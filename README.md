@@ -1,0 +1,2 @@
+# PlagiatSetup
+Plagiat Setup
