@@ -1,5 +1,5 @@
 {
-	Group 0x2B create :name "VxORLMeuf"
+	Group 0x2B create :name "VxORLGars"
 	Mixer_Strip 0x1 create :name "VxORLPitch1" :width "narrow" :tab "signal" :color 392336264 :gain_mode 0 :mute_mode 0 :group 0x2B :auto_input "" :manual_connection 0
 	Chain 0x2 create :strip 0x1 :tab "chain"
 	JACK_Module 0x3 create :parameter_values "0,000000:1,000000" :is_default 1 :chain 0x2 :active 1
