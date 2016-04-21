@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tapeutape version="0.1.0">
+  <options globalvolume="1.000000" max_polyphony="100">
+    <jack-output name="Samples1"/>
+    <jack-output name="Samples2"/>
+    <jack-output name="Samples3"/>
+  </options>
+  <creation>
+    <setup name="Plagiat" channel="1" cc="0">
+      <kit name="Le5" volume="1.000000">
+        <instrument name="new instrument" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="" sampleRelative=""/>
+        </instrument>
+      </kit>
+      <kit name="WholeWorld" volume="1.000000">
+        <instrument name="new instrument" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="" sampleRelative=""/>
+        </instrument>
+      </kit>
+      <kit name="SW" volume="1.000000">
+        <instrument name="new instrument" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="" sampleRelative=""/>
+        </instrument>
+      </kit>
+      <kit name="Climat" volume="1.000000">
+        <instrument name="new instrument" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="" sampleRelative=""/>
+        </instrument>
+      </kit>
+      <kit name="GetUrFreakOn" volume="1.000000">
+        <instrument name="new instrument" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="" sampleRelative=""/>
+        </instrument>
+      </kit>
+      <kit name="Fifty" volume="1.000000">
+        <instrument name="new instrument" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="" sampleRelative=""/>
+        </instrument>
+      </kit>
+      <kit name="Haggadah" volume="1.000000">
+        <instrument name="new instrument" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="" sampleRelative=""/>
+        </instrument>
+      </kit>
+      <kit name="ConnassesSACEM" volume="1.000000">
+        <instrument name="new instrument" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="" sampleRelative=""/>
+        </instrument>
+      </kit>
+    </setup>
+  </creation>
+</tapeutape>
