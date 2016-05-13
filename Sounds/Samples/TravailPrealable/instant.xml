@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instant>
+  <Mixer narrow-strips="no" show-mixer="no" show-mixer-list="yes" maximised="no">
+    <geometry x-size="1024" y-size="708" x-pos="0" y-pos="31" x-off="0" y-off="0" mixer-rhs-pane1-pos="348" mixer-rhs-pane2-pos="471" mixer-list-hpane-pos="123"/>
+    <PluginOrder/>
+  </Mixer>
+  <LastUsedSnapshot name="TravailPrealable"/>
+  <Editor id="18" mixer-width="Wide" zoom-focus="ZoomFocusPlayhead" zoom="312" snap-to="SnapToBeat" snap-mode="SnapNormal" internal-snap-to="SnapToBeatDiv4" internal-snap-mode="SnapNormal" pre-internal-snap-to="SnapToBeat" pre-internal-snap-mode="SnapNormal" edit-point="EditAtMouse" visible-track-count="-1" playhead="0" left-frame="0" y-origin="0,000000" show-measures="yes" maximised="no" follow-playhead="yes" stationary-playhead="no" region-list-sort-type="ByEndInFile" mouse-mode="MouseObject" join-object-range="no" show-editor-mixer="yes" show-editor-list="yes" editor-list-page="0" show-marker-lines="no" nudge-clock-value="220500">
+    <geometry x-size="1231" y-size="708" x-pos="0" y-pos="31" edit-horizontal-pane-pos="650" notebook-shrunk="0" edit-vertical-pane-pos="515"/>
+    <Buttons>
+      <Press/>
+      <Release/>
+    </Buttons>
+    <Selection>
+      <Region id="274"/>
+    </Selection>
+    <RegionList sort-type="ByEndInFile" sort-ascending="yes" show-all="no" show-automatic-regions="yes"/>
+  </Editor>
+</instant>
