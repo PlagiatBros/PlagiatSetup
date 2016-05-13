@@ -135,6 +135,18 @@ climat = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/metro/start'),
             ] >> Discard()
         ],
+    ProgramFilter(3) >> [ # Refrain - Bouton 3
+        Program(66) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eighth_per_cycle', 74),
+            SendOSC(slport, '/set', 'tempo', 150),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 150),
+            SendOSC(klickport, '/klick/simple/set_meter', 74, 8),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'X.x.x.x.X.x.x.x.X.x.x.x.X.x.x.x.X.x.x.xX.x.x.x.X.x.x.x.X.x.x.x.X.x.x.x.X.x'),
+            SendOSC(klickport, '/klick/metro/start'),
+            ] >> Discard()
+        ],
     ]
 
 

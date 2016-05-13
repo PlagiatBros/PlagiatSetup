@@ -49,6 +49,18 @@
         <instrument name="Morricone3" minnote="76" maxnote="76" rootnote="76" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_morricone.3@133.wav" sampleRelative="Climat/48k_morricone.3@133.wav"/>
         </instrument>
+        <instrument name="AnoushkaSpeed" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_AnoushkaSHankar.3@84.wav" sampleRelative="Climat/48k_AnoushkaSHankar.3@84.wav"/>
+        </instrument>
+        <instrument name="Mandela4" minnote="53" maxnote="53" rootnote="53" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples5" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_mandela.4.wav" sampleRelative="Climat/48k_mandela.4.wav"/>
+        </instrument>
+        <instrument name="Mandela5" minnote="55" maxnote="55" rootnote="55" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples5" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_mandela.121.wav" sampleRelative="Climat/48k_mandela.121.wav"/>
+        </instrument>
+        <instrument name="Mandela6" minnote="57" maxnote="57" rootnote="57" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples5" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_mandela.128.wav" sampleRelative="Climat/48k_mandela.128.wav"/>
+        </instrument>
       </kit>
       <kit name="GetUrFreakOn" volume="1.000000">
         <instrument name="new instrument" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
