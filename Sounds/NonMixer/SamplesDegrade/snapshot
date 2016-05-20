@@ -3,7 +3,7 @@
 	Mixer_Strip 0x1 create :name "Samples1" :width "narrow" :tab "fader" :color 1354466568 :gain_mode 0 :mute_mode 0 :group 0x2B :auto_input "" :manual_connection 0
 	Chain 0x2 create :strip 0x1 :tab "chain"
 	JACK_Module 0x3 create :parameter_values "0,000000:2,000000" :is_default 1 :chain 0x2 :active 1
-	Gain_Module 0x4 create :parameter_values "-70,000000:0,000000" :is_default 1 :chain 0x2 :active 1
+	Gain_Module 0x4 create :parameter_values "0,000000:0,000000" :is_default 1 :chain 0x2 :active 1
 	Meter_Module 0x5 create :is_default 1 :chain 0x2 :active 1
 	JACK_Module 0x6 create :parameter_values "2,000000:0,000000" :is_default 1 :chain 0x2 :active 1
 	Mixer_Strip 0x7 create :name "Samples2" :width "narrow" :tab "fader" :color 36291653 :gain_mode 0 :mute_mode 0 :group 0x2B :auto_input "" :manual_connection 0
@@ -36,9 +36,10 @@
 	Gain_Module 0x22 create :parameter_values "-6,500000:0,000000" :is_default 1 :chain 0x20 :active 1
 	Meter_Module 0x23 create :is_default 1 :chain 0x20 :active 1
 	JACK_Module 0x24 create :parameter_values "2,000000:0,000000" :is_default 1 :chain 0x20 :active 1
-	Mixer_Strip 0x25 create :name "SamplesDegrade" :width "narrow" :tab "fader" :color 1524461221 :gain_mode 0 :mute_mode 0 :group 0x2B :auto_input "" :manual_connection 0
+	Mixer_Strip 0x25 create :name "SamplesDegrade" :width "narrow" :tab "signal" :color 1524461221 :gain_mode 0 :mute_mode 0 :group 0x2B :auto_input "" :manual_connection 0
 	Chain 0x26 create :strip 0x25 :tab "chain"
 	JACK_Module 0x27 create :parameter_values "0,000000:2,000000" :is_default 1 :chain 0x26 :active 1
+	Plugin_Module 0x56 create :lv2_plugin_uri "http://drobilla.net/plugins/mda/Degrade" :plugin_ins 2 :plugin_outs 2 :parameter_values "0,800000:0,439716:0,650000:0,900000:0,580000:0,500000" :is_default 0 :chain 0x26 :active 1
 	Gain_Module 0x28 create :parameter_values "0,000000:0,000000" :is_default 1 :chain 0x26 :active 1
 	Meter_Module 0x29 create :is_default 1 :chain 0x26 :active 1
 	JACK_Module 0x2A create :parameter_values "2,000000:0,000000" :is_default 1 :chain 0x26 :active 1
