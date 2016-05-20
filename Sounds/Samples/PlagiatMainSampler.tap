@@ -10,8 +10,23 @@
   <creation>
     <setup name="Plagiat" channel="1" cc="0">
       <kit name="Le5" volume="1.000000">
-        <instrument name="new instrument" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="" sampleRelative=""/>
+        <instrument name="Tigrou" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Le5/48k_Processed_03_Kars_1.5@89.wav" sampleRelative="Le5/48k_Processed_03_Kars_1.5@89.wav"/>
+        </instrument>
+        <instrument name="Tigrou2" minnote="62" maxnote="62" rootnote="62" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Le5/48k_Processed_03_Kars_1@200.wav" sampleRelative="Le5/48k_Processed_03_Kars_1@200.wav"/>
+        </instrument>
+        <instrument name="Tigrou3Short" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Le5/48k_Processed_03_Kars_1.37@87_Short.wav" sampleRelative="Le5/48k_Processed_03_Kars_1.37@87_Short.wav"/>
+        </instrument>
+        <instrument name="Tigrou3Long" minnote="65" maxnote="65" rootnote="65" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Le5/48k_Processed_03_Kars_1.37@87_Long.wav" sampleRelative="Le5/48k_Processed_03_Kars_1.37@87_Long.wav"/>
+        </instrument>
+        <instrument name="yamanyar" minnote="48" maxnote="48" rootnote="48" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Le5/48k__yamanyar_stretched_yamanyar4.5@200.wav" sampleRelative="Le5/48k__yamanyar_stretched_yamanyar4.5@200.wav"/>
+        </instrument>
+        <instrument name="yamanyar2" minnote="50" maxnote="50" rootnote="50" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Le5/48k_yamanyar_stretched_yamanyar4.9@78.wav" sampleRelative="Le5/48k_yamanyar_stretched_yamanyar4.9@78.wav"/>
         </instrument>
       </kit>
       <kit name="WholeWorld" volume="1.000000">
@@ -77,11 +92,20 @@
         </instrument>
       </kit>
       <kit name="Fifty" volume="1.000000">
-        <instrument name="LoveBuzz" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+        <instrument name="LoveBuzz" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Fifty/48k_loveBuzz.4.wav" sampleRelative="Fifty/48k_loveBuzz.4.wav"/>
         </instrument>
         <instrument name="LoveBuzz2" minnote="61" maxnote="61" rootnote="61" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Fifty/48k_loveBuzz.9.wav" sampleRelative="Fifty/48k_loveBuzz.9.wav"/>
+        </instrument>
+        <instrument name="Christina" minnote="62" maxnote="62" rootnote="62" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Fifty/48k_Processed_aguilera%L%L-2%L.1@107.wav" sampleRelative="Fifty/48k_Processed_aguilera%L%L-2%L.1@107.wav"/>
+        </instrument>
+        <instrument name="Christina2" minnote="63" maxnote="63" rootnote="63" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Fifty/48k_aguilera%L%L-2%L.@107.wav" sampleRelative="Fifty/48k_aguilera%L%L-2%L.@107.wav"/>
+        </instrument>
+        <instrument name="Pinokio" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Fifty/48k_Pinokio_Pinokio.4@100.wav" sampleRelative="Fifty/48k_Pinokio_Pinokio.4@100.wav"/>
         </instrument>
       </kit>
       <kit name="Haggadah" volume="1.000000">
