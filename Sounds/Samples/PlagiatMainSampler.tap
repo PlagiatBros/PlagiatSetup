@@ -115,7 +115,7 @@
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/48k_SW.57.wav" sampleRelative="SW/48k_SW.57.wav"/>
         </instrument>
       </kit>
-      <kit name="WholeWorld" volume="1.000000">
+      <kit name="WholeWorld" volume="0.330000">
         <instrument name="Koto" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/WholeWorld/48k_Processed_Koto_6.1.wav" sampleRelative="WholeWorld/48k_Processed_Koto_6.1.wav"/>
         </instrument>
@@ -127,40 +127,40 @@
         </instrument>
       </kit>
       <kit name="Haggadah" volume="1.000000">
-        <instrument name="BAM" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="BAM" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.300000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/48k_BAM_8.1.wav" sampleRelative="DaFirst/48k_BAM_8.1.wav"/>
         </instrument>
-        <instrument name="BAM2" minnote="62" maxnote="62" rootnote="62" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="BAM2" minnote="62" maxnote="62" rootnote="62" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.300000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/48k_BAM_8.2.wav" sampleRelative="DaFirst/48k_BAM_8.2.wav"/>
         </instrument>
-        <instrument name="BAM3" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="BAM3" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.300000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/48k_BAM_8.3.wav" sampleRelative="DaFirst/48k_BAM_8.3.wav"/>
         </instrument>
         <instrument name="ufo" minnote="48" maxnote="48" rootnote="48" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/48k_ufo.42.wav" sampleRelative="DaFirst/48k_ufo.42.wav"/>
         </instrument>
-        <instrument name="ufo2" minnote="50" maxnote="50" rootnote="50" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+        <instrument name="ufo2" minnote="50" maxnote="50" rootnote="50" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.570000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/48k_ufo.41.wav" sampleRelative="DaFirst/48k_ufo.41.wav"/>
         </instrument>
-        <instrument name="psychose" minnote="72" maxnote="72" rootnote="72" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="psychose" minnote="72" maxnote="72" rootnote="72" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="0.330000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/48k_psychose.2.wav" sampleRelative="DaFirst/48k_psychose.2.wav"/>
         </instrument>
-        <instrument name="psychose2" minnote="74" maxnote="74" rootnote="74" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="psychose2" minnote="74" maxnote="74" rootnote="74" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="0.430000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/48k_psychose.5@112.wav" sampleRelative="DaFirst/48k_psychose.5@112.wav"/>
         </instrument>
-        <instrument name="psychosereverse" minnote="76" maxnote="76" rootnote="76" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="psychosereverse" minnote="76" maxnote="76" rootnote="76" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="0.430000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/48k_reverse_psychose.185@112.wav" sampleRelative="DaFirst/48k_reverse_psychose.185@112.wav"/>
         </instrument>
-        <instrument name="psychoseinstru" minnote="84" maxnote="100" rootnote="79" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="psychoseinstru" minnote="84" maxnote="100" rootnote="79" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.300000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/48k_psychose.5@112.wav" sampleRelative="DaFirst/48k_psychose.5@112.wav"/>
         </instrument>
-        <instrument name="derbouka" minnote="36" maxnote="36" rootnote="36" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples5" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+        <instrument name="derbouka" minnote="36" maxnote="36" rootnote="36" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples5" volume="0.500000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/48k_derbouka.2@133.wav" sampleRelative="DaFirst/48k_derbouka.2@133.wav"/>
         </instrument>
-        <instrument name="haendel" minnote="24" maxnote="24" rootnote="24" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+        <instrument name="haendel" minnote="24" maxnote="24" rootnote="24" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="0.500000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/48k_haendelOperture.16@62.wav" sampleRelative="DaFirst/48k_haendelOperture.16@62.wav"/>
         </instrument>
-        <instrument name="ufo3" minnote="52" maxnote="52" rootnote="52" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+        <instrument name="ufo3" minnote="52" maxnote="52" rootnote="52" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.570000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/48k_ufo.37@178.wav" sampleRelative="DaFirst/48k_ufo.37@178.wav"/>
         </instrument>
       </kit>
