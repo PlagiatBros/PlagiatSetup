@@ -28,22 +28,22 @@ class OSCCustomInterface(object):
             self.server.stop()
             del self.server
 
-    @_liblo.make_method('/Sequencer/Intro', 'i')
-    def intro_cb(self, path, args):
-        _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 0, int(args[0])))
-        _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 39, int(args[0])))
-        _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 38, int(args[0])))
-        _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 40, int(args[0])))
-        _engine.output_event(_event.ProgramEvent('PBCtrlOut', _util.NoDataOffset(1), 127))     
+    # @_liblo.make_method('/Sequencer/Intro', 'i')
+    # def intro_cb(self, path, args):
+    #     _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 0, int(args[0])))
+    #     _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 39, int(args[0])))
+    #     _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 38, int(args[0])))
+    #     _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 40, int(args[0])))
+    #     _engine.output_event(_event.ProgramEvent('PBCtrlOut', _util.NoDataOffset(1), 127))     
 
-    @_liblo.make_method('/Sequencer/Sabra', 'i')
-    def sabra_cb(self, path, args):
-        _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 23, int(args[0])))
-        _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 39, int(args[0])))
-        _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 38, int(args[0])))
-        _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 40, int(args[0])))
-        _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 22, int(args[0])))
-        _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 65, int(args[0])))
+    # @_liblo.make_method('/Sequencer/Sabra', 'i')
+    # def sabra_cb(self, path, args):
+    #     _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 23, int(args[0])))
+    #     _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 39, int(args[0])))
+    #     _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 38, int(args[0])))
+    #     _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 40, int(args[0])))
+    #     _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 22, int(args[0])))
+    #     _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 65, int(args[0])))
 
 
 
@@ -58,10 +58,11 @@ class OSCCustomInterface(object):
         if _engine.current_subscene() == 9 and args[0] < 9:
          _engine.switch_scene(args[0])
          _engine.switch_subscene(1)
-         if args[0] == 1: # Rustine car acte 0 sur screen 14 !!!
-             _engine.output_event(_event.ProgramEvent('PBseq24', _util.NoDataOffset(1), 127))
-         else:
-             _engine.output_event(_event.ProgramEvent('PBseq24', _util.NoDataOffset(1), args[0] + 111))
+         # if args[0] == 1: # Rustine car acte 0 sur screen 14 !!!
+         #     _engine.output_event(_event.ProgramEvent('PBseq24', _util.NoDataOffset(1), 127))
+         # else:
+         _engine.output_event(_event.ProgramEvent('PBseq24', _util.NoDataOffset(1), args[0] + 112))
+         _engine.output_event(_event.CtrlEvent('PBTapeutape', _util.NoDataOffset(0), 0, args[0]-1))
 	else:
             if args[0] == 12:
              _engine.switch_subscene(9)

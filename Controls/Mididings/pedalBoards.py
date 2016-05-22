@@ -480,7 +480,42 @@ run(
                         climat,
                         ]
 		),
-		Scene("Guitar ORL",
+		Scene("Nope",
+                      [
+                        climat,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        climat,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        climat,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        climat,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        climat,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        climat,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        climat,
+                        ]
+		),
+		Scene("Tune Select",
                       [
                         climat,
                         ]
@@ -527,45 +562,10 @@ run(
 		),
 	    ]
         ),
-        6: SceneGroup("Da Fist", [
+        7: SceneGroup("Da Fist", [
   		Scene("Bass ORL",
                       [
                         dafist,
-                        ]
-		),
-	    ]
-        ),
-        7: SceneGroup("Tune Select", [
-  		Scene("Bass ORL",
-                      [
-                        ]
-		),
-	    ]
-        ),
-        7: SceneGroup("Tune Select", [
-  		Scene("Bass ORL",
-                      [
-                        ]
-		),
-	    ]
-        ),
-        8: SceneGroup("Tune Select", [
-  		Scene("Bass ORL",
-                      [
-                        ]
-		),
-	    ]
-        ),
-        9: SceneGroup("Tune Select", [
-  		Scene("Bass ORL",
-                      [
-                        ]
-		),
-	    ]
-        ),
-        10: SceneGroup("Tune Select", [
-  		Scene("Bass ORL",
-                      [
                         ]
 		),
 	    ]
