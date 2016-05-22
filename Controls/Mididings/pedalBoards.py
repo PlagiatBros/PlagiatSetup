@@ -149,6 +149,326 @@ climat = PortFilter('PBCtrlIn') >> [
         ],
     ]
 
+#### ConnassesSACEM ####
+connassessacem = PortFilter('PBCtrlIn') >> [
+    ProgramFilter(1) >> stop, # !!!STOP!!! #
+    ProgramFilter(2) >> [ # Thème Intro - Bouton 2
+        Program(65) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 125),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 125),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+            ] >> Discard()
+        ],
+    ProgramFilter(3) >> [ # Thème Intro - Bouton 3
+        Program(66) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 125),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 125),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+            ] >> Discard()
+        ],
+    ]
+
+
+#### Fifty ####
+fifty = PortFilter('PBCtrlIn') >> [
+    ProgramFilter(1) >> stop, # !!!STOP!!! #
+    ProgramFilter(2) >> [ # Couplet - Bouton 2
+        Program(65) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 110),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 110),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+            ] >> Discard()
+        ],
+    ProgramFilter(3) >> [ # Pont Refrain - Bouton 3
+        Program(66) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 110),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 110),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+            ] >> Discard()
+        ],
+    ProgramFilter(4) >> [ # Refrain - Bouton 4
+        Program(67) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 110),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 110),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+            ] >> Discard()
+        ],
+    ]
+
+#### Le5 ####
+le5 = PortFilter('PBCtrlIn') >> [
+    ProgramFilter(1) >> stop, # !!!STOP!!! #
+    ProgramFilter(2) >> [ # Intro - Bouton 2
+        Program(65) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eight_per_cycle', 5),
+            SendOSC(slport, '/set', 'tempo', 160),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 160),
+            SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+            ] >> Discard()
+        ],
+    ProgramFilter(3) >> [ # Couplet A - Bouton 3
+        Program(66) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eight_per_cycle', 5),
+            SendOSC(slport, '/set', 'tempo', 160),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 160),
+            SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+            ] >> Discard()
+        ],
+    ProgramFilter(4) >> [ # Couplet B - Bouton 4
+        Program(67) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eight_per_cycle', 5),
+            SendOSC(slport, '/set', 'tempo', 160),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 160),
+            SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+            ] >> Discard()
+        ],
+    ProgramFilter(5) >> [ # Couplet C - Bouton 5
+        Program(68) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eight_per_cycle', 5),
+            SendOSC(slport, '/set', 'tempo', 160),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 160),
+            SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+            ] >> Discard()
+        ],
+    ProgramFilter(6) >> [ # Refrain - Bouton 6
+        Program(69) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eight_per_cycle', 5),
+            SendOSC(slport, '/set', 'tempo', 160),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 160),
+            SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+            ] >> Discard()
+        ],
+    ProgramFilter(7) >> [ # Couplet A - Bouton 7 - #TODO INUTILE?
+        Program(70) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eight_per_cycle', 5),
+            SendOSC(slport, '/set', 'tempo', 160),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 160),
+            SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+            ] >> Discard()
+        ],
+    ProgramFilter(8) >> [ # Couplet Bbis - Bouton 8
+        Program(71) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eight_per_cycle', 5),
+            SendOSC(slport, '/set', 'tempo', 160),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 160),
+            SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+            ] >> Discard()
+        ],
+    ProgramFilter(9) >> [ # Couplet Cbis - Bouton 9
+        Program(72) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eight_per_cycle', 5),
+            SendOSC(slport, '/set', 'tempo', 160),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 160),
+            SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+            ] >> Discard()
+        ],
+    ]
+
+
+#### SW ####
+sw = PortFilter('PBCtrlIn') >> [
+    ProgramFilter(1) >> stop, # !!!STOP!!! #
+    ProgramFilter(2) >> [ # Couplet - Bouton 2
+        Program(65) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 178.5),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 178.5),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+            ] >> Discard()
+        ],
+    ProgramFilter(3) >> [ # Pont Refrain - Bouton 3
+        Program(66) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 178.5),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 178.5),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+            ] >> Discard()
+        ],
+    ]
+
+#### Whole World ####
+wholeworld = PortFilter('PBCtrlIn') >> [
+    ProgramFilter(1) >> stop, # !!!STOP!!! #
+    ProgramFilter(2) >> [ # Couplet - Bouton 2
+        Program(65) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 90),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 90),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+            ] >> Discard()
+        ],
+    ProgramFilter(3) >> [ # Refrain - Bouton 3
+        Program(66) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 90),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 90),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+            ] >> Discard()
+        ],
+    ProgramFilter(4) >> [ # Pont - Bouton 4
+        Program(67) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 90),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 90),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+            ] >> Discard()
+        ],
+    ]
+
+#### Da Fist ####
+dafist = PortFilter('PBCtrlIn') >> [
+    ProgramFilter(1) >> stop, # !!!STOP!!! #
+    ProgramFilter(2) >> [ # Intro Thème - Bouton 2
+        Program(65) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 120),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 120),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+            ] >> Discard()
+        ],
+    ProgramFilter(3) >> [ # Intro Thème 2 - Bouton 3
+        Program(66) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 120),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 120),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+            ] >> Discard()
+        ],
+    ProgramFilter(4) >> [ # Couplet - Bouton 4
+        Program(67) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 120),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 120),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+            ] >> Discard()
+        ],
+    ProgramFilter(5) >> [ # Couplet part 2 - Bouton 5
+        Program(68) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 120),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 120),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+            ] >> Discard()
+        ],
+    ProgramFilter(6) >> [ # Intro Refrain - Bouton 6
+        Program(69) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 120),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 120),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+            ] >> Discard()
+        ],
+    ProgramFilter(7) >> [ # Refrain - Bouton 7
+        Program(70) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 120),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 120),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+            ] >> Discard()
+        ],
+    ]
+
 
 #### RUN ###################################################
 
@@ -163,6 +483,89 @@ run(
 		Scene("Guitar ORL",
                       [
                         climat,
+                        ]
+		),
+	    ]
+        ),
+        2: SceneGroup("ConnassesSACEM", [
+  		Scene("Bass ORL",
+                      [
+                        connassessacem,
+                        ]
+		),
+	    ]
+        ),
+        3: SceneGroup("Fifty", [
+  		Scene("Bass ORL",
+                      [
+                        fifty,
+                        ]
+		),
+	    ]
+        ),
+        4: SceneGroup("Le5", [
+  		Scene("Bass ORL",
+                      [
+                        le5,
+                        ]
+		),
+	    ]
+        ),
+        5: SceneGroup("SW", [
+  		Scene("Bass ORL",
+                      [
+                        sw,
+                        ]
+		),
+	    ]
+        ),
+        6: SceneGroup("Wholeworld", [
+  		Scene("Bass ORL",
+                      [
+                        wholeworld,
+                        ]
+		),
+	    ]
+        ),
+        6: SceneGroup("Da Fist", [
+  		Scene("Bass ORL",
+                      [
+                        dafist,
+                        ]
+		),
+	    ]
+        ),
+        7: SceneGroup("Tune Select", [
+  		Scene("Bass ORL",
+                      [
+                        ]
+		),
+	    ]
+        ),
+        7: SceneGroup("Tune Select", [
+  		Scene("Bass ORL",
+                      [
+                        ]
+		),
+	    ]
+        ),
+        8: SceneGroup("Tune Select", [
+  		Scene("Bass ORL",
+                      [
+                        ]
+		),
+	    ]
+        ),
+        9: SceneGroup("Tune Select", [
+  		Scene("Bass ORL",
+                      [
+                        ]
+		),
+	    ]
+        ),
+        10: SceneGroup("Tune Select", [
+  		Scene("Bass ORL",
+                      [
                         ]
 		),
 	    ]
