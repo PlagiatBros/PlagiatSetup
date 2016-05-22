@@ -33,10 +33,16 @@
 	Mixer_Strip 0x1F create :name "SamplesTremolo" :width "narrow" :tab "fader" :color 1072619702 :gain_mode 0 :mute_mode 0 :group 0x2B :auto_input "" :manual_connection 0
 	Chain 0x20 create :strip 0x1F :tab "chain"
 	JACK_Module 0x21 create :parameter_values "0,000000:1,000000" :is_default 1 :chain 0x20 :active 1
-	Gain_Module 0x22 create :parameter_values "-7,500000:0,000000" :is_default 1 :chain 0x20 :active 1
+	Gain_Module 0x22 create :parameter_values "-70,000000:0,000000" :is_default 1 :chain 0x20 :active 1
 	Meter_Module 0x23 create :is_default 1 :chain 0x20 :active 1
 	JACK_Module 0x24 create :parameter_values "1,000000:0,000000" :is_default 1 :chain 0x20 :active 1
-	Mixer_Strip 0x25 create :name "SamplesScape" :width "narrow" :tab "signal" :color 918758223 :gain_mode 0 :mute_mode 0 :group 0x2B :auto_input "" :manual_connection 0
+	Mixer_Strip 0x57 create :name "SamplesDegrade" :width "narrow" :tab "fader" :color 553043481 :gain_mode 0 :mute_mode 0 :group 0x2B :auto_input "" :manual_connection 0
+	Chain 0x58 create :strip 0x57 :tab "chain"
+	JACK_Module 0x59 create :parameter_values "0,000000:1,000000" :is_default 1 :chain 0x58 :active 1
+	Gain_Module 0x5A create :parameter_values "0,000000:0,000000" :is_default 1 :chain 0x58 :active 1
+	Meter_Module 0x5B create :is_default 1 :chain 0x58 :active 1
+	JACK_Module 0x5C create :parameter_values "1,000000:0,000000" :is_default 1 :chain 0x58 :active 1
+	Mixer_Strip 0x25 create :name "SamplesScape" :width "narrow" :tab "fader" :color 918758223 :gain_mode 0 :mute_mode 0 :group 0x2B :auto_input "" :manual_connection 0
 	Chain 0x26 create :strip 0x25 :tab "chain"
 	JACK_Module 0x27 create :parameter_values "0,000000:1,000000" :is_default 1 :chain 0x26 :active 1
 	Plugin_Module 0x2D create :plugin_id 2588 :plugin_ins 1 :plugin_outs 2 :parameter_values "150,000000:4,000000:0,890000:0,000000:1,000000:440,000000" :is_default 0 :chain 0x26 :active 1

@@ -43,6 +43,33 @@ slport = 9951
 # desktoporlport = ("CtrlOrl", 12345)
 
 # Non Mixers
+
+vxorlpreport = 6666
+vxorlmeufport = 6667
+vxorlpostport = 6668
+vxmainport = 6669
+vxorlgarsport = 6670
+
+vxjeannotpreport = 6671
+vxjeannotmeufport = 6672
+vxjeannotgarsport = 6673
+vxjeannotpostport = 6674
+
+
+samplesdelaymungeport = 7001
+samplesreversedelayport = 7002
+samplesringmodport = 7003
+samplestremoloport = 7005
+samplesscapeport = 7006
+samplesdegradeport = 7009
+samplesdisintegratorport = 7007
+samplesmainport = 7008
+
+
+bassmainport = 7020
+monitorsorlport = 7030
+monitorsjeannotport = 7031
+
 # mainmixport = 6666
 # drumsport = 6667
 # bassesport = 6668
@@ -133,6 +160,27 @@ climat = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 74, 8),
             SendOSC(klickport, '/klick/simple/set_pattern', 'X.x.x.x.X.x.x.x.X.x.x.x.X.x.x.x.X.x.x.xX.x.x.x.X.x.x.x.X.x.x.x.X.x.x.x.X.x'),
             SendOSC(klickport, '/klick/metro/start'),
+
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
+
+            SendOSC(samplesmainport, '/strip/SamplesMunge/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/SamplesTremolo/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDegrade/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 0.0),
+
+            SendOSC(samplesdelaymungeport, '/strip/Samples3/Gain/Gain%20(dB)/unscaled', -7.0),
+            SendOSC(samplesreversedelayport, '/strip/Samples4/Gain/Gain%20(dB)/unscaled', -2.0),
+            SendOSC(samplesringmodport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -2.0),
+
+
+
             ] >> Discard()
         ],
     ProgramFilter(3) >> [ # Refrain - Bouton 3
@@ -145,6 +193,24 @@ climat = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 74, 8),
             SendOSC(klickport, '/klick/simple/set_pattern', 'X.x.x.x.X.x.x.x.X.x.x.x.X.x.x.x.X.x.x.xX.x.x.x.X.x.x.x.X.x.x.x.X.x.x.x.X.x'),
             SendOSC(klickport, '/klick/metro/start'),
+
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
+
+            SendOSC(samplesmainport, '/strip/SamplesMunge/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesTremolo/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/SamplesDegrade/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
+
+            SendOSC(samplestremoloport, '/strip/SamplesTremolo/Gain/Gain%20(dB)/unscaled', -6.0),
+            SendOSC(samplesscapeport, '/strip/SamplesTremolo/Gain/Gain%20(dB)/unscaled', -7.50),
+
             ] >> Discard()
         ],
     ]
@@ -162,6 +228,25 @@ connassessacem = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
+
+
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
+
+            SendOSC(samplesmainport, '/strip/SamplesMunge/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesTremolo/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDegrade/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
+
+            SendOSC(samplesdelaymungeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -7.0),
+            SendOSC(samplesdelaymungeport, '/strip/Samples3/Gain/Gain%20(dB)/unscaled', -70.0),
+
             ] >> Discard()
         ],
     ProgramFilter(3) >> [ # Thème Intro - Bouton 3
@@ -174,6 +259,24 @@ connassessacem = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
+
+            SendOSC(samplesmainport, '/strip/SamplesMunge/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesTremolo/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDegrade/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
+
+            SendOSC(samplesdelaymungeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -7.0),
+            SendOSC(samplesdelaymungeport, '/strip/Samples3/Gain/Gain%20(dB)/unscaled', -70.0),
+
             ] >> Discard()
         ],
     ]
@@ -192,6 +295,24 @@ fifty = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
+
+            SendOSC(samplesmainport, '/strip/SamplesMunge/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesTremolo/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDegrade/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
+
+            SendOSC(samplesdelaymungeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -7.0),
+            SendOSC(samplesdelaymungeport, '/strip/Samples3/Gain/Gain%20(dB)/unscaled', -70.0),
+
             ] >> Discard()
         ],
     ProgramFilter(3) >> [ # Pont Refrain - Bouton 3
@@ -204,6 +325,20 @@ fifty = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
+
+            SendOSC(samplesmainport, '/strip/SamplesMunge/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesTremolo/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDegrade/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
             ] >> Discard()
         ],
     ProgramFilter(4) >> [ # Refrain - Bouton 4
@@ -216,6 +351,21 @@ fifty = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
+
+            SendOSC(samplesmainport, '/strip/SamplesMunge/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesTremolo/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDegrade/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
+
             ] >> Discard()
         ],
     ]
@@ -233,6 +383,20 @@ le5 = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
+
+            SendOSC(samplesmainport, '/strip/SamplesMunge/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesTremolo/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDegrade/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
             ] >> Discard()
         ],
     ProgramFilter(3) >> [ # Couplet A - Bouton 3
@@ -245,6 +409,20 @@ le5 = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
+
+            SendOSC(samplesmainport, '/strip/SamplesMunge/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesTremolo/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDegrade/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
             ] >> Discard()
         ],
     ProgramFilter(4) >> [ # Couplet B - Bouton 4
@@ -257,6 +435,20 @@ le5 = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
+
+            SendOSC(samplesmainport, '/strip/SamplesMunge/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesTremolo/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDegrade/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
             ] >> Discard()
         ],
     ProgramFilter(5) >> [ # Couplet C - Bouton 5
@@ -269,6 +461,20 @@ le5 = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
+
+            SendOSC(samplesmainport, '/strip/SamplesMunge/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesTremolo/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDegrade/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
             ] >> Discard()
         ],
     ProgramFilter(6) >> [ # Refrain - Bouton 6
@@ -281,6 +487,20 @@ le5 = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
+
+            SendOSC(samplesmainport, '/strip/SamplesMunge/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesTremolo/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDegrade/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
             ] >> Discard()
         ],
     ProgramFilter(7) >> [ # Couplet A - Bouton 7 - #TODO INUTILE?
@@ -293,6 +513,20 @@ le5 = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
+
+            SendOSC(samplesmainport, '/strip/SamplesMunge/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesTremolo/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDegrade/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
             ] >> Discard()
         ],
     ProgramFilter(8) >> [ # Couplet Bbis - Bouton 8
@@ -305,6 +539,20 @@ le5 = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
+
+            SendOSC(samplesmainport, '/strip/SamplesMunge/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesTremolo/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDegrade/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
             ] >> Discard()
         ],
     ProgramFilter(9) >> [ # Couplet Cbis - Bouton 9
@@ -317,6 +565,20 @@ le5 = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
+
+            SendOSC(samplesmainport, '/strip/SamplesMunge/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesTremolo/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDegrade/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
             ] >> Discard()
         ],
     ]
@@ -335,9 +597,56 @@ sw = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
+
+            SendOSC(samplesmainport, '/strip/SamplesMunge/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesTremolo/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDegrade/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
+
+            SendOSC(samplesscapeport, '/strip/SamplesDegrade/Gain/Gain%20(dB)/unscaled', -18.0),
+            SendOSC(samplesscapeport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -70.0),
             ] >> Discard()
         ],
-    ProgramFilter(3) >> [ # Pont Refrain - Bouton 3
+    ProgramFilter(3) >> [ # Couplet - Bouton 3
+        Program(65) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 178.5),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 178.5),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
+
+            SendOSC(samplesmainport, '/strip/SamplesMunge/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesTremolo/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDegrade/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
+
+            SendOSC(samplesscapeport, '/strip/SamplesDegrade/Gain/Gain%20(dB)/unscaled', -18.0),
+            SendOSC(samplesscapeport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -70.0),
+            ] >> Discard()
+        ],
+
+    ProgramFilter(4) >> [ # Pont Refrain - Bouton 4
         Program(66) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eight_per_cycle', 8),
@@ -347,8 +656,56 @@ sw = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
+
+            SendOSC(samplesmainport, '/strip/SamplesMunge/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesTremolo/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDegrade/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
+
+            SendOSC(samplesscapeport, '/strip/SamplesDegrade/Gain/Gain%20(dB)/unscaled', -70.0),
+            SendOSC(samplesscapeport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -4.5),
             ] >> Discard()
         ],
+
+    ProgramFilter(5) >> [ # Couplet - Bouton 5
+        Program(65) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 178.5),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 178.5),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
+
+            SendOSC(samplesmainport, '/strip/SamplesMunge/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesTremolo/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDegrade/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
+
+            SendOSC(samplesscapeport, '/strip/SamplesDegrade/Gain/Gain%20(dB)/unscaled', -18.0),
+            SendOSC(samplesscapeport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -70.0),
+            ] >> Discard()
+        ],
+
     ]
 
 #### Whole World ####
@@ -364,6 +721,22 @@ wholeworld = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
+
+            SendOSC(samplesmainport, '/strip/SamplesMunge/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesTremolo/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDegrade/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
+
+            SendOSC(samplesscapeport, '/strip/SamplesDegrade/Gain/Gain%20(dB)/unscaled', -18.0),
             ] >> Discard()
         ],
     ProgramFilter(3) >> [ # Refrain - Bouton 3

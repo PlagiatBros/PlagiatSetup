@@ -10,28 +10,28 @@
   <creation>
     <setup name="Plagiat" channel="1" cc="0">
       <kit name="Climat" volume="1.000000">
-        <instrument name="AnoushkaRing" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+        <instrument name="AnoushkaRing" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.500000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_AnoushkaSHankar.2@142-118.wav" sampleRelative="Climat/48k_AnoushkaSHankar.2@142-118.wav"/>
         </instrument>
-        <instrument name="Anoushka" minnote="62" maxnote="62" rootnote="62" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="Anoushka" minnote="62" maxnote="62" rootnote="62" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.510000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_AnoushkaSHankar.5@169.wav" sampleRelative="Climat/48k_AnoushkaSHankar.5@169.wav"/>
         </instrument>
-        <instrument name="Morricone1" minnote="72" maxnote="72" rootnote="72" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="Morricone1" minnote="72" maxnote="72" rootnote="72" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="0.170000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_morricone.4@141.wav" sampleRelative="Climat/48k_morricone.4@141.wav"/>
         </instrument>
-        <instrument name="Morricone2" minnote="74" maxnote="74" rootnote="74" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="Morricone2" minnote="74" maxnote="74" rootnote="74" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="0.310000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_morricone.5.wav" sampleRelative="Climat/48k_morricone.5.wav"/>
         </instrument>
-        <instrument name="Mandela" minnote="48" maxnote="48" rootnote="48" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="Mandela" minnote="48" maxnote="48" rootnote="48" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="0.330000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_mandela.2.wav" sampleRelative="Climat/48k_mandela.2.wav"/>
         </instrument>
-        <instrument name="Mandela2" minnote="50" maxnote="50" rootnote="50" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="Mandela2" minnote="50" maxnote="50" rootnote="50" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="0.330000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_mandela.13.wav" sampleRelative="Climat/48k_mandela.13.wav"/>
         </instrument>
         <instrument name="Mandela3" minnote="52" maxnote="52" rootnote="52" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_mandela.4.wav" sampleRelative="Climat/48k_mandela.4.wav"/>
         </instrument>
-        <instrument name="Morricone3" minnote="76" maxnote="76" rootnote="76" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="Morricone3" minnote="76" maxnote="76" rootnote="76" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="0.260000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_morricone.3@133.wav" sampleRelative="Climat/48k_morricone.3@133.wav"/>
         </instrument>
         <instrument name="AnoushkaSpeed" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
@@ -46,13 +46,13 @@
         <instrument name="Mandela6" minnote="57" maxnote="57" rootnote="57" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples5" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_mandela.128.wav" sampleRelative="Climat/48k_mandela.128.wav"/>
         </instrument>
-        <instrument name="MandelaDist1" minnote="54" maxnote="54" rootnote="54" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="MandelaDist1" minnote="54" maxnote="54" rootnote="54" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="0.850000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_Processed_mandela108.wav" sampleRelative="Climat/48k_Processed_mandela108.wav"/>
         </instrument>
-        <instrument name="MandelaDist2" minnote="56" maxnote="56" rootnote="56" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="MandelaDist2" minnote="56" maxnote="56" rootnote="56" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="0.850000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_Processed_mandela121.wav" sampleRelative="Climat/48k_Processed_mandela121.wav"/>
         </instrument>
-        <instrument name="MandelaDist3" minnote="58" maxnote="58" rootnote="58" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="MandelaDist3" minnote="58" maxnote="58" rootnote="58" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="0.850000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_Processed_mandela128.wav" sampleRelative="Climat/48k_Processed_mandela128.wav"/>
         </instrument>
       </kit>
@@ -60,13 +60,13 @@
         <instrument name="ViolinConnasses" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/48k_conassesSACEM_theme.1.wav" sampleRelative="ConnassesSACEM/48k_conassesSACEM_theme.1.wav"/>
         </instrument>
-        <instrument name="RiresConnasses" minnote="62" maxnote="62" rootnote="62" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="RiresConnasses" minnote="62" maxnote="62" rootnote="62" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/48k_conassesSACEM_3.9@50.wav" sampleRelative="ConnassesSACEM/48k_conassesSACEM_3.9@50.wav"/>
         </instrument>
         <instrument name="FrayedEnds" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/48k_FrayedEnds.2.wav" sampleRelative="ConnassesSACEM/48k_FrayedEnds.2.wav"/>
         </instrument>
-        <instrument name="Laughters" minnote="65" maxnote="65" rootnote="65" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+        <instrument name="Laughters" minnote="65" maxnote="72" rootnote="65" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav" sampleRelative="ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav"/>
         </instrument>
       </kit>
@@ -87,31 +87,31 @@
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Fifty/48k_Pinokio_Pinokio.4@100.wav" sampleRelative="Fifty/48k_Pinokio_Pinokio.4@100.wav"/>
         </instrument>
       </kit>
-      <kit name="Le5" volume="1.000000">
-        <instrument name="Tigrou" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+      <kit name="Le5" volume="0.310000">
+        <instrument name="Tigrou" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.530000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Le5/48k_Processed_03_Kars_1.5@89.wav" sampleRelative="Le5/48k_Processed_03_Kars_1.5@89.wav"/>
         </instrument>
-        <instrument name="Tigrou2" minnote="62" maxnote="62" rootnote="62" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="Tigrou2" minnote="62" maxnote="62" rootnote="62" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.440000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Le5/48k_Processed_03_Kars_1@200.wav" sampleRelative="Le5/48k_Processed_03_Kars_1@200.wav"/>
         </instrument>
-        <instrument name="Tigrou3Short" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="Tigrou3Short" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.850000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Le5/48k_Processed_03_Kars_1.37@87_Short.wav" sampleRelative="Le5/48k_Processed_03_Kars_1.37@87_Short.wav"/>
         </instrument>
-        <instrument name="Tigrou3Long" minnote="65" maxnote="65" rootnote="65" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="Tigrou3Long" minnote="65" maxnote="65" rootnote="65" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.850000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Le5/48k_Processed_03_Kars_1.37@87_Long.wav" sampleRelative="Le5/48k_Processed_03_Kars_1.37@87_Long.wav"/>
         </instrument>
-        <instrument name="yamanyar" minnote="48" maxnote="48" rootnote="48" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="yamanyar" minnote="48" maxnote="48" rootnote="48" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.610000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Le5/48k__yamanyar_stretched_yamanyar4.5@200.wav" sampleRelative="Le5/48k__yamanyar_stretched_yamanyar4.5@200.wav"/>
         </instrument>
-        <instrument name="yamanyar2" minnote="50" maxnote="50" rootnote="50" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="yamanyar2" minnote="50" maxnote="50" rootnote="50" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.610000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Le5/48k_yamanyar_stretched_yamanyar4.9@78.wav" sampleRelative="Le5/48k_yamanyar_stretched_yamanyar4.9@78.wav"/>
         </instrument>
       </kit>
       <kit name="SW" volume="1.000000">
-        <instrument name="FiatLux" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+        <instrument name="FiatLux" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.480000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/48k_FiatLux.6@112.wav" sampleRelative="SW/48k_FiatLux.6@112.wav"/>
         </instrument>
-        <instrument name="SW" minnote="48" maxnote="48" rootnote="48" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="SW" minnote="48" maxnote="48" rootnote="48" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.400000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/48k_SW.57.wav" sampleRelative="SW/48k_SW.57.wav"/>
         </instrument>
       </kit>
