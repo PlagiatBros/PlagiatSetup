@@ -26,7 +26,7 @@ hook(
 
 klickport = 1234
 slport = 9951
-# testport = 1111
+testport = 1111
 # qlcport = ("192.168.0.13", 7772)
 # qlcstopport = ("192.168.0.13", 7771)
 # #qlcport = 7777
@@ -119,7 +119,27 @@ seqtrigger = Filter(PROGRAM) >> [
 
 cseqtrigger = Channel(1) >> seqtrigger
 
+#### BPM Scape ####
+# Formule : (x-30)/134.
+scapebpmpath = 'C%2A%20Scape%20-%20Stereo%20delay%20with%20chromatic%20resonances/bpm'
+
 #### Bass ####
+
+# Dry #
+bassdry = [
+    SendOSC(bassmainport, '/strip/BassScapePre/Gain/Mute', 1.0),
+    SendOSC(bassmainport, '/strip/BassDegradePre/Gain/Mute', 1.0),    
+    ] >> Discard()
+
+# Scape #
+bassscape = [
+    SendOSC(bassmainport, '/strip/BassScapePre/Gain/Mute', 0.0),
+    ] >> Discard()
+
+# Degrade #
+bassscape = [
+    SendOSC(bassmainport, '/strip/BassDegradePre/Gain/Mute', 0.0),
+    ] >> Discard()
 
 #### Vocals ####
 
@@ -161,6 +181,9 @@ climat = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_pattern', 'X.x.x.x.X.x.x.x.X.x.x.x.X.x.x.x.X.x.x.xX.x.x.x.X.x.x.x.X.x.x.x.X.x.x.x.X.x'),
             SendOSC(klickport, '/klick/metro/start'),
 
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.8955),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.8955),
+
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 1.0),
@@ -193,6 +216,9 @@ climat = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 74, 8),
             SendOSC(klickport, '/klick/simple/set_pattern', 'X.x.x.x.X.x.x.x.X.x.x.x.X.x.x.x.X.x.x.xX.x.x.x.X.x.x.x.X.x.x.x.X.x.x.x.X.x'),
             SendOSC(klickport, '/klick/metro/start'),
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.8955),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.8955),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
@@ -229,6 +255,9 @@ connassessacem = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
 
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.708955),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.708955),
+
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
@@ -259,6 +288,9 @@ connassessacem = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.708955),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.708955),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
@@ -296,6 +328,9 @@ fifty = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
 
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.5970),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.5970),
+
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 1.0),
@@ -326,6 +361,9 @@ fifty = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
 
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.5970),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.5970),
+
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0),
@@ -351,6 +389,9 @@ fifty = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.5970),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.5970),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
@@ -384,6 +425,9 @@ le5 = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
 
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
+
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0),
@@ -409,6 +453,9 @@ le5 = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
@@ -436,6 +483,9 @@ le5 = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
 
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
+
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0),
@@ -461,6 +511,9 @@ le5 = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
@@ -488,6 +541,9 @@ le5 = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
 
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
+
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0),
@@ -513,6 +569,9 @@ le5 = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
@@ -540,6 +599,9 @@ le5 = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
 
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
+
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0),
@@ -565,6 +627,9 @@ le5 = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
@@ -598,6 +663,9 @@ sw = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
 
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.44216),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.44216),
+
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 1.0),
@@ -626,6 +694,9 @@ sw = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.44216),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.44216),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
@@ -657,6 +728,9 @@ sw = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
 
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.44216),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.44216),
+
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 1.0),
@@ -686,6 +760,9 @@ sw = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.44216),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.44216),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
@@ -722,6 +799,9 @@ wholeworld = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
 
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.44776),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.44776),
+
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 1.0),
@@ -750,6 +830,9 @@ wholeworld = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
 
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.44776),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.44776),
+
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 1.0),
@@ -777,6 +860,9 @@ wholeworld = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.44776),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.44776),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
@@ -811,6 +897,9 @@ dafist = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
 
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.6716),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.6716),
+
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0),
@@ -836,6 +925,9 @@ dafist = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.6716),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.6716),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
@@ -864,6 +956,9 @@ dafist = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.6716),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.6716),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
@@ -894,6 +989,9 @@ dafist = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),    
 
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.6716),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.6716),
+
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 1.0),
@@ -922,6 +1020,9 @@ dafist = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
 
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.6716),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.6716),
+
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 1.0),
@@ -949,6 +1050,9 @@ dafist = PortFilter('PBCtrlIn') >> [
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.6716),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.6716),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
@@ -1028,10 +1132,90 @@ run(
                         connassessacem,
                         ]
 		),
+		Scene("Nope",
+                      [
+                        connassessacem,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        connassessacem,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        connassessacem,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        connassessacem,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        connassessacem,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        connassessacem,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        connassessacem,
+                        ]
+		),
+		Scene("Tune Select",
+                      [
+                        connassessacem,
+                        ]
+		),
 	    ]
         ),
         3: SceneGroup("Fifty", [
   		Scene("Bass ORL",
+                      [
+                        fifty,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        fifty,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        fifty,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        fifty,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        fifty,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        fifty,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        fifty,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        fifty,
+                        ]
+		),
+		Scene("Tune Select",
                       [
                         fifty,
                         ]
@@ -1044,10 +1228,90 @@ run(
                         le5,
                         ]
 		),
+		Scene("Nope",
+                      [
+                        le5,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        le5,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        le5,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        le5,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        le5,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        le5,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        le5,
+                        ]
+		),
+		Scene("Tune Select",
+                      [
+                        le5,
+                        ]
+		),
 	    ]
         ),
         5: SceneGroup("SW", [
   		Scene("Bass ORL",
+                      [
+                        sw,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        sw,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        sw,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        sw,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        sw,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        sw,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        sw,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        sw,
+                        ]
+		),
+		Scene("Tune Select",
                       [
                         sw,
                         ]
@@ -1060,10 +1324,90 @@ run(
                         wholeworld,
                         ]
 		),
+		Scene("Nope",
+                      [
+                        wholeworld,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        wholeworld,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        wholeworld,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        wholeworld,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        wholeworld,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        wholeworld,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        wholeworld,
+                        ]
+		),
+		Scene("Tune Select",
+                      [
+                        wholeworld,
+                        ]
+		),
 	    ]
         ),
         7: SceneGroup("Da Fist", [
   		Scene("Bass ORL",
+                      [
+                        dafist,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        dafist,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        dafist,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        dafist,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        dafist,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        dafist,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        dafist,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        dafist,
+                        ]
+		),
+		Scene("Tune Select",
                       [
                         dafist,
                         ]
