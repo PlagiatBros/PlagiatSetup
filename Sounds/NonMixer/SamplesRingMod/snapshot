@@ -30,7 +30,7 @@
 	Gain_Module 0x1C create :parameter_values "-70,000000:0,000000" :is_default 1 :chain 0x1A :active 1
 	Meter_Module 0x1D create :is_default 1 :chain 0x1A :active 1
 	JACK_Module 0x1E create :parameter_values "2,000000:0,000000" :is_default 1 :chain 0x1A :active 1
-	Mixer_Strip 0x1F create :name "SamplesRingMod" :width "narrow" :tab "signal" :color 1979670436 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
+	Mixer_Strip 0x1F create :name "SamplesRingMod" :width "narrow" :tab "fader" :color 1979670436 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
 	Chain 0x20 create :strip 0x1F :tab "chain"
 	JACK_Module 0x21 create :parameter_values "0,000000:2,000000" :is_default 1 :chain 0x20 :active 1
 	Plugin_Module 0x4A create :lv2_plugin_uri "http://calf.sourceforge.net/plugins/RingModulator" :plugin_ins 2 :plugin_outs 2 :parameter_values "0,000000:1,000000:1,000000:0,000000:281,000000:0,500000:0,500000:-139,000000:0,000000:0,000000:0,120000:0,000000:100,000000:10000,000000:1,000000:-100,000000:100,000000:0,000000:0,000000:0,460000:0,000000:0,080000:0,500000:1,000000:0,360000:0,560000:1,000000" :is_default 0 :chain 0x20 :active 1
