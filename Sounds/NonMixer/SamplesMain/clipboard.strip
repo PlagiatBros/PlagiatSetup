@@ -1,0 +1,8 @@
+{
+	Mixer_Strip 0x31 create :name "SamplesScape" :width "narrow" :tab "fader" :color 12257792 :gain_mode 0 :mute_mode 0 :group 0x4F :auto_input "" :manual_connection 0
+	Chain 0x32 create :strip 0x31 :tab "chain"
+	JACK_Module 0x33 create :parameter_values "0,000000:2,000000" :is_default 1 :chain 0x32 :active 1
+	Gain_Module 0x34 create :parameter_values "0,000000:1,000000" :is_default 1 :chain 0x32 :active 1
+	Meter_Module 0x35 create :is_default 1 :chain 0x32 :active 1
+	JACK_Module 0x36 create :parameter_values "2,000000:0,000000" :is_default 1 :chain 0x32 :active 1
+}
