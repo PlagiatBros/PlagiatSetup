@@ -68,7 +68,7 @@ tapeutape=Output('DKTapeutape',10)
 
 #### Slicing ####
 slicing = PortFilter('DKJeannotIn') >> [
-    Filter(NOTE) >> 
+    Filter(NOTEON) >> 
     [
         KeyFilter(64) >> NoteOn(64, 127),
         ~KeyFilter(64) >> Pass(),
