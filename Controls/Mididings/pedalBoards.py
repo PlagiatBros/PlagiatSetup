@@ -205,9 +205,26 @@ bassscape = [
     ] >> Discard()
 
 # Degrade #
-bassscape = [
+bassdegrade = [
     SendOSC(bassmainport, '/strip/BassDegradePre/Gain/Mute', 0.0),
     ] >> Discard()
+
+# Bass Pedal
+basspedal= [
+    ProgramFilter(13) >> SendOSC(slport, '/sl/0/hit', 'record') >> Discard(),
+    ProgramFilter(14) >> SendOSC(slport, '/sl/0/hit', 'pause_on') >> Discard(),
+    ProgramFilter(15) >> SendOSC(slport, '/sl/0/hit', 'overdub') >> Discard(),
+    ProgramFilter(16) >> SendOSC(slport, '/sl/0/hit', 'multiply') >> Discard(),
+#    ProgramFilter(18) >> SendOSC(slport, '/sl/0/hit', 'trigger') >> Discard(),
+    ProgramFilter(17) >> SendOSC(slport, '/sl/0/hit', 'record') >> Discard(),
+    ProgramFilter(18) >> SendOSC(slport, '/sl/0/hit', 'pause_on') >> Discard(),
+    ProgramFilter(19) >> SendOSC(slport, '/sl/0/hit', 'overdub') >> Discard(),
+    ProgramFilter(20) >> SendOSC(slport, '/sl/0/hit', 'multiply') >> Discard(),
+#    ProgramFilter(18) >> SendOSC(slport, '/sl/0/hit', 'trigger') >> Discard(),
+    ProgramFilter(23) >> bassdry,
+    ProgramFilter(22) >> bassscape,
+    ProgramFilter(21) >> bassdegrade,
+    ]
 
 #### Vocals ####
 
@@ -1403,46 +1420,55 @@ run(
   		Scene("Bass ORL",
                       [
                         climat,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         climat,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         climat,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         climat,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         climat,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         climat,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         climat,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         climat,
+                        basspedal,
                         ]
 		),
 		Scene("Tune Select",
                       [
                         climat,
+                        basspedal,
                         ]
 		),
 	    ]
@@ -1451,46 +1477,55 @@ run(
   		Scene("Bass ORL",
                       [
                         connassessacem,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         connassessacem,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         connassessacem,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         connassessacem,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         connassessacem,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         connassessacem,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         connassessacem,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         connassessacem,
+                        basspedal,
                         ]
 		),
 		Scene("Tune Select",
                       [
                         connassessacem,
+                        basspedal,
                         ]
 		),
 	    ]
@@ -1499,46 +1534,55 @@ run(
   		Scene("Bass ORL",
                       [
                         fifty,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         fifty,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         fifty,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         fifty,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         fifty,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         fifty,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         fifty,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         fifty,
+                        basspedal,
                         ]
 		),
 		Scene("Tune Select",
                       [
                         fifty,
+                        basspedal,
                         ]
 		),
 	    ]
@@ -1547,46 +1591,55 @@ run(
   		Scene("Bass ORL",
                       [
                         le5,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         le5,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         le5,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         le5,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         le5,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         le5,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         le5,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         le5,
+                        basspedal,
                         ]
 		),
 		Scene("Tune Select",
                       [
                         le5,
+                        basspedal,
                         ]
 		),
 	    ]
@@ -1595,46 +1648,55 @@ run(
   		Scene("Bass ORL",
                       [
                         sw,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         sw,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         sw,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         sw,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         sw,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         sw,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         sw,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         sw,
+                        basspedal,
                         ]
 		),
 		Scene("Tune Select",
                       [
                         sw,
+                        basspedal,
                         ]
 		),
 	    ]
@@ -1643,46 +1705,55 @@ run(
   		Scene("Bass ORL",
                       [
                         wholeworld,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         wholeworld,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         wholeworld,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         wholeworld,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         wholeworld,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         wholeworld,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         wholeworld,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         wholeworld,
+                        basspedal,
                         ]
 		),
 		Scene("Tune Select",
                       [
                         wholeworld,
+                        basspedal,
                         ]
 		),
 	    ]
@@ -1691,46 +1762,55 @@ run(
   		Scene("Bass ORL",
                       [
                         dafist,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         dafist,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         dafist,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         dafist,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         dafist,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         dafist,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         dafist,
+                        basspedal,
                         ]
 		),
 		Scene("Nope",
                       [
                         dafist,
+                        basspedal,
                         ]
 		),
 		Scene("Tune Select",
                       [
                         dafist,
+                        basspedal,
                         ]
 		),
 	    ]
