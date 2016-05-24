@@ -491,11 +491,11 @@ fifty = PortFilter('PBCtrlIn') >> [
         Program(66) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
-            SendOSC(slport, '/set', 'tempo', 110),
+            SendOSC(slport, '/set', 'tempo', 117),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 117),
-            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
-            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/simple/set_meter', 3, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxx'),
             SendOSC(klickport, '/klick/metro/start'),            
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.64925),
@@ -530,11 +530,11 @@ fifty = PortFilter('PBCtrlIn') >> [
         Program(67) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
-            SendOSC(slport, '/set', 'tempo', 110),
+            SendOSC(slport, '/set', 'tempo', 117),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 117),
-            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
-            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/simple/set_meter', 3, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxx'),
             SendOSC(klickport, '/klick/metro/start'),            
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.64925),

@@ -30,10 +30,10 @@
 	Gain_Module 0x1C create :parameter_values "-70,000000:0,000000" :is_default 1 :chain 0x1A :active 1
 	Meter_Module 0x1D create :is_default 1 :chain 0x1A :active 1
 	JACK_Module 0x1E create :parameter_values "2,000000:0,000000" :is_default 1 :chain 0x1A :active 1
-	Mixer_Strip 0x1F create :name "SamplesDelayMunge" :width "narrow" :tab "fader" :color 5768448 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
+	Mixer_Strip 0x1F create :name "SamplesDelayMunge" :width "narrow" :tab "signal" :color 5768448 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
 	Chain 0x20 create :strip 0x1F :tab "chain"
 	JACK_Module 0x21 create :parameter_values "0,000000:2,000000" :is_default 1 :chain 0x20 :active 1
-	Plugin_Module 0x4C create :lv2_plugin_uri "http://invadarecords.com/plugins/lv2/delay/sum" :plugin_ins 2 :plugin_outs 2 :parameter_values "0,000000:0,000000:0,000000:0,000000:18,000000:0,000000:0,300000:85,000000:-0,500000:100,000000:0,150000:87,000000:0,690000:100,000000" :is_default 0 :chain 0x20 :active 1
+	Plugin_Module 0x4C create :lv2_plugin_uri "http://invadarecords.com/plugins/lv2/delay/sum" :plugin_ins 2 :plugin_outs 2 :parameter_values "0,000000:0,000000:0,000000:0,000000:10,000000:0,000000:0,300000:80,000000:-0,900000:100,000000:0,150000:81,000000:0,940000:95,000000" :is_default 0 :chain 0x20 :active 1
 	Plugin_Module 0x26 create :plugin_id 1605 :plugin_ins 1 :plugin_outs 1 :parameter_values "1,110000:0,000000:-3,600000:0,050000:1250,000000" :is_default 0 :chain 0x20 :active 1
 	Gain_Module 0x22 create :parameter_values "0,000000:0,000000" :is_default 1 :chain 0x20 :active 1
 	Meter_Module 0x23 create :is_default 1 :chain 0x20 :active 1

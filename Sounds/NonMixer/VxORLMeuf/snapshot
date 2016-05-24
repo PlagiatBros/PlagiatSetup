@@ -31,18 +31,18 @@
 	Meter_Module 0x17 create :is_default 1 :chain 0x14 :active 1
 	Plugin_Module 0xB1 create :plugin_id 2146 :plugin_ins 2 :plugin_outs 2 :parameter_values "2,600000:100,000000:0,000000" :is_default 0 :chain 0x14 :active 0
 	JACK_Module 0x18 create :parameter_values "2,000000:0,000000" :is_default 1 :chain 0x14 :active 1
-	Mixer_Strip 0x19 create :name "VxORLOverPitchUp" :width "narrow" :tab "signal" :color 4290183168 :gain_mode 0 :mute_mode 0 :group 0x2B :auto_input "" :manual_connection 0
+	Mixer_Strip 0x19 create :name "VxORLOverPitchUp" :width "narrow" :tab "fader" :color 4290183168 :gain_mode 0 :mute_mode 0 :group 0x2B :auto_input "" :manual_connection 0
 	Chain 0x1A create :strip 0x19 :tab "chain"
 	JACK_Module 0x1B create :parameter_values "0,000000:1,000000" :is_default 1 :chain 0x1A :active 1
-	Plugin_Module 0x69 create :plugin_id 1410 :plugin_ins 1 :plugin_outs 1 :parameter_values "250,000000:6600,000000:-18,000000:60,000000:620,000000:300,000000:-90,000000:0,000000" :is_default 0 :chain 0x1A :active 1
+	Plugin_Module 0x69 create :plugin_id 1410 :plugin_ins 1 :plugin_outs 1 :parameter_values "250,000000:6600,000000:-16,500000:60,000000:620,000000:300,000000:-90,000000:0,000000" :is_default 0 :chain 0x1A :active 1
 	Plugin_Module 0x66 create :plugin_id 1433 :plugin_ins 1 :plugin_outs 1 :parameter_values "1,200000:4,000000" :is_default 0 :chain 0x1A :active 1
 	Gain_Module 0x1C create :parameter_values "0,000000:0,000000" :is_default 1 :chain 0x1A :active 1
 	Meter_Module 0x1D create :is_default 1 :chain 0x1A :active 1
 	JACK_Module 0x1E create :parameter_values "1,000000:0,000000" :is_default 1 :chain 0x1A :active 1
-	Mixer_Strip 0x1F create :name "VxORLOverPitchDown" :width "narrow" :tab "signal" :color 4290183168 :gain_mode 0 :mute_mode 0 :group 0x2B :auto_input "" :manual_connection 0
+	Mixer_Strip 0x1F create :name "VxORLOverPitchDown" :width "narrow" :tab "fader" :color 4290183168 :gain_mode 0 :mute_mode 0 :group 0x2B :auto_input "" :manual_connection 0
 	Chain 0x20 create :strip 0x1F :tab "chain"
 	JACK_Module 0x21 create :parameter_values "0,000000:1,000000" :is_default 1 :chain 0x20 :active 1
-	Plugin_Module 0x6A create :plugin_id 1410 :plugin_ins 1 :plugin_outs 1 :parameter_values "250,000000:6600,000000:-17,000000:60,000000:660,000000:300,000000:-90,000000:0,000000" :is_default 0 :chain 0x20 :active 1
+	Plugin_Module 0x6A create :plugin_id 1410 :plugin_ins 1 :plugin_outs 1 :parameter_values "250,000000:6600,000000:-16,500000:60,000000:660,000000:300,000000:-90,000000:0,000000" :is_default 0 :chain 0x20 :active 1
 	Plugin_Module 0x90 create :lv2_plugin_uri "http://ssj71.github.io/infamousPlugins/plugs.html#ewham" :plugin_ins 1 :plugin_outs 1 :parameter_values "0,000000:-12,000000:-24,000000:0,000000:1,000000" :is_default 0 :chain 0x20 :active 1
 	Gain_Module 0x22 create :parameter_values "0,000000:0,000000" :is_default 1 :chain 0x20 :active 1
 	Meter_Module 0x23 create :is_default 1 :chain 0x20 :active 1
