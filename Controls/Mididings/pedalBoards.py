@@ -119,12 +119,80 @@ seqtrigger = Filter(PROGRAM) >> [
 
 cseqtrigger = Channel(1) >> seqtrigger
 
-#### BPM Scape ####
+#### BPM Scape & Delay Vx ####
 # Formule : (x-30)/134.
 scapebpmpath = 'C%2A%20Scape%20-%20Stereo%20delay%20with%20chromatic%20resonances/bpm'
+# Formule : (x-30)/270.
+delaybpmpath = 'Calf%20Vintage%20Delay/Tempo'
+
+#### Vocals ####
+# VxORLMeuf
+vxorlmeuf_on = [
+    SendOSC(vxorlpreport, '/strip/VxORLMeuf/Gain/Mute', 0.0),
+    SendOSC(vxorlpostport, '/strip/VxORLMeuf/Gain/Mute', 0.0),
+    ] >> Discard()
+
+vxorlmeuf_off = [
+    SendOSC(vxorlpreport, '/strip/VxORLMeuf/Gain/Mute', 1.0),
+    SendOSC(vxorlpostport, '/strip/VxORLMeuf/Gain/Mute', 1.0),
+    ] >> Discard()
+
+# VxORLGars
+vxorlgars_on = [
+    SendOSC(vxorlpreport, '/strip/VxORLGars/Gain/Mute', 0.0),
+    SendOSC(vxorlpostport, '/strip/VxORLGars/Gain/Mute', 0.0),
+    ] >> Discard()
+
+vxorlgars_off = [
+    SendOSC(vxorlpreport, '/strip/VxORLGars/Gain/Mute', 1.0),
+    SendOSC(vxorlpostport, '/strip/VxORLGars/Gain/Mute', 1.0),
+    ] >> Discard()
+
+# VxORLDisint
+vxorldisint_on = [
+    SendOSC(vxorlpreport, '/strip/VxORLDisint/Gain/Mute', 0.0),
+    SendOSC(vxorlpostport, '/strip/VxORLDisint/Gain/Mute', 0.0),
+    ] >> Discard()
+
+vxorldisint_off = [
+    SendOSC(vxorlpreport, '/strip/VxORLDisint/Gain/Mute', 1.0),
+    SendOSC(vxorlpostport, '/strip/VxORLDisint/Gain/Mute', 1.0),
+    ] >> Discard()
+
+# VxJeannotMeuf
+vxjeannotmeuf_on = [
+    SendOSC(vxjeannotpreport, '/strip/VxJeannotMeuf/Gain/Mute', 0.0),
+    SendOSC(vxjeannotpostport, '/strip/VxJeannotMeuf/Gain/Mute', 0.0),
+    ] >> Discard()
+
+vxjeannotmeuf_off = [
+    SendOSC(vxjeannotpreport, '/strip/VxJeannotMeuf/Gain/Mute', 1.0),
+    SendOSC(vxjeannotpostport, '/strip/VxJeannotMeuf/Gain/Mute', 1.0),
+    ] >> Discard()
+
+# VxJeannotGars
+vxjeannotgars_on = [
+    SendOSC(vxjeannotpreport, '/strip/VxJeannotGars/Gain/Mute', 0.0),
+    SendOSC(vxjeannotpostport, '/strip/VxJeannotGars/Gain/Mute', 0.0),
+    ] >> Discard()
+
+vxjeannotgars_off = [
+    SendOSC(vxjeannotpreport, '/strip/VxJeannotGars/Gain/Mute', 1.0),
+    SendOSC(vxjeannotpostport, '/strip/VxJeannotGars/Gain/Mute', 1.0),
+    ] >> Discard()
+
+# VxJeannotDisint
+vxjeannotdisint_on = [
+    SendOSC(vxjeannotpreport, '/strip/VxJeannotDisint/Gain/Mute', 0.0),
+    SendOSC(vxjeannotpostport, '/strip/VxJeannotDisint/Gain/Mute', 0.0),
+    ] >> Discard()
+
+vxjeannotdisint_off = [
+    SendOSC(vxjeannotpreport, '/strip/VxJeannotDisint/Gain/Mute', 1.0),
+    SendOSC(vxjeannotpostport, '/strip/VxJeannotDisint/Gain/Mute', 1.0),
+    ] >> Discard()
 
 #### Bass ####
-
 # Dry #
 bassdry = [
     SendOSC(bassmainport, '/strip/BassScapePre/Gain/Mute', 1.0),
@@ -183,6 +251,7 @@ climat = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.8955),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.8955),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.4444),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
@@ -203,6 +272,13 @@ climat = PortFilter('PBCtrlIn') >> [
             SendOSC(samplesringmodport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -2.0),
 
 
+            vxorlgars_on,
+            vxorlmeuf_off,
+            vxorldisint_off,
+
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
+            vxjeannotdisint_off,
 
             ] >> Discard()
         ],
@@ -219,6 +295,7 @@ climat = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.8955),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.8955),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.4444),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
@@ -236,6 +313,14 @@ climat = PortFilter('PBCtrlIn') >> [
 
             SendOSC(samplestremoloport, '/strip/SamplesTremolo/Gain/Gain%20(dB)/unscaled', -6.0),
             SendOSC(samplesscapeport, '/strip/SamplesTremolo/Gain/Gain%20(dB)/unscaled', -7.50),
+
+            vxorlgars_on,
+            vxorlmeuf_off,
+            vxorldisint_off,
+
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
+            vxjeannotdisint_off,
 
             ] >> Discard()
         ],
@@ -257,6 +342,7 @@ connassessacem = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.708955),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.708955),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.35185),
 
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
@@ -275,6 +361,14 @@ connassessacem = PortFilter('PBCtrlIn') >> [
 
             SendOSC(samplesdelaymungeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -7.0),
             SendOSC(samplesdelaymungeport, '/strip/Samples3/Gain/Gain%20(dB)/unscaled', -70.0),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
+            vxjeannotdisint_off,
 
             ] >> Discard()
         ],
@@ -291,6 +385,7 @@ connassessacem = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.708955),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.708955),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.35185),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
@@ -308,6 +403,14 @@ connassessacem = PortFilter('PBCtrlIn') >> [
 
             SendOSC(samplesdelaymungeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -7.0),
             SendOSC(samplesdelaymungeport, '/strip/Samples3/Gain/Gain%20(dB)/unscaled', -70.0),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
+            vxjeannotdisint_off,
 
             ] >> Discard()
         ],
@@ -330,6 +433,7 @@ fifty = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.5970),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.5970),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.2963),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
@@ -348,6 +452,14 @@ fifty = PortFilter('PBCtrlIn') >> [
             SendOSC(samplesdelaymungeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -7.0),
             SendOSC(samplesdelaymungeport, '/strip/Samples3/Gain/Gain%20(dB)/unscaled', -70.0),
 
+            vxorlgars_on,
+            vxorlmeuf_off,
+            vxorldisint_off,
+
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
+            vxjeannotdisint_off,
+
             ] >> Discard()
         ],
     ProgramFilter(3) >> [ # Pont Refrain - Bouton 3
@@ -363,6 +475,7 @@ fifty = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.5970),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.5970),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.2963),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
@@ -377,6 +490,14 @@ fifty = PortFilter('PBCtrlIn') >> [
             SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
+
+            vxorlgars_on,
+            vxorlmeuf_off,
+            vxorldisint_off,
+
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
+            vxjeannotdisint_off,
             ] >> Discard()
         ],
     ProgramFilter(4) >> [ # Refrain - Bouton 4
@@ -392,6 +513,7 @@ fifty = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.5970),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.5970),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.2963),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
@@ -406,6 +528,14 @@ fifty = PortFilter('PBCtrlIn') >> [
             SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
+
+            vxorlgars_on,
+            vxorlmeuf_off,
+            vxorldisint_off,
+
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
+            vxjeannotdisint_off,
 
             ] >> Discard()
         ],
@@ -427,9 +557,10 @@ le5 = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.48148),
 
-            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
-            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
@@ -441,6 +572,15 @@ le5 = PortFilter('PBCtrlIn') >> [
             SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
+
             ] >> Discard()
         ],
     ProgramFilter(3) >> [ # Couplet A - Bouton 3
@@ -456,9 +596,10 @@ le5 = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.48148),
 
-            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
-            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
@@ -470,6 +611,14 @@ le5 = PortFilter('PBCtrlIn') >> [
             SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
             ] >> Discard()
         ],
     ProgramFilter(4) >> [ # Couplet B - Bouton 4
@@ -485,9 +634,10 @@ le5 = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.48148),
 
-            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
-            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
@@ -499,6 +649,14 @@ le5 = PortFilter('PBCtrlIn') >> [
             SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
             ] >> Discard()
         ],
     ProgramFilter(5) >> [ # Couplet C - Bouton 5
@@ -514,9 +672,10 @@ le5 = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.48148),
 
-            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
-            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
@@ -528,6 +687,14 @@ le5 = PortFilter('PBCtrlIn') >> [
             SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
             ] >> Discard()
         ],
     ProgramFilter(6) >> [ # Refrain - Bouton 6
@@ -543,9 +710,10 @@ le5 = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.48148),
 
-            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
-            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
@@ -557,6 +725,14 @@ le5 = PortFilter('PBCtrlIn') >> [
             SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_on,
+
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_on,
             ] >> Discard()
         ],
     ProgramFilter(7) >> [ # Couplet A - Bouton 7 - #TODO INUTILE?
@@ -572,9 +748,10 @@ le5 = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.48148),
 
-            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
-            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
@@ -586,6 +763,14 @@ le5 = PortFilter('PBCtrlIn') >> [
             SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
             ] >> Discard()
         ],
     ProgramFilter(8) >> [ # Couplet Bbis - Bouton 8
@@ -601,9 +786,10 @@ le5 = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.48148),
 
-            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
-            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
@@ -615,6 +801,14 @@ le5 = PortFilter('PBCtrlIn') >> [
             SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
             ] >> Discard()
         ],
     ProgramFilter(9) >> [ # Couplet Cbis - Bouton 9
@@ -630,9 +824,10 @@ le5 = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.48148),
 
-            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
-            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
@@ -644,6 +839,14 @@ le5 = PortFilter('PBCtrlIn') >> [
             SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
             ] >> Discard()
         ],
     ]
@@ -665,6 +868,7 @@ sw = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.44216),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.44216),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.55),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
@@ -682,6 +886,14 @@ sw = PortFilter('PBCtrlIn') >> [
 
             SendOSC(samplesscapeport, '/strip/SamplesDegrade/Gain/Gain%20(dB)/unscaled', -18.0),
             SendOSC(samplesscapeport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -70.0),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
             ] >> Discard()
         ],
     ProgramFilter(3) >> [ # Couplet - Bouton 3
@@ -697,6 +909,7 @@ sw = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.44216),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.44216),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.55),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
@@ -714,10 +927,18 @@ sw = PortFilter('PBCtrlIn') >> [
 
             SendOSC(samplesscapeport, '/strip/SamplesDegrade/Gain/Gain%20(dB)/unscaled', -18.0),
             SendOSC(samplesscapeport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -70.0),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
             ] >> Discard()
         ],
 
-    ProgramFilter(4) >> [ # Pont Refrain - Bouton 4
+    ProgramFilter(4) >> [ # Refrain - Bouton 4
         Program(66) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eight_per_cycle', 8),
@@ -730,6 +951,7 @@ sw = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.44216),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.44216),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.55),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
@@ -747,6 +969,14 @@ sw = PortFilter('PBCtrlIn') >> [
 
             SendOSC(samplesscapeport, '/strip/SamplesDegrade/Gain/Gain%20(dB)/unscaled', -70.0),
             SendOSC(samplesscapeport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -4.5),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_on,
+
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_on,
             ] >> Discard()
         ],
 
@@ -763,6 +993,7 @@ sw = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.44216),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.44216),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.55),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
@@ -780,6 +1011,14 @@ sw = PortFilter('PBCtrlIn') >> [
 
             SendOSC(samplesscapeport, '/strip/SamplesDegrade/Gain/Gain%20(dB)/unscaled', -18.0),
             SendOSC(samplesscapeport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -70.0),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
             ] >> Discard()
         ],
 
@@ -801,6 +1040,7 @@ wholeworld = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.44776),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.44776),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.2222),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
@@ -817,6 +1057,14 @@ wholeworld = PortFilter('PBCtrlIn') >> [
             SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
 
             SendOSC(samplesscapeport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -6.0),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
             ] >> Discard()
         ],
     ProgramFilter(3) >> [ # Refrain - Bouton 3
@@ -832,6 +1080,7 @@ wholeworld = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.44776),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.44776),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.2222),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
@@ -848,6 +1097,14 @@ wholeworld = PortFilter('PBCtrlIn') >> [
             SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
 
             SendOSC(samplesscapeport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -6.0),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
             ] >> Discard()
         ],
     ProgramFilter(4) >> [ # Pont - Bouton 4
@@ -863,6 +1120,7 @@ wholeworld = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.44776),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.44776),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.2222),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
@@ -879,6 +1137,14 @@ wholeworld = PortFilter('PBCtrlIn') >> [
             SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
 
             SendOSC(samplesscapeport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -6.0),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
             ] >> Discard()
         ],
     ]
@@ -899,6 +1165,7 @@ dafist = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.6716),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.6716),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.3333),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
@@ -913,6 +1180,14 @@ dafist = PortFilter('PBCtrlIn') >> [
             SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
             ] >> Discard()
         ],
     ProgramFilter(3) >> [ # Intro Thème 2 - Bouton 3
@@ -928,6 +1203,7 @@ dafist = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.6716),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.6716),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.3333),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
@@ -944,6 +1220,14 @@ dafist = PortFilter('PBCtrlIn') >> [
             SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
 
             SendOSC(samplesscapeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -5.0),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
             ] >> Discard()
         ],
     ProgramFilter(4) >> [ # Couplet - Bouton 4
@@ -959,6 +1243,7 @@ dafist = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.6716),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.6716),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.3333),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
@@ -976,6 +1261,14 @@ dafist = PortFilter('PBCtrlIn') >> [
 
             SendOSC(samplesscapeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -10.0),
             SendOSC(samplesdelaymungeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -9.0),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
             ] >> Discard()
         ],
     ProgramFilter(5) >> [ # Couplet part 2 - Bouton 5
@@ -991,6 +1284,7 @@ dafist = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.6716),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.6716),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.3333),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
@@ -1007,6 +1301,14 @@ dafist = PortFilter('PBCtrlIn') >> [
             SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
 
             SendOSC(samplesscapeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -5.0),        
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
             ] >> Discard()
         ],
     ProgramFilter(6) >> [ # Intro Refrain - Bouton 6
@@ -1022,10 +1324,11 @@ dafist = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.6716),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.6716),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.3333),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
-            SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 0.0),
 
@@ -1038,6 +1341,14 @@ dafist = PortFilter('PBCtrlIn') >> [
             SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
 
             SendOSC(samplesscapeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -5.0),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
             ] >> Discard()
         ],
     ProgramFilter(7) >> [ # Refrain - Bouton 7
@@ -1053,10 +1364,11 @@ dafist = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.6716),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.6716),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.3333),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
-            SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 0.0),
 
@@ -1069,6 +1381,14 @@ dafist = PortFilter('PBCtrlIn') >> [
             SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
 
             SendOSC(samplesscapeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -5.0),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
             ] >> Discard()
         ],
     ]

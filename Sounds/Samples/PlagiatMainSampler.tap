@@ -163,6 +163,15 @@
         <instrument name="ufo3" minnote="52" maxnote="52" rootnote="52" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.570000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/48k_ufo.37@178.wav" sampleRelative="DaFirst/48k_ufo.37@178.wav"/>
         </instrument>
+        <instrument name="lead1" minnote="108" maxnote="108" rootnote="108" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.290000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/48k_Processed_Lead8.26.wav" sampleRelative="DaFirst/48k_Processed_Lead8.26.wav"/>
+        </instrument>
+        <instrument name="lead2" minnote="110" maxnote="110" rootnote="110" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.290000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/48k_Processed_Lead8.27.wav" sampleRelative="DaFirst/48k_Processed_Lead8.27.wav"/>
+        </instrument>
+        <instrument name="lead3" minnote="112" maxnote="112" rootnote="112" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.290000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/48k_Processed_Lead8.28.wav" sampleRelative="DaFirst/48k_Processed_Lead8.28.wav"/>
+        </instrument>
       </kit>
       <kit name="GetUrFreakOn" volume="1.000000">
         <instrument name="new instrument" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
