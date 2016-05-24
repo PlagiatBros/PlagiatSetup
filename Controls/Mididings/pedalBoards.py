@@ -56,6 +56,7 @@ vxjeannotgarsport = 6673
 vxjeannotpostport = 6674
 
 
+samplespitchport = 7000
 samplesdelaymungeport = 7001
 samplesreversedelayport = 7002
 samplesringmodport = 7003
@@ -320,6 +321,7 @@ climat = PortFilter('PBCtrlIn') >> [
             SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
 
+            SendOSC(samplesmainport, '/strip/SamplesPitch/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/SamplesMunge/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/SamplesTremolo/Gain/Mute', 0.0),
@@ -330,6 +332,11 @@ climat = PortFilter('PBCtrlIn') >> [
 
             SendOSC(samplestremoloport, '/strip/SamplesTremolo/Gain/Gain%20(dB)/unscaled', -6.0),
             SendOSC(samplesscapeport, '/strip/SamplesTremolo/Gain/Gain%20(dB)/unscaled', -7.50),
+            SendOSC(samplestremoloport, '/strip/Samples4/Gain/Gain%20(dB)/unscaled', -18.),
+            SendOSC(samplestremoloport, '/strip/SamplesPitch/Gain/Gain%20(dB)/unscaled', 0.0),
+            SendOSC(samplesscapeport, '/strip/SamplesPitch/Gain/Gain%20(dB)/unscaled', -7.50),
+            SendOSC(samplespitchport, '/strip/SamplesPitch1/AM%20pitchshifter/Pitch%20shift/unscaled', 2),
+            SendOSC(samplespitchport, '/strip/SamplesPitch2/AM%20pitchshifter/Pitch%20shift/unscaled', 2.3),
 
             vxorlgars_on,
             vxorlmeuf_off,
@@ -1412,6 +1419,86 @@ dafist = PortFilter('PBCtrlIn') >> [
     ]
 
 
+#### Get Ur Freak On ####
+geturfreakon = PortFilter('PBCtrlIn') >> [
+    ProgramFilter(1) >> stop, # !!!STOP!!! #
+    ProgramFilter(2) >> [ # Couplet - Bouton 2
+#        Program(65) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 200),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 200),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.522388),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.522388),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.6296),
+
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
+
+            SendOSC(samplesmainport, '/strip/SamplesMunge/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesTremolo/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDegrade/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
+            ] >> Discard()
+        ],
+    ProgramFilter(3) >> [ # Couplet - Bouton 3
+        Program(66) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 200),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 200),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.522388),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.522388),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.6296),
+
+            SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
+
+            SendOSC(samplesmainport, '/strip/SamplesMunge/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesTremolo/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDegrade/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesScape/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 1.0),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
+            ] >> Discard()
+        ],
+    ]
 #### RUN ###################################################
 
 run(
@@ -1810,6 +1897,63 @@ run(
 		Scene("Tune Select",
                       [
                         dafist,
+                        basspedal,
+                        ]
+		),
+	    ]
+        ),
+        8: SceneGroup("GetYourFreakOn", [
+  		Scene("Bass ORL",
+                      [
+                        geturfreakon,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        geturfreakon,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        geturfreakon,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        geturfreakon,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        geturfreakon,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        geturfreakon,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        geturfreakon,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        geturfreakon,
+                        basspedal,
+                        ]
+		),
+		Scene("Tune Select",
+                      [
+                        geturfreakon,
                         basspedal,
                         ]
 		),
