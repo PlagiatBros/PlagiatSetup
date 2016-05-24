@@ -6,6 +6,7 @@
     <jack-output name="Samples3"/>
     <jack-output name="Samples4"/>
     <jack-output name="Samples5"/>
+    <jack-output name="DrumKlit"/>
   </options>
   <creation>
     <setup name="Plagiat" channel="1" cc="0">
@@ -55,6 +56,15 @@
         <instrument name="MandelaDist3" minnote="58" maxnote="58" rootnote="58" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="0.850000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_Processed_mandela128.wav" sampleRelative="Climat/48k_Processed_mandela128.wav"/>
         </instrument>
+        <instrument name="Klap" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Klap.wav" sampleRelative="DrumKlit/Klap.wav"/>
+        </instrument>
+        <instrument name="Reload" minnote="65" maxnote="65" rootnote="65" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="Samples1" volume="0.560000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Reload.wav" sampleRelative="DrumKlit/Reload.wav"/>
+        </instrument>
+        <instrument name="Fire" minnote="66" maxnote="66" rootnote="66" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="Samples1" volume="0.820000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Fire.wav" sampleRelative="DrumKlit/Fire.wav"/>
+        </instrument>
       </kit>
       <kit name="ConnassesSACEM" volume="1.000000">
         <instrument name="ViolinConnasses" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
@@ -68,6 +78,15 @@
         </instrument>
         <instrument name="Laughters" minnote="65" maxnote="72" rootnote="65" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav" sampleRelative="ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav"/>
+        </instrument>
+        <instrument name="Klap" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Klap.wav" sampleRelative="DrumKlit/Klap.wav"/>
+        </instrument>
+        <instrument name="Reload" minnote="65" maxnote="65" rootnote="65" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="Samples1" volume="0.560000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Reload.wav" sampleRelative="DrumKlit/Reload.wav"/>
+        </instrument>
+        <instrument name="Fire" minnote="66" maxnote="66" rootnote="66" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="Samples1" volume="0.820000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Fire.wav" sampleRelative="DrumKlit/Fire.wav"/>
         </instrument>
       </kit>
       <kit name="Fifty" volume="1.000000">
@@ -85,6 +104,21 @@
         </instrument>
         <instrument name="Pinokio" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Fifty/48k_Pinokio_Pinokio.4@100.wav" sampleRelative="Fifty/48k_Pinokio_Pinokio.4@100.wav"/>
+        </instrument>
+        <instrument name="Klap" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Klap.wav" sampleRelative="DrumKlit/Klap.wav"/>
+        </instrument>
+        <instrument name="Reload" minnote="65" maxnote="65" rootnote="65" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="Samples1" volume="0.560000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Reload.wav" sampleRelative="DrumKlit/Reload.wav"/>
+        </instrument>
+        <instrument name="Fire" minnote="66" maxnote="66" rootnote="66" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="Samples1" volume="0.820000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Fire.wav" sampleRelative="DrumKlit/Fire.wav"/>
+        </instrument>
+        <instrument name="Basse" minnote="48" maxnote="49" rootnote="48" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Fifty/FiftyBass0dB.wav" sampleRelative="Fifty/FiftyBass0dB.wav"/>
+        </instrument>
+        <instrument name="Karkabou" minnote="50" maxnote="50" rootnote="50" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples5" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Fifty/FiftyPerc0dB.wav" sampleRelative="Fifty/FiftyPerc0dB.wav"/>
         </instrument>
       </kit>
       <kit name="Le5" volume="0.310000">
@@ -106,6 +140,15 @@
         <instrument name="yamanyar2" minnote="50" maxnote="50" rootnote="50" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.610000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Le5/48k_yamanyar_stretched_yamanyar4.9@78.wav" sampleRelative="Le5/48k_yamanyar_stretched_yamanyar4.9@78.wav"/>
         </instrument>
+        <instrument name="Klap" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Klap.wav" sampleRelative="DrumKlit/Klap.wav"/>
+        </instrument>
+        <instrument name="Reload" minnote="65" maxnote="65" rootnote="65" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="Samples1" volume="0.560000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Reload.wav" sampleRelative="DrumKlit/Reload.wav"/>
+        </instrument>
+        <instrument name="Fire" minnote="66" maxnote="66" rootnote="66" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="Samples1" volume="0.820000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Fire.wav" sampleRelative="DrumKlit/Fire.wav"/>
+        </instrument>
       </kit>
       <kit name="SW" volume="1.000000">
         <instrument name="FiatLux" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.480000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
@@ -114,16 +157,34 @@
         <instrument name="SW" minnote="48" maxnote="48" rootnote="48" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.400000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/48k_SW.57.wav" sampleRelative="SW/48k_SW.57.wav"/>
         </instrument>
+        <instrument name="Klap" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Klap.wav" sampleRelative="DrumKlit/Klap.wav"/>
+        </instrument>
+        <instrument name="Reload" minnote="65" maxnote="65" rootnote="65" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="Samples1" volume="0.560000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Reload.wav" sampleRelative="DrumKlit/Reload.wav"/>
+        </instrument>
+        <instrument name="Fire" minnote="66" maxnote="66" rootnote="66" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="Samples1" volume="0.820000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Fire.wav" sampleRelative="DrumKlit/Fire.wav"/>
+        </instrument>
       </kit>
       <kit name="WholeWorld" volume="0.330000">
         <instrument name="Koto" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/WholeWorld/48k_Processed_Koto_6.1.wav" sampleRelative="WholeWorld/48k_Processed_Koto_6.1.wav"/>
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/WholeWorld/WholeWorldCymb1_0dB.wav" sampleRelative="WholeWorld/WholeWorldCymb1_0dB.wav"/>
         </instrument>
         <instrument name="Koto2" minnote="62" maxnote="62" rootnote="62" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/WholeWorld/48k_Processed_Koto_8.wav" sampleRelative="WholeWorld/48k_Processed_Koto_8.wav"/>
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/WholeWorld/WholeWorldCymb2_0dB.wav" sampleRelative="WholeWorld/WholeWorldCymb2_0dB.wav"/>
         </instrument>
         <instrument name="Koto3" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/WholeWorld/48k_Processed_Koto_10.wav" sampleRelative="WholeWorld/48k_Processed_Koto_10.wav"/>
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/WholeWorld/WholeWorldCymb3_0dB.wav" sampleRelative="WholeWorld/WholeWorldCymb3_0dB.wav"/>
+        </instrument>
+        <instrument name="Klap" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Klap.wav" sampleRelative="DrumKlit/Klap.wav"/>
+        </instrument>
+        <instrument name="Reload" minnote="65" maxnote="65" rootnote="65" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="Samples1" volume="0.560000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Reload.wav" sampleRelative="DrumKlit/Reload.wav"/>
+        </instrument>
+        <instrument name="Fire" minnote="66" maxnote="66" rootnote="66" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="Samples1" volume="0.820000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Fire.wav" sampleRelative="DrumKlit/Fire.wav"/>
         </instrument>
       </kit>
       <kit name="Haggadah" volume="1.000000">
@@ -172,10 +233,28 @@
         <instrument name="lead3" minnote="112" maxnote="112" rootnote="112" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.290000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/48k_Processed_Lead8.28.wav" sampleRelative="DaFirst/48k_Processed_Lead8.28.wav"/>
         </instrument>
+        <instrument name="Klap" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Klap.wav" sampleRelative="DrumKlit/Klap.wav"/>
+        </instrument>
+        <instrument name="Reload" minnote="65" maxnote="65" rootnote="65" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="Samples1" volume="0.560000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Reload.wav" sampleRelative="DrumKlit/Reload.wav"/>
+        </instrument>
+        <instrument name="Fire" minnote="66" maxnote="66" rootnote="66" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="Samples1" volume="0.820000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Fire.wav" sampleRelative="DrumKlit/Fire.wav"/>
+        </instrument>
       </kit>
       <kit name="GetUrFreakOn" volume="1.000000">
         <instrument name="new instrument" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="" sampleRelative=""/>
+        </instrument>
+        <instrument name="Klap" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Klap.wav" sampleRelative="DrumKlit/Klap.wav"/>
+        </instrument>
+        <instrument name="Reload" minnote="65" maxnote="65" rootnote="65" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="Samples1" volume="0.560000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Reload.wav" sampleRelative="DrumKlit/Reload.wav"/>
+        </instrument>
+        <instrument name="Fire" minnote="66" maxnote="66" rootnote="66" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="Samples1" volume="0.820000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Fire.wav" sampleRelative="DrumKlit/Fire.wav"/>
         </instrument>
       </kit>
     </setup>

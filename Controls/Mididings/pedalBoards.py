@@ -129,67 +129,67 @@ delaybpmpath = 'Calf%20Vintage%20Delay/Tempo'
 # VxORLMeuf
 vxorlmeuf_on = [
     SendOSC(vxorlpreport, '/strip/VxORLMeuf/Gain/Mute', 0.0),
-    SendOSC(vxorlpostport, '/strip/VxORLMeuf/Gain/Mute', 0.0),
+    SendOSC(vxorlpostport, '/strip/VxORLMeufPost/Gain/Mute', 0.0),
     ] >> Discard()
 
 vxorlmeuf_off = [
     SendOSC(vxorlpreport, '/strip/VxORLMeuf/Gain/Mute', 1.0),
-    SendOSC(vxorlpostport, '/strip/VxORLMeuf/Gain/Mute', 1.0),
+    SendOSC(vxorlpostport, '/strip/VxORLMeufPost/Gain/Mute', 1.0),
     ] >> Discard()
 
 # VxORLGars
 vxorlgars_on = [
     SendOSC(vxorlpreport, '/strip/VxORLGars/Gain/Mute', 0.0),
-    SendOSC(vxorlpostport, '/strip/VxORLGars/Gain/Mute', 0.0),
+    SendOSC(vxorlpostport, '/strip/VxORLGarsPost/Gain/Mute', 0.0),
     ] >> Discard()
 
 vxorlgars_off = [
     SendOSC(vxorlpreport, '/strip/VxORLGars/Gain/Mute', 1.0),
-    SendOSC(vxorlpostport, '/strip/VxORLGars/Gain/Mute', 1.0),
+    SendOSC(vxorlpostport, '/strip/VxORLGarsPost/Gain/Mute', 1.0),
     ] >> Discard()
 
 # VxORLDisint
 vxorldisint_on = [
     SendOSC(vxorlpreport, '/strip/VxORLDisint/Gain/Mute', 0.0),
-    SendOSC(vxorlpostport, '/strip/VxORLDisint/Gain/Mute', 0.0),
+    SendOSC(vxorlpostport, '/strip/VxORLDisintPost/Gain/Mute', 0.0),
     ] >> Discard()
 
 vxorldisint_off = [
     SendOSC(vxorlpreport, '/strip/VxORLDisint/Gain/Mute', 1.0),
-    SendOSC(vxorlpostport, '/strip/VxORLDisint/Gain/Mute', 1.0),
+    SendOSC(vxorlpostport, '/strip/VxORLDisintPost/Gain/Mute', 1.0),
     ] >> Discard()
 
 # VxJeannotMeuf
 vxjeannotmeuf_on = [
     SendOSC(vxjeannotpreport, '/strip/VxJeannotMeuf/Gain/Mute', 0.0),
-    SendOSC(vxjeannotpostport, '/strip/VxJeannotMeuf/Gain/Mute', 0.0),
+    SendOSC(vxjeannotpostport, '/strip/VxJeannotMeufPost/Gain/Mute', 0.0),
     ] >> Discard()
 
 vxjeannotmeuf_off = [
     SendOSC(vxjeannotpreport, '/strip/VxJeannotMeuf/Gain/Mute', 1.0),
-    SendOSC(vxjeannotpostport, '/strip/VxJeannotMeuf/Gain/Mute', 1.0),
+    SendOSC(vxjeannotpostport, '/strip/VxJeannotMeufPost/Gain/Mute', 1.0),
     ] >> Discard()
 
 # VxJeannotGars
 vxjeannotgars_on = [
     SendOSC(vxjeannotpreport, '/strip/VxJeannotGars/Gain/Mute', 0.0),
-    SendOSC(vxjeannotpostport, '/strip/VxJeannotGars/Gain/Mute', 0.0),
+    SendOSC(vxjeannotpostport, '/strip/VxJeannotGarsPost/Gain/Mute', 0.0),
     ] >> Discard()
 
 vxjeannotgars_off = [
     SendOSC(vxjeannotpreport, '/strip/VxJeannotGars/Gain/Mute', 1.0),
-    SendOSC(vxjeannotpostport, '/strip/VxJeannotGars/Gain/Mute', 1.0),
+    SendOSC(vxjeannotpostport, '/strip/VxJeannotGarsPost/Gain/Mute', 1.0),
     ] >> Discard()
 
 # VxJeannotDisint
 vxjeannotdisint_on = [
     SendOSC(vxjeannotpreport, '/strip/VxJeannotDisint/Gain/Mute', 0.0),
-    SendOSC(vxjeannotpostport, '/strip/VxJeannotDisint/Gain/Mute', 0.0),
+    SendOSC(vxjeannotpostport, '/strip/VxJeannotDisintPost/Gain/Mute', 0.0),
     ] >> Discard()
 
 vxjeannotdisint_off = [
     SendOSC(vxjeannotpreport, '/strip/VxJeannotDisint/Gain/Mute', 1.0),
-    SendOSC(vxjeannotpostport, '/strip/VxJeannotDisint/Gain/Mute', 1.0),
+    SendOSC(vxjeannotpostport, '/strip/VxJeannotDisintPost/Gain/Mute', 1.0),
     ] >> Discard()
 
 #### Bass ####
@@ -424,22 +424,22 @@ fifty = PortFilter('PBCtrlIn') >> [
         Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eight_per_cycle', 8),
-            SendOSC(slport, '/set', 'tempo', 110),
+            SendOSC(slport, '/set', 'tempo', 117),
 
-            SendOSC(klickport, '/klick/simple/set_tempo', 110),
+            SendOSC(klickport, '/klick/simple/set_tempo', 117),
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
 
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.5970),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.5970),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.2963),
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.64925),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.64925),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.32222),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 1.0),
-            SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0),
-            SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0),
+            SendOSC(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 0.0),
+            SendOSC(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 0.0),
 
             SendOSC(samplesmainport, '/strip/SamplesMunge/Gain/Mute', 0.0),
             SendOSC(samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 1.0),
@@ -468,14 +468,15 @@ fifty = PortFilter('PBCtrlIn') >> [
             SendOSC(slport, '/set', 'eight_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 110),
 
-            SendOSC(klickport, '/klick/simple/set_tempo', 110),
+            SendOSC(klickport, '/klick/simple/set_tempo', 117),
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
 
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.5970),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.5970),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.2963),
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.64925),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.64925),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.32222),
+
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
@@ -506,14 +507,14 @@ fifty = PortFilter('PBCtrlIn') >> [
             SendOSC(slport, '/set', 'eight_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 110),
 
-            SendOSC(klickport, '/klick/simple/set_tempo', 110),
+            SendOSC(klickport, '/klick/simple/set_tempo', 117),
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
 
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.5970),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.5970),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.2963),
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.64925),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.64925),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.32222),
 
             SendOSC(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0),
             SendOSC(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0),
