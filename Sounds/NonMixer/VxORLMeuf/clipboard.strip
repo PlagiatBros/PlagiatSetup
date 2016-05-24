@@ -1,0 +1,8 @@
+{
+	Mixer_Strip 0x25 create :name "VxORLOverPitchPost" :width "narrow" :tab "fader" :color 3079798784 :gain_mode 0 :mute_mode 0 :group 0x2B :auto_input "" :manual_connection 0
+	Chain 0x26 create :strip 0x25 :tab "chain"
+	JACK_Module 0x27 create :parameter_values "0,000000:1,000000" :is_default 1 :chain 0x26 :active 1
+	Gain_Module 0x28 create :parameter_values "-9,000000:0,000000" :is_default 1 :chain 0x26 :active 1
+	Meter_Module 0x29 create :is_default 1 :chain 0x26 :active 1
+	JACK_Module 0x2A create :parameter_values "1,000000:0,000000" :is_default 1 :chain 0x26 :active 1
+}
