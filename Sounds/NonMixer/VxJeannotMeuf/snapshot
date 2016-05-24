@@ -27,7 +27,7 @@
 	Mixer_Strip 0x13 create :name "VxJeannotOverPitchPre" :width "narrow" :tab "signal" :color 692977408 :gain_mode 0 :mute_mode 0 :group 0x2B :auto_input "" :manual_connection 0
 	Chain 0x14 create :strip 0x13 :tab "chain"
 	JACK_Module 0x15 create :parameter_values "0,000000:1,000000" :is_default 1 :chain 0x14 :active 1
-	Gain_Module 0x16 create :parameter_values "0,000000:0,000000" :is_default 1 :chain 0x14 :active 1
+	Gain_Module 0x16 create :parameter_values "0,000000:1,000000" :is_default 1 :chain 0x14 :active 1
 	Meter_Module 0x17 create :is_default 1 :chain 0x14 :active 1
 	Plugin_Module 0x57 create :plugin_id 2146 :plugin_ins 2 :plugin_outs 2 :parameter_values "3,200000:100,000000:0,000000" :is_default 0 :chain 0x14 :active 0
 	JACK_Module 0x18 create :parameter_values "2,000000:0,000000" :is_default 1 :chain 0x14 :active 1

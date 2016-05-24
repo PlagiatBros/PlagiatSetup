@@ -264,7 +264,7 @@ climat = PortFilter('PBCtrlIn') >> [
 
             SendOSC(klickport, '/klick/simple/set_tempo', 150),
             SendOSC(klickport, '/klick/simple/set_meter', 74, 8),
-            SendOSC(klickport, '/klick/simple/set_pattern', 'X.x.x.x.X.x.x.x.X.x.x.x.X.x.x.x.X.x.x.xX.x.x.x.X.x.x.x.X.x.x.x.X.x.x.x.X.x'),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'X.x.x.x.X.x.x.x.X.x.x.x.Xxx.x.x.X.x.x.xX.x.x.x.X.x.x.x.X.x.xxx.X.x.x.x.X.x'),
             SendOSC(klickport, '/klick/metro/start'),
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.8955),
@@ -308,7 +308,8 @@ climat = PortFilter('PBCtrlIn') >> [
 
             SendOSC(klickport, '/klick/simple/set_tempo', 150),
             SendOSC(klickport, '/klick/simple/set_meter', 74, 8),
-            SendOSC(klickport, '/klick/simple/set_pattern', 'X.x.x.x.X.x.x.x.X.x.x.x.X.x.x.x.X.x.x.xX.x.x.x.X.x.x.x.X.x.x.x.X.x.x.x.X.x'),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'X.x.x.x.X.x.x.x.X.x.x.x.Xxx.x.x.X.x.x.xX.x.x.x.X.x.x.x.X.x.xxx.X.x.x.x.X.x'),
+#            SendOSC(klickport, '/klick/simple/set_pattern', 'X.x.x.x.X.x.x.x.X.x.x.x.X.x.x.x.X.x.x.xX.x.x.x.X.x.x.x.X.x.x.x.X.x.x.x.X.x'),
             SendOSC(klickport, '/klick/metro/start'),
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.8955),
@@ -356,7 +357,7 @@ connassessacem = PortFilter('PBCtrlIn') >> [
     ProgramFilter(2) >> [ # Thème Intro - Bouton 2
         Program(65) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 125),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 125),
@@ -399,7 +400,7 @@ connassessacem = PortFilter('PBCtrlIn') >> [
     ProgramFilter(3) >> [ # Thème Intro - Bouton 3
         Program(66) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 125),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 125),
@@ -447,7 +448,7 @@ fifty = PortFilter('PBCtrlIn') >> [
     ProgramFilter(2) >> [ # Couplet - Bouton 2
         Program(65) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 117),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 117),
@@ -489,7 +490,7 @@ fifty = PortFilter('PBCtrlIn') >> [
     ProgramFilter(3) >> [ # Pont Refrain - Bouton 3
         Program(66) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 110),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 117),
@@ -528,7 +529,7 @@ fifty = PortFilter('PBCtrlIn') >> [
     ProgramFilter(4) >> [ # Refrain - Bouton 4
         Program(67) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 110),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 117),
@@ -572,7 +573,7 @@ le5 = PortFilter('PBCtrlIn') >> [
     ProgramFilter(2) >> [ # Intro - Bouton 2
         Program(65) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eight_per_cycle', 5),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 5),
             SendOSC(slport, '/set', 'tempo', 160),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 160),
@@ -611,7 +612,7 @@ le5 = PortFilter('PBCtrlIn') >> [
     ProgramFilter(3) >> [ # Couplet A - Bouton 3
         Program(66) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eight_per_cycle', 5),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 5),
             SendOSC(slport, '/set', 'tempo', 160),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 160),
@@ -649,7 +650,7 @@ le5 = PortFilter('PBCtrlIn') >> [
     ProgramFilter(4) >> [ # Couplet B - Bouton 4
         Program(67) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eight_per_cycle', 5),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 5),
             SendOSC(slport, '/set', 'tempo', 160),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 160),
@@ -687,7 +688,7 @@ le5 = PortFilter('PBCtrlIn') >> [
     ProgramFilter(5) >> [ # Couplet C - Bouton 5
         Program(68) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eight_per_cycle', 5),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 5),
             SendOSC(slport, '/set', 'tempo', 160),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 160),
@@ -725,7 +726,7 @@ le5 = PortFilter('PBCtrlIn') >> [
     ProgramFilter(6) >> [ # Refrain - Bouton 6
         Program(69) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eight_per_cycle', 5),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 5),
             SendOSC(slport, '/set', 'tempo', 160),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 160),
@@ -763,10 +764,10 @@ le5 = PortFilter('PBCtrlIn') >> [
     ProgramFilter(7) >> [ # Couplet A - Bouton 7 - #TODO INUTILE?
         Program(70) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eight_per_cycle', 5),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 5),
             SendOSC(slport, '/set', 'tempo', 160),
 
-            SendOSC(klickport, '/klick/simple/set_tempo', 160),
+            SendOSC(klickport, '/klick/simple/set_tempo', 80),
             SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
@@ -801,10 +802,10 @@ le5 = PortFilter('PBCtrlIn') >> [
     ProgramFilter(8) >> [ # Couplet Bbis - Bouton 8
         Program(71) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eight_per_cycle', 5),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 5),
             SendOSC(slport, '/set', 'tempo', 160),
 
-            SendOSC(klickport, '/klick/simple/set_tempo', 160),
+            SendOSC(klickport, '/klick/simple/set_tempo', 80),
             SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
@@ -839,7 +840,7 @@ le5 = PortFilter('PBCtrlIn') >> [
     ProgramFilter(9) >> [ # Couplet Cbis - Bouton 9
         Program(72) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eight_per_cycle', 5),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 5),
             SendOSC(slport, '/set', 'tempo', 160),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 160),
@@ -883,7 +884,7 @@ sw = PortFilter('PBCtrlIn') >> [
     ProgramFilter(2) >> [ # Couplet - Bouton 2
         Program(65) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 178.5),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 178.5),
@@ -924,7 +925,7 @@ sw = PortFilter('PBCtrlIn') >> [
     ProgramFilter(3) >> [ # Couplet - Bouton 3
         Program(65) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 178.5),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 178.5),
@@ -966,7 +967,7 @@ sw = PortFilter('PBCtrlIn') >> [
     ProgramFilter(4) >> [ # Refrain - Bouton 4
         Program(66) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 178.5),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 178.5),
@@ -1008,7 +1009,7 @@ sw = PortFilter('PBCtrlIn') >> [
     ProgramFilter(5) >> [ # Couplet - Bouton 5
         Program(65) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 178.5),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 178.5),
@@ -1055,7 +1056,7 @@ wholeworld = PortFilter('PBCtrlIn') >> [
     ProgramFilter(2) >> [ # Couplet - Bouton 2
         Program(65) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 90),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 90),
@@ -1095,7 +1096,7 @@ wholeworld = PortFilter('PBCtrlIn') >> [
     ProgramFilter(3) >> [ # Refrain - Bouton 3
         Program(66) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 90),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 90),
@@ -1135,7 +1136,7 @@ wholeworld = PortFilter('PBCtrlIn') >> [
     ProgramFilter(4) >> [ # Pont - Bouton 4
         Program(67) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 90),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 90),
@@ -1180,7 +1181,7 @@ dafist = PortFilter('PBCtrlIn') >> [
     ProgramFilter(2) >> [ # Intro Thème - Bouton 2
         Program(65) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 120),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 120),
@@ -1218,7 +1219,7 @@ dafist = PortFilter('PBCtrlIn') >> [
     ProgramFilter(3) >> [ # Intro Thème 2 - Bouton 3
         Program(66) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 120),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 120),
@@ -1258,7 +1259,7 @@ dafist = PortFilter('PBCtrlIn') >> [
     ProgramFilter(4) >> [ # Couplet - Bouton 4
         Program(67) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 120),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 120),
@@ -1299,7 +1300,7 @@ dafist = PortFilter('PBCtrlIn') >> [
     ProgramFilter(5) >> [ # Couplet part 2 - Bouton 5
         Program(68) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 120),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 120),
@@ -1339,7 +1340,7 @@ dafist = PortFilter('PBCtrlIn') >> [
     ProgramFilter(6) >> [ # Intro Refrain - Bouton 6
         Program(69) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 120),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 120),
@@ -1379,7 +1380,7 @@ dafist = PortFilter('PBCtrlIn') >> [
     ProgramFilter(7) >> [ # Refrain - Bouton 7
         Program(70) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 120),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 120),
@@ -1425,7 +1426,7 @@ geturfreakon = PortFilter('PBCtrlIn') >> [
     ProgramFilter(2) >> [ # Couplet - Bouton 2
 #        Program(65) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 200),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 200),
@@ -1463,7 +1464,7 @@ geturfreakon = PortFilter('PBCtrlIn') >> [
     ProgramFilter(3) >> [ # Couplet - Bouton 3
         Program(66) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eight_per_cycle', 8),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 200),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 200),
