@@ -4,9 +4,9 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="meter_in" value="2.539e-05" />
-  <param name="meter_outL" value="2.539e-05" />
-  <param name="meter_outR" value="2.539e-05" />
+  <param name="meter_in" value="0" />
+  <param name="meter_outL" value="0" />
+  <param name="meter_outR" value="0" />
   <param name="clip_in" value="0" />
   <param name="clip_outL" value="0" />
   <param name="clip_outR" value="0" />
@@ -26,20 +26,20 @@
 <preset bank="0" program="0" plugin="gate" name="">
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
-  <param name="meter_in" value="2.539e-05" />
-  <param name="meter_out" value="1.55514e-06" />
+  <param name="meter_in" value="0" />
+  <param name="meter_out" value="0" />
   <param name="clip_in" value="0" />
   <param name="clip_out" value="0" />
   <param name="range" value="0.06125" />
-  <param name="threshold" value="0.125" />
-  <param name="ratio" value="2" />
-  <param name="attack" value="20" />
-  <param name="release" value="250" />
+  <param name="threshold" value="0.00718897" />
+  <param name="ratio" value="4.88649" />
+  <param name="attack" value="23.1549" />
+  <param name="release" value="262.509" />
   <param name="makeup" value="1" />
-  <param name="knee" value="2.82843" />
+  <param name="knee" value="3.97788" />
   <param name="detection" value="0" />
   <param name="stereo_link" value="0" />
-  <param name="gating" value="0.06125" />
+  <param name="gating" value="1" />
 </preset>
 </plugin>
 <plugin type="bassenhancer" instance-name="bassenhancer" input-index="6" output-index="7">
@@ -47,38 +47,78 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="amount" value="1" />
-  <param name="meter_in" value="1.55514e-06" />
-  <param name="meter_out" value="1.542e-06" />
+  <param name="amount" value="4.13532" />
+  <param name="meter_in" value="0" />
+  <param name="meter_out" value="0" />
   <param name="clip_in" value="0" />
   <param name="clip_out" value="0" />
-  <param name="drive" value="8.5" />
+  <param name="drive" value="8.5396" />
   <param name="blend" value="0" />
-  <param name="meter_drive" value="1.23766e-07" />
+  <param name="meter_drive" value="0" />
   <param name="freq" value="100" />
-  <param name="listen" value="0" />
-  <param name="floor_active" value="0" />
-  <param name="floor" value="20" />
+  <param name="listen" value="1" />
+  <param name="floor_active" value="1" />
+  <param name="floor" value="20.1998" />
 </preset>
 </plugin>
 <plugin type="compressor" instance-name="compressor" input-index="8" output-index="9">
 <preset bank="0" program="0" plugin="compressor" name="">
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
-  <param name="meter_in" value="1.542e-06" />
-  <param name="meter_out" value="1.542e-06" />
+  <param name="meter_in" value="0" />
+  <param name="meter_out" value="0" />
   <param name="clip_in" value="0" />
   <param name="clip_out" value="0" />
-  <param name="threshold" value="0.125" />
-  <param name="ratio" value="2" />
-  <param name="attack" value="20" />
-  <param name="release" value="250" />
-  <param name="makeup" value="1" />
-  <param name="knee" value="2.82843" />
+  <param name="threshold" value="0.0921418" />
+  <param name="ratio" value="8.60779" />
+  <param name="attack" value="35.9318" />
+  <param name="release" value="215.937" />
+  <param name="makeup" value="2.04486" />
+  <param name="knee" value="1.97794" />
   <param name="detection" value="0" />
   <param name="stereo_link" value="0" />
   <param name="compression" value="1" />
   <param name="mix" value="1" />
+</preset>
+</plugin>
+<plugin type="filter" instance-name="filter" input-index="12" output-index="13">
+<preset bank="0" program="0" plugin="filter" name="">
+  <param name="freq" value="1157.06" />
+  <param name="res" value="0.707" />
+  <param name="mode" value="1" />
+  <param name="inertia" value="20" />
+</preset>
+</plugin>
+<plugin type="stereo" instance-name="stereo" input-index="14" output-index="15">
+<preset bank="0" program="0" plugin="stereo" name="">
+  <param name="bypass" value="0" />
+  <param name="level_in" value="1" />
+  <param name="level_out" value="1" />
+  <param name="meter_inL" value="0" />
+  <param name="meter_inR" value="0" />
+  <param name="meter_outL" value="0" />
+  <param name="meter_outR" value="0" />
+  <param name="clip_inL" value="0" />
+  <param name="clip_inR" value="0" />
+  <param name="clip_outL" value="0" />
+  <param name="clip_outR" value="0" />
+  <param name="balance_in" value="0" />
+  <param name="balance_out" value="0" />
+  <param name="softclip" value="0" />
+  <param name="mutel" value="0" />
+  <param name="muter" value="0" />
+  <param name="phasel" value="0" />
+  <param name="phaser" value="0" />
+  <param name="mode" value="5" />
+  <param name="slev" value="0" />
+  <param name="sbal" value="0" />
+  <param name="mlev" value="0" />
+  <param name="mpan" value="0" />
+  <param name="stereo_base" value="0" />
+  <param name="delay" value="0" />
+  <param name="meter_phase" value="0" />
+  <param name="sc_level" value="1" />
+  <param name="stereo_phase" value="0" />
 </preset>
 </plugin>
 </rack>

@@ -65,6 +65,9 @@
         <instrument name="Fire" minnote="66" maxnote="66" rootnote="66" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="0.820000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Fire.wav" sampleRelative="DrumKlit/Fire.wav"/>
         </instrument>
+        <instrument name="LaughtersJeannot" minnote="67" maxnote="67" rootnote="67" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav" sampleRelative="ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav"/>
+        </instrument>
       </kit>
       <kit name="ConnassesSACEM" volume="1.000000">
         <instrument name="ViolinConnasses" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
@@ -76,7 +79,7 @@
         <instrument name="FrayedEnds" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/48k_FrayedEnds.2.wav" sampleRelative="ConnassesSACEM/48k_FrayedEnds.2.wav"/>
         </instrument>
-        <instrument name="Laughters" minnote="65" maxnote="72" rootnote="65" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+        <instrument name="Laughters" minnote="65" maxnote="72" rootnote="65" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav" sampleRelative="ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav"/>
         </instrument>
         <instrument name="Klap" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
@@ -87,6 +90,9 @@
         </instrument>
         <instrument name="Fire" minnote="66" maxnote="66" rootnote="66" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="0.820000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Fire.wav" sampleRelative="DrumKlit/Fire.wav"/>
+        </instrument>
+        <instrument name="LaughtersJeannot" minnote="67" maxnote="67" rootnote="67" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav" sampleRelative="ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav"/>
         </instrument>
       </kit>
       <kit name="Fifty" volume="1.000000">
@@ -120,6 +126,9 @@
         <instrument name="Karkabou" minnote="50" maxnote="50" rootnote="50" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples5" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Fifty/FiftyPerc0dB.wav" sampleRelative="Fifty/FiftyPerc0dB.wav"/>
         </instrument>
+        <instrument name="LaughtersJeannot" minnote="67" maxnote="67" rootnote="67" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav" sampleRelative="ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav"/>
+        </instrument>
       </kit>
       <kit name="Le5" volume="0.310000">
         <instrument name="Tigrou" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.530000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
@@ -149,6 +158,9 @@
         <instrument name="Fire" minnote="66" maxnote="66" rootnote="66" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="0.820000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Fire.wav" sampleRelative="DrumKlit/Fire.wav"/>
         </instrument>
+        <instrument name="LaughtersJeannot" minnote="67" maxnote="67" rootnote="67" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav" sampleRelative="ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav"/>
+        </instrument>
       </kit>
       <kit name="SW" volume="1.000000">
         <instrument name="FiatLux" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.480000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
@@ -165,6 +177,9 @@
         </instrument>
         <instrument name="Fire" minnote="66" maxnote="66" rootnote="66" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="0.820000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Fire.wav" sampleRelative="DrumKlit/Fire.wav"/>
+        </instrument>
+        <instrument name="LaughtersJeannot" minnote="67" maxnote="67" rootnote="67" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav" sampleRelative="ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav"/>
         </instrument>
       </kit>
       <kit name="WholeWorld" volume="0.330000">
@@ -185,6 +200,15 @@
         </instrument>
         <instrument name="Fire" minnote="66" maxnote="66" rootnote="66" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="0.820000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Fire.wav" sampleRelative="DrumKlit/Fire.wav"/>
+        </instrument>
+        <instrument name="LaughtersJeannot" minnote="67" maxnote="67" rootnote="67" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav" sampleRelative="ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav"/>
+        </instrument>
+        <instrument name="Indien" minnote="48" maxnote="48" rootnote="48" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/WholeWorld/Indien_0dB.wav" sampleRelative="WholeWorld/Indien_0dB.wav"/>
+        </instrument>
+        <instrument name="Cowboy" minnote="50" maxnote="50" rootnote="45" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/WholeWorld/Cowboy_0dB.wav" sampleRelative="WholeWorld/Cowboy_0dB.wav"/>
         </instrument>
       </kit>
       <kit name="Haggadah" volume="1.000000">
@@ -242,6 +266,9 @@
         <instrument name="Fire" minnote="66" maxnote="66" rootnote="66" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="0.820000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Fire.wav" sampleRelative="DrumKlit/Fire.wav"/>
         </instrument>
+        <instrument name="LaughtersJeannot" minnote="67" maxnote="67" rootnote="67" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav" sampleRelative="ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav"/>
+        </instrument>
       </kit>
       <kit name="GetUrFreakOn" volume="1.000000">
         <instrument name="Gtr1" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.500000" pan="-0.500000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
@@ -258,6 +285,9 @@
         </instrument>
         <instrument name="Gtr2" minnote="62" maxnote="62" rootnote="62" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.500000" pan="0.500000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/GetUrFreakOn/GTR_2.wav" sampleRelative="GetUrFreakOn/GTR_2.wav"/>
+        </instrument>
+        <instrument name="LaughtersJeannot" minnote="67" maxnote="67" rootnote="67" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav" sampleRelative="ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav"/>
         </instrument>
       </kit>
     </setup>
