@@ -62,7 +62,7 @@ class OSCCustomInterface(object):
          #     _engine.output_event(_event.ProgramEvent('PBseq24', _util.NoDataOffset(1), 127))
          # else:
          _engine.output_event(_event.ProgramEvent('PBseq24', _util.NoDataOffset(1), args[0] + 112))
-         _engine.output_event(_event.CtrlEvent('PBTapeutape', _util.NoDataOffset(0), 0, args[0]-1))
+#         _engine.output_event(_event.CtrlEvent('PBTapeutape', _util.NoDataOffset(0), 0, args[0]-1))
 	else:
             if args[0] == 12:
              _engine.switch_subscene(9)

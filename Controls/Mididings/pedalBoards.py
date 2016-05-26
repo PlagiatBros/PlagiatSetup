@@ -96,7 +96,7 @@ oscsendproxy = OscSendProxy([
     [samplesmainport, '/strip/Samples3Dry/Gain/Mute', 1.0],
     [samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0],
     [samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0],
-    [samplesmainport, '/strip/SamplesDrumKlit/Gain/Mute', 1.0],
+    [samplesmainport, '/strip/SamplesDrumKlit/Gain/Mute', 0.0],
     [samplesmainport, '/strip/SamplesMunge/Gain/Mute', 1.0],
     [samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 1.0],
     [samplesmainport, '/strip/SamplesScape/Gain/Mute', 1.0],
@@ -178,6 +178,7 @@ seq24=Output('PBseq24',1)
 seq24once=Output('PBseq24',2)
 
 tapeutape=Output('PBTapeutape',10)
+tapeutapecontrol=Output('PBTapeutape',1)
 
 
 #### Functions #############################################
@@ -246,6 +247,17 @@ vxorldisint_off = [
     SendOSC(vxorlpostport, '/strip/VxORLDisintPost/Gain/Mute', 1.0),
     ] >> Discard()
 
+# VxORLDelay
+vxorldelay_on = [
+    SendOSC(vxorlpreport, '/strip/VxORLDelayPre/Gain/Mute', 0.0),
+    SendOSC(vxorlpostport, '/strip/VxORLDelayPost/Gain/Mute', 0.0),
+    ] >> Discard()
+
+vxorldelay_off = [
+    SendOSC(vxorlpreport, '/strip/VxORLDelayPre/Gain/Mute', 1.0),
+    SendOSC(vxorlpostport, '/strip/VxORLDelayPost/Gain/Mute', 1.0),
+    ] >> Discard()
+
 # VxJeannotMeuf
 vxjeannotmeuf_on = [
     SendOSC(vxjeannotpreport, '/strip/VxJeannotMeuf/Gain/Mute', 0.0),
@@ -279,6 +291,17 @@ vxjeannotdisint_off = [
     SendOSC(vxjeannotpostport, '/strip/VxJeannotDisintPost/Gain/Mute', 1.0),
     ] >> Discard()
 
+# VxJeannotDelay
+vxjeannotdelay_on = [
+    SendOSC(vxjeannotpreport, '/strip/VxJeannotDelayPre/Gain/Mute', 0.0),
+    SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/Gain/Mute', 0.0),
+    ] >> Discard()
+
+vxjeannotdelay_off = [
+    SendOSC(vxjeannotpreport, '/strip/VxJeannotDelayPre/Gain/Mute', 1.0),
+    SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/Gain/Mute', 1.0),
+    ] >> Discard()
+
 #### Bass ####
 # Dry #
 bassdry = [
@@ -303,10 +326,10 @@ basspedal= [
     ProgramFilter(15) >> SendOSC(slport, '/sl/0/hit', 'overdub') >> Discard(),
     ProgramFilter(16) >> SendOSC(slport, '/sl/0/hit', 'multiply') >> Discard(),
 #    ProgramFilter(18) >> SendOSC(slport, '/sl/0/hit', 'trigger') >> Discard(),
-    ProgramFilter(17) >> SendOSC(slport, '/sl/0/hit', 'record') >> Discard(),
-    ProgramFilter(18) >> SendOSC(slport, '/sl/0/hit', 'pause_on') >> Discard(),
-    ProgramFilter(19) >> SendOSC(slport, '/sl/0/hit', 'overdub') >> Discard(),
-    ProgramFilter(20) >> SendOSC(slport, '/sl/0/hit', 'multiply') >> Discard(),
+    ProgramFilter(17) >> SendOSC(slport, '/sl/1/hit', 'record') >> Discard(),
+    ProgramFilter(18) >> SendOSC(slport, '/sl/1/hit', 'pause_on') >> Discard(),
+    ProgramFilter(19) >> SendOSC(slport, '/sl/1/hit', 'overdub') >> Discard(),
+    ProgramFilter(20) >> SendOSC(slport, '/sl/1/hit', 'multiply') >> Discard(),
 #    ProgramFilter(18) >> SendOSC(slport, '/sl/0/hit', 'trigger') >> Discard(),
     ProgramFilter(23) >> bassdry,
     ProgramFilter(22) >> bassscape,
@@ -341,12 +364,14 @@ stop = [
 
 #### Climat ####
 climat = PortFilter('PBCtrlIn') >> [
+    Filter(PROGRAM) >> Ctrl(0, 0) >> tapeutapecontrol,
     ProgramFilter(1) >> stop, # !!!STOP!!! #
     ProgramFilter(2) >> [ # Couplet - Bouton 2
         Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 74),
             SendOSC(slport, '/set', 'tempo', 150),
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 150),
             SendOSC(klickport, '/klick/simple/set_meter', 74, 8),
@@ -375,10 +400,13 @@ climat = PortFilter('PBCtrlIn') >> [
             vxorlgars_on,
             vxorlmeuf_off,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_on,
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
+
 
             ] >> Discard()
         ],
@@ -421,7 +449,9 @@ climat = PortFilter('PBCtrlIn') >> [
             vxorlgars_on,
             vxorlmeuf_off,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_on,
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
@@ -462,7 +492,9 @@ climat = PortFilter('PBCtrlIn') >> [
             vxorlgars_on,
             vxorlmeuf_off,
             vxorldisint_on,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_on,
             vxjeannotmeuf_off,
             vxjeannotdisint_on,
@@ -504,7 +536,9 @@ climat = PortFilter('PBCtrlIn') >> [
             vxorlgars_on,
             vxorlmeuf_off,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_on,
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
@@ -538,7 +572,9 @@ climat = PortFilter('PBCtrlIn') >> [
             vxorlgars_on,
             vxorlmeuf_off,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_on,
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
@@ -572,7 +608,9 @@ climat = PortFilter('PBCtrlIn') >> [
             vxorlgars_on,
             vxorlmeuf_off,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_on,
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
@@ -584,12 +622,14 @@ climat = PortFilter('PBCtrlIn') >> [
 
 #### ConnassesSACEM ####
 connassessacem = PortFilter('PBCtrlIn') >> [
+    Filter(PROGRAM) >> Ctrl(0, 1) >> tapeutapecontrol,
     ProgramFilter(1) >> stop, # !!!STOP!!! #
     ProgramFilter(2) >> [ # Thème Intro - Bouton 2
         Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 125),
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 125),
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
@@ -615,7 +655,9 @@ connassessacem = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
+            vxorldelay_on,
 
+            vxjeannotdelay_on,
             vxjeannotgars_on,
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
@@ -651,7 +693,9 @@ connassessacem = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
+            vxorldelay_on,
 
+            vxjeannotdelay_on,
             vxjeannotgars_on,
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
@@ -664,12 +708,14 @@ connassessacem = PortFilter('PBCtrlIn') >> [
 
 #### Fifty ####
 fifty = PortFilter('PBCtrlIn') >> [
+    Filter(PROGRAM) >> Ctrl(0, 2) >> tapeutapecontrol,
     ProgramFilter(1) >> stop, # !!!STOP!!! #
     ProgramFilter(2) >> [ # Couplet - Bouton 2
         Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 117),
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 117),
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
@@ -696,7 +742,9 @@ fifty = PortFilter('PBCtrlIn') >> [
             vxorlgars_on,
             vxorlmeuf_off,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_on,
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
@@ -718,6 +766,9 @@ fifty = PortFilter('PBCtrlIn') >> [
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.64925),
             SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.32222),
 
+
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
+
             SendOscState([
 
                 [samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0],
@@ -727,7 +778,9 @@ fifty = PortFilter('PBCtrlIn') >> [
             vxorlgars_on,
             vxorlmeuf_off,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_on,
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
@@ -757,7 +810,9 @@ fifty = PortFilter('PBCtrlIn') >> [
             vxorlgars_on,
             vxorlmeuf_off,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_on,
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
@@ -768,12 +823,14 @@ fifty = PortFilter('PBCtrlIn') >> [
 
 #### Le5 ####
 le5 = PortFilter('PBCtrlIn') >> [
+    Filter(PROGRAM) >> Ctrl(0, 3) >> tapeutapecontrol,
     ProgramFilter(1) >> stop, # !!!STOP!!! #
     ProgramFilter(2) >> [ # Intro - Bouton 2
         Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
             SendOSC(slport, '/set', 'tempo', 160),
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 160),
             SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
@@ -795,7 +852,9 @@ le5 = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
@@ -828,7 +887,9 @@ le5 = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
@@ -860,7 +921,9 @@ le5 = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
@@ -892,7 +955,9 @@ le5 = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
@@ -924,7 +989,9 @@ le5 = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_on,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_on,
@@ -956,7 +1023,9 @@ le5 = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
@@ -989,7 +1058,9 @@ le5 = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
@@ -1021,7 +1092,9 @@ le5 = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
@@ -1060,7 +1133,9 @@ le5 = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
@@ -1103,7 +1178,9 @@ le5 = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
@@ -1114,12 +1191,14 @@ le5 = PortFilter('PBCtrlIn') >> [
 
 #### SW ####
 sw = PortFilter('PBCtrlIn') >> [
+    Filter(PROGRAM) >> Ctrl(0, 4) >> tapeutapecontrol,
     ProgramFilter(1) >> stop, # !!!STOP!!! #
     ProgramFilter(2) >> [ # Couplet - Bouton 2
         Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 178.5),
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 178.5),
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
@@ -1128,7 +1207,8 @@ sw = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.44216),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.44216),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.55),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.55),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, 0.55),
 
             SendOscState([
 
@@ -1143,7 +1223,9 @@ sw = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
@@ -1162,7 +1244,8 @@ sw = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.44216),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.44216),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.55),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.55),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, 0.55),
 
             SendOscState([
 
@@ -1176,7 +1259,9 @@ sw = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
@@ -1196,8 +1281,8 @@ sw = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.44216),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.44216),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.55),
-
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.55),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, 0.55),
 
             SendOscState([
 
@@ -1211,7 +1296,9 @@ sw = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_on,
+            vxorldelay_on,
 
+            vxjeannotdelay_on,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_on,
@@ -1231,7 +1318,8 @@ sw = PortFilter('PBCtrlIn') >> [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.44216),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.44216),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.55),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.55),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, 0.55),
 
             SendOscState([
 
@@ -1246,7 +1334,9 @@ sw = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
@@ -1257,12 +1347,14 @@ sw = PortFilter('PBCtrlIn') >> [
 
 #### Whole World ####
 wholeworld = PortFilter('PBCtrlIn') >> [
+    Filter(PROGRAM) >> Ctrl(0, 5) >> tapeutapecontrol,
     ProgramFilter(1) >> stop, # !!!STOP!!! #
     ProgramFilter(2) >> [ # Couplet - Bouton 2
         Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 90),
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 90),
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
@@ -1285,7 +1377,9 @@ wholeworld = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
@@ -1319,7 +1413,9 @@ wholeworld = PortFilter('PBCtrlIn') >> [
             vxorlgars_on,
             vxorlmeuf_off,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
@@ -1330,6 +1426,7 @@ wholeworld = PortFilter('PBCtrlIn') >> [
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 90),
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 90),
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
@@ -1353,7 +1450,9 @@ wholeworld = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
@@ -1384,7 +1483,9 @@ wholeworld = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
@@ -1397,12 +1498,14 @@ wholeworld = PortFilter('PBCtrlIn') >> [
 
 #### Da Fist ####
 dafist = PortFilter('PBCtrlIn') >> [
+    Filter(PROGRAM) >> Ctrl(0, 6) >> tapeutapecontrol,
     ProgramFilter(1) >> stop, # !!!STOP!!! #
     ProgramFilter(2) >> [ # Intro Thème - Bouton 2
         Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 120),
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 120),
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
@@ -1425,7 +1528,9 @@ dafist = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
@@ -1461,7 +1566,9 @@ dafist = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
@@ -1500,7 +1607,9 @@ dafist = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
@@ -1511,6 +1620,8 @@ dafist = PortFilter('PBCtrlIn') >> [
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 120),
+
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 120),
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
@@ -1536,7 +1647,9 @@ dafist = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
@@ -1573,7 +1686,9 @@ dafist = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
@@ -1609,7 +1724,9 @@ dafist = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
@@ -1641,7 +1758,9 @@ dafist = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
@@ -1652,12 +1771,14 @@ dafist = PortFilter('PBCtrlIn') >> [
 
 #### Get Ur Freak On ####
 geturfreakon = PortFilter('PBCtrlIn') >> [
+    Filter(PROGRAM) >> Ctrl(0, 7) >> tapeutapecontrol,
     ProgramFilter(1) >> stop, # !!!STOP!!! #
     ProgramFilter(2) >> [ # Couplet - Bouton 2
 #        Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 200),
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 200),
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
@@ -1679,7 +1800,9 @@ geturfreakon = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
@@ -1710,7 +1833,9 @@ geturfreakon = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
+            vxorldelay_off,
 
+            vxjeannotdelay_off,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
