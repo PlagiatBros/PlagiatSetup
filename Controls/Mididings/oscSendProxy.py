@@ -47,7 +47,17 @@ These will be merged with the defaults defined via @setDefaults
 
 """
 
-from liblo import _send
+from liblo import send as _send
+from mididings import Call as _Call
+
+class callableSendOscState(object):
+    def __init__(self,messages):
+        self.messages = messages
+
+    def __call__(self,ev):
+        for item in self.messages:
+            _send(*item)
+            
 
 
 class OscSendProxy(object):
@@ -70,17 +80,9 @@ class OscSendProxy(object):
         return copy
 
     def sendOscState(self,overrides):
-        messages = self.mergeWithDefaults(overrides)
-        return self.callableSendOscState(messages)
+        messages = self.mergeWithDefaults(overrides).values()
+        return _Call(callableSendOscState(messages))
 
-    class callableSendOscState(object):
-        def __init__(self,messages):
-            self.messages = messages
-
-        def __call__(self,ev):
-            for key in self.messages:
-                _send(*self.messages[key])
-            
 
 
 
