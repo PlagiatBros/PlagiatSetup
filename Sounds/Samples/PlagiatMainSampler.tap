@@ -123,7 +123,7 @@
         <instrument name="Basse" minnote="48" maxnote="49" rootnote="48" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Fifty/FiftyBass0dB.wav" sampleRelative="Fifty/FiftyBass0dB.wav"/>
         </instrument>
-        <instrument name="Karkabou" minnote="50" maxnote="50" rootnote="50" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples5" volume="0.800000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="Karkabou" minnote="50" maxnote="50" rootnote="50" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples5" volume="0.590000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Fifty/FiftyPerc0dB.wav" sampleRelative="Fifty/FiftyPerc0dB.wav"/>
         </instrument>
         <instrument name="LaughtersJeannot" minnote="67" maxnote="67" rootnote="67" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
