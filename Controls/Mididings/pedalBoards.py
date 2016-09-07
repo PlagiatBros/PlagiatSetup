@@ -415,6 +415,7 @@ climat = PortFilter('PBCtrlIn') >> [
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 74),
             SendOSC(slport, '/set', 'tempo', 150),
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 150),
             SendOSC(klickport, '/klick/simple/set_meter', 74, 8),
@@ -713,7 +714,7 @@ fifty = PortFilter('PBCtrlIn') >> [
     ProgramFilter(2) >> [ # Couplet - Bouton 2
         Program(65) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 64),
             SendOSC(slport, '/set', 'tempo', 117),
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
@@ -819,6 +820,51 @@ fifty = PortFilter('PBCtrlIn') >> [
 
             ] >> Discard()
         ],
+    ProgramFilter(5) >> [ # Couplet avec boucle - Bouton 5
+        Program(65) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eighth_per_cycle', 64),
+            SendOSC(slport, '/set', 'tempo', 117),
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
+            SendOSC(slport, '/sl/0/set', 'play_sync', 0),            
+            SendOSC(slport, '/sl/0/hit', 'pause_off'),
+            SendOSC(slport, '/sl/0/hit', 'trigger'),
+            SendOSC(slport, '/sl/0/set', 'play_sync', 1),            
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 117),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.64925),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.64925),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.32222),
+
+            SendOscState([
+
+                [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/Samples4Dry/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/Samples5Dry/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/SamplesMunge/Gain/Mute', 0.0],
+
+                [samplesdelaymungeport, '/strip/Samples2/Gain/Gain%20(dB]/unscaled', -7.0],
+            
+            ]),
+
+
+            vxorlgars_on,
+            vxorlmeuf_off,
+            vxorldisint_off,
+            vxorldelay_off,
+
+            vxjeannotdelay_off,
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
+            vxjeannotdisint_off,
+
+            ] >> Discard()
+        ],
     ]
 
 #### Le5 ####
@@ -859,6 +905,7 @@ le5 = PortFilter('PBCtrlIn') >> [
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
 
+            bassdry,
             ] >> Discard()
         ],
     ProgramFilter(3) >> [ # Couplet A - Bouton 3
@@ -893,6 +940,8 @@ le5 = PortFilter('PBCtrlIn') >> [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+
+            bassdry,
             ] >> Discard()
         ],
     ProgramFilter(4) >> [ # Couplet B - Bouton 4
@@ -927,6 +976,8 @@ le5 = PortFilter('PBCtrlIn') >> [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+
+            bassdry,
             ] >> Discard()
         ],
     ProgramFilter(5) >> [ # Couplet C - Bouton 5
@@ -961,6 +1012,8 @@ le5 = PortFilter('PBCtrlIn') >> [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+
+            bassdry,
             ] >> Discard()
         ],
     ProgramFilter(6) >> [ # Refrain - Bouton 6
@@ -995,6 +1048,9 @@ le5 = PortFilter('PBCtrlIn') >> [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_on,
+
+            bassscape,
+            bassdegrade,
             ] >> Discard()
         ],
     ProgramFilter(7) >> [ # Couplet A - Bouton 7 - #TODO INUTILE?
@@ -1029,6 +1085,8 @@ le5 = PortFilter('PBCtrlIn') >> [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+
+            bassdry,
             ] >> Discard()
         ],
     ProgramFilter(8) >> [ # Couplet Bbis - Bouton 8
