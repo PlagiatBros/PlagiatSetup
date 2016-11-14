@@ -258,6 +258,14 @@ vxorldelay_off = [
     SendOSC(vxorlpostport, '/strip/VxORLDelayPost/Gain/Mute', 1.0),
     ] >> Discard()
 
+# VxORLVocode
+vxorlvocode_on= [
+    SendOSC(vxorlpostport, '/strip/VxORLVocodePost/Gain/Mute', 0.0),
+    ] >> Discard()
+vxorlvocode_off= [
+    SendOSC(vxorlpostport, '/strip/VxORLVocodePost/Gain/Mute', 1.0),
+    ] >> Discard()
+
 # VxJeannotMeuf
 vxjeannotmeuf_on = [
     SendOSC(vxjeannotpreport, '/strip/VxJeannotMeuf/Gain/Mute', 0.0),
@@ -401,6 +409,7 @@ climat = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_off,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_on,
@@ -451,6 +460,7 @@ climat = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_off,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_on,
@@ -494,6 +504,7 @@ climat = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_off,
             vxorldisint_on,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_on,
@@ -538,6 +549,7 @@ climat = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_off,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_on,
@@ -574,6 +586,7 @@ climat = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_off,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_on,
@@ -610,6 +623,7 @@ climat = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_off,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_on,
@@ -657,6 +671,7 @@ connassessacem = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_on,
+            vxorlvocode_off,
 
             vxjeannotdelay_on,
             vxjeannotgars_on,
@@ -695,6 +710,7 @@ connassessacem = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_on,
+            vxorlvocode_off,
 
             vxjeannotdelay_on,
             vxjeannotgars_on,
@@ -744,6 +760,7 @@ fifty = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_off,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_on,
@@ -780,6 +797,7 @@ fifty = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_off,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_on,
@@ -813,6 +831,7 @@ fifty = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_off,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_on,
@@ -858,6 +877,7 @@ fifty = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_off,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_on,
@@ -899,6 +919,7 @@ fifty = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_off,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_on,
@@ -942,6 +963,7 @@ le5 = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
@@ -978,6 +1000,7 @@ le5 = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
@@ -1014,6 +1037,7 @@ le5 = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
@@ -1050,6 +1074,7 @@ le5 = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
@@ -1086,6 +1111,7 @@ le5 = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_on,
             vxorldisint_on,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
@@ -1123,6 +1149,7 @@ le5 = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
@@ -1160,6 +1187,7 @@ le5 = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
@@ -1194,6 +1222,7 @@ le5 = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
@@ -1235,6 +1264,7 @@ le5 = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
@@ -1280,6 +1310,7 @@ le5 = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
@@ -1325,6 +1356,7 @@ sw = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
@@ -1361,6 +1393,7 @@ sw = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
@@ -1398,6 +1431,7 @@ sw = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_on,
             vxorldisint_on,
             vxorldelay_on,
+            vxorlvocode_off,
 
             vxjeannotdelay_on,
             vxjeannotgars_off,
@@ -1436,6 +1470,7 @@ sw = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
@@ -1479,6 +1514,7 @@ wholeworld = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
@@ -1515,6 +1551,7 @@ wholeworld = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_off,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
@@ -1552,6 +1589,7 @@ wholeworld = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
@@ -1585,6 +1623,7 @@ wholeworld = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_on,
             vxorldisint_on,
             vxorldelay_on,
+            vxorlvocode_off,
 
             vxjeannotdelay_on,
             vxjeannotgars_on,
@@ -1630,6 +1669,7 @@ dafist = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
@@ -1668,6 +1708,7 @@ dafist = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
@@ -1709,6 +1750,7 @@ dafist = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
@@ -1749,6 +1791,7 @@ dafist = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
@@ -1789,6 +1832,7 @@ dafist = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
@@ -1828,6 +1872,7 @@ dafist = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
@@ -1862,6 +1907,7 @@ dafist = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_on,
+            vxorlvocode_off,
 
             vxjeannotdelay_on,
             vxjeannotgars_off,
@@ -1906,6 +1952,7 @@ geturfreakon = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
@@ -1939,6 +1986,7 @@ geturfreakon = PortFilter('PBCtrlIn') >> [
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
@@ -1947,6 +1995,48 @@ geturfreakon = PortFilter('PBCtrlIn') >> [
             ] >> Discard()
         ],
     ]
+
+#### SlowMotium ####
+slowmotium = PortFilter('PBCtrlIn') >> [
+    Filter(PROGRAM) >> Ctrl(0, 8) >> tapeutapecontrol,
+    ProgramFilter(1) >> stop, # !!!STOP!!! #
+    ProgramFilter(2) >> [ # Couplet - Bouton 2
+        Program(65) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 200),
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 200),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.522388),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.522388),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.6296),
+
+
+            SendOscState([
+
+                [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
+
+            ]),
+
+
+            vxorlgars_off,
+            vxorlmeuf_off,
+            vxorldisint_off,
+            vxorldelay_off,
+            vxorlvocode_on,
+
+            vxjeannotdelay_off,
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
+            ] >> Discard()
+        ],
+
 #### RUN ###################################################
 
 run(
