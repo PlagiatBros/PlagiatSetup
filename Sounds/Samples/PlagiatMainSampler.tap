@@ -295,6 +295,16 @@
           <variation minveloc="0" maxveloc="127" sample="" sampleRelative=""/>
         </instrument>
       </kit>
+      <kit name="Horrorcore" volume="1.000000">
+        <instrument name="new instrument" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="" sampleRelative=""/>
+        </instrument>
+      </kit>
+      <kit name="TrapOne" volume="1.000000">
+        <instrument name="new instrument" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="" sampleRelative=""/>
+        </instrument>
+      </kit>
     </setup>
   </creation>
 </tapeutape>

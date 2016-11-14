@@ -55,7 +55,7 @@ class OSCCustomInterface(object):
             return
         self.timestamp = time() * 1000
 
-        if _engine.current_subscene() == 9 and args[0] < 9:
+        if _engine.current_subscene() == 9 and args[0] < 12:
          _engine.switch_scene(args[0])
          _engine.switch_subscene(1)
          # if args[0] == 1: # Rustine car acte 0 sur screen 14 !!!

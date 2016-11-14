@@ -221,7 +221,7 @@ vxorlmeuf_on = [
     ] >> Discard()
 
 vxorlmeuf_off = [
-    SendOSC(vxorlpreport, '/strip/VxORLMeuf/Gain/Mute', 1.0),
+#    SendOSC(vxorlpreport, '/strip/VxORLMeuf/Gain/Mute', 1.0),
     SendOSC(vxorlpostport, '/strip/VxORLMeufPost/Gain/Mute', 1.0),
     ] >> Discard()
 
@@ -2037,6 +2037,94 @@ slowmotium = PortFilter('PBCtrlIn') >> [
             ] >> Discard()
         ],
 
+    ]
+
+#### HorroCore ####
+horrorcore = PortFilter('PBCtrlIn') >> [
+    Filter(PROGRAM) >> Ctrl(0, 9) >> tapeutapecontrol,
+    ProgramFilter(1) >> stop, # !!!STOP!!! #
+    ProgramFilter(2) >> [ # Couplet - Bouton 2
+        Program(65) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 200),
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 200),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.522388),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.522388),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.6296),
+
+
+            SendOscState([
+
+                [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
+
+            ]),
+
+
+            vxorlgars_off,
+            vxorlmeuf_off,
+            vxorldisint_off,
+            vxorldelay_off,
+            vxorlvocode_on,
+
+            vxjeannotdelay_off,
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
+            ] >> Discard()
+        ],
+
+    ]
+
+#### TrapOne ####
+trapone = PortFilter('PBCtrlIn') >> [
+    Filter(PROGRAM) >> Ctrl(0, 10) >> tapeutapecontrol,
+    ProgramFilter(1) >> stop, # !!!STOP!!! #
+    ProgramFilter(2) >> [ # Couplet - Bouton 2
+        Program(65) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 200),
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 200),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),            
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.522388),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.522388),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.6296),
+
+
+            SendOscState([
+
+                [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
+
+            ]),
+
+
+            vxorlgars_off,
+            vxorlmeuf_off,
+            vxorldisint_off,
+            vxorldelay_off,
+            vxorlvocode_on,
+
+            vxjeannotdelay_off,
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
+            ] >> Discard()
+        ],
+
+    ]
+
 #### RUN ###################################################
 
 run(
@@ -2497,342 +2585,177 @@ run(
 		),
 	    ]
         ),
-        # 2: SceneGroup("", [
-  	# 	Scene("Bass ORL",
-        #               [
-        #                 acte1,
-        #                 orl_basspedal
-        #                 ]
-	# 	),
-	# 	Scene("Guitar ORL",
-        #               [
-        #                 acte1,
-        #                 orl_gtrpedal
-        #                 ]
-	# 	),
-	# 	Scene("Voix ORL",
-        #               [
-        #                 acte1,
-        #                 orl_vxpedal
-        #                 ]
-	#         ),
-	# 	Scene("Bass Dag",
-        #               [
-        #                 acte1,
-        #                 dag_basspedal
-        #                 ]
-	# 	),
-	# 	Scene("Guitar Dag",
-        #               [
-        #                 acte1,
-        #                 dag_gtrpedal
-        #                 ]
-	# 	),
-	# 	Scene("Voix Dag",
-        #               [
-        #                 acte1,
-        #                 dag_vxpedal
-        #                 ]
-	# 	),
-	# 	Scene("Boucles",
-        #               acte1
-	# 	),
-	# 	Scene("Bank Select",
-        #               acte1
-	# 	),
-	# 	Scene("Tune Select",
-        #               acte1
-	# 	)
-	#     ]
-        # ),
-        # 3: SceneGroup("Acte II", [
-  	# 	Scene("Bass ORL",
-        #               [
-        #                 acte2,
-        #                 orl_basspedal
-        #                 ]
-	# 	),
-	# 	Scene("Guitar ORL",
-        #               [
-        #                 acte2,
-        #                 orl_gtrpedal
-        #                 ]
-	# 	),
-	# 	Scene("Voix ORL",
-        #               [
-        #                 acte2,
-        #                 orl_vxpedal
-        #                 ]
-	#         ),
-	# 	Scene("Bass Dag",
-        #               [
-        #                 acte2,
-        #                 dag_basspedal
-        #                 ]
-	# 	),
-	# 	Scene("Guitar Dag",
-        #               [
-        #                 acte2,
-        #                 dag_gtrpedal
-        #                 ]
-	# 	),
-	# 	Scene("Voix Dag",
-        #               [
-        #                 acte2,
-        #                 dag_vxpedal
-        #                 ]
-	# 	),
-	# 	Scene("Boucles",
-        #               acte2
-	# 	),
-	# 	Scene("Bank Select",
-        #               acte2
-	# 	),
-	# 	Scene("Tune Select",
-        #               acte2
-	# 	)
-	#     ]
-        # ),
-        # 4: SceneGroup("Forain Acte II", [
-  	# 	Scene("Bass ORL",
-        #               [
-        #                 forainacte2,
-        #                 orl_basspedal
-        #                 ]
-	# 	),
-	# 	Scene("Guitar ORL",
-        #               [
-        #                 forainacte2,
-        #                 orl_gtrpedal
-        #                 ]
-	# 	),
-	# 	Scene("Voix ORL",
-        #               [
-        #                 forainacte2,
-        #                 orl_vxpedal
-        #                 ]
-	#         ),
-	# 	Scene("Bass Dag",
-        #               [
-        #                 forainacte2,
-        #                 dag_basspedal
-        #                 ]
-	# 	),
-	# 	Scene("Guitar Dag",
-        #               [
-        #                 forainacte2,
-        #                 dag_gtrpedal
-        #                 ]
-	# 	),
-	# 	Scene("Voix Dag",
-        #               [
-        #                 forainacte2,
-        #                 dag_vxpedal
-        #                 ]
-	# 	),
-	# 	Scene("Boucles",
-        #               forainacte2
-	# 	),
-	# 	Scene("Bank Select",
-        #               forainacte2
-	# 	),
-	# 	Scene("Tune Select",
-        #               forainacte2
-	# 	)
-	#     ]
-        # ),
-        # 5: SceneGroup("Acte III", [
-  	# 	Scene("Bass ORL",
-        #               [
-        #                 acte3,
-        #                 orl_basspedal
-        #                 ]
-	# 	),
-	# 	Scene("Guitar ORL",
-        #               [
-        #                 acte3,
-        #                 orl_gtrpedal
-        #                 ]
-	# 	),
-	# 	Scene("Voix ORL",
-        #               [
-        #                 acte3,
-        #                 orl_vxpedal
-        #                 ]
-	#         ),
-	# 	Scene("Bass Dag",
-        #               [
-        #                 acte3,
-        #                 dag_basspedal
-        #                 ]
-	# 	),
-	# 	Scene("Guitar Dag",
-        #               [
-        #                 acte3,
-        #                 dag_gtrpedal
-        #                 ]
-	# 	),
-	# 	Scene("Voix Dag",
-        #               [
-        #                 acte3,
-        #                 dag_vxpedal
-        #                 ]
-	# 	),
-	# 	Scene("Boucles",
-        #               acte3
-        #               ),
-	# 	Scene("Bank Select",
-        #               acte3
-        #               ),
-	# 	Scene("Tune Select",
-        #               acte3
-	# 	)
-	#     ]
-        # ),
-        # 6: SceneGroup("Acte III Part II", [
-  	# 	Scene("Bass ORL",
-        #               [
-        #                 acte3partII,
-        #                 orl_basspedal
-        #                 ]
-	# 	),
-	# 	Scene("Guitar ORL",
-        #               [
-        #                 acte3partII,
-        #                 orl_gtrpedal
-        #                 ]
-	# 	),
-	# 	Scene("Voix ORL",
-        #               [
-        #                 acte3partII,
-        #                 orl_vxpedal
-        #                 ]
-	#         ),
-	# 	Scene("Bass Dag",
-        #               [
-        #                 acte3partII,
-        #                 dag_basspedal
-        #                 ]
-	# 	),
-	# 	Scene("Guitar Dag",
-        #               [
-        #                 acte3partII,
-        #                 dag_gtrpedal
-        #                 ]
-	# 	),
-	# 	Scene("Voix Dag",
-        #               [
-        #                 acte3partII,
-        #                 dag_vxpedal
-        #                 ]
-	# 	),
-	# 	Scene("Boucles",
-        #               acte3partII
-	# 	),
-	# 	Scene("Bank Select",
-        #               acte3partII
-	# 	),
-	# 	Scene("Tune Select",
-        #               acte3partII
-	# 	)
-	#     ]
-        # ),
-        # 7: SceneGroup("Acte III Part III", [
-  	# 	Scene("Bass ORL",
-        #               [
-        #                 acte3partIII,
-        #                 orl_basspedal
-        #                 ]
-	# 	),
-	# 	Scene("Guitar ORL",
-        #               [
-        #                 acte3partIII,
-        #                 orl_gtrpedal
-        #                 ]
-	# 	),
-	# 	Scene("Voix ORL",
-        #               [
-        #                 acte3partIII,
-        #                 orl_vxpedal
-        #                 ]
-	#         ),
-	# 	Scene("Bass Dag",
-        #               [
-        #                 acte3partIII,
-        #                 dag_basspedal
-        #                 ]
-	# 	),
-	# 	Scene("Guitar Dag",
-        #               [
-        #                 acte3partIII,
-        #                 dag_gtrpedal
-        #                 ]
-	# 	),
-	# 	Scene("Voix Dag",
-        #               [
-        #                 acte3partIII,
-        #                 dag_vxpedal
-        #                 ]
-	# 	),
-	# 	Scene("Boucles",
-        #               acte3partIII,
-	# 	),
-	# 	Scene("Bank Select",
-        #               acte3partIII
-	# 	),
-	# 	Scene("Tune Select",
-        #               acte3partIII
-	# 	)
-	#     ]
-        # ),
-        # 8: SceneGroup("Acte IV", [
-  	# 	Scene("Bass ORL",
-        #               [
-        #                 acte4,
-        #                 orl_basspedal
-        #                 ]
-	# 	),
-	# 	Scene("Guitar ORL",
-        #               [
-        #                 acte4,
-        #                 orl_gtrpedal
-        #                 ]
-	# 	),
-	# 	Scene("Voix ORL",
-        #               [
-        #                 acte4,
-        #                 orl_vxpedal
-        #                 ]
-	#         ),
-	# 	Scene("Bass Dag",
-        #               [
-        #                 acte4,
-        #                 dag_basspedal
-        #                 ]
-	# 	),
-	# 	Scene("Guitar Dag",
-        #               [
-        #                 acte4,
-        #                 dag_gtrpedal
-        #                 ]
-	# 	),
-	# 	Scene("Voix Dag",
-        #               [
-        #                 acte4,
-        #                 dag_vxpedal
-        #                 ]
-	# 	),
-	# 	Scene("Boucles",
-	# 	    acte4
-	# 	),
-	# 	Scene("Bank Select",
-	# 	    acte4
-	# 	),
-	# 	Scene("Tune Select",
-	# 	    acte4
-	# 	)
-	#     ]
-        # ),
+        9: SceneGroup("SlowMotium", [
+  		Scene("Bass ORL",
+                      [
+                        slowmotium,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        slowmotium,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        slowmotium,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        slowmotium,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        slowmotium,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        slowmotium,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        slowmotium,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        slowmotium,
+                        basspedal,
+                        ]
+		),
+		Scene("Tune Select",
+                      [
+                        slowmotium,
+                        basspedal,
+                        ]
+		),
+	    ]
+        ),
+        10: SceneGroup("Horrorcore", [
+  		Scene("Bass ORL",
+                      [
+                        horrorcore,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        horrorcore,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        horrorcore,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        horrorcore,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        horrorcore,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        horrorcore,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        horrorcore,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        horrorcore,
+                        basspedal,
+                        ]
+		),
+		Scene("Tune Select",
+                      [
+                        horrorcore,
+                        basspedal,
+                        ]
+		),
+	    ]
+        ),
+        11: SceneGroup("Trapone", [
+  		Scene("Bass ORL",
+                      [
+                        trapone,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        trapone,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        trapone,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        trapone,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        trapone,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        trapone,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        trapone,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        trapone,
+                        basspedal,
+                        ]
+		),
+		Scene("Tune Select",
+                      [
+                        trapone,
+                        basspedal,
+                        ]
+		),
+	    ]
+        ),
 
     },
 )
