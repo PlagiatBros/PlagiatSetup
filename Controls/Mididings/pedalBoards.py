@@ -2003,18 +2003,14 @@ slowmotium = PortFilter('PBCtrlIn') >> [
     ProgramFilter(2) >> [ # Couplet - Bouton 2
         Program(65) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
-            SendOSC(slport, '/set', 'tempo', 200),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 68),
+            SendOSC(slport, '/set', 'tempo', 75),
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
-            SendOSC(klickport, '/klick/simple/set_tempo', 200),
+            SendOSC(klickport, '/klick/simple/set_tempo', 75),
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
-            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'xxxx'),
             SendOSC(klickport, '/klick/metro/start'),            
-
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.522388),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.522388),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.6296),
 
 
             SendOscState([
