@@ -1550,11 +1550,11 @@ wholeworld = PortFilter('PBCtrlIn') >> [
             vxorlgars_on,
             vxorlmeuf_off,
             vxorldisint_off,
-            vxorldelay_off,
+            vxorldelay_on,
             vxorlvocode_off,
 
             vxjeannotdelay_off,
-            vxjeannotgars_off,
+            vxjeannotgars_on,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
             ] >> Discard()
@@ -2003,7 +2003,7 @@ slowmotium = PortFilter('PBCtrlIn') >> [
     ProgramFilter(2) >> [ # Couplet - Bouton 2
         Program(65) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eighth_per_cycle', 68),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 4),
             SendOSC(slport, '/set', 'tempo', 75),
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
@@ -2023,15 +2023,41 @@ slowmotium = PortFilter('PBCtrlIn') >> [
             vxorlgars_off,
             vxorlmeuf_off,
             vxorldisint_off,
-            vxorldelay_off,
+            vxorldelay_on,
             vxorlvocode_on,
 
-            vxjeannotdelay_off,
-            vxjeannotgars_off,
-            vxjeannotmeuf_on,
+            vxjeannotdelay_on,
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
             vxjeannotdisint_off,
             ] >> Discard()
         ],
+    ProgramFilter(3) >> [ # Couplet - Bouton 3
+            vxorlgars_off,
+            vxorlmeuf_off,
+            vxorldisint_off,
+            vxorldelay_off,
+            vxorlvocode_on,
+
+            vxjeannotdelay_on,
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
+            vxjeannotdisint_off,
+        ],
+
+    ProgramFilter(4) >> [ # Couplet - Bouton 4
+            vxorlgars_off,
+            vxorlmeuf_off,
+            vxorldisint_off,
+            vxorldelay_on,
+            vxorlvocode_on,
+
+            vxjeannotdelay_on,
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
+            vxjeannotdisint_off,
+        ],
+
 
     ]
 
@@ -2085,13 +2111,13 @@ trapone = PortFilter('PBCtrlIn') >> [
     ProgramFilter(2) >> [ # Couplet - Bouton 2
         Program(65) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
-            SendOSC(slport, '/set', 'tempo', 200),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 17),
+            SendOSC(slport, '/set', 'tempo', 120),
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
-            SendOSC(klickport, '/klick/simple/set_tempo', 200),
-            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
-            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/simple/set_tempo', 120),
+            SendOSC(klickport, '/klick/simple/set_meter', 17, 8),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'X-x-x-x-X-x-x-x-x'),
             SendOSC(klickport, '/klick/metro/start'),            
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.522388),
@@ -2102,6 +2128,8 @@ trapone = PortFilter('PBCtrlIn') >> [
             SendOscState([
 
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0],
 
             ]),
 

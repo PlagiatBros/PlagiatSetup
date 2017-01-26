@@ -2,7 +2,7 @@
 <!--
 ladish Studio configuration.
 -->
-<!-- Fri Mar 25 17:18:28 2016 -->
+<!-- Mon Nov 14 14:59:27 2016 -->
 <studio>
   <jack>
     <conf>
@@ -27,55 +27,55 @@ ladish Studio configuration.
           <port name="capture_1" uuid="ea3e523a-31e7-4cae-a880-06669e5e4573" />
           <port name="capture_2" uuid="3c925070-b798-403d-96df-76ac53944ff8" />
           <port name="capture_3" uuid="2800dd59-5250-41fd-b8c1-f69f8db81818" />
-          <port name="capture_4" uuid="3f19527c-2b6c-4928-a109-1dc4d5692789" />
-          <port name="capture_5" uuid="4c8f8b07-d125-4483-86df-a9f93549bfd5" />
-          <port name="capture_6" uuid="cd377bf9-f5b7-47da-bf79-7883d2ce2746" />
-          <port name="capture_7" uuid="da4e635a-cc0b-4b60-b213-dd23f680c124" />
-          <port name="capture_8" uuid="89f9b7c9-76e0-4480-aa7c-40cb4a2f3991" />
-          <port name="capture_9" uuid="32cfc11f-d27a-4f5a-8f2b-6a2da7921520" />
-          <port name="capture_10" uuid="d7c0af4c-ad1d-4a97-bed6-a2d59547621a" />
-          <port name="capture_11" uuid="5b407ff8-ac7f-488c-a3be-a78b780f2d32" />
-          <port name="capture_12" uuid="ea99b22d-25e7-4a15-8270-ad64adef6900" />
-          <port name="capture_13" uuid="79a61b88-6b5a-4c54-ae81-b599de1872c9" />
-          <port name="capture_14" uuid="be3d372f-50b0-421f-b018-a7648a33c209" />
-          <port name="capture_15" uuid="5e2c7e67-1531-45a5-a744-301a99453bd4" />
-          <port name="capture_16" uuid="6090f8e9-f415-4a97-842f-aee6e0d0793a" />
-          <port name="capture_17" uuid="63db3973-8994-4fc4-889e-60094189dd6b" />
-          <port name="capture_18" uuid="32ae8fc7-4232-46e0-af29-ab474ac32ad0" />
-          <port name="capture_19" uuid="8ebcd331-b0e1-432a-8b59-bfef5af576ae" />
-          <port name="capture_20" uuid="179653e1-5084-41a7-83ba-bde4d52ace18" />
-          <port name="capture_21" uuid="a6e06377-9338-40eb-9cfd-1c30e1721eca" />
-          <port name="capture_22" uuid="336ed7d5-645f-4deb-b9b5-dd6181aeb17e" />
-          <port name="capture_23" uuid="ab06bdfa-0283-45c2-8417-818960218a4c" />
-          <port name="capture_24" uuid="e0b02500-f9c3-415f-86d3-8457345b7353" />
-          <port name="capture_25" uuid="3564a718-c841-4ef0-927e-8887732f4e2a" />
-          <port name="capture_26" uuid="e13f331c-ed07-4efa-b040-e5272730185c" />
           <port name="playback_1" uuid="d99b3abd-5b07-48f7-ad7e-27c579b61e35" />
           <port name="playback_2" uuid="5260c58c-3e6b-4cb5-92c8-3ad9e1703320" />
           <port name="playback_3" uuid="2d259ab5-6670-4a84-aeab-c9908460b07d" />
-          <port name="playback_4" uuid="e75ed56c-7e21-436b-b00f-90df4adfd10d" />
-          <port name="playback_5" uuid="f5205678-15a2-49c4-a63f-edfd1856c352" />
-          <port name="playback_6" uuid="a1be2302-4ed2-43af-a34e-ccb5d445acd8" />
-          <port name="playback_7" uuid="03ff54f1-f024-4c87-83b9-25d7c2f924a2" />
-          <port name="playback_8" uuid="90e8ee9b-48a2-4f52-8849-da8633208d02" />
-          <port name="playback_9" uuid="8524534f-b1d8-45c0-ba2b-560ea79cd5ce" />
-          <port name="playback_10" uuid="acfa6416-6978-4550-a4d8-666f22e72e0b" />
-          <port name="playback_11" uuid="f20438f1-241c-45ff-8416-fcbc8f320f71" />
-          <port name="playback_12" uuid="bf88e8d2-338b-4610-a5e6-17645790fe76" />
-          <port name="playback_13" uuid="99cf8191-56a6-4bb3-bd2f-7d775cbf180e" />
-          <port name="playback_14" uuid="11c06c8c-9f28-47a3-93de-8c6a7e11f780" />
-          <port name="playback_15" uuid="ccebd0d7-32cf-48c5-9e1c-298ccf261c5d" />
-          <port name="playback_16" uuid="51e749d6-0ea3-49e4-99a7-bb1587640a5f" />
-          <port name="playback_17" uuid="a6375fba-5a9d-4d99-b497-ab01e6d9139a" />
-          <port name="playback_18" uuid="a9493499-c701-40f1-b953-2341c8ce2fe5" />
-          <port name="playback_19" uuid="ac0c5f50-940c-4bf7-bb7a-a70dae02be12" />
-          <port name="playback_20" uuid="fccc31b7-c18e-48df-8bc0-47c22a7ab892" />
-          <port name="playback_21" uuid="8ab2d5a9-b3c4-463d-9b11-eebb32533e7f" />
-          <port name="playback_22" uuid="36104805-ce53-46ae-b582-d95e1e28ab61" />
-          <port name="playback_23" uuid="c2fb1b3b-b6fe-4915-9482-e8c556b38e75" />
-          <port name="playback_24" uuid="ed2bf1a4-7b87-4d7b-824b-5e40197937b8" />
-          <port name="playback_25" uuid="a9453024-01a6-4f99-9386-0129c22f07f8" />
-          <port name="playback_26" uuid="56ecec66-6119-4a8f-b523-5cf0016b8079" />
+          <port name="capture_4" uuid="84195089-21f1-42ec-bce7-25708c6c9b62" />
+          <port name="capture_5" uuid="67ca54d8-27a3-4aa8-9e4f-cff1aa24c354" />
+          <port name="capture_6" uuid="754831ff-b11f-4ae7-a085-11d5d96a8b44" />
+          <port name="capture_7" uuid="25e02047-ddbe-4ddc-90b0-e741dfbcbcb4" />
+          <port name="capture_8" uuid="848cb591-01ad-4d9c-b400-c7c5c1876cbf" />
+          <port name="capture_9" uuid="5a5d81b9-78f0-4ebc-baea-064e80dce50f" />
+          <port name="capture_10" uuid="c46fb374-3e39-4f58-88ff-f273ed1139b6" />
+          <port name="capture_11" uuid="b6d986e9-e65b-45ac-a92e-db64533b61e3" />
+          <port name="capture_12" uuid="7244477b-0acf-4352-9315-14764745c23b" />
+          <port name="capture_13" uuid="46046985-47cd-4eeb-afce-f938d97a21c2" />
+          <port name="capture_14" uuid="08bc0edc-7e59-4b1e-827b-5b74f578f074" />
+          <port name="capture_15" uuid="6682c602-15cd-4ce5-a4b0-dc26e46bf2c4" />
+          <port name="capture_16" uuid="ca0486a0-e804-4fc4-9cd3-cb4b45371940" />
+          <port name="capture_17" uuid="5a128a8b-042e-4a0c-9bc2-098a88ab57de" />
+          <port name="capture_18" uuid="dabf6add-b30c-4741-8e58-d2ed38dc95e5" />
+          <port name="capture_19" uuid="f704c946-2920-457b-9450-2f948f8eae94" />
+          <port name="capture_20" uuid="7c4b46fd-b98c-435a-9330-b3630cb39928" />
+          <port name="capture_21" uuid="6e9e2205-248e-43a3-a213-fb4b91f6f3be" />
+          <port name="capture_22" uuid="87b61f75-6e78-4f90-9b77-81d15b4ff839" />
+          <port name="capture_23" uuid="5747fe73-d3f5-49b0-9e0f-1199d3085f1b" />
+          <port name="capture_24" uuid="5ae66d24-e97e-4095-a270-a0bbfd946c36" />
+          <port name="capture_25" uuid="bf004daf-4f13-4e7b-8dc4-b63e4711ee2e" />
+          <port name="capture_26" uuid="58d5d640-2cc5-400f-94b3-06fc7835573b" />
+          <port name="playback_4" uuid="7019da14-f1ca-4ece-8bf1-8dc92479eaa1" />
+          <port name="playback_5" uuid="f189ca68-3e8d-42fb-9360-c9c94cfe8e0e" />
+          <port name="playback_6" uuid="b0142eac-5953-4d16-b9e0-496a74551727" />
+          <port name="playback_7" uuid="a968f860-a2eb-4026-a823-705dba7a7ea9" />
+          <port name="playback_8" uuid="701f17f8-1b15-41e3-a03a-211161e94a04" />
+          <port name="playback_9" uuid="0e15bcbe-afac-48ca-9a1a-1dbdfea09e27" />
+          <port name="playback_10" uuid="4b26065a-ba54-43bc-8000-d6474e28d8d3" />
+          <port name="playback_11" uuid="f86d9a37-525f-4b28-a924-99bc73131bd3" />
+          <port name="playback_12" uuid="69cc787a-bd80-49c2-919b-51c96a33ba5a" />
+          <port name="playback_13" uuid="887bb461-c639-49f9-873f-ba3689c6d557" />
+          <port name="playback_14" uuid="732171cf-dea2-4064-b6b7-599763519794" />
+          <port name="playback_15" uuid="56bf5a12-038d-4ae2-99b0-776ba590d69f" />
+          <port name="playback_16" uuid="cc4c9336-fedf-4af2-99f4-be300ce5a2fc" />
+          <port name="playback_17" uuid="321751a7-b207-4a24-af04-9b5812261288" />
+          <port name="playback_18" uuid="dedc980a-fa69-4a22-a7c1-2a6a8060abb0" />
+          <port name="playback_19" uuid="0afdae1d-b7b3-4ced-8e0f-61de43d14e11" />
+          <port name="playback_20" uuid="03057478-7059-48da-96e0-9ef08f28bbbd" />
+          <port name="playback_21" uuid="4b48dafb-6379-4350-a85b-fe196bea37bd" />
+          <port name="playback_22" uuid="d74114ea-f79a-44d7-bd7c-c8fb559b6425" />
+          <port name="playback_23" uuid="c7066241-14cc-4bad-b619-105b36cf9f8b" />
+          <port name="playback_24" uuid="507a0c0f-45de-447e-a010-d29760cb8eca" />
+          <port name="playback_25" uuid="ad52f9de-e62d-4a58-aae2-70962b04db5f" />
+          <port name="playback_26" uuid="8631f462-062d-4fe4-93dd-f986ea41579f" />
         </ports>
       </client>
       <client name="a2j" uuid="be23a242-e2b2-11de-b795-002618af5e42">
@@ -110,6 +110,8 @@ ladish Studio configuration.
           <port name="seq24 (capture): [15] seq24 15" uuid="210e9960-e1b8-4804-9af4-a34f001fdccf" />
           <port name="seq24 (capture): [16] seq24 16" uuid="1cbcba0b-4f06-4495-a209-837b9c3453d9" />
           <port name="seq24 (playback): seq24 in" uuid="ea53353f-3418-47db-ba32-dcdcc5e09815" />
+          <port name="LPD8 (capture): LPD8 MIDI 1" uuid="8f01528b-6384-4ff0-9f0c-e2a7fb38be69" />
+          <port name="LPD8 (playback): LPD8 MIDI 1" uuid="37f79b59-e07e-4490-812c-74e8879c6dff" />
         </ports>
       </client>
       <client name="SLServer" uuid="75627883-d5f1-47fe-a2d9-daf52fcb8b8d">
@@ -140,16 +142,18 @@ ladish Studio configuration.
       </client>
       <client name="Tapeutape" uuid="5375f91d-ee4b-4328-9bc4-1d06e008f956">
         <ports>
-          <port name="Snares-L" uuid="eddb129d-8e75-46e9-ae30-e53bfc8214f4" />
-          <port name="Snares-R" uuid="10305d99-4b6a-452d-b8a9-71857dba236c" />
-          <port name="Cymbales-L" uuid="d8ca9524-b984-40db-a2ab-7efaded953a3" />
-          <port name="Cymbales-R" uuid="7d2e3790-db56-4560-ab8d-e7f0344bae7e" />
-          <port name="Continua-L" uuid="fae5065c-e6d1-4cbb-a0c4-3823a01436cc" />
-          <port name="Continua-R" uuid="0148851f-41c1-4103-a653-1fdb05b6bad1" />
-          <port name="Samples-L" uuid="5f69c5f6-d2f7-4bd6-b26c-9a8f71700840" />
-          <port name="Samples-R" uuid="0a47d136-971c-4cc3-9c76-a15051a578bc" />
-          <port name="Kicks-L" uuid="40afc566-2b33-417c-a1e7-5b670a37cece" />
-          <port name="Kicks-R" uuid="858f6e66-bf0d-4f1f-9632-8786373a5346" />
+          <port name="Samples1-L" uuid="7fc11d6f-3512-4427-9395-94613b9823c0" />
+          <port name="Samples1-R" uuid="1e63f6c1-8608-4964-9586-238ea23a32a3" />
+          <port name="Samples2-L" uuid="ad357231-2bed-4e03-8d6b-a9663646dcaf" />
+          <port name="Samples2-R" uuid="c53a7692-c19f-4635-b72b-a51db910cf2a" />
+          <port name="Samples3-L" uuid="f940d9e3-eac8-4cc6-bf70-52debd06b9ef" />
+          <port name="Samples3-R" uuid="fcd346d2-9623-4d25-9a18-0ce44392d393" />
+          <port name="Samples4-L" uuid="55e4c951-e640-4bec-b578-bf4b152863f7" />
+          <port name="Samples4-R" uuid="7d0c0bdd-abd8-4a05-8a98-4323a0ffff20" />
+          <port name="Samples5-L" uuid="3134f2e3-a0d0-4b58-ae5f-b2671f77c172" />
+          <port name="Samples5-R" uuid="480a1fa1-0735-407a-bdf8-c719a74fe3c7" />
+          <port name="DrumKlit-L" uuid="8382c397-9c29-4984-8896-a0bc108dde61" />
+          <port name="DrumKlit-R" uuid="a5873768-1431-449b-bcf5-f56eb1ec1d8f" />
         </ports>
       </client>
       <client name="seq24" uuid="b21aa504-043a-423e-87fd-e93c6c1f9ebf">
@@ -160,14 +164,8 @@ ladish Studio configuration.
         <ports>
           <port name="PBCtrlIn" uuid="b02a6476-6d5c-403c-ba89-ce4fe7886183" />
           <port name="PBseq24" uuid="c597d714-683f-41ba-a3fa-9307f81ccbcf" />
-          <port name="PBAMSBassSynth" uuid="76270647-f3aa-411a-ac42-9eb9de3f5fb6" />
-          <port name="PBAMSChordsSynth" uuid="879f156f-8440-4f45-a496-0ef4301aac35" />
-          <port name="PBAMSLeadSynth" uuid="39875483-c83b-4503-98e5-97f7b22896ca" />
-          <port name="PBAMSCtLeadSynth" uuid="5ab9cfb6-b3ba-45ea-bbb5-4bf4aad5cc7b" />
           <port name="PBAMSClassicalSynth" uuid="ffad4d6f-01ab-4ea3-8394-b31b16e4d4e4" />
           <port name="PBTapeutape" uuid="5c081b20-2ec1-449f-87ce-5aaaa468a1bb" />
-          <port name="PBGuitarDag" uuid="6e0a8cb5-5df8-4c6c-b04a-2a0ab6bc372e" />
-          <port name="PBGuitarORL" uuid="b26f03e8-97db-4c43-b9d6-eab2cd42bc8f" />
           <port name="PBCtrlOut" uuid="5f138bbb-dfaa-46d5-88c5-60983750f6e1" />
         </ports>
       </client>
@@ -190,6 +188,8 @@ ladish Studio configuration.
           <port name="VxORLGars/out-1" uuid="9ecccf03-730b-4e6d-98f9-03d976ef520b" />
           <port name="VxORLDisint/in-1" uuid="f4726b1c-dcf6-473e-baeb-55bf3c0e2a65" />
           <port name="VxORLDisint/out-1" uuid="86bf6c73-7e6f-4b86-8ccb-db1965085101" />
+          <port name="VxORLDelayPre/in-1" uuid="ea5ccd96-1216-43cd-9f0c-5d57135e3a7c" />
+          <port name="VxORLDelayPre/out-1" uuid="545bac62-0b08-415d-9de7-a6db07005db6" />
         </ports>
       </client>
       <client name="VxORLMeuf (NM)" uuid="af915b7f-5b48-47df-bab1-f342d68f8897">
@@ -209,6 +209,8 @@ ladish Studio configuration.
           <port name="VxORLOverPitchPost/in-1" uuid="a0d2c3ac-53c6-458c-b30e-b815b9c870b4" />
           <port name="VxORLOverPitchPost/out-1" uuid="81da01da-2b8e-4d0c-8f18-25ed2a7029fc" />
           <port name="VxORLOverPitchPre/out-2" uuid="c270a2f9-3b33-4031-bd95-12972f3c77ea" />
+          <port name="VxORLVocod/in-1" uuid="8bab1173-af33-48e7-a126-fd05a87b7023" />
+          <port name="VxORLVocod/out-1" uuid="21e86a41-8705-497f-82c9-ad2b8f75ccb1" />
         </ports>
       </client>
       <client name="VxORLPost (NM)" uuid="09f13ae7-ea1b-491b-9acb-27501c5c539d">
@@ -223,6 +225,11 @@ ladish Studio configuration.
           <port name="VxORLDisintPost/out-1" uuid="bc965443-5d75-47b5-ab1d-16bfca683238" />
           <port name="VxORLGarsPost/in-2" uuid="abf3eb6f-6682-4309-9079-3bd9ba171936" />
           <port name="VxORLGarsPost/out-2" uuid="eb9ecc14-0364-4408-8909-aff0751c6e43" />
+          <port name="VxORLDelayPost/in-1" uuid="3276f9b6-7674-4970-9d9b-20403bf1029e" />
+          <port name="VxORLDelayPost/out-1" uuid="e1e1b541-173a-4aeb-b8c9-71a35965d14f" />
+          <port name="VxORLDelayPost/out-2" uuid="d26363c7-a877-460b-a6db-ba50ea618843" />
+          <port name="VxORLVocodePost/in-1" uuid="d8f2619d-6daf-449b-8d42-c934a22300ba" />
+          <port name="VxORLVocodePost/out-1" uuid="572efdcb-6a2d-4645-b183-30f523c5f156" />
         </ports>
       </client>
       <client name="VxMain (NM)" uuid="758755c6-37b7-4b76-ad9d-f7a3ff703614">
@@ -264,6 +271,8 @@ ladish Studio configuration.
           <port name="VxJeannotGars/out-1" uuid="ffcd0076-8067-4236-b045-7eddb6e45a6b" />
           <port name="VxJeannotDisint/in-1" uuid="74388d68-fd7f-4f88-a11d-002d49b51f32" />
           <port name="VxJeannotDisint/out-1" uuid="3534fbde-6d1c-4603-a72e-4e48c14f4937" />
+          <port name="VxJeannotDelayPre/in-1" uuid="c79381cf-5291-4a25-bd42-6626e7c553f5" />
+          <port name="VxJeannotDelayPre/out-1" uuid="62d5c028-cd1f-4b86-8ea3-dda7e65de0ed" />
         </ports>
       </client>
       <client name="VxJeannotMeuf (NM)" uuid="c213131f-bca0-4136-9a75-8e61478fbd7b">
@@ -316,6 +325,452 @@ ladish Studio configuration.
           <port name="VxJeannotGarsPost/out-2" uuid="7f3a676b-7b87-4158-bd40-cf28e93a55fb" />
           <port name="VxJeannotDisintPost/in-1" uuid="7c6c3a36-a70e-436a-a48d-ba377636f2f4" />
           <port name="VxJeannotDisintPost/out-1" uuid="d3304e42-0584-4072-beaa-d22a1849da36" />
+          <port name="VxJeannotDelayPost/in-1" uuid="f57d5c37-0046-4c2a-b137-54d4895a98e9" />
+          <port name="VxJeannotDelayPost/out-1" uuid="1bdd8974-aec3-49fb-b418-b8f281b303d2" />
+          <port name="VxJeannotDelayPost/out-2" uuid="3bccbd6b-9310-45e1-9f63-0fb0f9ffc23a" />
+        </ports>
+      </client>
+      <client name="SamplesProcessing (NM)" uuid="82f4ee25-29dc-4fab-b725-34ae8376d14d">
+        <ports>
+          <port name="Samples1/in-1" uuid="9adecef5-eae0-405d-a448-a1a9b9be52dc" />
+          <port name="Samples1/in-2" uuid="ce6382fe-ecac-4161-9031-b9e38c65c5f6" />
+          <port name="Samples1/out-1" uuid="4f8cec11-bb88-48d9-88da-99b1668794e3" />
+          <port name="Samples1/out-2" uuid="d46d039e-33de-4487-a912-12a615ef9d41" />
+          <port name="Samples2/in-1" uuid="c3bfd3b1-d1b0-411b-a4aa-fcb6d33bb365" />
+          <port name="Samples2/in-2" uuid="dda3a3b3-54ed-41c8-96d5-c6bc667bea67" />
+          <port name="Samples2/out-1" uuid="f89978d9-dfaf-423c-97c3-e25804a6c31d" />
+          <port name="Samples2/out-2" uuid="030cf5a6-863f-46f9-af0a-c6f9600c90b5" />
+          <port name="Samples3/in-1" uuid="6d98c1c7-fcf1-4193-ad2b-c8b94d31432c" />
+          <port name="Samples3/in-2" uuid="2b2196a4-2c6d-4eb2-a555-43b876a26555" />
+          <port name="Samples3/out-1" uuid="916800a5-85e5-414e-9256-aea4ccf3495b" />
+          <port name="Samples3/out-2" uuid="8e425891-3e0b-4c10-bad7-3d1dd66679b2" />
+          <port name="Samples4/in-1" uuid="20bf27bf-f068-4c39-92cc-84c327d8494d" />
+          <port name="Samples4/in-2" uuid="cb98bb30-3e5d-489e-8ac0-db606c843ddf" />
+          <port name="Samples4/out-1" uuid="95091d00-1d17-458e-9a03-8bf6b120c093" />
+          <port name="Samples4/out-2" uuid="38976f67-e069-4bba-a8c6-5b4196aeabb2" />
+          <port name="Samples5/in-1" uuid="1708963e-bba6-4570-afcf-17e3dd89a845" />
+          <port name="Samples5/in-2" uuid="d0d1636c-373a-4a9c-9af7-3b623c8fd540" />
+          <port name="Samples5/out-1" uuid="63964bb0-74d8-4d66-ac05-244796967d9b" />
+          <port name="Samples5/out-2" uuid="6424d575-c5d3-4f50-9263-04a9eaa31129" />
+        </ports>
+      </client>
+      <client name="SamplesDelayMunge (NM)" uuid="ec986b74-f54b-483c-8ea2-2925ceee867f">
+        <ports>
+          <port name="Samples1/in-1" uuid="ff2e3fbb-92ec-4cd5-b79b-69aa4543395a" />
+          <port name="Samples1/out-1" uuid="5f5f2546-e54c-441f-a843-c873e63e10a0" />
+          <port name="Samples2/in-1" uuid="66e52982-914d-49fc-accd-6fbb7877793e" />
+          <port name="Samples2/out-1" uuid="19ecc82d-86de-42bb-9407-a2bec5269085" />
+          <port name="Samples3/in-1" uuid="828df122-3119-4e7f-b3ef-df13ffc7be2a" />
+          <port name="Samples3/out-1" uuid="13b94e5d-7b9b-49ce-8b5f-1775ad30abae" />
+          <port name="Samples4/in-1" uuid="872bd17f-5749-4d72-989f-0149e20b768f" />
+          <port name="Samples4/out-1" uuid="bbb36725-1b1a-4fe7-8a0b-430307782ef3" />
+          <port name="Samples5/in-1" uuid="0d134c18-ae32-49fa-a439-f9e76e121a66" />
+          <port name="Samples5/out-1" uuid="dd5b6fc9-2d34-4a4e-af0d-138c27b421a6" />
+          <port name="SamplesDelayMunge/in-1" uuid="749cc066-eeaa-4d6d-b2fb-c0a9d2c6edc9" />
+          <port name="SamplesDelayMunge/out-1" uuid="89ccb38a-fc51-44d7-9b4f-0ea7de047b92" />
+          <port name="Samples1/in-2" uuid="6919f3a3-4a72-4ef3-9ae7-ac5c36aa02a8" />
+          <port name="Samples1/out-2" uuid="72b612c4-1146-4128-8eb6-fa32bd654225" />
+          <port name="Samples2/in-2" uuid="44d7795d-bb4f-4324-8a0f-48e251cc2ba4" />
+          <port name="Samples2/out-2" uuid="1933aa29-c901-4d0f-861d-9b94435df1f8" />
+          <port name="Samples3/in-2" uuid="d9b1c7e9-d786-4d8c-b591-54200cfeeab3" />
+          <port name="Samples3/out-2" uuid="28e55857-87fd-467a-ac07-7061722a8ca9" />
+          <port name="Samples4/in-2" uuid="82ab8aba-6f0d-4bc6-82d0-24b75369b0f9" />
+          <port name="Samples4/out-2" uuid="0c7eb2c9-395e-48ee-943d-47742c54c360" />
+          <port name="Samples5/in-2" uuid="718d5308-457b-4547-9683-8cd81bd28935" />
+          <port name="Samples5/out-2" uuid="74b43ddd-10c2-4ccb-8656-0bdb5e34f9e9" />
+          <port name="SamplesDelayMunge/in-2" uuid="6ce05da0-587c-42af-a92f-0eabd3243cd7" />
+          <port name="SamplesDelayMunge/out-2" uuid="20bb42ad-d119-4b80-b517-256b78dda48a" />
+        </ports>
+      </client>
+      <client name="SamplesReverseDelay (NM)" uuid="5a55aca2-5445-43e6-881d-cc83293751bf">
+        <ports>
+          <port name="Samples1/in-1" uuid="dd6ff77d-987e-4885-8ef2-65760bbfa33b" />
+          <port name="Samples1/in-2" uuid="2d6fbcea-ee58-484f-b49c-1ba5d8c2c086" />
+          <port name="Samples1/out-1" uuid="752251f4-ee3e-4b2e-918a-43d81d559a62" />
+          <port name="Samples1/out-2" uuid="15484d4b-654f-4b72-beaf-8ee2bd433d37" />
+          <port name="Samples2/in-1" uuid="e40825bb-0617-462c-84d9-62762ea398a1" />
+          <port name="Samples2/in-2" uuid="38c8da19-1fc0-4b75-9d3e-eefe3e4bccdd" />
+          <port name="Samples2/out-1" uuid="888be444-0f80-4950-8835-e4c2daab076a" />
+          <port name="Samples2/out-2" uuid="5ae0d6ba-da27-4974-9ece-f8c5d53d757f" />
+          <port name="Samples3/in-1" uuid="3a272d63-894e-4bf4-bdee-f9890163b7d6" />
+          <port name="Samples3/in-2" uuid="435a32c0-f246-47ab-b414-a0aabfe51131" />
+          <port name="Samples3/out-1" uuid="044988df-4c96-47e5-9357-98afc5acf984" />
+          <port name="Samples3/out-2" uuid="7c515dbe-61fb-4c2c-8871-fc24298515ec" />
+          <port name="Samples4/in-1" uuid="a48d1e8a-414e-4075-b363-98f37a9334f0" />
+          <port name="Samples4/in-2" uuid="a26d0528-7a95-4d5a-a4b1-8f446d310036" />
+          <port name="Samples4/out-1" uuid="1a051316-013a-42ca-a4dc-b6bf8421b836" />
+          <port name="Samples4/out-2" uuid="6d7310a8-3de3-4215-9d8a-8c3c4eb8cd5e" />
+          <port name="Samples5/in-1" uuid="28a4a61f-bfad-4aae-9221-e465f8eb826b" />
+          <port name="Samples5/in-2" uuid="a2f75801-9137-4f18-a427-091c5c40459e" />
+          <port name="Samples5/out-1" uuid="2b7b562d-6910-48cb-b9e4-57d34f099776" />
+          <port name="Samples5/out-2" uuid="ee9e3e9d-39d4-4249-a4ee-5eb0ee50cdd2" />
+          <port name="SamplesReverseDelay/in-1" uuid="c6452bdb-fe61-412b-ad85-14cfc62457af" />
+          <port name="SamplesReverseDelay/in-2" uuid="8c5d9299-6f2e-4734-8782-e3dcccef9449" />
+          <port name="SamplesReverseDelay/out-1" uuid="ad9be332-0757-49ee-8fa3-3566db065834" />
+          <port name="SamplesReverseDelay/out-2" uuid="4ec0f741-e1c1-4481-a338-ef34b52339c4" />
+        </ports>
+      </client>
+      <client name="SamplesRingMod (NM)" uuid="04e62c0c-b5b8-4b22-8d79-794fe091da30">
+        <ports>
+          <port name="Samples1/in-1" uuid="a758eca5-0cbb-46d8-bba5-269dcf1d0a7f" />
+          <port name="Samples1/in-2" uuid="1fde02c5-e94f-471b-8c68-2161124ddecd" />
+          <port name="Samples1/out-1" uuid="ac949b8c-b930-4ea9-a978-b2b70baeb8b2" />
+          <port name="Samples1/out-2" uuid="7cbf9a6a-3f11-4440-8d7e-c5771b827103" />
+          <port name="Samples2/in-1" uuid="d1315839-b161-4109-bef7-56f8c8186b1c" />
+          <port name="Samples2/in-2" uuid="897d56f7-9d9f-40af-9fa0-329d7b5c045d" />
+          <port name="Samples2/out-1" uuid="49e68607-7e20-42be-8fc0-0506ae649479" />
+          <port name="Samples2/out-2" uuid="20746843-bedf-4348-850f-00b5d5ab0738" />
+          <port name="Samples3/in-1" uuid="35fe84c9-0225-4138-9180-6fe1882c4fb5" />
+          <port name="Samples3/in-2" uuid="d93f79b8-bb76-45b5-80e9-631442872f34" />
+          <port name="Samples3/out-1" uuid="a4cf55e1-561a-4b67-89e8-1adf63092e90" />
+          <port name="Samples3/out-2" uuid="866a6efa-5b1f-422b-be07-5d4d1537767c" />
+          <port name="Samples4/in-1" uuid="21fb456e-9c70-407c-84d1-3068d3d69163" />
+          <port name="Samples4/in-2" uuid="0872504a-5c7f-4e98-aeeb-c16012c24ed6" />
+          <port name="Samples4/out-1" uuid="3821c874-2e2d-41cc-8ba8-bae991822b43" />
+          <port name="Samples4/out-2" uuid="cccafa46-87ac-4f00-bdee-b6d2245c9bc1" />
+          <port name="Samples5/in-1" uuid="f89fc725-90cb-4407-be7a-9fdee1652bd4" />
+          <port name="Samples5/in-2" uuid="d074d83a-4e52-4d8f-be27-5cb0308d7cd0" />
+          <port name="Samples5/out-1" uuid="f63c244f-797d-43ac-abe2-2d60ae2874a7" />
+          <port name="Samples5/out-2" uuid="6ee1c511-7d46-4742-b465-dd1fd529eceb" />
+          <port name="SamplesRingMod/in-1" uuid="52ebc77e-e764-4bbd-861a-c6c773537571" />
+          <port name="SamplesRingMod/in-2" uuid="9b0816fb-cfc9-483f-a472-35065b2b8472" />
+          <port name="SamplesRingMod/out-1" uuid="992e548f-9c6e-476c-84f4-9ab4c2277c93" />
+          <port name="SamplesRingMod/out-2" uuid="c923acb5-b3bb-4301-be40-4acf15f4d634" />
+        </ports>
+      </client>
+      <client name="SamplesTremolo (NM)" uuid="8af2293d-fadc-40fe-89e1-d776eeca261e">
+        <ports>
+          <port name="Samples1/in-1" uuid="af632443-f779-4a1a-b36f-32452a1823b1" />
+          <port name="Samples1/out-1" uuid="73798d6f-49b3-4fd6-8b95-c8c7301923eb" />
+          <port name="Samples2/in-1" uuid="4589064e-7693-44b4-8439-e664f2326580" />
+          <port name="Samples2/out-1" uuid="a99a83b3-0a70-495c-8e0b-13c0d27cebb5" />
+          <port name="Samples3/in-1" uuid="1e3da821-9f7f-45d9-a122-8266f79f6c7b" />
+          <port name="Samples3/out-1" uuid="6e26ef2e-02e2-4cee-a477-16bea21123ea" />
+          <port name="Samples4/in-1" uuid="ff05b99b-6662-4d95-a91b-de6438d6e0e8" />
+          <port name="Samples4/out-1" uuid="a93d8a6a-fc0d-4edd-8928-f778747fc272" />
+          <port name="Samples5/in-1" uuid="11b333d6-45e8-47d0-bc5d-0ce04d538ccc" />
+          <port name="Samples5/out-1" uuid="ef3bd3ab-28e9-4d33-b8b0-035eac68c8c9" />
+          <port name="SamplesTremolo/in-1" uuid="ee273266-aacf-4d99-ad6f-35f6c79d035e" />
+          <port name="SamplesTremolo/out-1" uuid="0d29cf0d-3da4-4472-b762-2e9a7a96c998" />
+          <port name="Samples1/in-2" uuid="8fec9379-7074-47c2-a30d-fc227cf99c8c" />
+          <port name="Samples1/out-2" uuid="62069280-8e07-4f37-ad45-e301ef417845" />
+          <port name="Samples2/in-2" uuid="13568ede-88db-4cac-8d92-2e1becb0c9d2" />
+          <port name="Samples2/out-2" uuid="5066cba9-2275-47d7-bfec-aa2e699319e2" />
+          <port name="Samples3/in-2" uuid="57d80662-ba1f-411a-95b2-60cc5a3d1472" />
+          <port name="Samples3/out-2" uuid="4364a27b-812e-4d0f-b6d3-bc0e11161d2f" />
+          <port name="Samples4/in-2" uuid="c5700635-fd7a-4ffd-8a85-e4cf23a0af55" />
+          <port name="Samples4/out-2" uuid="dbdbd70e-add0-43ef-bf4c-3c5bf25c0d6c" />
+          <port name="Samples5/in-2" uuid="fdf61da3-2c06-4516-a763-3319bc739d62" />
+          <port name="Samples5/out-2" uuid="06ced2b2-54d8-40b3-875b-3bac98ae043f" />
+          <port name="SamplesTremolo/in-2" uuid="76eaa622-c780-4c49-9375-ce9eb64c9f24" />
+          <port name="SamplesTremolo/out-2" uuid="946afb59-72d0-4805-b7ba-e5a58ee42244" />
+          <port name="SamplesPitch/in-1" uuid="e8a5d5d8-eb22-4325-8275-3aa9a3dcc832" />
+          <port name="SamplesPitch/out-1" uuid="dd15fa82-216b-4b8b-ae2e-718e5a69c80c" />
+          <port name="SamplesPitch/in-2" uuid="2c33b7b0-4ec5-4f65-a932-3f4fdd510219" />
+          <port name="SamplesPitch/out-2" uuid="39a0c6ac-649b-46aa-82b7-97a9c012adbf" />
+        </ports>
+      </client>
+      <client name="SamplesScape (NM)" uuid="759708bd-5b53-4f71-a15a-76ac90773cc0">
+        <ports>
+          <port name="Samples1/in-1" uuid="5e6d854e-9dc2-4738-81e1-619c10be646b" />
+          <port name="Samples1/out-1" uuid="4f47c8e9-9cf2-4e18-bded-d6b9d02bec07" />
+          <port name="Samples2/in-1" uuid="d92175b8-f21d-49b5-a1ed-41ad9b25f5b2" />
+          <port name="Samples2/out-1" uuid="853dc68e-e75c-424a-80bb-de34fd0c6fea" />
+          <port name="Samples3/in-1" uuid="96ff85d6-5756-46d6-9d77-2b5464cc7a5d" />
+          <port name="Samples3/out-1" uuid="3c276368-e653-4de6-acb3-de404393a494" />
+          <port name="Samples4/in-1" uuid="c9fcc781-ba83-4509-9951-33a1db9607fd" />
+          <port name="Samples4/out-1" uuid="eed6f44a-8efa-4ff7-ac6e-1ecc4f3d5cfa" />
+          <port name="Samples5/in-1" uuid="8c91152b-7ee0-459b-927e-a5eec67c5f10" />
+          <port name="Samples5/out-1" uuid="70c77348-d91c-4883-acb5-30303cc8c04e" />
+          <port name="SamplesTremolo/in-1" uuid="a084e4b6-f102-4f21-8286-12cd8071f399" />
+          <port name="SamplesTremolo/out-1" uuid="0261618d-8e0a-4da2-8d2a-c54a098c4c05" />
+          <port name="SamplesScape/in-1" uuid="d7344338-c779-4493-a16d-81eedce0ac5d" />
+          <port name="SamplesScape/out-1" uuid="fb95eacf-ce6b-41e9-be9d-07f37ad878b6" />
+          <port name="SamplesScape/out-2" uuid="20261012-7a36-439a-a959-6101e4dff726" />
+          <port name="SamplesDegrade/in-1" uuid="7443c47e-c4f7-41a9-a8c9-36a664ca5c9f" />
+          <port name="SamplesDegrade/out-1" uuid="6e32c41b-1730-4f7b-af73-601c3bb8ca0e" />
+          <port name="SamplesPitch/in-1" uuid="d19c132e-2847-4ef1-aa0e-2bf373ed3bd9" />
+          <port name="SamplesPitch/out-1" uuid="fc443232-a766-4645-ae18-21afe1112192" />
+        </ports>
+      </client>
+      <client name="SamplesDegrade (NM)" uuid="85f5af99-a5ef-4149-a4a0-f475f0f49790">
+        <ports>
+          <port name="Samples1/in-1" uuid="1472b8bb-6dd8-415e-a19f-6ddaf51746ba" />
+          <port name="Samples1/out-1" uuid="8742e48b-f7ed-4a6e-a960-424b0c4a0564" />
+          <port name="Samples2/in-1" uuid="3fee34a0-365e-45c5-bc7b-feb8ccae85ff" />
+          <port name="Samples2/out-1" uuid="2baf07ca-69ac-49d7-9ba2-c750719023c1" />
+          <port name="Samples3/in-1" uuid="49f3ed17-d8d2-419c-ae80-96448dff4839" />
+          <port name="Samples3/out-1" uuid="5660efcd-d429-46ff-aaa6-d2ebb27a3681" />
+          <port name="Samples4/in-1" uuid="608e4a59-c40f-4ad5-a80e-1f4c0906e868" />
+          <port name="Samples4/out-1" uuid="83458054-7644-430c-b342-5add1caec364" />
+          <port name="Samples5/in-1" uuid="3fbf546e-e5ed-4985-ba7a-d9e8ebe6822d" />
+          <port name="Samples5/out-1" uuid="b164cad5-1363-4f4f-9b39-60809b32af38" />
+          <port name="SamplesScape/in-1" uuid="692d9e8d-5b26-444e-b33d-9a8cafe9e0a9" />
+          <port name="SamplesScape/out-1" uuid="1f86b66c-d4ad-422e-8515-b8d54965a800" />
+          <port name="SamplesDegrade/in-1" uuid="f381d1cb-374c-487a-b600-297d9c364d6f" />
+          <port name="SamplesDegrade/out-1" uuid="8c8fb672-b687-49ef-b16d-70ab6e3069b8" />
+          <port name="Samples1/in-2" uuid="7445fa7e-040c-4977-94c1-c71cd662ccf9" />
+          <port name="Samples1/out-2" uuid="61d732e5-094e-46d3-b978-a1d8d1a61a49" />
+          <port name="Samples2/in-2" uuid="1160306a-7a3f-40b9-a3dd-f844e7880d1e" />
+          <port name="Samples2/out-2" uuid="ce9bb94a-9bad-4050-a99c-a1ad69b2b2a5" />
+          <port name="Samples3/in-2" uuid="92a1a665-f1b2-4ec9-9d9c-9e6496ca740d" />
+          <port name="Samples3/out-2" uuid="1842af96-4f46-477e-97fc-64c9492ce1ed" />
+          <port name="Samples4/in-2" uuid="2b46e286-3881-41e5-8182-3394ba2bb359" />
+          <port name="Samples4/out-2" uuid="d68b3540-7ae3-4dba-a69a-aef561140a91" />
+          <port name="Samples5/in-2" uuid="b92dc153-78b3-440c-90a5-169d5eebc3b9" />
+          <port name="Samples5/out-2" uuid="325cf4e5-65aa-4cf8-8a3a-48f71c2da637" />
+          <port name="SamplesScape/in-2" uuid="3400ae95-1cdf-450c-980b-1ebc42500eb1" />
+          <port name="SamplesScape/out-2" uuid="2e0db207-2df4-4ace-bb27-5eea5b7e873d" />
+          <port name="SamplesDegrade/in-2" uuid="7248ff00-1d3d-4734-8882-a604eb20c168" />
+          <port name="SamplesDegrade/out-2" uuid="9f529ea6-3723-4c7b-bb2f-6037c78f174b" />
+        </ports>
+      </client>
+      <client name="SamplesDisintegrator (NM)" uuid="b5df9a5f-cf2c-480a-8382-b16787b0903c">
+        <ports>
+          <port name="Samples1/in-1" uuid="7cfc95c6-d77e-4d69-be91-12aeb10234da" />
+          <port name="Samples1/out-1" uuid="9f96f048-a935-429b-8f4b-d11a0f6f7d4c" />
+          <port name="Samples2/in-1" uuid="f87e59b7-b4a1-406f-8c72-beaaa0a7caaf" />
+          <port name="Samples2/out-1" uuid="a34e9b27-06a3-42bb-8e58-8a2d869adb57" />
+          <port name="Samples3/in-1" uuid="beb4b08e-00f4-42fa-a7f7-26c0d413439d" />
+          <port name="Samples3/out-1" uuid="e86f603b-5250-4281-94d7-9054640534f1" />
+          <port name="Samples4/in-1" uuid="7b9d6588-737d-45b7-9670-e5847a54bb83" />
+          <port name="Samples4/out-1" uuid="cbc6d0b9-470f-4086-8d9d-b0b5be9baa79" />
+          <port name="Samples5/in-1" uuid="c37c41fc-33ef-4a3b-85ec-848ea7379705" />
+          <port name="Samples5/out-1" uuid="1761cc36-9313-4d55-a8dc-3994b2b63c17" />
+          <port name="SamplesDisintegrator/in-1" uuid="bc9282fd-ad06-47ea-bfe2-b1ee6eaec1d4" />
+          <port name="SamplesDisintegrator/out-1" uuid="4f97b368-68be-4893-b0e3-a1580bb14a33" />
+        </ports>
+      </client>
+      <client name="SamplesMain (NM)" uuid="8adcef08-4e15-4c0f-bdf1-90abfbaae729">
+        <ports>
+          <port name="Samples1Dry/in-1" uuid="24fb3197-ec57-4fc0-84ca-3148cb3d43f8" />
+          <port name="Samples1Dry/in-2" uuid="3204575f-d57a-479d-b4dc-f9a16fec5b7e" />
+          <port name="Samples1Dry/out-1" uuid="c3644b86-63de-47cc-9218-78544f985fb0" />
+          <port name="Samples1Dry/out-2" uuid="887e4c56-7a2f-4475-85a8-ed6c65f97ad9" />
+          <port name="Samples2Dry/in-1" uuid="b78224ec-14d2-4b30-954c-54059e36b908" />
+          <port name="Samples2Dry/in-2" uuid="811bc560-48b5-42cc-816b-d72a9663bc4d" />
+          <port name="Samples2Dry/out-1" uuid="cf0b8637-2c1c-4ff0-b7b1-759ba16cfbec" />
+          <port name="Samples2Dry/out-2" uuid="80ccd8d1-19fa-4793-ace1-9d96f91a1acb" />
+          <port name="Samples3Dry/in-1" uuid="65fbd534-9cee-4e65-949a-6d12ef1dc2b6" />
+          <port name="Samples3Dry/in-2" uuid="5ac4fd4e-d668-43e5-af21-d39429e25ce9" />
+          <port name="Samples3Dry/out-1" uuid="c4da9968-7de6-4b01-9b6a-ef8a53ef20ea" />
+          <port name="Samples3Dry/out-2" uuid="e949171f-f4fb-467d-a491-3df2a9a205de" />
+          <port name="Samples4Dry/in-1" uuid="0fda9330-c34b-43c6-8ccb-14f4a0eadcf3" />
+          <port name="Samples4Dry/in-2" uuid="d52c83cb-eda1-413f-b1b0-2ffc2c3c1fa3" />
+          <port name="Samples4Dry/out-1" uuid="9f54e20e-3890-462f-8c79-f8bd5a7189cd" />
+          <port name="Samples4Dry/out-2" uuid="c79de4c2-a1a7-4651-8c0e-7321a2d5e82e" />
+          <port name="Samples5Dry/in-1" uuid="7864ca88-5382-43c9-9c86-baa5e252949a" />
+          <port name="Samples5Dry/in-2" uuid="7d140398-82bd-42f3-9e94-055dad7bda3c" />
+          <port name="Samples5Dry/out-1" uuid="444aea51-49c6-45db-8abf-5ee55db1578a" />
+          <port name="Samples5Dry/out-2" uuid="78ba7a90-ec9c-4aa7-ac9d-9593cd655255" />
+          <port name="SamplesMunge/in-1" uuid="7b48bd57-dfb7-47a2-8f1f-446d122244a2" />
+          <port name="SamplesMunge/in-2" uuid="66edb7cb-63a6-4d91-a6ff-1f0cf69a88e3" />
+          <port name="SamplesMunge/out-1" uuid="e7b015e8-f3b0-44a0-bd68-1c6c76d52426" />
+          <port name="SamplesMunge/out-2" uuid="9bf7a84e-656a-45ff-b45e-18dd6534bda3" />
+          <port name="SamplesReverseDelay/in-1" uuid="0d142c29-92c4-498d-9cf7-53baaef57ef3" />
+          <port name="SamplesReverseDelay/in-2" uuid="a9aca069-fd24-4b65-ae3e-86a8be85de57" />
+          <port name="SamplesReverseDelay/out-1" uuid="28d57852-6c5d-42cd-9bdb-fb9142816725" />
+          <port name="SamplesReverseDelay/out-2" uuid="23f08f6c-a854-4b45-80c2-5f0f52f4589a" />
+          <port name="SamplesTremolo/in-1" uuid="49b6f400-a84b-4df5-98c1-44d6ea9c5cfb" />
+          <port name="SamplesTremolo/in-2" uuid="c35a59ab-f1a9-488e-9ad3-df9f82fb2dca" />
+          <port name="SamplesTremolo/out-1" uuid="c74eec52-0add-49b6-a382-f5992208816e" />
+          <port name="SamplesTremolo/out-2" uuid="033433ee-76cc-4da7-b0aa-3f1a615971bc" />
+          <port name="SamplesScape/in-1" uuid="7f75966a-92bf-4ec1-9e8e-d17d83e314ff" />
+          <port name="SamplesScape/in-2" uuid="a8f09650-8f28-4646-bbdf-49c6c8be7bdf" />
+          <port name="SamplesScape/out-1" uuid="ac92362e-914d-48da-812f-7041e7206d19" />
+          <port name="SamplesScape/out-2" uuid="3d5dcc02-33ef-468e-a60a-aeb1fc83b66f" />
+          <port name="SamplesDegrade/in-1" uuid="9bb7b187-83c9-4cff-b76e-82bdcd2f394a" />
+          <port name="SamplesDegrade/in-2" uuid="6e9b66fa-daf1-4297-9863-fbbff5b3e444" />
+          <port name="SamplesDegrade/out-1" uuid="0c2bcb73-a5b3-4071-a83e-4c86cbd5234c" />
+          <port name="SamplesDegrade/out-2" uuid="3a3d19e9-f37a-484e-b37a-977fb199b453" />
+          <port name="SamplesDisintegrator/in-1" uuid="fbe44d6c-a043-47d4-8d0f-eb3d55385048" />
+          <port name="SamplesDisintegrator/out-1" uuid="794c14ce-9520-4956-9c52-a90b1290febf" />
+          <port name="SamplesRingMod/in-1" uuid="4e1222fd-5256-4897-8ed0-0ff555e90a80" />
+          <port name="SamplesRingMod/in-2" uuid="0b82c150-0ad6-4d9d-9038-2136a92b1e83" />
+          <port name="SamplesRingMod/out-1" uuid="45082675-4adf-4230-b65d-f54dc01134ea" />
+          <port name="SamplesRingMod/out-2" uuid="98983164-f187-41b2-9640-e40a64449d39" />
+          <port name="SamplesMain/in-1" uuid="c1169c81-df84-49e2-924d-3e7278251f5e" />
+          <port name="SamplesMain/in-2" uuid="4c586115-2628-4f58-8972-486f108ec213" />
+          <port name="SamplesMain/out-1" uuid="c3991a9b-a145-43d6-bf61-b5741607ccda" />
+          <port name="SamplesMain/out-2" uuid="a2e4fd7f-3e76-44a3-9ac3-67f81c772fd9" />
+          <port name="SamplesDrumKlit/in-1" uuid="7362510b-40d6-4228-bcf8-0fa37f6675e6" />
+          <port name="SamplesDrumKlit/out-1" uuid="06fb7c99-e975-45f7-bf25-6ef21c61f4ac" />
+          <port name="SamplesDrumKlit/in-2" uuid="7e74236c-c3b5-456a-beda-288fd15a14d8" />
+          <port name="SamplesDrumKlit/out-2" uuid="713dce35-eb79-4887-9630-dac86d7dc019" />
+          <port name="SamplesPitch/in-1" uuid="40ea3eee-c6a2-4bc0-84c6-ad851181949d" />
+          <port name="SamplesPitch/out-1" uuid="fdf4b209-2ef1-4aa0-a36f-6e926c154d46" />
+          <port name="SamplesPitch/in-2" uuid="dbf3ff12-2659-4914-87a6-360bad65a3e2" />
+          <port name="SamplesPitch/out-2" uuid="feb46521-f250-4274-b8f9-bbb0895e4791" />
+        </ports>
+      </client>
+      <client name="SamplesControl" uuid="75176a5e-1780-4e94-bfd7-0db3ba16c40a">
+        <ports>
+          <port name="SCCtrlIn" uuid="736664ed-bfbd-4904-9d0d-bc72bd9a0d36" />
+          <port name="SCTapeutape" uuid="8b90f8a4-1fd5-4f50-9a60-c6d8d62e1be8" />
+          <port name="SCCtrlOut" uuid="dceb6140-7d72-457d-bd93-337e95c6ea29" />
+        </ports>
+      </client>
+      <client name="BassMain (NM)" uuid="60386c23-774c-485d-a2ac-c7ff16ce50fc">
+        <ports>
+          <port name="BassDry/in-1" uuid="47bb49dc-4bec-4f05-b5b0-4d49f79509a4" />
+          <port name="BassDry/out-1" uuid="d7920f90-fcea-4161-baca-613f865651d0" />
+          <port name="BassOct/in-1" uuid="d67bbf18-3423-441a-a892-54d3e2364862" />
+          <port name="BassOct/out-1" uuid="8802f7f0-6129-4d8e-ac9f-ced692aa9c97" />
+          <port name="BassScapePre/in-1" uuid="905a1f92-01a1-4e99-a0d4-e774b8660604" />
+          <port name="BassScapePre/out-1" uuid="b2cca0aa-c81e-403e-84dc-84baf3682887" />
+          <port name="BassScapePost/in-1" uuid="d7d9c69a-2896-4109-905c-35a3a5c8d5b8" />
+          <port name="BassScapePost/out-1" uuid="7a176acf-38bf-46b7-8c7c-86dccf48a3d9" />
+          <port name="BassDegradePre/in-1" uuid="ad0f2c91-2c6a-4d48-96ca-dd283b0bba2a" />
+          <port name="BassDegradePre/out-1" uuid="d513c723-6ad9-40a1-bf00-553e2b380f4c" />
+          <port name="BassDegradePost/in-1" uuid="61389820-3a02-47e7-87c5-a43c5ad0e116" />
+          <port name="BassDegradePost/out-1" uuid="30b2dd0d-4428-4d68-b039-8f77a6e20bfb" />
+          <port name="BassMain/in-1" uuid="daaec82e-1603-4ee2-936e-573f397a55ac" />
+          <port name="BassMain/in-2" uuid="b1cfe7f9-3eac-4794-8e71-62cbfcef22ff" />
+          <port name="BassMain/out-1" uuid="0b386ab2-1fff-49fd-8ae0-1a5e105e03f5" />
+          <port name="BassMain/out-2" uuid="1dd89637-bf3f-4562-9cad-9e88c14744e2" />
+          <port name="BassScapePost/out-2" uuid="77379935-0983-47a0-b6a5-246d6e4317c0" />
+          <port name="BassDegradePost/out-2" uuid="9697bf1e-d590-4839-8093-5357ad9a32ce" />
+          <port name="BassSub/out-2" uuid="feee0e86-c3c1-44d4-9873-8589d1105635" />
+          <port name="BassSub/in-2" uuid="64654eb6-bfa1-4c0b-b659-aeb0178dcdfc" />
+          <port name="BassSub/in-1" uuid="ff1cdb98-bf39-4edc-8e26-c8bb5ab00603" />
+          <port name="BassSub/out-1" uuid="a058c7b5-14db-47ab-bf66-2bb0732ae440" />
+        </ports>
+      </client>
+      <client name="MonitorsORL (NM)" uuid="3ea515bd-6ceb-4511-93fb-6fb75262ae57">
+        <ports>
+          <port name="VxO/in-1" uuid="0a9ea060-eb54-426e-ac65-23336801f386" />
+          <port name="VxO/out-1" uuid="d29ddd88-8afd-4bb2-8a13-c2730d81ef59" />
+          <port name="VxJ/in-1" uuid="62f8ef80-799c-41f0-821f-075e64f5f8bf" />
+          <port name="VxJ/out-1" uuid="422f90b7-2686-4137-841c-005a75a385f2" />
+          <port name="BassDry/in-1" uuid="5647b24f-7666-4881-9597-377a5aba0fe6" />
+          <port name="BassDry/out-1" uuid="f5bdb83d-a866-48eb-b131-2deb176dbcce" />
+          <port name="BassFX/in-1" uuid="06bfe4be-f206-422c-b153-872d6b9faabd" />
+          <port name="BassFX/out-1" uuid="2520cecb-4824-4cfa-a37d-4f6034bf31cb" />
+          <port name="VxO/in-2" uuid="f4d5175e-ffde-4547-9780-d1f9abe17858" />
+          <port name="VxO/out-2" uuid="2b7ed3db-b7f1-43e0-b254-1e75e9a998a3" />
+          <port name="VxJ/in-2" uuid="bf533fe3-057d-438a-a19f-98a275d5b17d" />
+          <port name="VxJ/out-2" uuid="74b98469-d981-4f6a-829d-940f28b4a341" />
+          <port name="BassFX/in-2" uuid="e3dc6cca-85bb-477d-8f6e-c9b9efa38e91" />
+          <port name="BassFX/out-2" uuid="69349eb5-1f1c-486c-82f8-7b39481f2453" />
+          <port name="Samples/in-1" uuid="fc4d56bc-1770-48df-b078-89f4349beda7" />
+          <port name="Samples/in-2" uuid="b1cc8e72-ca89-44a3-af5f-9db214cef174" />
+          <port name="Samples/out-1" uuid="0e92a450-70d1-4a73-8aba-1f18ce0a9d48" />
+          <port name="Samples/out-2" uuid="fd705475-ce21-4b22-aeeb-e4d02d621a1f" />
+          <port name="Klick/in-1" uuid="9fb2e904-b835-4768-9f8e-7aeb86650898" />
+          <port name="Klick/out-1" uuid="7795b0f2-3dd1-48e6-a51f-40d1086c3e85" />
+          <port name="Drums/in-1" uuid="ddfab416-87ea-42d5-b750-5017ad275642" />
+          <port name="Drums/out-1" uuid="419ff412-4f27-4f01-a5db-beb71ce89adc" />
+          <port name="MonitorsORL/in-1" uuid="2c9b52ec-31fc-4b1f-be62-23b022ddd675" />
+          <port name="MonitorsORL/out-1" uuid="16a1ae57-b048-402c-8520-72e682910e39" />
+          <port name="MonitorsORL/in-2" uuid="d43244ed-1aec-45e7-99e8-5eb6235f6340" />
+          <port name="MonitorsORL/out-2" uuid="a6d065b9-cf29-47bf-a11d-8d0c802b0303" />
+        </ports>
+      </client>
+      <client name="MonitorsJeannot (NM)" uuid="6ffec436-c769-4da2-bcb1-6f341f65b9d8">
+        <ports>
+          <port name="VxO/in-1" uuid="e2f5e864-d2d2-441a-9186-0fc33e8a1456" />
+          <port name="VxO/in-2" uuid="8700d1f9-78be-4240-b124-e5160f6ed125" />
+          <port name="VxO/out-1" uuid="a221dab0-d738-47eb-b9f3-b26c38c8e5e7" />
+          <port name="VxO/out-2" uuid="8d61caae-d7ff-4bf5-a9da-782a7cacc3ac" />
+          <port name="VxJ/in-1" uuid="53afe948-f1b3-429d-ad44-ab06a9c07b3c" />
+          <port name="VxJ/in-2" uuid="07f2b22c-2bd1-4aa0-84e3-ef59adf86b4c" />
+          <port name="VxJ/out-1" uuid="9723f9cf-cf73-4799-b23b-91bae92362a2" />
+          <port name="VxJ/out-2" uuid="436f7155-5031-47bd-bce0-3929f688a706" />
+          <port name="BassDry/in-1" uuid="dea2da0b-45e1-4654-ac5d-31ae50d8cef7" />
+          <port name="BassDry/out-1" uuid="98900528-4fbc-4268-9b78-e21ea8ef7fef" />
+          <port name="BassFX/in-1" uuid="3427dd15-3c0c-413b-8ae3-7db173efaae8" />
+          <port name="BassFX/in-2" uuid="25b23d9b-74b3-4c75-b3de-f47d02386004" />
+          <port name="BassFX/out-1" uuid="75317b45-edf8-480c-a8f3-7eea3db9786d" />
+          <port name="BassFX/out-2" uuid="b480121a-163f-49f7-8575-b7ddcce46204" />
+          <port name="Samples/in-1" uuid="9e980527-fc04-4cfc-8b9d-48924d08d2ec" />
+          <port name="Samples/in-2" uuid="008c6e97-ec12-400e-8e7a-3b4ab7a772ee" />
+          <port name="Samples/out-1" uuid="77b5411c-5b14-4b8a-9a3b-989e2144310c" />
+          <port name="Samples/out-2" uuid="ccede540-7a86-403a-bdaa-c1ee119d0cdf" />
+          <port name="Klick/in-1" uuid="20088890-63c4-4e89-bea8-23c9ac5cac25" />
+          <port name="Klick/out-1" uuid="1b50e551-a3d2-444f-82f3-5ae5d18977ba" />
+          <port name="Drums/in-1" uuid="ae6f987f-9142-4361-b606-770e6ee245fe" />
+          <port name="Drums/out-1" uuid="8331b6d7-6e03-4e05-a2ed-c643510b213c" />
+          <port name="MonitorsJeannot/in-1" uuid="ac9d29b9-0c97-4708-99b4-10f840c9d930" />
+          <port name="MonitorsJeannot/in-2" uuid="93adb0f9-65dd-476f-8c39-2bb16f720995" />
+          <port name="MonitorsJeannot/out-1" uuid="579fe8c3-4bd2-4a29-8169-56ba15a5b840" />
+          <port name="MonitorsJeannot/out-2" uuid="ba3d0ed9-90eb-4da1-9196-93627a451997" />
+        </ports>
+      </client>
+      <client name="SamplesPitch (NM)" uuid="c8f52a38-6a42-423a-8861-6b16ec183742">
+        <ports>
+          <port name="Samples1/in-1" uuid="bc98859c-459e-4ab6-92ab-9d1fde3f926a" />
+          <port name="Samples1/in-2" uuid="cd73e137-ce8a-4223-9d36-ede1915f8dfa" />
+          <port name="Samples1/out-1" uuid="aa7daa79-264e-4981-9a9e-6f0aa874bb57" />
+          <port name="Samples1/out-2" uuid="54376dbe-6bce-4af4-8a72-f3ebcfcd4642" />
+          <port name="Samples2/in-1" uuid="297384f1-6bac-43ca-b274-bd8c5a8967b8" />
+          <port name="Samples2/in-2" uuid="a03df7d0-9657-426d-b21f-8c49b73f6fe3" />
+          <port name="Samples2/out-1" uuid="c02304c0-3657-427a-a352-81b25979093d" />
+          <port name="Samples2/out-2" uuid="22727f62-4bbd-46d2-a137-a284d7910bf4" />
+          <port name="Samples3/in-1" uuid="aefa1ca6-8239-413d-a5bc-90d43e41699a" />
+          <port name="Samples3/in-2" uuid="fa7f2982-5fe7-4898-9fd4-94c4002e34a9" />
+          <port name="Samples3/out-1" uuid="ee03e367-8ede-47a7-9460-18f357a915d9" />
+          <port name="Samples3/out-2" uuid="2e2360ca-d98c-4ae2-bf57-2640719e11d6" />
+          <port name="Samples4/in-1" uuid="63faf9e5-a57c-44fa-b90b-439f2c21e575" />
+          <port name="Samples4/in-2" uuid="de1f0f71-3519-46ce-ae08-48257698e1b3" />
+          <port name="Samples4/out-1" uuid="09d5d88a-f188-4f6e-8d4e-be996fe41b00" />
+          <port name="Samples4/out-2" uuid="02437437-c2e4-4eda-b423-9bd6c260d507" />
+          <port name="Samples5/in-1" uuid="9037ee0b-1ee3-4291-acaf-a58ab2c04e28" />
+          <port name="Samples5/in-2" uuid="c1084677-6832-4e00-b960-174ac47515e9" />
+          <port name="Samples5/out-1" uuid="7f9bd03c-a60f-4450-bc83-567ebdfe54f7" />
+          <port name="Samples5/out-2" uuid="9d3e78ab-7802-4a9a-a624-018c11ecce5e" />
+          <port name="SamplesPitch1/in-1" uuid="53bdbd37-b72b-48b5-bb16-35be8dd5b3a5" />
+          <port name="SamplesPitch1/in-2" uuid="a9ab57c6-eed4-4933-8500-f4610c7a86e0" />
+          <port name="SamplesPitch1/out-1" uuid="4acb0428-9dad-4c68-909a-3bd8a9653114" />
+          <port name="SamplesPitch1/out-2" uuid="fa3345db-7c60-4e02-92cb-d44afd86aca6" />
+          <port name="SamplesPitch2/in-1" uuid="00cbbfb3-ccf0-409e-aed6-d3c5af3da954" />
+          <port name="SamplesPitch2/in-2" uuid="6c104608-bfad-4863-9ced-b34c2d32b2e9" />
+          <port name="SamplesPitch2/out-1" uuid="8d7368b6-58a7-4623-a475-a44c6a46dd5e" />
+          <port name="SamplesPitch2/out-2" uuid="37f14442-7629-4520-bfef-fbd57317984a" />
+          <port name="SamplesPitch/in-1" uuid="9669ea2c-3c91-458d-876d-bc1e8ff1933a" />
+          <port name="SamplesPitch/in-2" uuid="119c629c-ac60-48f0-a106-51651d2c5359" />
+          <port name="SamplesPitch/out-1" uuid="8aeaf932-56d2-4df7-9f2e-322b2baadc1e" />
+          <port name="SamplesPitch/out-2" uuid="c679b376-c5f8-4a7e-a20a-383be8ce1ce1" />
+        </ports>
+      </client>
+      <client name="drumKlit (MIdidings)" uuid="e7225f71-4f9d-4008-ae92-89d31f351d15">
+        <ports>
+          <port name="DKJeannotIn" uuid="2445a71a-5d6c-4e8e-90de-7624ca7db870" />
+          <port name="DKTapeutape" uuid="4c6f5169-9d9f-488d-a5c5-aa15656a3f01" />
+        </ports>
+      </client>
+      <client name="BassSubCALF" uuid="53611810-654c-4b78-b957-3852ee160b32">
+        <ports>
+          <port name="Automation MIDI In" uuid="180d3302-17cb-4044-a13a-0d30391cddbd" />
+          <port name="mono In #1" uuid="7f47854d-877f-4c44-a4f7-da3982deb843" />
+          <port name="mono Out #1" uuid="9623d23d-bff7-4a26-b62a-bab2b1ca4bb8" />
+          <port name="mono Out #2" uuid="15d011b6-1f78-4ee2-a0ab-ca1fe0e89d1b" />
+          <port name="gate In #1" uuid="639f99fa-e82e-4842-b413-8c8ba567bc91" />
+          <port name="gate In #2" uuid="0fefaa97-db60-4a3c-a579-380490b44aa8" />
+          <port name="gate Out #1" uuid="d0103797-aec4-4294-9c15-832604342fca" />
+          <port name="gate Out #2" uuid="b14939fe-e7ce-4a3b-aedb-3c1b616d29d8" />
+          <port name="bassenhancer In #1" uuid="40752abe-792f-4a08-80fc-1a6a3b4dde53" />
+          <port name="bassenhancer In #2" uuid="bed137c6-878b-47ad-a17c-d926720eaef2" />
+          <port name="bassenhancer Out #1" uuid="37c70d42-4dd4-41b9-9b28-95fed989a3ff" />
+          <port name="bassenhancer Out #2" uuid="0cee0c30-441c-4341-b503-a7122ac85dc1" />
+          <port name="compressor In #1" uuid="ded0c505-ed6b-4086-a632-7f2fb59aff9a" />
+          <port name="compressor In #2" uuid="37453285-1ab7-421a-aa86-920fc0b9cb5c" />
+          <port name="compressor Out #1" uuid="9387b063-940d-4d56-baf5-4ad986c9abbc" />
+          <port name="compressor Out #2" uuid="0824ee07-0c17-479d-a038-c930a78f532d" />
+          <port name="filter In #1" uuid="c2a1a0d9-99ec-4fec-8f30-26f74e60ca51" />
+          <port name="filter In #2" uuid="93615ba8-107e-4fc3-8c3d-629a45f5abdf" />
+          <port name="filter Out #1" uuid="7ad70b39-b5bd-42ad-8a92-8c73e409e246" />
+          <port name="filter Out #2" uuid="7677e0e5-bd0b-4fce-a4b1-2dea41fe8626" />
+          <port name="stereo In #1" uuid="9e4c7f86-456a-4083-9e51-9524b3417b3d" />
+          <port name="stereo In #2" uuid="bcc66a84-e4d3-46e9-9a87-92a2a185b857" />
+          <port name="stereo Out #1" uuid="aeb32190-c635-4cac-93a0-2994e6cfb4b8" />
+          <port name="stereo Out #2" uuid="718f97ba-eec4-4cda-9ce8-a272488b2753" />
+        </ports>
+      </client>
+      <client name="ZitaORL" uuid="d6d213b9-63f8-469f-bb6a-27161211bb80">
+        <ports>
+          <port name="in" uuid="09c376fd-7883-441e-87c5-98a178a8adef" />
+          <port name="out" uuid="6813f71b-e1e7-47ac-b69a-37b714d9e669" />
+          <port name="pitch" uuid="e1e28cc7-af85-4f46-ab41-0f242946e7cb" />
         </ports>
       </client>
     </clients>
@@ -326,33 +781,33 @@ ladish Studio configuration.
         <port name="capture_1" uuid="ea3e523a-31e7-4cae-a880-06669e5e4573" type="audio" direction="output" />
         <port name="capture_2" uuid="3c925070-b798-403d-96df-76ac53944ff8" type="audio" direction="output" />
         <port name="capture_3" uuid="2800dd59-5250-41fd-b8c1-f69f8db81818" type="audio" direction="output" />
-        <port name="capture_4" uuid="3f19527c-2b6c-4928-a109-1dc4d5692789" type="audio" direction="output" />
-        <port name="capture_5" uuid="4c8f8b07-d125-4483-86df-a9f93549bfd5" type="audio" direction="output" />
-        <port name="capture_6" uuid="cd377bf9-f5b7-47da-bf79-7883d2ce2746" type="audio" direction="output" />
-        <port name="capture_7" uuid="da4e635a-cc0b-4b60-b213-dd23f680c124" type="audio" direction="output" />
-        <port name="capture_8" uuid="89f9b7c9-76e0-4480-aa7c-40cb4a2f3991" type="audio" direction="output" />
-        <port name="capture_9" uuid="32cfc11f-d27a-4f5a-8f2b-6a2da7921520" type="audio" direction="output" />
-        <port name="capture_10" uuid="d7c0af4c-ad1d-4a97-bed6-a2d59547621a" type="audio" direction="output" />
-        <port name="capture_11" uuid="5b407ff8-ac7f-488c-a3be-a78b780f2d32" type="audio" direction="output" />
-        <port name="capture_12" uuid="ea99b22d-25e7-4a15-8270-ad64adef6900" type="audio" direction="output" />
-        <port name="capture_13" uuid="79a61b88-6b5a-4c54-ae81-b599de1872c9" type="audio" direction="output" />
-        <port name="capture_14" uuid="be3d372f-50b0-421f-b018-a7648a33c209" type="audio" direction="output" />
-        <port name="capture_15" uuid="5e2c7e67-1531-45a5-a744-301a99453bd4" type="audio" direction="output" />
-        <port name="capture_16" uuid="6090f8e9-f415-4a97-842f-aee6e0d0793a" type="audio" direction="output" />
-        <port name="capture_17" uuid="63db3973-8994-4fc4-889e-60094189dd6b" type="audio" direction="output" />
-        <port name="capture_18" uuid="32ae8fc7-4232-46e0-af29-ab474ac32ad0" type="audio" direction="output" />
-        <port name="capture_19" uuid="8ebcd331-b0e1-432a-8b59-bfef5af576ae" type="audio" direction="output" />
-        <port name="capture_20" uuid="179653e1-5084-41a7-83ba-bde4d52ace18" type="audio" direction="output" />
-        <port name="capture_21" uuid="a6e06377-9338-40eb-9cfd-1c30e1721eca" type="audio" direction="output" />
-        <port name="capture_22" uuid="336ed7d5-645f-4deb-b9b5-dd6181aeb17e" type="audio" direction="output" />
-        <port name="capture_23" uuid="ab06bdfa-0283-45c2-8417-818960218a4c" type="audio" direction="output" />
-        <port name="capture_24" uuid="e0b02500-f9c3-415f-86d3-8457345b7353" type="audio" direction="output" />
-        <port name="capture_25" uuid="3564a718-c841-4ef0-927e-8887732f4e2a" type="audio" direction="output" />
-        <port name="capture_26" uuid="e13f331c-ed07-4efa-b040-e5272730185c" type="audio" direction="output" />
+        <port name="capture_4" uuid="84195089-21f1-42ec-bce7-25708c6c9b62" type="audio" direction="output" />
+        <port name="capture_5" uuid="67ca54d8-27a3-4aa8-9e4f-cff1aa24c354" type="audio" direction="output" />
+        <port name="capture_6" uuid="754831ff-b11f-4ae7-a085-11d5d96a8b44" type="audio" direction="output" />
+        <port name="capture_7" uuid="25e02047-ddbe-4ddc-90b0-e741dfbcbcb4" type="audio" direction="output" />
+        <port name="capture_8" uuid="848cb591-01ad-4d9c-b400-c7c5c1876cbf" type="audio" direction="output" />
+        <port name="capture_9" uuid="5a5d81b9-78f0-4ebc-baea-064e80dce50f" type="audio" direction="output" />
+        <port name="capture_10" uuid="c46fb374-3e39-4f58-88ff-f273ed1139b6" type="audio" direction="output" />
+        <port name="capture_11" uuid="b6d986e9-e65b-45ac-a92e-db64533b61e3" type="audio" direction="output" />
+        <port name="capture_12" uuid="7244477b-0acf-4352-9315-14764745c23b" type="audio" direction="output" />
+        <port name="capture_13" uuid="46046985-47cd-4eeb-afce-f938d97a21c2" type="audio" direction="output" />
+        <port name="capture_14" uuid="08bc0edc-7e59-4b1e-827b-5b74f578f074" type="audio" direction="output" />
+        <port name="capture_15" uuid="6682c602-15cd-4ce5-a4b0-dc26e46bf2c4" type="audio" direction="output" />
+        <port name="capture_16" uuid="ca0486a0-e804-4fc4-9cd3-cb4b45371940" type="audio" direction="output" />
+        <port name="capture_17" uuid="5a128a8b-042e-4a0c-9bc2-098a88ab57de" type="audio" direction="output" />
+        <port name="capture_18" uuid="dabf6add-b30c-4741-8e58-d2ed38dc95e5" type="audio" direction="output" />
+        <port name="capture_19" uuid="f704c946-2920-457b-9450-2f948f8eae94" type="audio" direction="output" />
+        <port name="capture_20" uuid="7c4b46fd-b98c-435a-9330-b3630cb39928" type="audio" direction="output" />
+        <port name="capture_21" uuid="6e9e2205-248e-43a3-a213-fb4b91f6f3be" type="audio" direction="output" />
+        <port name="capture_22" uuid="87b61f75-6e78-4f90-9b77-81d15b4ff839" type="audio" direction="output" />
+        <port name="capture_23" uuid="5747fe73-d3f5-49b0-9e0f-1199d3085f1b" type="audio" direction="output" />
+        <port name="capture_24" uuid="5ae66d24-e97e-4095-a270-a0bbfd946c36" type="audio" direction="output" />
+        <port name="capture_25" uuid="bf004daf-4f13-4e7b-8dc4-b63e4711ee2e" type="audio" direction="output" />
+        <port name="capture_26" uuid="58d5d640-2cc5-400f-94b3-06fc7835573b" type="audio" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1058.821847</key>
-        <key name="http://ladish.org/ns/canvas/y">596.797930</key>
+        <key name="http://ladish.org/ns/canvas/x">397.815904</key>
+        <key name="http://ladish.org/ns/canvas/y">934.872159</key>
       </dict>
     </client>
     <client name="Hardware Playback" uuid="b2a0bb06-28d8-4bfe-956e-eb24378f9629" naming="app">
@@ -360,33 +815,33 @@ ladish Studio configuration.
         <port name="playback_1" uuid="d99b3abd-5b07-48f7-ad7e-27c579b61e35" type="audio" direction="input" />
         <port name="playback_2" uuid="5260c58c-3e6b-4cb5-92c8-3ad9e1703320" type="audio" direction="input" />
         <port name="playback_3" uuid="2d259ab5-6670-4a84-aeab-c9908460b07d" type="audio" direction="input" />
-        <port name="playback_4" uuid="e75ed56c-7e21-436b-b00f-90df4adfd10d" type="audio" direction="input" />
-        <port name="playback_5" uuid="f5205678-15a2-49c4-a63f-edfd1856c352" type="audio" direction="input" />
-        <port name="playback_6" uuid="a1be2302-4ed2-43af-a34e-ccb5d445acd8" type="audio" direction="input" />
-        <port name="playback_7" uuid="03ff54f1-f024-4c87-83b9-25d7c2f924a2" type="audio" direction="input" />
-        <port name="playback_8" uuid="90e8ee9b-48a2-4f52-8849-da8633208d02" type="audio" direction="input" />
-        <port name="playback_9" uuid="8524534f-b1d8-45c0-ba2b-560ea79cd5ce" type="audio" direction="input" />
-        <port name="playback_10" uuid="acfa6416-6978-4550-a4d8-666f22e72e0b" type="audio" direction="input" />
-        <port name="playback_11" uuid="f20438f1-241c-45ff-8416-fcbc8f320f71" type="audio" direction="input" />
-        <port name="playback_12" uuid="bf88e8d2-338b-4610-a5e6-17645790fe76" type="audio" direction="input" />
-        <port name="playback_13" uuid="99cf8191-56a6-4bb3-bd2f-7d775cbf180e" type="audio" direction="input" />
-        <port name="playback_14" uuid="11c06c8c-9f28-47a3-93de-8c6a7e11f780" type="audio" direction="input" />
-        <port name="playback_15" uuid="ccebd0d7-32cf-48c5-9e1c-298ccf261c5d" type="audio" direction="input" />
-        <port name="playback_16" uuid="51e749d6-0ea3-49e4-99a7-bb1587640a5f" type="audio" direction="input" />
-        <port name="playback_17" uuid="a6375fba-5a9d-4d99-b497-ab01e6d9139a" type="audio" direction="input" />
-        <port name="playback_18" uuid="a9493499-c701-40f1-b953-2341c8ce2fe5" type="audio" direction="input" />
-        <port name="playback_19" uuid="ac0c5f50-940c-4bf7-bb7a-a70dae02be12" type="audio" direction="input" />
-        <port name="playback_20" uuid="fccc31b7-c18e-48df-8bc0-47c22a7ab892" type="audio" direction="input" />
-        <port name="playback_21" uuid="8ab2d5a9-b3c4-463d-9b11-eebb32533e7f" type="audio" direction="input" />
-        <port name="playback_22" uuid="36104805-ce53-46ae-b582-d95e1e28ab61" type="audio" direction="input" />
-        <port name="playback_23" uuid="c2fb1b3b-b6fe-4915-9482-e8c556b38e75" type="audio" direction="input" />
-        <port name="playback_24" uuid="ed2bf1a4-7b87-4d7b-824b-5e40197937b8" type="audio" direction="input" />
-        <port name="playback_25" uuid="a9453024-01a6-4f99-9386-0129c22f07f8" type="audio" direction="input" />
-        <port name="playback_26" uuid="56ecec66-6119-4a8f-b523-5cf0016b8079" type="audio" direction="input" />
+        <port name="playback_4" uuid="7019da14-f1ca-4ece-8bf1-8dc92479eaa1" type="audio" direction="input" />
+        <port name="playback_5" uuid="f189ca68-3e8d-42fb-9360-c9c94cfe8e0e" type="audio" direction="input" />
+        <port name="playback_6" uuid="b0142eac-5953-4d16-b9e0-496a74551727" type="audio" direction="input" />
+        <port name="playback_7" uuid="a968f860-a2eb-4026-a823-705dba7a7ea9" type="audio" direction="input" />
+        <port name="playback_8" uuid="701f17f8-1b15-41e3-a03a-211161e94a04" type="audio" direction="input" />
+        <port name="playback_9" uuid="0e15bcbe-afac-48ca-9a1a-1dbdfea09e27" type="audio" direction="input" />
+        <port name="playback_10" uuid="4b26065a-ba54-43bc-8000-d6474e28d8d3" type="audio" direction="input" />
+        <port name="playback_11" uuid="f86d9a37-525f-4b28-a924-99bc73131bd3" type="audio" direction="input" />
+        <port name="playback_12" uuid="69cc787a-bd80-49c2-919b-51c96a33ba5a" type="audio" direction="input" />
+        <port name="playback_13" uuid="887bb461-c639-49f9-873f-ba3689c6d557" type="audio" direction="input" />
+        <port name="playback_14" uuid="732171cf-dea2-4064-b6b7-599763519794" type="audio" direction="input" />
+        <port name="playback_15" uuid="56bf5a12-038d-4ae2-99b0-776ba590d69f" type="audio" direction="input" />
+        <port name="playback_16" uuid="cc4c9336-fedf-4af2-99f4-be300ce5a2fc" type="audio" direction="input" />
+        <port name="playback_17" uuid="321751a7-b207-4a24-af04-9b5812261288" type="audio" direction="input" />
+        <port name="playback_18" uuid="dedc980a-fa69-4a22-a7c1-2a6a8060abb0" type="audio" direction="input" />
+        <port name="playback_19" uuid="0afdae1d-b7b3-4ced-8e0f-61de43d14e11" type="audio" direction="input" />
+        <port name="playback_20" uuid="03057478-7059-48da-96e0-9ef08f28bbbd" type="audio" direction="input" />
+        <port name="playback_21" uuid="4b48dafb-6379-4350-a85b-fe196bea37bd" type="audio" direction="input" />
+        <port name="playback_22" uuid="d74114ea-f79a-44d7-bd7c-c8fb559b6425" type="audio" direction="input" />
+        <port name="playback_23" uuid="c7066241-14cc-4bad-b619-105b36cf9f8b" type="audio" direction="input" />
+        <port name="playback_24" uuid="507a0c0f-45de-447e-a010-d29760cb8eca" type="audio" direction="input" />
+        <port name="playback_25" uuid="ad52f9de-e62d-4a58-aae2-70962b04db5f" type="audio" direction="input" />
+        <port name="playback_26" uuid="8631f462-062d-4fe4-93dd-f986ea41579f" type="audio" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">2153.804230</key>
-        <key name="http://ladish.org/ns/canvas/y">982.014342</key>
+        <key name="http://ladish.org/ns/canvas/x">1891.958111</key>
+        <key name="http://ladish.org/ns/canvas/y">596.912382</key>
       </dict>
     </client>
     <client name="Midi Through" uuid="54e662d0-a51a-4bfe-a7d6-957b8cc160ca" naming="app">
@@ -395,8 +850,8 @@ ladish Studio configuration.
         <port name="Midi Through Port-0" uuid="a846c559-b6a6-418e-b0e5-e84a807bf342" type="midi" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1769.555777</key>
-        <key name="http://ladish.org/ns/canvas/y">393.853875</key>
+        <key name="http://ladish.org/ns/canvas/x">439.184108</key>
+        <key name="http://ladish.org/ns/canvas/y">1657.921707</key>
       </dict>
     </client>
     <client name="Hammerfall DSP" uuid="e320691c-cd97-4890-aa63-ab6cf70fe003" naming="app">
@@ -407,8 +862,8 @@ ladish Studio configuration.
         <port name="HDSP MIDI 2" uuid="6560155e-666d-4d08-b379-fd12c6abe84f" type="midi" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1725.981049</key>
-        <key name="http://ladish.org/ns/canvas/y">387.411243</key>
+        <key name="http://ladish.org/ns/canvas/x">450.269893</key>
+        <key name="http://ladish.org/ns/canvas/y">1412.095139</key>
       </dict>
     </client>
     <client name="TiMidity" uuid="92ec5216-57ae-4d9b-b00d-3b5c1e005edc" naming="app">
@@ -419,8 +874,8 @@ ladish Studio configuration.
         <port name="TiMidity port 3" uuid="64e45c1d-415b-488f-89f4-076e3fd3bf48" type="midi" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1804.597861</key>
-        <key name="http://ladish.org/ns/canvas/y">385.178363</key>
+        <key name="http://ladish.org/ns/canvas/x">450.119286</key>
+        <key name="http://ladish.org/ns/canvas/y">1536.393394</key>
       </dict>
     </client>
     <client name="SLServer" uuid="a4cb99c5-0e90-43f9-b8b8-557f8010ed52" naming="app" app="6048d3ab-ecf3-4545-901a-2a842e8dbd93">
@@ -434,34 +889,33 @@ ladish Studio configuration.
         <port name="sooperlooper" uuid="33d2b1cd-6e1b-454a-9f00-12d5c2b55c42" type="midi" direction="output" />
         <port name="loop4_out_1" uuid="c0e5ca85-570d-48b1-94f3-a80ccc3756ad" type="audio" direction="output" />
         <port name="loop5_out_1" uuid="cda3e38e-413b-4988-aac2-0f93e192e8c0" type="audio" direction="output" />
-        <port name="loop1_in_2" uuid="228615c8-1d15-4127-ad06-549defbaed9b" type="audio" direction="input" />
         <port name="loop1_out_2" uuid="a85d7340-1a20-4d76-bfc3-d09f8b47511e" type="audio" direction="output" />
-        <port name="loop3_in_2" uuid="779bd636-c263-483a-9405-d32205eaa427" type="audio" direction="input" />
         <port name="loop3_out_2" uuid="ac7cc7e9-9e4f-4a7a-a682-212ce79cd3e8" type="audio" direction="output" />
-        <port name="loop5_in_2" uuid="97fe94ac-3a29-4b7f-aaa1-ea178fe15ccb" type="audio" direction="input" />
         <port name="loop5_out_2" uuid="a6101004-dead-4e11-8231-811da10628f8" type="audio" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1438.487007</key>
-        <key name="http://ladish.org/ns/canvas/y">572.275489</key>
+        <key name="http://ladish.org/ns/canvas/x">959.517273</key>
+        <key name="http://ladish.org/ns/canvas/y">731.329592</key>
       </dict>
     </client>
     <client name="Tapeutape" uuid="315eece9-4510-4bc5-9c79-c1eff5d40b8e" naming="app" app="4fa27312-1cbb-486e-bcfd-3d484756dcb0">
       <ports>
-        <port name="Snares-L" uuid="eddb129d-8e75-46e9-ae30-e53bfc8214f4" type="audio" direction="output" />
-        <port name="Snares-R" uuid="10305d99-4b6a-452d-b8a9-71857dba236c" type="audio" direction="output" />
-        <port name="Cymbales-L" uuid="d8ca9524-b984-40db-a2ab-7efaded953a3" type="audio" direction="output" />
-        <port name="Cymbales-R" uuid="7d2e3790-db56-4560-ab8d-e7f0344bae7e" type="audio" direction="output" />
-        <port name="Continua-L" uuid="fae5065c-e6d1-4cbb-a0c4-3823a01436cc" type="audio" direction="output" />
-        <port name="Continua-R" uuid="0148851f-41c1-4103-a653-1fdb05b6bad1" type="audio" direction="output" />
-        <port name="Samples-L" uuid="5f69c5f6-d2f7-4bd6-b26c-9a8f71700840" type="audio" direction="output" />
-        <port name="Samples-R" uuid="0a47d136-971c-4cc3-9c76-a15051a578bc" type="audio" direction="output" />
-        <port name="Kicks-L" uuid="40afc566-2b33-417c-a1e7-5b670a37cece" type="audio" direction="output" />
-        <port name="Kicks-R" uuid="858f6e66-bf0d-4f1f-9632-8786373a5346" type="audio" direction="output" />
+        <port name="Samples1-L" uuid="7fc11d6f-3512-4427-9395-94613b9823c0" type="audio" direction="output" />
+        <port name="Samples1-R" uuid="1e63f6c1-8608-4964-9586-238ea23a32a3" type="audio" direction="output" />
+        <port name="Samples2-L" uuid="ad357231-2bed-4e03-8d6b-a9663646dcaf" type="audio" direction="output" />
+        <port name="Samples2-R" uuid="c53a7692-c19f-4635-b72b-a51db910cf2a" type="audio" direction="output" />
+        <port name="Samples3-L" uuid="f940d9e3-eac8-4cc6-bf70-52debd06b9ef" type="audio" direction="output" />
+        <port name="Samples3-R" uuid="fcd346d2-9623-4d25-9a18-0ce44392d393" type="audio" direction="output" />
+        <port name="Samples4-L" uuid="55e4c951-e640-4bec-b578-bf4b152863f7" type="audio" direction="output" />
+        <port name="Samples4-R" uuid="7d0c0bdd-abd8-4a05-8a98-4323a0ffff20" type="audio" direction="output" />
+        <port name="Samples5-L" uuid="3134f2e3-a0d0-4b58-ae5f-b2671f77c172" type="audio" direction="output" />
+        <port name="Samples5-R" uuid="480a1fa1-0735-407a-bdf8-c719a74fe3c7" type="audio" direction="output" />
+        <port name="DrumKlit-L" uuid="8382c397-9c29-4984-8896-a0bc108dde61" type="audio" direction="output" />
+        <port name="DrumKlit-R" uuid="a5873768-1431-449b-bcf5-f56eb1ec1d8f" type="audio" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1161.276672</key>
-        <key name="http://ladish.org/ns/canvas/y">1097.729501</key>
+        <key name="http://ladish.org/ns/canvas/x">2134.276672</key>
+        <key name="http://ladish.org/ns/canvas/y">672.062834</key>
       </dict>
     </client>
     <client name="MainMix" uuid="da9f3a6c-b869-40a2-8daf-1432ced82c5e" naming="app" app="51f5d88a-93d0-46c5-b23e-5b8c2335746e">
@@ -493,8 +947,8 @@ ladish Studio configuration.
         <port name="loop5_in_1" uuid="e6e1d475-4a21-4da8-a880-c604a9db6ca8" type="audio" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1318.000000</key>
-        <key name="http://ladish.org/ns/canvas/y">572.000000</key>
+        <key name="http://ladish.org/ns/canvas/x">759.713425</key>
+        <key name="http://ladish.org/ns/canvas/y">813.249965</key>
       </dict>
     </client>
     <client name="Drums (NM)" uuid="8c816cc7-e4bd-4596-9544-6a0dd2632c01" naming="app" app="7bca603d-3692-43a1-a7f8-4c88aefa8b82">
@@ -579,11 +1033,11 @@ ladish Studio configuration.
     </client>
     <client name="Tapeutape" uuid="626aa1df-521a-4380-b23e-b912aa7c9c50" naming="app" app="4fa27312-1cbb-486e-bcfd-3d484756dcb0">
       <ports>
-        <port name="Tapeutape_IN" uuid="ff117881-f553-4dbf-b190-014df27a9298" type="audio" direction="output" />
+        <port name="Tapeutape_IN" uuid="ff117881-f553-4dbf-b190-014df27a9298" type="midi" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1862.710284</key>
-        <key name="http://ladish.org/ns/canvas/y">1678.545920</key>
+        <key name="http://ladish.org/ns/canvas/x">950.912035</key>
+        <key name="http://ladish.org/ns/canvas/y">2025.730823</key>
       </dict>
     </client>
     <client name="AMSClassicalSynth" uuid="d671da0f-e041-4974-a300-fbdd9a4f5cca" naming="app" app="833aeaae-3aeb-4ff6-b65c-e6a7735c38d4">
@@ -628,54 +1082,48 @@ ladish Studio configuration.
     </client>
     <client name="seq24" uuid="4df05a96-0a1f-4054-a6ae-5b601cab37b5" naming="app" app="b1b78940-cc7c-4394-8a02-401a18f75388">
       <ports>
-        <port name="[1] seq24 1" uuid="4b2c3f15-e83e-47ad-93ab-33982473ecc0" type="audio" direction="output" />
-        <port name="[2] seq24 2" uuid="95324661-87cc-4dd2-a240-f9ef149a19eb" type="audio" direction="output" />
-        <port name="[3] seq24 3" uuid="122568ad-b87d-4e3c-8767-34e3e19cb2af" type="audio" direction="output" />
-        <port name="[4] seq24 4" uuid="bb234da9-7984-4987-9d54-4c7eee46bfdb" type="audio" direction="output" />
-        <port name="[5] seq24 5" uuid="993eac29-9b1a-4ce8-91df-058b77b99536" type="audio" direction="output" />
-        <port name="[6] seq24 6" uuid="c860d140-e50f-41aa-bc52-21f4078f738c" type="audio" direction="output" />
-        <port name="[7] seq24 7" uuid="e71daff2-9aac-40ab-9c50-ec80646d4ce6" type="audio" direction="output" />
-        <port name="[8] seq24 8" uuid="d0e00765-3442-4342-bbcd-6f48170860e6" type="audio" direction="output" />
-        <port name="[9] seq24 9" uuid="c5f924f0-7e94-4bae-a447-ca3270caf68a" type="audio" direction="output" />
-        <port name="[10] seq24 10" uuid="d928be78-681f-4d0b-a0c2-7d6e52f749bb" type="audio" direction="output" />
-        <port name="[11] seq24 11" uuid="2eabb4e6-d0ff-4122-a62c-d3f954096136" type="audio" direction="output" />
-        <port name="[12] seq24 12" uuid="fe8475e7-9299-49d3-acc9-8b8d37944f54" type="audio" direction="output" />
-        <port name="[13] seq24 13" uuid="8fe8317b-e65b-49d8-a1a1-6c0839ac9484" type="audio" direction="output" />
-        <port name="[14] seq24 14" uuid="4769d4ef-1511-4dc6-a838-868002c9c37c" type="audio" direction="output" />
-        <port name="[15] seq24 15" uuid="210e9960-e1b8-4804-9af4-a34f001fdccf" type="audio" direction="output" />
-        <port name="[16] seq24 16" uuid="1cbcba0b-4f06-4495-a209-837b9c3453d9" type="audio" direction="output" />
+        <port name="[1] seq24 1" uuid="4b2c3f15-e83e-47ad-93ab-33982473ecc0" type="midi" direction="output" />
+        <port name="[2] seq24 2" uuid="95324661-87cc-4dd2-a240-f9ef149a19eb" type="midi" direction="output" />
+        <port name="[3] seq24 3" uuid="122568ad-b87d-4e3c-8767-34e3e19cb2af" type="midi" direction="output" />
+        <port name="[4] seq24 4" uuid="bb234da9-7984-4987-9d54-4c7eee46bfdb" type="midi" direction="output" />
+        <port name="[5] seq24 5" uuid="993eac29-9b1a-4ce8-91df-058b77b99536" type="midi" direction="output" />
+        <port name="[6] seq24 6" uuid="c860d140-e50f-41aa-bc52-21f4078f738c" type="midi" direction="output" />
+        <port name="[7] seq24 7" uuid="e71daff2-9aac-40ab-9c50-ec80646d4ce6" type="midi" direction="output" />
+        <port name="[8] seq24 8" uuid="d0e00765-3442-4342-bbcd-6f48170860e6" type="midi" direction="output" />
+        <port name="[9] seq24 9" uuid="c5f924f0-7e94-4bae-a447-ca3270caf68a" type="midi" direction="output" />
+        <port name="[10] seq24 10" uuid="d928be78-681f-4d0b-a0c2-7d6e52f749bb" type="midi" direction="output" />
+        <port name="[11] seq24 11" uuid="2eabb4e6-d0ff-4122-a62c-d3f954096136" type="midi" direction="output" />
+        <port name="[12] seq24 12" uuid="fe8475e7-9299-49d3-acc9-8b8d37944f54" type="midi" direction="output" />
+        <port name="[13] seq24 13" uuid="8fe8317b-e65b-49d8-a1a1-6c0839ac9484" type="midi" direction="output" />
+        <port name="[14] seq24 14" uuid="4769d4ef-1511-4dc6-a838-868002c9c37c" type="midi" direction="output" />
+        <port name="[15] seq24 15" uuid="210e9960-e1b8-4804-9af4-a34f001fdccf" type="midi" direction="output" />
+        <port name="[16] seq24 16" uuid="1cbcba0b-4f06-4495-a209-837b9c3453d9" type="midi" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">459.000000</key>
-        <key name="http://ladish.org/ns/canvas/y">1006.000000</key>
+        <key name="http://ladish.org/ns/canvas/x">434.857753</key>
+        <key name="http://ladish.org/ns/canvas/y">2147.470822</key>
       </dict>
     </client>
     <client name="pedalBoards" uuid="37e11721-fe35-4339-aeed-9d4e0dc474b0" naming="app" app="18c1159f-2bfb-4240-831d-8e3b63cfdfae">
       <ports>
         <port name="PBCtrlIn" uuid="b02a6476-6d5c-403c-ba89-ce4fe7886183" type="midi" direction="input" />
         <port name="PBseq24" uuid="c597d714-683f-41ba-a3fa-9307f81ccbcf" type="midi" direction="output" />
-        <port name="PBAMSBassSynth" uuid="76270647-f3aa-411a-ac42-9eb9de3f5fb6" type="midi" direction="output" />
-        <port name="PBAMSChordsSynth" uuid="879f156f-8440-4f45-a496-0ef4301aac35" type="midi" direction="output" />
-        <port name="PBAMSLeadSynth" uuid="39875483-c83b-4503-98e5-97f7b22896ca" type="midi" direction="output" />
-        <port name="PBAMSCtLeadSynth" uuid="5ab9cfb6-b3ba-45ea-bbb5-4bf4aad5cc7b" type="midi" direction="output" />
         <port name="PBAMSClassicalSynth" uuid="ffad4d6f-01ab-4ea3-8394-b31b16e4d4e4" type="midi" direction="output" />
         <port name="PBTapeutape" uuid="5c081b20-2ec1-449f-87ce-5aaaa468a1bb" type="midi" direction="output" />
-        <port name="PBGuitarDag" uuid="6e0a8cb5-5df8-4c6c-b04a-2a0ab6bc372e" type="midi" direction="output" />
-        <port name="PBGuitarORL" uuid="b26f03e8-97db-4c43-b9d6-eab2cd42bc8f" type="midi" direction="output" />
         <port name="PBCtrlOut" uuid="5f138bbb-dfaa-46d5-88c5-60983750f6e1" type="midi" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1245.844294</key>
-        <key name="http://ladish.org/ns/canvas/y">1443.980596</key>
+        <key name="http://ladish.org/ns/canvas/x">444.303724</key>
+        <key name="http://ladish.org/ns/canvas/y">1937.526560</key>
       </dict>
     </client>
     <client name="seq24" uuid="31353d3b-e86a-4bd1-b01d-073395ceca12" naming="app" app="b1b78940-cc7c-4394-8a02-401a18f75388">
       <ports>
-        <port name="seq24 in" uuid="ea53353f-3418-47db-ba32-dcdcc5e09815" type="audio" direction="output" />
+        <port name="seq24 in" uuid="ea53353f-3418-47db-ba32-dcdcc5e09815" type="midi" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">736.227074</key>
-        <key name="http://ladish.org/ns/canvas/y">882.613537</key>
+        <key name="http://ladish.org/ns/canvas/x">662.980115</key>
+        <key name="http://ladish.org/ns/canvas/y">1812.585588</key>
       </dict>
     </client>
     <client name="Klick" uuid="69c6ea54-4dbd-4b83-831d-839b0155757e" naming="app" app="08ad27a4-0fc1-4a28-ac4b-3f5caee7e048">
@@ -683,8 +1131,8 @@ ladish Studio configuration.
         <port name="out" uuid="fe523f8e-f5da-4e85-b6c1-4bc54be2d05d" type="audio" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1127.819971</key>
-        <key name="http://ladish.org/ns/canvas/y">1017.905830</key>
+        <key name="http://ladish.org/ns/canvas/x">1001.950245</key>
+        <key name="http://ladish.org/ns/canvas/y">1181.011804</key>
       </dict>
     </client>
     <client name="MonitorsDag" uuid="22ef1d2d-41af-4ce5-96dc-3718c74b9307" naming="app" app="38bc0ae9-869f-4e30-b312-4f52d742ab73">
@@ -814,10 +1262,12 @@ ladish Studio configuration.
         <port name="VxORLMeuf/out-1" uuid="1c957f96-fb96-47f0-b8d5-2789a05cf8d7" type="audio" direction="output" />
         <port name="VxORLGars/out-1" uuid="9ecccf03-730b-4e6d-98f9-03d976ef520b" type="audio" direction="output" />
         <port name="VxORLDisint/out-1" uuid="86bf6c73-7e6f-4b86-8ccb-db1965085101" type="audio" direction="output" />
+        <port name="VxORLDelayPre/in-1" uuid="ea5ccd96-1216-43cd-9f0c-5d57135e3a7c" type="audio" direction="input" />
+        <port name="VxORLDelayPre/out-1" uuid="545bac62-0b08-415d-9de7-a6db07005db6" type="audio" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1246.907164</key>
-        <key name="http://ladish.org/ns/canvas/y">864.916535</key>
+        <key name="http://ladish.org/ns/canvas/x">1105.363604</key>
+        <key name="http://ladish.org/ns/canvas/y">1894.477429</key>
       </dict>
     </client>
     <client name="VxORLPre (NM)" uuid="f014e19b-5ef3-40ec-9abd-30834b352491" naming="app" app="192d2aa3-4975-46d0-ba89-51991f95784d">
@@ -826,8 +1276,8 @@ ladish Studio configuration.
         <port name="VxORLGars/in-1" uuid="017eed71-20c1-45a7-b455-6004799d2f5d" type="audio" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1644.059548</key>
-        <key name="http://ladish.org/ns/canvas/y">658.118116</key>
+        <key name="http://ladish.org/ns/canvas/x">1311.621526</key>
+        <key name="http://ladish.org/ns/canvas/y">642.412383</key>
       </dict>
     </client>
     <client name="VxORLPre (NM)" uuid="4c81ec08-68f1-4d69-ae70-5d1eef5fbe55" naming="app" app="192d2aa3-4975-46d0-ba89-51991f95784d">
@@ -835,8 +1285,8 @@ ladish Studio configuration.
         <port name="VxORLDisint/in-1" uuid="f4726b1c-dcf6-473e-baeb-55bf3c0e2a65" type="audio" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1644.422882</key>
-        <key name="http://ladish.org/ns/canvas/y">703.139690</key>
+        <key name="http://ladish.org/ns/canvas/x">1308.058427</key>
+        <key name="http://ladish.org/ns/canvas/y">688.742768</key>
       </dict>
     </client>
     <client name="VxORLMeuf (NM)" uuid="414c40ec-074a-4ba2-9961-b8c258a715ba" naming="app" app="76652b87-4292-4652-ae01-24d07e15294b">
@@ -849,10 +1299,12 @@ ladish Studio configuration.
         <port name="VxORLOverPitchDown/out-1" uuid="ecd4af9d-860b-46c5-8366-3fcab0e4264f" type="audio" direction="output" />
         <port name="VxORLOverPitchPost/out-1" uuid="81da01da-2b8e-4d0c-8f18-25ed2a7029fc" type="audio" direction="output" />
         <port name="VxORLOverPitchPre/out-2" uuid="c270a2f9-3b33-4031-bd95-12972f3c77ea" type="audio" direction="output" />
+        <port name="VxORLVocod/in-1" uuid="8bab1173-af33-48e7-a126-fd05a87b7023" type="audio" direction="input" />
+        <port name="VxORLVocod/out-1" uuid="21e86a41-8705-497f-82c9-ad2b8f75ccb1" type="audio" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1264.282212</key>
-        <key name="http://ladish.org/ns/canvas/y">1181.467883</key>
+        <key name="http://ladish.org/ns/canvas/x">1102.518144</key>
+        <key name="http://ladish.org/ns/canvas/y">2188.952584</key>
       </dict>
     </client>
     <client name="VxORLMeuf (NM)" uuid="69bafae9-347a-4dac-9d0e-ae7988697e30" naming="app" app="76652b87-4292-4652-ae01-24d07e15294b">
@@ -866,8 +1318,8 @@ ladish Studio configuration.
         <port name="VxORLOverPitchPost/in-1" uuid="a0d2c3ac-53c6-458c-b30e-b815b9c870b4" type="audio" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1678.240043</key>
-        <key name="http://ladish.org/ns/canvas/y">1061.450995</key>
+        <key name="http://ladish.org/ns/canvas/x">1390.097796</key>
+        <key name="http://ladish.org/ns/canvas/y">2126.397779</key>
       </dict>
     </client>
     <client name="VxORLPost (NM)" uuid="878d97dc-56dc-44c1-bdb4-e834b049bc0e" naming="app" app="ea8e2dc0-f0ca-4fb2-9b63-23b82960b0c1">
@@ -877,10 +1329,15 @@ ladish Studio configuration.
         <port name="VxORLGarsPost/out-1" uuid="372eb8dd-afe4-4624-bfef-195b50962d3a" type="audio" direction="output" />
         <port name="VxORLDisintPost/out-1" uuid="bc965443-5d75-47b5-ab1d-16bfca683238" type="audio" direction="output" />
         <port name="VxORLGarsPost/out-2" uuid="eb9ecc14-0364-4408-8909-aff0751c6e43" type="audio" direction="output" />
+        <port name="VxORLDelayPost/in-1" uuid="3276f9b6-7674-4970-9d9b-20403bf1029e" type="audio" direction="input" />
+        <port name="VxORLDelayPost/out-1" uuid="e1e1b541-173a-4aeb-b8c9-71a35965d14f" type="audio" direction="output" />
+        <port name="VxORLDelayPost/out-2" uuid="d26363c7-a877-460b-a6db-ba50ea618843" type="audio" direction="output" />
+        <port name="VxORLVocodePost/in-1" uuid="d8f2619d-6daf-449b-8d42-c934a22300ba" type="audio" direction="input" />
+        <port name="VxORLVocodePost/out-1" uuid="572efdcb-6a2d-4645-b183-30f523c5f156" type="audio" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1579.018742</key>
-        <key name="http://ladish.org/ns/canvas/y">749.422882</key>
+        <key name="http://ladish.org/ns/canvas/x">1380.183741</key>
+        <key name="http://ladish.org/ns/canvas/y">1790.779072</key>
       </dict>
     </client>
     <client name="VxORLPost (NM)" uuid="5141d829-601c-4f69-8d80-4f1901681108" naming="app" app="ea8e2dc0-f0ca-4fb2-9b63-23b82960b0c1">
@@ -892,8 +1349,8 @@ ladish Studio configuration.
         <port name="VxORLGarsPost/in-2" uuid="abf3eb6f-6682-4309-9079-3bd9ba171936" type="audio" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1677.818663</key>
-        <key name="http://ladish.org/ns/canvas/y">1186.426441</key>
+        <key name="http://ladish.org/ns/canvas/x">1407.639664</key>
+        <key name="http://ladish.org/ns/canvas/y">2292.973643</key>
       </dict>
     </client>
     <client name="VxMain (NM)" uuid="74218bfd-7953-4f3e-9a7e-d31e0b2557d3" naming="app" app="8710a376-0475-41d9-bc9c-111d3405389a">
@@ -904,8 +1361,8 @@ ladish Studio configuration.
         <port name="VxJeannotMain/out-2" uuid="a624d230-a093-4380-81e6-57674b70d458" type="audio" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1915.577778</key>
-        <key name="http://ladish.org/ns/canvas/y">968.066667</key>
+        <key name="http://ladish.org/ns/canvas/x">1894.577778</key>
+        <key name="http://ladish.org/ns/canvas/y">966.066667</key>
       </dict>
     </client>
     <client name="VxMain (NM)" uuid="353c268f-d0fb-4e0e-82ec-b926b37339e4" naming="app" app="8710a376-0475-41d9-bc9c-111d3405389a">
@@ -916,8 +1373,8 @@ ladish Studio configuration.
         <port name="VxJeannotMain/in-2" uuid="7080d500-68d1-49fc-8993-6042c1ffeb86" type="audio" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1912.977778</key>
-        <key name="http://ladish.org/ns/canvas/y">759.111111</key>
+        <key name="http://ladish.org/ns/canvas/x">2267.942487</key>
+        <key name="http://ladish.org/ns/canvas/y">1686.437324</key>
       </dict>
     </client>
     <client name="VxORLGars (NM)" uuid="48fb7b9c-3f76-4736-8dbf-608471d37b07" naming="app" app="ba8989c7-23f6-425d-9ed7-f05191f6124a">
@@ -932,8 +1389,8 @@ ladish Studio configuration.
         <port name="VxORLOverPitchPost/out-1" uuid="64da0734-88d8-4fee-9feb-70af8ad616e0" type="audio" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1257.000000</key>
-        <key name="http://ladish.org/ns/canvas/y">970.000000</key>
+        <key name="http://ladish.org/ns/canvas/x">1103.661143</key>
+        <key name="http://ladish.org/ns/canvas/y">2034.946784</key>
       </dict>
     </client>
     <client name="VxORLGars (NM)" uuid="b79bb39c-e927-4cac-b0a8-d6a4978a5529" naming="app" app="ba8989c7-23f6-425d-9ed7-f05191f6124a">
@@ -947,8 +1404,8 @@ ladish Studio configuration.
         <port name="VxORLOverPitchPost/in-1" uuid="404d45c2-b0c0-4021-9443-0e5766b75667" type="audio" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1680.000000</key>
-        <key name="http://ladish.org/ns/canvas/y">946.000000</key>
+        <key name="http://ladish.org/ns/canvas/x">1391.857753</key>
+        <key name="http://ladish.org/ns/canvas/y">1978.930979</key>
       </dict>
     </client>
     <client name="VxJeannotPre (NM)" uuid="96ce246d-aa40-4be0-82f7-1378210f8d89" naming="app" app="6ec0d5e5-63ae-451b-bf51-2f421abe1091">
@@ -956,10 +1413,12 @@ ladish Studio configuration.
         <port name="VxJeannotMeuf/out-1" uuid="0e5eaeb9-85b8-4c1a-92fe-390b0f8e4bf6" type="audio" direction="output" />
         <port name="VxJeannotGars/out-1" uuid="ffcd0076-8067-4236-b045-7eddb6e45a6b" type="audio" direction="output" />
         <port name="VxJeannotDisint/out-1" uuid="3534fbde-6d1c-4603-a72e-4e48c14f4937" type="audio" direction="output" />
+        <port name="VxJeannotDelayPre/in-1" uuid="c79381cf-5291-4a25-bd42-6626e7c553f5" type="audio" direction="input" />
+        <port name="VxJeannotDelayPre/out-1" uuid="62d5c028-cd1f-4b86-8ea3-dda7e65de0ed" type="audio" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1279.400000</key>
-        <key name="http://ladish.org/ns/canvas/y">1325.800000</key>
+        <key name="http://ladish.org/ns/canvas/x">1719.349097</key>
+        <key name="http://ladish.org/ns/canvas/y">1890.915843</key>
       </dict>
     </client>
     <client name="VxJeannotMeuf (NM)" uuid="533f3ae9-ce2a-48c1-8bef-ba3ade90f635" naming="app" app="2244005f-e046-4f34-8d7b-97990d6d269c">
@@ -974,8 +1433,8 @@ ladish Studio configuration.
         <port name="VxJeannotOverPitchPost/out-1" uuid="55b27e44-661f-45a6-bab5-40d6181c08c7" type="audio" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1227.688889</key>
-        <key name="http://ladish.org/ns/canvas/y">1549.044444</key>
+        <key name="http://ladish.org/ns/canvas/x">1723.452752</key>
+        <key name="http://ladish.org/ns/canvas/y">2199.927339</key>
       </dict>
     </client>
     <client name="VxJeannotGars (NM)" uuid="84193a59-a61d-4d69-87d9-b8e9659cb1f7" naming="app" app="c3f00316-4d22-4495-a08d-65802756c142">
@@ -990,8 +1449,8 @@ ladish Studio configuration.
         <port name="VxJeannotOverPitchPost/out-1" uuid="a2188fa2-41f3-4cf6-a6e6-0ac8c628c61b" type="audio" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1236.444444</key>
-        <key name="http://ladish.org/ns/canvas/y">1409.088889</key>
+        <key name="http://ladish.org/ns/canvas/x">1722.980570</key>
+        <key name="http://ladish.org/ns/canvas/y">2033.820121</key>
       </dict>
     </client>
     <client name="VxJeannotPost (NM)" uuid="a16b6329-c193-437d-9581-b0c6be075a37" naming="app" app="99a02ef0-87b5-4b01-8490-b86e02f8edff">
@@ -1001,10 +1460,13 @@ ladish Studio configuration.
         <port name="VxJeannotGarsPost/out-1" uuid="a1d6eabe-eb89-45b9-88a1-3eceea045822" type="audio" direction="output" />
         <port name="VxJeannotGarsPost/out-2" uuid="7f3a676b-7b87-4158-bd40-cf28e93a55fb" type="audio" direction="output" />
         <port name="VxJeannotDisintPost/out-1" uuid="d3304e42-0584-4072-beaa-d22a1849da36" type="audio" direction="output" />
+        <port name="VxJeannotDelayPost/in-1" uuid="f57d5c37-0046-4c2a-b137-54d4895a98e9" type="audio" direction="input" />
+        <port name="VxJeannotDelayPost/out-1" uuid="1bdd8974-aec3-49fb-b418-b8f281b303d2" type="audio" direction="output" />
+        <port name="VxJeannotDelayPost/out-2" uuid="3bccbd6b-9310-45e1-9f63-0fb0f9ffc23a" type="audio" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1561.377778</key>
-        <key name="http://ladish.org/ns/canvas/y">837.000000</key>
+        <key name="http://ladish.org/ns/canvas/x">1960.148035</key>
+        <key name="http://ladish.org/ns/canvas/y">1792.461402</key>
       </dict>
     </client>
     <client name="VxJeannotPost" uuid="0853c1ad-ce60-4936-9dfc-f2356565d118" naming="app" app="99a02ef0-87b5-4b01-8490-b86e02f8edff">
@@ -1016,8 +1478,8 @@ ladish Studio configuration.
         <port name="VxJeannotDisintPost/in-1" uuid="7c6c3a36-a70e-436a-a48d-ba377636f2f4" type="audio" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1654.511111</key>
-        <key name="http://ladish.org/ns/canvas/y">1558.377778</key>
+        <key name="http://ladish.org/ns/canvas/x">2007.008627</key>
+        <key name="http://ladish.org/ns/canvas/y">2294.744383</key>
       </dict>
     </client>
     <client name="VxJeannotGars (NM)" uuid="acd07f21-d65e-4363-92b4-5113ebf52f17" naming="app" app="c3f00316-4d22-4495-a08d-65802756c142">
@@ -1031,8 +1493,8 @@ ladish Studio configuration.
         <port name="VxJeannotOverPitchPost/in-1" uuid="a1d8865e-9e04-49df-a7f0-367aead9cef8" type="audio" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1629.444444</key>
-        <key name="http://ladish.org/ns/canvas/y">1292.177778</key>
+        <key name="http://ladish.org/ns/canvas/x">1973.952099</key>
+        <key name="http://ladish.org/ns/canvas/y">1966.424798</key>
       </dict>
     </client>
     <client name="VxJeannotMeuf (NM)" uuid="4a83de53-9ade-40a8-89b4-6cd2969397a8" naming="app" app="2244005f-e046-4f34-8d7b-97990d6d269c">
@@ -1046,8 +1508,8 @@ ladish Studio configuration.
         <port name="VxJeannotOverPitchPost/in-1" uuid="a932df1f-0735-4a5f-9da6-53cd1e262484" type="audio" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1628.666667</key>
-        <key name="http://ladish.org/ns/canvas/y">1420.511111</key>
+        <key name="http://ladish.org/ns/canvas/x">1976.544407</key>
+        <key name="http://ladish.org/ns/canvas/y">2128.458979</key>
       </dict>
     </client>
     <client name="VxJeannotPre (NM)" uuid="c73d636a-0bc1-44b8-8375-39eedcba2087" naming="app" app="6ec0d5e5-63ae-451b-bf51-2f421abe1091">
@@ -1057,8 +1519,668 @@ ladish Studio configuration.
         <port name="VxJeannotDisint/in-1" uuid="74388d68-fd7f-4f88-a11d-002d49b51f32" type="audio" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1653.222222</key>
-        <key name="http://ladish.org/ns/canvas/y">548.955556</key>
+        <key name="http://ladish.org/ns/canvas/x">1298.539524</key>
+        <key name="http://ladish.org/ns/canvas/y">888.300624</key>
+      </dict>
+    </client>
+    <client name="SamplesProcessing (NM)" uuid="864fb2d8-07b4-444c-96c9-b0ac52f952f6" naming="app" app="df3034d3-2fba-4914-b673-d261d898de5d">
+      <ports>
+        <port name="Samples1/out-1" uuid="4f8cec11-bb88-48d9-88da-99b1668794e3" type="audio" direction="output" />
+        <port name="Samples1/out-2" uuid="d46d039e-33de-4487-a912-12a615ef9d41" type="audio" direction="output" />
+        <port name="Samples2/out-1" uuid="f89978d9-dfaf-423c-97c3-e25804a6c31d" type="audio" direction="output" />
+        <port name="Samples2/out-2" uuid="030cf5a6-863f-46f9-af0a-c6f9600c90b5" type="audio" direction="output" />
+        <port name="Samples3/out-1" uuid="916800a5-85e5-414e-9256-aea4ccf3495b" type="audio" direction="output" />
+        <port name="Samples3/out-2" uuid="8e425891-3e0b-4c10-bad7-3d1dd66679b2" type="audio" direction="output" />
+        <port name="Samples4/out-1" uuid="95091d00-1d17-458e-9a03-8bf6b120c093" type="audio" direction="output" />
+        <port name="Samples4/out-2" uuid="38976f67-e069-4bba-a8c6-5b4196aeabb2" type="audio" direction="output" />
+        <port name="Samples5/out-1" uuid="63964bb0-74d8-4d66-ac05-244796967d9b" type="audio" direction="output" />
+        <port name="Samples5/out-2" uuid="6424d575-c5d3-4f50-9263-04a9eaa31129" type="audio" direction="output" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">2144.355556</key>
+        <key name="http://ladish.org/ns/canvas/y">1506.222222</key>
+      </dict>
+    </client>
+    <client name="SamplesProcessing (NM)" uuid="91ce7467-be54-4255-a9d8-a045dea5884c" naming="app" app="df3034d3-2fba-4914-b673-d261d898de5d">
+      <ports>
+        <port name="Samples1/in-1" uuid="9adecef5-eae0-405d-a448-a1a9b9be52dc" type="audio" direction="output" />
+        <port name="Samples1/in-2" uuid="ce6382fe-ecac-4161-9031-b9e38c65c5f6" type="audio" direction="output" />
+        <port name="Samples2/in-1" uuid="c3bfd3b1-d1b0-411b-a4aa-fcb6d33bb365" type="audio" direction="output" />
+        <port name="Samples2/in-2" uuid="dda3a3b3-54ed-41c8-96d5-c6bc667bea67" type="audio" direction="output" />
+        <port name="Samples3/in-1" uuid="6d98c1c7-fcf1-4193-ad2b-c8b94d31432c" type="audio" direction="output" />
+        <port name="Samples3/in-2" uuid="2b2196a4-2c6d-4eb2-a555-43b876a26555" type="audio" direction="output" />
+        <port name="Samples4/in-1" uuid="20bf27bf-f068-4c39-92cc-84c327d8494d" type="audio" direction="output" />
+        <port name="Samples4/in-2" uuid="cb98bb30-3e5d-489e-8ac0-db606c843ddf" type="audio" direction="output" />
+        <port name="Samples5/in-1" uuid="1708963e-bba6-4570-afcf-17e3dd89a845" type="audio" direction="output" />
+        <port name="Samples5/in-2" uuid="d0d1636c-373a-4a9c-9af7-3b623c8fd540" type="audio" direction="output" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">2599.600000</key>
+        <key name="http://ladish.org/ns/canvas/y">442.400000</key>
+      </dict>
+    </client>
+    <client name="SamplesDelayMunge (NM)" uuid="ca8e7f8e-6681-49f7-a0df-993a4d609690" naming="app" app="9a13a64e-b423-4751-9c31-ee51c7a03845">
+      <ports>
+        <port name="Samples1/out-1" uuid="5f5f2546-e54c-441f-a843-c873e63e10a0" type="audio" direction="output" />
+        <port name="Samples2/out-1" uuid="19ecc82d-86de-42bb-9407-a2bec5269085" type="audio" direction="output" />
+        <port name="Samples3/out-1" uuid="13b94e5d-7b9b-49ce-8b5f-1775ad30abae" type="audio" direction="output" />
+        <port name="Samples4/out-1" uuid="bbb36725-1b1a-4fe7-8a0b-430307782ef3" type="audio" direction="output" />
+        <port name="Samples5/out-1" uuid="dd5b6fc9-2d34-4a4e-af0d-138c27b421a6" type="audio" direction="output" />
+        <port name="SamplesDelayMunge/out-1" uuid="89ccb38a-fc51-44d7-9b4f-0ea7de047b92" type="audio" direction="output" />
+        <port name="Samples1/out-2" uuid="72b612c4-1146-4128-8eb6-fa32bd654225" type="audio" direction="output" />
+        <port name="Samples2/out-2" uuid="1933aa29-c901-4d0f-861d-9b94435df1f8" type="audio" direction="output" />
+        <port name="Samples3/out-2" uuid="28e55857-87fd-467a-ac07-7061722a8ca9" type="audio" direction="output" />
+        <port name="Samples4/out-2" uuid="0c7eb2c9-395e-48ee-943d-47742c54c360" type="audio" direction="output" />
+        <port name="Samples5/out-2" uuid="74b43ddd-10c2-4ccb-8656-0bdb5e34f9e9" type="audio" direction="output" />
+        <port name="SamplesDelayMunge/out-2" uuid="20bb42ad-d119-4b80-b517-256b78dda48a" type="audio" direction="output" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">1868.933333</key>
+        <key name="http://ladish.org/ns/canvas/y">365.644444</key>
+      </dict>
+    </client>
+    <client name="SamplesDelayMunge (NM)" uuid="a5eaf9e8-588a-40d2-8c05-586e1492c7c3" naming="app" app="9a13a64e-b423-4751-9c31-ee51c7a03845">
+      <ports>
+        <port name="Samples1/in-1" uuid="ff2e3fbb-92ec-4cd5-b79b-69aa4543395a" type="audio" direction="input" />
+        <port name="Samples2/in-1" uuid="66e52982-914d-49fc-accd-6fbb7877793e" type="audio" direction="input" />
+        <port name="Samples3/in-1" uuid="828df122-3119-4e7f-b3ef-df13ffc7be2a" type="audio" direction="input" />
+        <port name="Samples4/in-1" uuid="872bd17f-5749-4d72-989f-0149e20b768f" type="audio" direction="input" />
+        <port name="Samples5/in-1" uuid="0d134c18-ae32-49fa-a439-f9e76e121a66" type="audio" direction="input" />
+        <port name="SamplesDelayMunge/in-1" uuid="749cc066-eeaa-4d6d-b2fb-c0a9d2c6edc9" type="audio" direction="input" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">2194.340776</key>
+        <key name="http://ladish.org/ns/canvas/y">52.496668</key>
+      </dict>
+    </client>
+    <client name="SamplesDelayMunge (NM)" uuid="b0c8e913-916e-49a3-971b-7d3dee08000c" naming="app" app="9a13a64e-b423-4751-9c31-ee51c7a03845">
+      <ports>
+        <port name="Samples1/in-2" uuid="6919f3a3-4a72-4ef3-9ae7-ac5c36aa02a8" type="audio" direction="input" />
+        <port name="Samples2/in-2" uuid="44d7795d-bb4f-4324-8a0f-48e251cc2ba4" type="audio" direction="input" />
+        <port name="Samples3/in-2" uuid="d9b1c7e9-d786-4d8c-b591-54200cfeeab3" type="audio" direction="input" />
+        <port name="Samples4/in-2" uuid="82ab8aba-6f0d-4bc6-82d0-24b75369b0f9" type="audio" direction="input" />
+        <port name="Samples5/in-2" uuid="718d5308-457b-4547-9683-8cd81bd28935" type="audio" direction="input" />
+        <port name="SamplesDelayMunge/in-2" uuid="6ce05da0-587c-42af-a92f-0eabd3243cd7" type="audio" direction="input" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">2305.770902</key>
+        <key name="http://ladish.org/ns/canvas/y">537.823453</key>
+      </dict>
+    </client>
+    <client name="SamplesReverseDelay (NM)" uuid="51b34335-c02e-4460-8eeb-618ab0b9b76c" naming="app" app="f569a36d-2067-4197-bbe1-e7c04370d840">
+      <ports>
+        <port name="Samples1/out-1" uuid="752251f4-ee3e-4b2e-918a-43d81d559a62" type="audio" direction="output" />
+        <port name="Samples1/out-2" uuid="15484d4b-654f-4b72-beaf-8ee2bd433d37" type="audio" direction="output" />
+        <port name="Samples2/out-1" uuid="888be444-0f80-4950-8835-e4c2daab076a" type="audio" direction="output" />
+        <port name="Samples2/out-2" uuid="5ae0d6ba-da27-4974-9ece-f8c5d53d757f" type="audio" direction="output" />
+        <port name="Samples3/out-1" uuid="044988df-4c96-47e5-9357-98afc5acf984" type="audio" direction="output" />
+        <port name="Samples3/out-2" uuid="7c515dbe-61fb-4c2c-8871-fc24298515ec" type="audio" direction="output" />
+        <port name="Samples4/out-1" uuid="1a051316-013a-42ca-a4dc-b6bf8421b836" type="audio" direction="output" />
+        <port name="Samples4/out-2" uuid="6d7310a8-3de3-4215-9d8a-8c3c4eb8cd5e" type="audio" direction="output" />
+        <port name="Samples5/out-1" uuid="2b7b562d-6910-48cb-b9e4-57d34f099776" type="audio" direction="output" />
+        <port name="Samples5/out-2" uuid="ee9e3e9d-39d4-4249-a4ee-5eb0ee50cdd2" type="audio" direction="output" />
+        <port name="SamplesReverseDelay/out-1" uuid="ad9be332-0757-49ee-8fa3-3566db065834" type="audio" direction="output" />
+        <port name="SamplesReverseDelay/out-2" uuid="4ec0f741-e1c1-4481-a338-ef34b52339c4" type="audio" direction="output" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">2241.520000</key>
+        <key name="http://ladish.org/ns/canvas/y">1346.888889</key>
+      </dict>
+    </client>
+    <client name="SamplesReverseDelay (NM)" uuid="ab980378-46d2-410c-ae12-5bbc7c973735" naming="app" app="f569a36d-2067-4197-bbe1-e7c04370d840">
+      <ports>
+        <port name="Samples1/in-1" uuid="dd6ff77d-987e-4885-8ef2-65760bbfa33b" type="audio" direction="input" />
+        <port name="Samples1/in-2" uuid="2d6fbcea-ee58-484f-b49c-1ba5d8c2c086" type="audio" direction="input" />
+        <port name="Samples2/in-1" uuid="e40825bb-0617-462c-84d9-62762ea398a1" type="audio" direction="input" />
+        <port name="Samples2/in-2" uuid="38c8da19-1fc0-4b75-9d3e-eefe3e4bccdd" type="audio" direction="input" />
+        <port name="Samples3/in-1" uuid="3a272d63-894e-4bf4-bdee-f9890163b7d6" type="audio" direction="input" />
+        <port name="Samples3/in-2" uuid="435a32c0-f246-47ab-b414-a0aabfe51131" type="audio" direction="input" />
+        <port name="Samples4/in-1" uuid="a48d1e8a-414e-4075-b363-98f37a9334f0" type="audio" direction="input" />
+        <port name="Samples4/in-2" uuid="a26d0528-7a95-4d5a-a4b1-8f446d310036" type="audio" direction="input" />
+        <port name="Samples5/in-1" uuid="28a4a61f-bfad-4aae-9221-e465f8eb826b" type="audio" direction="input" />
+        <port name="Samples5/in-2" uuid="a2f75801-9137-4f18-a427-091c5c40459e" type="audio" direction="input" />
+        <port name="SamplesReverseDelay/in-1" uuid="c6452bdb-fe61-412b-ad85-14cfc62457af" type="audio" direction="input" />
+        <port name="SamplesReverseDelay/in-2" uuid="8c5d9299-6f2e-4734-8782-e3dcccef9449" type="audio" direction="input" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">2456.229870</key>
+        <key name="http://ladish.org/ns/canvas/y">839.676963</key>
+      </dict>
+    </client>
+    <client name="SamplesRingMod (NM)" uuid="91798564-e742-4187-9ea0-3998c7f4f0b7" naming="app" app="714cb217-13aa-4599-8708-c81f45c69842">
+      <ports>
+        <port name="Samples1/out-1" uuid="ac949b8c-b930-4ea9-a978-b2b70baeb8b2" type="audio" direction="output" />
+        <port name="Samples1/out-2" uuid="7cbf9a6a-3f11-4440-8d7e-c5771b827103" type="audio" direction="output" />
+        <port name="Samples2/out-1" uuid="49e68607-7e20-42be-8fc0-0506ae649479" type="audio" direction="output" />
+        <port name="Samples2/out-2" uuid="20746843-bedf-4348-850f-00b5d5ab0738" type="audio" direction="output" />
+        <port name="Samples3/out-1" uuid="a4cf55e1-561a-4b67-89e8-1adf63092e90" type="audio" direction="output" />
+        <port name="Samples3/out-2" uuid="866a6efa-5b1f-422b-be07-5d4d1537767c" type="audio" direction="output" />
+        <port name="Samples4/out-1" uuid="3821c874-2e2d-41cc-8ba8-bae991822b43" type="audio" direction="output" />
+        <port name="Samples4/out-2" uuid="cccafa46-87ac-4f00-bdee-b6d2245c9bc1" type="audio" direction="output" />
+        <port name="Samples5/out-1" uuid="f63c244f-797d-43ac-abe2-2d60ae2874a7" type="audio" direction="output" />
+        <port name="Samples5/out-2" uuid="6ee1c511-7d46-4742-b465-dd1fd529eceb" type="audio" direction="output" />
+        <port name="SamplesRingMod/out-1" uuid="992e548f-9c6e-476c-84f4-9ab4c2277c93" type="audio" direction="output" />
+        <port name="SamplesRingMod/out-2" uuid="c923acb5-b3bb-4301-be40-4acf15f4d634" type="audio" direction="output" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">2785.075974</key>
+        <key name="http://ladish.org/ns/canvas/y">595.519628</key>
+      </dict>
+    </client>
+    <client name="SamplesRingMod (NM)" uuid="8b126a64-ed2e-48b9-9642-5a7a0469dcda" naming="app" app="714cb217-13aa-4599-8708-c81f45c69842">
+      <ports>
+        <port name="Samples1/in-1" uuid="a758eca5-0cbb-46d8-bba5-269dcf1d0a7f" type="audio" direction="input" />
+        <port name="Samples1/in-2" uuid="1fde02c5-e94f-471b-8c68-2161124ddecd" type="audio" direction="input" />
+        <port name="Samples2/in-1" uuid="d1315839-b161-4109-bef7-56f8c8186b1c" type="audio" direction="input" />
+        <port name="Samples2/in-2" uuid="897d56f7-9d9f-40af-9fa0-329d7b5c045d" type="audio" direction="input" />
+        <port name="Samples3/in-1" uuid="35fe84c9-0225-4138-9180-6fe1882c4fb5" type="audio" direction="input" />
+        <port name="Samples3/in-2" uuid="d93f79b8-bb76-45b5-80e9-631442872f34" type="audio" direction="input" />
+        <port name="Samples4/in-1" uuid="21fb456e-9c70-407c-84d1-3068d3d69163" type="audio" direction="input" />
+        <port name="Samples4/in-2" uuid="0872504a-5c7f-4e98-aeeb-c16012c24ed6" type="audio" direction="input" />
+        <port name="Samples5/in-1" uuid="f89fc725-90cb-4407-be7a-9fdee1652bd4" type="audio" direction="input" />
+        <port name="Samples5/in-2" uuid="d074d83a-4e52-4d8f-be27-5cb0308d7cd0" type="audio" direction="input" />
+        <port name="SamplesRingMod/in-1" uuid="52ebc77e-e764-4bbd-861a-c6c773537571" type="audio" direction="input" />
+        <port name="SamplesRingMod/in-2" uuid="9b0816fb-cfc9-483f-a472-35065b2b8472" type="audio" direction="input" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">3041.169154</key>
+        <key name="http://ladish.org/ns/canvas/y">415.864757</key>
+      </dict>
+    </client>
+    <client name="SamplesTremolo (NM)" uuid="d416985b-86b7-42ca-a602-4c4bc9896b3a" naming="app" app="b74d0407-5e4d-4d08-9768-3a9e4f6473fc">
+      <ports>
+        <port name="Samples1/out-1" uuid="73798d6f-49b3-4fd6-8b95-c8c7301923eb" type="audio" direction="output" />
+        <port name="Samples2/out-1" uuid="a99a83b3-0a70-495c-8e0b-13c0d27cebb5" type="audio" direction="output" />
+        <port name="Samples3/out-1" uuid="6e26ef2e-02e2-4cee-a477-16bea21123ea" type="audio" direction="output" />
+        <port name="Samples4/out-1" uuid="a93d8a6a-fc0d-4edd-8928-f778747fc272" type="audio" direction="output" />
+        <port name="Samples5/out-1" uuid="ef3bd3ab-28e9-4d33-b8b0-035eac68c8c9" type="audio" direction="output" />
+        <port name="SamplesTremolo/out-1" uuid="0d29cf0d-3da4-4472-b762-2e9a7a96c998" type="audio" direction="output" />
+        <port name="Samples1/out-2" uuid="62069280-8e07-4f37-ad45-e301ef417845" type="audio" direction="output" />
+        <port name="Samples2/out-2" uuid="5066cba9-2275-47d7-bfec-aa2e699319e2" type="audio" direction="output" />
+        <port name="Samples3/out-2" uuid="4364a27b-812e-4d0f-b6d3-bc0e11161d2f" type="audio" direction="output" />
+        <port name="Samples4/out-2" uuid="dbdbd70e-add0-43ef-bf4c-3c5bf25c0d6c" type="audio" direction="output" />
+        <port name="Samples5/out-2" uuid="06ced2b2-54d8-40b3-875b-3bac98ae043f" type="audio" direction="output" />
+        <port name="SamplesTremolo/out-2" uuid="946afb59-72d0-4805-b7ba-e5a58ee42244" type="audio" direction="output" />
+        <port name="SamplesPitch/in-1" uuid="e8a5d5d8-eb22-4325-8275-3aa9a3dcc832" type="audio" direction="input" />
+        <port name="SamplesPitch/out-1" uuid="dd15fa82-216b-4b8b-ae2e-718e5a69c80c" type="audio" direction="output" />
+        <port name="SamplesPitch/in-2" uuid="2c33b7b0-4ec5-4f65-a932-3f4fdd510219" type="audio" direction="input" />
+        <port name="SamplesPitch/out-2" uuid="39a0c6ac-649b-46aa-82b7-97a9c012adbf" type="audio" direction="output" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">2497.517562</key>
+        <key name="http://ladish.org/ns/canvas/y">1047.181360</key>
+      </dict>
+    </client>
+    <client name="SamplesTremolo (NM)" uuid="58a7f50f-c8be-40eb-9daa-c57beae2150f" naming="app" app="b74d0407-5e4d-4d08-9768-3a9e4f6473fc">
+      <ports>
+        <port name="Samples1/in-1" uuid="af632443-f779-4a1a-b36f-32452a1823b1" type="audio" direction="input" />
+        <port name="Samples2/in-1" uuid="4589064e-7693-44b4-8439-e664f2326580" type="audio" direction="input" />
+        <port name="Samples3/in-1" uuid="1e3da821-9f7f-45d9-a122-8266f79f6c7b" type="audio" direction="input" />
+        <port name="Samples4/in-1" uuid="ff05b99b-6662-4d95-a91b-de6438d6e0e8" type="audio" direction="input" />
+        <port name="Samples5/in-1" uuid="11b333d6-45e8-47d0-bc5d-0ce04d538ccc" type="audio" direction="input" />
+        <port name="SamplesTremolo/in-1" uuid="ee273266-aacf-4d99-ad6f-35f6c79d035e" type="audio" direction="input" />
+        <port name="Samples1/in-2" uuid="8fec9379-7074-47c2-a30d-fc227cf99c8c" type="audio" direction="input" />
+        <port name="Samples2/in-2" uuid="13568ede-88db-4cac-8d92-2e1becb0c9d2" type="audio" direction="input" />
+        <port name="Samples3/in-2" uuid="57d80662-ba1f-411a-95b2-60cc5a3d1472" type="audio" direction="input" />
+        <port name="Samples4/in-2" uuid="c5700635-fd7a-4ffd-8a85-e4cf23a0af55" type="audio" direction="input" />
+        <port name="Samples5/in-2" uuid="fdf61da3-2c06-4516-a763-3319bc739d62" type="audio" direction="input" />
+        <port name="SamplesTremolo/in-2" uuid="76eaa622-c780-4c49-9375-ce9eb64c9f24" type="audio" direction="input" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">2850.573532</key>
+        <key name="http://ladish.org/ns/canvas/y">785.373940</key>
+      </dict>
+    </client>
+    <client name="SamplesScape (NM)" uuid="051a208e-a597-4a17-aa2f-970dd8cb2bee" naming="app" app="7c694afa-1d6f-4812-81cd-bbdaaa2b123e">
+      <ports>
+        <port name="Samples1/out-1" uuid="4f47c8e9-9cf2-4e18-bded-d6b9d02bec07" type="audio" direction="output" />
+        <port name="Samples2/out-1" uuid="853dc68e-e75c-424a-80bb-de34fd0c6fea" type="audio" direction="output" />
+        <port name="Samples3/out-1" uuid="3c276368-e653-4de6-acb3-de404393a494" type="audio" direction="output" />
+        <port name="Samples4/out-1" uuid="eed6f44a-8efa-4ff7-ac6e-1ecc4f3d5cfa" type="audio" direction="output" />
+        <port name="Samples5/out-1" uuid="70c77348-d91c-4883-acb5-30303cc8c04e" type="audio" direction="output" />
+        <port name="SamplesTremolo/out-1" uuid="0261618d-8e0a-4da2-8d2a-c54a098c4c05" type="audio" direction="output" />
+        <port name="SamplesScape/out-1" uuid="fb95eacf-ce6b-41e9-be9d-07f37ad878b6" type="audio" direction="output" />
+        <port name="SamplesScape/out-2" uuid="20261012-7a36-439a-a959-6101e4dff726" type="audio" direction="output" />
+        <port name="SamplesDegrade/in-1" uuid="7443c47e-c4f7-41a9-a8c9-36a664ca5c9f" type="audio" direction="input" />
+        <port name="SamplesDegrade/out-1" uuid="6e32c41b-1730-4f7b-af73-601c3bb8ca0e" type="audio" direction="output" />
+        <port name="SamplesPitch/in-1" uuid="d19c132e-2847-4ef1-aa0e-2bf373ed3bd9" type="audio" direction="input" />
+        <port name="SamplesPitch/out-1" uuid="fc443232-a766-4645-ae18-21afe1112192" type="audio" direction="output" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">2147.012940</key>
+        <key name="http://ladish.org/ns/canvas/y">888.682285</key>
+      </dict>
+    </client>
+    <client name="SamplesScape" uuid="e86b05f9-d980-4dcc-8597-64bc9c11cf50" naming="app" app="7c694afa-1d6f-4812-81cd-bbdaaa2b123e">
+      <ports>
+        <port name="Samples1/in-1" uuid="5e6d854e-9dc2-4738-81e1-619c10be646b" type="audio" direction="input" />
+        <port name="Samples2/in-1" uuid="d92175b8-f21d-49b5-a1ed-41ad9b25f5b2" type="audio" direction="input" />
+        <port name="Samples3/in-1" uuid="96ff85d6-5756-46d6-9d77-2b5464cc7a5d" type="audio" direction="input" />
+        <port name="Samples4/in-1" uuid="c9fcc781-ba83-4509-9951-33a1db9607fd" type="audio" direction="input" />
+        <port name="Samples5/in-1" uuid="8c91152b-7ee0-459b-927e-a5eec67c5f10" type="audio" direction="input" />
+        <port name="SamplesTremolo/in-1" uuid="a084e4b6-f102-4f21-8286-12cd8071f399" type="audio" direction="input" />
+        <port name="SamplesScape/in-1" uuid="d7344338-c779-4493-a16d-81eedce0ac5d" type="audio" direction="input" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">2640.368011</key>
+        <key name="http://ladish.org/ns/canvas/y">637.243132</key>
+      </dict>
+    </client>
+    <client name="SamplesDegrade (NM)" uuid="3e703f35-1c66-400c-978d-94913ab59fbe" naming="app" app="2cf1a1d5-de38-4398-b917-fc2c404fd54a">
+      <ports>
+        <port name="Samples1/out-1" uuid="8742e48b-f7ed-4a6e-a960-424b0c4a0564" type="audio" direction="output" />
+        <port name="Samples2/out-1" uuid="2baf07ca-69ac-49d7-9ba2-c750719023c1" type="audio" direction="output" />
+        <port name="Samples3/out-1" uuid="5660efcd-d429-46ff-aaa6-d2ebb27a3681" type="audio" direction="output" />
+        <port name="Samples4/out-1" uuid="83458054-7644-430c-b342-5add1caec364" type="audio" direction="output" />
+        <port name="Samples5/out-1" uuid="b164cad5-1363-4f4f-9b39-60809b32af38" type="audio" direction="output" />
+        <port name="SamplesScape/out-1" uuid="1f86b66c-d4ad-422e-8515-b8d54965a800" type="audio" direction="output" />
+        <port name="SamplesDegrade/out-1" uuid="8c8fb672-b687-49ef-b16d-70ab6e3069b8" type="audio" direction="output" />
+        <port name="Samples1/out-2" uuid="61d732e5-094e-46d3-b978-a1d8d1a61a49" type="audio" direction="output" />
+        <port name="Samples2/out-2" uuid="ce9bb94a-9bad-4050-a99c-a1ad69b2b2a5" type="audio" direction="output" />
+        <port name="Samples3/out-2" uuid="1842af96-4f46-477e-97fc-64c9492ce1ed" type="audio" direction="output" />
+        <port name="Samples4/out-2" uuid="d68b3540-7ae3-4dba-a69a-aef561140a91" type="audio" direction="output" />
+        <port name="Samples5/out-2" uuid="325cf4e5-65aa-4cf8-8a3a-48f71c2da637" type="audio" direction="output" />
+        <port name="SamplesScape/out-2" uuid="2e0db207-2df4-4ace-bb27-5eea5b7e873d" type="audio" direction="output" />
+        <port name="SamplesDegrade/out-2" uuid="9f529ea6-3723-4c7b-bb2f-6037c78f174b" type="audio" direction="output" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">2836.685727</key>
+        <key name="http://ladish.org/ns/canvas/y">1298.814942</key>
+      </dict>
+    </client>
+    <client name="SamplesDisintegrator (NM)" uuid="9fa79351-54d3-411c-849a-d079f3b97e1e" naming="app" app="fa10797a-5969-4882-b80a-c48fe2e2522a">
+      <ports>
+        <port name="Samples1/out-1" uuid="9f96f048-a935-429b-8f4b-d11a0f6f7d4c" type="audio" direction="output" />
+        <port name="Samples2/out-1" uuid="a34e9b27-06a3-42bb-8e58-8a2d869adb57" type="audio" direction="output" />
+        <port name="Samples3/out-1" uuid="e86f603b-5250-4281-94d7-9054640534f1" type="audio" direction="output" />
+        <port name="Samples4/out-1" uuid="cbc6d0b9-470f-4086-8d9d-b0b5be9baa79" type="audio" direction="output" />
+        <port name="Samples5/out-1" uuid="1761cc36-9313-4d55-a8dc-3994b2b63c17" type="audio" direction="output" />
+        <port name="SamplesDisintegrator/out-1" uuid="4f97b368-68be-4893-b0e3-a1580bb14a33" type="audio" direction="output" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">2738.235226</key>
+        <key name="http://ladish.org/ns/canvas/y">1159.246701</key>
+      </dict>
+    </client>
+    <client name="SamplesDisintegrator (NM)" uuid="7af15cec-9dad-422f-9efe-3a8515eedc49" naming="app" app="fa10797a-5969-4882-b80a-c48fe2e2522a">
+      <ports>
+        <port name="Samples1/in-1" uuid="7cfc95c6-d77e-4d69-be91-12aeb10234da" type="audio" direction="input" />
+        <port name="Samples2/in-1" uuid="f87e59b7-b4a1-406f-8c72-beaaa0a7caaf" type="audio" direction="input" />
+        <port name="Samples3/in-1" uuid="beb4b08e-00f4-42fa-a7f7-26c0d413439d" type="audio" direction="input" />
+        <port name="Samples4/in-1" uuid="7b9d6588-737d-45b7-9670-e5847a54bb83" type="audio" direction="input" />
+        <port name="Samples5/in-1" uuid="c37c41fc-33ef-4a3b-85ec-848ea7379705" type="audio" direction="input" />
+        <port name="SamplesDisintegrator/in-1" uuid="bc9282fd-ad06-47ea-bfe2-b1ee6eaec1d4" type="audio" direction="input" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">3018.985083</key>
+        <key name="http://ladish.org/ns/canvas/y">997.289730</key>
+      </dict>
+    </client>
+    <client name="SamplesDegrade (NM)" uuid="cfc639af-ddad-46ae-b660-210a4a0dd59b" naming="app" app="2cf1a1d5-de38-4398-b917-fc2c404fd54a">
+      <ports>
+        <port name="Samples1/in-1" uuid="1472b8bb-6dd8-415e-a19f-6ddaf51746ba" type="audio" direction="input" />
+        <port name="Samples2/in-1" uuid="3fee34a0-365e-45c5-bc7b-feb8ccae85ff" type="audio" direction="input" />
+        <port name="Samples3/in-1" uuid="49f3ed17-d8d2-419c-ae80-96448dff4839" type="audio" direction="input" />
+        <port name="Samples4/in-1" uuid="608e4a59-c40f-4ad5-a80e-1f4c0906e868" type="audio" direction="input" />
+        <port name="Samples5/in-1" uuid="3fbf546e-e5ed-4985-ba7a-d9e8ebe6822d" type="audio" direction="input" />
+        <port name="SamplesScape/in-1" uuid="692d9e8d-5b26-444e-b33d-9a8cafe9e0a9" type="audio" direction="input" />
+        <port name="SamplesDegrade/in-1" uuid="f381d1cb-374c-487a-b600-297d9c364d6f" type="audio" direction="input" />
+        <port name="Samples1/in-2" uuid="7445fa7e-040c-4977-94c1-c71cd662ccf9" type="audio" direction="input" />
+        <port name="Samples2/in-2" uuid="1160306a-7a3f-40b9-a3dd-f844e7880d1e" type="audio" direction="input" />
+        <port name="Samples3/in-2" uuid="92a1a665-f1b2-4ec9-9d9c-9e6496ca740d" type="audio" direction="input" />
+        <port name="Samples4/in-2" uuid="2b46e286-3881-41e5-8182-3394ba2bb359" type="audio" direction="input" />
+        <port name="Samples5/in-2" uuid="b92dc153-78b3-440c-90a5-169d5eebc3b9" type="audio" direction="input" />
+        <port name="SamplesScape/in-2" uuid="3400ae95-1cdf-450c-980b-1ebc42500eb1" type="audio" direction="input" />
+        <port name="SamplesDegrade/in-2" uuid="7248ff00-1d3d-4734-8882-a604eb20c168" type="audio" direction="input" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">3013.829944</key>
+        <key name="http://ladish.org/ns/canvas/y">1161.377553</key>
+      </dict>
+    </client>
+    <client name="SamplesMain (NM)" uuid="ba74d1f3-c61b-41f6-acc4-a5474d01e7e0" naming="app" app="4b3f53a9-93d0-4b65-b92f-c9e68efcc40b">
+      <ports>
+        <port name="Samples1Dry/out-1" uuid="c3644b86-63de-47cc-9218-78544f985fb0" type="audio" direction="output" />
+        <port name="Samples1Dry/out-2" uuid="887e4c56-7a2f-4475-85a8-ed6c65f97ad9" type="audio" direction="output" />
+        <port name="Samples2Dry/out-1" uuid="cf0b8637-2c1c-4ff0-b7b1-759ba16cfbec" type="audio" direction="output" />
+        <port name="Samples2Dry/out-2" uuid="80ccd8d1-19fa-4793-ace1-9d96f91a1acb" type="audio" direction="output" />
+        <port name="Samples3Dry/out-1" uuid="c4da9968-7de6-4b01-9b6a-ef8a53ef20ea" type="audio" direction="output" />
+        <port name="Samples3Dry/out-2" uuid="e949171f-f4fb-467d-a491-3df2a9a205de" type="audio" direction="output" />
+        <port name="Samples4Dry/out-1" uuid="9f54e20e-3890-462f-8c79-f8bd5a7189cd" type="audio" direction="output" />
+        <port name="Samples4Dry/out-2" uuid="c79de4c2-a1a7-4651-8c0e-7321a2d5e82e" type="audio" direction="output" />
+        <port name="Samples5Dry/out-1" uuid="444aea51-49c6-45db-8abf-5ee55db1578a" type="audio" direction="output" />
+        <port name="Samples5Dry/out-2" uuid="78ba7a90-ec9c-4aa7-ac9d-9593cd655255" type="audio" direction="output" />
+        <port name="SamplesMunge/out-1" uuid="e7b015e8-f3b0-44a0-bd68-1c6c76d52426" type="audio" direction="output" />
+        <port name="SamplesMunge/out-2" uuid="9bf7a84e-656a-45ff-b45e-18dd6534bda3" type="audio" direction="output" />
+        <port name="SamplesReverseDelay/out-1" uuid="28d57852-6c5d-42cd-9bdb-fb9142816725" type="audio" direction="output" />
+        <port name="SamplesReverseDelay/out-2" uuid="23f08f6c-a854-4b45-80c2-5f0f52f4589a" type="audio" direction="output" />
+        <port name="SamplesTremolo/out-1" uuid="c74eec52-0add-49b6-a382-f5992208816e" type="audio" direction="output" />
+        <port name="SamplesTremolo/out-2" uuid="033433ee-76cc-4da7-b0aa-3f1a615971bc" type="audio" direction="output" />
+        <port name="SamplesScape/out-1" uuid="ac92362e-914d-48da-812f-7041e7206d19" type="audio" direction="output" />
+        <port name="SamplesScape/out-2" uuid="3d5dcc02-33ef-468e-a60a-aeb1fc83b66f" type="audio" direction="output" />
+        <port name="SamplesDegrade/out-1" uuid="0c2bcb73-a5b3-4071-a83e-4c86cbd5234c" type="audio" direction="output" />
+        <port name="SamplesDegrade/out-2" uuid="3a3d19e9-f37a-484e-b37a-977fb199b453" type="audio" direction="output" />
+        <port name="SamplesDisintegrator/out-1" uuid="794c14ce-9520-4956-9c52-a90b1290febf" type="audio" direction="output" />
+        <port name="SamplesRingMod/out-1" uuid="45082675-4adf-4230-b65d-f54dc01134ea" type="audio" direction="output" />
+        <port name="SamplesRingMod/out-2" uuid="98983164-f187-41b2-9640-e40a64449d39" type="audio" direction="output" />
+        <port name="SamplesMain/out-1" uuid="c3991a9b-a145-43d6-bf61-b5741607ccda" type="audio" direction="output" />
+        <port name="SamplesMain/out-2" uuid="a2e4fd7f-3e76-44a3-9ac3-67f81c772fd9" type="audio" direction="output" />
+        <port name="SamplesDrumKlit/out-1" uuid="06fb7c99-e975-45f7-bf25-6ef21c61f4ac" type="audio" direction="output" />
+        <port name="SamplesDrumKlit/out-2" uuid="713dce35-eb79-4887-9630-dac86d7dc019" type="audio" direction="output" />
+        <port name="SamplesPitch/in-1" uuid="40ea3eee-c6a2-4bc0-84c6-ad851181949d" type="audio" direction="input" />
+        <port name="SamplesPitch/out-1" uuid="fdf4b209-2ef1-4aa0-a36f-6e926c154d46" type="audio" direction="output" />
+        <port name="SamplesPitch/in-2" uuid="dbf3ff12-2659-4914-87a6-360bad65a3e2" type="audio" direction="input" />
+        <port name="SamplesPitch/out-2" uuid="feb46521-f250-4274-b8f9-bbb0895e4791" type="audio" direction="output" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">1692.043473</key>
+        <key name="http://ladish.org/ns/canvas/y">56.335511</key>
+      </dict>
+    </client>
+    <client name="SamplesMain (NM)" uuid="b59dc0a0-578f-4e7c-83b7-99718a9c81b2" naming="app" app="4b3f53a9-93d0-4b65-b92f-c9e68efcc40b">
+      <ports>
+        <port name="Samples1Dry/in-1" uuid="24fb3197-ec57-4fc0-84ca-3148cb3d43f8" type="audio" direction="input" />
+        <port name="Samples1Dry/in-2" uuid="3204575f-d57a-479d-b4dc-f9a16fec5b7e" type="audio" direction="input" />
+        <port name="Samples2Dry/in-1" uuid="b78224ec-14d2-4b30-954c-54059e36b908" type="audio" direction="input" />
+        <port name="Samples2Dry/in-2" uuid="811bc560-48b5-42cc-816b-d72a9663bc4d" type="audio" direction="input" />
+        <port name="Samples3Dry/in-1" uuid="65fbd534-9cee-4e65-949a-6d12ef1dc2b6" type="audio" direction="input" />
+        <port name="Samples3Dry/in-2" uuid="5ac4fd4e-d668-43e5-af21-d39429e25ce9" type="audio" direction="input" />
+        <port name="Samples4Dry/in-1" uuid="0fda9330-c34b-43c6-8ccb-14f4a0eadcf3" type="audio" direction="input" />
+        <port name="Samples4Dry/in-2" uuid="d52c83cb-eda1-413f-b1b0-2ffc2c3c1fa3" type="audio" direction="input" />
+        <port name="Samples5Dry/in-1" uuid="7864ca88-5382-43c9-9c86-baa5e252949a" type="audio" direction="input" />
+        <port name="Samples5Dry/in-2" uuid="7d140398-82bd-42f3-9e94-055dad7bda3c" type="audio" direction="input" />
+        <port name="SamplesMunge/in-1" uuid="7b48bd57-dfb7-47a2-8f1f-446d122244a2" type="audio" direction="input" />
+        <port name="SamplesMunge/in-2" uuid="66edb7cb-63a6-4d91-a6ff-1f0cf69a88e3" type="audio" direction="input" />
+        <port name="SamplesReverseDelay/in-1" uuid="0d142c29-92c4-498d-9cf7-53baaef57ef3" type="audio" direction="input" />
+        <port name="SamplesReverseDelay/in-2" uuid="a9aca069-fd24-4b65-ae3e-86a8be85de57" type="audio" direction="input" />
+        <port name="SamplesTremolo/in-1" uuid="49b6f400-a84b-4df5-98c1-44d6ea9c5cfb" type="audio" direction="input" />
+        <port name="SamplesTremolo/in-2" uuid="c35a59ab-f1a9-488e-9ad3-df9f82fb2dca" type="audio" direction="input" />
+        <port name="SamplesScape/in-1" uuid="7f75966a-92bf-4ec1-9e8e-d17d83e314ff" type="audio" direction="input" />
+        <port name="SamplesScape/in-2" uuid="a8f09650-8f28-4646-bbdf-49c6c8be7bdf" type="audio" direction="input" />
+        <port name="SamplesDegrade/in-1" uuid="9bb7b187-83c9-4cff-b76e-82bdcd2f394a" type="audio" direction="input" />
+        <port name="SamplesDegrade/in-2" uuid="6e9b66fa-daf1-4297-9863-fbbff5b3e444" type="audio" direction="input" />
+        <port name="SamplesDisintegrator/in-1" uuid="fbe44d6c-a043-47d4-8d0f-eb3d55385048" type="audio" direction="input" />
+        <port name="SamplesRingMod/in-1" uuid="4e1222fd-5256-4897-8ed0-0ff555e90a80" type="audio" direction="input" />
+        <port name="SamplesRingMod/in-2" uuid="0b82c150-0ad6-4d9d-9038-2136a92b1e83" type="audio" direction="input" />
+        <port name="SamplesMain/in-1" uuid="c1169c81-df84-49e2-924d-3e7278251f5e" type="audio" direction="input" />
+        <port name="SamplesMain/in-2" uuid="4c586115-2628-4f58-8972-486f108ec213" type="audio" direction="input" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">2388.770085</key>
+        <key name="http://ladish.org/ns/canvas/y">131.857782</key>
+      </dict>
+    </client>
+    <client name="SamplesControl" uuid="802db107-ed08-4593-b96a-2a0dc11941f3" naming="app" app="e9d93bf6-5b87-4805-b805-67933ca1f5ef">
+      <ports>
+        <port name="SCCtrlIn" uuid="736664ed-bfbd-4904-9d0d-bc72bd9a0d36" type="midi" direction="input" />
+        <port name="SCTapeutape" uuid="8b90f8a4-1fd5-4f50-9a60-c6d8d62e1be8" type="midi" direction="output" />
+        <port name="SCCtrlOut" uuid="dceb6140-7d72-457d-bd93-337e95c6ea29" type="midi" direction="output" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">643.895180</key>
+        <key name="http://ladish.org/ns/canvas/y">2075.333779</key>
+      </dict>
+    </client>
+    <client name="BassMain (NM)" uuid="d7f3e967-833b-47e4-835f-3b5ad93615c7" naming="app" app="9950811d-a2ff-48c6-84f7-d569f415b4bd">
+      <ports>
+        <port name="BassDry/out-1" uuid="d7920f90-fcea-4161-baca-613f865651d0" type="audio" direction="output" />
+        <port name="BassOct/out-1" uuid="8802f7f0-6129-4d8e-ac9f-ced692aa9c97" type="audio" direction="output" />
+        <port name="BassScapePre/out-1" uuid="b2cca0aa-c81e-403e-84dc-84baf3682887" type="audio" direction="output" />
+        <port name="BassScapePost/out-1" uuid="7a176acf-38bf-46b7-8c7c-86dccf48a3d9" type="audio" direction="output" />
+        <port name="BassDegradePre/out-1" uuid="d513c723-6ad9-40a1-bf00-553e2b380f4c" type="audio" direction="output" />
+        <port name="BassDegradePost/out-1" uuid="30b2dd0d-4428-4d68-b039-8f77a6e20bfb" type="audio" direction="output" />
+        <port name="BassMain/out-1" uuid="0b386ab2-1fff-49fd-8ae0-1a5e105e03f5" type="audio" direction="output" />
+        <port name="BassMain/out-2" uuid="1dd89637-bf3f-4562-9cad-9e88c14744e2" type="audio" direction="output" />
+        <port name="BassScapePost/out-2" uuid="77379935-0983-47a0-b6a5-246d6e4317c0" type="audio" direction="output" />
+        <port name="BassDegradePost/out-2" uuid="9697bf1e-d590-4839-8093-5357ad9a32ce" type="audio" direction="output" />
+        <port name="BassSub/out-2" uuid="feee0e86-c3c1-44d4-9873-8589d1105635" type="audio" direction="output" />
+        <port name="BassSub/in-2" uuid="64654eb6-bfa1-4c0b-b659-aeb0178dcdfc" type="audio" direction="input" />
+        <port name="BassSub/in-1" uuid="ff1cdb98-bf39-4edc-8e26-c8bb5ab00603" type="audio" direction="input" />
+        <port name="BassSub/out-1" uuid="a058c7b5-14db-47ab-bf66-2bb0732ae440" type="audio" direction="output" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">793.959131</key>
+        <key name="http://ladish.org/ns/canvas/y">1329.638966</key>
+      </dict>
+    </client>
+    <client name="BassMain (NM)" uuid="6653e783-f1cc-4cff-ba1e-f60ad285e5e3" naming="app" app="9950811d-a2ff-48c6-84f7-d569f415b4bd">
+      <ports>
+        <port name="BassDry/in-1" uuid="47bb49dc-4bec-4f05-b5b0-4d49f79509a4" type="audio" direction="input" />
+        <port name="BassOct/in-1" uuid="d67bbf18-3423-441a-a892-54d3e2364862" type="audio" direction="input" />
+        <port name="BassScapePre/in-1" uuid="905a1f92-01a1-4e99-a0d4-e774b8660604" type="audio" direction="input" />
+        <port name="BassScapePost/in-1" uuid="d7d9c69a-2896-4109-905c-35a3a5c8d5b8" type="audio" direction="input" />
+        <port name="BassDegradePre/in-1" uuid="ad0f2c91-2c6a-4d48-96ca-dd283b0bba2a" type="audio" direction="input" />
+        <port name="BassDegradePost/in-1" uuid="61389820-3a02-47e7-87c5-a43c5ad0e116" type="audio" direction="input" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">1318.478582</key>
+        <key name="http://ladish.org/ns/canvas/y">1174.765264</key>
+      </dict>
+    </client>
+    <client name="BassMain (NM)" uuid="e243b67e-746a-477b-b5a0-5f04089dd5f5" naming="app" app="9950811d-a2ff-48c6-84f7-d569f415b4bd">
+      <ports>
+        <port name="BassMain/in-1" uuid="daaec82e-1603-4ee2-936e-573f397a55ac" type="audio" direction="input" />
+        <port name="BassMain/in-2" uuid="b1cfe7f9-3eac-4794-8e71-62cbfcef22ff" type="audio" direction="input" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">1492.579030</key>
+        <key name="http://ladish.org/ns/canvas/y">1328.356462</key>
+      </dict>
+    </client>
+    <client name="SLServer" uuid="5eac2eb4-f24a-441f-91b3-063f8b8ff5a0" naming="app" app="6048d3ab-ecf3-4545-901a-2a842e8dbd93">
+      <ports>
+        <port name="loop1_in_2" uuid="228615c8-1d15-4127-ad06-549defbaed9b" type="audio" direction="input" />
+        <port name="loop3_in_2" uuid="779bd636-c263-483a-9405-d32205eaa427" type="audio" direction="input" />
+        <port name="loop5_in_2" uuid="97fe94ac-3a29-4b7f-aaa1-ea178fe15ccb" type="audio" direction="input" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">773.034123</key>
+        <key name="http://ladish.org/ns/canvas/y">994.670472</key>
+      </dict>
+    </client>
+    <client name="MonitorsORL (NM)" uuid="e1fe3f8e-751b-479e-8fe9-3d564538b997" naming="app" app="c365e0ab-4ba7-4e4a-84aa-10f66c324a43">
+      <ports>
+        <port name="VxO/out-1" uuid="d29ddd88-8afd-4bb2-8a13-c2730d81ef59" type="audio" direction="output" />
+        <port name="VxJ/out-1" uuid="422f90b7-2686-4137-841c-005a75a385f2" type="audio" direction="output" />
+        <port name="BassDry/out-1" uuid="f5bdb83d-a866-48eb-b131-2deb176dbcce" type="audio" direction="output" />
+        <port name="BassFX/out-1" uuid="2520cecb-4824-4cfa-a37d-4f6034bf31cb" type="audio" direction="output" />
+        <port name="VxO/out-2" uuid="2b7ed3db-b7f1-43e0-b254-1e75e9a998a3" type="audio" direction="output" />
+        <port name="VxJ/out-2" uuid="74b98469-d981-4f6a-829d-940f28b4a341" type="audio" direction="output" />
+        <port name="BassFX/out-2" uuid="69349eb5-1f1c-486c-82f8-7b39481f2453" type="audio" direction="output" />
+        <port name="Samples/out-1" uuid="0e92a450-70d1-4a73-8aba-1f18ce0a9d48" type="audio" direction="output" />
+        <port name="Samples/out-2" uuid="fd705475-ce21-4b22-aeeb-e4d02d621a1f" type="audio" direction="output" />
+        <port name="Klick/out-1" uuid="7795b0f2-3dd1-48e6-a51f-40d1086c3e85" type="audio" direction="output" />
+        <port name="Drums/out-1" uuid="419ff412-4f27-4f01-a5db-beb71ce89adc" type="audio" direction="output" />
+        <port name="MonitorsORL/out-1" uuid="16a1ae57-b048-402c-8520-72e682910e39" type="audio" direction="output" />
+        <port name="MonitorsORL/out-2" uuid="a6d065b9-cf29-47bf-a11d-8d0c802b0303" type="audio" direction="output" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">95.424374</key>
+        <key name="http://ladish.org/ns/canvas/y">181.415407</key>
+      </dict>
+    </client>
+    <client name="MonitorsORL (NM)" uuid="ca8f8bf8-bbb6-456e-9685-cbf41a531c60" naming="app" app="c365e0ab-4ba7-4e4a-84aa-10f66c324a43">
+      <ports>
+        <port name="VxO/in-1" uuid="0a9ea060-eb54-426e-ac65-23336801f386" type="audio" direction="input" />
+        <port name="VxJ/in-1" uuid="62f8ef80-799c-41f0-821f-075e64f5f8bf" type="audio" direction="input" />
+        <port name="BassDry/in-1" uuid="5647b24f-7666-4881-9597-377a5aba0fe6" type="audio" direction="input" />
+        <port name="BassFX/in-1" uuid="06bfe4be-f206-422c-b153-872d6b9faabd" type="audio" direction="input" />
+        <port name="VxO/in-2" uuid="f4d5175e-ffde-4547-9780-d1f9abe17858" type="audio" direction="input" />
+        <port name="VxJ/in-2" uuid="bf533fe3-057d-438a-a19f-98a275d5b17d" type="audio" direction="input" />
+        <port name="BassFX/in-2" uuid="e3dc6cca-85bb-477d-8f6e-c9b9efa38e91" type="audio" direction="input" />
+        <port name="Samples/in-1" uuid="fc4d56bc-1770-48df-b078-89f4349beda7" type="audio" direction="input" />
+        <port name="Samples/in-2" uuid="b1cc8e72-ca89-44a3-af5f-9db214cef174" type="audio" direction="input" />
+        <port name="Klick/in-1" uuid="9fb2e904-b835-4768-9f8e-7aeb86650898" type="audio" direction="input" />
+        <port name="Drums/in-1" uuid="ddfab416-87ea-42d5-b750-5017ad275642" type="audio" direction="input" />
+        <port name="MonitorsORL/in-1" uuid="2c9b52ec-31fc-4b1f-be62-23b022ddd675" type="audio" direction="input" />
+        <port name="MonitorsORL/in-2" uuid="d43244ed-1aec-45e7-99e8-5eb6235f6340" type="audio" direction="input" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">555.379884</key>
+        <key name="http://ladish.org/ns/canvas/y">156.102326</key>
+      </dict>
+    </client>
+    <client name="MonitorsJeannot (NM)" uuid="74f7ca8f-fcb0-4bdc-9512-8786d03fafad" naming="app" app="590fef19-5033-478f-b350-3ee15dc0c354">
+      <ports>
+        <port name="VxO/out-1" uuid="a221dab0-d738-47eb-b9f3-b26c38c8e5e7" type="audio" direction="output" />
+        <port name="VxO/out-2" uuid="8d61caae-d7ff-4bf5-a9da-782a7cacc3ac" type="audio" direction="output" />
+        <port name="VxJ/out-1" uuid="9723f9cf-cf73-4799-b23b-91bae92362a2" type="audio" direction="output" />
+        <port name="VxJ/out-2" uuid="436f7155-5031-47bd-bce0-3929f688a706" type="audio" direction="output" />
+        <port name="BassDry/out-1" uuid="98900528-4fbc-4268-9b78-e21ea8ef7fef" type="audio" direction="output" />
+        <port name="BassFX/out-1" uuid="75317b45-edf8-480c-a8f3-7eea3db9786d" type="audio" direction="output" />
+        <port name="BassFX/out-2" uuid="b480121a-163f-49f7-8575-b7ddcce46204" type="audio" direction="output" />
+        <port name="Samples/out-1" uuid="77b5411c-5b14-4b8a-9a3b-989e2144310c" type="audio" direction="output" />
+        <port name="Samples/out-2" uuid="ccede540-7a86-403a-bdaa-c1ee119d0cdf" type="audio" direction="output" />
+        <port name="Klick/out-1" uuid="1b50e551-a3d2-444f-82f3-5ae5d18977ba" type="audio" direction="output" />
+        <port name="Drums/out-1" uuid="8331b6d7-6e03-4e05-a2ed-c643510b213c" type="audio" direction="output" />
+        <port name="MonitorsJeannot/out-1" uuid="579fe8c3-4bd2-4a29-8169-56ba15a5b840" type="audio" direction="output" />
+        <port name="MonitorsJeannot/out-2" uuid="ba3d0ed9-90eb-4da1-9196-93627a451997" type="audio" direction="output" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">97.931925</key>
+        <key name="http://ladish.org/ns/canvas/y">474.639298</key>
+      </dict>
+    </client>
+    <client name="MonitorsJeannot (NM)" uuid="314feade-dc15-4f48-9a18-4edc2bca2f7d" naming="app" app="590fef19-5033-478f-b350-3ee15dc0c354">
+      <ports>
+        <port name="VxO/in-1" uuid="e2f5e864-d2d2-441a-9186-0fc33e8a1456" type="audio" direction="input" />
+        <port name="VxO/in-2" uuid="8700d1f9-78be-4240-b124-e5160f6ed125" type="audio" direction="input" />
+        <port name="VxJ/in-1" uuid="53afe948-f1b3-429d-ad44-ab06a9c07b3c" type="audio" direction="input" />
+        <port name="VxJ/in-2" uuid="07f2b22c-2bd1-4aa0-84e3-ef59adf86b4c" type="audio" direction="input" />
+        <port name="BassDry/in-1" uuid="dea2da0b-45e1-4654-ac5d-31ae50d8cef7" type="audio" direction="input" />
+        <port name="BassFX/in-1" uuid="3427dd15-3c0c-413b-8ae3-7db173efaae8" type="audio" direction="input" />
+        <port name="BassFX/in-2" uuid="25b23d9b-74b3-4c75-b3de-f47d02386004" type="audio" direction="input" />
+        <port name="Samples/in-1" uuid="9e980527-fc04-4cfc-8b9d-48924d08d2ec" type="audio" direction="input" />
+        <port name="Samples/in-2" uuid="008c6e97-ec12-400e-8e7a-3b4ab7a772ee" type="audio" direction="input" />
+        <port name="Klick/in-1" uuid="20088890-63c4-4e89-bea8-23c9ac5cac25" type="audio" direction="input" />
+        <port name="Drums/in-1" uuid="ae6f987f-9142-4361-b606-770e6ee245fe" type="audio" direction="input" />
+        <port name="MonitorsJeannot/in-1" uuid="ac9d29b9-0c97-4708-99b4-10f840c9d930" type="audio" direction="input" />
+        <port name="MonitorsJeannot/in-2" uuid="93adb0f9-65dd-476f-8c39-2bb16f720995" type="audio" direction="input" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">528.138206</key>
+        <key name="http://ladish.org/ns/canvas/y">473.468408</key>
+      </dict>
+    </client>
+    <client name="SamplesMain (NM)" uuid="194a2f5d-f237-433e-8a1f-b779cae86634" naming="app" app="4b3f53a9-93d0-4b65-b92f-c9e68efcc40b">
+      <ports>
+        <port name="SamplesDrumKlit/in-1" uuid="7362510b-40d6-4228-bcf8-0fa37f6675e6" type="audio" direction="input" />
+        <port name="SamplesDrumKlit/in-2" uuid="7e74236c-c3b5-456a-beda-288fd15a14d8" type="audio" direction="input" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">2286.992541</key>
+        <key name="http://ladish.org/ns/canvas/y">829.000000</key>
+      </dict>
+    </client>
+    <client name="SamplesPitch (NM)" uuid="8f8a9e3e-39ed-467d-9c57-941fa5b65203" naming="app" app="29e48490-4c5d-47d9-8602-d3a7e8d63676">
+      <ports>
+        <port name="Samples1/out-1" uuid="aa7daa79-264e-4981-9a9e-6f0aa874bb57" type="audio" direction="output" />
+        <port name="Samples1/out-2" uuid="54376dbe-6bce-4af4-8a72-f3ebcfcd4642" type="audio" direction="output" />
+        <port name="Samples2/out-1" uuid="c02304c0-3657-427a-a352-81b25979093d" type="audio" direction="output" />
+        <port name="Samples2/out-2" uuid="22727f62-4bbd-46d2-a137-a284d7910bf4" type="audio" direction="output" />
+        <port name="Samples3/out-1" uuid="ee03e367-8ede-47a7-9460-18f357a915d9" type="audio" direction="output" />
+        <port name="Samples3/out-2" uuid="2e2360ca-d98c-4ae2-bf57-2640719e11d6" type="audio" direction="output" />
+        <port name="Samples4/out-1" uuid="09d5d88a-f188-4f6e-8d4e-be996fe41b00" type="audio" direction="output" />
+        <port name="Samples4/out-2" uuid="02437437-c2e4-4eda-b423-9bd6c260d507" type="audio" direction="output" />
+        <port name="Samples5/out-1" uuid="7f9bd03c-a60f-4450-bc83-567ebdfe54f7" type="audio" direction="output" />
+        <port name="Samples5/out-2" uuid="9d3e78ab-7802-4a9a-a624-018c11ecce5e" type="audio" direction="output" />
+        <port name="SamplesPitch1/out-1" uuid="4acb0428-9dad-4c68-909a-3bd8a9653114" type="audio" direction="output" />
+        <port name="SamplesPitch1/out-2" uuid="fa3345db-7c60-4e02-92cb-d44afd86aca6" type="audio" direction="output" />
+        <port name="SamplesPitch2/out-1" uuid="8d7368b6-58a7-4623-a475-a44c6a46dd5e" type="audio" direction="output" />
+        <port name="SamplesPitch2/out-2" uuid="37f14442-7629-4520-bfef-fbd57317984a" type="audio" direction="output" />
+        <port name="SamplesPitch/out-1" uuid="8aeaf932-56d2-4df7-9f2e-322b2baadc1e" type="audio" direction="output" />
+        <port name="SamplesPitch/out-2" uuid="c679b376-c5f8-4a7e-a20a-383be8ce1ce1" type="audio" direction="output" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">1876.992542</key>
+        <key name="http://ladish.org/ns/canvas/y">1377.000000</key>
+      </dict>
+    </client>
+    <client name="SamplesPitch (NM)" uuid="2fef1baf-d18a-4564-a5fa-dd38a10918c8" naming="app" app="29e48490-4c5d-47d9-8602-d3a7e8d63676">
+      <ports>
+        <port name="Samples1/in-1" uuid="bc98859c-459e-4ab6-92ab-9d1fde3f926a" type="audio" direction="input" />
+        <port name="Samples1/in-2" uuid="cd73e137-ce8a-4223-9d36-ede1915f8dfa" type="audio" direction="input" />
+        <port name="Samples2/in-1" uuid="297384f1-6bac-43ca-b274-bd8c5a8967b8" type="audio" direction="input" />
+        <port name="Samples2/in-2" uuid="a03df7d0-9657-426d-b21f-8c49b73f6fe3" type="audio" direction="input" />
+        <port name="Samples3/in-1" uuid="aefa1ca6-8239-413d-a5bc-90d43e41699a" type="audio" direction="input" />
+        <port name="Samples3/in-2" uuid="fa7f2982-5fe7-4898-9fd4-94c4002e34a9" type="audio" direction="input" />
+        <port name="Samples4/in-1" uuid="63faf9e5-a57c-44fa-b90b-439f2c21e575" type="audio" direction="input" />
+        <port name="Samples4/in-2" uuid="de1f0f71-3519-46ce-ae08-48257698e1b3" type="audio" direction="input" />
+        <port name="Samples5/in-1" uuid="9037ee0b-1ee3-4291-acaf-a58ab2c04e28" type="audio" direction="input" />
+        <port name="Samples5/in-2" uuid="c1084677-6832-4e00-b960-174ac47515e9" type="audio" direction="input" />
+        <port name="SamplesPitch1/in-1" uuid="53bdbd37-b72b-48b5-bb16-35be8dd5b3a5" type="audio" direction="input" />
+        <port name="SamplesPitch1/in-2" uuid="a9ab57c6-eed4-4933-8500-f4610c7a86e0" type="audio" direction="input" />
+        <port name="SamplesPitch2/in-1" uuid="00cbbfb3-ccf0-409e-aed6-d3c5af3da954" type="audio" direction="input" />
+        <port name="SamplesPitch2/in-2" uuid="6c104608-bfad-4863-9ced-b34c2d32b2e9" type="audio" direction="input" />
+        <port name="SamplesPitch/in-1" uuid="9669ea2c-3c91-458d-876d-bc1e8ff1933a" type="audio" direction="input" />
+        <port name="SamplesPitch/in-2" uuid="119c629c-ac60-48f0-a106-51651d2c5359" type="audio" direction="input" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">2139.992541</key>
+        <key name="http://ladish.org/ns/canvas/y">1061.000000</key>
+      </dict>
+    </client>
+    <client name="drumKlit (MIdidings)" uuid="280a2197-f0bd-4572-a3d8-66fe092d08ae" naming="app" app="50114045-9636-4c01-869f-e2b0b1ff1200">
+      <ports>
+        <port name="DKJeannotIn" uuid="2445a71a-5d6c-4e8e-90de-7624ca7db870" type="midi" direction="input" />
+        <port name="DKTapeutape" uuid="4c6f5169-9d9f-488d-a5c5-aa15656a3f01" type="midi" direction="output" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">809.976355</key>
+        <key name="http://ladish.org/ns/canvas/y">1921.772926</key>
+      </dict>
+    </client>
+    <client name="BassSubCALF" uuid="c40c304d-ee62-409b-a6a3-b0f9ee6cfebb" naming="app" app="9f82ed21-0cd3-4d4e-8595-7d825d3ff094">
+      <ports>
+        <port name="Automation MIDI In" uuid="180d3302-17cb-4044-a13a-0d30391cddbd" type="midi" direction="input" />
+        <port name="mono In #1" uuid="7f47854d-877f-4c44-a4f7-da3982deb843" type="audio" direction="input" />
+        <port name="mono Out #1" uuid="9623d23d-bff7-4a26-b62a-bab2b1ca4bb8" type="audio" direction="output" />
+        <port name="mono Out #2" uuid="15d011b6-1f78-4ee2-a0ab-ca1fe0e89d1b" type="audio" direction="output" />
+        <port name="gate In #1" uuid="639f99fa-e82e-4842-b413-8c8ba567bc91" type="audio" direction="input" />
+        <port name="gate In #2" uuid="0fefaa97-db60-4a3c-a579-380490b44aa8" type="audio" direction="input" />
+        <port name="gate Out #1" uuid="d0103797-aec4-4294-9c15-832604342fca" type="audio" direction="output" />
+        <port name="gate Out #2" uuid="b14939fe-e7ce-4a3b-aedb-3c1b616d29d8" type="audio" direction="output" />
+        <port name="bassenhancer In #1" uuid="40752abe-792f-4a08-80fc-1a6a3b4dde53" type="audio" direction="input" />
+        <port name="bassenhancer In #2" uuid="bed137c6-878b-47ad-a17c-d926720eaef2" type="audio" direction="input" />
+        <port name="bassenhancer Out #1" uuid="37c70d42-4dd4-41b9-9b28-95fed989a3ff" type="audio" direction="output" />
+        <port name="bassenhancer Out #2" uuid="0cee0c30-441c-4341-b503-a7122ac85dc1" type="audio" direction="output" />
+        <port name="compressor In #1" uuid="ded0c505-ed6b-4086-a632-7f2fb59aff9a" type="audio" direction="input" />
+        <port name="compressor In #2" uuid="37453285-1ab7-421a-aa86-920fc0b9cb5c" type="audio" direction="input" />
+        <port name="compressor Out #1" uuid="9387b063-940d-4d56-baf5-4ad986c9abbc" type="audio" direction="output" />
+        <port name="compressor Out #2" uuid="0824ee07-0c17-479d-a038-c930a78f532d" type="audio" direction="output" />
+        <port name="filter In #1" uuid="c2a1a0d9-99ec-4fec-8f30-26f74e60ca51" type="audio" direction="input" />
+        <port name="filter In #2" uuid="93615ba8-107e-4fc3-8c3d-629a45f5abdf" type="audio" direction="input" />
+        <port name="filter Out #1" uuid="7ad70b39-b5bd-42ad-8a92-8c73e409e246" type="audio" direction="output" />
+        <port name="filter Out #2" uuid="7677e0e5-bd0b-4fce-a4b1-2dea41fe8626" type="audio" direction="output" />
+        <port name="stereo In #1" uuid="9e4c7f86-456a-4083-9e51-9524b3417b3d" type="audio" direction="input" />
+        <port name="stereo In #2" uuid="bcc66a84-e4d3-46e9-9a87-92a2a185b857" type="audio" direction="input" />
+        <port name="stereo Out #1" uuid="aeb32190-c635-4cac-93a0-2994e6cfb4b8" type="audio" direction="output" />
+        <port name="stereo Out #2" uuid="718f97ba-eec4-4cda-9ce8-a272488b2753" type="audio" direction="output" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">1199.376175</key>
+        <key name="http://ladish.org/ns/canvas/y">1456.706765</key>
+      </dict>
+    </client>
+    <client name="ZitaORL" uuid="6eb40854-4297-4f03-95ab-7f7fae3c2d1b" naming="app" app="87318598-bfef-4411-b30f-060d5c7f85dc">
+      <ports>
+        <port name="in" uuid="09c376fd-7883-441e-87c5-98a178a8adef" type="audio" direction="input" />
+        <port name="out" uuid="6813f71b-e1e7-47ac-b69a-37b714d9e669" type="audio" direction="output" />
+        <port name="pitch" uuid="e1e28cc7-af85-4f46-ab41-0f242946e7cb" type="midi" direction="input" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">1455.676675</key>
+        <key name="http://ladish.org/ns/canvas/y">1518.203927</key>
+      </dict>
+    </client>
+    <client name="LPD8" uuid="24fba88a-ffaa-4a1d-b9f3-bb656ac1ad61" naming="app">
+      <ports>
+        <port name="LPD8 MIDI 1" uuid="8f01528b-6384-4ff0-9f0c-e2a7fb38be69" type="midi" direction="output" />
+        <port name="LPD8 MIDI 1" uuid="37f79b59-e07e-4490-812c-74e8879c6dff" type="midi" direction="input" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">242.992542</key>
+        <key name="http://ladish.org/ns/canvas/y">1255.000000</key>
       </dict>
     </client>
   </clients>
@@ -1092,8 +2214,6 @@ ladish Studio configuration.
     <connection port1="eb9ecc14-0364-4408-8909-aff0751c6e43" port2="ccbf9029-5e4d-4224-8a5e-58824293b839" />
     <connection port1="bc965443-5d75-47b5-ab1d-16bfca683238" port2="df087322-11af-43d9-b94e-0744869b0e76" />
     <connection port1="bc965443-5d75-47b5-ab1d-16bfca683238" port2="ccbf9029-5e4d-4224-8a5e-58824293b839" />
-    <connection port1="67a0a9a7-bcc1-4e27-8f99-03ca0fcbe58c" port2="f5205678-15a2-49c4-a63f-edfd1856c352" />
-    <connection port1="c6e1832a-862f-41c3-81e2-92397d053215" port2="a1be2302-4ed2-43af-a34e-ccb5d445acd8" />
     <connection port1="c04f775c-def4-4499-ba9e-2b8fea502f6a" port2="0d1053d1-2dc1-482d-9f2f-02fcc35f57cd" />
     <connection port1="dbd741b5-0c95-46bd-8d91-571b041c87f7" port2="fefcbdf6-4d30-44b0-9c68-2708ee0b78f2" />
     <connection port1="9ecccf03-730b-4e6d-98f9-03d976ef520b" port2="6498fff1-90b1-4f1e-9551-fa6d37c46b35" />
@@ -1149,17 +2269,367 @@ ladish Studio configuration.
     <connection port1="c0e30e6f-5b9c-48e9-b030-4efd3752f5f8" port2="a932df1f-0735-4a5f-9da6-53cd1e262484" />
     <connection port1="55b27e44-661f-45a6-bab5-40d6181c08c7" port2="a3855668-f6a5-4a7b-8418-bb66014a2ca3" />
     <connection port1="55b27e44-661f-45a6-bab5-40d6181c08c7" port2="043dcc84-7f94-498d-b3ec-98234558ec8c" />
-    <connection port1="bd9c23b7-6520-4570-b274-03a9892138cd" port2="f5205678-15a2-49c4-a63f-edfd1856c352" />
-    <connection port1="a624d230-a093-4380-81e6-57674b70d458" port2="a1be2302-4ed2-43af-a34e-ccb5d445acd8" />
+    <connection port1="67a0a9a7-bcc1-4e27-8f99-03ca0fcbe58c" port2="056569ec-90af-40c6-a424-7eccb2456f27" />
+    <connection port1="c6e1832a-862f-41c3-81e2-92397d053215" port2="779bd636-c263-483a-9405-d32205eaa427" />
+    <connection port1="bd9c23b7-6520-4570-b274-03a9892138cd" port2="e6e1d475-4a21-4da8-a880-c604a9db6ca8" />
+    <connection port1="a624d230-a093-4380-81e6-57674b70d458" port2="97fe94ac-3a29-4b7f-aaa1-ea178fe15ccb" />
+    <connection port1="7fc11d6f-3512-4427-9395-94613b9823c0" port2="9adecef5-eae0-405d-a448-a1a9b9be52dc" />
+    <connection port1="1e63f6c1-8608-4964-9586-238ea23a32a3" port2="ce6382fe-ecac-4161-9031-b9e38c65c5f6" />
+    <connection port1="ad357231-2bed-4e03-8d6b-a9663646dcaf" port2="c3bfd3b1-d1b0-411b-a4aa-fcb6d33bb365" />
+    <connection port1="c53a7692-c19f-4635-b72b-a51db910cf2a" port2="dda3a3b3-54ed-41c8-96d5-c6bc667bea67" />
+    <connection port1="f940d9e3-eac8-4cc6-bf70-52debd06b9ef" port2="6d98c1c7-fcf1-4193-ad2b-c8b94d31432c" />
+    <connection port1="fcd346d2-9623-4d25-9a18-0ce44392d393" port2="2b2196a4-2c6d-4eb2-a555-43b876a26555" />
+    <connection port1="55e4c951-e640-4bec-b578-bf4b152863f7" port2="20bf27bf-f068-4c39-92cc-84c327d8494d" />
+    <connection port1="7d0c0bdd-abd8-4a05-8a98-4323a0ffff20" port2="cb98bb30-3e5d-489e-8ac0-db606c843ddf" />
+    <connection port1="3134f2e3-a0d0-4b58-ae5f-b2671f77c172" port2="1708963e-bba6-4570-afcf-17e3dd89a845" />
+    <connection port1="480a1fa1-0735-407a-bdf8-c719a74fe3c7" port2="d0d1636c-373a-4a9c-9af7-3b623c8fd540" />
+    <connection port1="5f5f2546-e54c-441f-a843-c873e63e10a0" port2="749cc066-eeaa-4d6d-b2fb-c0a9d2c6edc9" />
+    <connection port1="19ecc82d-86de-42bb-9407-a2bec5269085" port2="749cc066-eeaa-4d6d-b2fb-c0a9d2c6edc9" />
+    <connection port1="13b94e5d-7b9b-49ce-8b5f-1775ad30abae" port2="749cc066-eeaa-4d6d-b2fb-c0a9d2c6edc9" />
+    <connection port1="bbb36725-1b1a-4fe7-8a0b-430307782ef3" port2="749cc066-eeaa-4d6d-b2fb-c0a9d2c6edc9" />
+    <connection port1="dd5b6fc9-2d34-4a4e-af0d-138c27b421a6" port2="749cc066-eeaa-4d6d-b2fb-c0a9d2c6edc9" />
+    <connection port1="72b612c4-1146-4128-8eb6-fa32bd654225" port2="6ce05da0-587c-42af-a92f-0eabd3243cd7" />
+    <connection port1="1933aa29-c901-4d0f-861d-9b94435df1f8" port2="6ce05da0-587c-42af-a92f-0eabd3243cd7" />
+    <connection port1="28e55857-87fd-467a-ac07-7061722a8ca9" port2="6ce05da0-587c-42af-a92f-0eabd3243cd7" />
+    <connection port1="0c7eb2c9-395e-48ee-943d-47742c54c360" port2="6ce05da0-587c-42af-a92f-0eabd3243cd7" />
+    <connection port1="74b43ddd-10c2-4ccb-8656-0bdb5e34f9e9" port2="6ce05da0-587c-42af-a92f-0eabd3243cd7" />
+    <connection port1="7fc11d6f-3512-4427-9395-94613b9823c0" port2="ff2e3fbb-92ec-4cd5-b79b-69aa4543395a" />
+    <connection port1="1e63f6c1-8608-4964-9586-238ea23a32a3" port2="6919f3a3-4a72-4ef3-9ae7-ac5c36aa02a8" />
+    <connection port1="ad357231-2bed-4e03-8d6b-a9663646dcaf" port2="66e52982-914d-49fc-accd-6fbb7877793e" />
+    <connection port1="c53a7692-c19f-4635-b72b-a51db910cf2a" port2="44d7795d-bb4f-4324-8a0f-48e251cc2ba4" />
+    <connection port1="f940d9e3-eac8-4cc6-bf70-52debd06b9ef" port2="828df122-3119-4e7f-b3ef-df13ffc7be2a" />
+    <connection port1="fcd346d2-9623-4d25-9a18-0ce44392d393" port2="d9b1c7e9-d786-4d8c-b591-54200cfeeab3" />
+    <connection port1="55e4c951-e640-4bec-b578-bf4b152863f7" port2="872bd17f-5749-4d72-989f-0149e20b768f" />
+    <connection port1="7d0c0bdd-abd8-4a05-8a98-4323a0ffff20" port2="82ab8aba-6f0d-4bc6-82d0-24b75369b0f9" />
+    <connection port1="3134f2e3-a0d0-4b58-ae5f-b2671f77c172" port2="0d134c18-ae32-49fa-a439-f9e76e121a66" />
+    <connection port1="480a1fa1-0735-407a-bdf8-c719a74fe3c7" port2="718d5308-457b-4547-9683-8cd81bd28935" />
+    <connection port1="752251f4-ee3e-4b2e-918a-43d81d559a62" port2="c6452bdb-fe61-412b-ad85-14cfc62457af" />
+    <connection port1="888be444-0f80-4950-8835-e4c2daab076a" port2="c6452bdb-fe61-412b-ad85-14cfc62457af" />
+    <connection port1="044988df-4c96-47e5-9357-98afc5acf984" port2="c6452bdb-fe61-412b-ad85-14cfc62457af" />
+    <connection port1="1a051316-013a-42ca-a4dc-b6bf8421b836" port2="c6452bdb-fe61-412b-ad85-14cfc62457af" />
+    <connection port1="2b7b562d-6910-48cb-b9e4-57d34f099776" port2="c6452bdb-fe61-412b-ad85-14cfc62457af" />
+    <connection port1="15484d4b-654f-4b72-beaf-8ee2bd433d37" port2="8c5d9299-6f2e-4734-8782-e3dcccef9449" />
+    <connection port1="5ae0d6ba-da27-4974-9ece-f8c5d53d757f" port2="8c5d9299-6f2e-4734-8782-e3dcccef9449" />
+    <connection port1="7c515dbe-61fb-4c2c-8871-fc24298515ec" port2="8c5d9299-6f2e-4734-8782-e3dcccef9449" />
+    <connection port1="6d7310a8-3de3-4215-9d8a-8c3c4eb8cd5e" port2="8c5d9299-6f2e-4734-8782-e3dcccef9449" />
+    <connection port1="ee9e3e9d-39d4-4249-a4ee-5eb0ee50cdd2" port2="8c5d9299-6f2e-4734-8782-e3dcccef9449" />
+    <connection port1="7fc11d6f-3512-4427-9395-94613b9823c0" port2="dd6ff77d-987e-4885-8ef2-65760bbfa33b" />
+    <connection port1="1e63f6c1-8608-4964-9586-238ea23a32a3" port2="2d6fbcea-ee58-484f-b49c-1ba5d8c2c086" />
+    <connection port1="ad357231-2bed-4e03-8d6b-a9663646dcaf" port2="e40825bb-0617-462c-84d9-62762ea398a1" />
+    <connection port1="c53a7692-c19f-4635-b72b-a51db910cf2a" port2="38c8da19-1fc0-4b75-9d3e-eefe3e4bccdd" />
+    <connection port1="f940d9e3-eac8-4cc6-bf70-52debd06b9ef" port2="3a272d63-894e-4bf4-bdee-f9890163b7d6" />
+    <connection port1="fcd346d2-9623-4d25-9a18-0ce44392d393" port2="435a32c0-f246-47ab-b414-a0aabfe51131" />
+    <connection port1="55e4c951-e640-4bec-b578-bf4b152863f7" port2="a48d1e8a-414e-4075-b363-98f37a9334f0" />
+    <connection port1="7d0c0bdd-abd8-4a05-8a98-4323a0ffff20" port2="a26d0528-7a95-4d5a-a4b1-8f446d310036" />
+    <connection port1="3134f2e3-a0d0-4b58-ae5f-b2671f77c172" port2="28a4a61f-bfad-4aae-9221-e465f8eb826b" />
+    <connection port1="480a1fa1-0735-407a-bdf8-c719a74fe3c7" port2="a2f75801-9137-4f18-a427-091c5c40459e" />
+    <connection port1="ac949b8c-b930-4ea9-a978-b2b70baeb8b2" port2="52ebc77e-e764-4bbd-861a-c6c773537571" />
+    <connection port1="7cbf9a6a-3f11-4440-8d7e-c5771b827103" port2="9b0816fb-cfc9-483f-a472-35065b2b8472" />
+    <connection port1="49e68607-7e20-42be-8fc0-0506ae649479" port2="52ebc77e-e764-4bbd-861a-c6c773537571" />
+    <connection port1="20746843-bedf-4348-850f-00b5d5ab0738" port2="9b0816fb-cfc9-483f-a472-35065b2b8472" />
+    <connection port1="a4cf55e1-561a-4b67-89e8-1adf63092e90" port2="52ebc77e-e764-4bbd-861a-c6c773537571" />
+    <connection port1="866a6efa-5b1f-422b-be07-5d4d1537767c" port2="9b0816fb-cfc9-483f-a472-35065b2b8472" />
+    <connection port1="3821c874-2e2d-41cc-8ba8-bae991822b43" port2="52ebc77e-e764-4bbd-861a-c6c773537571" />
+    <connection port1="cccafa46-87ac-4f00-bdee-b6d2245c9bc1" port2="9b0816fb-cfc9-483f-a472-35065b2b8472" />
+    <connection port1="f63c244f-797d-43ac-abe2-2d60ae2874a7" port2="52ebc77e-e764-4bbd-861a-c6c773537571" />
+    <connection port1="6ee1c511-7d46-4742-b465-dd1fd529eceb" port2="9b0816fb-cfc9-483f-a472-35065b2b8472" />
+    <connection port1="7fc11d6f-3512-4427-9395-94613b9823c0" port2="a758eca5-0cbb-46d8-bba5-269dcf1d0a7f" />
+    <connection port1="1e63f6c1-8608-4964-9586-238ea23a32a3" port2="1fde02c5-e94f-471b-8c68-2161124ddecd" />
+    <connection port1="ad357231-2bed-4e03-8d6b-a9663646dcaf" port2="d1315839-b161-4109-bef7-56f8c8186b1c" />
+    <connection port1="c53a7692-c19f-4635-b72b-a51db910cf2a" port2="897d56f7-9d9f-40af-9fa0-329d7b5c045d" />
+    <connection port1="f940d9e3-eac8-4cc6-bf70-52debd06b9ef" port2="35fe84c9-0225-4138-9180-6fe1882c4fb5" />
+    <connection port1="fcd346d2-9623-4d25-9a18-0ce44392d393" port2="d93f79b8-bb76-45b5-80e9-631442872f34" />
+    <connection port1="55e4c951-e640-4bec-b578-bf4b152863f7" port2="21fb456e-9c70-407c-84d1-3068d3d69163" />
+    <connection port1="7d0c0bdd-abd8-4a05-8a98-4323a0ffff20" port2="0872504a-5c7f-4e98-aeeb-c16012c24ed6" />
+    <connection port1="3134f2e3-a0d0-4b58-ae5f-b2671f77c172" port2="f89fc725-90cb-4407-be7a-9fdee1652bd4" />
+    <connection port1="480a1fa1-0735-407a-bdf8-c719a74fe3c7" port2="d074d83a-4e52-4d8f-be27-5cb0308d7cd0" />
+    <connection port1="73798d6f-49b3-4fd6-8b95-c8c7301923eb" port2="ee273266-aacf-4d99-ad6f-35f6c79d035e" />
+    <connection port1="a99a83b3-0a70-495c-8e0b-13c0d27cebb5" port2="ee273266-aacf-4d99-ad6f-35f6c79d035e" />
+    <connection port1="6e26ef2e-02e2-4cee-a477-16bea21123ea" port2="ee273266-aacf-4d99-ad6f-35f6c79d035e" />
+    <connection port1="a93d8a6a-fc0d-4edd-8928-f778747fc272" port2="ee273266-aacf-4d99-ad6f-35f6c79d035e" />
+    <connection port1="ef3bd3ab-28e9-4d33-b8b0-035eac68c8c9" port2="ee273266-aacf-4d99-ad6f-35f6c79d035e" />
+    <connection port1="62069280-8e07-4f37-ad45-e301ef417845" port2="76eaa622-c780-4c49-9375-ce9eb64c9f24" />
+    <connection port1="5066cba9-2275-47d7-bfec-aa2e699319e2" port2="76eaa622-c780-4c49-9375-ce9eb64c9f24" />
+    <connection port1="4364a27b-812e-4d0f-b6d3-bc0e11161d2f" port2="76eaa622-c780-4c49-9375-ce9eb64c9f24" />
+    <connection port1="dbdbd70e-add0-43ef-bf4c-3c5bf25c0d6c" port2="76eaa622-c780-4c49-9375-ce9eb64c9f24" />
+    <connection port1="06ced2b2-54d8-40b3-875b-3bac98ae043f" port2="76eaa622-c780-4c49-9375-ce9eb64c9f24" />
+    <connection port1="7fc11d6f-3512-4427-9395-94613b9823c0" port2="af632443-f779-4a1a-b36f-32452a1823b1" />
+    <connection port1="ad357231-2bed-4e03-8d6b-a9663646dcaf" port2="4589064e-7693-44b4-8439-e664f2326580" />
+    <connection port1="f940d9e3-eac8-4cc6-bf70-52debd06b9ef" port2="1e3da821-9f7f-45d9-a122-8266f79f6c7b" />
+    <connection port1="55e4c951-e640-4bec-b578-bf4b152863f7" port2="ff05b99b-6662-4d95-a91b-de6438d6e0e8" />
+    <connection port1="3134f2e3-a0d0-4b58-ae5f-b2671f77c172" port2="11b333d6-45e8-47d0-bc5d-0ce04d538ccc" />
+    <connection port1="c53a7692-c19f-4635-b72b-a51db910cf2a" port2="13568ede-88db-4cac-8d92-2e1becb0c9d2" />
+    <connection port1="1e63f6c1-8608-4964-9586-238ea23a32a3" port2="8fec9379-7074-47c2-a30d-fc227cf99c8c" />
+    <connection port1="fcd346d2-9623-4d25-9a18-0ce44392d393" port2="57d80662-ba1f-411a-95b2-60cc5a3d1472" />
+    <connection port1="480a1fa1-0735-407a-bdf8-c719a74fe3c7" port2="fdf61da3-2c06-4516-a763-3319bc739d62" />
+    <connection port1="7d0c0bdd-abd8-4a05-8a98-4323a0ffff20" port2="c5700635-fd7a-4ffd-8a85-e4cf23a0af55" />
+    <connection port1="4f47c8e9-9cf2-4e18-bded-d6b9d02bec07" port2="d7344338-c779-4493-a16d-81eedce0ac5d" />
+    <connection port1="853dc68e-e75c-424a-80bb-de34fd0c6fea" port2="d7344338-c779-4493-a16d-81eedce0ac5d" />
+    <connection port1="3c276368-e653-4de6-acb3-de404393a494" port2="d7344338-c779-4493-a16d-81eedce0ac5d" />
+    <connection port1="eed6f44a-8efa-4ff7-ac6e-1ecc4f3d5cfa" port2="d7344338-c779-4493-a16d-81eedce0ac5d" />
+    <connection port1="70c77348-d91c-4883-acb5-30303cc8c04e" port2="d7344338-c779-4493-a16d-81eedce0ac5d" />
+    <connection port1="0261618d-8e0a-4da2-8d2a-c54a098c4c05" port2="d7344338-c779-4493-a16d-81eedce0ac5d" />
+    <connection port1="0d29cf0d-3da4-4472-b762-2e9a7a96c998" port2="a084e4b6-f102-4f21-8286-12cd8071f399" />
+    <connection port1="7fc11d6f-3512-4427-9395-94613b9823c0" port2="5e6d854e-9dc2-4738-81e1-619c10be646b" />
+    <connection port1="ad357231-2bed-4e03-8d6b-a9663646dcaf" port2="d92175b8-f21d-49b5-a1ed-41ad9b25f5b2" />
+    <connection port1="f940d9e3-eac8-4cc6-bf70-52debd06b9ef" port2="96ff85d6-5756-46d6-9d77-2b5464cc7a5d" />
+    <connection port1="55e4c951-e640-4bec-b578-bf4b152863f7" port2="c9fcc781-ba83-4509-9951-33a1db9607fd" />
+    <connection port1="3134f2e3-a0d0-4b58-ae5f-b2671f77c172" port2="8c91152b-7ee0-459b-927e-a5eec67c5f10" />
+    <connection port1="9f96f048-a935-429b-8f4b-d11a0f6f7d4c" port2="bc9282fd-ad06-47ea-bfe2-b1ee6eaec1d4" />
+    <connection port1="a34e9b27-06a3-42bb-8e58-8a2d869adb57" port2="bc9282fd-ad06-47ea-bfe2-b1ee6eaec1d4" />
+    <connection port1="e86f603b-5250-4281-94d7-9054640534f1" port2="bc9282fd-ad06-47ea-bfe2-b1ee6eaec1d4" />
+    <connection port1="cbc6d0b9-470f-4086-8d9d-b0b5be9baa79" port2="bc9282fd-ad06-47ea-bfe2-b1ee6eaec1d4" />
+    <connection port1="1761cc36-9313-4d55-a8dc-3994b2b63c17" port2="bc9282fd-ad06-47ea-bfe2-b1ee6eaec1d4" />
+    <connection port1="7fc11d6f-3512-4427-9395-94613b9823c0" port2="7cfc95c6-d77e-4d69-be91-12aeb10234da" />
+    <connection port1="ad357231-2bed-4e03-8d6b-a9663646dcaf" port2="f87e59b7-b4a1-406f-8c72-beaaa0a7caaf" />
+    <connection port1="f940d9e3-eac8-4cc6-bf70-52debd06b9ef" port2="beb4b08e-00f4-42fa-a7f7-26c0d413439d" />
+    <connection port1="55e4c951-e640-4bec-b578-bf4b152863f7" port2="7b9d6588-737d-45b7-9670-e5847a54bb83" />
+    <connection port1="3134f2e3-a0d0-4b58-ae5f-b2671f77c172" port2="c37c41fc-33ef-4a3b-85ec-848ea7379705" />
+    <connection port1="8742e48b-f7ed-4a6e-a960-424b0c4a0564" port2="f381d1cb-374c-487a-b600-297d9c364d6f" />
+    <connection port1="2baf07ca-69ac-49d7-9ba2-c750719023c1" port2="f381d1cb-374c-487a-b600-297d9c364d6f" />
+    <connection port1="5660efcd-d429-46ff-aaa6-d2ebb27a3681" port2="f381d1cb-374c-487a-b600-297d9c364d6f" />
+    <connection port1="83458054-7644-430c-b342-5add1caec364" port2="f381d1cb-374c-487a-b600-297d9c364d6f" />
+    <connection port1="b164cad5-1363-4f4f-9b39-60809b32af38" port2="f381d1cb-374c-487a-b600-297d9c364d6f" />
+    <connection port1="1f86b66c-d4ad-422e-8515-b8d54965a800" port2="f381d1cb-374c-487a-b600-297d9c364d6f" />
+    <connection port1="61d732e5-094e-46d3-b978-a1d8d1a61a49" port2="7248ff00-1d3d-4734-8882-a604eb20c168" />
+    <connection port1="ce9bb94a-9bad-4050-a99c-a1ad69b2b2a5" port2="7248ff00-1d3d-4734-8882-a604eb20c168" />
+    <connection port1="1842af96-4f46-477e-97fc-64c9492ce1ed" port2="7248ff00-1d3d-4734-8882-a604eb20c168" />
+    <connection port1="d68b3540-7ae3-4dba-a69a-aef561140a91" port2="7248ff00-1d3d-4734-8882-a604eb20c168" />
+    <connection port1="325cf4e5-65aa-4cf8-8a3a-48f71c2da637" port2="7248ff00-1d3d-4734-8882-a604eb20c168" />
+    <connection port1="2e0db207-2df4-4ace-bb27-5eea5b7e873d" port2="7248ff00-1d3d-4734-8882-a604eb20c168" />
+    <connection port1="7fc11d6f-3512-4427-9395-94613b9823c0" port2="1472b8bb-6dd8-415e-a19f-6ddaf51746ba" />
+    <connection port1="ad357231-2bed-4e03-8d6b-a9663646dcaf" port2="3fee34a0-365e-45c5-bc7b-feb8ccae85ff" />
+    <connection port1="f940d9e3-eac8-4cc6-bf70-52debd06b9ef" port2="49f3ed17-d8d2-419c-ae80-96448dff4839" />
+    <connection port1="55e4c951-e640-4bec-b578-bf4b152863f7" port2="608e4a59-c40f-4ad5-a80e-1f4c0906e868" />
+    <connection port1="3134f2e3-a0d0-4b58-ae5f-b2671f77c172" port2="3fbf546e-e5ed-4985-ba7a-d9e8ebe6822d" />
+    <connection port1="1e63f6c1-8608-4964-9586-238ea23a32a3" port2="7445fa7e-040c-4977-94c1-c71cd662ccf9" />
+    <connection port1="c53a7692-c19f-4635-b72b-a51db910cf2a" port2="1160306a-7a3f-40b9-a3dd-f844e7880d1e" />
+    <connection port1="fcd346d2-9623-4d25-9a18-0ce44392d393" port2="92a1a665-f1b2-4ec9-9d9c-9e6496ca740d" />
+    <connection port1="7d0c0bdd-abd8-4a05-8a98-4323a0ffff20" port2="2b46e286-3881-41e5-8182-3394ba2bb359" />
+    <connection port1="480a1fa1-0735-407a-bdf8-c719a74fe3c7" port2="b92dc153-78b3-440c-90a5-169d5eebc3b9" />
+    <connection port1="fb95eacf-ce6b-41e9-be9d-07f37ad878b6" port2="692d9e8d-5b26-444e-b33d-9a8cafe9e0a9" />
+    <connection port1="20261012-7a36-439a-a959-6101e4dff726" port2="3400ae95-1cdf-450c-980b-1ebc42500eb1" />
+    <connection port1="7fc11d6f-3512-4427-9395-94613b9823c0" port2="24fb3197-ec57-4fc0-84ca-3148cb3d43f8" />
+    <connection port1="1e63f6c1-8608-4964-9586-238ea23a32a3" port2="3204575f-d57a-479d-b4dc-f9a16fec5b7e" />
+    <connection port1="ad357231-2bed-4e03-8d6b-a9663646dcaf" port2="b78224ec-14d2-4b30-954c-54059e36b908" />
+    <connection port1="c53a7692-c19f-4635-b72b-a51db910cf2a" port2="811bc560-48b5-42cc-816b-d72a9663bc4d" />
+    <connection port1="f940d9e3-eac8-4cc6-bf70-52debd06b9ef" port2="65fbd534-9cee-4e65-949a-6d12ef1dc2b6" />
+    <connection port1="fcd346d2-9623-4d25-9a18-0ce44392d393" port2="5ac4fd4e-d668-43e5-af21-d39429e25ce9" />
+    <connection port1="55e4c951-e640-4bec-b578-bf4b152863f7" port2="0fda9330-c34b-43c6-8ccb-14f4a0eadcf3" />
+    <connection port1="7d0c0bdd-abd8-4a05-8a98-4323a0ffff20" port2="d52c83cb-eda1-413f-b1b0-2ffc2c3c1fa3" />
+    <connection port1="3134f2e3-a0d0-4b58-ae5f-b2671f77c172" port2="7864ca88-5382-43c9-9c86-baa5e252949a" />
+    <connection port1="480a1fa1-0735-407a-bdf8-c719a74fe3c7" port2="7d140398-82bd-42f3-9e94-055dad7bda3c" />
+    <connection port1="89ccb38a-fc51-44d7-9b4f-0ea7de047b92" port2="7b48bd57-dfb7-47a2-8f1f-446d122244a2" />
+    <connection port1="20bb42ad-d119-4b80-b517-256b78dda48a" port2="66edb7cb-63a6-4d91-a6ff-1f0cf69a88e3" />
+    <connection port1="fb95eacf-ce6b-41e9-be9d-07f37ad878b6" port2="7f75966a-92bf-4ec1-9e8e-d17d83e314ff" />
+    <connection port1="20261012-7a36-439a-a959-6101e4dff726" port2="a8f09650-8f28-4646-bbdf-49c6c8be7bdf" />
+    <connection port1="992e548f-9c6e-476c-84f4-9ab4c2277c93" port2="4e1222fd-5256-4897-8ed0-0ff555e90a80" />
+    <connection port1="c923acb5-b3bb-4301-be40-4acf15f4d634" port2="0b82c150-0ad6-4d9d-9038-2136a92b1e83" />
+    <connection port1="ad9be332-0757-49ee-8fa3-3566db065834" port2="0d142c29-92c4-498d-9cf7-53baaef57ef3" />
+    <connection port1="4ec0f741-e1c1-4481-a338-ef34b52339c4" port2="a9aca069-fd24-4b65-ae3e-86a8be85de57" />
+    <connection port1="0d29cf0d-3da4-4472-b762-2e9a7a96c998" port2="49b6f400-a84b-4df5-98c1-44d6ea9c5cfb" />
+    <connection port1="946afb59-72d0-4805-b7ba-e5a58ee42244" port2="c35a59ab-f1a9-488e-9ad3-df9f82fb2dca" />
+    <connection port1="8c8fb672-b687-49ef-b16d-70ab6e3069b8" port2="9bb7b187-83c9-4cff-b76e-82bdcd2f394a" />
+    <connection port1="9f529ea6-3723-4c7b-bb2f-6037c78f174b" port2="6e9b66fa-daf1-4297-9863-fbbff5b3e444" />
+    <connection port1="4f97b368-68be-4893-b0e3-a1580bb14a33" port2="fbe44d6c-a043-47d4-8d0f-eb3d55385048" />
+    <connection port1="c3644b86-63de-47cc-9218-78544f985fb0" port2="c1169c81-df84-49e2-924d-3e7278251f5e" />
+    <connection port1="887e4c56-7a2f-4475-85a8-ed6c65f97ad9" port2="4c586115-2628-4f58-8972-486f108ec213" />
+    <connection port1="cf0b8637-2c1c-4ff0-b7b1-759ba16cfbec" port2="c1169c81-df84-49e2-924d-3e7278251f5e" />
+    <connection port1="80ccd8d1-19fa-4793-ace1-9d96f91a1acb" port2="4c586115-2628-4f58-8972-486f108ec213" />
+    <connection port1="c4da9968-7de6-4b01-9b6a-ef8a53ef20ea" port2="c1169c81-df84-49e2-924d-3e7278251f5e" />
+    <connection port1="e949171f-f4fb-467d-a491-3df2a9a205de" port2="4c586115-2628-4f58-8972-486f108ec213" />
+    <connection port1="9f54e20e-3890-462f-8c79-f8bd5a7189cd" port2="c1169c81-df84-49e2-924d-3e7278251f5e" />
+    <connection port1="c79de4c2-a1a7-4651-8c0e-7321a2d5e82e" port2="4c586115-2628-4f58-8972-486f108ec213" />
+    <connection port1="444aea51-49c6-45db-8abf-5ee55db1578a" port2="c1169c81-df84-49e2-924d-3e7278251f5e" />
+    <connection port1="78ba7a90-ec9c-4aa7-ac9d-9593cd655255" port2="4c586115-2628-4f58-8972-486f108ec213" />
+    <connection port1="e7b015e8-f3b0-44a0-bd68-1c6c76d52426" port2="c1169c81-df84-49e2-924d-3e7278251f5e" />
+    <connection port1="9bf7a84e-656a-45ff-b45e-18dd6534bda3" port2="4c586115-2628-4f58-8972-486f108ec213" />
+    <connection port1="28d57852-6c5d-42cd-9bdb-fb9142816725" port2="c1169c81-df84-49e2-924d-3e7278251f5e" />
+    <connection port1="23f08f6c-a854-4b45-80c2-5f0f52f4589a" port2="4c586115-2628-4f58-8972-486f108ec213" />
+    <connection port1="c74eec52-0add-49b6-a382-f5992208816e" port2="c1169c81-df84-49e2-924d-3e7278251f5e" />
+    <connection port1="033433ee-76cc-4da7-b0aa-3f1a615971bc" port2="4c586115-2628-4f58-8972-486f108ec213" />
+    <connection port1="ac92362e-914d-48da-812f-7041e7206d19" port2="c1169c81-df84-49e2-924d-3e7278251f5e" />
+    <connection port1="3d5dcc02-33ef-468e-a60a-aeb1fc83b66f" port2="4c586115-2628-4f58-8972-486f108ec213" />
+    <connection port1="0c2bcb73-a5b3-4071-a83e-4c86cbd5234c" port2="c1169c81-df84-49e2-924d-3e7278251f5e" />
+    <connection port1="3a3d19e9-f37a-484e-b37a-977fb199b453" port2="4c586115-2628-4f58-8972-486f108ec213" />
+    <connection port1="794c14ce-9520-4956-9c52-a90b1290febf" port2="c1169c81-df84-49e2-924d-3e7278251f5e" />
+    <connection port1="794c14ce-9520-4956-9c52-a90b1290febf" port2="4c586115-2628-4f58-8972-486f108ec213" />
+    <connection port1="45082675-4adf-4230-b65d-f54dc01134ea" port2="c1169c81-df84-49e2-924d-3e7278251f5e" />
+    <connection port1="98983164-f187-41b2-9640-e40a64449d39" port2="4c586115-2628-4f58-8972-486f108ec213" />
+    <connection port1="4b2c3f15-e83e-47ad-93ab-33982473ecc0" port2="736664ed-bfbd-4904-9d0d-bc72bd9a0d36" />
+    <connection port1="245e558e-ef53-48ea-88d9-c5998afc9df9" port2="47bb49dc-4bec-4f05-b5b0-4d49f79509a4" />
+    <connection port1="d7920f90-fcea-4161-baca-613f865651d0" port2="daaec82e-1603-4ee2-936e-573f397a55ac" />
+    <connection port1="d7920f90-fcea-4161-baca-613f865651d0" port2="b1cfe7f9-3eac-4794-8e71-62cbfcef22ff" />
+    <connection port1="8802f7f0-6129-4d8e-ac9f-ced692aa9c97" port2="daaec82e-1603-4ee2-936e-573f397a55ac" />
+    <connection port1="8802f7f0-6129-4d8e-ac9f-ced692aa9c97" port2="b1cfe7f9-3eac-4794-8e71-62cbfcef22ff" />
+    <connection port1="7a176acf-38bf-46b7-8c7c-86dccf48a3d9" port2="daaec82e-1603-4ee2-936e-573f397a55ac" />
+    <connection port1="77379935-0983-47a0-b6a5-246d6e4317c0" port2="b1cfe7f9-3eac-4794-8e71-62cbfcef22ff" />
+    <connection port1="30b2dd0d-4428-4d68-b039-8f77a6e20bfb" port2="daaec82e-1603-4ee2-936e-573f397a55ac" />
+    <connection port1="9697bf1e-d590-4839-8093-5357ad9a32ce" port2="b1cfe7f9-3eac-4794-8e71-62cbfcef22ff" />
+    <connection port1="d7920f90-fcea-4161-baca-613f865651d0" port2="d67bbf18-3423-441a-a892-54d3e2364862" />
+    <connection port1="d7920f90-fcea-4161-baca-613f865651d0" port2="905a1f92-01a1-4e99-a0d4-e774b8660604" />
+    <connection port1="d7920f90-fcea-4161-baca-613f865651d0" port2="ad0f2c91-2c6a-4d48-96ca-dd283b0bba2a" />
+    <connection port1="b2cca0aa-c81e-403e-84dc-84baf3682887" port2="d7d9c69a-2896-4109-905c-35a3a5c8d5b8" />
+    <connection port1="d513c723-6ad9-40a1-bf00-553e2b380f4c" port2="61389820-3a02-47e7-87c5-a43c5ad0e116" />
+    <connection port1="0b386ab2-1fff-49fd-8ae0-1a5e105e03f5" port2="a1ee790f-618d-4c8c-b8d4-66da15012168" />
+    <connection port1="1dd89637-bf3f-4562-9cad-9e88c14744e2" port2="228615c8-1d15-4127-ad06-549defbaed9b" />
+    <connection port1="d7920f90-fcea-4161-baca-613f865651d0" port2="5647b24f-7666-4881-9597-377a5aba0fe6" />
+    <connection port1="52d7968e-7c89-40d0-b870-de79cddb354c" port2="06bfe4be-f206-422c-b153-872d6b9faabd" />
+    <connection port1="a85d7340-1a20-4d76-bfc3-d09f8b47511e" port2="e3dc6cca-85bb-477d-8f6e-c9b9efa38e91" />
+    <connection port1="c450dbbe-9094-4b22-8db6-e7132c6b3974" port2="0a9ea060-eb54-426e-ac65-23336801f386" />
+    <connection port1="ac7cc7e9-9e4f-4a7a-a682-212ce79cd3e8" port2="f4d5175e-ffde-4547-9780-d1f9abe17858" />
+    <connection port1="cda3e38e-413b-4988-aac2-0f93e192e8c0" port2="62f8ef80-799c-41f0-821f-075e64f5f8bf" />
+    <connection port1="a6101004-dead-4e11-8231-811da10628f8" port2="bf533fe3-057d-438a-a19f-98a275d5b17d" />
+    <connection port1="c3991a9b-a145-43d6-bf61-b5741607ccda" port2="fc4d56bc-1770-48df-b078-89f4349beda7" />
+    <connection port1="a2e4fd7f-3e76-44a3-9ac3-67f81c772fd9" port2="b1cc8e72-ca89-44a3-af5f-9db214cef174" />
+    <connection port1="fe523f8e-f5da-4e85-b6c1-4bc54be2d05d" port2="9fb2e904-b835-4768-9f8e-7aeb86650898" />
+    <connection port1="d29ddd88-8afd-4bb2-8a13-c2730d81ef59" port2="2c9b52ec-31fc-4b1f-be62-23b022ddd675" />
+    <connection port1="422f90b7-2686-4137-841c-005a75a385f2" port2="2c9b52ec-31fc-4b1f-be62-23b022ddd675" />
+    <connection port1="f5bdb83d-a866-48eb-b131-2deb176dbcce" port2="2c9b52ec-31fc-4b1f-be62-23b022ddd675" />
+    <connection port1="f5bdb83d-a866-48eb-b131-2deb176dbcce" port2="d43244ed-1aec-45e7-99e8-5eb6235f6340" />
+    <connection port1="2520cecb-4824-4cfa-a37d-4f6034bf31cb" port2="2c9b52ec-31fc-4b1f-be62-23b022ddd675" />
+    <connection port1="2b7ed3db-b7f1-43e0-b254-1e75e9a998a3" port2="d43244ed-1aec-45e7-99e8-5eb6235f6340" />
+    <connection port1="74b98469-d981-4f6a-829d-940f28b4a341" port2="d43244ed-1aec-45e7-99e8-5eb6235f6340" />
+    <connection port1="69349eb5-1f1c-486c-82f8-7b39481f2453" port2="d43244ed-1aec-45e7-99e8-5eb6235f6340" />
+    <connection port1="0e92a450-70d1-4a73-8aba-1f18ce0a9d48" port2="2c9b52ec-31fc-4b1f-be62-23b022ddd675" />
+    <connection port1="fd705475-ce21-4b22-aeeb-e4d02d621a1f" port2="d43244ed-1aec-45e7-99e8-5eb6235f6340" />
+    <connection port1="7795b0f2-3dd1-48e6-a51f-40d1086c3e85" port2="2c9b52ec-31fc-4b1f-be62-23b022ddd675" />
+    <connection port1="7795b0f2-3dd1-48e6-a51f-40d1086c3e85" port2="d43244ed-1aec-45e7-99e8-5eb6235f6340" />
+    <connection port1="419ff412-4f27-4f01-a5db-beb71ce89adc" port2="2c9b52ec-31fc-4b1f-be62-23b022ddd675" />
+    <connection port1="419ff412-4f27-4f01-a5db-beb71ce89adc" port2="d43244ed-1aec-45e7-99e8-5eb6235f6340" />
+    <connection port1="c450dbbe-9094-4b22-8db6-e7132c6b3974" port2="e2f5e864-d2d2-441a-9186-0fc33e8a1456" />
+    <connection port1="ac7cc7e9-9e4f-4a7a-a682-212ce79cd3e8" port2="8700d1f9-78be-4240-b124-e5160f6ed125" />
+    <connection port1="cda3e38e-413b-4988-aac2-0f93e192e8c0" port2="53afe948-f1b3-429d-ad44-ab06a9c07b3c" />
+    <connection port1="a6101004-dead-4e11-8231-811da10628f8" port2="07f2b22c-2bd1-4aa0-84e3-ef59adf86b4c" />
+    <connection port1="d7920f90-fcea-4161-baca-613f865651d0" port2="dea2da0b-45e1-4654-ac5d-31ae50d8cef7" />
+    <connection port1="52d7968e-7c89-40d0-b870-de79cddb354c" port2="3427dd15-3c0c-413b-8ae3-7db173efaae8" />
+    <connection port1="a85d7340-1a20-4d76-bfc3-d09f8b47511e" port2="25b23d9b-74b3-4c75-b3de-f47d02386004" />
+    <connection port1="c3991a9b-a145-43d6-bf61-b5741607ccda" port2="9e980527-fc04-4cfc-8b9d-48924d08d2ec" />
+    <connection port1="a2e4fd7f-3e76-44a3-9ac3-67f81c772fd9" port2="008c6e97-ec12-400e-8e7a-3b4ab7a772ee" />
+    <connection port1="fe523f8e-f5da-4e85-b6c1-4bc54be2d05d" port2="20088890-63c4-4e89-bea8-23c9ac5cac25" />
+    <connection port1="a221dab0-d738-47eb-b9f3-b26c38c8e5e7" port2="ac9d29b9-0c97-4708-99b4-10f840c9d930" />
+    <connection port1="8d61caae-d7ff-4bf5-a9da-782a7cacc3ac" port2="93adb0f9-65dd-476f-8c39-2bb16f720995" />
+    <connection port1="9723f9cf-cf73-4799-b23b-91bae92362a2" port2="ac9d29b9-0c97-4708-99b4-10f840c9d930" />
+    <connection port1="98900528-4fbc-4268-9b78-e21ea8ef7fef" port2="93adb0f9-65dd-476f-8c39-2bb16f720995" />
+    <connection port1="98900528-4fbc-4268-9b78-e21ea8ef7fef" port2="ac9d29b9-0c97-4708-99b4-10f840c9d930" />
+    <connection port1="b480121a-163f-49f7-8575-b7ddcce46204" port2="93adb0f9-65dd-476f-8c39-2bb16f720995" />
+    <connection port1="75317b45-edf8-480c-a8f3-7eea3db9786d" port2="ac9d29b9-0c97-4708-99b4-10f840c9d930" />
+    <connection port1="436f7155-5031-47bd-bce0-3929f688a706" port2="93adb0f9-65dd-476f-8c39-2bb16f720995" />
+    <connection port1="77b5411c-5b14-4b8a-9a3b-989e2144310c" port2="ac9d29b9-0c97-4708-99b4-10f840c9d930" />
+    <connection port1="ccede540-7a86-403a-bdaa-c1ee119d0cdf" port2="93adb0f9-65dd-476f-8c39-2bb16f720995" />
+    <connection port1="1b50e551-a3d2-444f-82f3-5ae5d18977ba" port2="ac9d29b9-0c97-4708-99b4-10f840c9d930" />
+    <connection port1="1b50e551-a3d2-444f-82f3-5ae5d18977ba" port2="93adb0f9-65dd-476f-8c39-2bb16f720995" />
+    <connection port1="8331b6d7-6e03-4e05-a2ed-c643510b213c" port2="ac9d29b9-0c97-4708-99b4-10f840c9d930" />
+    <connection port1="8331b6d7-6e03-4e05-a2ed-c643510b213c" port2="93adb0f9-65dd-476f-8c39-2bb16f720995" />
+    <connection port1="84195089-21f1-42ec-bce7-25708c6c9b62" port2="ddfab416-87ea-42d5-b750-5017ad275642" />
+    <connection port1="84195089-21f1-42ec-bce7-25708c6c9b62" port2="ae6f987f-9142-4361-b606-770e6ee245fe" />
+    <connection port1="579fe8c3-4bd2-4a29-8169-56ba15a5b840" port2="f189ca68-3e8d-42fb-9360-c9c94cfe8e0e" />
+    <connection port1="ba3d0ed9-90eb-4da1-9196-93627a451997" port2="b0142eac-5953-4d16-b9e0-496a74551727" />
+    <connection port1="16a1ae57-b048-402c-8520-72e682910e39" port2="a968f860-a2eb-4026-a823-705dba7a7ea9" />
+    <connection port1="a6d065b9-cf29-47bf-a11d-8d0c802b0303" port2="701f17f8-1b15-41e3-a03a-211161e94a04" />
+    <connection port1="d7920f90-fcea-4161-baca-613f865651d0" port2="0e15bcbe-afac-48ca-9a1a-1dbdfea09e27" />
+    <connection port1="52d7968e-7c89-40d0-b870-de79cddb354c" port2="4b26065a-ba54-43bc-8000-d6474e28d8d3" />
+    <connection port1="a85d7340-1a20-4d76-bfc3-d09f8b47511e" port2="f86d9a37-525f-4b28-a924-99bc73131bd3" />
+    <connection port1="c450dbbe-9094-4b22-8db6-e7132c6b3974" port2="887bb461-c639-49f9-873f-ba3689c6d557" />
+    <connection port1="ac7cc7e9-9e4f-4a7a-a682-212ce79cd3e8" port2="732171cf-dea2-4064-b6b7-599763519794" />
+    <connection port1="cda3e38e-413b-4988-aac2-0f93e192e8c0" port2="56bf5a12-038d-4ae2-99b0-776ba590d69f" />
+    <connection port1="a6101004-dead-4e11-8231-811da10628f8" port2="cc4c9336-fedf-4af2-99f4-be300ce5a2fc" />
+    <connection port1="c3991a9b-a145-43d6-bf61-b5741607ccda" port2="d99b3abd-5b07-48f7-ad7e-27c579b61e35" />
+    <connection port1="a2e4fd7f-3e76-44a3-9ac3-67f81c772fd9" port2="5260c58c-3e6b-4cb5-92c8-3ad9e1703320" />
+    <connection port1="8c8fb672-b687-49ef-b16d-70ab6e3069b8" port2="7443c47e-c4f7-41a9-a8c9-36a664ca5c9f" />
+    <connection port1="6e32c41b-1730-4f7b-af73-601c3bb8ca0e" port2="d7344338-c779-4493-a16d-81eedce0ac5d" />
+    <connection port1="e1e1b541-173a-4aeb-b8c9-71a35965d14f" port2="df087322-11af-43d9-b94e-0744869b0e76" />
+    <connection port1="d26363c7-a877-460b-a6db-ba50ea618843" port2="ccbf9029-5e4d-4224-8a5e-58824293b839" />
+    <connection port1="545bac62-0b08-415d-9de7-a6db07005db6" port2="3276f9b6-7674-4970-9d9b-20403bf1029e" />
+    <connection port1="b3d147ef-fef1-4326-a21e-d0f3bb044b9c" port2="ea5ccd96-1216-43cd-9f0c-5d57135e3a7c" />
+    <connection port1="c04f775c-def4-4499-ba9e-2b8fea502f6a" port2="ea5ccd96-1216-43cd-9f0c-5d57135e3a7c" />
+    <connection port1="62d5c028-cd1f-4b86-8ea3-dda7e65de0ed" port2="f57d5c37-0046-4c2a-b137-54d4895a98e9" />
+    <connection port1="bae4ab2f-5fac-4a74-88e6-fbf461f3e549" port2="c79381cf-5291-4a25-bd42-6626e7c553f5" />
+    <connection port1="16afb1d8-af78-4bcd-bb94-1fe125709f39" port2="c79381cf-5291-4a25-bd42-6626e7c553f5" />
+    <connection port1="1bdd8974-aec3-49fb-b418-b8f281b303d2" port2="a3e2d76b-ea3b-4131-954f-f16d752dcdf0" />
+    <connection port1="3bccbd6b-9310-45e1-9f63-0fb0f9ffc23a" port2="7080d500-68d1-49fc-8993-6042c1ffeb86" />
+    <connection port1="8382c397-9c29-4984-8896-a0bc108dde61" port2="7362510b-40d6-4228-bcf8-0fa37f6675e6" />
+    <connection port1="a5873768-1431-449b-bcf5-f56eb1ec1d8f" port2="7e74236c-c3b5-456a-beda-288fd15a14d8" />
+    <connection port1="06fb7c99-e975-45f7-bf25-6ef21c61f4ac" port2="c1169c81-df84-49e2-924d-3e7278251f5e" />
+    <connection port1="713dce35-eb79-4887-9630-dac86d7dc019" port2="4c586115-2628-4f58-8972-486f108ec213" />
+    <connection port1="4acb0428-9dad-4c68-909a-3bd8a9653114" port2="9669ea2c-3c91-458d-876d-bc1e8ff1933a" />
+    <connection port1="fa3345db-7c60-4e02-92cb-d44afd86aca6" port2="119c629c-ac60-48f0-a106-51651d2c5359" />
+    <connection port1="8d7368b6-58a7-4623-a475-a44c6a46dd5e" port2="9669ea2c-3c91-458d-876d-bc1e8ff1933a" />
+    <connection port1="37f14442-7629-4520-bfef-fbd57317984a" port2="119c629c-ac60-48f0-a106-51651d2c5359" />
+    <connection port1="aa7daa79-264e-4981-9a9e-6f0aa874bb57" port2="53bdbd37-b72b-48b5-bb16-35be8dd5b3a5" />
+    <connection port1="54376dbe-6bce-4af4-8a72-f3ebcfcd4642" port2="a9ab57c6-eed4-4933-8500-f4610c7a86e0" />
+    <connection port1="aa7daa79-264e-4981-9a9e-6f0aa874bb57" port2="00cbbfb3-ccf0-409e-aed6-d3c5af3da954" />
+    <connection port1="54376dbe-6bce-4af4-8a72-f3ebcfcd4642" port2="6c104608-bfad-4863-9ced-b34c2d32b2e9" />
+    <connection port1="c02304c0-3657-427a-a352-81b25979093d" port2="53bdbd37-b72b-48b5-bb16-35be8dd5b3a5" />
+    <connection port1="22727f62-4bbd-46d2-a137-a284d7910bf4" port2="6c104608-bfad-4863-9ced-b34c2d32b2e9" />
+    <connection port1="c02304c0-3657-427a-a352-81b25979093d" port2="00cbbfb3-ccf0-409e-aed6-d3c5af3da954" />
+    <connection port1="22727f62-4bbd-46d2-a137-a284d7910bf4" port2="a9ab57c6-eed4-4933-8500-f4610c7a86e0" />
+    <connection port1="ee03e367-8ede-47a7-9460-18f357a915d9" port2="53bdbd37-b72b-48b5-bb16-35be8dd5b3a5" />
+    <connection port1="2e2360ca-d98c-4ae2-bf57-2640719e11d6" port2="a9ab57c6-eed4-4933-8500-f4610c7a86e0" />
+    <connection port1="ee03e367-8ede-47a7-9460-18f357a915d9" port2="00cbbfb3-ccf0-409e-aed6-d3c5af3da954" />
+    <connection port1="2e2360ca-d98c-4ae2-bf57-2640719e11d6" port2="6c104608-bfad-4863-9ced-b34c2d32b2e9" />
+    <connection port1="09d5d88a-f188-4f6e-8d4e-be996fe41b00" port2="53bdbd37-b72b-48b5-bb16-35be8dd5b3a5" />
+    <connection port1="09d5d88a-f188-4f6e-8d4e-be996fe41b00" port2="00cbbfb3-ccf0-409e-aed6-d3c5af3da954" />
+    <connection port1="02437437-c2e4-4eda-b423-9bd6c260d507" port2="a9ab57c6-eed4-4933-8500-f4610c7a86e0" />
+    <connection port1="02437437-c2e4-4eda-b423-9bd6c260d507" port2="6c104608-bfad-4863-9ced-b34c2d32b2e9" />
+    <connection port1="7f9bd03c-a60f-4450-bc83-567ebdfe54f7" port2="53bdbd37-b72b-48b5-bb16-35be8dd5b3a5" />
+    <connection port1="7f9bd03c-a60f-4450-bc83-567ebdfe54f7" port2="00cbbfb3-ccf0-409e-aed6-d3c5af3da954" />
+    <connection port1="9d3e78ab-7802-4a9a-a624-018c11ecce5e" port2="a9ab57c6-eed4-4933-8500-f4610c7a86e0" />
+    <connection port1="9d3e78ab-7802-4a9a-a624-018c11ecce5e" port2="6c104608-bfad-4863-9ced-b34c2d32b2e9" />
+    <connection port1="7fc11d6f-3512-4427-9395-94613b9823c0" port2="bc98859c-459e-4ab6-92ab-9d1fde3f926a" />
+    <connection port1="1e63f6c1-8608-4964-9586-238ea23a32a3" port2="cd73e137-ce8a-4223-9d36-ede1915f8dfa" />
+    <connection port1="ad357231-2bed-4e03-8d6b-a9663646dcaf" port2="297384f1-6bac-43ca-b274-bd8c5a8967b8" />
+    <connection port1="c53a7692-c19f-4635-b72b-a51db910cf2a" port2="a03df7d0-9657-426d-b21f-8c49b73f6fe3" />
+    <connection port1="f940d9e3-eac8-4cc6-bf70-52debd06b9ef" port2="aefa1ca6-8239-413d-a5bc-90d43e41699a" />
+    <connection port1="fcd346d2-9623-4d25-9a18-0ce44392d393" port2="fa7f2982-5fe7-4898-9fd4-94c4002e34a9" />
+    <connection port1="55e4c951-e640-4bec-b578-bf4b152863f7" port2="63faf9e5-a57c-44fa-b90b-439f2c21e575" />
+    <connection port1="7d0c0bdd-abd8-4a05-8a98-4323a0ffff20" port2="de1f0f71-3519-46ce-ae08-48257698e1b3" />
+    <connection port1="3134f2e3-a0d0-4b58-ae5f-b2671f77c172" port2="9037ee0b-1ee3-4291-acaf-a58ab2c04e28" />
+    <connection port1="480a1fa1-0735-407a-bdf8-c719a74fe3c7" port2="c1084677-6832-4e00-b960-174ac47515e9" />
+    <connection port1="8aeaf932-56d2-4df7-9f2e-322b2baadc1e" port2="40ea3eee-c6a2-4bc0-84c6-ad851181949d" />
+    <connection port1="c679b376-c5f8-4a7e-a20a-383be8ce1ce1" port2="dbf3ff12-2659-4914-87a6-360bad65a3e2" />
+    <connection port1="fdf4b209-2ef1-4aa0-a36f-6e926c154d46" port2="c1169c81-df84-49e2-924d-3e7278251f5e" />
+    <connection port1="feb46521-f250-4274-b8f9-bbb0895e4791" port2="4c586115-2628-4f58-8972-486f108ec213" />
+    <connection port1="8aeaf932-56d2-4df7-9f2e-322b2baadc1e" port2="e8a5d5d8-eb22-4325-8275-3aa9a3dcc832" />
+    <connection port1="c679b376-c5f8-4a7e-a20a-383be8ce1ce1" port2="2c33b7b0-4ec5-4f65-a932-3f4fdd510219" />
+    <connection port1="8aeaf932-56d2-4df7-9f2e-322b2baadc1e" port2="d19c132e-2847-4ef1-aa0e-2bf373ed3bd9" />
+    <connection port1="dd15fa82-216b-4b8b-ae2e-718e5a69c80c" port2="ee273266-aacf-4d99-ad6f-35f6c79d035e" />
+    <connection port1="39a0c6ac-649b-46aa-82b7-97a9c012adbf" port2="76eaa622-c780-4c49-9375-ce9eb64c9f24" />
+    <connection port1="fc443232-a766-4645-ae18-21afe1112192" port2="d7344338-c779-4493-a16d-81eedce0ac5d" />
+    <connection port1="a058c7b5-14db-47ab-bf66-2bb0732ae440" port2="daaec82e-1603-4ee2-936e-573f397a55ac" />
+    <connection port1="4c6f5169-9d9f-488d-a5c5-aa15656a3f01" port2="ff117881-f553-4dbf-b190-014df27a9298" />
+    <connection port1="d7920f90-fcea-4161-baca-613f865651d0" port2="7f47854d-877f-4c44-a4f7-da3982deb843" />
+    <connection port1="9623d23d-bff7-4a26-b62a-bab2b1ca4bb8" port2="c2a1a0d9-99ec-4fec-8f30-26f74e60ca51" />
+    <connection port1="15d011b6-1f78-4ee2-a0ab-ca1fe0e89d1b" port2="93615ba8-107e-4fc3-8c3d-629a45f5abdf" />
+    <connection port1="7ad70b39-b5bd-42ad-8a92-8c73e409e246" port2="639f99fa-e82e-4842-b413-8c8ba567bc91" />
+    <connection port1="7677e0e5-bd0b-4fce-a4b1-2dea41fe8626" port2="0fefaa97-db60-4a3c-a579-380490b44aa8" />
+    <connection port1="d0103797-aec4-4294-9c15-832604342fca" port2="40752abe-792f-4a08-80fc-1a6a3b4dde53" />
+    <connection port1="b14939fe-e7ce-4a3b-aedb-3c1b616d29d8" port2="bed137c6-878b-47ad-a17c-d926720eaef2" />
+    <connection port1="37c70d42-4dd4-41b9-9b28-95fed989a3ff" port2="ded0c505-ed6b-4086-a632-7f2fb59aff9a" />
+    <connection port1="0cee0c30-441c-4341-b503-a7122ac85dc1" port2="37453285-1ab7-421a-aa86-920fc0b9cb5c" />
+    <connection port1="9387b063-940d-4d56-baf5-4ad986c9abbc" port2="9e4c7f86-456a-4083-9e51-9524b3417b3d" />
+    <connection port1="0824ee07-0c17-479d-a038-c930a78f532d" port2="bcc66a84-e4d3-46e9-9a87-92a2a185b857" />
+    <connection port1="aeb32190-c635-4cac-93a0-2994e6cfb4b8" port2="ff1cdb98-bf39-4edc-8e26-c8bb5ab00603" />
+    <connection port1="718f97ba-eec4-4cda-9ce8-a272488b2753" port2="64654eb6-bfa1-4c0b-b659-aeb0178dcdfc" />
+    <connection port1="feee0e86-c3c1-44d4-9873-8589d1105635" port2="b1cfe7f9-3eac-4794-8e71-62cbfcef22ff" />
+    <connection port1="67a0a9a7-bcc1-4e27-8f99-03ca0fcbe58c" port2="321751a7-b207-4a24-af04-9b5812261288" />
+    <connection port1="c6e1832a-862f-41c3-81e2-92397d053215" port2="dedc980a-fa69-4a22-a7c1-2a6a8060abb0" />
+    <connection port1="1c957f96-fb96-47f0-b8d5-2789a05cf8d7" port2="8bab1173-af33-48e7-a126-fd05a87b7023" />
+    <connection port1="21e86a41-8705-497f-82c9-ad2b8f75ccb1" port2="09c376fd-7883-441e-87c5-98a178a8adef" />
+    <connection port1="6813f71b-e1e7-47ac-b69a-37b714d9e669" port2="d8f2619d-6daf-449b-8d42-c934a22300ba" />
+    <connection port1="572efdcb-6a2d-4645-b183-30f523c5f156" port2="df087322-11af-43d9-b94e-0744869b0e76" />
+    <connection port1="572efdcb-6a2d-4645-b183-30f523c5f156" port2="ccbf9029-5e4d-4224-8a5e-58824293b839" />
+    <connection port1="1cbcba0b-4f06-4495-a209-837b9c3453d9" port2="e1e28cc7-af85-4f46-ab41-0f242946e7cb" />
+    <connection port1="8f01528b-6384-4ff0-9f0c-e2a7fb38be69" port2="2445a71a-5d6c-4e8e-90de-7624ca7db870" />
   </connections>
   <applications>
     <application name="a2j" uuid="65bce9a0-8285-4cb3-9630-321ba19b43a4" terminal="false" level="0" autorun="true">a2j -e</application>
     <application name="SLServer" uuid="6048d3ab-ecf3-4545-901a-2a842e8dbd93" terminal="false" level="0" autorun="true">sooperlooper -L %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FSooperLooper%2F2016_Plagiat.slsess</application>
-    <application name="Tapeutape" uuid="4fa27312-1cbb-486e-bcfd-3d484756dcb0" terminal="false" level="0" autorun="false">tapeutape %2Fhome%2Fwoii%2FSebkha-Chott%2FStage%2FMAO%2FSamples%2FExcessiveSCSetNormed.tap</application>
-    <application name="seq24" uuid="b1b78940-cc7c-4394-8a02-401a18f75388" terminal="false" level="0" autorun="false">seq24 --manual_alsa_ports --jack_transport --jack_start_mode 0 --file %2Fhome%2Fwoii%2FSebkha-Chott%2FStage%2FMAO%2FSequences%2FSCNuFormula_MainLiveAudioSequence.midi</application>
-    <application name="pedalBoards" uuid="18c1159f-2bfb-4240-831d-8e3b63cfdfae" terminal="false" level="0" autorun="false">python %2Fhome%2Fwoii%2FSebkha-Chott%2FStage%2FMAO%2FMididings%2FpedalBoards.py</application>
+    <application name="Tapeutape" uuid="4fa27312-1cbb-486e-bcfd-3d484756dcb0" terminal="false" level="0" autorun="true">tapeutape %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FSamples%2FPlagiatMainSampler.tap</application>
+    <application name="seq24" uuid="b1b78940-cc7c-4394-8a02-401a18f75388" terminal="false" level="0" autorun="true">seq24 --manual_alsa_ports --jack_transport --jack_start_mode 0 --file %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FSequences%2FPlagiatAudioSequences.midi</application>
+    <application name="pedalBoards" uuid="18c1159f-2bfb-4240-831d-8e3b63cfdfae" terminal="false" level="0" autorun="true">python %2Fhome%2Fwoii%2FPlagiat%2FStage%2FControls%2FMididings%2FpedalBoards.py</application>
     <application name="Klick" uuid="08ad27a4-0fc1-4a28-ac4b-3f5caee7e048" terminal="false" level="0" autorun="true">klick -o 1234 -d 0.0106</application>
-    <application name="SL_sync" uuid="78595655-c1e5-4205-99a7-9e2e0c7c66c5" terminal="false" level="0" autorun="false">%2Fhome%2Fwoii%2FSebkha-Chott%2FStage%2Fscripts%2Fsl_sync.sh</application>
+    <application name="SL_sync" uuid="78595655-c1e5-4205-99a7-9e2e0c7c66c5" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FSebkha-Chott%2FStage%2Fscripts%2Fsl_sync.sh</application>
     <application name="pyOSCseq Lights" uuid="e52a7bac-d237-4651-9fdd-8b3416add8af" terminal="false" level="0" autorun="false">python %2Fhome%2Fwoii%2FSebkha-Chott%2FStage%2FMAO%2FpyOSCseq%2Fmain.sc.lights.py</application>
     <application name="pyOSCseq Main" uuid="629ad6f3-4549-4224-bf26-057851ff4d76" terminal="false" level="0" autorun="false">python %2Fhome%2Fwoii%2FSebkha-Chott%2FStage%2FMAO%2FpyOSCseq%2Fmain.sc.py</application>
     <application name="pyOSCseq Audio" uuid="df982986-dd5d-451b-8e1d-64b7c3f203e7" terminal="false" level="0" autorun="false">python %2Fhome%2Fwoii%2FSebkha-Chott%2FStage%2FMAO%2FpyOSCseq%2Fmain.sc.audio.py</application>
@@ -1176,5 +2646,23 @@ ladish Studio configuration.
     <application name="VxJeannotMeuf (NM)" uuid="2244005f-e046-4f34-8d7b-97990d6d269c" terminal="false" level="0" autorun="true">%2Fusr%2Flocal%2Fbin%2Fnon-mixer --osc-port 6672 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FVxJeannotMeuf</application>
     <application name="VxJeannotGars (NM)" uuid="c3f00316-4d22-4495-a08d-65802756c142" terminal="false" level="0" autorun="true">%2Fusr%2Flocal%2Fbin%2Fnon-mixer --osc-port 6673 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FVxJeannotGars</application>
     <application name="VxJeannotPost (NM)" uuid="99a02ef0-87b5-4b01-8490-b86e02f8edff" terminal="false" level="0" autorun="true">%2Fusr%2Flocal%2Fbin%2Fnon-mixer --osc-port 6674 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FVxJeannotPost</application>
+    <application name="SamplesProcessing (NM)" uuid="df3034d3-2fba-4914-b673-d261d898de5d" terminal="false" level="0" autorun="false">non-mixer --osc-port 7000 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FSamplesProcessing</application>
+    <application name="SamplesDelayMunge (NM)" uuid="9a13a64e-b423-4751-9c31-ee51c7a03845" terminal="false" level="0" autorun="true">non-mixer --osc-port 7001 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FSamplesDelayMunge</application>
+    <application name="SamplesReverseDelay (NM)" uuid="f569a36d-2067-4197-bbe1-e7c04370d840" terminal="false" level="0" autorun="true">non-mixer --osc-port 7002 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FSamplesReverseDelay</application>
+    <application name="SamplesRingMod (NM)" uuid="714cb217-13aa-4599-8708-c81f45c69842" terminal="false" level="0" autorun="true">non-mixer --osc-port 7003 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FSamplesRingMod</application>
+    <application name="SamplesTremolo (NM)" uuid="b74d0407-5e4d-4d08-9768-3a9e4f6473fc" terminal="false" level="0" autorun="true">non-mixer --osc-port 7005 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FSamplesTremolo</application>
+    <application name="SamplesScape (NM)" uuid="7c694afa-1d6f-4812-81cd-bbdaaa2b123e" terminal="false" level="0" autorun="true">non-mixer --osc-port 7006 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FSamplesScape</application>
+    <application name="SamplesDegrade (NM)" uuid="2cf1a1d5-de38-4398-b917-fc2c404fd54a" terminal="false" level="0" autorun="true">non-mixer --osc-port 7009 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FSamplesDegrade</application>
+    <application name="SamplesDisintegrator (NM)" uuid="fa10797a-5969-4882-b80a-c48fe2e2522a" terminal="false" level="0" autorun="true">non-mixer --osc-port 7007 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FSamplesDisintegrator</application>
+    <application name="SamplesMain (NM)" uuid="4b3f53a9-93d0-4b65-b92f-c9e68efcc40b" terminal="false" level="0" autorun="true">non-mixer --osc-port 7008 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FSamplesMain</application>
+    <application name="SamplesControl" uuid="e9d93bf6-5b87-4805-b805-67933ca1f5ef" terminal="false" level="0" autorun="true">python %2Fhome%2Fwoii%2FPlagiat%2FStage%2FControls%2FMididings%2FsamplesControl.py</application>
+    <application name="BassMain (NM)" uuid="9950811d-a2ff-48c6-84f7-d569f415b4bd" terminal="false" level="0" autorun="true">non-mixer --osc-port 7020 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FBassMain</application>
+    <application name="MonitorsORL (NM)" uuid="c365e0ab-4ba7-4e4a-84aa-10f66c324a43" terminal="false" level="0" autorun="true">non-mixer --osc-port 7030 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FMonitorsORL</application>
+    <application name="MonitorsJeannot (NM)" uuid="590fef19-5033-478f-b350-3ee15dc0c354" terminal="false" level="0" autorun="true">non-mixer --osc-port 7031 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FMonitorsJeannot</application>
+    <application name="PolyPedalBoard" uuid="9bb06b8b-45ce-4165-abc8-adef4d0b3663" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FControls%2FPoly_PedalBoard%2FPoly_PedalBoard_RawHID_v0.2%2Fpoly_pedalboard_rawhid -p 56418</application>
+    <application name="SamplesPitch (NM)" uuid="29e48490-4c5d-47d9-8602-d3a7e8d63676" terminal="false" level="0" autorun="true">non-mixer --osc-port 7000 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FSamplesPitch</application>
+    <application name="drumKlit (MIdidings)" uuid="50114045-9636-4c01-869f-e2b0b1ff1200" terminal="false" level="0" autorun="true">python %2Fhome%2Fwoii%2FPlagiat%2FStage%2FControls%2FMididings%2FdrumKlit.py</application>
+    <application name="BassSubCALF" uuid="9f82ed21-0cd3-4d4e-8595-7d825d3ff094" terminal="false" level="0" autorun="true">calfjackhost --load %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FCalf%2FBassSub</application>
+    <application name="ZitaORL" uuid="87318598-bfef-4411-b30f-060d5c7f85dc" terminal="false" level="0" autorun="true">zita-at1</application>
   </applications>
 </studio>
