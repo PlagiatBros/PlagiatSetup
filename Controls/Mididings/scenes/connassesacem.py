@@ -11,8 +11,8 @@ from mididings.extra.osc import SendOSC
 #### ConnassesSACEM ####
 connassessacem = [
     [orl, jeannot] >> Filter(PROGRAM) >> Ctrl(0, 1) >> tapeutapecontrol,
-    orl >> ProgramFilter(1) >> stop, # !!!STOP!!! #
-    orl >> ProgramFilter(2) >> [ # Thème Intro - Bouton 2
+    [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
+    [orl, jeannot] >> ProgramFilter(2) >> [ # Thème Intro - Bouton 2
         Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -53,7 +53,7 @@ connassessacem = [
 
             ] >> Discard()
         ],
-    orl >> ProgramFilter(3) >> [ # Thème Intro - Bouton 3
+    [orl, jeannot] >> ProgramFilter(3) >> [ # Thème Intro - Bouton 3
         Program(66) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),

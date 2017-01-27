@@ -12,7 +12,7 @@ from mididings.extra.osc import SendOSC
 #### Climat ####
 climat = [
     [orl, jeannot] >> Filter(PROGRAM) >> Ctrl(0, 0) >> tapeutapecontrol,
-    orl >> ProgramFilter(1) >> stop, # !!!STOP!!! #
+    [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # Couplet - Bouton 2
         Program(65) >> cseqtrigger,
         [
