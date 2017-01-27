@@ -151,6 +151,7 @@ vxjeannotvocode_off= [
 bassdry = [
     SendOSC(bassmainport, '/strip/BassScapePre/Gain/Mute', 1.0),
     SendOSC(bassmainport, '/strip/BassDegradePre/Gain/Mute', 1.0),
+    SendOSC(bassmainport, '/strip/BassWobblePre/Gain/Mute', 1.0),
     ] >> Discard()
 
 # Scape #
@@ -162,6 +163,12 @@ bassscape = [
 bassdegrade = [
     SendOSC(bassmainport, '/strip/BassDegradePre/Gain/Mute', 0.0),
     ] >> Discard()
+
+# Degrade #
+basswobble = [
+    SendOSC(bassmainport, '/strip/BassWobblePre/Gain/Mute', 0.0),
+    ] >> Discard()
+
 
 # Bass Pedal
 basspedal= [

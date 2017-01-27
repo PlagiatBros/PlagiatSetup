@@ -422,6 +422,20 @@ dafist = [
             vxjeannotdisint_off,
 
             bassscape,
+
+            # Transition Trains Climat
+            SendOscState([
+                [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/SamplesMunge/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 0.0],
+
+                [samplesdelaymungeport, '/strip/Samples3/Gain/Gain%20(dB)/unscaled', -7.0],
+                [samplesreversedelayport, '/strip/Samples4/Gain/Gain%20(dB)/unscaled', -2.0],
+                [samplesringmodport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -2.0],
+            ]),
+
             ] >> Discard()
         ],
     ]
