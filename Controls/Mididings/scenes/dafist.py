@@ -382,7 +382,7 @@ dafist = [
         ],
     orl >> ProgramFilter(9) >> [ # RELANCE Transe goa - Bouton 9
         #TODO relance boucles
-        Program(71) >> cseqtrigger,
+        Program(71) >> cseqtrigger, # virer ??
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 120),
