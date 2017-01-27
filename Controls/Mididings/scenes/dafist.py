@@ -380,4 +380,48 @@ dafist = [
             bassscape,
             ] >> Discard()
         ],
+    orl >> ProgramFilter(9) >> [ # RELANCE Transe goa - Bouton 9
+        #TODO relance boucles
+        Program(71) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 120),
+
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
+
+            SendOSC(slport, '/sl/[4-6]/set', 'play_sync', 0),
+            SendOSC(slport, '/sl/[4-6]/hit', 'pause_off'),
+            SendOSC(slport, '/sl/[4-6]/hit', 'trigger'),
+            SendOSC(slport, '/sl/[4-6]/set', 'play_sync', 1),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 120),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.6716),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.6716),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.3333),
+
+            SendOscState([
+
+                [samplesscapeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -5.0],
+
+            ]),
+
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+            vxorldelay_on,
+            vxorlvocode_off,
+
+            vxjeannotdelay_on,
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
+
+            bassscape,
+            ] >> Discard()
+        ],
     ]
