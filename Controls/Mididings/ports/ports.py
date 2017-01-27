@@ -42,8 +42,14 @@ trapcutport = 8001
 
 ## MIDI
 
-seq24=Output('PBseq24',1)
-seq24once=Output('PBseq24',2)
+try:
 
-tapeutape=Output('PBTapeutape',10)
-tapeutapecontrol=Output('PBTapeutape',1)
+    seq24=Output('PBseq24',1)
+    seq24once=Output('PBseq24',2)
+
+    tapeutape=Output('PBTapeutape',10)
+    tapeutapecontrol=Output('PBTapeutape',1)
+
+except:
+
+    pass
