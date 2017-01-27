@@ -1,8 +1,5 @@
 #encoding: utf-8
 
-import sys
-sys.path.append('..')
-
 from mididings import *
 from mididings.extra.osc import SendOSC
 
