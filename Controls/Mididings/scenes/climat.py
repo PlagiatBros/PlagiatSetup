@@ -13,6 +13,28 @@ from mididings.extra.osc import SendOSC
 climat = [
     [orl, jeannot] >> Filter(PROGRAM) >> Ctrl(0, 0) >> tapeutapecontrol,
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
+    jeannot >> ProgramFilter(2) >> [
+        Program(69) >> cseqtrigger, # seq vocodeur à caler
+        [
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 74),
+            SendOSC(slport, '/set', 'tempo', 150),
+
+            vxorlgars_off,
+            vxorlmeuf_off,
+            vxorldisint_off,
+            vxorldelay_on, #??
+            vxorlvocode_on,
+
+            vxjeannotgars_off,
+            vxjeannotmeuf_off,
+            vxjeannotdisint_off,
+            vxjeannotdelay_on, #??
+            vxjeannotvocode_on,
+
+        ] >> Discard()
+
+    ],
     orl >> ProgramFilter(2) >> [ # Couplet - Bouton 2
         Program(65) >> cseqtrigger,
         [

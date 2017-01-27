@@ -137,6 +137,15 @@ vxjeannotdelay_off = [
     SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/Gain/Mute', 1.0),
     ] >> Discard()
 
+# VxJeannotVocode
+vxjeannotvocode_on= [
+    SendOSC(vxorlpostport, '/strip/VxJeannotVocodePost/Gain/Mute', 0.0),
+    ] >> Discard()
+vxjeannotvocode_off= [
+    SendOSC(vxorlpostport, '/strip/VxJeannotVocodePost/Gain/Mute', 1.0),
+    ] >> Discard()
+
+
 #### Bass ####
 # Dry #
 bassdry = [
