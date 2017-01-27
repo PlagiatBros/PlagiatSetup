@@ -11,8 +11,8 @@ from mididings.extra.osc import SendOSC
 #### Fifty ####
 fifty = PortFilter('PBCtrlIn') >> [
     Filter(PROGRAM) >> Ctrl(0, 2) >> tapeutapecontrol,
-    ProgramFilter(1) >> stop, # !!!STOP!!! #
-    ProgramFilter(2) >> [ # Couplet - Bouton 2
+    orl >> ProgramFilter(1) >> stop, # !!!STOP!!! #
+    orl >> ProgramFilter(2) >> [ # Couplet - Bouton 2
         Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 64),
@@ -54,7 +54,7 @@ fifty = PortFilter('PBCtrlIn') >> [
 
             ] >> Discard()
         ],
-    ProgramFilter(3) >> [ # Pont Refrain - Bouton 3
+    orl >> ProgramFilter(3) >> [ # Pont Refrain - Bouton 3
         Program(66) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -90,7 +90,7 @@ fifty = PortFilter('PBCtrlIn') >> [
             vxjeannotdisint_off,
             ] >> Discard()
         ],
-    ProgramFilter(4) >> [ # Refrain - Bouton 4
+    orl >> ProgramFilter(4) >> [ # Refrain - Bouton 4
         Program(67) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -125,7 +125,7 @@ fifty = PortFilter('PBCtrlIn') >> [
 
             ] >> Discard()
         ],
-    ProgramFilter(5) >> [ # Couplet avec boucle - Bouton 5
+    orl >> ProgramFilter(5) >> [ # Couplet avec boucle - Bouton 5
         Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 64),
@@ -171,7 +171,7 @@ fifty = PortFilter('PBCtrlIn') >> [
 
             ] >> Discard()
         ],
-    ProgramFilter(6) >> [ # Boucle rationnelle - Bouton 6
+    orl >> ProgramFilter(6) >> [ # Boucle rationnelle - Bouton 6
         Program(68) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 64),

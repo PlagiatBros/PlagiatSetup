@@ -11,8 +11,8 @@ from mididings.extra.osc import SendOSC
 #### Da Fist ####
 dafist = PortFilter('PBCtrlIn') >> [
     Filter(PROGRAM) >> Ctrl(0, 6) >> tapeutapecontrol,
-    ProgramFilter(1) >> stop, # !!!STOP!!! #
-    ProgramFilter(2) >> [ # Intro Thème - Bouton 2
+    orl >> ProgramFilter(1) >> stop, # !!!STOP!!! #
+    orl >> ProgramFilter(2) >> [ # Intro Thème - Bouton 2
         Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -49,7 +49,7 @@ dafist = PortFilter('PBCtrlIn') >> [
             vxjeannotdisint_off,
             ] >> Discard()
         ],
-    ProgramFilter(3) >> [ # Intro Thème 2 - Bouton 3
+    orl >> ProgramFilter(3) >> [ # Intro Thème 2 - Bouton 3
         Program(66) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -88,7 +88,7 @@ dafist = PortFilter('PBCtrlIn') >> [
             vxjeannotdisint_off,
             ] >> Discard()
         ],
-    ProgramFilter(4) >> [ # Couplet - Bouton 4
+    orl >> ProgramFilter(4) >> [ # Couplet - Bouton 4
         Program(67) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -130,7 +130,7 @@ dafist = PortFilter('PBCtrlIn') >> [
             vxjeannotdisint_off,
             ] >> Discard()
         ],
-    ProgramFilter(5) >> [ # Couplet part 2 - Bouton 5
+    orl >> ProgramFilter(5) >> [ # Couplet part 2 - Bouton 5
         Program(68) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -171,7 +171,7 @@ dafist = PortFilter('PBCtrlIn') >> [
             vxjeannotdisint_off,
             ] >> Discard()
         ],
-    ProgramFilter(6) >> [ # Intro Refrain - Bouton 6
+    orl >> ProgramFilter(6) >> [ # Intro Refrain - Bouton 6
         Program(69) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -212,7 +212,7 @@ dafist = PortFilter('PBCtrlIn') >> [
             vxjeannotdisint_off,
             ] >> Discard()
         ],
-    ProgramFilter(7) >> [ # Refrain - Bouton 7
+    orl >> ProgramFilter(7) >> [ # Refrain - Bouton 7
         Program(70) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -253,7 +253,7 @@ dafist = PortFilter('PBCtrlIn') >> [
             ] >> Discard()
         ],
 
-    ProgramFilter(8) >> [ # Refrain - Bouton 8
+    orl >> ProgramFilter(8) >> [ # Refrain - Bouton 8
         Program(71) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),

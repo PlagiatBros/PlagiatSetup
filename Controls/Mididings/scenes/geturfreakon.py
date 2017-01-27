@@ -11,8 +11,8 @@ from mididings.extra.osc import SendOSC
 #### Get Ur Freak On ####
 geturfreakon = PortFilter('PBCtrlIn') >> [
     Filter(PROGRAM) >> Ctrl(0, 7) >> tapeutapecontrol,
-    ProgramFilter(1) >> stop, # !!!STOP!!! #
-    ProgramFilter(2) >> [ # Couplet - Bouton 2
+    orl >> ProgramFilter(1) >> stop, # !!!STOP!!! #
+    orl >> ProgramFilter(2) >> [ # Couplet - Bouton 2
 #        Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -48,7 +48,7 @@ geturfreakon = PortFilter('PBCtrlIn') >> [
             vxjeannotdisint_off,
             ] >> Discard()
         ],
-    ProgramFilter(3) >> [ # Couplet - Bouton 3
+    orl >> ProgramFilter(3) >> [ # Couplet - Bouton 3
         Program(66) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),

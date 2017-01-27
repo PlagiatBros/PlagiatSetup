@@ -11,8 +11,8 @@ from mididings.extra.osc import SendOSC
 #### Le5 ####
 le5 = PortFilter('PBCtrlIn') >> [
     Filter(PROGRAM) >> Ctrl(0, 3) >> tapeutapecontrol,
-    ProgramFilter(1) >> stop, # !!!STOP!!! #
-    ProgramFilter(2) >> [ # Intro - Bouton 2
+    orl >> ProgramFilter(1) >> stop, # !!!STOP!!! #
+    orl >> ProgramFilter(2) >> [ # Intro - Bouton 2
         Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
@@ -50,7 +50,7 @@ le5 = PortFilter('PBCtrlIn') >> [
             bassdry,
             ] >> Discard()
         ],
-    ProgramFilter(3) >> [ # Couplet A - Bouton 3
+    orl >> ProgramFilter(3) >> [ # Couplet A - Bouton 3
         Program(66) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
@@ -87,7 +87,7 @@ le5 = PortFilter('PBCtrlIn') >> [
             bassdry,
             ] >> Discard()
         ],
-    ProgramFilter(4) >> [ # Couplet B - Bouton 4
+    orl >> ProgramFilter(4) >> [ # Couplet B - Bouton 4
         Program(67) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
@@ -124,7 +124,7 @@ le5 = PortFilter('PBCtrlIn') >> [
             bassdry,
             ] >> Discard()
         ],
-    ProgramFilter(5) >> [ # Couplet C - Bouton 5
+    orl >> ProgramFilter(5) >> [ # Couplet C - Bouton 5
         Program(68) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
@@ -161,7 +161,7 @@ le5 = PortFilter('PBCtrlIn') >> [
             bassdry,
             ] >> Discard()
         ],
-    ProgramFilter(6) >> [ # Refrain - Bouton 6
+    orl >> ProgramFilter(6) >> [ # Refrain - Bouton 6
         Program(69) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
@@ -199,7 +199,7 @@ le5 = PortFilter('PBCtrlIn') >> [
             bassdegrade,
             ] >> Discard()
         ],
-    ProgramFilter(7) >> [ # Couplet A - Bouton 7 - #TODO INUTILE?
+    orl >> ProgramFilter(7) >> [ # Couplet A - Bouton 7 - #TODO INUTILE?
         Program(70) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
@@ -236,7 +236,7 @@ le5 = PortFilter('PBCtrlIn') >> [
             bassdry,
             ] >> Discard()
         ],
-    ProgramFilter(8) >> [ # Couplet Bbis - Bouton 8
+    orl >> ProgramFilter(8) >> [ # Couplet Bbis - Bouton 8
         Program(71) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
@@ -272,7 +272,7 @@ le5 = PortFilter('PBCtrlIn') >> [
             vxjeannotdisint_off,
             ] >> Discard()
         ],
-    ProgramFilter(9) >> [ # Couplet Cbis - Bouton 9
+    orl >> ProgramFilter(9) >> [ # Couplet Cbis - Bouton 9
         Program(72) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
@@ -308,7 +308,7 @@ le5 = PortFilter('PBCtrlIn') >> [
             ] >> Discard()
         ],
 
-    ProgramFilter(10) >> [ # Transe Pédé - Bouton 10
+    orl >> ProgramFilter(10) >> [ # Transe Pédé - Bouton 10
         Program(73) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
@@ -350,7 +350,7 @@ le5 = PortFilter('PBCtrlIn') >> [
             ] >> Discard()
         ],
 
-    ProgramFilter(11) >> [ # Transe Pédé - Bouton 11
+    orl >> ProgramFilter(11) >> [ # Transe Pédé - Bouton 11
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
             SendOSC(slport, '/set', 'tempo', 160),

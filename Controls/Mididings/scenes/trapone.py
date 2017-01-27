@@ -11,8 +11,8 @@ from mididings.extra.osc import SendOSC
 #### TrapOne ####
 trapone = PortFilter('PBCtrlIn') >> [
     Filter(PROGRAM) >> Ctrl(0, 10) >> tapeutapecontrol,
-    ProgramFilter(1) >> stop, # !!!STOP!!! #
-    ProgramFilter(2) >> [ # Couplet - Bouton 2
+    orl >> ProgramFilter(1) >> stop, # !!!STOP!!! #
+    orl >> ProgramFilter(2) >> [ # Couplet - Bouton 2
         Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 17),

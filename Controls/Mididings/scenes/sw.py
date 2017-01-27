@@ -11,8 +11,8 @@ from mididings.extra.osc import SendOSC
 #### SW ####
 sw = PortFilter('PBCtrlIn') >> [
     Filter(PROGRAM) >> Ctrl(0, 4) >> tapeutapecontrol,
-    ProgramFilter(1) >> stop, # !!!STOP!!! #
-    ProgramFilter(2) >> [ # Couplet - Bouton 2
+    orl >> ProgramFilter(1) >> stop, # !!!STOP!!! #
+    orl >> ProgramFilter(2) >> [ # Couplet - Bouton 2
         Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -51,7 +51,7 @@ sw = PortFilter('PBCtrlIn') >> [
             vxjeannotdisint_off,
             ] >> Discard()
         ],
-    ProgramFilter(3) >> [ # Couplet - Bouton 3
+    orl >> ProgramFilter(3) >> [ # Couplet - Bouton 3
         Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -89,7 +89,7 @@ sw = PortFilter('PBCtrlIn') >> [
             ] >> Discard()
         ],
 
-    ProgramFilter(4) >> [ # Refrain - Bouton 4
+    orl >> ProgramFilter(4) >> [ # Refrain - Bouton 4
         Program(66) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -127,7 +127,7 @@ sw = PortFilter('PBCtrlIn') >> [
             ] >> Discard()
         ],
 
-    ProgramFilter(5) >> [ # Couplet - Bouton 5
+    orl >> ProgramFilter(5) >> [ # Couplet - Bouton 5
         Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
