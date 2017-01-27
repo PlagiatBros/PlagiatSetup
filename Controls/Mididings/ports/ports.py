@@ -36,6 +36,10 @@ bassmainport = 7020
 monitorsorlport = 7030
 monitorsjeannotport = 7031
 
+## OSC Sequencers
+
+trapcutport = 8001
+
 ## MIDI
 
 seq24=Output('PBseq24',1)
