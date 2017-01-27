@@ -9,8 +9,8 @@ from mididings.extra.osc import SendOSC
 #######################################
 
 #### Le5 ####
-le5 = PortFilter('PBCtrlIn') >> [
-    Filter(PROGRAM) >> Ctrl(0, 3) >> tapeutapecontrol,
+le5 = [
+    [orl, jeannot] >> Filter(PROGRAM) >> Ctrl(0, 3) >> tapeutapecontrol,
     orl >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # Intro - Bouton 2
         Program(65) >> cseqtrigger,

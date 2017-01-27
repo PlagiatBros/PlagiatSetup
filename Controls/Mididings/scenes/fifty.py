@@ -9,8 +9,8 @@ from mididings.extra.osc import SendOSC
 #######################################
 
 #### Fifty ####
-fifty = PortFilter('PBCtrlIn') >> [
-    Filter(PROGRAM) >> Ctrl(0, 2) >> tapeutapecontrol,
+fifty = [
+    [orl, jeannot] >> Filter(PROGRAM) >> Ctrl(0, 2) >> tapeutapecontrol,
     orl >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # Couplet - Bouton 2
         Program(65) >> cseqtrigger,

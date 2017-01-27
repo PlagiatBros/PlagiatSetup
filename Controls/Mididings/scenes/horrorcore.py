@@ -9,8 +9,8 @@ from mididings.extra.osc import SendOSC
 #######################################
 
 #### HorroCore ####
-horrorcore = PortFilter('PBCtrlIn') >> [
-    Filter(PROGRAM) >> Ctrl(0, 9) >> tapeutapecontrol,
+horrorcore = [
+    [orl, jeannot] >> Filter(PROGRAM) >> Ctrl(0, 9) >> tapeutapecontrol,
     orl >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # Couplet - Bouton 2
         Program(65) >> cseqtrigger,

@@ -1,4 +1,10 @@
-from mididings import ChannelFilter
+from mididings import *
 
-jeannot = ChannelFilter(2)
-orl     = ChannelFilter(1)
+jeannot = PortFilter('PBMk2In') >> Filter(CTRL) >> CtrlFilter(range(101,109)) >> CtrlValueFilter(127) >> NoteOn(EVENT_CTRL, 127) >> Transpose(-100) >> Program(EVENT_NOTE)
+
+jeannotKeys = PortFilter('PBMk2In') >> [
+    Filter(CTRL) >> ~CtrlFilter(range(101,109)),
+    ~Filter(CTRL)
+]
+
+orl     = PortFilter('PBCtrlIn') >> ChannelFilter(1)

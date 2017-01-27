@@ -9,8 +9,8 @@ from mididings.extra.osc import SendOSC
 #######################################
 
 #### SlowMotium ####
-slowmotium = PortFilter('PBCtrlIn') >> [
-    Filter(PROGRAM) >> Ctrl(0, 8) >> tapeutapecontrol,
+slowmotium = [
+    [orl, jeannot] >> Filter(PROGRAM) >> Ctrl(0, 8) >> tapeutapecontrol,
     orl >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # Couplet - Bouton 2
         Program(65) >> cseqtrigger,
