@@ -17,7 +17,7 @@ def _open(send):
 def _cutXtimes(x, sequencer, timer):
     for i in range(x):
         _open(sequencer.send)
-        timer.wait(0.5, 'beat')
+        timer.wait(1, 'beat')
         _close(sequencer.send)
 
 def I(sequencer, timer):
