@@ -2,21 +2,21 @@ from ports import *
 
 _ip = '127.0.0.1:'
 
-def _close(send):
+def _open(send):
     send(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0)
     send(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0)
     send(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0)
     send(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 0.0)
     send(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 0.0)
-    send('1111', '/trapcut/close')
+    send('1111', '/trapcut/open')
 
-def _open(send):
+def _close(send):
     send(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0)
     send(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0)
     send(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 1.0)
     send(samplesmainport, '/strip/Samples4Dry/Gain/Mute', 1.0)
     send(samplesmainport, '/strip/Samples5Dry/Gain/Mute', 1.0)
-    send('1111', '/trapcut/open')
+    send('1111', '/trapcut/close')
 
 def _cutXtimes(x, sequencer, timer):
     for i in range(x):
