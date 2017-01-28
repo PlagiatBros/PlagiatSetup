@@ -140,7 +140,7 @@ sw = [
             ] >> Discard()
         ],
 
-    orl >> ProgramFilter(5) >> [ # Couplet - Bouton 5
+    orl >> ProgramFilter(5) >> [ # Couplet 2 - Bouton 5
         Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -179,5 +179,55 @@ sw = [
             vxjeannotvocode_off,
             ] >> Discard()
         ],
+
+    jeannot >> ProgramFilter(3) >> [ # stop Three get the shit going- Bouton 3
+        Program(65) >> cseqtrigger,
+        [
+            stop,
+
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 178.5),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 178.5),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.44216),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.44216),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.55),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, 0.55),
+
+            SendOscState([
+
+                [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/SamplesScape/Gain/Mute', 0.0],
+
+                [samplesscapeport, '/strip/SamplesDegrade/Gain/Gain%20(dB)/unscaled', -18.0],
+
+            ]),
+
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_on,
+            vxorldelay_on,
+            vxorlvocode_off,
+
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_on,
+            vxjeannotdelay_on,
+            vxjeannotvocode_off,
+
+            SendOSC(vxorlpreport, '/strip/VxORLDelayPre/Gain/Mute', 1.0),
+            SendOSC(vxjeannotpreport, '/strip/VxJeannotDelayPre/Gain/Mute', 1.0),
+
+            SendOSC(audioseqport, '/Audioseq/Bpm', 178.5),
+            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'sw_shit_going'),
+
+            ] >> Discard()
+        ],
+
 
     ]
