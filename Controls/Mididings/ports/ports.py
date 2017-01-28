@@ -39,6 +39,7 @@ monitorsjeannotport = 7031
 ## OSC Sequencers
 
 trapcutport = 8001
+audioseqport = 8002
 
 ## MIDI
 
