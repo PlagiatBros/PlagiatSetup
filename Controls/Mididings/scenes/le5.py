@@ -278,7 +278,7 @@ le5 = [
             vxjeannotvocode_off,
             ] >> Discard()
         ],
-    orl >> ProgramFilter(9) >> [ # Couplet Cbis - Bouton 9
+    orl >> ProgramFilter(8) >> [ # Couplet Cbis (ain't no challenger left)- Bouton 8
         Program(72) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
@@ -315,13 +315,15 @@ le5 = [
             ] >> Discard()
         ],
 
-    orl >> ProgramFilter(10) >> [ # Transe Pédé - Bouton 10
-        Program(73) >> cseqtrigger,
+    orl >> ProgramFilter(9) >> [ # Ballade rhodes vocodeur - Bouton 10
+        #TODO son rhodes
         [
+            stop,
+
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
             SendOSC(slport, '/set', 'tempo', 160),
 
-            SendOSC(klickport, '/klick/simple/set_tempo', 160),
+            SendOSC(klickport, '/klick/simple/set_tempo', 80),
             SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),
@@ -330,35 +332,22 @@ le5 = [
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
             SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.48148),
 
-            SendOscState([
-
-                [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
-                [samplesmainport, '/strip/SamplesTremolo/Gain/Mute', 0.0],
-                [samplesmainport, '/strip/SamplesDegrade/Gain/Mute', 0.0],
-                [samplesdegradeport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -12.0],
-                [samplesdegradeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -9.0],
-                [samplesdegradeport, '/strip/SamplesTremolo/Gain/Gain%20(dB)/unscaled', -6.0],
-                [samplestremoloport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -6.0],
-
-            ]),
-
-
-
             vxorlgars_off,
-            vxorlmeuf_on,
+            vxorlmeuf_off,
             vxorldisint_off,
-            vxorldelay_off,
-            vxorlvocode_off,
+            vxorldelay_on,
+            vxorlvocode_on,
 
-            vxjeannotdelay_off,
             vxjeannotgars_off,
-            vxjeannotmeuf_on,
+            vxjeannotmeuf_off,
             vxjeannotdisint_off,
-            vxjeannotvocode_off,
+            vxjeannotdelay_on,
+            vxjeannotvocode_on,
+
             ] >> Discard()
         ],
-
-    orl >> ProgramFilter(11) >> [ # Transe Pédé - Bouton 11
+    jeannot >> ProgramFilter(4) >> [ # Sebkha 5/8 (batterie ternaire, puis death sebkha, puis meshugagah)
+        Program(73) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
             SendOSC(slport, '/set', 'tempo', 160),
@@ -377,19 +366,8 @@ le5 = [
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
                 [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
                 [samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0],
-                [samplesmainport, '/strip/SamplesTremolo/Gain/Mute', 0.0],
-                [samplesmainport, '/strip/SamplesDegrade/Gain/Mute', 0.0],
-                [samplesmainport, '/strip/SamplesDisintegrator/Gain/Mute', 0.0],
-                [samplesmainport, '/strip/SamplesScape/Gain/Mute', 0.0],
-                [samplesmainport, '/strip/SamplesRingMod/Gain/Mute', 0.0],
 
-                [samplesdegradeport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -12.0],
-                [samplesdegradeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -9.0],
-                [samplesdegradeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -4.0],
-                [samplesdisintegratorport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -4.0],
-                [samplestremoloport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -6.0],
             ]),
-
 
             vxorlgars_off,
             vxorlmeuf_on,
@@ -399,9 +377,14 @@ le5 = [
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
-            vxjeannotmeuf_on,
+            vxjeannotmeuf_off,
             vxjeannotdisint_off,
-            vxjeannotvocode_off,
+            vxorlvocode_off,
+
+            bassscape,
+            bassdegrade,
+            basswobble,
+
             ] >> Discard()
         ],
     ]
