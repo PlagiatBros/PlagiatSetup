@@ -13,7 +13,7 @@ geturfreakon = [
     [orl, jeannot] >> Filter(PROGRAM) >> Ctrl(0, 7) >> tapeutapecontrol,
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # Couplet - Bouton 2
-#        Program(65) >> cseqtrigger,
+        Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 200),
@@ -49,7 +49,7 @@ geturfreakon = [
             vxjeannotvocode_off,
             ] >> Discard()
         ],
-    orl >> ProgramFilter(3) >> [ # Couplet - Bouton 3
+    orl >> ProgramFilter(3) >> [ # Refrain - Bouton 3
         Program(66) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -82,6 +82,7 @@ geturfreakon = [
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
+            
             ] >> Discard()
         ],
     ]
