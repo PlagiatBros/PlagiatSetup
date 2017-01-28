@@ -346,7 +346,7 @@ le5 = [
 
             ] >> Discard()
         ],
-    jeannot >> ProgramFilter(4) >> [ # Sebkha 5/8 (batterie ternaire, puis death sebkha, puis meshugagah)
+    jeannot >> ProgramFilter(4) >> [ # Sebkha 5/8 (batterie ternaire, puis death sebkha, puis meshugagah)
         Program(73) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
