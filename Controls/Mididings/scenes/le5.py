@@ -317,8 +317,8 @@ le5 = [
 
     orl >> ProgramFilter(9) >> [ # Ballade rhodes vocodeur - Bouton 10
         #TODO son rhodes
+        stop,
         [
-            stop,
 
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
             SendOSC(slport, '/set', 'tempo', 160),

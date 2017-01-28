@@ -182,8 +182,8 @@ sw = [
 
     jeannot >> ProgramFilter(3) >> [ # stop Three get the shit going- Bouton 3
         Program(65) >> cseqtrigger,
+        stop,
         [
-            stop,
 
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 178.5),

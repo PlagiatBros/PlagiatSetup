@@ -13,8 +13,8 @@ trapone = [
     [orl, jeannot] >> Filter(PROGRAM) >> Ctrl(0, 10) >> tapeutapecontrol,
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # intro bass
+        stop,
         [
-            stop,
 
             SendOSC(slport, '/set', 'eighth_per_cycle', 33),
             SendOSC(slport, '/set', 'tempo', 120),
