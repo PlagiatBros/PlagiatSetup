@@ -1,6 +1,3 @@
 [submodule "Controls/Mididings/seqzero"]
 	path = Controls/Mididings/seqzero
 	url = https://github.com/jean-emmanuel/seqzero
-[submodule "Sequences/seqzero"]
-	path = Sequences/seqzero
-	url = https://github.com/jean-emmanuel/seqzero
