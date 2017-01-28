@@ -1,10 +1,10 @@
 from audio import *
+from time import sleep
 
 audioseq.start_threaded()
 
-print "Sequencers running... (ctrl+c to quit)"
-
-while True:
-    sleep(0.001)
+a = ''
+while a != 'stop':
+    a = raw_input('Sequencers running... (type "stop" to quit)\n')
 
 audioseq.exit()
