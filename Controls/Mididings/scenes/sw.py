@@ -12,7 +12,8 @@ from mididings.extra.osc import SendOSC
 sw = [
     [orl, jeannot] >> Filter(PROGRAM) >> Ctrl(0, 4) >> tapeutapecontrol,
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
-    orl >> ProgramFilter(2) >> [ # Couplet - Bouton 2
+    orl >> ProgramFilter(2) >> [ # intro - Bouton 2o
+        #TODO filtre
         Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -52,7 +53,15 @@ sw = [
             vxjeannotvocode_off,
             ] >> Discard()
         ],
-    orl >> ProgramFilter(3) >> [ # Couplet - Bouton 3
+    jeannot >> ProgramFilter(2) >> [ # [delay] Lanceur du Couplet - Bouton 2j
+        [
+
+            SendOSC(audioseqport, '/Audioseq/Bpm', 178.5),
+            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'sw_couplet_auto'),
+
+            ] >> Discard()
+        ],
+    orl >> ProgramFilter(3) >> [ # Couplet - Bouton 3o
         Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
