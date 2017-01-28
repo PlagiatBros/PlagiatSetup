@@ -5,7 +5,6 @@ from fifty import *
 from geturfreakon import *
 from horrorcore import *
 from le5 import *
-from slowmotium import *
 from sw import *
 from trapone import *
 from wholeworld import *

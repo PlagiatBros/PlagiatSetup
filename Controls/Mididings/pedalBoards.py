@@ -478,64 +478,7 @@ run(
 		),
 	    ]
         ),
-        9: SceneGroup("SlowMotium", [
-  		Scene("Bass ORL",
-                      [
-                        slowmotium,
-                        basspedal,
-                        ]
-		),
-		Scene("Nope",
-                      [
-                        slowmotium,
-                        basspedal,
-                        ]
-		),
-		Scene("Nope",
-                      [
-                        slowmotium,
-                        basspedal,
-                        ]
-		),
-		Scene("Nope",
-                      [
-                        slowmotium,
-                        basspedal,
-                        ]
-		),
-		Scene("Nope",
-                      [
-                        slowmotium,
-                        basspedal,
-                        ]
-		),
-		Scene("Nope",
-                      [
-                        slowmotium,
-                        basspedal,
-                        ]
-		),
-		Scene("Nope",
-                      [
-                        slowmotium,
-                        basspedal,
-                        ]
-		),
-		Scene("Nope",
-                      [
-                        slowmotium,
-                        basspedal,
-                        ]
-		),
-		Scene("Tune Select",
-                      [
-                        slowmotium,
-                        basspedal,
-                        ]
-		),
-	    ]
-        ),
-        10: SceneGroup("Horrorcore", [
+        9: SceneGroup("Horrorcore", [
   		Scene("Bass ORL",
                       [
                         horrorcore,
@@ -592,7 +535,7 @@ run(
 		),
 	    ]
         ),
-        11: SceneGroup("Trapone", [
+        10: SceneGroup("Trapone", [
   		Scene("Bass ORL",
                       [
                         trapone,
