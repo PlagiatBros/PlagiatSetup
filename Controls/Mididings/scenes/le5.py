@@ -320,18 +320,6 @@ le5 = [
         stop,
         [
 
-            SendOSC(slport, '/set', 'eighth_per_cycle', 5),
-            SendOSC(slport, '/set', 'tempo', 160),
-
-            SendOSC(klickport, '/klick/simple/set_tempo', 80),
-            SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
-            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
-            SendOSC(klickport, '/klick/metro/start'),
-
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.48148),
-
             vxorlgars_off,
             vxorlmeuf_off,
             vxorldisint_off,
@@ -346,14 +334,14 @@ le5 = [
 
             ] >> Discard()
         ],
-    jeannot >> ProgramFilter(4) >> [ # Sebkha 5/8 (batterie ternaire, puis death sebkha, puis meshugagah)
+    jeannot >> ProgramFilter(4) >> [ # Sebkha 5/8 (batterie ternaire sur synthé, puis death sebkha, puis meshugagah)
         Program(73) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
-            SendOSC(slport, '/set', 'tempo', 160),
+            SendOSC(slport, '/set', 'tempo', 120),
 
-            SendOSC(klickport, '/klick/simple/set_tempo', 160),
-            SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
+            SendOSC(klickport, '/klick/simple/set_tempo', 120),
+            SendOSC(klickport, '/klick/simple/set_meter', 5, 4),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),
 
