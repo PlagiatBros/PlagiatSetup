@@ -131,10 +131,12 @@ sw = [
             vxorldelay_on,
             vxorlvocode_off,
 
-            vxjeannotdelay_on,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_on,
+            vxjeannotdelay_on,
+            vxjeannotvocode_off,
+
             ] >> Discard()
         ],
 
