@@ -195,6 +195,7 @@ fifty = [
         #TODO son synthé
         Program(68) >> cseqtrigger,
         [
+            SendOSC(audioseqport, '/Audioseq/Bpm', 117),
             SendOSC(audioseqport, '/Audioseq/Scene/Play', 'fifty_refrain_auto'),
 
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
