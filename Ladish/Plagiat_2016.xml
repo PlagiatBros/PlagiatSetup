@@ -2627,7 +2627,7 @@ ladish Studio configuration.
     <application name="SLServer" uuid="6048d3ab-ecf3-4545-901a-2a842e8dbd93" terminal="false" level="0" autorun="true">sooperlooper -L %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FSooperLooper%2F2016_Plagiat.slsess</application>
     <application name="Tapeutape" uuid="4fa27312-1cbb-486e-bcfd-3d484756dcb0" terminal="false" level="0" autorun="true">tapeutape %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FSamples%2FPlagiatMainSampler.tap</application>
     <application name="seq24" uuid="b1b78940-cc7c-4394-8a02-401a18f75388" terminal="false" level="0" autorun="true">seq24 --manual_alsa_ports --jack_transport --jack_start_mode 0 --file %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSequences%2FPlagiatAudioSequences.midi</application>
-    <application name="pedalBoards" uuid="18c1159f-2bfb-4240-831d-8e3b63cfdfae" terminal="false" level="0" autorun="true">python %2Fhome%2Fwoii%2FPlagiat%2FStage%2FControls%2FMididings%2FpedalBoards.py</application>
+    <application name="pedalBoards" uuid="18c1159f-2bfb-4240-831d-8e3b63cfdfae" terminal="false" level="0" autorun="true">/home/woii/Plagiat/Stage/Scripts/launch_pB.sh</application>
     <application name="Klick" uuid="08ad27a4-0fc1-4a28-ac4b-3f5caee7e048" terminal="false" level="0" autorun="true">klick -o 1234 -d 0.0106</application>
     <application name="SL_sync" uuid="78595655-c1e5-4205-99a7-9e2e0c7c66c5" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FSebkha-Chott%2FStage%2Fscripts%2Fsl_sync.sh</application>
     <application name="pyOSCseq Lights" uuid="e52a7bac-d237-4651-9fdd-8b3416add8af" terminal="false" level="0" autorun="false">python %2Fhome%2Fwoii%2FSebkha-Chott%2FStage%2FMAO%2FpyOSCseq%2Fmain.sc.lights.py</application>
