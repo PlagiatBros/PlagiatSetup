@@ -26,7 +26,7 @@ trapone = [
             SendOSC(klickport, '/klick/metro/start'),
 
             bassdry,
-            basswoble,
+            basswobble,
 
             vxorlgars_off,
             vxorlmeuf_on,
