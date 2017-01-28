@@ -47,6 +47,7 @@ wholeworld = [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
             ] >> Discard()
         ],
     orl >> ProgramFilter(3) >> [ # Refrain - Bouton 3
@@ -84,6 +85,7 @@ wholeworld = [
             vxjeannotgars_on,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
             ] >> Discard()
         ],
     orl >> ProgramFilter(4) >> [ # Pont - Bouton 4
@@ -122,6 +124,7 @@ wholeworld = [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
             ] >> Discard()
         ],
 

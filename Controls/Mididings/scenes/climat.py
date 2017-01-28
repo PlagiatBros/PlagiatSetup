@@ -145,6 +145,7 @@ climat = [
             vxjeannotgars_on,
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
 
             ] >> Discard()
         ],
@@ -243,5 +244,5 @@ climat = [
 
             ] >> Discard()
         ],
-        
+
     ]

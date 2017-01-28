@@ -42,6 +42,7 @@ slowmotium = [
             vxjeannotgars_on,
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
             ] >> Discard()
         ],
     orl >> ProgramFilter(3) >> [ # Couplet - Bouton 3
@@ -55,6 +56,7 @@ slowmotium = [
             vxjeannotgars_on,
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
         ],
 
     orl >> ProgramFilter(4) >> [ # Couplet - Bouton 4
@@ -68,6 +70,7 @@ slowmotium = [
             vxjeannotgars_on,
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
         ],
 
 

@@ -46,6 +46,7 @@ le5 = [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
 
             bassdry,
             ] >> Discard()
@@ -83,6 +84,7 @@ le5 = [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
 
             bassdry,
             ] >> Discard()
@@ -120,6 +122,7 @@ le5 = [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
 
             bassdry,
             ] >> Discard()
@@ -157,11 +160,12 @@ le5 = [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
 
             bassdry,
             ] >> Discard()
         ],
-    orl >> ProgramFilter(6) >> [ # Refrain - Bouton 6
+    jeannot >> ProgramFilter(2) >> [ # Refrain (meeeaaan) - Bouton 2
         Program(69) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
@@ -199,7 +203,7 @@ le5 = [
             bassdegrade,
             ] >> Discard()
         ],
-    orl >> ProgramFilter(7) >> [ # Couplet A - Bouton 7 - #TODO INUTILE?
+    orl >> ProgramFilter(7) >> [ # Couplet A (niggah don't you know) - Bouton 7
         Program(70) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
@@ -232,11 +236,12 @@ le5 = [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
 
             bassdry,
             ] >> Discard()
         ],
-    orl >> ProgramFilter(8) >> [ # Couplet Bbis - Bouton 8
+    jeannot >> ProgramFilter(3) >> [ # Couplet Bbis (call your jesus) - Bouton 3
         Program(71) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
@@ -270,6 +275,7 @@ le5 = [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
             ] >> Discard()
         ],
     orl >> ProgramFilter(9) >> [ # Couplet Cbis - Bouton 9
@@ -305,6 +311,7 @@ le5 = [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
             ] >> Discard()
         ],
 
@@ -347,6 +354,7 @@ le5 = [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
             ] >> Discard()
         ],
 
@@ -393,6 +401,7 @@ le5 = [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
             ] >> Discard()
         ],
     ]

@@ -48,6 +48,7 @@ trapone = [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
             ] >> Discard()
         ],
 

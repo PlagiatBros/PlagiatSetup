@@ -46,6 +46,7 @@ geturfreakon = [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
             ] >> Discard()
         ],
     orl >> ProgramFilter(3) >> [ # Couplet - Bouton 3
@@ -80,6 +81,7 @@ geturfreakon = [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
             ] >> Discard()
         ],
     ]

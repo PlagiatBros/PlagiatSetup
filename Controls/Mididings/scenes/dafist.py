@@ -47,6 +47,7 @@ dafist = [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
             ] >> Discard()
         ],
     orl >> ProgramFilter(3) >> [ # Intro Thème 2 - Bouton 3
@@ -86,6 +87,7 @@ dafist = [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
             ] >> Discard()
         ],
     jeannot >> ProgramFilter(2) >> [ # Psychose - Bouton 2
@@ -127,6 +129,7 @@ dafist = [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
             ] >> Discard()
         ],
     jeannot >> ProgramFilter(3) >> [ # Refrain initial et final (basse / meshuggah)- Bouton 3
@@ -167,6 +170,7 @@ dafist = [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
             ] >> Discard()
         ],
     orl >> ProgramFilter(4) >> [ # Couplet - Bouton 4
@@ -210,6 +214,7 @@ dafist = [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
             ] >> Discard()
         ],
     orl >> ProgramFilter(5) >> [ # Couplet part 2 - Bouton 5
@@ -251,6 +256,7 @@ dafist = [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
             ] >> Discard()
         ],
     orl >> ProgramFilter(6) >> [ # Refrain milieu (synthé / skrillex) - Bouton 6
@@ -292,6 +298,7 @@ dafist = [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
             ] >> Discard()
         ],
     orl >> ProgramFilter(7) >> [ # Couplet 2 - Bouton 7
@@ -341,6 +348,7 @@ dafist = [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
             ] >> Discard()
         ],
     orl >> ProgramFilter(8) >> [ # Transe goa - Bouton 8
@@ -376,6 +384,7 @@ dafist = [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
 
             bassscape,
             ] >> Discard()
@@ -420,6 +429,7 @@ dafist = [
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
 
             bassscape,
 

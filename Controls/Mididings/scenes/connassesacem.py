@@ -50,6 +50,7 @@ connassessacem = [
             vxjeannotgars_on,
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
 
             ] >> Discard()
         ],
@@ -89,6 +90,7 @@ connassessacem = [
             vxjeannotgars_on,
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
+            vxjeannotvocode_off,
 
             ] >> Discard()
         ],
