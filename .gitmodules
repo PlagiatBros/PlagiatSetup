@@ -1,3 +1,6 @@
 [submodule "Controls/Mididings/seqzero"]
 	path = Controls/Mididings/seqzero
 	url = https://github.com/jean-emmanuel/seqzero
+[submodule "Controls/Poly_PedalBoard"]
+	path = Controls/Poly_PedalBoard
+	url = https://github.com/AMMD/Poly_PedalBoard
