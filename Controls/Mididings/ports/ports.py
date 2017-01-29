@@ -28,9 +28,11 @@ samplesreversedelayport = 7002
 samplesringmodport = 7003
 samplestremoloport = 7005
 samplesscapeport = 7006
-samplesdegradeport = 7009
 samplesdisintegratorport = 7007
 samplesmainport = 7008
+samplesdegradeport = 7009
+
+keyboardsport = 7010
 
 bassmainport = 7020
 monitorsorlport = 7030
