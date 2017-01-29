@@ -485,8 +485,8 @@ dafist = [
         ],
     orl >> ProgramFilter(11) >> [
         stop,
-        SendOSC(audioseqport, '/Audioseq/Scene/Play', 'dafist_outro_filter_open'),
+        SendOSC(audioseqport, '/Audioseq/Scene/Play', 'dafist_outro_filter_open') >> Discard(),
         SceneSwitch(3) >> Discard(),
         Ctrl(102, 127) >> Output('Mk2CtrlOut', 1)
-        ] >> Discard(),
+        ],
     ]

@@ -12,7 +12,8 @@ from mididings.extra.osc import SendOSC
 #### Climat ####
 climat = [
     Init([
-        Ctrl(0, 0) >> tapeutapecontrol
+        Ctrl(0, 0) >> tapeutapecontrol,
+        Program(seq24PageMap[3]) >> seq24once
     ]),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     jeannot >> ProgramFilter(2) >> [ # Intro mandela - Bouton 2
