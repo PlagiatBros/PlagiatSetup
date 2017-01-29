@@ -13,8 +13,6 @@ config(
 	in_ports=['CMEIn']
 )
 
-from scenes import *
-
 zynbass1 = Output('CMEOutBass', 1)
 zynbass2 = Output('CMEOutBass', 2)
 zynbass3 = Output('CMEOutBass', 3)
