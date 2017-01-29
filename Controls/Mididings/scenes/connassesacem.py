@@ -100,6 +100,13 @@ connassessacem = [
             vxjeannotdisint_off,
             vxjeannotvocode_off,
 
+            bassdry,
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
+
+
             ] >> Discard()
         ],
     orl >> ProgramFilter(4) >> [

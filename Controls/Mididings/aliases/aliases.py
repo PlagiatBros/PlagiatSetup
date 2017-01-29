@@ -100,6 +100,7 @@ vxorldelay_off = [
 
 # VxORLVocode
 vxorlvocode_on= [
+    SendOSC(vxorlpreport, '/strip/VxORLMeuf/Gain/Mute', 0.0),
     SendOSC(vxorlpostport, '/strip/VxORLVocodePost/Gain/Mute', 0.0),
     ] >> Discard()
 vxorlvocode_off= [
@@ -152,10 +153,11 @@ vxjeannotdelay_off = [
 
 # VxJeannotVocode
 vxjeannotvocode_on= [
-    SendOSC(vxorlpostport, '/strip/VxJeannotVocodePost/Gain/Mute', 0.0),
+    SendOSC(vxjeannotpreport, '/strip/VxJeannotMeuf/Gain/Mute', 0.0),
+    SendOSC(vxjeannotpostport, '/strip/VxJeannotVocodePost/Gain/Mute', 0.0),
     ] >> Discard()
 vxjeannotvocode_off= [
-    SendOSC(vxorlpostport, '/strip/VxJeannotVocodePost/Gain/Mute', 1.0),
+    SendOSC(vxjeannotpostport, '/strip/VxJeannotVocodePost/Gain/Mute', 1.0),
     ] >> Discard()
 
 
@@ -177,10 +179,21 @@ bassdegrade = [
     SendOSC(bassmainport, '/strip/BassDegradePre/Gain/Mute', 0.0),
     ] >> Discard()
 
-# Degrade #
+# Wobble #
 basswobble = [
     SendOSC(bassmainport, '/strip/BassWobblePre/Gain/Mute', 0.0),
     ] >> Discard()
+
+
+# Guitarix - Stages - Control Changes #
+bassdetunest_on = Ctrl(0, 127) >> guitarixst
+bassvibest_on = Ctrl(1, 127) >> guitarixst
+bassringst_on = Ctrl(2, 127) >> guitarixst
+bassbufferst_on = Ctrl(3, 127) >> guitarixst
+bassdetunest_off = Ctrl(0, 0) >> guitarixst
+bassvibest_off = Ctrl(1, 0) >> guitarixst
+bassringst_off = Ctrl(2, 0) >> guitarixst
+bassbufferst_off = Ctrl(3, 0) >> guitarixst
 
 
 # Bass Pedal
@@ -200,7 +213,7 @@ basspedal= [
     ProgramFilter(21) >> bassdegrade,
     ]
 
-#### Vocals ####
+
 
 #### Stop ####
 stop = [

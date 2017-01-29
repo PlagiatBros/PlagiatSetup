@@ -13,7 +13,9 @@ from mididings.extra.osc import SendOSC
 climat = [
     Init([
         Ctrl(0, 0) >> tapeutapecontrol,
-        Program(seq24PageMap[3]) >> seq24once
+        Program(seq24PageMap[3]) >> seq24once,
+        zynmicrotonal_on,
+        SendOSC(zyntrebleport, '/microtonal/tunings', '135.0\n200.0\n300.0\n400.0\n500.0\n600.0\n700.0\n835.0\n900.0\n1000.0\n1135.0\n2/1')
     ]),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     jeannot >> ProgramFilter(2) >> [ # Intro mandela - Bouton 2
@@ -34,6 +36,9 @@ climat = [
             vxjeannotdisint_off,
             vxjeannotdelay_on, #??
             vxjeannotvocode_on,
+
+            SendOSC(vxjeannotmeufport, '/strip/VxJeannotVocod/AM%20pitchshifter/Pitch%20shift/unscaled', 1.0),
+            SendOSC(vxorlmeufport,     '/strip/VxORLVocod/AM%20pitchshifter/Pitch%20shift/unscaled', 1.0),
 
             SendOscState([
                 [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
@@ -91,14 +96,26 @@ climat = [
             vxjeannotdisint_off,
             vxjeannotvocode_off,
 
+            SendOSC(vxjeannotmeufport, '/strip/VxJeannotVocod/AM%20pitchshifter/Pitch%20shift/unscaled', 1.20),
+            SendOSC(vxorlmeufport, '/strip/VxORLVocod/AM%20pitchshifter/Pitch%20shift/unscaled', 1.20),
+
+            bassdry,
             basswobble,
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
 
             ] >> Discard()
         ],
     jeannot >> ProgramFilter(3) >> [ # Couplet sans wobble - bouton 3
         #TODO arreter seq-wobble (à priori bassdry suffit)
         bassdry,
-        bassscape
+        bassscape,
+        bassdetunest_on,
+        bassringst_on,
+        bassvibest_off,
+        bassbufferst_off,
 
     ],
     jeannot >> ProgramFilter(4) >> [ # Refrain - Bouton 3
@@ -150,19 +167,25 @@ climat = [
             vxjeannotdisint_off,
             vxjeannotvocode_off,
 
+            bassdry,
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
+
             ] >> Discard()
         ],
-    orl >> ProgramFilter(3) >> [ # preCouplet Wobble - Bouton 3
+    orl >> ProgramFilter(3) >> [ # couplet - Bouton 3
         Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 74),
             SendOSC(slport, '/set', 'tempo', 150),
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
-            SendOSC(slport, '/sl/0/set', 'play_sync', 0),
+            SendOSC(slport, '/sl/0/set', 'sync', 0),
             SendOSC(slport, '/sl/0/hit', 'pause_off'),
             SendOSC(slport, '/sl/0/hit', 'trigger'),
-            SendOSC(slport, '/sl/0/set', 'play_sync', 1),
+            SendOSC(slport, '/sl/0/set', 'sync', 1),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 150),
             SendOSC(klickport, '/klick/simple/set_meter', 74, 8),
@@ -200,6 +223,10 @@ climat = [
 
             bassdry,
             bassscape,
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
             #TODO bassSUB
 
             ] >> Discard()
@@ -244,6 +271,13 @@ climat = [
             vxjeannotgars_on,
             vxjeannotmeuf_off,
             vxjeannotdisint_on,
+
+            bassdry,
+            bassscape,
+            bassdetunest_off,
+            bassringst_on,
+            bassvibest_on,
+            bassbufferst_on,
 
             ] >> Discard()
         ],

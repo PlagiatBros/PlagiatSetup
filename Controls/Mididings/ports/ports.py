@@ -65,6 +65,8 @@ try:
     tapeutape=Output('PBTapeutape',10)
     tapeutapecontrol=Output('PBTapeutape',1)
 
+    guitarixst = Output('PBguitarix', 1)
+
 except:
 
     pass
