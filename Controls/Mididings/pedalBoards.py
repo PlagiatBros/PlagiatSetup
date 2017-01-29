@@ -9,7 +9,7 @@ config(
 	backend='jack',
 	client_name='PedalBoardsRoutes',
 	out_ports=['PBseq24', 'PBAMSClassicalSynth', 'PBTapeutape', 'PBCtrlOut'],
-	in_ports=['PBCtrlIn', 'PBMk2In']
+	in_ports=['PBCtrlIn', 'PBMk2In', 'PBCmeIn']
 )
 
 from scenes import *
