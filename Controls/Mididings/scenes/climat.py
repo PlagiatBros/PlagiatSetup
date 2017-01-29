@@ -99,23 +99,30 @@ climat = [
             SendOSC(vxjeannotmeufport, '/strip/VxJeannotVocod/AM%20pitchshifter/Pitch%20shift/unscaled', 1.20),
             SendOSC(vxorlmeufport, '/strip/VxORLVocod/AM%20pitchshifter/Pitch%20shift/unscaled', 1.20),
 
+            SendOSC(mk2inport, '/mididings/switch_scene', 1),
+
             bassdry,
             basswobble,
             bassdetunest_on,
             bassringst_on,
-            bassvibest_off,
-            bassbufferst_off,
+            bassvibest_on,
+            bassbufferst_on,
 
             ] >> Discard()
         ],
     jeannot >> ProgramFilter(3) >> [ # Couplet sans wobble - bouton 3
         #TODO arreter seq-wobble (à priori bassdry suffit)
-        bassdry,
-        bassscape,
-        bassdetunest_on,
-        bassringst_on,
-        bassvibest_off,
-        bassbufferst_off,
+        Program(6) >> seq24once,
+        Program(4) >> seq24once,
+        [
+            bassdry,
+            bassscape,
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
+
+        ] >> Discard()
 
     ],
     jeannot >> ProgramFilter(4) >> [ # Refrain - Bouton 3
