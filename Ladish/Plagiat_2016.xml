@@ -2,7 +2,7 @@
 <!--
 ladish Studio configuration.
 -->
-<!-- Mon Nov 14 14:59:27 2016 -->
+<!-- Sat Jan 28 20:55:44 2017 -->
 <studio>
   <jack>
     <conf>
@@ -110,8 +110,8 @@ ladish Studio configuration.
           <port name="seq24 (capture): [15] seq24 15" uuid="210e9960-e1b8-4804-9af4-a34f001fdccf" />
           <port name="seq24 (capture): [16] seq24 16" uuid="1cbcba0b-4f06-4495-a209-837b9c3453d9" />
           <port name="seq24 (playback): seq24 in" uuid="ea53353f-3418-47db-ba32-dcdcc5e09815" />
-          <port name="LPD8 (capture): LPD8 MIDI 1" uuid="8f01528b-6384-4ff0-9f0c-e2a7fb38be69" />
-          <port name="LPD8 (playback): LPD8 MIDI 1" uuid="37f79b59-e07e-4490-812c-74e8879c6dff" />
+          <port name="Arturia MiniLab mkII (capture): Arturia MiniLab mkII MIDI 1" uuid="4c36ef24-732c-41be-a868-4a7510a3a35e" />
+          <port name="Arturia MiniLab mkII (playback): Arturia MiniLab mkII MIDI 1" uuid="0e8f08b9-9338-4ba7-b885-c097daf26cfc" />
         </ports>
       </client>
       <client name="SLServer" uuid="75627883-d5f1-47fe-a2d9-daf52fcb8b8d">
@@ -167,6 +167,7 @@ ladish Studio configuration.
           <port name="PBAMSClassicalSynth" uuid="ffad4d6f-01ab-4ea3-8394-b31b16e4d4e4" />
           <port name="PBTapeutape" uuid="5c081b20-2ec1-449f-87ce-5aaaa468a1bb" />
           <port name="PBCtrlOut" uuid="5f138bbb-dfaa-46d5-88c5-60983750f6e1" />
+          <port name="PBMk2In" uuid="753a7774-1286-4053-949c-f9e4c6615277" />
         </ports>
       </client>
       <client name="Klick" uuid="de8cebb2-2493-4551-9bce-c4d601aa60b6">
@@ -773,6 +774,13 @@ ladish Studio configuration.
           <port name="pitch" uuid="e1e28cc7-af85-4f46-ab41-0f242946e7cb" />
         </ports>
       </client>
+      <client name="ZitaJeannot" uuid="469d4e56-e918-4005-8aa4-615bd56042f0">
+        <ports>
+          <port name="in" uuid="d6921802-19e6-4e11-ab68-a271dd4494df" />
+          <port name="out" uuid="d156f56f-39ba-4048-962d-a425c105ca7b" />
+          <port name="pitch" uuid="bd835273-25d4-448e-9ac3-44258030999f" />
+        </ports>
+      </client>
     </clients>
   </jack>
   <clients>
@@ -1111,6 +1119,7 @@ ladish Studio configuration.
         <port name="PBAMSClassicalSynth" uuid="ffad4d6f-01ab-4ea3-8394-b31b16e4d4e4" type="midi" direction="output" />
         <port name="PBTapeutape" uuid="5c081b20-2ec1-449f-87ce-5aaaa468a1bb" type="midi" direction="output" />
         <port name="PBCtrlOut" uuid="5f138bbb-dfaa-46d5-88c5-60983750f6e1" type="midi" direction="output" />
+        <port name="PBMk2In" uuid="753a7774-1286-4053-949c-f9e4c6615277" type="midi" direction="input" />
       </ports>
       <dict>
         <key name="http://ladish.org/ns/canvas/x">444.303724</key>
@@ -1912,9 +1921,9 @@ ladish Studio configuration.
     </client>
     <client name="SamplesControl" uuid="802db107-ed08-4593-b96a-2a0dc11941f3" naming="app" app="e9d93bf6-5b87-4805-b805-67933ca1f5ef">
       <ports>
-        <port name="SCCtrlIn" uuid="736664ed-bfbd-4904-9d0d-bc72bd9a0d36" type="midi" direction="input" />
-        <port name="SCTapeutape" uuid="8b90f8a4-1fd5-4f50-9a60-c6d8d62e1be8" type="midi" direction="output" />
-        <port name="SCCtrlOut" uuid="dceb6140-7d72-457d-bd93-337e95c6ea29" type="midi" direction="output" />
+        <port name="SCCtrlIn" uuid="736664ed-bfbd-4904-9d0d-bc72bd9a0d36" type="audio" direction="output" />
+        <port name="SCTapeutape" uuid="8b90f8a4-1fd5-4f50-9a60-c6d8d62e1be8" type="audio" direction="output" />
+        <port name="SCCtrlOut" uuid="dceb6140-7d72-457d-bd93-337e95c6ea29" type="audio" direction="output" />
       </ports>
       <dict>
         <key name="http://ladish.org/ns/canvas/x">643.895180</key>
@@ -2173,14 +2182,25 @@ ladish Studio configuration.
         <key name="http://ladish.org/ns/canvas/y">1518.203927</key>
       </dict>
     </client>
-    <client name="LPD8" uuid="24fba88a-ffaa-4a1d-b9f3-bb656ac1ad61" naming="app">
+    <client name="Arturia MiniLab mkII" uuid="d25356ab-e6f5-4563-a8b9-9ec1e0342afc" naming="app">
       <ports>
-        <port name="LPD8 MIDI 1" uuid="8f01528b-6384-4ff0-9f0c-e2a7fb38be69" type="midi" direction="output" />
-        <port name="LPD8 MIDI 1" uuid="37f79b59-e07e-4490-812c-74e8879c6dff" type="midi" direction="input" />
+        <port name="Arturia MiniLab mkII MIDI 1" uuid="4c36ef24-732c-41be-a868-4a7510a3a35e" type="midi" direction="output" />
+        <port name="Arturia MiniLab mkII MIDI 1" uuid="0e8f08b9-9338-4ba7-b885-c097daf26cfc" type="midi" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">242.992542</key>
-        <key name="http://ladish.org/ns/canvas/y">1255.000000</key>
+        <key name="http://ladish.org/ns/canvas/x">99.030545</key>
+        <key name="http://ladish.org/ns/canvas/y">1901.243018</key>
+      </dict>
+    </client>
+    <client name="ZitaJeannot" uuid="f0698758-b8b4-4c84-8ba7-e42bf62c71aa" naming="app" app="a22b80ca-d674-4681-812d-e12014da4f7d">
+      <ports>
+        <port name="in" uuid="d6921802-19e6-4e11-ab68-a271dd4494df" type="audio" direction="input" />
+        <port name="out" uuid="d156f56f-39ba-4048-962d-a425c105ca7b" type="audio" direction="output" />
+        <port name="pitch" uuid="bd835273-25d4-448e-9ac3-44258030999f" type="midi" direction="input" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">1694.992542</key>
+        <key name="http://ladish.org/ns/canvas/y">1235.000000</key>
       </dict>
     </client>
   </clients>
@@ -2620,16 +2640,16 @@ ladish Studio configuration.
     <connection port1="572efdcb-6a2d-4645-b183-30f523c5f156" port2="df087322-11af-43d9-b94e-0744869b0e76" />
     <connection port1="572efdcb-6a2d-4645-b183-30f523c5f156" port2="ccbf9029-5e4d-4224-8a5e-58824293b839" />
     <connection port1="1cbcba0b-4f06-4495-a209-837b9c3453d9" port2="e1e28cc7-af85-4f46-ab41-0f242946e7cb" />
-    <connection port1="8f01528b-6384-4ff0-9f0c-e2a7fb38be69" port2="2445a71a-5d6c-4e8e-90de-7624ca7db870" />
+    <connection port1="4c36ef24-732c-41be-a868-4a7510a3a35e" port2="753a7774-1286-4053-949c-f9e4c6615277" />
   </connections>
   <applications>
     <application name="a2j" uuid="65bce9a0-8285-4cb3-9630-321ba19b43a4" terminal="false" level="0" autorun="true">a2j -e</application>
     <application name="SLServer" uuid="6048d3ab-ecf3-4545-901a-2a842e8dbd93" terminal="false" level="0" autorun="true">sooperlooper -L %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FSooperLooper%2F2016_Plagiat.slsess</application>
     <application name="Tapeutape" uuid="4fa27312-1cbb-486e-bcfd-3d484756dcb0" terminal="false" level="0" autorun="true">tapeutape %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FSamples%2FPlagiatMainSampler.tap</application>
     <application name="seq24" uuid="b1b78940-cc7c-4394-8a02-401a18f75388" terminal="false" level="0" autorun="true">seq24 --manual_alsa_ports --jack_transport --jack_start_mode 0 --file %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSequences%2FPlagiatAudioSequences.midi</application>
-    <application name="pedalBoards" uuid="18c1159f-2bfb-4240-831d-8e3b63cfdfae" terminal="false" level="0" autorun="true">/home/woii/Plagiat/Stage/Scripts/launch_pB.sh</application>
+    <application name="pedalBoards" uuid="18c1159f-2bfb-4240-831d-8e3b63cfdfae" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_pB.sh</application>
     <application name="Klick" uuid="08ad27a4-0fc1-4a28-ac4b-3f5caee7e048" terminal="false" level="0" autorun="true">klick -o 1234 -d 0.0106</application>
-    <application name="SL_sync" uuid="78595655-c1e5-4205-99a7-9e2e0c7c66c5" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FSebkha-Chott%2FStage%2Fscripts%2Fsl_sync.sh</application>
+    <application name="SL_sync" uuid="78595655-c1e5-4205-99a7-9e2e0c7c66c5" terminal="false" level="0" autorun="false">%2Fhome%2Fwoii%2FSebkha-Chott%2FStage%2Fscripts%2Fsl_sync.sh</application>
     <application name="pyOSCseq Lights" uuid="e52a7bac-d237-4651-9fdd-8b3416add8af" terminal="false" level="0" autorun="false">python %2Fhome%2Fwoii%2FSebkha-Chott%2FStage%2FMAO%2FpyOSCseq%2Fmain.sc.lights.py</application>
     <application name="pyOSCseq Main" uuid="629ad6f3-4549-4224-bf26-057851ff4d76" terminal="false" level="0" autorun="false">python %2Fhome%2Fwoii%2FSebkha-Chott%2FStage%2FMAO%2FpyOSCseq%2Fmain.sc.py</application>
     <application name="pyOSCseq Audio" uuid="df982986-dd5d-451b-8e1d-64b7c3f203e7" terminal="false" level="0" autorun="false">python %2Fhome%2Fwoii%2FSebkha-Chott%2FStage%2FMAO%2FpyOSCseq%2Fmain.sc.audio.py</application>
@@ -2655,14 +2675,15 @@ ladish Studio configuration.
     <application name="SamplesDegrade (NM)" uuid="2cf1a1d5-de38-4398-b917-fc2c404fd54a" terminal="false" level="0" autorun="true">non-mixer --osc-port 7009 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FSamplesDegrade</application>
     <application name="SamplesDisintegrator (NM)" uuid="fa10797a-5969-4882-b80a-c48fe2e2522a" terminal="false" level="0" autorun="true">non-mixer --osc-port 7007 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FSamplesDisintegrator</application>
     <application name="SamplesMain (NM)" uuid="4b3f53a9-93d0-4b65-b92f-c9e68efcc40b" terminal="false" level="0" autorun="true">non-mixer --osc-port 7008 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FSamplesMain</application>
-    <application name="SamplesControl" uuid="e9d93bf6-5b87-4805-b805-67933ca1f5ef" terminal="false" level="0" autorun="true">python %2Fhome%2Fwoii%2FPlagiat%2FStage%2FControls%2FMididings%2FsamplesControl.py</application>
+    <application name="SamplesControl" uuid="e9d93bf6-5b87-4805-b805-67933ca1f5ef" terminal="false" level="0" autorun="false">python %2Fhome%2Fwoii%2FPlagiat%2FStage%2FControls%2FMididings%2FsamplesControl.py</application>
     <application name="BassMain (NM)" uuid="9950811d-a2ff-48c6-84f7-d569f415b4bd" terminal="false" level="0" autorun="true">non-mixer --osc-port 7020 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FBassMain</application>
     <application name="MonitorsORL (NM)" uuid="c365e0ab-4ba7-4e4a-84aa-10f66c324a43" terminal="false" level="0" autorun="true">non-mixer --osc-port 7030 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FMonitorsORL</application>
     <application name="MonitorsJeannot (NM)" uuid="590fef19-5033-478f-b350-3ee15dc0c354" terminal="false" level="0" autorun="true">non-mixer --osc-port 7031 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FMonitorsJeannot</application>
-    <application name="PolyPedalBoard" uuid="9bb06b8b-45ce-4165-abc8-adef4d0b3663" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FControls%2FPoly_PedalBoard%2FPoly_PedalBoard_RawHID_v0.2%2Fpoly_pedalboard_rawhid -p 56418</application>
+    <application name="PolyPedalBoard" uuid="9bb06b8b-45ce-4165-abc8-adef4d0b3663" terminal="false" level="0" autorun="false">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FControls%2FPoly_PedalBoard%2FPoly_PedalBoard_RawHID_v0.2%2Fpoly_pedalboard_rawhid -p 56418</application>
     <application name="SamplesPitch (NM)" uuid="29e48490-4c5d-47d9-8602-d3a7e8d63676" terminal="false" level="0" autorun="true">non-mixer --osc-port 7000 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FSamplesPitch</application>
     <application name="drumKlit (MIdidings)" uuid="50114045-9636-4c01-869f-e2b0b1ff1200" terminal="false" level="0" autorun="true">python %2Fhome%2Fwoii%2FPlagiat%2FStage%2FControls%2FMididings%2FdrumKlit.py</application>
     <application name="BassSubCALF" uuid="9f82ed21-0cd3-4d4e-8595-7d825d3ff094" terminal="false" level="0" autorun="true">calfjackhost --load %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FCalf%2FBassSub</application>
     <application name="ZitaORL" uuid="87318598-bfef-4411-b30f-060d5c7f85dc" terminal="false" level="0" autorun="true">zita-at1</application>
+    <application name="ZitaJeannot" uuid="a22b80ca-d674-4681-812d-e12014da4f7d" terminal="false" level="0" autorun="true">zita-at1</application>
   </applications>
 </studio>
