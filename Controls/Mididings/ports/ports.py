@@ -38,10 +38,16 @@ bassmainport = 7020
 monitorsorlport = 7030
 monitorsjeannotport = 7031
 
+
 ## OSC Sequencers
 
 trapcutport = 8001
 audioseqport = 8002
+
+## Zynadd
+
+zynTrebleport = 10000
+zynBassport = 10001
 
 ## MIDI
 
