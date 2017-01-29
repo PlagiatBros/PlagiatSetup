@@ -408,7 +408,8 @@ dafist = [
 
             SendOSC(cmeinport, '/mididings/switch_scene', 9),
 
-            bassscape,
+            bassdry,
+
             ] >> Discard()
         ],
     orl >> ProgramFilter(9) >> [
@@ -419,7 +420,8 @@ dafist = [
         ] >> Discard(),
     jeannot >> ProgramFilter(4) >> [ # RELANCE Transe goa - Bouton 9
         #TODO relance boucles
-        Program(71) >> cseqtrigger, # virer ??
+        # Program(71) >> cseqtrigger,
+        Ctrl(0, 0) >> tapeutapecontrol,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 120),
@@ -466,6 +468,7 @@ dafist = [
             bassdry,
 
             # Transition Trains Climat
+            SendOSC(cmeinport, '/mididings/switch_scene', 11),
             SendOscState([
                 [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
                 [samplesmainport, '/strip/SamplesMunge/Gain/Mute', 0.0],
@@ -480,4 +483,10 @@ dafist = [
 
             ] >> Discard()
         ],
+    orl >> ProgramFilter(11) >> [
+        stop,
+        SendOSC(audioseqport, '/Audioseq/Scene/Play', 'dafist_outro_filter_open'),
+        SceneSwitch(3) >> Discard(),
+        Ctrl(102, 127) >> Output('Mk2CtrlOut', 1)
+        ] >> Discard(),
     ]

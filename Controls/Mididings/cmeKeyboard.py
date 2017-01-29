@@ -9,7 +9,7 @@ from ports import *
 config(
 	backend='jack',
 	client_name='CMEKeyBoardRoutes',
-	out_ports=['CMEOutBass', 'CMEOutTreble', 'CMEOutRhodes'],
+	out_ports=['CMEOutBass', 'CMEOutTreble', 'CMEOutRhodes', 'CMEOutTapeutape'],
 	in_ports=['CMEIn']
 )
 
@@ -39,6 +39,8 @@ zyntreble2 = ~Filter(CTRL) >> Output('CMEOutTreble', 2)
 
 zynrhodes1 = ~Filter(CTRL) >> Output('CMEOutRhodes', 1)
 
+tapeutape1 = ~Filter(CTRL) >> Output('CMEOutTapeutape', 1)
+
 run(
     scenes = {
         1: 	Scene("ZynBass 1", zynbass1),
@@ -51,6 +53,7 @@ run(
         8: 	Scene("ZynTreble 1", zyntreble1),
         9: 	Scene("ZynTreble 2", zyntreble2),
         10:	Scene("ZynRhodes 1", zynrhodes1),
+        11:	Scene("Tapeutape 1", tapeutape1),
     },
     control = Filter(PROGRAM) >> SceneSwitch(),
     pre = ~Filter(PROGRAM)

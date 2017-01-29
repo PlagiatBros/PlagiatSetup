@@ -11,7 +11,9 @@ from mididings.extra.osc import SendOSC
 
 #### Climat ####
 climat = [
-    [orl, jeannot] >> Filter(PROGRAM) >> Ctrl(0, 0) >> tapeutapecontrol,
+    Init([
+        Ctrl(0, 0) >> tapeutapecontrol
+    ]),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     jeannot >> ProgramFilter(2) >> [ # Intro mandela - Bouton 2
         Program(69) >> cseqtrigger, # seq vocodeur à caler
