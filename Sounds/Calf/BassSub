@@ -4,9 +4,9 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="meter_in" value="2.7025e-05" />
-  <param name="meter_outL" value="2.7025e-05" />
-  <param name="meter_outR" value="2.7025e-05" />
+  <param name="meter_in" value="5.74237e-06" />
+  <param name="meter_outL" value="5.74237e-06" />
+  <param name="meter_outR" value="5.74237e-06" />
   <param name="clip_in" value="0" />
   <param name="clip_outL" value="0" />
   <param name="clip_outR" value="0" />
@@ -26,8 +26,8 @@
 <preset bank="0" program="0" plugin="gate" name="">
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
-  <param name="meter_in" value="7.14143e-06" />
-  <param name="meter_out" value="7.14143e-06" />
+  <param name="meter_in" value="3.22667e-06" />
+  <param name="meter_out" value="1.97633e-07" />
   <param name="clip_in" value="0" />
   <param name="clip_out" value="0" />
   <param name="range" value="0.06125" />
@@ -39,7 +39,7 @@
   <param name="knee" value="3.97788" />
   <param name="detection" value="0" />
   <param name="stereo_link" value="0" />
-  <param name="gating" value="1" />
+  <param name="gating" value="0.06125" />
 </preset>
 </plugin>
 <plugin type="bassenhancer" instance-name="bassenhancer" input-index="6" output-index="7">
@@ -48,13 +48,13 @@
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
   <param name="amount" value="4.13532" />
-  <param name="meter_in" value="7.14143e-06" />
-  <param name="meter_out" value="7.49423e-06" />
+  <param name="meter_in" value="1.97633e-07" />
+  <param name="meter_out" value="0" />
   <param name="clip_in" value="0" />
   <param name="clip_out" value="0" />
   <param name="drive" value="8.5396" />
   <param name="blend" value="0" />
-  <param name="meter_drive" value="1.03516e-05" />
+  <param name="meter_drive" value="2.27899e-07" />
   <param name="freq" value="100" />
   <param name="listen" value="1" />
   <param name="floor_active" value="1" />
@@ -65,8 +65,8 @@
 <preset bank="0" program="0" plugin="compressor" name="">
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
-  <param name="meter_in" value="7.49423e-06" />
-  <param name="meter_out" value="1.53247e-05" />
+  <param name="meter_in" value="0" />
+  <param name="meter_out" value="0" />
   <param name="clip_in" value="0" />
   <param name="clip_out" value="0" />
   <param name="threshold" value="0.0921418" />
@@ -94,10 +94,10 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="meter_inL" value="1.53247e-05" />
-  <param name="meter_inR" value="1.53247e-05" />
-  <param name="meter_outL" value="1.53247e-05" />
-  <param name="meter_outR" value="1.53247e-05" />
+  <param name="meter_inL" value="0" />
+  <param name="meter_inR" value="0" />
+  <param name="meter_outL" value="0" />
+  <param name="meter_outR" value="0" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
   <param name="clip_outL" value="0" />
@@ -119,6 +119,31 @@
   <param name="meter_phase" value="0" />
   <param name="sc_level" value="1" />
   <param name="stereo_phase" value="0" />
+</preset>
+</plugin>
+<plugin type="fluidsynth" instance-name="fluidsynth" output-index="17" midi-index="0">
+<preset bank="0" program="0" plugin="fluidsynth" name="">
+  <param name="master" value="0.5" />
+  <param name="interpolation" value="2" />
+  <param name="reverb" value="0" />
+  <param name="chorus" value="0" />
+  <var name="preset_key_set">0</var>
+  <var name="preset_key_set10">-1</var>
+  <var name="preset_key_set11">0</var>
+  <var name="preset_key_set12">0</var>
+  <var name="preset_key_set13">0</var>
+  <var name="preset_key_set14">0</var>
+  <var name="preset_key_set15">0</var>
+  <var name="preset_key_set16">0</var>
+  <var name="preset_key_set2">0</var>
+  <var name="preset_key_set3">0</var>
+  <var name="preset_key_set4">0</var>
+  <var name="preset_key_set5">0</var>
+  <var name="preset_key_set6">0</var>
+  <var name="preset_key_set7">0</var>
+  <var name="preset_key_set8">0</var>
+  <var name="preset_key_set9">0</var>
+  <var name="soundfont">/home/woii/Plagiat/Stage/Sounds/sf2/jRhodes3.sf2</var>
 </preset>
 </plugin>
 </rack>
