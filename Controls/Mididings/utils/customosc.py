@@ -11,6 +11,19 @@ import liblo as _liblo
 
 from time import time
 
+seq24PageMap = {
+    1: 114, #connsasseSACEM
+    2: 119, #dafist
+    3: 113, #climat
+    4: 114, #fifty
+    5: 116, #Le5
+    6: 123, #trapone
+    7: 117, #sw
+    8: 121, #geturfreakon + 120
+    9: 122, #horrorcore
+    10:118, #wholeworld
+}
+
 class OSCCustomInterface(object):
     def __init__(self, port=56418):
         self.port = port
@@ -34,7 +47,7 @@ class OSCCustomInterface(object):
     #     _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 39, int(args[0])))
     #     _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 38, int(args[0])))
     #     _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 40, int(args[0])))
-    #     _engine.output_event(_event.ProgramEvent('PBCtrlOut', _util.NoDataOffset(1), 127))     
+    #     _engine.output_event(_event.ProgramEvent('PBCtrlOut', _util.NoDataOffset(1), 127))
 
     # @_liblo.make_method('/Sequencer/Sabra', 'i')
     # def sabra_cb(self, path, args):
@@ -61,7 +74,7 @@ class OSCCustomInterface(object):
          # if args[0] == 1: # Rustine car acte 0 sur screen 14 !!!
          #     _engine.output_event(_event.ProgramEvent('PBseq24', _util.NoDataOffset(1), 127))
          # else:
-         _engine.output_event(_event.ProgramEvent('PBseq24', _util.NoDataOffset(1), args[0] + 112))
+         _engine.output_event(_event.ProgramEvent('PBseq24', _util.NoDataOffset(1), seq24PageMap[args[0]]))
 #         _engine.output_event(_event.CtrlEvent('PBTapeutape', _util.NoDataOffset(0), 0, args[0]-1))
 	else:
             if args[0] == 12:
@@ -76,5 +89,3 @@ class OSCCustomInterface(object):
                  _engine.switch_subscene(8)
    	        if args[0] < 24 and args[0] > 12:
                     _engine.output_event(_event.ProgramEvent('PBCtrlOut', _util.NoDataOffset(1), args[0]))
-
-
