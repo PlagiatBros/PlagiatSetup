@@ -10,7 +10,10 @@ from mididings.extra.osc import SendOSC
 
 #### Da Fist ####
 dafist = [
-    [orl, jeannot] >> Filter(PROGRAM) >> Ctrl(0, 6) >> tapeutapecontrol,
+    Init([
+        Program(seq24PageMap[2]) >> seq24once,
+        Ctrl(0, 6) >> tapeutapecontrol,
+        ]),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # Intro Thème - Bouton 2
         Program(65) >> cseqtrigger,

@@ -34,6 +34,19 @@ seqtrigger = Filter(PROGRAM) >> [
 
 cseqtrigger = Channel(1) >> seqtrigger
 
+seq24PageMap = {
+    1: 114, #connsasseSACEM
+    2: 119, #dafist
+    3: 113, #climat
+    4: 114, #fifty
+    5: 116, #Le5
+    6: 123, #trapone
+    7: 117, #sw
+    8: 121, #geturfreakon + 120
+    9: 122, #horrorcore
+    10:118, #wholeworld
+}
+
 #### BPM Scape & Delay Vx ####
 # Formule : (x-30)/134.
 scapebpmpath = 'C%2A%20Scape%20-%20Stereo%20delay%20with%20chromatic%20resonances/bpm'

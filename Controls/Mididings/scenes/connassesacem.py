@@ -10,7 +10,10 @@ from mididings.extra.osc import SendOSC
 
 #### ConnassesSACEM ####
 connassessacem = [
-    [orl, jeannot] >> Filter(PROGRAM) >> Ctrl(0, 1) >> tapeutapecontrol,
+    Init([
+        Program(seq24PageMap[1]) >> seq24once,
+        Ctrl(0, 1) >> tapeutapecontrol,
+        ]),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     [orl, jeannot] >> ProgramFilter(2) >> [ # Thème Intro - Bouton 2
         Program(65) >> cseqtrigger,
@@ -51,6 +54,9 @@ connassessacem = [
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
+
+            SendOSC(cmeinport, '/mididings/switch_scene', 5),
+
 
             ] >> Discard()
         ],
@@ -94,5 +100,22 @@ connassessacem = [
 
             ] >> Discard()
         ],
+    orl >> ProgramFilter(4) >> [
+        SendOSC(slport, '/sl/6/hit', 'record')
+        ] >> Discard(),
+    orl >> ProgramFilter(5) >> [
+        SendOSC(slport, '/sl/7/hit', 'record')
+        ] >> Discard(),
+    orl >> ProgramFilter(6) >> [
+        SendOSC(slport, '/sl/8/hit', 'record')
+        ] >> Discard(),
+    orl >> ProgramFilter(7) >> [
+        SendOSC(slport, '/sl/-1/hit', 'pauseon')
+        ] >> Discard(),
+    orl >> ProgramFilter(11) >> [
+        SceneSwitch(2) >> Discard(),
+        Program(2) >> Output('PBCtrlOut', 1)
+        ],
+
 
     ]

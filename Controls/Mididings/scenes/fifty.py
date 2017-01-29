@@ -10,6 +10,10 @@ from mididings.extra.osc import SendOSC
 
 #### Fifty ####
 fifty = [
+    Init([
+        Program(seq24PageMap[4]) >> seq24once,
+        Ctrl(0, 2) >> tapeutapecontrol,
+        ]),
     [orl, jeannot] >> Filter(PROGRAM) >> Ctrl(0, 2) >> tapeutapecontrol,
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # Intro (fin du sample) - Bouton 2
