@@ -11,6 +11,8 @@ config(
 )
 
 def printer(ev):
-    print 'Midi received:\n channel: %s\n type: %s' % (ev.channel, ev.type)
+    print 'Midi received:'
+    print ' channel: %s\n type: %s' % (ev.channel, ev.type)
+    print ' ctrl: %s\n value: %s' % (ev.ctrl, ev.value)
 
 run(Process(printer))

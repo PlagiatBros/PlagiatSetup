@@ -13,6 +13,8 @@ dafist = [
     Init([
         Program(seq24PageMap[2]) >> seq24once,
         Ctrl(0, 6) >> tapeutapecontrol,
+        zynmicrotonal_on,
+        SendOSC(zyntrebleport, '/microtonal/tunings', '135.0\n200.0\n300.0\n400.0\n500.0\n600.0\n700.0\n835.0\n900.0\n1000.0\n1135.0\n2/1')
         ]),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # Intro Thème - Bouton 2
@@ -91,6 +93,9 @@ dafist = [
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
+
+            SendOSC(cmeinport, '/mididings/switch_scene', 7),
+
             ] >> Discard()
         ],
     jeannot >> ProgramFilter(2) >> [ # Psychose - Bouton 2
@@ -218,6 +223,9 @@ dafist = [
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
+
+            SendOSC(cmeinport, '/mididings/switch_scene', 9),
+
             ] >> Discard()
         ],
     orl >> ProgramFilter(5) >> [ # Couplet part 2 - Bouton 5
@@ -260,6 +268,9 @@ dafist = [
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
+
+            SendOSC(cmeinport, '/mididings/switch_scene', 7),
+
             ] >> Discard()
         ],
     orl >> ProgramFilter(6) >> [ # Refrain milieu (synthé / skrillex) - Bouton 6
@@ -302,6 +313,9 @@ dafist = [
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
+
+            SendOSC(cmeinport, '/mididings/switch_scene', 6),
+
             ] >> Discard()
         ],
     orl >> ProgramFilter(7) >> [ # Couplet 2 - Bouton 7
@@ -352,6 +366,9 @@ dafist = [
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
+
+            SendOSC(cmeinport, '/mididings/switch_scene', 9),
+
             ] >> Discard()
         ],
     orl >> ProgramFilter(8) >> [ # Transe goa - Bouton 8
@@ -389,10 +406,18 @@ dafist = [
             vxjeannotdisint_off,
             vxjeannotvocode_off,
 
+            SendOSC(cmeinport, '/mididings/switch_scene', 9),
+
             bassscape,
             ] >> Discard()
         ],
-    orl >> ProgramFilter(9) >> [ # RELANCE Transe goa - Bouton 9
+    orl >> ProgramFilter(9) >> [
+        SendOSC(slport, '/sl/7/hit', 'record')
+        ] >> Discard(),
+    orl >> ProgramFilter(10) >> [
+        SendOSC(slport, '/sl/7/hit', 'overdub')
+        ] >> Discard(),
+    jeannot >> ProgramFilter(4) >> [ # RELANCE Transe goa - Bouton 9
         #TODO relance boucles
         Program(71) >> cseqtrigger, # virer ??
         [
@@ -401,15 +426,19 @@ dafist = [
 
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
-            SendOSC(slport, '/sl/[4-6]/set', 'play_sync', 0),
-            SendOSC(slport, '/sl/[4-6]/hit', 'pause_off'),
-            SendOSC(slport, '/sl/[4-6]/hit', 'trigger'),
-            SendOSC(slport, '/sl/[4-6]/set', 'play_sync', 1),
+            SendOSC(slport, '/sl/7/set', 'sync', 0),
+            SendOSC(slport, '/sl/7/hit', 'pause_off'),
+            SendOSC(slport, '/sl/7/hit', 'trigger'),
+            SendOSC(slport, '/sl/7/set', 'sync', 1),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 120),
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),
+
+            SendOSC(audioseqport, '/Audioseq/Bpm', 120),
+            SendOSC(audioseqport, '/Audioseq/Play'),
+            SendOSC(audioseqport, '/Audioseq/Sequence/Enable', 'dafist_outro_filter'),
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.6716),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.6716),
@@ -434,7 +463,7 @@ dafist = [
             vxjeannotdisint_off,
             vxjeannotvocode_off,
 
-            bassscape,
+            bassdry,
 
             # Transition Trains Climat
             SendOscState([
