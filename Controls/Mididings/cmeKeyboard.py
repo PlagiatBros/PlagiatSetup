@@ -18,6 +18,7 @@ zynbass2 = Output('CMEOutBass', 2)
 zynbass3 = Output('CMEOutBass', 3)
 zynbass4 = Output('CMEOutBass', 4)
 zynbass5 = Output('CMEOutBass', 5)
+zynbass6 = Output('CMEOutBass', 6)
 
 zyntreble1 = Output('CMEOutTreble', 1)
 zyntreble2 = Output('CMEOutTreble', 2)
@@ -36,9 +37,10 @@ run(
         3: 	Scene("ZynBass 3", Filter(NOTE) >> zynbass3),
         4: 	Scene("ZynBass 4", Filter(NOTE) >> zynbass4),
         5: 	Scene("ZynBass 5", Filter(NOTE) >> zynbass5),
-        6: 	Scene("ZynTreble 1", Filter(NOTE) >> zyntreble1),
-        7: 	Scene("ZynTreble 2", Filter(NOTE) >> zyntreble2),
-        8: 	Scene("ZynRhodes 1", Filter(NOTE) >> zynrhodes1),
+        6: 	Scene("ZynBass 6", Filter(NOTE) >> zynbass6),
+        7: 	Scene("ZynTreble 1", Filter(NOTE) >> zyntreble1),
+        8: 	Scene("ZynTreble 2", Filter(NOTE) >> zyntreble2),
+        9: 	Scene("ZynRhodes 1", Filter(NOTE) >> zynrhodes1),
     },
     control = Filter(PROGRAM) >> SceneSwitch(),
     pre = ~Filter(PROGRAM)
