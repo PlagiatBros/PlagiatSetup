@@ -22,7 +22,7 @@ hook(
 
 run(
     scenes = {
-        1: SceneGroup("Climat", [
+        3: SceneGroup("Climat", [
   		Scene("Bass ORL",
                       [
                         climat,
@@ -79,7 +79,7 @@ run(
 		),
 	    ]
         ),
-        2: SceneGroup("ConnassesSACEM", [
+        1: SceneGroup("ConnassesSACEM", [
   		Scene("Bass ORL",
                       [
                         connassessacem,
@@ -136,7 +136,7 @@ run(
 		),
 	    ]
         ),
-        3: SceneGroup("Fifty", [
+        4: SceneGroup("Fifty", [
   		Scene("Bass ORL",
                       [
                         fifty,
@@ -193,7 +193,7 @@ run(
 		),
 	    ]
         ),
-        4: SceneGroup("Le5", [
+        5: SceneGroup("Le5", [
   		Scene("Bass ORL",
                       [
                         le5,
@@ -250,7 +250,7 @@ run(
 		),
 	    ]
         ),
-        5: SceneGroup("SW", [
+        7: SceneGroup("SW", [
   		Scene("Bass ORL",
                       [
                         sw,
@@ -307,7 +307,7 @@ run(
 		),
 	    ]
         ),
-        6: SceneGroup("Wholeworld", [
+        10: SceneGroup("Wholeworld", [
   		Scene("Bass ORL",
                       [
                         wholeworld,
@@ -364,7 +364,7 @@ run(
 		),
 	    ]
         ),
-        7: SceneGroup("Da Fist", [
+        2: SceneGroup("Da Fist", [
   		Scene("Bass ORL",
                       [
                         dafist,
@@ -535,7 +535,7 @@ run(
 		),
 	    ]
         ),
-        10: SceneGroup("Trapone", [
+        6: SceneGroup("Trapone", [
   		Scene("Bass ORL",
                       [
                         trapone,
