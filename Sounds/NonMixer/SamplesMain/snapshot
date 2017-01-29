@@ -91,4 +91,10 @@
 	Gain_Module 0x4C create :parameter_values "-14,000000:0,000000" :is_default 1 :chain 0x4A :active 1
 	Meter_Module 0x4D create :is_default 1 :chain 0x4A :active 1
 	JACK_Module 0x4E create :parameter_values "2,000000:0,000000" :is_default 1 :chain 0x4A :active 1
+	Mixer_Strip 0xDB create :name "Keyboards" :width "narrow" :tab "fader" :color 1163302711 :gain_mode 0 :mute_mode 0 :group 0x4F :auto_input "" :manual_connection 0
+	Chain 0xDC create :strip 0xDB :tab "chain"
+	JACK_Module 0xDD create :parameter_values "0,000000:2,000000" :is_default 1 :chain 0xDC :active 1
+	Gain_Module 0xDE create :parameter_values "0,000000:0,000000" :is_default 1 :chain 0xDC :active 1
+	Meter_Module 0xDF create :is_default 1 :chain 0xDC :active 1
+	JACK_Module 0xE0 create :parameter_values "2,000000:0,000000" :is_default 1 :chain 0xDC :active 1
 }
