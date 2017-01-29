@@ -47,7 +47,7 @@
 	Gain_Module 0x22 create :parameter_values "0,000000:0,000000" :is_default 1 :chain 0x20 :active 1
 	Meter_Module 0x23 create :is_default 1 :chain 0x20 :active 1
 	JACK_Module 0x24 create :parameter_values "2,000000:0,000000" :is_default 1 :chain 0x20 :active 1
-	Mixer_Strip 0xEC create :name "BassWobblePre" :width "narrow" :tab "fader" :color 2030052608 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
+	Mixer_Strip 0xEC create :name "BassWobblePre" :width "narrow" :tab "signal" :color 2030052608 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
 	Chain 0xED create :strip 0xEC :tab "chain"
 	JACK_Module 0xEE create :parameter_values "0,000000:1,000000" :is_default 1 :chain 0xED :active 1
 	Gain_Module 0xEF create :parameter_values "0,000000:0,000000" :is_default 1 :chain 0xED :active 1
@@ -56,12 +56,14 @@
 	Mixer_Strip 0xD7 create :name "BassWobblePost" :width "narrow" :tab "signal" :color 2550137088 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
 	Chain 0xD8 create :strip 0xD7 :tab "chain"
 	JACK_Module 0xD9 create :parameter_values "0,000000:2,000000" :is_default 1 :chain 0xD8 :active 1
-	Plugin_Module 0xE9 create :lv2_plugin_uri "http://drobilla.net/plugins/mda/Detune" :plugin_ins 2 :plugin_outs 2 :parameter_values "0,200000:0,900000:0,500000:0,500000" :is_default 0 :chain 0xD8 :active 1
-	Plugin_Module 0xEA create :lv2_plugin_uri "http://drobilla.net/plugins/mda/Bandisto" :plugin_ins 2 :plugin_outs 2 :parameter_values "1,000000:0,400000:0,500000:0,500000:0,500000:0,500000:0,500000:0,500000:0,500000:0,000000" :is_default 0 :chain 0xD8 :active 1
-	Plugin_Module 0xEB create :lv2_plugin_uri "http://drobilla.net/plugins/mda/RezFilter" :plugin_ins 2 :plugin_outs 2 :parameter_values "0,330000:0,700000:0,500000:0,850000:0,000000:0,500000:0,700000:0,400000:0,000000:0,750000" :is_default 0 :chain 0xD8 :active 1
+	Plugin_Module 0x108 create :plugin_id 1433 :plugin_ins 1 :plugin_outs 1 :parameter_values "1,000000:4,000000" :is_default 0 :chain 0xD8 :active 1
+	Plugin_Module 0xE9 create :lv2_plugin_uri "http://drobilla.net/plugins/mda/Detune" :plugin_ins 2 :plugin_outs 2 :parameter_values "0,260000:0,900000:0,500000:0,500000" :is_default 0 :chain 0xD8 :active 0
+	Plugin_Module 0xEA create :lv2_plugin_uri "http://drobilla.net/plugins/mda/Bandisto" :plugin_ins 2 :plugin_outs 2 :parameter_values "1,000000:0,340426:0,744681:0,500000:0,865248:0,765957:0,567376:0,659574:0,645390:0,000000" :is_default 0 :chain 0xD8 :active 1
+	Plugin_Module 0xEB create :lv2_plugin_uri "http://drobilla.net/plugins/mda/RezFilter" :plugin_ins 2 :plugin_outs 2 :parameter_values "0,250000:0,652482:0,500000:0,850000:0,000000:0,500000:0,700000:0,791687:0,000000:0,000000" :is_default 0 :chain 0xD8 :active 1
 	Gain_Module 0xDA create :parameter_values "0,000000:0,000000" :is_default 1 :chain 0xD8 :active 1
 	Meter_Module 0xDB create :is_default 1 :chain 0xD8 :active 1
 	JACK_Module 0xDC create :parameter_values "2,000000:0,000000" :is_default 1 :chain 0xD8 :active 1
+	Controller_Module 0x109 create :is_default 0 :chain 0xD8 :active 1 :module 0x108 :port 0 :mode 0
 	Mixer_Strip 0x26 create :name "BassMain" :width "narrow" :tab "signal" :color 4278196224 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
 	Chain 0x27 create :strip 0x26 :tab "chain"
 	JACK_Module 0x28 create :parameter_values "0,000000:2,000000" :is_default 1 :chain 0x27 :active 1

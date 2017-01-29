@@ -52,7 +52,12 @@ zynbassport = 10001
 ## CME keyboard programs
 
 cmeinport = 56424
-cmeoutport = 56424
+cmeoutport = 56425
+
+## Mk2 keyboard programs
+
+mk2inport = 56426
+mk2outport = 56427
 
 
 ## MIDI
