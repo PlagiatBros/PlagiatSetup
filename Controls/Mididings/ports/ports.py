@@ -46,8 +46,14 @@ audioseqport = 8002
 
 ## Zynadd
 
-zynTrebleport = 10000
-zynBassport = 10001
+zyntrebleport = 10000
+zynbassport = 10001
+
+## CME keyboard programs
+
+cmeinport = 56424
+cmeoutport = 56424
+
 
 ## MIDI
 
