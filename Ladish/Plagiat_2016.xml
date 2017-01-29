@@ -2,7 +2,7 @@
 <!--
 ladish Studio configuration.
 -->
-<!-- Sun Jan 29 15:25:01 2017 -->
+<!-- Sun Jan 29 18:56:44 2017 -->
 <studio>
   <jack>
     <conf>
@@ -2067,8 +2067,8 @@ ladish Studio configuration.
         <port name="MonitorsORL/in-2" uuid="d43244ed-1aec-45e7-99e8-5eb6235f6340" type="audio" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">656.402784</key>
-        <key name="http://ladish.org/ns/canvas/y">52.151226</key>
+        <key name="http://ladish.org/ns/canvas/x">787.402784</key>
+        <key name="http://ladish.org/ns/canvas/y">96.151226</key>
       </dict>
     </client>
     <client name="MonitorsJeannot (NM)" uuid="74f7ca8f-fcb0-4bdc-9512-8786d03fafad" naming="app" app="590fef19-5033-478f-b350-3ee15dc0c354">
