@@ -2,7 +2,7 @@
 <!--
 ladish Studio configuration.
 -->
-<!-- Mon Jan 30 18:46:58 2017 -->
+<!-- Mon Jan 30 19:04:01 2017 -->
 <studio>
   <jack>
     <conf>
@@ -2393,8 +2393,8 @@ ladish Studio configuration.
         <port name="out_1" uuid="cd87342d-412f-48dc-80b0-ec478e463383" type="midi" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1772.136542</key>
-        <key name="http://ladish.org/ns/canvas/y">1216.825000</key>
+        <key name="http://ladish.org/ns/canvas/x">1562.136542</key>
+        <key name="http://ladish.org/ns/canvas/y">1235.825000</key>
       </dict>
     </client>
   </clients>
