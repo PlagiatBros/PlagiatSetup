@@ -13,6 +13,7 @@ fifty = [
     Init([
         Program(seq24PageMap[4]) >> seq24once,
         Ctrl(0, 2) >> tapeutapecontrol,
+        zynmicrotonal_off,
         ]),
     [orl, jeannot] >> Filter(PROGRAM) >> Ctrl(0, 2) >> tapeutapecontrol,
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
@@ -103,6 +104,12 @@ fifty = [
             vxjeannotdisint_off,
             vxjeannotvocode_off,
 
+            bassdry,
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
+
             ] >> Discard()
         ],
     orl >> ProgramFilter(4) >> [ # Boucle rationnelle - Bouton 4
@@ -146,6 +153,12 @@ fifty = [
             vxjeannotdisint_off,
             vxjeannotvocode_off,
 
+            bassdry,
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
+
             ] >> Discard()
         ],
     orl >> ProgramFilter(5) >> [ # Couplet avec boucle - Bouton 5
@@ -154,10 +167,10 @@ fifty = [
             SendOSC(slport, '/set', 'eighth_per_cycle', 64),
             SendOSC(slport, '/set', 'tempo', 117),
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
-            SendOSC(slport, '/sl/0/set', 'play_sync', 0),
+            SendOSC(slport, '/sl/0/set', 'sync', 0),
             SendOSC(slport, '/sl/0/hit', 'pause_off'),
             SendOSC(slport, '/sl/0/hit', 'trigger'),
-            SendOSC(slport, '/sl/0/set', 'play_sync', 1),
+            SendOSC(slport, '/sl/0/set', 'sync', 1),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 117),
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
@@ -192,6 +205,12 @@ fifty = [
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
+
+            bassdry,
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
 
             ] >> Discard()
         ],
@@ -235,6 +254,12 @@ fifty = [
             vxjeannotdisint_off,
             vxjeannotvocode_off,
 
+            bassdry,
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
+
             ] >> Discard()
         ],
     orl >> ProgramFilter(7) >> [ # Refrain - Bouton 7
@@ -270,6 +295,12 @@ fifty = [
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
+
+            bassdry,
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
 
             ] >> Discard()
         ],

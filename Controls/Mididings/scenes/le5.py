@@ -10,7 +10,11 @@ from mididings.extra.osc import SendOSC
 
 #### Le5 ####
 le5 = [
-    [orl, jeannot] >> Filter(PROGRAM) >> Ctrl(0, 3) >> tapeutapecontrol,
+    Init([
+        Program(seq24PageMap[5]) >> seq24once,
+        Ctrl(0, 3) >> tapeutapecontrol,
+        zynmicrotonal_off,
+        ]),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # Intro - Bouton 2
         Program(65) >> cseqtrigger,
@@ -49,6 +53,11 @@ le5 = [
             vxjeannotvocode_off,
 
             bassdry,
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
+
             ] >> Discard()
         ],
     orl >> ProgramFilter(3) >> [ # Couplet A - Bouton 3
@@ -87,6 +96,11 @@ le5 = [
             vxjeannotvocode_off,
 
             bassdry,
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
+
             ] >> Discard()
         ],
     orl >> ProgramFilter(4) >> [ # Couplet B - Bouton 4
@@ -125,6 +139,11 @@ le5 = [
             vxjeannotvocode_off,
 
             bassdry,
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
+
             ] >> Discard()
         ],
     orl >> ProgramFilter(5) >> [ # Couplet C - Bouton 5
@@ -163,6 +182,11 @@ le5 = [
             vxjeannotvocode_off,
 
             bassdry,
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
+
             ] >> Discard()
         ],
     jeannot >> ProgramFilter(2) >> [ # Refrain (meeeaaan) - Bouton 2
@@ -201,6 +225,11 @@ le5 = [
 
             bassscape,
             bassdegrade,
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
+
             ] >> Discard()
         ],
     orl >> ProgramFilter(7) >> [ # Couplet A (niggah don't you know) - Bouton 7
@@ -239,6 +268,11 @@ le5 = [
             vxjeannotvocode_off,
 
             bassdry,
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
+
             ] >> Discard()
         ],
     jeannot >> ProgramFilter(3) >> [ # Couplet Bbis (call your jesus) - Bouton 3
@@ -276,6 +310,13 @@ le5 = [
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
+
+            bassdry,
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
+
             ] >> Discard()
         ],
     orl >> ProgramFilter(8) >> [ # Couplet Cbis (ain't no challenger left)- Bouton 8
@@ -312,6 +353,13 @@ le5 = [
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
+
+            bassdry,
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
+
             ] >> Discard()
         ],
 
@@ -372,6 +420,11 @@ le5 = [
             bassscape,
             bassdegrade,
             basswobble,
+
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
 
             ] >> Discard()
         ],
