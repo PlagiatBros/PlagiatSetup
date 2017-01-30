@@ -166,7 +166,7 @@ vxjeannotvocode_off= [
 bassdry = [
     SendOSC(bassmainport, '/strip/BassScapePre/Gain/Mute', 1.0),
     SendOSC(bassmainport, '/strip/BassDegradePre/Gain/Mute', 1.0),
-    SendOSC(bassmainport, '/strip/BassWobblePre/Gain/Mute', 1.0),
+    SendOSC(bassmainport, '/strip/BassWobblePost/MDA%20RezFilter/Freq/unscaled', 0.0),
     ] >> Discard()
 
 # Scape #
