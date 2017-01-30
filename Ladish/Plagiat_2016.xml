@@ -2,7 +2,7 @@
 <!--
 ladish Studio configuration.
 -->
-<!-- Sun Jan 29 23:46:54 2017 -->
+<!-- Mon Jan 30 16:25:34 2017 -->
 <studio>
   <jack>
     <conf>
@@ -2644,8 +2644,6 @@ ladish Studio configuration.
     <connection port1="245e558e-ef53-48ea-88d9-c5998afc9df9" port2="47bb49dc-4bec-4f05-b5b0-4d49f79509a4" />
     <connection port1="d7920f90-fcea-4161-baca-613f865651d0" port2="daaec82e-1603-4ee2-936e-573f397a55ac" />
     <connection port1="d7920f90-fcea-4161-baca-613f865651d0" port2="b1cfe7f9-3eac-4794-8e71-62cbfcef22ff" />
-    <connection port1="8802f7f0-6129-4d8e-ac9f-ced692aa9c97" port2="daaec82e-1603-4ee2-936e-573f397a55ac" />
-    <connection port1="8802f7f0-6129-4d8e-ac9f-ced692aa9c97" port2="b1cfe7f9-3eac-4794-8e71-62cbfcef22ff" />
     <connection port1="7a176acf-38bf-46b7-8c7c-86dccf48a3d9" port2="daaec82e-1603-4ee2-936e-573f397a55ac" />
     <connection port1="77379935-0983-47a0-b6a5-246d6e4317c0" port2="b1cfe7f9-3eac-4794-8e71-62cbfcef22ff" />
     <connection port1="30b2dd0d-4428-4d68-b039-8f77a6e20bfb" port2="daaec82e-1603-4ee2-936e-573f397a55ac" />
