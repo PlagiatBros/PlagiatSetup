@@ -329,28 +329,32 @@ zitaNotes = {
     'b':18,
 }
 
-def zitaNoteOn(port, note):
-    return SendOSC(port, '/x42/parameter', zitanotes[note.lower()], 1.0)
-
-def zitaNoteOff(port, note):
-    return SendOSC(port, '/x42/parameter', zitanotes[note.lower()], 0.0)
-
-def zitaScale(port, notes):
-
+def vocodernote(note, value, port=[vocoderjeannotport, vocoderorlport]):
     ev = []
 
     if type(port) != list:
         port = [port]
+    if type(note) != list:
+        note = [note]
+
+    value = float(bool(value))
 
     for p in port:
-        for note in zitaNotes:
-            if note in notes:
-                ev.append(
-                    zitaNoteOn(p, note)
-                )
-            else:
-                ev.append(
-                    zitaNoteOff(p, note)
-                )
+        for n in note:
+            ev.append(SendOSC(port, '/x42/parameter', zitanotes[n.lower()], value))
+
+def vocoderscale(notes, port=[vocoderjeannotport, vocoderorlport]):
+
+    ev = []
+
+    for note in zitaNotes:
+        if note in notes:
+            ev.append(
+                vocodernote_on(port, 1.0, note)
+            )
+        else:
+            ev.append(
+                vocodernote_off(port, 0.0, note)
+            )
 
     return ev

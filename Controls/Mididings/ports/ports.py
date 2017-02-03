@@ -38,7 +38,7 @@ bassmainport = 7020
 monitorsorlport = 7030
 monitorsjeannotport = 7031
 
-vocodereannotport = 7050
+vocoderjeannotport = 7050
 vocoderorlport = 7051
 
 
