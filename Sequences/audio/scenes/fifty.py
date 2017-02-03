@@ -16,7 +16,7 @@ def fifty_refrain_auto(sequencer, timer):
 
 
 def fifty_refrain_cutdown_close(sequencer, timer):
-    timer.wait(.25, 'bites')
+    timer.wait(.75, 'bites')
     sequencer.animate([samplesmainport, '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled'], 1, .25, 0.5, 'beat', framerate=50, blocking=True)
     timer.wait(.5, 'bites')
     sequencer.send(samplesmainport, '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.)
