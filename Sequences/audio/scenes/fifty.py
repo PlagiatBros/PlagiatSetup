@@ -12,4 +12,11 @@ def fifty_intro(sequencer, timer):
 
 def fifty_refrain_auto(sequencer, timer):
     timer.wait(12, 'bites')
-    sequencer.send(56418, '/pedalBoard/button', 6)
+    sequencer.send(56418, '/pedalBoard/button', 7)
+
+
+def fifty_refrain_cutdown_close(sequencer, timer):
+    timer.wait(.25, 'bites')
+    sequencer.animate([samplesmainport, '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled'], 1, .25, 0.5, 'beat', framerate=50, blocking=True)
+    timer.wait(.5, 'bites')
+    sequencer.send(samplesmainport, '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.)

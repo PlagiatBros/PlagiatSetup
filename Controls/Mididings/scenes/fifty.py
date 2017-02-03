@@ -273,6 +273,10 @@ fifty = [
     orl >> ProgramFilter(7) >> [ # Refrain - Bouton 7
         Program(69) >> cseqtrigger,
         [
+            SendOSC(audioseqport, '/Audioseq/Bpm', 117),
+            SendOSC(audioseqport, '/Audioseq/Play'),
+            SendOSC(audioseqport, '/Audioseq/Sequence/Enable', 'fifty_refrain_cutdown'),
+
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 117),
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
