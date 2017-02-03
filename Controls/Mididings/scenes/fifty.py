@@ -19,9 +19,6 @@ fifty = [
     orl >> ProgramFilter(2) >> [ # Intro (fin du sample) - Bouton 2
         Program(65) >> cseqtrigger,
         [
-            SendOSC(audioseqport, '/Audioseq/Bpm', 117),
-            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'fifty_intro'),
-
             SendOSC(slport, '/set', 'eighth_per_cycle', 64),
             SendOSC(slport, '/set', 'tempo', 117),
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
