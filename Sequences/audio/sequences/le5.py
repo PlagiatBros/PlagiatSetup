@@ -1,5 +1,4 @@
 le5_refrain_cutdown = [
-
     None,None,None,None,None,
     None,None,None,None,None,
     None,None,None,None,None,
