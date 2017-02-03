@@ -2,7 +2,6 @@ import sys
 sys.path.append("../Controls/Mididings/")
 
 from ports import *
-from liblo import send
 
 def dafist_outro_filter_close(sequencer, timer):
     timer.wait(.25, 'bites')
