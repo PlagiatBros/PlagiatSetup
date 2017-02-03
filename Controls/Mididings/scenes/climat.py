@@ -105,10 +105,12 @@ climat = [
             basswobble,
 
             ] >> Discard(),
-        bassdetunest_on,
-        bassringst_on,
-        bassvibest_on,
-        bassbufferst_on,
+        [
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_on,
+            bassbufferst_on,
+            ]
 
         ],
     jeannot >> ProgramFilter(3) >> [ # Couplet sans wobble - bouton 3
@@ -176,12 +178,14 @@ climat = [
             vxjeannotvocode_off,
 
             bassdry,
+
+            ] >> Discard(),
+        [
             bassdetunest_on,
             bassringst_on,
             bassvibest_off,
             bassbufferst_off,
-
-            ] >> Discard()
+            ]
         ],
     orl >> ProgramFilter(3) >> [ # couplet - Bouton 3
         Program(67) >> cseqtrigger,
@@ -231,13 +235,16 @@ climat = [
 
             bassdry,
             bassscape,
+
+            #TODO bassSUB
+
+            ] >> Discard(),
+        [
             bassdetunest_on,
             bassringst_on,
             bassvibest_off,
             bassbufferst_off,
-            #TODO bassSUB
-
-            ] >> Discard()
+            ]
         ],
     orl >> ProgramFilter(4) >> [ # The shit - Bouton 4
         Program(70) >> cseqtrigger,
@@ -285,10 +292,12 @@ climat = [
 
 
             ] >> Discard(),
-        bassdetunest_off,
-        bassringst_off,
-        bassvibest_off,
-        bassbufferst_off,
+        [
+            bassdetunest_off,
+            bassringst_off,
+            bassvibest_off,
+            bassbufferst_off,
+            ]
         ],
 
     ]

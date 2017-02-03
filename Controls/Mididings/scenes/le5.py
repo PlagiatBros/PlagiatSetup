@@ -53,12 +53,13 @@ le5 = [
             vxjeannotvocode_off,
 
             bassdry,
+            ] >> Discard(),
+        [
             bassdetunest_on,
             bassringst_on,
             bassvibest_off,
             bassbufferst_off,
-
-            ] >> Discard()
+            ]
         ],
     orl >> ProgramFilter(3) >> [ # Couplet A - Bouton 3
         Program(66) >> cseqtrigger,
@@ -96,12 +97,14 @@ le5 = [
             vxjeannotvocode_off,
 
             bassdry,
+
+            ] >> Discard(),
+        [
             bassdetunest_on,
             bassringst_on,
             bassvibest_off,
             bassbufferst_off,
-
-            ] >> Discard()
+            ]
         ],
     orl >> ProgramFilter(4) >> [ # Couplet B - Bouton 4
         Program(67) >> cseqtrigger,
@@ -139,12 +142,14 @@ le5 = [
             vxjeannotvocode_off,
 
             bassdry,
+
+            ] >> Discard(),
+        [
             bassdetunest_on,
             bassringst_on,
             bassvibest_off,
             bassbufferst_off,
-
-            ] >> Discard()
+            ]
         ],
     orl >> ProgramFilter(5) >> [ # Couplet C - Bouton 5
         Program(68) >> cseqtrigger,
@@ -182,12 +187,14 @@ le5 = [
             vxjeannotvocode_off,
 
             bassdry,
+
+            ] >> Discard(),
+        [
             bassdetunest_on,
             bassringst_on,
             bassvibest_off,
             bassbufferst_off,
-
-            ] >> Discard()
+            ]
         ],
     jeannot >> ProgramFilter(2) >> [ # Refrain (meeeaaan) - Bouton 2
         Program(69) >> cseqtrigger,
@@ -225,12 +232,14 @@ le5 = [
 
             bassscape,
             bassdegrade,
+
+            ] >> Discard(),
+        [
             bassdetunest_on,
             bassringst_on,
             bassvibest_off,
             bassbufferst_off,
-
-            ] >> Discard()
+            ]
         ],
     orl >> ProgramFilter(7) >> [ # Couplet A (niggah don't you know) - Bouton 7
         Program(70) >> cseqtrigger,
@@ -268,12 +277,14 @@ le5 = [
             vxjeannotvocode_off,
 
             bassdry,
+
+            ] >> Discard(),
+        [
             bassdetunest_on,
             bassringst_on,
             bassvibest_off,
             bassbufferst_off,
-
-            ] >> Discard()
+            ]
         ],
     jeannot >> ProgramFilter(3) >> [ # Couplet Bbis (call your jesus) - Bouton 3
         Program(71) >> cseqtrigger,
@@ -312,12 +323,14 @@ le5 = [
             vxjeannotvocode_off,
 
             bassdry,
+
+            ] >> Discard(),
+        [
             bassdetunest_on,
             bassringst_on,
             bassvibest_off,
             bassbufferst_off,
-
-            ] >> Discard()
+            ]
         ],
     orl >> ProgramFilter(8) >> [ # Couplet Cbis (ain't no challenger left)- Bouton 8
         Program(72) >> cseqtrigger,
@@ -355,12 +368,14 @@ le5 = [
             vxjeannotvocode_off,
 
             bassdry,
+
+            ] >> Discard(),
+        [
             bassdetunest_on,
             bassringst_on,
             bassvibest_off,
             bassbufferst_off,
-
-            ] >> Discard()
+            ]
         ],
 
     orl >> ProgramFilter(9) >> [ # Ballade rhodes vocodeur - Bouton 10
@@ -421,11 +436,12 @@ le5 = [
             bassdegrade,
             basswobble,
 
+            ] >> Discard(),
+        [
             bassdetunest_on,
             bassringst_on,
             bassvibest_off,
             bassbufferst_off,
-
-            ] >> Discard()
+            ]
         ],
     ]

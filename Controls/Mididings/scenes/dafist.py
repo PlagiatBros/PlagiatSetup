@@ -445,13 +445,14 @@ dafist = [
             SendOSC(cmeinport, '/mididings/switch_scene', 9),
 
             bassdry,
+
+            ] >> Discard(),
+        [
             bassdetunest_on,
             bassringst_on,
             bassvibest_off,
             bassbufferst_off,
-
-
-            ] >> Discard()
+            ]
         ],
     orl >> ProgramFilter(9) >> [
         SendOSC(slport, '/sl/7/hit', 'record')
@@ -506,10 +507,6 @@ dafist = [
             vxjeannotvocode_off,
 
             bassdry,
-            bassdetunest_on,
-            bassringst_on,
-            bassvibest_off,
-            bassbufferst_off,
 
             # Transition Trains Climat
             SendOSC(cmeinport, '/mididings/switch_scene', 11),
@@ -525,7 +522,13 @@ dafist = [
                 [samplesringmodport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -2.0],
             ]),
 
-            ] >> Discard()
+            ] >> Discard(),
+        [
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
+            ]
         ],
     orl >> ProgramFilter(11) >> [
         stop,

@@ -101,13 +101,14 @@ connassessacem = [
             vxjeannotvocode_off,
 
             bassdry,
+
+            ] >> Discard(),
+        [
             bassdetunest_on,
             bassringst_on,
             bassvibest_off,
             bassbufferst_off,
-
-
-            ] >> Discard()
+            ]
         ],
     orl >> ProgramFilter(4) >> [
         SendOSC(slport, '/sl/6/hit', 'record')

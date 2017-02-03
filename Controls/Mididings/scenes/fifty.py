@@ -105,12 +105,14 @@ fifty = [
             vxjeannotvocode_off,
 
             bassdry,
+
+            ] >> Discard(),
+        [
             bassdetunest_on,
             bassringst_on,
             bassvibest_off,
             bassbufferst_off,
-
-            ] >> Discard()
+            ]
         ],
     orl >> ProgramFilter(4) >> [ # Boucle rationnelle - Bouton 4
         Program(67) >> cseqtrigger,
@@ -154,12 +156,14 @@ fifty = [
             vxjeannotvocode_off,
 
             bassdry,
+
+            ] >> Discard(),
+        [
             bassdetunest_on,
             bassringst_on,
             bassvibest_off,
             bassbufferst_off,
-
-            ] >> Discard()
+            ]
         ],
     orl >> ProgramFilter(5) >> [ # Couplet avec boucle - Bouton 5
         Program(66) >> cseqtrigger,
@@ -207,12 +211,14 @@ fifty = [
             vxjeannotvocode_off,
 
             bassdry,
+
+            ] >> Discard(),
+        [
             bassdetunest_on,
             bassringst_on,
             bassvibest_off,
             bassbufferst_off,
-
-            ] >> Discard()
+            ]
         ],
     orl >> ProgramFilter(6) >> [ # Pont Refrain - Bouton 6
         #TODO son synthé
@@ -255,12 +261,14 @@ fifty = [
             vxjeannotvocode_off,
 
             bassdry,
+
+            ] >> Discard(),
+        [
             bassdetunest_on,
             bassringst_on,
             bassvibest_off,
             bassbufferst_off,
-
-            ] >> Discard()
+            ]
         ],
     orl >> ProgramFilter(7) >> [ # Refrain - Bouton 7
         Program(69) >> cseqtrigger,
@@ -297,12 +305,14 @@ fifty = [
             vxjeannotvocode_off,
 
             bassdry,
+
+            ] >> Discard(),
+        [
             bassdetunest_on,
             bassringst_on,
             bassvibest_off,
             bassbufferst_off,
-
-            ] >> Discard()
+            ]
         ],
 
 
