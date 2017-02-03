@@ -35,10 +35,10 @@ seqtrigger = Filter(PROGRAM) >> [
 cseqtrigger = Channel(1) >> seqtrigger
 
 seq24PageMap = {
-    1: 114, #connsasseSACEM
+    1: 114, #connassesSACEM
     2: 119, #dafist
     3: 113, #climat
-    4: 114, #fifty
+    4: 115, #fifty
     5: 116, #Le5
     6: 123, #trapone
     7: 117, #sw
