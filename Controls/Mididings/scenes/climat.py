@@ -300,4 +300,9 @@ climat = [
             ]
         ],
 
+    orl >> ProgramFilter(11) >> [ # Passage vers Fifty - Bouton 11
+        SceneSwitch(4) >> Discard(),
+        Program(2) >> Output('PBCtrlOut', 1)
+        ],
+
     ]
