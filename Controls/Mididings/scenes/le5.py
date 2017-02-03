@@ -16,7 +16,10 @@ le5 = [
         zynmicrotonal_off,
         ]),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
-    orl >> ProgramFilter(2) >> [ # Intro - Bouton 2
+    [orl, jeannot] >> Filter(PROGRAM) >> [
+        SendOSC(audioseqport, '/Audioseq/Sequences/Disable', '*')
+        ] >> Discard(),
+    jeannot >> ProgramFilter(2) >> [ # Intro - Bouton 2
         Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
@@ -61,7 +64,7 @@ le5 = [
             bassbufferst_off,
             ]
         ],
-    orl >> ProgramFilter(3) >> [ # Couplet A - Bouton 3
+    orl >> ProgramFilter(2) >> [ # Couplet A - Bouton 2
         Program(66) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
@@ -106,7 +109,7 @@ le5 = [
             bassbufferst_off,
             ]
         ],
-    orl >> ProgramFilter(4) >> [ # Couplet B - Bouton 4
+    orl >> ProgramFilter(3) >> [ # Couplet B - Bouton 3
         Program(67) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
@@ -151,7 +154,7 @@ le5 = [
             bassbufferst_off,
             ]
         ],
-    orl >> ProgramFilter(5) >> [ # Couplet C - Bouton 5
+    orl >> ProgramFilter(4) >> [ # Couplet C - Bouton 4
         Program(68) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
@@ -196,9 +199,13 @@ le5 = [
             bassbufferst_off,
             ]
         ],
-    jeannot >> ProgramFilter(2) >> [ # Refrain (meeeaaan) - Bouton 2
+    jeannot >> ProgramFilter(3) >> [ # Refrain (meeeaaan) - Bouton 3
         Program(69) >> cseqtrigger,
         [
+            SendOSC(audioseqport, '/Audioseq/Bpm', 320),
+            SendOSC(audioseqport, '/Audioseq/Play'),
+            SendOSC(audioseqport, '/Audioseq/Sequence/Enable', 'le5_refrain_cutdown'),
+
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
             SendOSC(slport, '/set', 'tempo', 160),
 
@@ -241,7 +248,7 @@ le5 = [
             bassbufferst_off,
             ]
         ],
-    orl >> ProgramFilter(7) >> [ # Couplet A (niggah don't you know) - Bouton 7
+    orl >> ProgramFilter(6) >> [ # Couplet A (niggah don't you know) - Bouton 6
         Program(70) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
@@ -286,7 +293,7 @@ le5 = [
             bassbufferst_off,
             ]
         ],
-    jeannot >> ProgramFilter(3) >> [ # Couplet Bbis (call your jesus) - Bouton 3
+    jeannot >> ProgramFilter(4) >> [ # Couplet Bbis (call your jesus) - Bouton 4
         Program(71) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
@@ -332,7 +339,7 @@ le5 = [
             bassbufferst_off,
             ]
         ],
-    orl >> ProgramFilter(8) >> [ # Couplet Cbis (ain't no challenger left)- Bouton 8
+    orl >> ProgramFilter(7) >> [ # Couplet Cbis (ain't no challenger left)- Bouton 7
         Program(72) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
@@ -378,7 +385,7 @@ le5 = [
             ]
         ],
 
-    orl >> ProgramFilter(9) >> [ # Ballade rhodes vocodeur - Bouton 10
+    orl >> ProgramFilter(8) >> [ # Ballade rhodes vocodeur - Bouton 8
         #TODO son rhodes
         stop,
         [
@@ -397,7 +404,7 @@ le5 = [
 
             ] >> Discard()
         ],
-    jeannot >> ProgramFilter(4) >> [ # Sebkha 5/8 (batterie ternaire sur synthé, puis death sebkha, puis meshugagah)
+    jeannot >> ProgramFilter(5) >> [ # Sebkha 5/8 (batterie ternaire sur synthé, puis death sebkha, puis meshugagah)
         Program(73) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
