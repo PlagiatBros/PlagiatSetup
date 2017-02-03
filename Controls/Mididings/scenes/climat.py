@@ -302,7 +302,7 @@ climat = [
 
     orl >> ProgramFilter(11) >> [ # Passage vers Fifty - Bouton 11
         SceneSwitch(4) >> Discard(),
-        Program(2) >> Output('PBCtrlOut', 1)
+        Program(2) >> Output('PBCtrlOut', 1),
         SendOSC(audioseqport, '/Audioseq/Bpm', 117),
         SendOSC(audioseqport, '/Audioseq/Scene/Play', 'fifty_intro'),
 

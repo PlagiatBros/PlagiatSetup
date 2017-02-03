@@ -19,7 +19,7 @@ fifty = [
     orl >> ProgramFilter(2) >> [ # Intro (fin du sample) - Bouton 2
         Program(65) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eighth_per_cycle', 64),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 4),
             SendOSC(slport, '/set', 'tempo', 117),
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
@@ -65,7 +65,8 @@ fifty = [
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 64),
             SendOSC(slport, '/set', 'tempo', 117),
-            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
+            SendOSC(slport, '/sl/[2-8]/hit', 'pause_on'),
+            SendOSC(slport, '/sl/0/hit', 'pause_on'),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 117),
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
