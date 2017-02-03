@@ -15,6 +15,9 @@ fifty = [
         Ctrl(0, 2) >> tapeutapecontrol,
         zynmicrotonal_off,
         ]),
+    [orl, jeannot] >> Filter(PROGRAM) >> [
+        SendOSC(audioseqport, '/Audioseq/Sequences/Disable', '*')
+    ] >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # Intro (fin du sample) - Bouton 2
         Program(65) >> cseqtrigger,

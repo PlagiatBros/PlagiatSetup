@@ -11,6 +11,9 @@ from mididings.extra.osc import SendOSC
 #### Get Ur Freak On ####
 geturfreakon = [
     [orl, jeannot] >> Filter(PROGRAM) >> Ctrl(0, 7) >> tapeutapecontrol,
+    [orl, jeannot] >> Filter(PROGRAM) >> [
+        SendOSC(audioseqport, '/Audioseq/Sequences/Disable', '*')
+    ] >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # Couplet - Bouton 2
         Program(65) >> cseqtrigger,

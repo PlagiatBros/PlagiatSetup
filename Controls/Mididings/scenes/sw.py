@@ -11,6 +11,9 @@ from mididings.extra.osc import SendOSC
 #### SW ####
 sw = [
     [orl, jeannot] >> Filter(PROGRAM) >> Ctrl(0, 4) >> tapeutapecontrol,
+    [orl, jeannot] >> Filter(PROGRAM) >> [
+        SendOSC(audioseqport, '/Audioseq/Sequences/Disable', '*')
+    ] >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # intro - Bouton 2
         #TODO filtre

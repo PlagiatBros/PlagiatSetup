@@ -11,6 +11,9 @@ from mididings.extra.osc import SendOSC
 #### Whole World ####
 wholeworld = [
     [orl, jeannot] >> Filter(PROGRAM) >> Ctrl(0, 5) >> tapeutapecontrol,
+    [orl, jeannot] >> Filter(PROGRAM) >> [
+        SendOSC(audioseqport, '/Audioseq/Sequences/Disable', '*')
+    ] >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # Intro cymbaloume - Bouton 2
         Program(65) >> cseqtrigger,

@@ -15,7 +15,10 @@ connassessacem = [
         Ctrl(0, 1) >> tapeutapecontrol,
         zynmicrotonal_on,
         SendOSC(zyntrebleport, '/microtonal/tunings', '100.0\n200.0\n300.0\n435.0\n500.0\n600.0\n700.0\n800.0\n900.0\n1000.0\n1135.0\n2/1')
-        ]),
+    ]),
+    [orl, jeannot] >> Filter(PROGRAM) >> [
+        SendOSC(audioseqport, '/Audioseq/Sequences/Disable', '*')
+    ] >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     [orl, jeannot] >> ProgramFilter(2) >> [ # Thème Intro - Bouton 2
         Program(65) >> cseqtrigger,

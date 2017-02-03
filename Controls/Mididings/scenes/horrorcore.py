@@ -11,6 +11,9 @@ from mididings.extra.osc import SendOSC
 #### HorroCore ####
 horrorcore = [
     [orl, jeannot] >> Filter(PROGRAM) >> Ctrl(0, 9) >> tapeutapecontrol,
+    [orl, jeannot] >> Filter(PROGRAM) >> [
+        SendOSC(audioseqport, '/Audioseq/Sequences/Disable', '*')
+    ] >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # Couplet (orl meuf) - Bouton 2
         Program(65) >> cseqtrigger,
