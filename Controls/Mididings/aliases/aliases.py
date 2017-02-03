@@ -312,3 +312,45 @@ oscsendproxy = OscSendProxy([
 ])
 
 SendOscState = oscsendproxy.sendOscState
+
+
+zitaNotes = {
+    'c': 7,
+    'c#':8,
+    'd' :9,
+    'd#':10,
+    'e':11,
+    'f':12,
+    'f#':13,
+    'g':14,
+    'g#':15,
+    'a':16,
+    'a#':17,
+    'b':18,
+}
+
+def zitaNoteOn(port, note):
+    return SendOSC(port, '/x42/parameter', zitanotes[note], 1.0)
+
+def zitaNoteOff(port, note):
+    return SendOSC(port, '/x42/parameter', zitanotes[note], 0.0)
+
+def zitaScale(port, notes):
+
+    ev = []
+
+    if type(port) != list:
+        port = [port]
+
+    for p in port:
+        for note in zitaNotes:
+            if note in notes:
+                ev.append(
+                    zitaNoteOn(p, note)
+                )
+            else:
+                ev.append(
+                    zitaNoteOff(p, note)
+                )
+
+    return ev

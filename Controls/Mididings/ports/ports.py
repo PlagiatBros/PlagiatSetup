@@ -38,6 +38,9 @@ bassmainport = 7020
 monitorsorlport = 7030
 monitorsjeannotport = 7031
 
+vocoderJeannot = 7050
+vocoderOrl = 7051
+
 
 ## OSC Sequencers
 
