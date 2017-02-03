@@ -58,53 +58,65 @@ delaybpmpath = 'Calf%20Vintage%20Delay/Tempo'
 vxorlmeuf_on = [
     SendOSC(vxorlpreport, '/strip/VxORLMeuf/Gain/Mute', 0.0),
     SendOSC(vxorlpostport, '/strip/VxORLMeufPost/Gain/Mute', 0.0),
+    SendOSC(surfaceorlport, '/vxorl', 'meuf', 1),
+
     ] >> Discard()
 
 vxorlmeuf_off = [
 #    SendOSC(vxorlpreport, '/strip/VxORLMeuf/Gain/Mute', 1.0),
     SendOSC(vxorlpostport, '/strip/VxORLMeufPost/Gain/Mute', 1.0),
+    SendOSC(surfaceorlport, '/vxorl', 'meuf', 0),
     ] >> Discard()
 
 # VxORLGars
 vxorlgars_on = [
     SendOSC(vxorlpreport, '/strip/VxORLGars/Gain/Mute', 0.0),
     SendOSC(vxorlpostport, '/strip/VxORLGarsPost/Gain/Mute', 0.0),
+    SendOSC(surfaceorlport, '/vxorl', 'gars', 1),
     ] >> Discard()
 
 vxorlgars_off = [
     SendOSC(vxorlpreport, '/strip/VxORLGars/Gain/Mute', 1.0),
     SendOSC(vxorlpostport, '/strip/VxORLGarsPost/Gain/Mute', 1.0),
+    SendOSC(surfaceorlport, '/vxorl', 'gars', 0),
     ] >> Discard()
 
 # VxORLDisint
 vxorldisint_on = [
     SendOSC(vxorlpreport, '/strip/VxORLDisint/Gain/Mute', 0.0),
     SendOSC(vxorlpostport, '/strip/VxORLDisintPost/Gain/Mute', 0.0),
+    SendOSC(surfaceorlport, '/vxorl', 'disint', 1),
     ] >> Discard()
 
 vxorldisint_off = [
     SendOSC(vxorlpreport, '/strip/VxORLDisint/Gain/Mute', 1.0),
     SendOSC(vxorlpostport, '/strip/VxORLDisintPost/Gain/Mute', 1.0),
+    SendOSC(surfaceorlport, '/vxorl', 'disint', 0),
     ] >> Discard()
 
 # VxORLDelay
 vxorldelay_on = [
     SendOSC(vxorlpreport, '/strip/VxORLDelayPre/Gain/Mute', 0.0),
     SendOSC(vxorlpostport, '/strip/VxORLDelayPost/Gain/Mute', 0.0),
+    SendOSC(surfaceorlport, '/vxorl', 'delay', 1),
     ] >> Discard()
 
 vxorldelay_off = [
     SendOSC(vxorlpreport, '/strip/VxORLDelayPre/Gain/Mute', 1.0),
     SendOSC(vxorlpostport, '/strip/VxORLDelayPost/Gain/Mute', 1.0),
+    SendOSC(surfaceorlport, '/vxorl', 'delay', 0),
     ] >> Discard()
 
 # VxORLVocode
 vxorlvocode_on= [
     SendOSC(vxorlpreport, '/strip/VxORLMeuf/Gain/Mute', 0.0),
     SendOSC(vxorlpostport, '/strip/VxORLVocodePost/Gain/Mute', 0.0),
+    SendOSC(surfaceorlport, '/vxorl', 'vocode', 1),
     ] >> Discard()
+
 vxorlvocode_off= [
     SendOSC(vxorlpostport, '/strip/VxORLVocodePost/Gain/Mute', 1.0),
+    SendOSC(surfaceorlport, '/vxorl', 'vocode', 0),
     ] >> Discard()
 
 # VxJeannotMeuf

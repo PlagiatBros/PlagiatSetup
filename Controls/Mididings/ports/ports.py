@@ -63,6 +63,12 @@ mk2inport = 56426
 mk2outport = 56427
 
 
+## Control Surfaces
+
+surfaceorlport = 11000
+
+
+
 ## MIDI
 
 try:
