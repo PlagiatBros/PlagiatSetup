@@ -2,7 +2,7 @@
 <!--
 ladish Studio configuration.
 -->
-<!-- Mon Jan 30 19:04:01 2017 -->
+<!-- Fri Feb  3 12:37:43 2017 -->
 <studio>
   <jack>
     <conf>
@@ -108,6 +108,12 @@ ladish Studio configuration.
           <port name="seq24 (playback): seq24 in" uuid="ea53353f-3418-47db-ba32-dcdcc5e09815" />
           <port name="Zyn (aigu) (playback): ZynAddSubFX" uuid="a11781c6-fa48-45a8-a526-b1dd78f2ee77" />
           <port name="Zyn (Bass) (playback): ZynAddSubFX" uuid="7d618618-5047-4218-842f-cdd996b04aed" />
+          <port name="Arturia MiniLab mkII (capture): Arturia MiniLab mkII MIDI 1" uuid="b73434f2-52d3-4165-b4c5-cb6340ef4f15" />
+          <port name="Arturia MiniLab mkII (playback): Arturia MiniLab mkII MIDI 1" uuid="e3ffd1fa-0312-4ffa-ba5c-c60e920a4da5" />
+          <port name="USB Device 0x7104:0x2202 (capture): USB Device 0x7104:0x2202 MIDI 1" uuid="86f4ff59-f5c4-4892-a5c3-e4205cdd11bd" />
+          <port name="USB Device 0x7104:0x2202 (playback): USB Device 0x7104:0x2202 MIDI 1" uuid="ba7038cf-0105-401e-bba5-734f232668d9" />
+          <port name="USB Device 0x7104:0x2202 (capture): USB Device 0x7104:0x2202 MIDI 2" uuid="1e9e573e-3c72-47a2-9836-5187e963f322" />
+          <port name="USB Device 0x7104:0x2202 (playback): USB Device 0x7104:0x2202 MIDI 2" uuid="48d46af9-2846-41d9-8d94-b83e85400e2f" />
         </ports>
       </client>
       <client name="SLServer" uuid="75627883-d5f1-47fe-a2d9-daf52fcb8b8d">
@@ -2033,8 +2039,8 @@ ladish Studio configuration.
         <port name="BassMain/in-2" uuid="b1cfe7f9-3eac-4794-8e71-62cbfcef22ff" type="audio" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1492.579030</key>
-        <key name="http://ladish.org/ns/canvas/y">1328.356462</key>
+        <key name="http://ladish.org/ns/canvas/x">1594.847553</key>
+        <key name="http://ladish.org/ns/canvas/y">1367.192610</key>
       </dict>
     </client>
     <client name="SLServer" uuid="5eac2eb4-f24a-441f-91b3-063f8b8ff5a0" naming="app" app="6048d3ab-ecf3-4545-901a-2a842e8dbd93">
@@ -2196,8 +2202,8 @@ ladish Studio configuration.
         <port name="DKTapeutape" uuid="4c6f5169-9d9f-488d-a5c5-aa15656a3f01" type="midi" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">710.976355</key>
-        <key name="http://ladish.org/ns/canvas/y">1934.772926</key>
+        <key name="http://ladish.org/ns/canvas/x">714.859970</key>
+        <key name="http://ladish.org/ns/canvas/y">1695.283346</key>
       </dict>
     </client>
     <client name="BassSubCALF" uuid="c40c304d-ee62-409b-a6a3-b0f9ee6cfebb" naming="app" app="9f82ed21-0cd3-4d4e-8595-7d825d3ff094">
@@ -2367,6 +2373,28 @@ ladish Studio configuration.
       <dict>
         <key name="http://ladish.org/ns/canvas/x">1562.136542</key>
         <key name="http://ladish.org/ns/canvas/y">1235.825000</key>
+      </dict>
+    </client>
+    <client name="Arturia MiniLab mkII" uuid="b472e10c-0103-4c30-9331-40bff842914f" naming="app">
+      <ports>
+        <port name="Arturia MiniLab mkII MIDI 1" uuid="b73434f2-52d3-4165-b4c5-cb6340ef4f15" type="midi" direction="output" />
+        <port name="Arturia MiniLab mkII MIDI 1" uuid="e3ffd1fa-0312-4ffa-ba5c-c60e920a4da5" type="midi" direction="input" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">161.320996</key>
+        <key name="http://ladish.org/ns/canvas/y">1293.767230</key>
+      </dict>
+    </client>
+    <client name="USB Device 0x7104:0x2202" uuid="4517719f-536a-4f18-8dff-ec9553ba70b0" naming="app">
+      <ports>
+        <port name="USB Device 0x7104:0x2202 MIDI 1" uuid="86f4ff59-f5c4-4892-a5c3-e4205cdd11bd" type="midi" direction="output" />
+        <port name="USB Device 0x7104:0x2202 MIDI 1" uuid="ba7038cf-0105-401e-bba5-734f232668d9" type="midi" direction="input" />
+        <port name="USB Device 0x7104:0x2202 MIDI 2" uuid="1e9e573e-3c72-47a2-9836-5187e963f322" type="midi" direction="output" />
+        <port name="USB Device 0x7104:0x2202 MIDI 2" uuid="48d46af9-2846-41d9-8d94-b83e85400e2f" type="midi" direction="input" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">302.577806</key>
+        <key name="http://ladish.org/ns/canvas/y">1548.670321</key>
       </dict>
     </client>
   </clients>
@@ -2784,8 +2812,6 @@ ladish Studio configuration.
     <connection port1="aeb32190-c635-4cac-93a0-2994e6cfb4b8" port2="ff1cdb98-bf39-4edc-8e26-c8bb5ab00603" />
     <connection port1="718f97ba-eec4-4cda-9ce8-a272488b2753" port2="64654eb6-bfa1-4c0b-b659-aeb0178dcdfc" />
     <connection port1="feee0e86-c3c1-44d4-9873-8589d1105635" port2="b1cfe7f9-3eac-4794-8e71-62cbfcef22ff" />
-    <connection port1="67a0a9a7-bcc1-4e27-8f99-03ca0fcbe58c" port2="321751a7-b207-4a24-af04-9b5812261288" />
-    <connection port1="c6e1832a-862f-41c3-81e2-92397d053215" port2="dedc980a-fa69-4a22-a7c1-2a6a8060abb0" />
     <connection port1="1c957f96-fb96-47f0-b8d5-2789a05cf8d7" port2="8bab1173-af33-48e7-a126-fd05a87b7023" />
     <connection port1="21e86a41-8705-497f-82c9-ad2b8f75ccb1" port2="09c376fd-7883-441e-87c5-98a178a8adef" />
     <connection port1="6813f71b-e1e7-47ac-b69a-37b714d9e669" port2="d8f2619d-6daf-449b-8d42-c934a22300ba" />
@@ -2848,6 +2874,12 @@ ladish Studio configuration.
     <connection port1="501c5f1a-547e-43c3-ac7d-870c3aeb61e5" port2="7080d500-68d1-49fc-8993-6042c1ffeb86" />
     <connection port1="7c52b236-5250-4b76-818e-3b9fd00da717" port2="ccbf9029-5e4d-4224-8a5e-58824293b839" />
     <connection port1="a03fb51c-75e9-4713-b986-6ba0a9e228ea" port2="a7e69124-82f5-4c98-ada0-5f1785490923" />
+    <connection port1="b73434f2-52d3-4165-b4c5-cb6340ef4f15" port2="fdab8d56-718f-444d-9568-19582d3c96d1" />
+    <connection port1="b73434f2-52d3-4165-b4c5-cb6340ef4f15" port2="753a7774-1286-4053-949c-f9e4c6615277" />
+    <connection port1="16a1ae57-b048-402c-8520-72e682910e39" port2="321751a7-b207-4a24-af04-9b5812261288" />
+    <connection port1="a6d065b9-cf29-47bf-a11d-8d0c802b0303" port2="dedc980a-fa69-4a22-a7c1-2a6a8060abb0" />
+    <connection port1="1e9e573e-3c72-47a2-9836-5187e963f322" port2="cfca9e3d-5dd8-4601-afe0-6eb45383ad55" />
+    <connection port1="592da900-3cf7-4f9f-9bc2-877a9516ce3b" port2="033dfe81-bb82-44d4-a445-6a1e19f830f4" />
   </connections>
   <applications>
     <application name="a2j" uuid="65bce9a0-8285-4cb3-9630-321ba19b43a4" terminal="false" level="0" autorun="true">a2j -e</application>
@@ -2856,7 +2888,7 @@ ladish Studio configuration.
     <application name="seq24" uuid="b1b78940-cc7c-4394-8a02-401a18f75388" terminal="false" level="0" autorun="true">seq24 --manual_alsa_ports --jack_transport --jack_start_mode 0 --file %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSequences%2FPlagiatAudioSequences.midi</application>
     <application name="pedalBoards" uuid="18c1159f-2bfb-4240-831d-8e3b63cfdfae" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_pB.sh</application>
     <application name="Klick" uuid="08ad27a4-0fc1-4a28-ac4b-3f5caee7e048" terminal="false" level="0" autorun="true">klick -o 1234 -d 0.0106</application>
-    <application name="SL_sync" uuid="78595655-c1e5-4205-99a7-9e2e0c7c66c5" terminal="false" level="0" autorun="false">%2Fhome%2Fwoii%2FSebkha-Chott%2FStage%2Fscripts%2Fsl_sync.sh</application>
+    <application name="SL_sync" uuid="78595655-c1e5-4205-99a7-9e2e0c7c66c5" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FSebkha-Chott%2FStage%2Fscripts%2Fsl_sync.sh</application>
     <application name="VxORLPre (NM)" uuid="192d2aa3-4975-46d0-ba89-51991f95784d" terminal="false" level="0" autorun="true">non-mixer --osc-port 6666 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FVxORLPre</application>
     <application name="VxORLMeuf (NM)" uuid="76652b87-4292-4652-ae01-24d07e15294b" terminal="false" level="0" autorun="true">%2Fusr%2Flocal%2Fbin%2Fnon-mixer --osc-port 6667 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FVxORLMeuf</application>
     <application name="VxORLPost (NM)" uuid="ea8e2dc0-f0ca-4fb2-9b63-23b82960b0c1" terminal="false" level="0" autorun="true">non-mixer --osc-port 6668 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FVxORLPost</application>
@@ -2877,7 +2909,7 @@ ladish Studio configuration.
     <application name="BassMain (NM)" uuid="9950811d-a2ff-48c6-84f7-d569f415b4bd" terminal="false" level="0" autorun="true">non-mixer --osc-port 7020 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FBassMain</application>
     <application name="MonitorsORL (NM)" uuid="c365e0ab-4ba7-4e4a-84aa-10f66c324a43" terminal="false" level="0" autorun="true">non-mixer --osc-port 7030 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FMonitorsORL</application>
     <application name="MonitorsJeannot (NM)" uuid="590fef19-5033-478f-b350-3ee15dc0c354" terminal="false" level="0" autorun="true">non-mixer --osc-port 7031 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FMonitorsJeannot</application>
-    <application name="PolyPedalBoard" uuid="9bb06b8b-45ce-4165-abc8-adef4d0b3663" terminal="false" level="0" autorun="false">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FControls%2FPoly_PedalBoard%2FPoly_PedalBoard_RawHID_v0.2%2Fpoly_pedalboard_rawhid -p 56418</application>
+    <application name="PolyPedalBoard" uuid="9bb06b8b-45ce-4165-abc8-adef4d0b3663" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FControls%2FPoly_PedalBoard%2FPoly_PedalBoard_RawHID_v0.2%2Fpoly_pedalboard_rawhid -p 56418</application>
     <application name="SamplesPitch (NM)" uuid="29e48490-4c5d-47d9-8602-d3a7e8d63676" terminal="false" level="0" autorun="true">non-mixer --osc-port 7000 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FSamplesPitch</application>
     <application name="drumKlit (MIdidings)" uuid="50114045-9636-4c01-869f-e2b0b1ff1200" terminal="false" level="0" autorun="true">python %2Fhome%2Fwoii%2FPlagiat%2FStage%2FControls%2FMididings%2FdrumKlit.py</application>
     <application name="BassSubCALF" uuid="9f82ed21-0cd3-4d4e-8595-7d825d3ff094" terminal="false" level="0" autorun="true">calfjackhost --load %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FCalf%2FBassSub</application>
@@ -2890,7 +2922,7 @@ ladish Studio configuration.
     <application name="Keyboards (NM)" uuid="c34bb6c1-d772-496d-8598-5b6c1e9a7d5d" terminal="false" level="0" autorun="true">non-mixer --osc-port 7010 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FKeyboards</application>
     <application name="Zyn (aigu)" uuid="74c7352c-1ca9-46fa-acb0-ac70829e0783" terminal="false" level="0" autorun="true">zynaddsubfx -P 10000 -l %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FZyn%2FSynths.xmz</application>
     <application name="Zyn (Bass)" uuid="ec63aad8-c625-45d1-82c7-c90baa9a183c" terminal="false" level="0" autorun="true">zynaddsubfx -P 10001 -l %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FZyn%2FBasses.xmz</application>
-    <application name="Guitarix (Bass)" uuid="7fdbc150-b9d1-414e-8411-c275c76afd62" terminal="true" level="0" autorun="false">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_gx.sh</application>
+    <application name="Guitarix (Bass)" uuid="7fdbc150-b9d1-414e-8411-c275c76afd62" terminal="true" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_gx.sh</application>
     <application name="CME KeyBoard Filter" uuid="ce8e80fd-4088-4ea8-b186-ab28732e4058" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_cK.sh</application>
     <application name="MKII Keyboard Filter" uuid="879e36a1-2289-493e-afca-810f133f1346" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_mK.sh</application>
     <application name="wobbleCtrl" uuid="d05dd957-12ce-4814-9733-d2df4fb92692" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_wC.sh</application>
