@@ -10,7 +10,11 @@ from mididings.extra.osc import SendOSC
 
 #### SW ####
 sw = [
-    [orl, jeannot] >> Filter(PROGRAM) >> Ctrl(0, 4) >> tapeutapecontrol,
+    Init([
+        Program(seq24PageMap[7]) >> seq24once,
+        Ctrl(0, 4) >> tapeutapecontrol,
+        zynmicrotonal_off,
+    ]),
     [orl, jeannot] >> Filter(PROGRAM) >> [
         SendOSC(audioseqport, '/Audioseq/Sequences/Disable', '*')
     ] >> Discard(),

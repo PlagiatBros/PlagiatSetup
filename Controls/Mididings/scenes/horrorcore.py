@@ -10,7 +10,11 @@ from mididings.extra.osc import SendOSC
 
 #### HorroCore ####
 horrorcore = [
-    [orl, jeannot] >> Filter(PROGRAM) >> Ctrl(0, 9) >> tapeutapecontrol,
+    Init([
+        Program(seq24PageMap[9]) >> seq24once,
+        Ctrl(0, 9) >> tapeutapecontrol,
+        zynmicrotonal_off,
+    ]),
     [orl, jeannot] >> Filter(PROGRAM) >> [
         SendOSC(audioseqport, '/Audioseq/Sequences/Disable', '*')
     ] >> Discard(),

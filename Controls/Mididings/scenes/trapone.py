@@ -10,7 +10,11 @@ from mididings.extra.osc import SendOSC
 
 #### TrapOne ####
 trapone = [
-    [orl, jeannot] >> Filter(PROGRAM) >> Ctrl(0, 10) >> tapeutapecontrol,
+    Init([
+        Program(seq24PageMap[6]) >> seq24once,
+        Ctrl(0, 10) >> tapeutapecontrol,
+        zynmicrotonal_off,
+    ]),
     [orl, jeannot] >> Filter(PROGRAM) >> [
         SendOSC(audioseqport, '/Audioseq/Sequences/Disable', '*')
     ] >> Discard(),

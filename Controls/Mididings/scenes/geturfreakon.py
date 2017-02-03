@@ -10,7 +10,11 @@ from mididings.extra.osc import SendOSC
 
 #### Get Ur Freak On ####
 geturfreakon = [
-    [orl, jeannot] >> Filter(PROGRAM) >> Ctrl(0, 7) >> tapeutapecontrol,
+    Init([
+        Program(seq24PageMap[8]) >> seq24once,
+        Ctrl(0, 7) >> tapeutapecontrol,
+        zynmicrotonal_off,
+    ]),
     [orl, jeannot] >> Filter(PROGRAM) >> [
         SendOSC(audioseqport, '/Audioseq/Sequences/Disable', '*')
     ] >> Discard(),
