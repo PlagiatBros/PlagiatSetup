@@ -330,10 +330,10 @@ zitaNotes = {
 }
 
 def zitaNoteOn(port, note):
-    return SendOSC(port, '/x42/parameter', zitanotes[note], 1.0)
+    return SendOSC(port, '/x42/parameter', zitanotes[note.lower()], 1.0)
 
 def zitaNoteOff(port, note):
-    return SendOSC(port, '/x42/parameter', zitanotes[note], 0.0)
+    return SendOSC(port, '/x42/parameter', zitanotes[note.lower()], 0.0)
 
 def zitaScale(port, notes):
 
