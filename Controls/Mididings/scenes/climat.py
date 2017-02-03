@@ -103,12 +103,13 @@ climat = [
 
             bassdry,
             basswobble,
-            bassdetunest_on,
-            bassringst_on,
-            bassvibest_on,
-            bassbufferst_on,
 
-            ] >> Discard()
+            ] >> Discard(),
+        bassdetunest_on,
+        bassringst_on,
+        bassvibest_on,
+        bassbufferst_on,
+
         ],
     jeannot >> ProgramFilter(3) >> [ # Couplet sans wobble - bouton 3
         #TODO arreter seq-wobble (à priori bassdry suffit)
@@ -183,7 +184,7 @@ climat = [
             ] >> Discard()
         ],
     orl >> ProgramFilter(3) >> [ # couplet - Bouton 3
-        Program(65) >> cseqtrigger,
+        Program(67) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 74),
             SendOSC(slport, '/set', 'tempo', 150),
@@ -239,7 +240,7 @@ climat = [
             ] >> Discard()
         ],
     orl >> ProgramFilter(4) >> [ # The shit - Bouton 4
-        Program(67) >> cseqtrigger,
+        Program(70) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 150),
@@ -281,12 +282,13 @@ climat = [
 
             bassdry,
             bassscape,
-            bassdetunest_off,
-            bassringst_on,
-            bassvibest_on,
-            bassbufferst_on,
 
-            ] >> Discard()
+
+            ] >> Discard(),
+        bassdetunest_off,
+        bassringst_off,
+        bassvibest_off,
+        bassbufferst_off,
         ],
 
     ]

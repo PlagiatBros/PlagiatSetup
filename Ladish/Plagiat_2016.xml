@@ -106,14 +106,8 @@ ladish Studio configuration.
           <port name="seq24 (capture): [15] seq24 15" uuid="210e9960-e1b8-4804-9af4-a34f001fdccf" />
           <port name="seq24 (capture): [16] seq24 16" uuid="1cbcba0b-4f06-4495-a209-837b9c3453d9" />
           <port name="seq24 (playback): seq24 in" uuid="ea53353f-3418-47db-ba32-dcdcc5e09815" />
-          <port name="USB Device 0x7104:0x2202 (capture): USB Device 0x7104:0x2202 MIDI 1" uuid="e16a7457-9caa-42a2-b502-800510c05eb8" />
-          <port name="USB Device 0x7104:0x2202 (playback): USB Device 0x7104:0x2202 MIDI 1" uuid="12353f0b-e744-44d2-a9fe-45a82aba7781" />
-          <port name="USB Device 0x7104:0x2202 (capture): USB Device 0x7104:0x2202 MIDI 2" uuid="c4f33e65-400a-4a24-a750-3e5dd60da832" />
-          <port name="USB Device 0x7104:0x2202 (playback): USB Device 0x7104:0x2202 MIDI 2" uuid="c4484742-44c8-4c82-b92f-6836ae3b2979" />
           <port name="Zyn (aigu) (playback): ZynAddSubFX" uuid="a11781c6-fa48-45a8-a526-b1dd78f2ee77" />
           <port name="Zyn (Bass) (playback): ZynAddSubFX" uuid="7d618618-5047-4218-842f-cdd996b04aed" />
-          <port name="Arturia MiniLab mkII (capture): Arturia MiniLab mkII MIDI 1" uuid="ab6c8025-0894-407c-b304-bc68468819d2" />
-          <port name="Arturia MiniLab mkII (playback): Arturia MiniLab mkII MIDI 1" uuid="eacf110b-e623-409d-9823-b4eec00e8860" />
         </ports>
       </client>
       <client name="SLServer" uuid="75627883-d5f1-47fe-a2d9-daf52fcb8b8d">
@@ -2263,18 +2257,6 @@ ladish Studio configuration.
         <key name="http://ladish.org/ns/canvas/y">1429.000000</key>
       </dict>
     </client>
-    <client name="USB Device 0x7104:0x2202" uuid="cec1d2f0-839e-49f1-b7e4-78f29cace6ce" naming="app">
-      <ports>
-        <port name="USB Device 0x7104:0x2202 MIDI 1" uuid="e16a7457-9caa-42a2-b502-800510c05eb8" type="midi" direction="output" />
-        <port name="USB Device 0x7104:0x2202 MIDI 1" uuid="12353f0b-e744-44d2-a9fe-45a82aba7781" type="midi" direction="input" />
-        <port name="USB Device 0x7104:0x2202 MIDI 2" uuid="c4f33e65-400a-4a24-a750-3e5dd60da832" type="midi" direction="output" />
-        <port name="USB Device 0x7104:0x2202 MIDI 2" uuid="c4484742-44c8-4c82-b92f-6836ae3b2979" type="midi" direction="input" />
-      </ports>
-      <dict>
-        <key name="http://ladish.org/ns/canvas/x">578.672542</key>
-        <key name="http://ladish.org/ns/canvas/y">1580.210000</key>
-      </dict>
-    </client>
     <client name="Keyboards (NM)" uuid="873e1db4-34d6-4d69-9320-756f7706f1cf" naming="app" app="c34bb6c1-d772-496d-8598-5b6c1e9a7d5d">
       <ports>
         <port name="Rhodes/in-1" uuid="0ad78690-d432-43fe-b969-3d3d03798926" type="audio" direction="input" />
@@ -2361,16 +2343,6 @@ ladish Studio configuration.
       <dict>
         <key name="http://ladish.org/ns/canvas/x">927.852541</key>
         <key name="http://ladish.org/ns/canvas/y">1539.920000</key>
-      </dict>
-    </client>
-    <client name="Arturia MiniLab mkII" uuid="db61ad3e-0362-4bc6-8485-14d8ab2004cf" naming="app">
-      <ports>
-        <port name="Arturia MiniLab mkII MIDI 1" uuid="ab6c8025-0894-407c-b304-bc68468819d2" type="midi" direction="output" />
-        <port name="Arturia MiniLab mkII MIDI 1" uuid="eacf110b-e623-409d-9823-b4eec00e8860" type="midi" direction="input" />
-      </ports>
-      <dict>
-        <key name="http://ladish.org/ns/canvas/x">204.992542</key>
-        <key name="http://ladish.org/ns/canvas/y">1813.000000</key>
       </dict>
     </client>
     <client name="MKII Keyboard Filter" uuid="5e797702-297b-4a6a-b31a-5210dcd7a5dc" naming="app" app="879e36a1-2289-493e-afca-810f133f1346">
@@ -2856,11 +2828,9 @@ ladish Studio configuration.
     <connection port1="d8f7ad09-abaf-4cda-acf0-7789920e1e4e" port2="fc2408ea-5fad-47e1-bc46-894e50134335" />
     <connection port1="9fdd83eb-d101-420b-9f83-0573cd941509" port2="377e25ee-2f4a-42fc-b42f-5ba51393c726" />
     <connection port1="5e95c059-25a9-4f04-805f-28218023200e" port2="b3f6789c-68ca-4d65-91de-b8e99f35fffe" />
-    <connection port1="c4f33e65-400a-4a24-a750-3e5dd60da832" port2="cfca9e3d-5dd8-4601-afe0-6eb45383ad55" />
     <connection port1="99b9a43e-5316-48d6-9317-d4347b64c60e" port2="7d618618-5047-4218-842f-cdd996b04aed" />
     <connection port1="86672e08-3965-4317-a619-b71f0731680f" port2="a11781c6-fa48-45a8-a526-b1dd78f2ee77" />
     <connection port1="7856fb33-aec3-440c-8be2-53320d2716eb" port2="6d6a1c7b-0c46-44a7-9249-187797aa4467" />
-    <connection port1="ab6c8025-0894-407c-b304-bc68468819d2" port2="753a7774-1286-4053-949c-f9e4c6615277" />
     <connection port1="8af9f270-2e03-4cf8-bfbb-cc221966f18c" port2="f4c2d0e1-0c2a-48c5-9c3c-9fec3b081336" />
     <connection port1="f5c9f1e3-c1a0-4ee3-9fc1-d3381f3da3e2" port2="5398d25b-f9ba-4d5c-9ad6-80b983e41f28" />
     <connection port1="5398679e-4e0d-4be8-823a-60ef2b6c4bc9" port2="f4c2d0e1-0c2a-48c5-9c3c-9fec3b081336" />
@@ -2877,7 +2847,7 @@ ladish Studio configuration.
     <connection port1="c06ce87a-b139-4de6-9bb3-0511d50c020f" port2="753a7774-1286-4053-949c-f9e4c6615277" />
     <connection port1="501c5f1a-547e-43c3-ac7d-870c3aeb61e5" port2="7080d500-68d1-49fc-8993-6042c1ffeb86" />
     <connection port1="7c52b236-5250-4b76-818e-3b9fd00da717" port2="ccbf9029-5e4d-4224-8a5e-58824293b839" />
-    <connection port1="ab6c8025-0894-407c-b304-bc68468819d2" port2="fdab8d56-718f-444d-9568-19582d3c96d1" />
+    <connection port1="a03fb51c-75e9-4713-b986-6ba0a9e228ea" port2="a7e69124-82f5-4c98-ada0-5f1785490923" />
   </connections>
   <applications>
     <application name="a2j" uuid="65bce9a0-8285-4cb3-9630-321ba19b43a4" terminal="false" level="0" autorun="true">a2j -e</application>
@@ -2907,7 +2877,7 @@ ladish Studio configuration.
     <application name="BassMain (NM)" uuid="9950811d-a2ff-48c6-84f7-d569f415b4bd" terminal="false" level="0" autorun="true">non-mixer --osc-port 7020 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FBassMain</application>
     <application name="MonitorsORL (NM)" uuid="c365e0ab-4ba7-4e4a-84aa-10f66c324a43" terminal="false" level="0" autorun="true">non-mixer --osc-port 7030 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FMonitorsORL</application>
     <application name="MonitorsJeannot (NM)" uuid="590fef19-5033-478f-b350-3ee15dc0c354" terminal="false" level="0" autorun="true">non-mixer --osc-port 7031 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FMonitorsJeannot</application>
-    <application name="PolyPedalBoard" uuid="9bb06b8b-45ce-4165-abc8-adef4d0b3663" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FControls%2FPoly_PedalBoard%2FPoly_PedalBoard_RawHID_v0.2%2Fpoly_pedalboard_rawhid -p 56418</application>
+    <application name="PolyPedalBoard" uuid="9bb06b8b-45ce-4165-abc8-adef4d0b3663" terminal="false" level="0" autorun="false">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FControls%2FPoly_PedalBoard%2FPoly_PedalBoard_RawHID_v0.2%2Fpoly_pedalboard_rawhid -p 56418</application>
     <application name="SamplesPitch (NM)" uuid="29e48490-4c5d-47d9-8602-d3a7e8d63676" terminal="false" level="0" autorun="true">non-mixer --osc-port 7000 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FSamplesPitch</application>
     <application name="drumKlit (MIdidings)" uuid="50114045-9636-4c01-869f-e2b0b1ff1200" terminal="false" level="0" autorun="true">python %2Fhome%2Fwoii%2FPlagiat%2FStage%2FControls%2FMididings%2FdrumKlit.py</application>
     <application name="BassSubCALF" uuid="9f82ed21-0cd3-4d4e-8595-7d825d3ff094" terminal="false" level="0" autorun="true">calfjackhost --load %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FCalf%2FBassSub</application>
