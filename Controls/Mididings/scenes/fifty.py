@@ -15,7 +15,7 @@ fifty = [
         Ctrl(0, 2) >> tapeutapecontrol,
         zynmicrotonal_off,
         ]),
-    [orl, jeannot] >> Filter(PROGRAM) >> Ctrl(0, 2) >> tapeutapecontrol,
+# INUTILE ?    [orl, jeannot] >> Filter(PROGRAM) >> Ctrl(0, 2) >> tapeutapecontrol,
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # Intro (fin du sample) - Bouton 2
         Program(65) >> cseqtrigger,
@@ -87,7 +87,7 @@ fifty = [
                 [samplesmainport, '/strip/Samples5Dry/Gain/Mute', 0.0],
                 [samplesmainport, '/strip/SamplesMunge/Gain/Mute', 0.0],
 
-                [samplesdelaymungeport, '/strip/Samples2/Gain/Gain%20(dB]/unscaled', -7.0],
+                [samplesdelaymungeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -7.0],
 
             ]),
 
