@@ -13,7 +13,9 @@
     sl_states = {
         2:'record',
         5:'overdub',
-        14:'pause'
+        14:'pause',
+        1:'wait',
+        3:'wait'
     }
 
     sl_map = [0,1,2]
@@ -119,7 +121,6 @@
             }
 
             else if (address == '/sl_time') {
-
                 registered = true
 
                 var i    = args[0].value,
@@ -144,7 +145,8 @@
                 var state = {
                     record:0,
                     overdub:0,
-                    pause:0
+                    pause:0,
+                    wait:0
                 }
 
                 state[sl_states[v]] = 1

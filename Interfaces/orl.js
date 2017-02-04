@@ -1,18 +1,17 @@
 [
     {
-        "label": "Unnamed",
+        "label": "PLAGIAT",
         "widgets": [
             {
                 "type": "panel",
-                "top": 20,
-                "left": 100,
+                "top": 10,
+                "left": "12%",
                 "id": "panel_2",
-                "label": "^infinite",
-                "width": 650,
-                "height": 550,
+                "label": "Ctrlz",
+                "width": "70%",
                 "scroll": true,
                 "color": "auto",
-                "css": "",
+                "css": "height:calc(100% - 20rem)",
                 "widgets": [
                     {
                         "type": "strip",
@@ -42,9 +41,8 @@
                                         "linkId": "",
                                         "label": "Record",
                                         "width": "20%",
-                                        "height": "100%",
+                                        "height": "90%",
                                         "color": "red",
-                                        "css": "",
                                         "on": 1,
                                         "off": 0,
                                         "norelease": true,
@@ -55,7 +53,8 @@
                                         "target": [
                                             "sl:port"
                                         ],
-                                        "address": "/sl/0/hit"
+                                        "address": "/sl/0/hit",
+                                        "css": ""
                                     },
                                     {
                                         "type": "push",
@@ -63,7 +62,7 @@
                                         "id": "sl_overdub_0",
                                         "label": "Overdub",
                                         "width": "20%",
-                                        "height": "100%",
+                                        "height": "90%",
                                         "color": "orange",
                                         "css": "",
                                         "precision": 2,
@@ -87,7 +86,7 @@
                                         "id": "sl_pause_0",
                                         "label": "Pause",
                                         "width": "20%",
-                                        "height": "100%",
+                                        "height": "90%",
                                         "color": "yellow",
                                         "css": "",
                                         "on": 1,
@@ -110,7 +109,7 @@
                                         "id": "sl_trigger_0",
                                         "label": "Trigger",
                                         "width": "20%",
-                                        "height": "100%",
+                                        "height": "90%",
                                         "color": "auto",
                                         "css": "",
                                         "on": 1,
@@ -154,6 +153,31 @@
                                         "precision": 2,
                                         "target": [],
                                         "top": "auto"
+                                    },
+                                    {
+                                        "type": "meter",
+                                        "top": "90%",
+                                        "left": 0,
+                                        "id": "sl_wait_0",
+                                        "label": false,
+                                        "width": "80%",
+                                        "height": "10%",
+                                        "color": "red",
+                                        "css": "--display-input:none;--color-knob:transparent;",
+                                        "range": {
+                                            "min": 0,
+                                            "max": 1
+                                        },
+                                        "logScale": false,
+                                        "value": "",
+                                        "preArgs": [
+                                            "wait"
+                                        ],
+                                        "unit": "",
+                                        "horizontal": true,
+                                        "origin": "auto",
+                                        "address": "/sl/0/hit",
+                                        "compact": true
                                     }
                                 ],
                                 "tabs": [],
@@ -176,7 +200,7 @@
                                         "linkId": "",
                                         "label": "Record",
                                         "width": "20%",
-                                        "height": "100%",
+                                        "height": "90%",
                                         "color": "red",
                                         "css": "",
                                         "on": 1,
@@ -198,7 +222,7 @@
                                         "id": "sl_pause_1",
                                         "label": "Pause",
                                         "width": "20%",
-                                        "height": "100%",
+                                        "height": "90%",
                                         "color": "yellow",
                                         "css": "",
                                         "on": 1,
@@ -221,7 +245,7 @@
                                         "id": "sl_trigger_1",
                                         "label": "Trigger",
                                         "width": "20%",
-                                        "height": "100%",
+                                        "height": "90%",
                                         "color": "auto",
                                         "css": "",
                                         "on": 1,
@@ -272,7 +296,7 @@
                                         "id": "sl_overdub_1",
                                         "label": "Overdub",
                                         "width": "20%",
-                                        "height": "100%",
+                                        "height": "90%",
                                         "color": "orange",
                                         "css": "",
                                         "precision": 2,
@@ -288,6 +312,31 @@
                                         "off": 0,
                                         "norelease": true,
                                         "address": "/sl/1/hit"
+                                    },
+                                    {
+                                        "type": "meter",
+                                        "top": "90%",
+                                        "left": 0,
+                                        "id": "sl_wait_1",
+                                        "label": false,
+                                        "width": "80%",
+                                        "height": "10%",
+                                        "color": "red",
+                                        "css": "--display-input:none;--color-knob:transparent;",
+                                        "range": {
+                                            "min": 0,
+                                            "max": 1
+                                        },
+                                        "logScale": false,
+                                        "value": "",
+                                        "preArgs": [
+                                            "wait"
+                                        ],
+                                        "unit": "",
+                                        "horizontal": true,
+                                        "origin": "auto",
+                                        "address": "/sl/1/hit",
+                                        "compact": true
                                     }
                                 ],
                                 "tabs": [],
@@ -310,7 +359,7 @@
                                         "linkId": "",
                                         "label": "Record",
                                         "width": "20%",
-                                        "height": "100%",
+                                        "height": "90%",
                                         "color": "red",
                                         "css": "",
                                         "on": 1,
@@ -331,7 +380,7 @@
                                         "id": "sl_overdub_2",
                                         "label": "Overdub",
                                         "width": "20%",
-                                        "height": "100%",
+                                        "height": "90%",
                                         "color": "orange",
                                         "css": "",
                                         "precision": 2,
@@ -355,7 +404,7 @@
                                         "id": "sl_pause_2",
                                         "label": "Pause",
                                         "width": "20%",
-                                        "height": "100%",
+                                        "height": "90%",
                                         "color": "yellow",
                                         "css": "",
                                         "on": 1,
@@ -378,7 +427,7 @@
                                         "id": "sl_trigger_2",
                                         "label": "Trigger",
                                         "width": "20%",
-                                        "height": "100%",
+                                        "height": "90%",
                                         "color": "auto",
                                         "css": "",
                                         "on": 1,
@@ -422,6 +471,31 @@
                                         "precision": 2,
                                         "target": [],
                                         "top": "auto"
+                                    },
+                                    {
+                                        "type": "meter",
+                                        "top": "90%",
+                                        "left": 0,
+                                        "id": "sl_wait_2",
+                                        "label": false,
+                                        "width": "80%",
+                                        "height": "10%",
+                                        "color": "red",
+                                        "css": "--display-input:none;--color-knob:transparent;",
+                                        "range": {
+                                            "min": 0,
+                                            "max": 1
+                                        },
+                                        "logScale": false,
+                                        "value": "",
+                                        "preArgs": [
+                                            "wait"
+                                        ],
+                                        "unit": "",
+                                        "horizontal": true,
+                                        "origin": "auto",
+                                        "address": "/sl/2/hit",
+                                        "compact": true
                                     }
                                 ],
                                 "tabs": [],
@@ -561,24 +635,25 @@
                         "tabs": []
                     }
                 ],
-                "tabs": []
+                "tabs": [],
+                "height": "auto"
             },
             {
                 "type": "fader",
-                "top": 20,
-                "left": 0,
+                "top": 10,
+                "left": "1%",
                 "id": "pitch_samples",
                 "linkId": "",
                 "label": "Pitch",
                 "unit": "",
-                "width": "auto",
+                "width": "10%",
                 "height": 550,
                 "alignRight": false,
                 "horizontal": false,
                 "noPip": false,
                 "compact": true,
                 "color": "auto",
-                "css": "",
+                "css": "--display-input:none;height:calc(100% - 20rem)",
                 "snap": false,
                 "spring": true,
                 "range": {
@@ -597,6 +672,20 @@
                 "target": [
                     "non:pitch"
                 ]
+            },
+            {
+                "type": "panel",
+                "top": 10,
+                "left": "83%",
+                "id": "panel_3",
+                "label": "Samples",
+                "width": "16%",
+                "height": "auto",
+                "scroll": true,
+                "color": "auto",
+                "css": "height:calc(100% - 20rem)",
+                "widgets": [],
+                "tabs": []
             }
         ]
     }
