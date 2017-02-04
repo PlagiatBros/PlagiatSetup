@@ -95,13 +95,13 @@
                     })
                     sendOsc({
                         address: '/sl/'+sl_range+'/register_auto_update',
-                        args: [{type:'s',value:'loop_len'}, {type:'f',value:20}, {type:'s', value:host}, {type:'s', value:'/sl_time'}],
+                        args: [{type:'s',value:'loop_len'}, {type:'f',value:50}, {type:'s', value:host}, {type:'s', value:'/sl_time'}],
                         host: slhost,
                         port: slport
                     })
                     sendOsc({
                         address: '/sl/'+sl_range+'/register_auto_update',
-                        args: [{type:'s',value:'loop_pos'}, {type:'f',value:20}, {type:'s', value:host}, {type:'s', value:'/sl_time'}],
+                        args: [{type:'s',value:'loop_pos'}, {type:'f',value:50}, {type:'s', value:host}, {type:'s', value:'/sl_time'}],
                         host: slhost,
                         port: slport
                     })
