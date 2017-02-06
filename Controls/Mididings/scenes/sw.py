@@ -20,7 +20,7 @@ sw = [
     ] >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # intro - Bouton 2
-        #TODO filtre
+        #TODO filtre --> Degrade déjà en place ?
         Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -62,14 +62,18 @@ sw = [
         ],
     jeannot >> ProgramFilter(2) >> [ # [delay] Lanceur du Couplet - Bouton 2
         [
-
             SendOSC(audioseqport, '/Audioseq/Bpm', 178.5),
             SendOSC(audioseqport, '/Audioseq/Scene/Play', 'sw_couplet_auto'),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 178.5),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'XxXx'),
+            SendOSC(klickport, '/klick/metro/start'),
 
             ] >> Discard()
         ],
     orl >> ProgramFilter(3) >> [ # Couplet - Bouton 3
-        Program(65) >> cseqtrigger,
+        Program(66) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 178.5),
@@ -96,8 +100,10 @@ sw = [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
-            vxorldelay_off,
+            vxorldelay_on,
             vxorlvocode_off,
+            SendOSC(vxorlpreport, '/strip/VxORLDelayPre/Gain/Mute', 1.0),
+            SendOSC(mk2inport, '/mididings/switch_scene', 2),
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
@@ -108,7 +114,7 @@ sw = [
         ],
 
     orl >> ProgramFilter(4) >> [ # Refrain - Bouton 4
-        Program(66) >> cseqtrigger,
+        Program(67) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 178.5),
@@ -148,7 +154,50 @@ sw = [
         ],
 
     orl >> ProgramFilter(5) >> [ # Couplet 2 - Bouton 5
-        Program(65) >> cseqtrigger,
+        Program(66) >> cseqtrigger,
+        [
+            SendOSC(audioseqport, '/Audioseq/Bpm', 178.5),
+            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'sw_couplet_auto2'),
+
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 178.5),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 178.5),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.44216),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.44216),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.55),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, 0.55),
+
+            SendOscState([
+
+                [samplesmainport, '/strip/SamplesScape/Gain/Mute', 0.0],
+                [samplesdegradeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -3.0],
+                [samplesscapeport, '/strip/SamplesDegrade/Gain/Gain%20(dB)/unscaled', -18.0],
+
+            ]),
+
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+            vxorldelay_on,
+            vxorlvocode_off,
+            SendOSC(vxorlpreport, '/strip/VxORLDelayPre/Gain/Mute', 1.0),
+            SendOSC(mk2inport, '/mididings/switch_scene', 2),
+
+            vxjeannotdelay_off,
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
+            vxjeannotvocode_off,
+            ] >> Discard()
+        ],
+    orl >> ProgramFilter(6) >> [ # Couplet 2 - Bouton 6
+        Program(66) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 178.5),
@@ -188,7 +237,7 @@ sw = [
         ],
 
     jeannot >> ProgramFilter(3) >> [ # stop Three get the shit going- Bouton 3
-        Program(65) >> cseqtrigger,
+#        Program(65) >> cseqtrigger,
         stop,
         [
 

@@ -162,8 +162,19 @@ trapone = [
 
         ],
     jeannot >> ProgramFilter(3) >> SendOSC(trapcutport, '/Trapcut/Scene/Play', 'I') >> Discard(),
-    orl >> ProgramFilter(5) >> [ # Refrain - Bouton 5
+    jeannot >> ProgramFilter(4) >> [ # Couplet Altern - Bouton 4
         Program(67) >> cseqtrigger,
+        SendOSC(audioseqport, '/Audioseq/Bpm', 120),
+        SendOSC(audioseqport, '/Audioseq/Scene/Play', 'trapone_altern_couplet'),
+
+        ],
+    jeannot >> ProgramFilter(5) >> [ # Couplet Altern - Bouton 5
+        Program(67) >> cseqtrigger,
+        SendOSC(audioseqport, '/Audioseq/Bpm', 120),
+        SendOSC(audioseqport, '/Audioseq/Scene/Play', 'trapone_altern_refrain'),
+        ],
+    orl >> ProgramFilter(5) >> [ # Refrain - Bouton 5
+        Program(68) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 33),
             SendOSC(slport, '/set', 'tempo', 120),
@@ -210,17 +221,24 @@ trapone = [
             ],
 
         ],
+    jeannot >> ProgramFilter(6) >> [ # Couplet Altern - Bouton 6
+        Program(67) >> cseqtrigger,
+        SendOSC(audioseqport, '/Audioseq/Bpm', 120),
+        SendOSC(audioseqport, '/Audioseq/Scene/Play', 'trapone_altern_final'),
+        ],
+
+
     orl >> ProgramFilter(6) >> [ # Sortie (vers sonnerie de telephone) - Bouton 6
-        Program(68) >> cseqtrigger,
+        Program(69) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 120),
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
-            SendOSC(klickport, '/klick/simple/set_tempo', 120),
-            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
-            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'), #TODO ?? (instru qui sonne metronom déjà)
-            SendOSC(klickport, '/klick/metro/start'),
+            # SendOSC(klickport, '/klick/simple/set_tempo', 120),
+            # SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            # SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'), #TODO ?? (instru qui sonne metronom déjà)
+            # SendOSC(klickport, '/klick/metro/start'),
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.522388),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.522388),
