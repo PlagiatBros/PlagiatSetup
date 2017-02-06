@@ -328,6 +328,9 @@
         <instrument name="Cloche" minnote="72" maxnote="72" rootnote="72" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/TrapOne/TrapOne_Cloche_Main_r1.wav" sampleRelative="TrapOne/TrapOne_Cloche_Main_r1.wav"/>
         </instrument>
+        <instrument name="PercRefrain" minnote="36" maxnote="36" rootnote="36" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/TrapOne/TrapOnePerc_Refrain.flac" sampleRelative="TrapOne/TrapOnePerc_Refrain.flac"/>
+        </instrument>
       </kit>
     </setup>
   </creation>
