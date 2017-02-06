@@ -49,6 +49,12 @@ trapone = [
 
 
         ] >> Discard(),
+        [
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
+            ]
     ],
     jeannot >> ProgramFilter(2) >> [ # Pity and Shame / Stop - Bouton 2
         stop
@@ -81,22 +87,29 @@ trapone = [
                 [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
                 [samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0],
 
-            ]),
-
+                ]),
+            
             bassdry,
-
+            
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
             vxorlvocode_off,
-
+            
             vxjeannotdelay_off,
             vxjeannotgars_on,
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
             ] >> Discard(),
+        [
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
+            ],
+            
         ],
     orl >> ProgramFilter(4) >> [ # Couplet 1  - Bouton 4
         Program(66) >> cseqtrigger,
@@ -139,7 +152,14 @@ trapone = [
             vxjeannotdisint_off,
             vxjeannotvocode_off,
 
-            ] >> Discard()
+            ] >> Discard(),
+        [
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
+            ],
+
         ],
     jeannot >> ProgramFilter(3) >> SendOSC(trapcutport, '/Trapcut/Scene/Play', 'I') >> Discard(),
     orl >> ProgramFilter(5) >> [ # Refrain - Bouton 5
