@@ -26,7 +26,12 @@ hook(
 
 run(
     scenes = {
-        1: 	Scene("BassWobbleCtrl", Output('Mk2OutWobble', 1)),
+        1: 	Scene("BassWobbleCtrl", 
+                [
+                ~CtrlFilter(18) >> Output('Mk2OutWobble', 1),
+                CtrlFilter(18) >> SendOSC(bassmainport, '/strip/BassMain/Calf%20Filter/Frequency/unscaled', lambda ev: 20000. * pow(10,((-log10(71/20000.))*ev.value) / 127. + log10(71/20000.))) >> Discard(),
+                ]
+                      ),
     },
     control = Filter(PROGRAM) >> SceneSwitch(),
     pre = ~Filter(PROGRAM)

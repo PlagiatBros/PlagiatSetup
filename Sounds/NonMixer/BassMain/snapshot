@@ -68,6 +68,7 @@
 	Chain 0x27 create :strip 0x26 :tab "chain"
 	JACK_Module 0x28 create :parameter_values "0,000000:2,000000" :is_default 1 :chain 0x27 :active 1
 	Plugin_Module 0xF2 create :plugin_id 1433 :plugin_ins 1 :plugin_outs 1 :parameter_values "1,000000:4,000000" :is_default 0 :chain 0x27 :active 1
+	Plugin_Module 0x11D create :lv2_plugin_uri "http://calf.sourceforge.net/plugins/Filter" :plugin_ins 2 :plugin_outs 2 :parameter_values "20000,000000:4,500000:2,000000:20,000000" :is_default 0 :chain 0x27 :active 1
 	Gain_Module 0x29 create :parameter_values "-10,000000:0,000000" :is_default 1 :chain 0x27 :active 1
 	Meter_Module 0x2A create :is_default 1 :chain 0x27 :active 1
 	JACK_Module 0x2B create :parameter_values "2,000000:0,000000" :is_default 1 :chain 0x27 :active 1
