@@ -22,13 +22,13 @@ hook(
 cmeevents = ~Filter(CTRL)
 
 
-zynbass1 = ~Filter(CTRL) >> Output('CMEOutBass', 1)
-zynbass2 = ~Filter(CTRL) >> Output('CMEOutBass', 2)
-zynbass3 = ~Filter(CTRL) >> Output('CMEOutBass', 3)
-zynbass4 = ~Filter(CTRL) >> Output('CMEOutBass', 4)
-zynbass5 = ~Filter(CTRL) >> Output('CMEOutBass', 5)
-zynbass6 = ~Filter(CTRL) >> Output('CMEOutBass', 6)
-zynbass7 = ~Filter(CTRL) >> Output('CMEOutBass', 7)
+zynbass1 = Output('CMEOutBass', 1)
+zynbass2 = Output('CMEOutBass', 2)
+zynbass3 = Output('CMEOutBass', 3)
+zynbass4 = Output('CMEOutBass', 4)
+zynbass5 = Output('CMEOutBass', 5)
+zynbass6 = Output('CMEOutBass', 6)
+zynbass7 = Output('CMEOutBass', 7)
 
 zyntreble1 = [
     ~Filter(CTRL) >> Output('CMEOutTreble', 1),
@@ -37,7 +37,7 @@ zyntreble1 = [
 
 zyntreble2 = ~Filter(CTRL) >> Output('CMEOutTreble', 2)
 
-zynrhodes1 = ~Filter(CTRL) >> Output('CMEOutRhodes', 1)
+zynrhodes1 = Output('CMEOutRhodes', 1)
 
 tapeutape1 = ~Filter(CTRL) >> Output('CMEOutTapeutape', 1)
 
