@@ -16,6 +16,7 @@ from scenes import *
 
 hook(
     OSCInterface(56422, 56423), # "osc.udp://CtrlOrl:56423"),
+    OSCInterface(57422, 11000), # open-stage-control orl,
     OSCCustomInterface(56418),
     AutoRestart()
 )
