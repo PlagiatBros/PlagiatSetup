@@ -1,9 +1,10 @@
 (function(){
 
-    registered = false
-    slhost = '127.0.0.1'
-    slport = 9952
     host = 'osc.udp://127.0.0.1:8080'
+
+    sl_registered = false
+    sl_host = '127.0.0.1'
+    sl_port = 9952
 
     loop_time = {
         loop_pos:{},
@@ -21,13 +22,13 @@
     sl_map = [0,1,2]
     sl_range = '[0-2]'
 
-    nonhost = '127.0.0.1'
+    non_host = '127.0.0.1'
 
-    vxports = {
+    vx_ports = {
         pre:6666,
         post:6668
     }
-    vxaddresses = {
+    vx_addresses = {
         meuf: {
             on: [
                 '/strip/VxORLMeuf/Gain/Mute',
@@ -67,12 +68,21 @@
     }
 
 
-    pitchaddresses = {
+
+    pitch_addresses = {
         samples:['/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled']
     }
-    pitchports = {
+    pitch_ports = {
         samples:7008
     }
+
+    mididings_host = '127.0.0.1'
+    mididings_port = 57422
+    mididings_registered = false
+    mididings_current_scenes = false
+    mididings_current_subscenes = false
+    mididings_scenes = {}
+
 
     return {
         init: function(){
@@ -81,34 +91,49 @@
                 sendOsc({
                     address: '/ping',
                     args: [{type:'s', value:host},{type:'s',value:'/pong'}],
-                    host: slhost,
-                    port: slport
+                    host: sl_host,
+                    port: sl_port
                 })
-                if (!registered) {
+                if (!sl_registered) {
                     setTimeout(ping,1000)
                 } else {
                     sendOsc({
                         address: '/sl/'+sl_range+'/register_auto_update',
                         args: [{type:'s',value:'state'}, {type:'f',value:1}, {type:'s', value:host}, {type:'s', value:'/sl_state'}],
-                        host: slhost,
-                        port: slport
+                        host: sl_host,
+                        port: sl_port
                     })
                     sendOsc({
                         address: '/sl/'+sl_range+'/register_auto_update',
                         args: [{type:'s',value:'loop_len'}, {type:'f',value:50}, {type:'s', value:host}, {type:'s', value:'/sl_time'}],
-                        host: slhost,
-                        port: slport
+                        host: sl_host,
+                        port: sl_port
                     })
                     sendOsc({
                         address: '/sl/'+sl_range+'/register_auto_update',
                         args: [{type:'s',value:'loop_pos'}, {type:'f',value:50}, {type:'s', value:host}, {type:'s', value:'/sl_time'}],
-                        host: slhost,
-                        port: slport
+                        host: sl_host,
+                        port: sl_port
                     })
                 }
             }
 
-            setTimeout(ping,1000)
+            mididings_query = ()=>{
+                if (!mididings_registered) {
+                    sendOsc({
+                        address: '/mididings/query',
+                        args: [],
+                        host: mididings_host,
+                        port: mididings_port
+                    })
+                    setTimeout(mididings_query, 1000)
+                }
+
+            }
+
+            setTimeout(mididings_query, 1000)
+
+            setTimeout(ping, 1000)
         },
         oscInFilter: function(data){
             // Filter incomming osc messages
@@ -116,12 +141,12 @@
             var {address, args, host, port} = data
 
             if (address == '/pong') {
-                registered = true
+                sl_registered = true
                 return
             }
 
             else if (address == '/sl_time') {
-                registered = true
+                sl_registered = true
 
                 var i    = args[0].value,
                     ctrl = args[1].value,
@@ -162,6 +187,80 @@
 
             }
 
+            else if (address.indexOf('/mididings') != -1) {
+
+                mididings_registered = true
+
+                if (address == '/mididings/add_scene') {
+
+                    mididings_scenes[args[0].value] = {
+                        title: args[1].value,
+                        subscenes: []
+                    }
+                    for (var i = 2; i < args.length; i++) {
+                        mididings_scenes[args[0].value].subscenes.push(args[i].value)
+                    }
+
+                    return
+
+                }
+
+                else if (address == '/mididings/end_scenes') {
+
+                    var scenes_buttons = {}
+                    for (var i in mididings_scenes) {
+                        scenes_buttons[mididings_scenes[i].title] = parseInt(i)
+                    }
+                    address = '/EXEC'
+                    args = [
+                        {type:'s', value: 'edit'},
+                        {type:'s', value: 'mididings_scenes'},
+                        {type:'s', value: JSON.stringify({values:scenes_buttons})}
+                    ]
+
+                    setTimeout(()=>{
+                        receiveOsc({address, args, host, port})
+
+                        receiveOsc({address:'/mididings/switch_scene', args:[{type:'s',value: mididings_current_scenes }]})
+                        receiveOsc({address:'/mididings/switch_subscene', args:[{type:'s',value: mididings_current_subscenes }]})
+
+                    },3000)
+
+                    return
+                }
+
+                else if (address == '/mididings/current_scene') {
+
+                    if (mididings_current_scenes != args[0].value) {
+
+                        var subscenes_buttons = {}
+
+                        for (var i in mididings_scenes[args[0].value].subscenes) {
+                            subscenes_buttons[mididings_scenes[args[0].value].subscenes[i]] = parseInt(i) + 1
+                        }
+                        address = '/EXEC'
+                        editargs = [
+                            {type:'s', value: 'edit'},
+                            {type:'s', value: 'mididings_subscenes'},
+                            {type:'s', value: JSON.stringify({values:subscenes_buttons})}
+                        ]
+
+                        receiveOsc({address, args:editargs, host, port})
+
+                    }
+
+                    mididings_current_scenes = args[0].value
+                    mididings_current_subscenes = args[1].value
+
+                    receiveOsc({address:'/mididings/switch_scene', args:[{type:'s',value: args[0].value }]})
+                    receiveOsc({address:'/mididings/switch_subscene', args:[{type:'s',value: args[1].value }]})
+
+                    return
+
+                }
+
+
+            }
 
             return {address, args, host, port}
 
@@ -174,8 +273,8 @@
             if (address.indexOf('/sl') != -1) {
                 address = '/sl/' + sl_map[address.split('/')[2]] + '/hit'
                 args.splice(1,1)
-                host = slhost
-                port = slport
+                host = sl_host
+                port = sl_port
 
             }
 
@@ -185,16 +284,16 @@
                     v    = args[1].value
 
 
-                if (!vxaddresses[type]) throw 'Unknown VX strip ' + type
+                if (!vx_addresses[type]) throw 'Unknown VX strip ' + type
 
-                var addresses = vxaddresses[type].both || vxaddresses[type][['off','on'][v]]
+                var addresses = vx_addresses[type].both || vx_addresses[type][['off','on'][v]]
 
                 for (i in addresses) {
                     sendOsc({
                         address: addresses[i],
                         args: [{type:'f', value:[1,0][v]}],
-                        host: nonhost,
-                        port: addresses[i].indexOf('Post') != -1 ? vxports.post : vxports.pre
+                        host: non_host,
+                        port: addresses[i].indexOf('Post') != -1 ? vx_ports.post : vx_ports.pre
 
                     })
                 }
@@ -209,21 +308,26 @@
                     v    = args[1].value
 
 
-                if (!pitchports[type]) throw 'Unknown Pitch strip ' + type
+                if (!pitch_ports[type]) throw 'Unknown Pitch strip ' + type
 
-                var addresses = pitchaddresses[type]
+                var addresses = pitch_addresses[type]
 
                 for (i in addresses) {
                     sendOsc({
                         address: addresses[i],
                         args: [{type:'f', value:v}],
-                        host: nonhost,
-                        port: pitchports[type]
+                        host: non_host,
+                        port: pitch_ports[type]
                     })
                 }
 
                 return
 
+            }
+
+            else if (address.indexOf('/mididings') != -1) {
+                host= mididings_host,
+                port= mididings_port
             }
 
             return {address, args, host, port}
