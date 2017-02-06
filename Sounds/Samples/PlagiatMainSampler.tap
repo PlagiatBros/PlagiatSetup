@@ -311,7 +311,7 @@
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/TrapOne/TrapOne_MusicBox1_Fin_r1.wav" sampleRelative="TrapOne/TrapOne_MusicBox1_Fin_r1.wav"/>
         </instrument>
         <instrument name="MusicBox1Dring" minnote="65" maxnote="65" rootnote="65" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="-0.250000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/TrapOne/TrapOne_MusicBox1_Fin_r1.wav" sampleRelative="TrapOne/TrapOne_MusicBox1_Fin_r1.wav"/>
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/TrapOne/TrapOne_MusicBox1_Dring_r1.wav" sampleRelative="TrapOne/TrapOne_MusicBox1_Dring_r1.wav"/>
         </instrument>
         <instrument name="MusicBox2Main" minnote="48" maxnote="48" rootnote="48" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="1.000000" pan="0.250000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/TrapOne/TrapOne_MusicBox2_Main_r1.wav" sampleRelative="TrapOne/TrapOne_MusicBox2_Main_r1.wav"/>
