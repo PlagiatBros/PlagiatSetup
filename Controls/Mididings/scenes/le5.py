@@ -13,7 +13,8 @@ le5 = [
     Init([
         Program(seq24PageMap[5]) >> seq24once,
         Ctrl(0, 3) >> tapeutapecontrol,
-        zynmicrotonal_off,
+        zynmicrotonal_on,
+        SendOSC(zyntrebleport, '/microtonal/tunings', '100.0\n200.0\n300.0\n435.0\n500.0\n635.0\n700.0\n800.0\n900.0\n1000.0\n1135.0\n2/1')
         ]),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     [orl, jeannot] >> Filter(PROGRAM) >> [
@@ -244,8 +245,8 @@ le5 = [
         [
             bassdetunest_on,
             bassringst_on,
-            bassvibest_off,
-            bassbufferst_off,
+            bassvibest_on,
+            bassbufferst_on,
             ]
         ],
     orl >> ProgramFilter(6) >> [ # Couplet A (niggah don't you know) - Bouton 6
@@ -387,7 +388,8 @@ le5 = [
 
     orl >> ProgramFilter(8) >> [ # Ballade rhodes vocodeur - Bouton 8
         #TODO son rhodes
-        stop,
+        Program(73) >> cseqtrigger,
+        SendOSC(cmeinport, '/mididings/switch_scene', 10),
         [
 
             vxorlgars_off,
@@ -405,7 +407,7 @@ le5 = [
             ] >> Discard()
         ],
     jeannot >> ProgramFilter(5) >> [ # Sebkha 5/8 (batterie ternaire sur synthé, puis death sebkha, puis meshugagah)
-        Program(73) >> cseqtrigger,
+        Program(74) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
             SendOSC(slport, '/set', 'tempo', 120),
@@ -449,6 +451,14 @@ le5 = [
             bassringst_on,
             bassvibest_off,
             bassbufferst_off,
+            ]
+        ],
+    orl >> ProgramFilter(9) >> [ # Son Basse - Bouton 9
+        [
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_on,
+            bassbufferst_on,
             ]
         ],
     ]
