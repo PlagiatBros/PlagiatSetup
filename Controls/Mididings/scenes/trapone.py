@@ -50,8 +50,56 @@ trapone = [
 
         ] >> Discard(),
     ],
-    orl >> ProgramFilter(3) >> [ # Couplet - Bouton 3
+    jeannot >> ProgramFilter(2) >> [ # Pity and Shame / Stop - Bouton 2
+        stop
+        #LIGHTS
+        ],
+    orl >> ProgramFilter(3) >> [ # Couplet 1 (Levée) - Bouton 3
         Program(65) >> cseqtrigger,
+        [
+            SendOSC(audioseqport, '/Audioseq/Bpm', 120),
+            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'trapone_intro'),
+
+
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 120),
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 120),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.522388),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.522388),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.6296),
+
+
+            SendOscState([
+
+                [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0],
+
+            ]),
+
+            bassdry,
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+            vxorldelay_off,
+            vxorlvocode_off,
+
+            vxjeannotdelay_off,
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
+            vxjeannotdisint_off,
+            vxjeannotvocode_off,
+            ] >> Discard(),
+        ],
+    orl >> ProgramFilter(4) >> [ # Couplet 1  - Bouton 4
+        Program(66) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 120),
@@ -93,8 +141,8 @@ trapone = [
 
             ] >> Discard()
         ],
-    jeannot >> ProgramFilter(2) >> SendOSC(trapcutport, '/Trapcut/Scene/Play', 'I') >> Discard(),
-    orl >> ProgramFilter(3) >> [ # Refrain - Bouton 3
+    jeannot >> ProgramFilter(3) >> SendOSC(trapcutport, '/Trapcut/Scene/Play', 'I') >> Discard(),
+    orl >> ProgramFilter(5) >> [ # Refrain - Bouton 5
         Program(66) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 33),
@@ -135,7 +183,7 @@ trapone = [
 
             ] >> Discard()
         ],
-    orl >> ProgramFilter(4) >> [ # Sortie (vers sonnerie de telephone) - Bouton
+    orl >> ProgramFilter(6) >> [ # Sortie (vers sonnerie de telephone) - Bouton 6
         Program(68) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
