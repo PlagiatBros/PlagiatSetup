@@ -63,7 +63,7 @@ sw = [
     jeannot >> ProgramFilter(2) >> [ # [delay] Lanceur du Couplet - Bouton 2
         [
             SendOSC(audioseqport, '/Audioseq/Bpm', 178.5),
-            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'sw_couplet_auto'),
+            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'sw_couplet_auto', Timestamp()),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 178.5),
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
@@ -157,7 +157,7 @@ sw = [
         Program(66) >> cseqtrigger,
         [
             SendOSC(audioseqport, '/Audioseq/Bpm', 178.5),
-            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'sw_couplet_auto2'),
+            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'sw_couplet_auto2', Timestamp()),
 
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 178.5),
@@ -280,7 +280,7 @@ sw = [
             SendOSC(vxjeannotpreport, '/strip/VxJeannotDelayPre/Gain/Mute', 1.0),
 
             SendOSC(audioseqport, '/Audioseq/Bpm', 178.5),
-            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'sw_shit_going'),
+            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'sw_shit_going', Timestamp()),
 
             ] >> Discard()
         ],

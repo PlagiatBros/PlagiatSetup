@@ -228,7 +228,7 @@ fifty = [
         Program(68) >> cseqtrigger,
         [
             SendOSC(audioseqport, '/Audioseq/Bpm', 117),
-            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'fifty_refrain_auto'),
+            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'fifty_refrain_auto', Timestamp()),
 
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 117),
@@ -277,7 +277,7 @@ fifty = [
         Program(69) >> cseqtrigger,
         [
             SendOSC(audioseqport, '/Audioseq/Bpm', 117),
-            SendOSC(audioseqport, '/Audioseq/Play'),
+            SendOSC(audioseqport, '/Audioseq/Play', Timestamp()),
             SendOSC(audioseqport, '/Audioseq/Sequence/Enable', 'fifty_refrain_cutdown'),
 
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),

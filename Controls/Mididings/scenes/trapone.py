@@ -64,7 +64,7 @@ trapone = [
         Program(65) >> cseqtrigger,
         [
             SendOSC(audioseqport, '/Audioseq/Bpm', 120),
-            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'trapone_intro'),
+            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'trapone_intro', Timestamp()),
 
 
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -88,15 +88,15 @@ trapone = [
                 [samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0],
 
                 ]),
-            
+
             bassdry,
-            
+
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
             vxorlvocode_off,
-            
+
             vxjeannotdelay_off,
             vxjeannotgars_on,
             vxjeannotmeuf_off,
@@ -109,7 +109,7 @@ trapone = [
             bassvibest_off,
             bassbufferst_off,
             ],
-            
+
         ],
     orl >> ProgramFilter(4) >> [ # Couplet 1  - Bouton 4
         Program(66) >> cseqtrigger,
@@ -165,13 +165,13 @@ trapone = [
     jeannot >> ProgramFilter(4) >> [ # Couplet Altern - Bouton 4
         Program(67) >> cseqtrigger,
         SendOSC(audioseqport, '/Audioseq/Bpm', 120),
-        SendOSC(audioseqport, '/Audioseq/Scene/Play', 'trapone_altern_couplet'),
+        SendOSC(audioseqport, '/Audioseq/Scene/Play', 'trapone_altern_couplet', Timestamp()),
 
         ],
     jeannot >> ProgramFilter(5) >> [ # Couplet Altern - Bouton 5
         Program(67) >> cseqtrigger,
         SendOSC(audioseqport, '/Audioseq/Bpm', 120),
-        SendOSC(audioseqport, '/Audioseq/Scene/Play', 'trapone_altern_refrain'),
+        SendOSC(audioseqport, '/Audioseq/Scene/Play', 'trapone_altern_refrain', Timestamp()),
         ],
     orl >> ProgramFilter(5) >> [ # Refrain - Bouton 5
         Program(68) >> cseqtrigger,
@@ -224,7 +224,7 @@ trapone = [
     jeannot >> ProgramFilter(6) >> [ # Couplet Altern - Bouton 6
         Program(67) >> cseqtrigger,
         SendOSC(audioseqport, '/Audioseq/Bpm', 120),
-        SendOSC(audioseqport, '/Audioseq/Scene/Play', 'trapone_altern_final'),
+        SendOSC(audioseqport, '/Audioseq/Scene/Play', 'trapone_altern_final', Timestamp()),
         ],
 
 

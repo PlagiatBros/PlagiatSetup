@@ -483,7 +483,7 @@ dafist = [
             SendOSC(klickport, '/klick/metro/start'),
 
             SendOSC(audioseqport, '/Audioseq/Bpm', 120),
-            SendOSC(audioseqport, '/Audioseq/Play'),
+            SendOSC(audioseqport, '/Audioseq/Play', Timestamp()),
             SendOSC(audioseqport, '/Audioseq/Sequence/Enable', 'dafist_outro_filter'),
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.6716),
@@ -535,7 +535,7 @@ dafist = [
         ],
     orl >> ProgramFilter(11) >> [
         stop,
-        SendOSC(audioseqport, '/Audioseq/Scene/Play', 'dafist_outro_filter_open') >> Discard(),
+        SendOSC(audioseqport, '/Audioseq/Scene/Play', 'dafist_outro_filter_open', Timestamp()) >> Discard(),
         SceneSwitch(3) >> Discard(),
         Ctrl(102, 127) >> Output('Mk2CtrlOut', 1)
         ],
