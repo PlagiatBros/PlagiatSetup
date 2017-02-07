@@ -7,6 +7,7 @@ from ports import *
 
 from oscSendProxy import OscSendProxy
 
+from time import time
 
 #### Functions #############################################
 #### Trigger seq24 ####
@@ -370,3 +371,7 @@ def vocoderscale(notes, port=[vocoderjeannotport, vocoderorlport]):
             )
 
     return ev
+
+class Timestamp(object):
+    def __call__(self):
+        return 't:%f' % time()
