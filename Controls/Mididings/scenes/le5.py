@@ -204,7 +204,7 @@ le5 = [
         Program(69) >> cseqtrigger,
         [
             SendOSC(audioseqport, '/Audioseq/Bpm', 320),
-            SendOSC(audioseqport, '/Audioseq/Play', Timestamp()),
+            SendOSC(audioseqport, '/Audioseq/Play', timestamp),
             SendOSC(audioseqport, '/Audioseq/Sequence/Enable', 'le5_refrain_cutdown'),
 
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),

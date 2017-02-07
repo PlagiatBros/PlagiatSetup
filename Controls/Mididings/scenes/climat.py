@@ -307,7 +307,7 @@ climat = [
         SceneSwitch(4) >> Discard(),
         Program(2) >> Output('PBCtrlOut', 1),
         SendOSC(audioseqport, '/Audioseq/Bpm', 117),
-        SendOSC(audioseqport, '/Audioseq/Scene/Play', 'fifty_intro', Timestamp()),
+        SendOSC(audioseqport, '/Audioseq/Scene/Play', 'fifty_intro', timestamp),
 
 
         ],

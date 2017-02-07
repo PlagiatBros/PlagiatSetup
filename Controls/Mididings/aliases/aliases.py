@@ -372,6 +372,5 @@ def vocoderscale(notes, port=[vocoderjeannotport, vocoderorlport]):
 
     return ev
 
-class Timestamp(object):
-    def __call__(self):
-        return 't:%f' % time()
+def timestamp():
+    return 't:%f' % time()
