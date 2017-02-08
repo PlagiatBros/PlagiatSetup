@@ -58,7 +58,7 @@ trapone = [
     ],
     jeannot >> ProgramFilter(2) >> [ # Pity and Shame / Stop - Bouton 2
         stop
-        #LIGHTS
+        #TODO LIGHTS
         ],
     orl >> ProgramFilter(3) >> [ # Couplet 1 (Levée) - Bouton 3
         Program(65) >> cseqtrigger,
