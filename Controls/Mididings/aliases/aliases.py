@@ -233,7 +233,7 @@ stop = [
         Program(2) >> cseqtrigger,
         SendOSC(slport, '/sl/-1/hit', 'pause_on') >> Discard(),
         SendOSC(klickport, '/klick/metro/stop') >> Discard(),
-        SendOSC(audioseqport, '/Audioseq/DisableAll') >> Discard(),
+        # SendOSC(audioseqport, '/Audioseq/DisableAll') >> Discard(),
 ]
 
 
