@@ -22,13 +22,12 @@ hook(
 
 
 def wobbleRythm(denom):
-    global tempo
     def wobble(ev):
-        param = (log10((tempo/60.)*denom) + 1.5) / 3
+        param = (log10((sltemposerver.tempo/60.)*denom) + 1.5) / 3
         sltemposerver.send('osc.udp://127.0.0.1:%i' % bassmainport, '/strip/BassWobblePost/MDA%20RezFilter/LFO%20Rate/unscaled', param)
         sltemposerver.send('osc.udp://127.0.0.1:%i' % bassmainport, '/strip/BassWobblePost/MDA%20RezFilter/Max%20Freq/unscaled', 1.0)
         sltemposerver.send('osc.udp://127.0.0.1:%i' % samplesmainport, '/strip/Keyboards/Gain/Mute', 1.0)
-
+        print 'hi'
     return wobble
 
 run([

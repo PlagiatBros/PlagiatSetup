@@ -28,11 +28,11 @@ run(
     scenes = {
         1: 	Scene("BassWobbleCtrl",
                 [
-                ~CtrlFilter(18) >> Output('Mk2OutWobble', 1),
+                [Filter(NOTE), Filter(PITCHBEND)] >> Output('Mk2OutWobble', 1),
                 CtrlFilter(18) >> SendOSC(bassmainport, '/strip/BassMain/Calf%20Filter/Frequency/unscaled', lambda ev: 20000. * pow(10,((-log10(71/20000.))*ev.value) / 127. + log10(71/20000.))) >> Discard(),
                 ]
                       ),
-        2: 	Scene("VxDelayCtrl", 
+        2: 	Scene("VxDelayCtrl",
                 [
                 [
                     Filter(NOTEON) >> SendOSC(vxorlpreport, '/strip/VxORLDelayPre/Gain/Mute', 0.0),
