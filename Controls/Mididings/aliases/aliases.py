@@ -51,8 +51,21 @@ seq24PageMap = {
 #### BPM Scape & Delay Vx ####
 # Formule : (x-30)/134.
 scapebpmpath = 'C%2A%20Scape%20-%20Stereo%20delay%20with%20chromatic%20resonances/bpm'
+
+class scapebpm(object):
+    def __init__(self, bpm):
+        self.v = (bpm-30)/134.
+    def __call__(self, ev):
+        return self.v
+
 # Formule : (x-30)/270.
 delaybpmpath = 'Calf%20Vintage%20Delay/Tempo'
+class delaybpm(object):
+    def __init__(self, bpm):
+        self.v = (bpm-30)/270.
+    def __call__(self, ev):
+        return self.v
+
 
 #### Vocals ####
 # VxORLMeuf

@@ -4,9 +4,9 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="meter_in" value="5.74237e-06" />
-  <param name="meter_outL" value="5.74237e-06" />
-  <param name="meter_outR" value="5.74237e-06" />
+  <param name="meter_in" value="5.77174e-06" />
+  <param name="meter_outL" value="5.77174e-06" />
+  <param name="meter_outR" value="5.77174e-06" />
   <param name="clip_in" value="0" />
   <param name="clip_outL" value="0" />
   <param name="clip_outR" value="0" />
@@ -26,8 +26,8 @@
 <preset bank="0" program="0" plugin="gate" name="">
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
-  <param name="meter_in" value="3.22667e-06" />
-  <param name="meter_out" value="1.97633e-07" />
+  <param name="meter_in" value="3.22668e-06" />
+  <param name="meter_out" value="1.97634e-07" />
   <param name="clip_in" value="0" />
   <param name="clip_out" value="0" />
   <param name="range" value="0.06125" />
@@ -48,13 +48,13 @@
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
   <param name="amount" value="4.13532" />
-  <param name="meter_in" value="1.97633e-07" />
+  <param name="meter_in" value="1.97634e-07" />
   <param name="meter_out" value="0" />
   <param name="clip_in" value="0" />
   <param name="clip_out" value="0" />
   <param name="drive" value="8.5396" />
   <param name="blend" value="0" />
-  <param name="meter_drive" value="2.27899e-07" />
+  <param name="meter_drive" value="1.53692e-07" />
   <param name="freq" value="100" />
   <param name="listen" value="1" />
   <param name="floor_active" value="1" />
@@ -123,7 +123,7 @@
 </plugin>
 <plugin type="fluidsynth" instance-name="fluidsynth" output-index="17" midi-index="0">
 <preset bank="0" program="0" plugin="fluidsynth" name="">
-  <param name="master" value="0.5" />
+  <param name="master" value="1" />
   <param name="interpolation" value="2" />
   <param name="reverb" value="0" />
   <param name="chorus" value="0" />

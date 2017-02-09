@@ -37,6 +37,8 @@ zyntreble1 = [
 
 zyntreble2 = ~Filter(CTRL) >> Output('CMEOutTreble', 2)
 
+zyntreble3 = ~Filter(CTRL) >> Output('CMEOutTreble', 3)
+
 zynrhodes1 = Output('CMEOutRhodes', 1)
 
 tapeutape1 = ~Filter(CTRL) >> Output('CMEOutTapeutape', 1)
@@ -54,6 +56,7 @@ run(
         9: 	Scene("ZynTreble 2", zyntreble2),
         10:	Scene("ZynRhodes 1", zynrhodes1),
         11:	Scene("Tapeutape 1", tapeutape1),
+        12: Scene("ZynTreble 3", zyntreble3),
     },
     control = Filter(PROGRAM) >> SceneSwitch(),
     pre = ~Filter(PROGRAM)
