@@ -1,10 +1,10 @@
 (function(){
 
-    host = 'osc.udp://127.0.0.1:8080'
+    host = 'osc.udp://127.0.0.1:11000'
 
     sl_registered = false
     sl_host = '127.0.0.1'
-    sl_port = 9952
+    sl_port = 9951
 
     loop_time = {
         loop_pos:{},
@@ -19,8 +19,8 @@
         3:'wait'
     }
 
-    sl_map = [0,1,2]
-    sl_range = '[0-2]'
+    sl_map = [6,7,8]
+    sl_range = '[6-8]'
 
     non_host = '127.0.0.1'
 
