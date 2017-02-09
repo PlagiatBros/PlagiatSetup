@@ -1,0 +1,3134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Workspace>
+<Workspace xmlns="http://www.qlcplus.org/Workspace" CurrentWindow="InputOutputManager">
+ <Creator>
+  <Name>Q Light Controller Plus</Name>
+  <Version>4.10.5b</Version>
+  <Author>Wladimir Ohrelianov II</Author>
+ </Creator>
+ <Engine>
+  <InputOutputMap>
+   <Universe Name="Universe 1" ID="0">
+    <Input Plugin="OSC" Line="0">
+     <PluginParameters inputPort="12000"/>
+    </Input>
+    <Output Plugin="DMX USB" Line="0">
+     <PluginParameters UniverseChannels="104"/>
+    </Output>
+   </Universe>
+   <Universe Name="Universe 2" ID="1"/>
+   <Universe Name="Universe 3" ID="2"/>
+   <Universe Name="Universe 4" ID="3"/>
+  </InputOutputMap>
+  <Fixture>
+   <Manufacturer>Stairville</Manufacturer>
+   <Model>LED Bar 240/8 RGB</Model>
+   <Mode>24-channel</Mode>
+   <ID>0</ID>
+   <Name>STLedBar Contre Jardin</Name>
+   <Universe>0</Universe>
+   <Address>0</Address>
+   <Channels>24</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Stairville</Manufacturer>
+   <Model>LED Bar 240/8 RGB</Model>
+   <Mode>24-channel</Mode>
+   <ID>1</ID>
+   <Name>STLedBar Blind Jardin</Name>
+   <Universe>0</Universe>
+   <Address>24</Address>
+   <Channels>24</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic</Model>
+   <Mode>4 Channel</Mode>
+   <ID>2</ID>
+   <Name>GhLedBar Centre</Name>
+   <Universe>0</Universe>
+   <Address>48</Address>
+   <Channels>4</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Stairville</Manufacturer>
+   <Model>LED Bar 240/8 RGB</Model>
+   <Mode>24-channel</Mode>
+   <ID>3</ID>
+   <Name>STLedBar Blind Cour</Name>
+   <Universe>0</Universe>
+   <Address>52</Address>
+   <Channels>24</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Stairville</Manufacturer>
+   <Model>LED Bar 240/8 RGB</Model>
+   <Mode>24-channel</Mode>
+   <ID>4</ID>
+   <Name>STLedBar Contre Cour</Name>
+   <Universe>0</Universe>
+   <Address>76</Address>
+   <Channels>24</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic</Model>
+   <Mode>1 Channel</Mode>
+   <ID>5</ID>
+   <Name>Decoupe Jardin [ORL]</Name>
+   <Universe>0</Universe>
+   <Address>100</Address>
+   <Channels>1</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic</Model>
+   <Mode>1 Channel</Mode>
+   <ID>6</ID>
+   <Name>Decoupe Cour [Dag]</Name>
+   <Universe>0</Universe>
+   <Address>101</Address>
+   <Channels>1</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic</Model>
+   <Mode>1 Channel</Mode>
+   <ID>7</ID>
+   <Name>Decoupe Lointain [Jeannot]</Name>
+   <Universe>0</Universe>
+   <Address>102</Address>
+   <Channels>1</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic</Model>
+   <Mode>1 Channel</Mode>
+   <ID>8</ID>
+   <Name>Decoupe Plot [Tyran]</Name>
+   <Universe>0</Universe>
+   <Address>103</Address>
+   <Channels>1</Channels>
+  </Fixture>
+  <Function ID="0" Type="Scene" Name="CJ Red Segment 1">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">0,255</FixtureVal>
+  </Function>
+  <Function ID="1" Type="Scene" Name="CJ Red Segment 2">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">3,255</FixtureVal>
+  </Function>
+  <Function ID="2" Type="Scene" Name="CJ Red Segment 3">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">6,255</FixtureVal>
+  </Function>
+  <Function ID="3" Type="Scene" Name="CJ Red Segment 4">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">9,255</FixtureVal>
+  </Function>
+  <Function ID="4" Type="Scene" Name="CJ Red Segment 5">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">12,255</FixtureVal>
+  </Function>
+  <Function ID="5" Type="Scene" Name="CJ Red Segment 6">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">15,255</FixtureVal>
+  </Function>
+  <Function ID="6" Type="Scene" Name="CJ Red Segment 7">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">18,255</FixtureVal>
+  </Function>
+  <Function ID="7" Type="Scene" Name="CJ Red Segment 8">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">21,255</FixtureVal>
+  </Function>
+  <Function ID="8" Type="Scene" Name="CJ Green Segment 1">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">1,255</FixtureVal>
+  </Function>
+  <Function ID="9" Type="Scene" Name="CJ Green Segment 2">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">4,255</FixtureVal>
+  </Function>
+  <Function ID="10" Type="Scene" Name="CJ Green Segment 3">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">7,255</FixtureVal>
+  </Function>
+  <Function ID="11" Type="Scene" Name="CJ Green Segment 4">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">10,255</FixtureVal>
+  </Function>
+  <Function ID="12" Type="Scene" Name="CJ Green Segment 5">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">13,255</FixtureVal>
+  </Function>
+  <Function ID="13" Type="Scene" Name="CJ Green Segment 6">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">16,255</FixtureVal>
+  </Function>
+  <Function ID="14" Type="Scene" Name="CJ Green Segment 7">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">19,255</FixtureVal>
+  </Function>
+  <Function ID="15" Type="Scene" Name="CJ Green Segment 8">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">22,255</FixtureVal>
+  </Function>
+  <Function ID="16" Type="Scene" Name="CJ Blue Segment 1">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">2,255</FixtureVal>
+  </Function>
+  <Function ID="17" Type="Scene" Name="CJ Blue Segment 2">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">5,255</FixtureVal>
+  </Function>
+  <Function ID="18" Type="Scene" Name="CJ Blue Segment 3">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">8,255</FixtureVal>
+  </Function>
+  <Function ID="19" Type="Scene" Name="CJ Blue Segment 4">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">11,255</FixtureVal>
+  </Function>
+  <Function ID="20" Type="Scene" Name="CJ Blue Segment 5">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">14,255</FixtureVal>
+  </Function>
+  <Function ID="21" Type="Scene" Name="CJ Blue Segment 6">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">17,255</FixtureVal>
+  </Function>
+  <Function ID="22" Type="Scene" Name="CJ Blue Segment 7">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">20,255</FixtureVal>
+  </Function>
+  <Function ID="23" Type="Scene" Name="CJ Blue Segment 8">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">23,255</FixtureVal>
+  </Function>
+  <Function ID="24" Type="Scene" Name="CC Red Segment 1">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">0,255</FixtureVal>
+  </Function>
+  <Function ID="25" Type="Scene" Name="CC Red Segment 2">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">3,255</FixtureVal>
+  </Function>
+  <Function ID="26" Type="Scene" Name="CC Red Segment 3">
+   <Speed FadeIn="1130" FadeOut="510" Duration="0"/>
+   <FixtureVal ID="4">6,255</FixtureVal>
+  </Function>
+  <Function ID="27" Type="Scene" Name="CC Red Segment 4">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">9,255</FixtureVal>
+  </Function>
+  <Function ID="28" Type="Scene" Name="CC Red Segment 5">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">12,255</FixtureVal>
+  </Function>
+  <Function ID="29" Type="Scene" Name="CC Red Segment 6">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">15,255</FixtureVal>
+  </Function>
+  <Function ID="30" Type="Scene" Name="CC Red Segment 7">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">18,255</FixtureVal>
+  </Function>
+  <Function ID="31" Type="Scene" Name="CC Red Segment 8">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">21,255</FixtureVal>
+  </Function>
+  <Function ID="32" Type="Scene" Name="CC Green Segment 1">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">1,255</FixtureVal>
+  </Function>
+  <Function ID="33" Type="Scene" Name="CC Green Segment 2">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">4,255</FixtureVal>
+  </Function>
+  <Function ID="34" Type="Scene" Name="CC Green Segment 3">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">7,255</FixtureVal>
+  </Function>
+  <Function ID="35" Type="Scene" Name="CC Green Segment 4">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">10,255</FixtureVal>
+  </Function>
+  <Function ID="36" Type="Scene" Name="CC Green Segment 5">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">13,255</FixtureVal>
+  </Function>
+  <Function ID="37" Type="Scene" Name="CC Green Segment 6">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">16,255</FixtureVal>
+  </Function>
+  <Function ID="38" Type="Scene" Name="CC Green Segment 7">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">19,255</FixtureVal>
+  </Function>
+  <Function ID="39" Type="Scene" Name="CC Green Segment 8">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">22,255</FixtureVal>
+  </Function>
+  <Function ID="40" Type="Scene" Name="CC Blue Segment 1">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">2,255</FixtureVal>
+  </Function>
+  <Function ID="41" Type="Scene" Name="CC Blue Segment 2">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">5,255</FixtureVal>
+  </Function>
+  <Function ID="42" Type="Scene" Name="CC Blue Segment 3">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">8,255</FixtureVal>
+  </Function>
+  <Function ID="43" Type="Scene" Name="CC Blue Segment 4">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">11,255</FixtureVal>
+  </Function>
+  <Function ID="44" Type="Scene" Name="CC Blue Segment 5">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">14,255</FixtureVal>
+  </Function>
+  <Function ID="45" Type="Scene" Name="CC Blue Segment 6">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">17,255</FixtureVal>
+  </Function>
+  <Function ID="46" Type="Scene" Name="CC Blue Segment 7">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">20,255</FixtureVal>
+  </Function>
+  <Function ID="47" Type="Scene" Name="CC Blue Segment 8">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">23,255</FixtureVal>
+  </Function>
+  <Function ID="48" Type="Scene" Name="BJ Red Segment 1">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">0,255</FixtureVal>
+  </Function>
+  <Function ID="49" Type="Scene" Name="BJ Red Segment 2">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">3,255</FixtureVal>
+  </Function>
+  <Function ID="50" Type="Scene" Name="BJ Red Segment 3">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">6,255</FixtureVal>
+  </Function>
+  <Function ID="51" Type="Scene" Name="BJ Red Segment 4">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">9,255</FixtureVal>
+  </Function>
+  <Function ID="52" Type="Scene" Name="BJ Red Segment 5">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">12,255</FixtureVal>
+  </Function>
+  <Function ID="53" Type="Scene" Name="BJ Red Segment 6">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">15,255</FixtureVal>
+  </Function>
+  <Function ID="54" Type="Scene" Name="BJ Red Segment 7">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">18,255</FixtureVal>
+  </Function>
+  <Function ID="55" Type="Scene" Name="BJ Red Segment 8">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">21,255</FixtureVal>
+  </Function>
+  <Function ID="56" Type="Scene" Name="BJ Green Segment 1">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">1,255</FixtureVal>
+  </Function>
+  <Function ID="57" Type="Scene" Name="BJ Green Segment 2">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">4,255</FixtureVal>
+  </Function>
+  <Function ID="58" Type="Scene" Name="BJ Green Segment 3">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">7,255</FixtureVal>
+  </Function>
+  <Function ID="59" Type="Scene" Name="BJ Green Segment 4">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">10,255</FixtureVal>
+  </Function>
+  <Function ID="60" Type="Scene" Name="BJ Green Segment 5">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">13,255</FixtureVal>
+  </Function>
+  <Function ID="61" Type="Scene" Name="BJ Green Segment 6">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">16,255</FixtureVal>
+  </Function>
+  <Function ID="62" Type="Scene" Name="BJ Green Segment 7">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">19,255</FixtureVal>
+  </Function>
+  <Function ID="63" Type="Scene" Name="BJ Green Segment 8">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">22,255</FixtureVal>
+  </Function>
+  <Function ID="64" Type="Scene" Name="BJ Blue Segment 1">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">2,255</FixtureVal>
+  </Function>
+  <Function ID="65" Type="Scene" Name="BJ Blue Segment 2">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">5,255</FixtureVal>
+  </Function>
+  <Function ID="66" Type="Scene" Name="BJ Blue Segment 3">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">8,255</FixtureVal>
+  </Function>
+  <Function ID="67" Type="Scene" Name="BJ Blue Segment 4">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">11,255</FixtureVal>
+  </Function>
+  <Function ID="68" Type="Scene" Name="BJ Blue Segment 5">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">14,255</FixtureVal>
+  </Function>
+  <Function ID="69" Type="Scene" Name="BJ Blue Segment 6">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">17,255</FixtureVal>
+  </Function>
+  <Function ID="70" Type="Scene" Name="BJ Blue Segment 7">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">20,255</FixtureVal>
+  </Function>
+  <Function ID="71" Type="Scene" Name="BJ Blue Segment 8">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">23,255</FixtureVal>
+  </Function>
+  <Function ID="72" Type="Scene" Name="BC Red Segment 1">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">0,255</FixtureVal>
+  </Function>
+  <Function ID="73" Type="Scene" Name="BC Red Segment 2">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">3,255</FixtureVal>
+  </Function>
+  <Function ID="74" Type="Scene" Name="BC Red Segment 3">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">6,255</FixtureVal>
+  </Function>
+  <Function ID="75" Type="Scene" Name="BC Red Segment 4">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">9,255</FixtureVal>
+  </Function>
+  <Function ID="76" Type="Scene" Name="BC Red Segment 5">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">12,255</FixtureVal>
+  </Function>
+  <Function ID="77" Type="Scene" Name="BC Red Segment 6">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">15,255</FixtureVal>
+  </Function>
+  <Function ID="78" Type="Scene" Name="BC Red Segment 7">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">18,255</FixtureVal>
+  </Function>
+  <Function ID="79" Type="Scene" Name="BC Red Segment 8">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">21,255</FixtureVal>
+  </Function>
+  <Function ID="80" Type="Scene" Name="BC Green Segment 1">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">1,255</FixtureVal>
+  </Function>
+  <Function ID="81" Type="Scene" Name="BC Green Segment 2">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">4,255</FixtureVal>
+  </Function>
+  <Function ID="82" Type="Scene" Name="BC Green Segment 3">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">7,255</FixtureVal>
+  </Function>
+  <Function ID="83" Type="Scene" Name="BC Green Segment 4">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">10,255</FixtureVal>
+  </Function>
+  <Function ID="84" Type="Scene" Name="BC Green Segment 5">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">13,255</FixtureVal>
+  </Function>
+  <Function ID="85" Type="Scene" Name="BC Green Segment 6">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">16,255</FixtureVal>
+  </Function>
+  <Function ID="86" Type="Scene" Name="BC Green Segment 7">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">19,255</FixtureVal>
+  </Function>
+  <Function ID="87" Type="Scene" Name="BC Green Segment 8">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">22,255</FixtureVal>
+  </Function>
+  <Function ID="88" Type="Scene" Name="BC Blue Segment 1">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">2,255</FixtureVal>
+  </Function>
+  <Function ID="89" Type="Scene" Name="BC Blue Segment 2">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">5,255</FixtureVal>
+  </Function>
+  <Function ID="90" Type="Scene" Name="BC Blue Segment 3">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">8,255</FixtureVal>
+  </Function>
+  <Function ID="91" Type="Scene" Name="BC Blue Segment 4">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">11,255</FixtureVal>
+  </Function>
+  <Function ID="92" Type="Scene" Name="BC Blue Segment 5">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">14,255</FixtureVal>
+  </Function>
+  <Function ID="93" Type="Scene" Name="BC Blue Segment 6">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">17,255</FixtureVal>
+  </Function>
+  <Function ID="94" Type="Scene" Name="BC Blue Segment 7">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">20,255</FixtureVal>
+  </Function>
+  <Function ID="95" Type="Scene" Name="BC Blue Segment 8">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">23,255</FixtureVal>
+  </Function>
+  <Function ID="96" Type="Scene" Name="BC Red Segment All">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">0,255,3,255,6,255,9,255,12,255,15,255,18,255,21,255</FixtureVal>
+  </Function>
+  <Function ID="97" Type="Scene" Name="BC Green Segment All">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">1,255,4,255,7,255,10,255,13,255,16,255,19,255,22,255</FixtureVal>
+  </Function>
+  <Function ID="98" Type="Scene" Name="BC Blue Segment All">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">2,255,5,255,8,255,11,255,14,255,17,255,20,255,23,255</FixtureVal>
+  </Function>
+  <Function ID="99" Type="Scene" Name="BJ Red Segment All">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">0,255,3,255,6,255,9,255,12,255,15,255,18,255,21,255</FixtureVal>
+  </Function>
+  <Function ID="100" Type="Scene" Name="BJ Green Segment All">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">1,255,4,255,7,255,10,255,13,255,16,255,19,255,22,255</FixtureVal>
+  </Function>
+  <Function ID="101" Type="Scene" Name="BJ Blue Segment All">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">2,255,5,255,8,255,11,255,14,255,17,255,20,255,23,255</FixtureVal>
+  </Function>
+  <Function ID="102" Type="Scene" Name="CC Red Segment All">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">0,255,3,255,6,255,9,255,12,255,15,255,18,255,21,255</FixtureVal>
+  </Function>
+  <Function ID="103" Type="Scene" Name="CC Green Segment All">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">1,255,4,255,7,255,10,255,13,255,16,255,19,255,22,255</FixtureVal>
+  </Function>
+  <Function ID="104" Type="Scene" Name="CC Blue Segment All">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">2,255,5,255,8,255,11,255,14,255,17,255,20,255,23,255</FixtureVal>
+  </Function>
+  <Function ID="105" Type="Scene" Name="CJ Red Segment All">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">0,255,3,255,6,255,9,255,12,255,15,255,18,255,21,255</FixtureVal>
+  </Function>
+  <Function ID="106" Type="Scene" Name="CJ Green Segment All">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">1,255,4,255,7,255,10,255,13,255,16,255,19,255,22,255</FixtureVal>
+  </Function>
+  <Function ID="107" Type="Scene" Name="CJ Blue Segment All">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">2,255,5,255,8,255,11,255,14,255,17,255,20,255,23,255</FixtureVal>
+  </Function>
+  <Function ID="108" Type="Scene" Name="CJ White Segment 1">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">0,255,1,255,2,255</FixtureVal>
+  </Function>
+  <Function ID="109" Type="Scene" Name="CJ White Segment 2">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">3,255,4,255,5,255</FixtureVal>
+  </Function>
+  <Function ID="110" Type="Scene" Name="CJ White Segment 3">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">6,255,7,255,8,255</FixtureVal>
+  </Function>
+  <Function ID="111" Type="Scene" Name="CJ White Segment 4">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">9,255,10,255,11,255</FixtureVal>
+  </Function>
+  <Function ID="112" Type="Scene" Name="CJ White Segment 5">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">12,255,13,255,14,255</FixtureVal>
+  </Function>
+  <Function ID="113" Type="Scene" Name="Strob">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="2">0,196,1,255</FixtureVal>
+  </Function>
+  <Function ID="114" Type="Scene" Name="CJ White Segment 6">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">15,255,16,255,17,255</FixtureVal>
+  </Function>
+  <Function ID="115" Type="Scene" Name="CJ White Segment 7">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">18,255,19,255,20,255</FixtureVal>
+  </Function>
+  <Function ID="116" Type="Scene" Name="CJ White Segment 8">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">21,255,22,255,23,255</FixtureVal>
+  </Function>
+  <Function ID="117" Type="Scene" Name="CJ White Segment All">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">0,255,1,255,2,255,3,255,4,255,5,255,6,255,7,255,8,255,9,255,10,255,11,255,12,255,13,255,14,255,15,255,16,255,17,255,18,255,19,255,20,255,21,255,22,255,23,255</FixtureVal>
+  </Function>
+  <Function ID="118" Type="Scene" Name="CC White Segment 1">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">0,255,1,255,2,255</FixtureVal>
+  </Function>
+  <Function ID="119" Type="Scene" Name="CC White Segment 2">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">3,255,4,255,5,255</FixtureVal>
+  </Function>
+  <Function ID="120" Type="Scene" Name="CC White Segment 3">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">6,255,7,255,8,255</FixtureVal>
+  </Function>
+  <Function ID="121" Type="Scene" Name="CC White Segment 4">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">9,255,10,255,11,255</FixtureVal>
+  </Function>
+  <Function ID="122" Type="Scene" Name="CC White Segment 5">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">12,255,13,255,14,255</FixtureVal>
+  </Function>
+  <Function ID="123" Type="Scene" Name="CC White Segment 6">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">15,255,16,255,17,255</FixtureVal>
+  </Function>
+  <Function ID="124" Type="Scene" Name="CC White Segment 7">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">18,255,19,255,20,255</FixtureVal>
+  </Function>
+  <Function ID="125" Type="Scene" Name="CC White Segment 8">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">21,255,22,255,23,255</FixtureVal>
+  </Function>
+  <Function ID="126" Type="Scene" Name="CC White Segment All">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4">0,255,1,255,2,255,3,255,4,255,5,255,6,255,7,255,8,255,9,255,10,255,11,255,12,255,13,255,14,255,15,255,16,255,17,255,18,255,19,255,20,255,21,255,22,255,23,255</FixtureVal>
+  </Function>
+  <Function ID="127" Type="Scene" Name="BJ White Segment 1">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">0,255,1,255,2,255</FixtureVal>
+  </Function>
+  <Function ID="128" Type="Scene" Name="BJ White Segment 2">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">3,255,4,255,5,255</FixtureVal>
+  </Function>
+  <Function ID="129" Type="Scene" Name="BJ White Segment 3">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">6,255,7,255,8,255</FixtureVal>
+  </Function>
+  <Function ID="130" Type="Scene" Name="BJ White Segment 4">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">9,255,10,255,11,255</FixtureVal>
+  </Function>
+  <Function ID="131" Type="Scene" Name="BJ White Segment 5">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">12,255,13,255,14,255</FixtureVal>
+  </Function>
+  <Function ID="132" Type="Scene" Name="BJ White Segment 6">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">15,255,16,255,17,255</FixtureVal>
+  </Function>
+  <Function ID="133" Type="Scene" Name="BJ White Segment 7">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">18,255,19,255,20,255</FixtureVal>
+  </Function>
+  <Function ID="134" Type="Scene" Name="BJ White Segment 8">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">21,255,22,255,23,255</FixtureVal>
+  </Function>
+  <Function ID="135" Type="Scene" Name="BJ White Segment All">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">0,255,1,255,2,255,3,255,4,255,5,255,6,255,7,255,8,255,9,255,10,255,11,255,12,255,13,255,14,255,15,255,16,255,17,255,18,255,19,255,20,255,21,255,22,255,23,255</FixtureVal>
+  </Function>
+  <Function ID="136" Type="Scene" Name="BC White Segment 1">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">0,255,1,255,2,255</FixtureVal>
+  </Function>
+  <Function ID="137" Type="Scene" Name="BC White Segment 2">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">3,255,4,255,5,255</FixtureVal>
+  </Function>
+  <Function ID="138" Type="Scene" Name="BC White Segment 3">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">6,255,7,255,8,255</FixtureVal>
+  </Function>
+  <Function ID="139" Type="Scene" Name="BC White Segment 4">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">9,255,10,255,11,255</FixtureVal>
+  </Function>
+  <Function ID="140" Type="Scene" Name="BC White Segment 5">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">12,255,13,255,14,255</FixtureVal>
+  </Function>
+  <Function ID="141" Type="Scene" Name="BC White Segment 6">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">15,255,16,255,17,255</FixtureVal>
+  </Function>
+  <Function ID="142" Type="Scene" Name="BC White Segment 7">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">18,255,19,255,20,255</FixtureVal>
+  </Function>
+  <Function ID="143" Type="Scene" Name="BC White Segment 8">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">21,255,22,255,23,255</FixtureVal>
+  </Function>
+  <Function ID="144" Type="Scene" Name="BC White Segment All">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">0,255,1,255,2,255,3,255,4,255,5,255,6,255,7,255,8,255,9,255,10,255,11,255,12,255,13,255,14,255,15,255,16,255,17,255,18,255,19,255,20,255,21,255,22,255,23,255</FixtureVal>
+  </Function>
+  <Function ID="145" Type="Scene" Name="Dimmer Jardin">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="5">0,255</FixtureVal>
+  </Function>
+  <Function ID="146" Type="Scene" Name="Dimmer Cour">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="6">0,255</FixtureVal>
+  </Function>
+  <Function ID="147" Type="Scene" Name="Dimmer Tyran">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="8">0,255</FixtureVal>
+  </Function>
+  <Function ID="148" Type="Scene" Name="Dimmer Jeannot">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="7">0,255</FixtureVal>
+  </Function>
+ </Engine>
+ <VirtualConsole>
+  <Frame Caption="">
+   <Appearance>
+    <FrameStyle>None</FrameStyle>
+    <ForegroundColor>Default</ForegroundColor>
+    <BackgroundColor>Default</BackgroundColor>
+    <BackgroundImage>None</BackgroundImage>
+    <Font>Default</Font>
+   </Appearance>
+   <Slider Caption="CJ Red Segment 1" ID="0" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="5" Y="40" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="29334"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>0</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ Red Segment 2" ID="1" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="65" Y="40" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="16397"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>1</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ Red Segment 3" ID="2" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="125" Y="40" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="20868"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>2</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ Red Segment 4" ID="3" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="185" Y="40" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="9531"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>3</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ Red Segment 5" ID="4" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="245" Y="40" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="13490"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>4</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ Red Segment 6" ID="5" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="305" Y="40" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="1577"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>5</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ Red Segment 7" ID="6" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="365" Y="40" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="6048"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>6</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ Red Segment 8" ID="7" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="425" Y="40" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="61271"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>7</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ Red Segment All" ID="8" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="485" Y="40" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="63256"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>105</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ Green Segment 1" ID="9" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="5" Y="130" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="17247"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>8</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ Green Segment 2" ID="10" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="65" Y="130" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="29124"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>9</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ Green Segment 3" ID="11" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="125" Y="130" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="24653"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>10</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ Green Segment 4" ID="12" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="185" Y="130" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="5362"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>11</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ Green Segment 5" ID="13" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="245" Y="130" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="1403"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>12</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ Green Segment 6" ID="14" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="305" Y="130" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="14304"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>13</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ Green Segment 7" ID="15" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="365" Y="130" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="9833"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>14</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ Green Segment 8" ID="16" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="425" Y="130" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="56990"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>15</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ Green Segment All" ID="17" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="485" Y="130" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="51872"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>106</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ Blue Segment 1" ID="18" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="5" Y="220" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="61809"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>16</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ Blue Segment 2" ID="19" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="65" Y="220" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="50154"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>17</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ Blue Segment 3" ID="20" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="125" Y="220" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="53859"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>18</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ Blue Segment 4" ID="21" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="185" Y="220" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="42716"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>19</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ Blue Segment 5" ID="22" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="245" Y="220" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="46933"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>20</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ Blue Segment 6" ID="23" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="305" Y="220" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="34254"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>21</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ Blue Segment 7" ID="24" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="365" Y="220" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="37959"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>22</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ Blue Segment 8" ID="25" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="425" Y="220" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="27824"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>23</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ Blue Segment All" ID="26" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="485" Y="220" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="58650"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>107</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ White Segment 1" ID="27" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="5" Y="310" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="52371"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>108</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ White Segment 2" ID="28" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="65" Y="310" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="65032"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>109</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ White Segment 3" ID="29" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="125" Y="310" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="61313"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>110</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ White Segment 4" ID="30" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="185" Y="310" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="39742"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>111</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ White Segment 5" ID="31" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="245" Y="310" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="35511"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>112</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ White Segment 6" ID="32" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="305" Y="310" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="47148"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>114</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ White Segment 7" ID="33" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="365" Y="310" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="43429"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>115</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ White Segment 8" ID="34" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="425" Y="310" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="20818"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>116</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CJ White Segment All" ID="35" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="485" Y="310" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="54613"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>117</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC Red Segment 1" ID="36" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="5" Y="400" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="27598"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>24</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC Red Segment 2" ID="37" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="65" Y="400" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="22869"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>25</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC Red Segment 3" ID="38" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="125" Y="400" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="18652"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>26</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC Red Segment 4" ID="39" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="185" Y="400" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="15459"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>27</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC Red Segment 5" ID="40" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="245" Y="400" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="11754"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>28</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC Red Segment 6" ID="41" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="305" Y="400" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="8049"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>29</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC Red Segment 7" ID="42" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="365" Y="400" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="3832"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>30</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC Red Segment 8" ID="43" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="425" Y="400" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="62991"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>31</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC Red Segment All" ID="44" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="485" Y="400" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="26479"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>102</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC Green Segment 1" ID="45" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="5" Y="490" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="54056"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>32</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC Green Segment 2" ID="46" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="65" Y="490" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="57779"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>33</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC Green Segment 3" ID="47" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="125" Y="490" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="61498"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>34</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC Green Segment 4" ID="48" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="185" Y="490" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="33925"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>35</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC Green Segment 5" ID="49" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="245" Y="490" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="38156"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>36</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC Green Segment 6" ID="50" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="305" Y="490" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="42903"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>37</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC Green Segment 7" ID="51" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="365" Y="490" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="46622"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>38</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC Green Segment 8" ID="52" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="425" Y="490" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="20201"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>39</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC Green Segment All" ID="53" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="485" Y="490" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="58341"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>103</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC Blue Segment 1" ID="54" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="5" Y="580" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="12197"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>40</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC Blue Segment 2" ID="55" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="65" Y="580" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="7486"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>41</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC Blue Segment 3" ID="56" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="125" Y="580" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="3255"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>42</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC Blue Segment 4" ID="57" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="185" Y="580" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="30728"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>43</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC Blue Segment 5" ID="58" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="245" Y="580" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="27009"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>44</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC Blue Segment 6" ID="59" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="305" Y="580" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="23322"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>45</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC Blue Segment 7" ID="60" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="365" Y="580" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="19091"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>46</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC Blue Segment 8" ID="61" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="425" Y="580" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="45668"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>47</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC Blue Segment All" ID="62" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="485" Y="580" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="58034"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>104</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC White Segment 1" ID="63" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="5" Y="670" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="23780"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>118</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC White Segment 2" ID="64" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="65" Y="670" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="28287"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>119</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC White Segment 3" ID="65" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="125" Y="670" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="32758"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>120</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC White Segment 4" ID="66" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="185" Y="670" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="2889"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>121</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC White Segment 5" ID="67" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="245" Y="670" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="6848"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>122</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC White Segment 6" ID="68" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="305" Y="670" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="10331"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>123</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC White Segment 7" ID="69" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="365" Y="670" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="14802"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>124</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC White Segment 8" ID="70" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="425" Y="670" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="49445"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>125</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="CC White Segment All" ID="71" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="485" Y="670" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="64528"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>126</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ Red Segment 1" ID="72" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="5" Y="760" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="64646"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>48</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ Red Segment 2" ID="73" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="65" Y="760" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="52765"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>49</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ Red Segment 3" ID="74" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="125" Y="760" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="57236"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>50</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ Red Segment 4" ID="75" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="185" Y="760" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="43819"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>51</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ Red Segment 5" ID="76" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="245" Y="760" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="47778"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>52</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ Red Segment 6" ID="77" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="305" Y="760" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="34873"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>53</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ Red Segment 7" ID="78" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="365" Y="760" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="39344"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>54</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ Red Segment 8" ID="79" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="425" Y="760" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="24903"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>55</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ Red Segment All" ID="80" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="485" Y="760" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="4095"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>99</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ Green Segment 1" ID="81" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="5" Y="850" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="48056"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>56</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ Green Segment 2" ID="82" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="65" Y="850" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="35107"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>57</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ Green Segment 3" ID="83" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="125" Y="850" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="39082"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>58</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ Green Segment 4" ID="84" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="185" Y="850" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="60437"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>59</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ Green Segment 5" ID="85" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="245" Y="850" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="64924"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>60</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ Green Segment 6" ID="86" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="305" Y="850" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="52999"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>61</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ Green Segment 7" ID="87" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="365" Y="850" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="56974"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>62</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ Green Segment 8" ID="88" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="425" Y="850" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="9849"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>63</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ Green Segment All" ID="89" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="485" Y="850" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="5622"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>100</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ Blue Segment 1" ID="90" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="5" Y="940" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="57726"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>64</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ Blue Segment 2" ID="91" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="65" Y="940" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="54245"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>65</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ Blue Segment 3" ID="92" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="125" Y="940" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="49772"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>66</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ Blue Segment 4" ID="93" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="185" Y="940" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="46803"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>67</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ Blue Segment 5" ID="94" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="245" Y="940" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="42842"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>68</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ Blue Segment 6" ID="95" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="305" Y="940" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="38337"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>69</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ Blue Segment 7" ID="96" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="365" Y="940" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="33864"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>70</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ Blue Segment 8" ID="97" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="425" Y="940" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="31935"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>71</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ Blue Segment All" ID="98" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="485" Y="940" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="30291"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>101</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ White Segment 1" ID="99" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="5" Y="1030" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="13428"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>127</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ White Segment 2" ID="100" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="65" Y="1030" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="1775"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>128</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ White Segment 3" ID="101" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="125" Y="1030" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="5990"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>129</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ White Segment 4" ID="102" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="185" Y="1030" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="25561"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>130</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ White Segment 5" ID="103" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="245" Y="1030" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="29264"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>131</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ White Segment 6" ID="104" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="305" Y="1030" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="16587"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>132</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ White Segment 7" ID="105" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="365" Y="1030" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="20802"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>133</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ White Segment 8" ID="106" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="425" Y="1030" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="43445"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>134</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BJ White Segment All" ID="107" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="485" Y="1030" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="2563"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>135</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC Red Segment 1" ID="108" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="5" Y="1120" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="58846"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>72</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC Red Segment 2" ID="109" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="65" Y="1120" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="55109"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>73</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC Red Segment 3" ID="110" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="125" Y="1120" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="50892"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>74</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC Red Segment 4" ID="111" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="185" Y="1120" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="45683"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>75</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC Red Segment 5" ID="112" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="245" Y="1120" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="41978"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>76</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC Red Segment 6" ID="113" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="305" Y="1120" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="37217"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>77</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC Red Segment 7" ID="114" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="365" Y="1120" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="33000"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>78</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC Red Segment 8" ID="115" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="425" Y="1120" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="30751"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>79</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC Red Segment All" ID="116" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="485" Y="1120" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="40840"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>96</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC Green Segment 1" ID="117" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="5" Y="1210" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="11215"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>80</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC Green Segment 2" ID="118" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="65" Y="1210" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="6484"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>81</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC Green Segment 3" ID="119" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="125" Y="1210" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="2269"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>82</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC Green Segment 4" ID="120" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="185" Y="1210" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="31842"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>83</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC Green Segment 5" ID="121" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="245" Y="1210" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="28139"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>84</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC Green Segment 6" ID="122" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="305" Y="1210" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="24432"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>85</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC Green Segment 7" ID="123" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="365" Y="1210" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="20217"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>86</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC Green Segment 8" ID="124" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="425" Y="1210" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="46606"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>87</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC Green Segment All" ID="125" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="485" Y="1210" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="15539"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>97</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC Blue Segment 1" ID="126" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="5" Y="1300" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="16298"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>88</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC Blue Segment 2" ID="127" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="65" Y="1300" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="3377"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>89</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC Blue Segment 3" ID="128" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="125" Y="1300" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="7352"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>90</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC Blue Segment 4" ID="129" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="185" Y="1300" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="26631"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>91</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC Blue Segment 5" ID="130" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="245" Y="1300" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="31118"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>92</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC Blue Segment 6" ID="131" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="305" Y="1300" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="19221"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>93</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC Blue Segment 7" ID="132" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="365" Y="1300" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="23196"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>94</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC Blue Segment 8" ID="133" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="425" Y="1300" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="41579"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>95</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC Blue Segment All" ID="134" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="485" Y="1300" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="29179"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>98</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC White Segment 1" ID="135" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="5" Y="1390" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="41987"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>136</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC White Segment 2" ID="136" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="65" Y="1390" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="38552"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>137</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC White Segment 3" ID="137" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="125" Y="1390" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="34577"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>138</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC White Segment 4" ID="138" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="185" Y="1390" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="62382"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>139</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC White Segment 5" ID="139" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="245" Y="1390" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="57895"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>140</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC White Segment 6" ID="140" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="305" Y="1390" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="53436"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>141</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC White Segment 7" ID="141" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="365" Y="1390" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="49461"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>142</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC White Segment 8" ID="142" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="425" Y="1390" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="14786"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>143</Function>
+    </Playback>
+   </Slider>
+   <Slider Caption="BC White Segment All" ID="143" WidgetStyle="Knob" InvertedAppearance="false">
+    <WindowState Visible="False" X="485" Y="1390" Width="60" Height="90"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="9030"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>144</Function>
+    </Playback>
+   </Slider>
+   <Frame Caption="" ID="150">
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <WindowState Visible="False" X="715" Y="105" Width="260" Height="120"/>
+    <AllowChildren>False</AllowChildren>
+    <AllowResize>False</AllowResize>
+    <ShowHeader>False</ShowHeader>
+    <ShowEnableButton>True</ShowEnableButton>
+    <Collapsed>False</Collapsed>
+    <Disabled>False</Disabled>
+    <Slider Caption="Découpe Jardin Dag" ID="151" WidgetStyle="Slider" InvertedAppearance="false">
+     <WindowState Visible="False" X="10" Y="0" Width="60" Height="100"/>
+     <Appearance>
+      <FrameStyle>Sunken</FrameStyle>
+      <ForegroundColor>Default</ForegroundColor>
+      <BackgroundColor>Default</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>Default</Font>
+     </Appearance>
+     <Input Universe="0" Channel="20060"/>
+     <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+     <Level LowLimit="0" HighLimit="255" Value="0">
+      <Channel Fixture="5">0</Channel>
+     </Level>
+     <Playback>
+      <Function>145</Function>
+     </Playback>
+    </Slider>
+    <Slider Caption="Découpe Cour ORL" ID="152" WidgetStyle="Slider" InvertedAppearance="false">
+     <WindowState Visible="False" X="70" Y="0" Width="60" Height="100"/>
+     <Appearance>
+      <FrameStyle>Sunken</FrameStyle>
+      <ForegroundColor>Default</ForegroundColor>
+      <BackgroundColor>Default</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>Default</Font>
+     </Appearance>
+     <Input Universe="0" Channel="1025"/>
+     <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+     <Level LowLimit="0" HighLimit="255" Value="0">
+      <Channel Fixture="6">0</Channel>
+     </Level>
+     <Playback>
+      <Function>146</Function>
+     </Playback>
+    </Slider>
+    <Slider Caption="Découpe Lointain Jeannot" ID="153" WidgetStyle="Slider" InvertedAppearance="false">
+     <WindowState Visible="False" X="130" Y="0" Width="60" Height="100"/>
+     <Appearance>
+      <FrameStyle>Sunken</FrameStyle>
+      <ForegroundColor>Default</ForegroundColor>
+      <BackgroundColor>Default</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>Default</Font>
+     </Appearance>
+     <Input Universe="0" Channel="59998"/>
+     <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+     <Level LowLimit="0" HighLimit="255" Value="0">
+      <Channel Fixture="7">0</Channel>
+     </Level>
+     <Playback>
+      <Function>148</Function>
+     </Playback>
+    </Slider>
+    <Slider Caption="Découpe Plot Tyran" ID="154" WidgetStyle="Slider" InvertedAppearance="false">
+     <WindowState Visible="False" X="190" Y="0" Width="60" Height="100"/>
+     <Appearance>
+      <FrameStyle>Sunken</FrameStyle>
+      <ForegroundColor>Default</ForegroundColor>
+      <BackgroundColor>Default</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>Default</Font>
+     </Appearance>
+     <Input Universe="0" Channel="64201"/>
+     <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+     <Level LowLimit="0" HighLimit="255" Value="0">
+      <Channel Fixture="8">0</Channel>
+     </Level>
+     <Playback>
+      <Function>147</Function>
+     </Playback>
+    </Slider>
+   </Frame>
+   <Button Caption="Strob" ID="155" Icon="">
+    <WindowState Visible="False" X="815" Y="295" Width="50" Height="50"/>
+    <Appearance>
+     <FrameStyle>None</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Function ID="113"/>
+    <Action>Flash</Action>
+    <Intensity Adjust="False">100</Intensity>
+    <Input Universe="0" Channel="40072"/>
+   </Button>
+  </Frame>
+  <Properties>
+   <Size Width="1920" Height="1080"/>
+   <GrandMaster ChannelMode="Intensity" ValueMode="Reduce" SliderMode="Normal"/>
+  </Properties>
+ </VirtualConsole>
+ <SimpleDesk>
+  <Engine/>
+ </SimpleDesk>
+</Workspace>

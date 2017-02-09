@@ -46,6 +46,7 @@ vocoderorlport = 7051
 
 trapcutport = 8001
 audioseqport = 8002
+seqseqport = 8003
 
 ## Zynadd
 
@@ -66,6 +67,13 @@ mk2outport = 56427
 ## Control Surfaces
 
 surfaceorlport = 11000
+
+## QLC
+
+qlcappport = 12000
+qlcport = 12001 # delayed messages
+qlcstopport = 12002 # stop (all off)
+
 
 
 
