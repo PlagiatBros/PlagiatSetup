@@ -15,7 +15,7 @@ connassessacem = [
         Ctrl(0, 1) >> tapeutapecontrol,
         zynmicrotonal_on,
         SendOSC(zyntrebleport, '/microtonal/tunings', '100.0\n200.0\n300.0\n435.0\n500.0\n600.0\n700.0\n800.0\n900.0\n1000.0\n1135.0\n2/1'),
-        SendOSC(mk2inport, '/mididings/switch_scene', 10),
+        SendOSC(mk2inport, '/mididings/switch_scene', 3),
     ]),
     [orl, jeannot] >> Filter(PROGRAM) >> [
         SendOSC(audioseqport, '/Audioseq/Sequences/Disable', '*')
@@ -24,6 +24,7 @@ connassessacem = [
     [orl, jeannot] >> ProgramFilter(2) >> [ # Thème Intro - Bouton 2
         Program(65) >> cseqtrigger,
         [
+
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 125),
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
@@ -47,7 +48,7 @@ connassessacem = [
                 [samplesmainport, '/strip/Samples4Dry/Gain/Mute', 0.0],
                 [samplesmainport, '/strip/SamplesMunge/Gain/Mute', 0.0],
 
-                [samplesdelaymungeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -7.0],
+                [samplesdelaymungeport, '/strip/Samples4/Gain/Gain%20(dB)/unscaled', -7.0],
 
             ]),
 
