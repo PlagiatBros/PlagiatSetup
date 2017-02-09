@@ -13,7 +13,9 @@ wholeworld = [
     Init([
         Program(seq24PageMap[10]) >> seq24once,
         Ctrl(0, 5) >> tapeutapecontrol,
-        zynmicrotonal_off,
+        zynmicrotonal_on,
+        SendOSC(zyntrebleport, '/microtonal/tunings', '135.0\n200.0\n300.0\n400.0\n500.0\n635.0\n700.0\n800.0\n900.0\n1000.0\n1100.0\n2/1')
+
     ]),
     [orl, jeannot] >> Filter(PROGRAM) >> [
         SendOSC(audioseqport, '/Audioseq/Sequences/Disable', '*')
@@ -56,7 +58,15 @@ wholeworld = [
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
-            ] >> Discard()
+            bassdry,
+
+            ] >> Discard(),
+        [
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
+            ]
         ],
     orl >> ProgramFilter(3) >> [ # Couplet - Bouton 3
         Program(66) >> cseqtrigger,
@@ -94,8 +104,19 @@ wholeworld = [
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
-            ] >> Discard()
+            bassdry,
+
+            ] >> Discard(),
+        [
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
+            ]
         ],
+    jeannot >> ProgramFilter(2) >> [ # sequence synthé toggle - bouton 2
+        Program(14) >> seq24once,
+    ],
     orl >> ProgramFilter(4) >> [ # Refrain - Bouton 4
         Program(67) >> cseqtrigger,
         [
@@ -132,12 +153,18 @@ wholeworld = [
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
-            ] >> Discard()
+            bassdry,
+
+            ] >> Discard(),
+        [
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
+            ]
         ],
 
-
     orl >> ProgramFilter(5) >> [ # Outro - Bouton 5
-        Program(68) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 90),
@@ -168,8 +195,21 @@ wholeworld = [
             vxjeannotmeuf_on,
             vxjeannotdisint_on,
 
+            bassdry,
             bassscape,
-            bassdegrade,
-            ] >> Discard()
+
+            ] >> Discard(),
+        [
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
+            ]
         ],
+    orl >> ProgramFilter(6) >> [ # Bouclage synths - bouton 6
+        SendOSC(slport, '/sl/7/hit', 'record')
+        ] >> Discard(),
+    orl >> ProgramFilter(7) >> [ # Overdub synths - bouton 7
+        SendOSC(slport, '/sl/7/hit', 'overdub')
+        ] >> Discard(),
     ]
