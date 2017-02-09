@@ -28,7 +28,7 @@ class qlcStopper(object):
             self.server.register_methods(self)
             self.server.start()
 
-    @make_method('/AllStop', 'i')
+    @make_method('/Stop', None)
     def allStopQlc(self, path, args):
         for path in paths:
             self.server.send(qlcappport, path, 0)

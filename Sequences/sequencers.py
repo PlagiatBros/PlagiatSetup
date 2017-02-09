@@ -1,4 +1,5 @@
 from audio import *
+from light import *
 
 audioseq.start_threaded()
 lightseq.start_threaded()

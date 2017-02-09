@@ -247,6 +247,8 @@ stop = [
         SendOSC(slport, '/sl/-1/hit', 'pause_on') >> Discard(),
         SendOSC(klickport, '/klick/metro/stop') >> Discard(),
         # SendOSC(audioseqport, '/Audioseq/DisableAll') >> Discard(),
+        SendOSC(qlcstopport, '/Stop') >> Discard(),
+
 ]
 
 
@@ -385,5 +387,5 @@ def vocoderscale(notes, port=[vocoderjeannotport, vocoderorlport]):
 
     return ev
 
-def timestamp():
+def timestamp(ev):
     return 't:%f' % time()

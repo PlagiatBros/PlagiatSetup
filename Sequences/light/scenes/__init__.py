@@ -2,7 +2,7 @@ from climat import *
 from connassesacem import *
 from dafist import *
 from fifty import *
-from getourfeakon import *
+from geturfreakon import *
 from trapone import *
 from horrorcore import *
 from le5 import *

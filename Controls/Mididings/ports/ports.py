@@ -46,7 +46,7 @@ vocoderorlport = 7051
 
 trapcutport = 8001
 audioseqport = 8002
-seqseqport = 8003
+lightseqport = 8003
 
 ## Zynadd
 
