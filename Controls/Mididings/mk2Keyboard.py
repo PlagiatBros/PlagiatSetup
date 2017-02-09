@@ -40,7 +40,16 @@ run(
                     ] >> Discard(),
                 CtrlFilter(18) >> SendOSC(bassmainport, '/strip/BassMain/Calf%20Filter/Frequency/unscaled', lambda ev: 20000. * pow(10,((-log10(71/20000.))*ev.value) / 127. + log10(71/20000.))) >> Discard(),
                 ]
-                      ),
+              ),
+        10: Scene("Connasses SACEM samples",
+                [
+                [
+                    Filter(NOTEON) >> Output('Mk2OutTapeutape', 1),
+                    ] >> Discard(),
+                CtrlFilter(18) >> SendOSC(bassmainport, '/strip/BassMain/Calf%20Filter/Frequency/unscaled', lambda ev: 20000. * pow(10,((-log10(71/20000.))*ev.value) / 127. + log10(71/20000.))) >> Discard(),
+                ]
+              ),
+
     },
     control = Filter(PROGRAM) >> SceneSwitch(),
     pre = ~Filter(PROGRAM)

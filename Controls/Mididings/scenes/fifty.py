@@ -14,6 +14,7 @@ fifty = [
         Program(seq24PageMap[4]) >> seq24once,
         Ctrl(0, 2) >> tapeutapecontrol,
         zynmicrotonal_off,
+        SendOSC(mk2inport, '/mididings/switch_scene', 1),
         ]),
     [orl, jeannot] >> Filter(PROGRAM) >> [
         SendOSC(audioseqport, '/Audioseq/Sequences/Disable', '*')

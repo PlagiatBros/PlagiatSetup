@@ -14,6 +14,7 @@ sw = [
         Program(seq24PageMap[7]) >> seq24once,
         Ctrl(0, 4) >> tapeutapecontrol,
         zynmicrotonal_off,
+        SendOSC(mk2inport, '/mididings/switch_scene', 2),
     ]),
     [orl, jeannot] >> Filter(PROGRAM) >> [
         SendOSC(audioseqport, '/Audioseq/Sequences/Disable', '*')
@@ -103,7 +104,6 @@ sw = [
             vxorldelay_on,
             vxorlvocode_off,
             SendOSC(vxorlpreport, '/strip/VxORLDelayPre/Gain/Mute', 1.0),
-            SendOSC(mk2inport, '/mididings/switch_scene', 2),
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
@@ -187,7 +187,6 @@ sw = [
             vxorldelay_on,
             vxorlvocode_off,
             SendOSC(vxorlpreport, '/strip/VxORLDelayPre/Gain/Mute', 1.0),
-            SendOSC(mk2inport, '/mididings/switch_scene', 2),
 
             vxjeannotdelay_off,
             vxjeannotgars_off,

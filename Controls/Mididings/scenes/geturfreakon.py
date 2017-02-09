@@ -14,6 +14,7 @@ geturfreakon = [
         Program(seq24PageMap[8]) >> seq24once,
         Ctrl(0, 7) >> tapeutapecontrol,
         zynmicrotonal_off,
+        SendOSC(mk2inport, '/mididings/switch_scene', 1),
     ]),
     [orl, jeannot] >> Filter(PROGRAM) >> [
         SendOSC(audioseqport, '/Audioseq/Sequences/Disable', '*')
