@@ -67,6 +67,7 @@ mk2outport = 56427
 ## Control Surfaces
 
 surfaceorlport = 11000
+surfaceorltomidiport = 11001
 
 ## QLC
 

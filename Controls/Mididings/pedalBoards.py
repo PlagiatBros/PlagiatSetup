@@ -30,10 +30,10 @@ run(
                         basspedal,
                         ]
 		),
-		Scene("Nope",
+		Scene("Vx ORL",
                       [
                         climat,
-                        basspedal,
+                        vxpedal,
                         ]
 		),
 		Scene("Nope",
@@ -87,10 +87,10 @@ run(
                         basspedal,
                         ]
 		),
-		Scene("Nope",
+		Scene("Vx ORL",
                       [
                         connassessacem,
-                        basspedal,
+                        vxpedal,
                         ]
 		),
 		Scene("Nope",
@@ -144,10 +144,10 @@ run(
                         basspedal,
                         ]
 		),
-		Scene("Nope",
+		Scene("Vx ORL",
                       [
                         fifty,
-                        basspedal,
+                        vxpedal,
                         ]
 		),
 		Scene("Nope",
@@ -201,10 +201,10 @@ run(
                         basspedal,
                         ]
 		),
-		Scene("Nope",
+		Scene("Vx ORL",
                       [
                         le5,
-                        basspedal,
+                        vxpedal,
                         ]
 		),
 		Scene("Nope",
@@ -258,10 +258,10 @@ run(
                         basspedal,
                         ]
 		),
-		Scene("Nope",
+		Scene("Vx ORL",
                       [
                         sw,
-                        basspedal,
+                        vxpedal,
                         ]
 		),
 		Scene("Nope",
@@ -315,10 +315,10 @@ run(
                         basspedal,
                         ]
 		),
-		Scene("Nope",
+		Scene("Vx ORL",
                       [
                         wholeworld,
-                        basspedal,
+                        vxpedal,
                         ]
 		),
 		Scene("Nope",
@@ -372,10 +372,10 @@ run(
                         basspedal,
                         ]
 		),
-		Scene("Nope",
+		Scene("Vx ORL",
                       [
                         dafist,
-                        basspedal,
+                        vxpedal,
                         ]
 		),
 		Scene("Nope",
@@ -429,10 +429,10 @@ run(
                         basspedal,
                         ]
 		),
-		Scene("Nope",
+		Scene("Vx ORL",
                       [
                         geturfreakon,
-                        basspedal,
+                        vxpedal,
                         ]
 		),
 		Scene("Nope",
@@ -486,10 +486,10 @@ run(
                         basspedal,
                         ]
 		),
-		Scene("Nope",
+		Scene("Vx ORl",
                       [
                         horrorcore,
-                        basspedal,
+                        vxpedal,
                         ]
 		),
 		Scene("Nope",
@@ -543,10 +543,10 @@ run(
                         basspedal,
                         ]
 		),
-		Scene("Nope",
+		Scene("Vx ORL",
                       [
                         trapone,
-                        basspedal,
+                        vxpedal,
                         ]
 		),
 		Scene("Nope",

@@ -14,6 +14,7 @@ trapone = [
         Program(seq24PageMap[6]) >> seq24once,
         Ctrl(0, 10) >> tapeutapecontrol,
         zynmicrotonal_off,
+        SubSceneSwitch(2),
     ]),
     [orl, jeannot] >> Filter(PROGRAM) >> [
         SendOSC(audioseqport, '/Audioseq/Sequences/Disable', '*')

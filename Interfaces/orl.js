@@ -775,5 +775,24 @@
                 "tabs": []
             }
         ]
+    },
+    {
+        "label": "SACEM",
+        "widgets": [
+            {
+                "type": "panel",
+                "top": 0,
+                "left": 0,
+                "id": "sacem_samples",
+                "label": "Samples ^heart",
+                "width": "100%",
+                "height": "100%",
+                "scroll": true,
+                "color": "auto",
+                "css": "",
+                "widgets": [],
+                "tabs": []
+            }
+        ]
     }
 ]

@@ -83,6 +83,73 @@
     mididings_current_subscenes = false
     mididings_scenes = {}
 
+    sacem_samples = {
+        Laughters: {note:65, channel:1},
+        Reload: {note:65, channel:3},
+        Fire: {note:66, channel:3},
+        ArmeMitrailletteTony: {note:120, channel:1},
+        Automatiseeslesarmesafeu: {note:117, channel:1},
+        CalogeroAdoreInternet: {note:10, channel:1},
+        CalogeroBonjour: {note:0, channel:1},
+        CalogeroChouetteJeuns: {note:1, channel:1},
+        CalogeroCondamne: {note:2, channel:1},
+        CalogeroContreLaMusiqueGratuite: {note:11, channel:1},
+        CalogeroFlippeSurInternet: {note:3, channel:1},
+        ClogeroFlippeSurLesDroitsAuteur: {note:4, channel:1},
+        CalogeroLaAnarchie: {note:5, channel:1},
+        CalogeroLoiMalFaite: {note:6, channel:1},
+        CalogeroOse: {note:7, channel:1},
+        CalogeroPommeC: {note:8, channel:1},
+        CalogeroVoleDesDisques: {note:9, channel:1},
+        CesNousLesBagarreurs: {note:111, channel:1},
+        CommeTonyMontana2: {note:121, channel:1},
+        CommeTonyMontana: {note:122, channel:1},
+        EurosDansMonCompteCourant: {note:115, channel:1},
+        FlorentPagnyPlagiat: {note:17, channel:1},
+        JulRappeChambre: {note:112, channel:1},
+        LeCanonFrotteAMonPenis: {note:116, channel:1},
+        LunettesTonyMontana: {note:119, channel:1},
+        MoiMoi: {note:100, channel:1},
+        PeignoirArmeAFeu: {note:118, channel:1},
+        PNApprendreCafe: {note:15, channel:1},
+        PNCreux: {note:16, channel:1},
+        PNStagiaire: {note:12, channel:1},
+        PNPasStagiaireBenevole: {note:13, channel:1},
+        PNSousPaye: {note:14, channel:1},
+        TonyMontana1x2: {note:123, channel:1},
+        TonyMontana1x3: {note:124, channel:1},
+        TonyMontana1x: {note:125, channel:1},
+        TonyMontana2x: {note:126, channel:1},
+        TonyMontana6x: {note:127, channel:1},
+        TrapDeFeignants: {note:114, channel:1},
+        UrolagneDescription: {note:102, channel:1},
+        Urolagne: {note:101, channel:1},
+        YADesEnfants: {note:103, channel:1},
+        BlahBlahBlah: {note:104, channel:1}
+    }
+    var sacem_buttons = [],
+        i = 0
+
+    for (var k in sacem_samples) {
+        let w = {
+            type:'push',
+            label:k,
+            norelease:true,
+            on:127,
+            precision:0,
+            width:100/7 + '%',
+            height:100/6 + '%',
+            top: parseInt(i/7) * 100/6 + '%',
+            left: i % 7 * 100/7 + '%',
+            preArgs:[sacem_samples[k].channel, sacem_samples[k].note],
+            address: '/midi/noteon',
+            target:['127.0.0.1:11001']
+        }
+        sacem_buttons.push(w)
+        i++
+    }
+
+
 
     return {
         init: function(){
@@ -134,6 +201,18 @@
             setTimeout(mididings_query, 1000)
 
             setTimeout(ping, 1000)
+
+            setTimeout(()=>{
+                var address = '/EXEC',
+                    args = [
+                        {type:'s', value: 'edit'},
+                        {type:'s', value: 'sacem_samples'},
+                        {type:'s', value: JSON.stringify({widgets:sacem_buttons})}
+                    ]
+
+                receiveOsc({address, args})
+
+            },5000)
         },
         oscInFilter: function(data){
             // Filter incomming osc messages

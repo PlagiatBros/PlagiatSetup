@@ -225,19 +225,33 @@ bassbufferst_off = Ctrl(3, 0) >> guitarixst
 # Bass Pedal
 basspedal= [
     ProgramFilter(13) >> SendOSC(slport, '/sl/0/hit', 'record') >> Discard(),
-    ProgramFilter(14) >> SendOSC(slport, '/sl/0/hit', 'pause_on') >> Discard(),
-    ProgramFilter(15) >> SendOSC(slport, '/sl/0/hit', 'overdub') >> Discard(),
-    ProgramFilter(16) >> SendOSC(slport, '/sl/0/hit', 'multiply') >> Discard(),
-#    ProgramFilter(18) >> SendOSC(slport, '/sl/0/hit', 'trigger') >> Discard(),
-    ProgramFilter(17) >> SendOSC(slport, '/sl/1/hit', 'record') >> Discard(),
+    ProgramFilter(14) >> SendOSC(slport, '/sl/0/hit', 'overdub') >> Discard(),
+    ProgramFilter(15) >> SendOSC(slport, '/sl/0/hit', 'pause_on') >> Discard(),
+    ProgramFilter(16) >> SendOSC(slport, '/sl/1/hit', 'record') >> Discard(),
+    ProgramFilter(17) >> SendOSC(slport, '/sl/1/hit', 'overdub') >> Discard(),
     ProgramFilter(18) >> SendOSC(slport, '/sl/1/hit', 'pause_on') >> Discard(),
-    ProgramFilter(19) >> SendOSC(slport, '/sl/1/hit', 'overdub') >> Discard(),
-    ProgramFilter(20) >> SendOSC(slport, '/sl/1/hit', 'multiply') >> Discard(),
-#    ProgramFilter(18) >> SendOSC(slport, '/sl/0/hit', 'trigger') >> Discard(),
-    ProgramFilter(23) >> bassdry,
-    ProgramFilter(22) >> bassscape,
-    ProgramFilter(21) >> bassdegrade,
+    ProgramFilter(19) >> bassscape,
+    ProgramFilter(20) >> bassdegrade,
+    ProgramFilter(21) >> [bassdry, bassdetunest_on, bassvibest_on, bassringst_on, bassbufferst_on],
+    ProgramFilter(22) >> [bassdry, bassdetunest_off, bassvibest_on, bassringst_on, bassbufferst_on],
+    ProgramFilter(23) >> [bassdry, bassdetunest_on, bassvibest_on, bassringst_off, bassbufferst_off],
     ]
+
+# Vx Pedal
+vxpedal= [
+    ProgramFilter(13) >> SendOSC(slport, '/sl/2/hit', 'record') >> Discard(),
+    ProgramFilter(14) >> SendOSC(slport, '/sl/2/hit', 'overdub') >> Discard(),
+    ProgramFilter(15) >> SendOSC(slport, '/sl/2/hit', 'pause_on') >> Discard(),
+    ProgramFilter(16) >> SendOSC(slport, '/sl/3/hit', 'record') >> Discard(),
+    ProgramFilter(17) >> SendOSC(slport, '/sl/3/hit', 'overdub') >> Discard(),
+    ProgramFilter(18) >> SendOSC(slport, '/sl/3/hit', 'pause_on') >> Discard(),
+    ProgramFilter(19) >> vxorldelay_on,
+    ProgramFilter(20) >> vxorldisint_on,
+    ProgramFilter(21) >> [vxorlmeuf_on, vxorlgars_on, vxorldelay_off, vxorlvocode_off, vxorldisint_off],
+    ProgramFilter(22) >> [vxorlmeuf_off, vxorlgars_on, vxorldelay_off, vxorlvocode_off, vxorldisint_off],
+    ProgramFilter(23) >> [vxorlmeuf_on, vxorlgars_off, vxorldelay_off, vxorlvocode_off, vxorldisint_off],
+    ]
+
 
 
 
