@@ -32,13 +32,13 @@ climat = [
             vxorlgars_off,
             vxorlmeuf_off,
             vxorldisint_off,
-            vxorldelay_on, #??
+            vxorldelay_off, #??
             vxorlvocode_on,
 
             vxjeannotgars_off,
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
-            vxjeannotdelay_on, #??
+            vxjeannotdelay_off, #??
             vxjeannotvocode_on,
 
             SendOSC(vxjeannotmeufport, '/strip/VxJeannotVocod/AM%20pitchshifter/Pitch%20shift/unscaled', 1.0),

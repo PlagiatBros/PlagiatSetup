@@ -17,7 +17,7 @@ dafist = [
         SendOSC(zyntrebleport, '/microtonal/tunings', '135.0\n200.0\n300.0\n400.0\n500.0\n600.0\n700.0\n835.0\n900.0\n1000.0\n1135.0\n2/1'),
         SendOSC(mk2inport, '/mididings/switch_scene', 1),
         ]),
-    [orl, jeannot] >> Filter(PROGRAM) >> [
+    [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
@@ -344,7 +344,7 @@ dafist = [
             vxjeannotdisint_off,
             vxjeannotvocode_off,
 
-            SendOSC(cmeinport, '/mididings/switch_scene', 6),
+            SendOSC(cmeinport, '/mididings/switch_scene', 5),
 
             bassdry,
             bassdetunest_on,
