@@ -202,17 +202,17 @@
 
             setTimeout(ping, 1000)
 
-            setTimeout(()=>{
-                var address = '/EXEC',
-                    args = [
-                        {type:'s', value: 'edit'},
-                        {type:'s', value: 'sacem_samples'},
-                        {type:'s', value: JSON.stringify({widgets:sacem_buttons})}
-                    ]
-
-                receiveOsc({address, args})
-
-            },5000)
+            // setTimeout(()=>{
+            //     var address = '/EXEC',
+            //         args = [
+            //             {type:'s', value: 'edit'},
+            //             {type:'s', value: 'sacem_samples'},
+            //             {type:'s', value: JSON.stringify({widgets:sacem_buttons})}
+            //         ]
+            //
+            //     receiveOsc({address, args})
+            //
+            // },5000)
         },
         oscInFilter: function(data){
             // Filter incomming osc messages

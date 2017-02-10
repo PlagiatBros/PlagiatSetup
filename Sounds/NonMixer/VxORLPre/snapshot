@@ -1,14 +1,16 @@
 {
 	Group 0x13 create :name "VxORL"
-	Mixer_Strip 0x1 create :name "VxORLMeuf" :width "narrow" :tab "fader" :color 4290183168 :gain_mode 0 :mute_mode 0 :group 0x13 :auto_input "" :manual_connection 0
+	Mixer_Strip 0x1 create :name "VxORLMeuf" :width "narrow" :tab "signal" :color 4290183168 :gain_mode 0 :mute_mode 0 :group 0x13 :auto_input "" :manual_connection 0
 	Chain 0x2 create :strip 0x1 :tab "chain"
 	JACK_Module 0x3 create :parameter_values "0,000000:1,000000" :is_default 1 :chain 0x2 :active 1
+	Plugin_Module 0x33 create :plugin_id 1410 :plugin_ins 1 :plugin_outs 1 :parameter_values "300,000000:3200,000000:-48,000000:30,000000:160,000000:550,000000:-90,000000:0,000000" :is_default 0 :chain 0x2 :active 1
 	Gain_Module 0x4 create :parameter_values "0,000000:0,000000" :is_default 1 :chain 0x2 :active 1
 	Meter_Module 0x5 create :is_default 1 :chain 0x2 :active 1
 	JACK_Module 0x6 create :parameter_values "1,000000:0,000000" :is_default 1 :chain 0x2 :active 1
-	Mixer_Strip 0x7 create :name "VxORLGars" :width "narrow" :tab "fader" :color 4290183168 :gain_mode 0 :mute_mode 0 :group 0x13 :auto_input "" :manual_connection 0
+	Mixer_Strip 0x7 create :name "VxORLGars" :width "narrow" :tab "signal" :color 4290183168 :gain_mode 0 :mute_mode 0 :group 0x13 :auto_input "" :manual_connection 0
 	Chain 0x8 create :strip 0x7 :tab "chain"
 	JACK_Module 0x9 create :parameter_values "0,000000:1,000000" :is_default 1 :chain 0x8 :active 1
+	Plugin_Module 0x35 create :plugin_id 1410 :plugin_ins 1 :plugin_outs 1 :parameter_values "300,000000:3200,000000:-48,000000:30,000000:160,000000:550,000000:-90,000000:0,000000" :is_default 0 :chain 0x8 :active 1
 	Gain_Module 0xA create :parameter_values "0,000000:1,000000" :is_default 1 :chain 0x8 :active 1
 	Meter_Module 0xB create :is_default 1 :chain 0x8 :active 1
 	JACK_Module 0xC create :parameter_values "1,000000:0,000000" :is_default 1 :chain 0x8 :active 1
@@ -23,7 +25,7 @@
 	Mixer_Strip 0x2D create :name "VxORLDelayPre" :width "narrow" :tab "signal" :color 2775973888 :gain_mode 0 :mute_mode 0 :group 0x13 :auto_input "" :manual_connection 0
 	Chain 0x2E create :strip 0x2D :tab "chain"
 	JACK_Module 0x2F create :parameter_values "0,000000:1,000000" :is_default 1 :chain 0x2E :active 1
-	Gain_Module 0x30 create :parameter_values "0,000000:1,000000" :is_default 1 :chain 0x2E :active 1
+	Gain_Module 0x30 create :parameter_values "0,000000:0,000000" :is_default 1 :chain 0x2E :active 1
 	Meter_Module 0x31 create :is_default 1 :chain 0x2E :active 1
 	JACK_Module 0x32 create :parameter_values "1,000000:0,000000" :is_default 1 :chain 0x2E :active 1
 }
