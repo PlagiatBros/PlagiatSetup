@@ -2,7 +2,7 @@
 <!--
 ladish Studio configuration.
 -->
-<!-- Fri Feb 10 13:50:22 2017 -->
+<!-- Fri Feb 10 22:05:57 2017 -->
 <studio>
   <jack>
     <conf>
@@ -709,6 +709,8 @@ ladish Studio configuration.
           <port name="Keyboards/out-2" uuid="29166dd7-c251-4a7c-a91e-e106d43a4435" />
           <port name="Public/in-1" uuid="b513f77d-bd26-452d-b81a-90590677aeb6" />
           <port name="Public/out-1" uuid="943181c1-5c4a-409a-9529-409a065134ef" />
+          <port name="BassWobble/in-1" uuid="23f6b292-264d-44f9-b248-8e954758045a" />
+          <port name="BassWobble/out-1" uuid="6980c990-a1ee-4107-89a7-a341e077ec87" />
         </ports>
       </client>
       <client name="SamplesPitch (NM)" uuid="c8f52a38-6a42-423a-8861-6b16ec183742">
@@ -870,6 +872,12 @@ ladish Studio configuration.
         <ports>
           <port name="BassWobbleCtrlIn" uuid="a7e69124-82f5-4c98-ada0-5f1785490923" />
           <port name="out_1" uuid="cd87342d-412f-48dc-80b0-ec478e463383" />
+        </ports>
+      </client>
+      <client name="OSC Control to MIDI" uuid="2c85ab3f-68c2-409e-b306-90c8982052f9">
+        <ports>
+          <port name="osc2Tapeutape_in" uuid="ee3c71ed-843f-4cc6-904a-8f15be06eb51" />
+          <port name="osc2Tapeutape_out" uuid="4e9b9e14-498e-4644-a407-b817641af003" />
         </ports>
       </client>
     </clients>
@@ -1114,6 +1122,8 @@ ladish Studio configuration.
         <port name="Keyboards/out-2" uuid="29166dd7-c251-4a7c-a91e-e106d43a4435" type="audio" direction="output" />
         <port name="Public/in-1" uuid="b513f77d-bd26-452d-b81a-90590677aeb6" type="audio" direction="input" />
         <port name="Public/out-1" uuid="943181c1-5c4a-409a-9529-409a065134ef" type="audio" direction="output" />
+        <port name="BassWobble/in-1" uuid="23f6b292-264d-44f9-b248-8e954758045a" type="audio" direction="input" />
+        <port name="BassWobble/out-1" uuid="6980c990-a1ee-4107-89a7-a341e077ec87" type="audio" direction="output" />
       </ports>
       <dict>
         <key name="http://ladish.org/ns/canvas/x">553.507387</key>
@@ -2258,8 +2268,8 @@ ladish Studio configuration.
         <port name="pitch" uuid="e1e28cc7-af85-4f46-ab41-0f242946e7cb" type="midi" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1418.676675</key>
-        <key name="http://ladish.org/ns/canvas/y">1610.203927</key>
+        <key name="http://ladish.org/ns/canvas/x">1482.676675</key>
+        <key name="http://ladish.org/ns/canvas/y">1583.537260</key>
       </dict>
     </client>
     <client name="ZitaJeannot" uuid="f0698758-b8b4-4c84-8ba7-e42bf62c71aa" naming="app" app="a22b80ca-d674-4681-812d-e12014da4f7d">
@@ -2297,8 +2307,8 @@ ladish Studio configuration.
         <port name="ZynAddSubFX" uuid="a11781c6-fa48-45a8-a526-b1dd78f2ee77" type="midi" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1324.136142</key>
-        <key name="http://ladish.org/ns/canvas/y">1009.856400</key>
+        <key name="http://ladish.org/ns/canvas/x">1281.469475</key>
+        <key name="http://ladish.org/ns/canvas/y">997.856400</key>
       </dict>
     </client>
     <client name="Zyn (Bass)" uuid="8aeb8e65-920b-45d0-a45e-1e12cfa1cdad" naming="app" app="ec63aad8-c625-45d1-82c7-c90baa9a183c">
@@ -2415,6 +2425,16 @@ ladish Studio configuration.
       <dict>
         <key name="http://ladish.org/ns/canvas/x">1835.992542</key>
         <key name="http://ladish.org/ns/canvas/y">996.000000</key>
+      </dict>
+    </client>
+    <client name="OSC Control to MIDI" uuid="9ff413ad-768d-4508-96f5-8a9bd61baca2" naming="app" app="59351a7d-de17-4db2-80b0-9b56dbbf4ce6">
+      <ports>
+        <port name="osc2Tapeutape_in" uuid="ee3c71ed-843f-4cc6-904a-8f15be06eb51" type="midi" direction="input" />
+        <port name="osc2Tapeutape_out" uuid="4e9b9e14-498e-4644-a407-b817641af003" type="midi" direction="output" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">899.992542</key>
+        <key name="http://ladish.org/ns/canvas/y">2144.000000</key>
       </dict>
     </client>
   </clients>
@@ -2909,6 +2929,10 @@ ladish Studio configuration.
     <connection port1="943181c1-5c4a-409a-9529-409a065134ef" port2="93adb0f9-65dd-476f-8c39-2bb16f720995" />
     <connection port1="53679272-23d4-4f41-ad08-1f0a087e75cd" port2="2c9b52ec-31fc-4b1f-be62-23b022ddd675" />
     <connection port1="53679272-23d4-4f41-ad08-1f0a087e75cd" port2="d43244ed-1aec-45e7-99e8-5eb6235f6340" />
+    <connection port1="4e9b9e14-498e-4644-a407-b817641af003" port2="ff117881-f553-4dbf-b190-014df27a9298" />
+    <connection port1="0e95cb88-16a5-471e-ab24-26e7fcd56229" port2="23f6b292-264d-44f9-b248-8e954758045a" />
+    <connection port1="6980c990-a1ee-4107-89a7-a341e077ec87" port2="ac9d29b9-0c97-4708-99b4-10f840c9d930" />
+    <connection port1="6980c990-a1ee-4107-89a7-a341e077ec87" port2="93adb0f9-65dd-476f-8c39-2bb16f720995" />
   </connections>
   <applications>
     <application name="a2j" uuid="65bce9a0-8285-4cb3-9630-321ba19b43a4" terminal="false" level="0" autorun="true">a2j -e</application>
@@ -2956,5 +2980,7 @@ ladish Studio configuration.
     <application name="wobbleCtrl" uuid="d05dd957-12ce-4814-9733-d2df4fb92692" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_wC.sh</application>
     <application name="QLC+" uuid="6247c29f-437a-492f-bab0-2c6474f19ebb" terminal="false" level="0" autorun="true">qlcplus -p -o %2Fhome%2Fwoii%2FPlagiat%2FStage%2FLights%2Fplagiat.qxw</application>
     <application name="QLC Manager" uuid="56d9deaf-5745-47f4-b4a7-e47a25e5a3f0" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_qLC.sh</application>
+    <application name="OSC Control Surface" uuid="31ca0d05-49db-4b09-9d83-e925b9262e99" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_gUI.sh</application>
+    <application name="OSC Control to MIDI" uuid="59351a7d-de17-4db2-80b0-9b56dbbf4ce6" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_gUItoMidi.sh</application>
   </applications>
 </studio>
