@@ -21,8 +21,9 @@ le5 = [
     [orl, jeannot] >> Filter(PROGRAM) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
         ] >> Discard(),
-    jeannot >> ProgramFilter(2) >> [ # Intro - Bouton 2
+    jeannot >> ProgramFilter(2) >> [ # Intro Shut your dickhole - Bouton 2
         Program(65) >> cseqtrigger,
+        NoteOn(66,127) >> Output('PBTapeutape', 3), # gunshot
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
             SendOSC(slport, '/set', 'tempo', 160),
@@ -250,7 +251,7 @@ le5 = [
             bassbufferst_on,
             ]
         ],
-    orl >> ProgramFilter(6) >> [ # Couplet A (niggah don't you know) - Bouton 6
+    orl >> ProgramFilter(5) >> [ # Couplet A (niggah don't you know) - Bouton 6
         Program(70) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
@@ -306,6 +307,8 @@ le5 = [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),
 
+            SendOSC(trapcutport, '/Trapcut/Bpm', 320),
+
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
             SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.48148),
@@ -341,7 +344,7 @@ le5 = [
             bassbufferst_off,
             ]
         ],
-    orl >> ProgramFilter(7) >> [ # Couplet Cbis (ain't no challenger left)- Bouton 7
+    orl >> ProgramFilter(6) >> [ # Couplet Cbis (ain't no challenger left)- Bouton 7
         Program(72) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
@@ -387,22 +390,23 @@ le5 = [
             ]
         ],
 
-    orl >> ProgramFilter(8) >> [ # Ballade rhodes vocodeur - Bouton 8
+    orl >> ProgramFilter(7) >> [ # Ballade rhodes vocodeur - Bouton 8
         #TODO son rhodes
+        stop,
         Program(73) >> cseqtrigger,
         SendOSC(cmeinport, '/mididings/switch_scene', 10),
         [
 
             vxorlgars_off,
-            vxorlmeuf_off,
+            vxorlmeuf_on,
             vxorldisint_off,
-            vxorldelay_on,
-            vxorlvocode_on,
+            vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotgars_off,
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
-            vxjeannotdelay_on,
+            vxjeannotdelay_off,
             vxjeannotvocode_on,
 
             ] >> Discard()
@@ -437,7 +441,7 @@ le5 = [
             vxorlvocode_off,
 
             vxjeannotdelay_off,
-            vxjeannotgars_off,
+            vxjeannotgars_on,
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
             vxorlvocode_off,
@@ -454,7 +458,29 @@ le5 = [
             bassbufferst_off,
             ]
         ],
-    orl >> ProgramFilter(9) >> [ # Son Basse - Bouton 9
+    orl >> ProgramFilter(8) >> [ # Son Basse - Bouton 9
+        Program(75) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eighth_per_cycle', 5),
+            SendOSC(slport, '/set', 'tempo', 120),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 120),
+            SendOSC(klickport, '/klick/simple/set_meter', 5, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
+            SendOSC(klickport, '/klick/metro/start'),
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.48148),
+
+            SendOscState([
+
+                [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0],
+
+            ]),
+        ],
         [
             bassdetunest_on,
             bassringst_on,
@@ -462,4 +488,6 @@ le5 = [
             bassbufferst_on,
             ]
         ],
+    jeannot >> ProgramFilter(8) >> SendOSC(trapcutport, '/Trapcut/Scene/Play', 'IIII') >> Discard(),
+
     ]

@@ -121,7 +121,7 @@ fifty = [
     orl >> ProgramFilter(4) >> [ # Boucle rationnelle - Bouton 4
         Program(67) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eighth_per_cycle', 64),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 4),
             SendOSC(slport, '/set', 'tempo', 117),
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
@@ -179,6 +179,9 @@ fifty = [
             SendOSC(slport, '/sl/1/hit', 'pause_off'),
             SendOSC(slport, '/sl/1/hit', 'trigger'),
             SendOSC(slport, '/sl/1/set', 'sync', 1),
+
+            SendOSC(trapcutport, '/Trapcut/Bpm', 234),
+
 
             SendOSC(klickport, '/klick/simple/set_tempo', 117),
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
@@ -322,6 +325,15 @@ fifty = [
             bassbufferst_off,
             ]
         ],
+
+    jeannot >> ProgramFilter(2) >> [
+        SceneSwitch(5) >> Discard(),
+        Ctrl(102, 127) >> Output('Mk2CtrlOut', 1)
+        ],
+
+    jeannot >> ProgramFilter(8) >> SendOSC(trapcutport, '/Trapcut/Scene/Play', 'I') >> Discard(),
+
+
 
 
 

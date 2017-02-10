@@ -39,6 +39,16 @@ zyntreble2 = ~Filter(CTRL) >> Output('CMEOutTreble', 2)
 
 zyntreble3 = ~Filter(CTRL) >> Output('CMEOutTreble', 3)
 
+zyntrebleGMandela = ~Filter(CTRL) >> [
+    KeyFilter(notes=['g2','g#2','a#2','g3','g#3','a#3','g3','g#3','a#3','g4','g#4','a#4']),
+    ~KeyFilter(notes=['g2','g#2','a#2','g3','g#3','a#3','g3','g#3','a#3','g4','g#4','a#4']) >> [
+        KeyFilter('c2','b2') >> Key('g2'),
+        KeyFilter('c3','b3') >> Key('g3'),
+        KeyFilter('c4','b4') >> Key('g4'),
+        KeyFilter('c5','b5') >> Key('g5'),
+    ],
+] >> Output('CMEOutTreble', 1)
+
 zynrhodes1 = Output('CMEOutRhodes', 1)
 
 tapeutape1 = ~Filter(CTRL) >> Output('CMEOutTapeutape', 1)
@@ -57,6 +67,7 @@ run(
         10:	Scene("ZynRhodes 1", zynrhodes1),
         11:	Scene("Tapeutape 1", tapeutape1),
         12: Scene("ZynTreble 3", zyntreble3),
+        13: Scene("zyntrebleGMandela", zyntrebleGMandela),
     },
     control = Filter(PROGRAM) >> SceneSwitch(),
     pre = ~Filter(PROGRAM)

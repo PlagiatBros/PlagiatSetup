@@ -4,6 +4,8 @@ _ip = '127.0.0.1:'
 
 def _open(send):
     send(samplesmainport, '/strip/SamplesMain/Gain/Mute', 0.0)
+    send(bassmainport, '/strip/BassMain/Gain/Mute', 0.0)
+    send(slport, '/sl/1/set', 'wet', 1)
     # send(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0)
     # send(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0)
     # send(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0)
@@ -13,6 +15,8 @@ def _open(send):
 
 def _close(send):
     send(samplesmainport, '/strip/SamplesMain/Gain/Mute', 1.0)
+    send(bassmainport, '/strip/BassMain/Gain/Mute', 1.0)
+    send(slport, '/sl/1/set', 'wet', 0)
     # send(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0)
     # send(samplesmainport, '/strip/Samples2Dry/Gain/Mute', 1.0)
     # send(samplesmainport, '/strip/Samples3Dry/Gain/Mute', 1.0)
@@ -25,7 +29,7 @@ def _cutXtimes(x, sequencer, timer):
         _open(sequencer.send)
         timer.wait(1, 'beat')
         _close(sequencer.send)
-    timer.wait(1, 'beat')
+        timer.wait(1, 'beat')
     _open(sequencer.send)
 
 def I(sequencer, timer):

@@ -13,6 +13,7 @@ config(
 )
 
 
+
 from scenes import *
 
 hook(
@@ -21,6 +22,7 @@ hook(
     OSCCustomInterface(56418),
     AutoRestart()
 )
+
 
 run(
     scenes = {
@@ -67,10 +69,10 @@ run(
                         basspedal,
                         ]
 		),
-		Scene("Nope",
+		Scene("Pedal Select",
                       [
                         climat,
-                        basspedal,
+                        pedalselect,
                         ]
 		),
 		Scene("Tune Select",
@@ -124,10 +126,10 @@ run(
                         basspedal,
                         ]
 		),
-		Scene("Nope",
+		Scene("Pedal Select",
                       [
                         connassessacem,
-                        basspedal,
+                        pedalselect,
                         ]
 		),
 		Scene("Tune Select",
@@ -181,10 +183,10 @@ run(
                         basspedal,
                         ]
 		),
-		Scene("Nope",
+		Scene("Pedal Select",
                       [
                         fifty,
-                        basspedal,
+                        pedalselect,
                         ]
 		),
 		Scene("Tune Select",
@@ -238,10 +240,10 @@ run(
                         basspedal,
                         ]
 		),
-		Scene("Nope",
+		Scene("Pedal Select",
                       [
                         le5,
-                        basspedal,
+                        pedalselect,
                         ]
 		),
 		Scene("Tune Select",
@@ -295,10 +297,10 @@ run(
                         basspedal,
                         ]
 		),
-		Scene("Nope",
+		Scene("Pedal Select",
                       [
                         sw,
-                        basspedal,
+                        pedalselect,
                         ]
 		),
 		Scene("Tune Select",
@@ -352,10 +354,10 @@ run(
                         basspedal,
                         ]
 		),
-		Scene("Nope",
+		Scene("Pedal Select",
                       [
                         wholeworld,
-                        basspedal,
+                        pedalselect,
                         ]
 		),
 		Scene("Tune Select",
@@ -409,10 +411,10 @@ run(
                         basspedal,
                         ]
 		),
-		Scene("Nope",
+		Scene("Pedal Select",
                       [
                         dafist,
-                        basspedal,
+                        pedalselect,
                         ]
 		),
 		Scene("Tune Select",
@@ -466,10 +468,10 @@ run(
                         basspedal,
                         ]
 		),
-		Scene("Nope",
+		Scene("Pedal Select",
                       [
                         geturfreakon,
-                        basspedal,
+                        pedalselect,
                         ]
 		),
 		Scene("Tune Select",
@@ -523,10 +525,10 @@ run(
                         basspedal,
                         ]
 		),
-		Scene("Nope",
+		Scene("Pedal Select",
                       [
                         horrorcore,
-                        basspedal,
+                        pedalselect,
                         ]
 		),
 		Scene("Tune Select",
@@ -580,10 +582,10 @@ run(
                         basspedal,
                         ]
 		),
-		Scene("Nope",
+		Scene("Pedal Select",
                       [
                         trapone,
-                        basspedal,
+                        pedalselect,
                         ]
 		),
 		Scene("Tune Select",

@@ -222,6 +222,10 @@ bassringst_off = Ctrl(2, 0) >> guitarixst
 bassbufferst_off = Ctrl(3, 0) >> guitarixst
 
 
+# pedal Select
+
+pedalselect = ProgramFilter([range(12,24)]) >> NoteOn(EVENT_PROGRAM, 127) >> Transpose(-12) >> SubSceneSwitch(EVENT_NOTE) >> Discard()
+
 # Bass Pedal
 basspedal= [
     ProgramFilter(13) >> SendOSC(slport, '/sl/0/hit', 'record') >> Discard(),

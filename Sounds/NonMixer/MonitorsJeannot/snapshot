@@ -21,7 +21,7 @@
 	Mixer_Strip 0x13 create :name "BassFX" :width "narrow" :tab "fader" :color 2315255808 :gain_mode 0 :mute_mode 0 :group 0x31 :auto_input "" :manual_connection 0
 	Chain 0x14 create :strip 0x13 :tab "chain"
 	JACK_Module 0x15 create :parameter_values "0,000000:2,000000" :is_default 1 :chain 0x14 :active 1
-	Gain_Module 0x16 create :parameter_values "-11,000000:0,000000" :is_default 1 :chain 0x14 :active 1
+	Gain_Module 0x16 create :parameter_values "-19,600000:0,000000" :is_default 1 :chain 0x14 :active 1
 	Meter_Module 0x17 create :is_default 1 :chain 0x14 :active 1
 	JACK_Module 0x18 create :parameter_values "2,000000:0,000000" :is_default 1 :chain 0x14 :active 1
 	Mixer_Strip 0x19 create :name "Samples" :width "narrow" :tab "fader" :color 4278228480 :gain_mode 0 :mute_mode 0 :group 0x31 :auto_input "" :manual_connection 0
@@ -60,4 +60,10 @@
 	Gain_Module 0x2E create :parameter_values "0,000000:0,000000" :is_default 1 :chain 0x2C :active 1
 	Meter_Module 0x2F create :is_default 1 :chain 0x2C :active 1
 	JACK_Module 0x30 create :parameter_values "2,000000:0,000000" :is_default 1 :chain 0x2C :active 1
+	Mixer_Strip 0x80 create :name "BassWobble" :width "narrow" :tab "fader" :color 2107583654 :gain_mode 0 :mute_mode 0 :group 0x31 :auto_input "" :manual_connection 0
+	Chain 0x81 create :strip 0x80 :tab "chain"
+	JACK_Module 0x82 create :parameter_values "0,000000:1,000000" :is_default 1 :chain 0x81 :active 1
+	Gain_Module 0x83 create :parameter_values "-7,500000:0,000000" :is_default 1 :chain 0x81 :active 1
+	Meter_Module 0x84 create :is_default 1 :chain 0x81 :active 1
+	JACK_Module 0x85 create :parameter_values "1,000000:0,000000" :is_default 1 :chain 0x81 :active 1
 }

@@ -56,6 +56,8 @@ climat = [
                 [samplesringmodport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -2.0],
             ]),
 
+            SendOSC(cmeinport, '/mididings/switch_scene', 13),
+
         ] >> Discard()
 
     ],
@@ -74,6 +76,8 @@ climat = [
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.8955),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.8955),
             SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.4444),
+
+            SendOSC(mk2inport, '/mididings/switch_scene', 1),
 
 
             SendOscState([
@@ -130,7 +134,7 @@ climat = [
         ] >> Discard()
 
     ],
-    jeannot >> ProgramFilter(4) >> [ # Refrain - Bouton 3
+    jeannot >> ProgramFilter(4) >> [ # Refrain - Bouton 4
         Program(66) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 74),
@@ -196,6 +200,10 @@ climat = [
             SendOSC(slport, '/set', 'tempo', 150),
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
+            SendOSC(trapcutport, '/Trapcut/Bpm', 300),
+
+            SendOSC(mk2inport, '/mididings/switch_scene', 2),
+
             SendOSC(slport, '/sl/0/set', 'sync', 0),
             SendOSC(slport, '/sl/0/hit', 'pause_off'),
             SendOSC(slport, '/sl/0/hit', 'trigger'),
@@ -226,8 +234,11 @@ climat = [
             vxorlgars_on,
             vxorlmeuf_off,
             vxorldisint_off,
-            vxorldelay_off,
+            vxorldelay_on,
             vxorlvocode_off,
+
+            SendOSC(vxorlpreport, '/strip/VxORLDelayPre/Gain/Mute', 1.0),
+
 
             vxjeannotdelay_off,
             vxjeannotgars_on,
@@ -301,7 +312,7 @@ climat = [
             bassbufferst_off,
             ]
         ],
-
+    jeannot >> ProgramFilter(8) >> SendOSC(trapcutport, '/Trapcut/Scene/Play', 'IIII') >> Discard(),
     orl >> ProgramFilter(11) >> [ # Passage vers Fifty - Bouton 11
         SceneSwitch(4) >> Discard(),
         Program(2) >> Output('PBCtrlOut', 1),
