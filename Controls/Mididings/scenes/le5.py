@@ -19,7 +19,7 @@ le5 = [
         ]),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     [orl, jeannot] >> Filter(PROGRAM) >> [
-        SendOSC(audioseqport, '/Audioseq/Sequences/Disable', '*')
+        SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
         ] >> Discard(),
     jeannot >> ProgramFilter(2) >> [ # Intro - Bouton 2
         Program(65) >> cseqtrigger,

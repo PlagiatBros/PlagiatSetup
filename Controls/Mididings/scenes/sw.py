@@ -17,7 +17,7 @@ sw = [
         SendOSC(mk2inport, '/mididings/switch_scene', 2),
     ]),
     [orl, jeannot] >> Filter(PROGRAM) >> [
-        SendOSC(audioseqport, '/Audioseq/Sequences/Disable', '*')
+        SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # intro - Bouton 2

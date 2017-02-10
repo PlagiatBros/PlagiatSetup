@@ -13,6 +13,9 @@ config(
 def printer(ev):
     print 'Midi received:'
     print ' channel: %s\n type: %s' % (ev.channel, ev.type)
-    print ' ctrl: %s\n value: %s' % (ev.ctrl, ev.value)
+    if str(ev.type) == 'CTRL':
+        print ' ctrl: %s\n value: %s' % (ev.ctrl, ev.value)
+    if str(ev.type) == 'NOTEON' or str(ev.type) == 'NOTEOFF':
+        print ' note: %s\n velocity: %s' % (ev.note, ev.velocity)
 
 run(Process(printer))
