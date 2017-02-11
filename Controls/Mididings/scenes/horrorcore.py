@@ -15,14 +15,15 @@ horrorcore = [
         Ctrl(0, 9) >> tapeutapecontrol,
         zynmicrotonal_on,
         SendOSC(zyntrebleport, '/microtonal/tunings', '135.0\n200.0\n300.0\n400.0\n500.0\n600.0\n700.0\n835.0\n900.0\n1000.0\n1065.0\n2/1'),
-        SendOSC(mk2inport, '/mididings/switch_scene', 1),
         SubSceneSwitch(2),
     ]),
-    [orl, jeannot] >> Filter(PROGRAM) >> [
-        SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
+    [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
+        SendOSC(mk2inport, '/mididings/switch_scene', 4),
+        SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*'),
+        SubSceneSwitch(2),
     ] >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
-    orl >> ProgramFilter(2) >> [ # Couplet (orl meuf) - Bouton 2
+    [orl, jeannot] >> ProgramFilter(2) >> [ # Couplet (orl meuf) - Bouton 2
         Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -38,6 +39,7 @@ horrorcore = [
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(150)),
             SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
 
+            SendOSC(mk2inport, '/mididings/switch_scene', 5), # rip backing
 
             SendOscState([
 
@@ -47,11 +49,11 @@ horrorcore = [
                 [samplesmainport, '/strip/Samples4Dry/Gain/Mute', 0.0],
                 [samplesmainport, '/strip/Samples5Dry/Gain/Mute', 0.0],
 
-                [samplesmainport, '/strip/SamplesMunge/Gain/Mute', 0.0],
-
-                [samplesdelaymungeport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -12.0],
-                [samplesdelaymungeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -12.0],
-                [samplesdelaymungeport, '/strip/Samples3/Gain/Gain%20(dB)/unscaled', -15.0],
+                # [samplesmainport, '/strip/SamplesMunge/Gain/Mute', 0.0],
+                #
+                # [samplesdelaymungeport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -12.0],
+                # [samplesdelaymungeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -12.0],
+                # [samplesdelaymungeport, '/strip/Samples3/Gain/Gain%20(dB)/unscaled', -15.0],
 
             ]),
 
@@ -63,8 +65,8 @@ horrorcore = [
             vxorlvocode_off,
 
             vxjeannotdelay_off,
-            vxjeannotgars_on,
-            vxjeannotmeuf_off,
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
 
@@ -78,7 +80,7 @@ horrorcore = [
             bassbufferst_off,
             ]
         ],
-    orl >> ProgramFilter(3) >> [ # Refrain - Bouton 3
+    [orl, jeannot] >> ProgramFilter(3) >> [ # Refrain - Bouton 3
         Program(66) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -111,17 +113,17 @@ horrorcore = [
             ]),
 
 
-            vxorlgars_off,
-            vxorlmeuf_on,
+            vxorlgars_on,
+            vxorlmeuf_off,
             vxorldisint_off,
-            vxorldelay_on,
+            vxorldelay_off,
             vxorlvocode_off,
 
-            vxjeannotgars_on,
+            vxjeannotgars_off,
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
-            vxjeannotdelay_on,
-            vxjeannotvocode_off,
+            vxjeannotdelay_off,
+            vxjeannotvocode_on,
 
             bassdry,
 
@@ -133,7 +135,7 @@ horrorcore = [
             bassbufferst_on,
             ]
         ],
-    orl >> ProgramFilter(4) >> [ # Couplet 2 (orl gars, jeannot rabbits) - Bouton 4
+    [orl, jeannot] >> ProgramFilter(4) >> [ # Couplet 2 (orl gars) - Bouton 4
         Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -158,16 +160,16 @@ horrorcore = [
                 [samplesmainport, '/strip/Samples4Dry/Gain/Mute', 0.0],
                 [samplesmainport, '/strip/Samples5Dry/Gain/Mute', 0.0],
 
-                [samplesmainport, '/strip/SamplesMunge/Gain/Mute', 0.0],
-
-                [samplesdelaymungeport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -12.0],
-                [samplesdelaymungeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -12.0],
-                [samplesdelaymungeport, '/strip/Samples3/Gain/Gain%20(dB)/unscaled', -15.0],
+                # [samplesmainport, '/strip/SamplesMunge/Gain/Mute', 0.0],
+                #
+                # [samplesdelaymungeport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -12.0],
+                # [samplesdelaymungeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -12.0],
+                # [samplesdelaymungeport, '/strip/Samples3/Gain/Gain%20(dB)/unscaled', -15.0],
 
             ]),
 
 
-            vxorlmeuf_off,
+            vxorlmeuf_on,
             vxorlgars_on,
             vxorldisint_off,
             vxorldelay_off,
@@ -188,24 +190,6 @@ horrorcore = [
             bassvibest_off,
             bassbufferst_off,
             ]
-        ],
-    jeannot >> ProgramFilter(2) >> [ # WE IS DA REAL RABBITS (stop milieu couplet) - Bouton 2
-        stop,
-        [
-
-            vxorlmeuf_on,
-            vxorlgars_on,
-            vxorldisint_off,
-            vxorldelay_off,
-            vxorlvocode_off,
-
-            vxjeannotgars_on,
-            vxjeannotmeuf_on,
-            vxjeannotdelay_off,
-            vxjeannotdisint_off,
-            vxjeannotvocode_off,
-
-            ] >> Discard()
         ],
     orl >> ProgramFilter(5) >> [ # Refrain grand messe - bouton 5
         stop,

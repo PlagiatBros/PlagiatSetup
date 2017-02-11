@@ -22,8 +22,4 @@ def trapone_altern_refrain(sequencer, timer):
 
 def trapone_altern_final(sequencer, timer):
     timer.wait(8, 'bites')
-    sequencer.send(56418, '/pedalBoard/button', 6)
-
-
-
-
+    sequencer.send(56418, '/pedalBoard/button', 7)

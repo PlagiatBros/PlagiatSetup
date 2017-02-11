@@ -16,7 +16,7 @@ fifty = [
         zynmicrotonal_off,
         SendOSC(mk2inport, '/mididings/switch_scene', 1),
         ]),
-    [orl, jeannot] >> Filter(PROGRAM) >> [
+    [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #

@@ -12,13 +12,13 @@ from mididings.extra.osc import SendOSC
 #### Climat ####
 climat = [
     Init([
-        Ctrl(0, 0) >> tapeutapecontrol,
+        Ctrl(0, 1) >> tapeutapecontrol,
         Program(seq24PageMap[3]) >> seq24once,
         zynmicrotonal_on,
         SendOSC(zyntrebleport, '/microtonal/tunings', '135.0\n200.0\n300.0\n400.0\n500.0\n600.0\n700.0\n835.0\n900.0\n1000.0\n1135.0\n2/1'),
         SendOSC(mk2inport, '/mididings/switch_scene', 1),
     ]),
-    [orl, jeannot] >> Filter(PROGRAM) >> [
+    [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #

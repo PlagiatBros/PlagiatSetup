@@ -10,65 +10,6 @@
   </options>
   <creation>
     <setup name="Plagiat" channel="1" cc="0">
-      <kit name="Climat" volume="1.000000">
-        <instrument name="AnoushkaRing" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.390000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_AnoushkaSHankar.2@142-118.wav" sampleRelative="Climat/48k_AnoushkaSHankar.2@142-118.wav"/>
-        </instrument>
-        <instrument name="Anoushka" minnote="62" maxnote="62" rootnote="62" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.460000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_AnoushkaSHankar.5@169.wav" sampleRelative="Climat/48k_AnoushkaSHankar.5@169.wav"/>
-        </instrument>
-        <instrument name="Morricone1" minnote="0" maxnote="72" rootnote="72" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="0.170000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_morricone.4@141.wav" sampleRelative="Climat/48k_morricone.4@141.wav"/>
-        </instrument>
-        <instrument name="Morricone2" minnote="73" maxnote="127" rootnote="74" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="0.310000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_morricone.5.wav" sampleRelative="Climat/48k_morricone.5.wav"/>
-        </instrument>
-        <instrument name="Mandela" minnote="48" maxnote="48" rootnote="48" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="0.330000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_mandela.2.wav" sampleRelative="Climat/48k_mandela.2.wav"/>
-        </instrument>
-        <instrument name="Mandela2" minnote="50" maxnote="50" rootnote="50" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="0.330000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_mandela.13.wav" sampleRelative="Climat/48k_mandela.13.wav"/>
-        </instrument>
-        <instrument name="Mandela3" minnote="52" maxnote="52" rootnote="52" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_mandela.4.wav" sampleRelative="Climat/48k_mandela.4.wav"/>
-        </instrument>
-        <instrument name="Morricone3" minnote="76" maxnote="76" rootnote="76" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="0.260000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_morricone.3@133.wav" sampleRelative="Climat/48k_morricone.3@133.wav"/>
-        </instrument>
-        <instrument name="AnoushkaSpeed" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.510000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_AnoushkaSHankar.3@84.wav" sampleRelative="Climat/48k_AnoushkaSHankar.3@84.wav"/>
-        </instrument>
-        <instrument name="Mandela4" minnote="53" maxnote="53" rootnote="53" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples5" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_mandela.4.wav" sampleRelative="Climat/48k_mandela.4.wav"/>
-        </instrument>
-        <instrument name="Mandela5" minnote="55" maxnote="55" rootnote="55" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples5" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_mandela.121.wav" sampleRelative="Climat/48k_mandela.121.wav"/>
-        </instrument>
-        <instrument name="Mandela6" minnote="57" maxnote="57" rootnote="57" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples5" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_mandela.128.wav" sampleRelative="Climat/48k_mandela.128.wav"/>
-        </instrument>
-        <instrument name="MandelaDist1" minnote="54" maxnote="54" rootnote="54" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="0.850000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_Processed_mandela108.wav" sampleRelative="Climat/48k_Processed_mandela108.wav"/>
-        </instrument>
-        <instrument name="MandelaDist2" minnote="56" maxnote="56" rootnote="56" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="0.850000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_Processed_mandela121.wav" sampleRelative="Climat/48k_Processed_mandela121.wav"/>
-        </instrument>
-        <instrument name="MandelaDist3" minnote="58" maxnote="58" rootnote="58" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="0.850000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_Processed_mandela128.wav" sampleRelative="Climat/48k_Processed_mandela128.wav"/>
-        </instrument>
-        <instrument name="Klap" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Klap.wav" sampleRelative="DrumKlit/Klap.wav"/>
-        </instrument>
-        <instrument name="Reload" minnote="65" maxnote="65" rootnote="65" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="0.560000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Reload.wav" sampleRelative="DrumKlit/Reload.wav"/>
-        </instrument>
-        <instrument name="Fire" minnote="66" maxnote="66" rootnote="66" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="0.820000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Fire.wav" sampleRelative="DrumKlit/Fire.wav"/>
-        </instrument>
-        <instrument name="LaughtersJeannot" minnote="67" maxnote="67" rootnote="67" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav" sampleRelative="ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav"/>
-        </instrument>
-      </kit>
       <kit name="ConnassesSACEM" volume="1.000000">
         <instrument name="ViolinConnasses" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/48k_conassesSACEM_theme.1.wav" sampleRelative="ConnassesSACEM/48k_conassesSACEM_theme.1.wav"/>
@@ -210,6 +151,65 @@
         </instrument>
         <instrument name="BlahBlahBlah" minnote="104" maxnote="104" rootnote="104" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/blahblahblah.wav" sampleRelative="ConnassesSACEM/blahblahblah.wav"/>
+        </instrument>
+      </kit>
+      <kit name="Climat" volume="1.000000">
+        <instrument name="AnoushkaRing" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.390000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_AnoushkaSHankar.2@142-118.wav" sampleRelative="Climat/48k_AnoushkaSHankar.2@142-118.wav"/>
+        </instrument>
+        <instrument name="Anoushka" minnote="62" maxnote="62" rootnote="62" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.460000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_AnoushkaSHankar.5@169.wav" sampleRelative="Climat/48k_AnoushkaSHankar.5@169.wav"/>
+        </instrument>
+        <instrument name="Morricone1" minnote="0" maxnote="72" rootnote="72" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="0.170000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_morricone.4@141.wav" sampleRelative="Climat/48k_morricone.4@141.wav"/>
+        </instrument>
+        <instrument name="Morricone2" minnote="73" maxnote="127" rootnote="74" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="0.310000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_morricone.5.wav" sampleRelative="Climat/48k_morricone.5.wav"/>
+        </instrument>
+        <instrument name="Mandela" minnote="48" maxnote="48" rootnote="48" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="0.330000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_mandela.2.wav" sampleRelative="Climat/48k_mandela.2.wav"/>
+        </instrument>
+        <instrument name="Mandela2" minnote="50" maxnote="50" rootnote="50" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="0.330000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_mandela.13.wav" sampleRelative="Climat/48k_mandela.13.wav"/>
+        </instrument>
+        <instrument name="Mandela3" minnote="52" maxnote="52" rootnote="52" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_mandela.4.wav" sampleRelative="Climat/48k_mandela.4.wav"/>
+        </instrument>
+        <instrument name="Morricone3" minnote="76" maxnote="76" rootnote="76" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="0.260000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_morricone.3@133.wav" sampleRelative="Climat/48k_morricone.3@133.wav"/>
+        </instrument>
+        <instrument name="AnoushkaSpeed" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.510000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_AnoushkaSHankar.3@84.wav" sampleRelative="Climat/48k_AnoushkaSHankar.3@84.wav"/>
+        </instrument>
+        <instrument name="Mandela4" minnote="53" maxnote="53" rootnote="53" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples5" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_mandela.4.wav" sampleRelative="Climat/48k_mandela.4.wav"/>
+        </instrument>
+        <instrument name="Mandela5" minnote="55" maxnote="55" rootnote="55" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples5" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_mandela.121.wav" sampleRelative="Climat/48k_mandela.121.wav"/>
+        </instrument>
+        <instrument name="Mandela6" minnote="57" maxnote="57" rootnote="57" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples5" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_mandela.128.wav" sampleRelative="Climat/48k_mandela.128.wav"/>
+        </instrument>
+        <instrument name="MandelaDist1" minnote="54" maxnote="54" rootnote="54" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="0.850000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_Processed_mandela108.wav" sampleRelative="Climat/48k_Processed_mandela108.wav"/>
+        </instrument>
+        <instrument name="MandelaDist2" minnote="56" maxnote="56" rootnote="56" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="0.850000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_Processed_mandela121.wav" sampleRelative="Climat/48k_Processed_mandela121.wav"/>
+        </instrument>
+        <instrument name="MandelaDist3" minnote="58" maxnote="58" rootnote="58" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="0.850000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/48k_Processed_mandela128.wav" sampleRelative="Climat/48k_Processed_mandela128.wav"/>
+        </instrument>
+        <instrument name="Klap" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Klap.wav" sampleRelative="DrumKlit/Klap.wav"/>
+        </instrument>
+        <instrument name="Reload" minnote="65" maxnote="65" rootnote="65" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="0.560000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Reload.wav" sampleRelative="DrumKlit/Reload.wav"/>
+        </instrument>
+        <instrument name="Fire" minnote="66" maxnote="66" rootnote="66" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="0.820000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Fire.wav" sampleRelative="DrumKlit/Fire.wav"/>
+        </instrument>
+        <instrument name="LaughtersJeannot" minnote="67" maxnote="67" rootnote="67" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav" sampleRelative="ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav"/>
         </instrument>
       </kit>
       <kit name="Fifty" volume="1.000000">
@@ -413,66 +413,66 @@
         </instrument>
       </kit>
       <kit name="Horrorcore" volume="1.000000">
-        <instrument name="Keziah1" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.540000" pan="-0.560000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="Keziah1" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.240000" pan="-0.560000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/HorrorCore/Horrocore_Keziah1.flac" sampleRelative="HorrorCore/Horrocore_Keziah1.flac"/>
         </instrument>
-        <instrument name="Keziah2" minnote="62" maxnote="62" rootnote="62" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.520000" pan="0.610000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="Keziah2" minnote="62" maxnote="62" rootnote="62" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.310000" pan="0.610000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/HorrorCore/Horrocore_Keziah2.flac" sampleRelative="HorrorCore/Horrocore_Keziah2.flac"/>
         </instrument>
-        <instrument name="Keziah3" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.480000" pan="0.220000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="Keziah3" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.200000" pan="0.220000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/HorrorCore/Horrocore_Keziah3.flac" sampleRelative="HorrorCore/Horrocore_Keziah3.flac"/>
         </instrument>
-        <instrument name="Keziah4" minnote="65" maxnote="65" rootnote="65" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.490000" pan="-0.270000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="Keziah4" minnote="65" maxnote="65" rootnote="65" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.230000" pan="-0.270000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/HorrorCore/Horrocore_Keziah4.flac" sampleRelative="HorrorCore/Horrocore_Keziah4.flac"/>
         </instrument>
-        <instrument name="Keziah5" minnote="67" maxnote="67" rootnote="67" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.540000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="Keziah5" minnote="67" maxnote="67" rootnote="67" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.280000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/HorrorCore/Horrocore_Keziah5.flac" sampleRelative="HorrorCore/Horrocore_Keziah5.flac"/>
         </instrument>
-        <instrument name="KeziahD1" minnote="48" maxnote="48" rootnote="48" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.360000" pan="-0.710000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="KeziahD1" minnote="48" maxnote="48" rootnote="48" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.140000" pan="-0.710000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/HorrorCore/Horrocore_KezD1.flac" sampleRelative="HorrorCore/Horrocore_KezD1.flac"/>
         </instrument>
-        <instrument name="KeziahD2" minnote="50" maxnote="50" rootnote="50" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.310000" pan="0.830000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="KeziahD2" minnote="50" maxnote="50" rootnote="50" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.140000" pan="0.830000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/HorrorCore/Horrocore_KezD2.flac" sampleRelative="HorrorCore/Horrocore_KezD2.flac"/>
         </instrument>
-        <instrument name="Ambre" minnote="72" maxnote="72" rootnote="72" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="0.340000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="Ambre" minnote="72" maxnote="72" rootnote="72" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="0.160000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/HorrorCore/Horrocore_Ambre.flac" sampleRelative="HorrorCore/Horrocore_Ambre.flac"/>
         </instrument>
-        <instrument name="Cri1" minnote="35" maxnote="36" rootnote="36" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="false" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="Cri1" minnote="35" maxnote="36" rootnote="36" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.370000" pan="0.000000" pitch_over_range="false" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/HorrorCore/Horrocore_Cri1.flac" sampleRelative="HorrorCore/Horrocore_Cri1.flac"/>
         </instrument>
-        <instrument name="Cri2" minnote="38" maxnote="38" rootnote="38" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="Cri2" minnote="38" maxnote="38" rootnote="38" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.380000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/HorrorCore/Horrocore_Cri2.flac" sampleRelative="HorrorCore/Horrocore_Cri2.flac"/>
         </instrument>
       </kit>
       <kit name="TrapOne" volume="1.000000">
-        <instrument name="MusicBox1Main" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="-0.250000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="MusicBox1Main" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.300000" pan="-0.250000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/TrapOne/TrapOne_MusicBox1_Main_r1.wav" sampleRelative="TrapOne/TrapOne_MusicBox1_Main_r1.wav"/>
         </instrument>
-        <instrument name="MusicBox1Montee" minnote="62" maxnote="62" rootnote="62" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="-0.250000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="MusicBox1Montee" minnote="62" maxnote="62" rootnote="62" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.300000" pan="-0.250000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/TrapOne/TrapOne_MusicBox1_Montee_r1.wav" sampleRelative="TrapOne/TrapOne_MusicBox1_Montee_r1.wav"/>
         </instrument>
-        <instrument name="MusicBox1Fin" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="-0.250000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="MusicBox1Fin" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.300000" pan="-0.250000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/TrapOne/TrapOne_MusicBox1_Fin_r1.wav" sampleRelative="TrapOne/TrapOne_MusicBox1_Fin_r1.wav"/>
         </instrument>
-        <instrument name="MusicBox1Dring" minnote="65" maxnote="65" rootnote="65" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="-0.250000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="MusicBox1Dring" minnote="65" maxnote="65" rootnote="65" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.300000" pan="-0.250000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/TrapOne/TrapOne_MusicBox1_Dring_r1.wav" sampleRelative="TrapOne/TrapOne_MusicBox1_Dring_r1.wav"/>
         </instrument>
-        <instrument name="MusicBox2Main" minnote="48" maxnote="48" rootnote="48" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="1.000000" pan="0.250000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="MusicBox2Main" minnote="48" maxnote="48" rootnote="48" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.300000" pan="0.250000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/TrapOne/TrapOne_MusicBox2_Main_r1.wav" sampleRelative="TrapOne/TrapOne_MusicBox2_Main_r1.wav"/>
         </instrument>
-        <instrument name="MusicBox2Montee" minnote="50" maxnote="50" rootnote="50" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="1.000000" pan="0.250000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="MusicBox2Montee" minnote="50" maxnote="50" rootnote="50" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.300000" pan="0.250000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/TrapOne/TrapOne_MusicBox2_Montee_r1.wav" sampleRelative="TrapOne/TrapOne_MusicBox2_Montee_r1.wav"/>
         </instrument>
-        <instrument name="MusicBox2Fin" minnote="52" maxnote="52" rootnote="52" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="1.000000" pan="0.250000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="MusicBox2Fin" minnote="52" maxnote="52" rootnote="52" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.300000" pan="0.250000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/TrapOne/TrapOne_MusicBox2_Fin_r1.wav" sampleRelative="TrapOne/TrapOne_MusicBox2_Fin_r1.wav"/>
         </instrument>
-        <instrument name="MusicBox2Dring" minnote="53" maxnote="53" rootnote="53" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="1.000000" pan="0.250000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="MusicBox2Dring" minnote="53" maxnote="53" rootnote="53" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.300000" pan="0.250000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/TrapOne/TrapOne_MusicBox2_Dring_r1.wav" sampleRelative="TrapOne/TrapOne_MusicBox2_Dring_r1.wav"/>
         </instrument>
-        <instrument name="Cloche" minnote="72" maxnote="72" rootnote="72" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+        <instrument name="Cloche" minnote="72" maxnote="72" rootnote="72" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="0.260000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/TrapOne/TrapOne_Cloche_Main_r1.wav" sampleRelative="TrapOne/TrapOne_Cloche_Main_r1.wav"/>
         </instrument>
-        <instrument name="PercRefrain" minnote="36" maxnote="36" rootnote="36" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="PercRefrain" minnote="36" maxnote="36" rootnote="36" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.490000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/TrapOne/TrapOnePerc_Refrain.flac" sampleRelative="TrapOne/TrapOnePerc_Refrain.flac"/>
         </instrument>
       </kit>

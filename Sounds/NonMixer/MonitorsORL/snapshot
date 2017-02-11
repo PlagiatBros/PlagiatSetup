@@ -21,7 +21,8 @@
 	Mixer_Strip 0x13 create :name "BassFX" :width "narrow" :tab "fader" :color 2315255808 :gain_mode 0 :mute_mode 0 :group 0x31 :auto_input "" :manual_connection 0
 	Chain 0x14 create :strip 0x13 :tab "chain"
 	JACK_Module 0x15 create :parameter_values "0,000000:2,000000" :is_default 1 :chain 0x14 :active 1
-	Gain_Module 0x16 create :parameter_values "-10,000000:0,000000" :is_default 1 :chain 0x14 :active 1
+	Plugin_Module 0x8B create :plugin_id 1882 :plugin_ins 2 :plugin_outs 2 :parameter_values "0,000000:30,000000:100,000000:-27,500000:20,000000:3,250000:4,800000" :is_default 0 :chain 0x14 :active 1
+	Gain_Module 0x16 create :parameter_values "2,500000:0,000000" :is_default 1 :chain 0x14 :active 1
 	Meter_Module 0x17 create :is_default 1 :chain 0x14 :active 1
 	JACK_Module 0x18 create :parameter_values "2,000000:0,000000" :is_default 1 :chain 0x14 :active 1
 	Mixer_Strip 0x19 create :name "Samples" :width "narrow" :tab "fader" :color 4278228480 :gain_mode 0 :mute_mode 0 :group 0x31 :auto_input "" :manual_connection 0
@@ -33,7 +34,7 @@
 	Mixer_Strip 0x1F create :name "Klick" :width "narrow" :tab "fader" :color 56 :gain_mode 0 :mute_mode 0 :group 0x31 :auto_input "" :manual_connection 0
 	Chain 0x20 create :strip 0x1F :tab "chain"
 	JACK_Module 0x21 create :parameter_values "0,000000:1,000000" :is_default 1 :chain 0x20 :active 1
-	Gain_Module 0x22 create :parameter_values "-14,500000:0,000000" :is_default 1 :chain 0x20 :active 1
+	Gain_Module 0x22 create :parameter_values "-23,000000:0,000000" :is_default 1 :chain 0x20 :active 1
 	Meter_Module 0x23 create :is_default 1 :chain 0x20 :active 1
 	JACK_Module 0x24 create :parameter_values "1,000000:0,000000" :is_default 1 :chain 0x20 :active 1
 	Mixer_Strip 0x62 create :name "Keyboards" :width "narrow" :tab "fader" :color 1965432679 :gain_mode 0 :mute_mode 0 :group 0x31 :auto_input "" :manual_connection 0

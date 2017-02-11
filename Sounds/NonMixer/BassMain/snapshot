@@ -3,9 +3,10 @@
 	Mixer_Strip 0x1 create :name "BassDry" :width "narrow" :tab "signal" :color 4278196224 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
 	Chain 0x2 create :strip 0x1 :tab "chain"
 	JACK_Module 0x3 create :parameter_values "0,000000:1,000000" :is_default 1 :chain 0x2 :active 1
+	Plugin_Module 0x127 create :lv2_plugin_uri "http://calf.sourceforge.net/plugins/Filter" :plugin_ins 2 :plugin_outs 2 :parameter_values "20000,000000:4,500000:2,000000:20,000000" :is_default 0 :chain 0x2 :active 1
 	Gain_Module 0x4 create :parameter_values "-10,000000:0,000000" :is_default 1 :chain 0x2 :active 1
 	Meter_Module 0x5 create :is_default 1 :chain 0x2 :active 1
-	JACK_Module 0x6 create :parameter_values "1,000000:0,000000" :is_default 1 :chain 0x2 :active 1
+	JACK_Module 0x6 create :parameter_values "2,000000:0,000000" :is_default 1 :chain 0x2 :active 1
 	Mixer_Strip 0x7 create :name "BassOct" :width "narrow" :tab "signal" :color 2315255808 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
 	Chain 0x8 create :strip 0x7 :tab "chain"
 	JACK_Module 0x9 create :parameter_values "0,000000:1,000000" :is_default 1 :chain 0x8 :active 1
@@ -29,7 +30,7 @@
 	Mixer_Strip 0x13 create :name "BassScapePost" :width "narrow" :tab "signal" :color 2315255808 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
 	Chain 0x14 create :strip 0x13 :tab "chain"
 	JACK_Module 0x15 create :parameter_values "0,000000:1,000000" :is_default 1 :chain 0x14 :active 1
-	Plugin_Module 0x2C create :plugin_id 2588 :plugin_ins 1 :plugin_outs 2 :parameter_values "149,997009:3,000000:0,750000:0,000000:1,000000:440,000000" :is_default 0 :chain 0x14 :active 1
+	Plugin_Module 0x2C create :plugin_id 2588 :plugin_ins 1 :plugin_outs 2 :parameter_values "159,993393:3,000000:0,750000:0,000000:1,000000:440,000000" :is_default 0 :chain 0x14 :active 1
 	Gain_Module 0x16 create :parameter_values "0,000000:0,000000" :is_default 1 :chain 0x14 :active 1
 	Meter_Module 0x17 create :is_default 1 :chain 0x14 :active 1
 	JACK_Module 0x18 create :parameter_values "2,000000:0,000000" :is_default 1 :chain 0x14 :active 1
@@ -59,7 +60,7 @@
 	Plugin_Module 0x108 create :plugin_id 1433 :plugin_ins 1 :plugin_outs 1 :parameter_values "1,000000:4,000000" :is_default 0 :chain 0xD8 :active 1
 	Plugin_Module 0xE9 create :lv2_plugin_uri "http://drobilla.net/plugins/mda/Detune" :plugin_ins 2 :plugin_outs 2 :parameter_values "0,260000:0,900000:0,500000:0,500000" :is_default 0 :chain 0xD8 :active 0
 	Plugin_Module 0xEA create :lv2_plugin_uri "http://drobilla.net/plugins/mda/Bandisto" :plugin_ins 2 :plugin_outs 2 :parameter_values "1,000000:0,340426:0,744681:0,500000:0,865248:0,765957:0,567376:0,659574:0,645390:0,000000" :is_default 0 :chain 0xD8 :active 1
-	Plugin_Module 0xEB create :lv2_plugin_uri "http://drobilla.net/plugins/mda/RezFilter" :plugin_ins 2 :plugin_outs 2 :parameter_values "0,250000:0,652482:0,500000:0,850000:0,000000:0,500000:0,700000:0,791687:0,000000:0,000000" :is_default 0 :chain 0xD8 :active 1
+	Plugin_Module 0xEB create :lv2_plugin_uri "http://drobilla.net/plugins/mda/RezFilter" :plugin_ins 2 :plugin_outs 2 :parameter_values "0,000000:0,652482:0,500000:0,850000:0,000000:0,500000:0,700000:0,691344:0,000000:0,000000" :is_default 0 :chain 0xD8 :active 1
 	Gain_Module 0xDA create :parameter_values "0,000000:0,000000" :is_default 1 :chain 0xD8 :active 1
 	Meter_Module 0xDB create :is_default 1 :chain 0xD8 :active 1
 	JACK_Module 0xDC create :parameter_values "2,000000:0,000000" :is_default 1 :chain 0xD8 :active 1

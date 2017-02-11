@@ -13,10 +13,12 @@ geturfreakon = [
     Init([
         Program(seq24PageMap[8]) >> seq24once,
         Ctrl(0, 7) >> tapeutapecontrol,
-        zynmicrotonal_off,
+        zynmicrotonal_on,
+        SendOSC(zyntrebleport, '/microtonal/tunings', '100.0\n200.0\n335.0\n400.0\n500.0\n600.0\n700.0\n835.0\n900.0\n1000.0\n1135.0\n2/1'),
+
         SendOSC(mk2inport, '/mididings/switch_scene', 1),
     ]),
-    [orl, jeannot] >> Filter(PROGRAM) >> [
+    [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
@@ -43,7 +45,7 @@ geturfreakon = [
             vxorlgars_off,
             vxorlmeuf_off,
             vxorldisint_off,
-            vxorldelay_on,
+            vxorldelay_off,
             vxorlvocode_on,
 
             vxjeannotdelay_on,
@@ -91,12 +93,13 @@ geturfreakon = [
             vxjeannotvocode_off,
         ],
     orl >> ProgramFilter(3) >> [ # Refrain - Bouton 3
+        stop,
         Program(66) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
-            SendOSC(slport, '/set', 'tempo', 200),
+            SendOSC(slport, '/set', 'tempo', 225),
 
-            SendOSC(klickport, '/klick/simple/set_tempo', 200),
+            SendOSC(klickport, '/klick/simple/set_tempo', 225),
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),
@@ -125,7 +128,7 @@ geturfreakon = [
             vxjeannotvocode_off,
 
             bassdry,
-            bassscape,
+            #bassscape,
 
             ] >> Discard(),
         [
