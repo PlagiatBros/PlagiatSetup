@@ -86,6 +86,7 @@ dafist = [
             SendOSC(lightseqport, '/Lightseq/Bpm', 120),
             SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_entreeinstru'),
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_entreeinstru_leslie'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_clignotage'),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
             SendOscState([
@@ -131,6 +132,9 @@ dafist = [
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.6716),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.6716),
             SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.3333),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 120),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_clignotageA'),
 
             SendOscState([
 
@@ -180,6 +184,10 @@ dafist = [
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.6716),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.6716),
             SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.3333),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 120),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_themerefrain_clignotagestrob'),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
             SendOscState([
 
@@ -283,6 +291,7 @@ dafist = [
             SendOSC(lightseqport, '/Lightseq/Bpm', 120),
             SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_entreeinstru'),
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_entreeinstru_leslie'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_clignotage'),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.6716),
