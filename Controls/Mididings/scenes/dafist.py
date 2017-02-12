@@ -37,6 +37,8 @@ dafist = [
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.6716),
             SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.3333),
 
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_intro'),
+
 
             SendOscState([
 
@@ -73,6 +75,11 @@ dafist = [
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.6716),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.6716),
             SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.3333),
+
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_entreeinstru'),
+            SendOSC(lightseqport, '/Lightseq/Play'),
+            SendOSC(lightseqport, '/Lightseq/Bpm', 120),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_entreeinstru_leslie'),
 
             SendOscState([
 

@@ -75,6 +75,9 @@ qlcappport = 12000
 qlcport = 12001 # delayed messages
 qlcstopport = 12002 # stop (all off)
 
+## pyta
+vporlport = '192.168.0.31:56418'
+vpjeannotport = '192.168.0.30:56418'
 
 
 

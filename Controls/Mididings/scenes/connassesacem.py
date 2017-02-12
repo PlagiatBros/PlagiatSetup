@@ -84,6 +84,11 @@ connassessacem = [
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.708955),
             SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.35185),
 
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'connassesacem_2', timestamp),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+            SendOSC(lightseqport, '/Lightseq/Bpm', 125),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'connasses_metallica_clignote'),
+
             SendOscState([
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
                 [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
