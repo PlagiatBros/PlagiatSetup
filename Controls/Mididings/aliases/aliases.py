@@ -262,11 +262,13 @@ vxpedal= [
 #### Stop ####
 stop = [
         Program(2) >> cseqtrigger,
-        SendOSC(slport, '/sl/-1/hit', 'pause_on') >> Discard(),
-        SendOSC(klickport, '/klick/metro/stop') >> Discard(),
-        # SendOSC(audioseqport, '/Audioseq/DisableAll') >> Discard(),
-        SendOSC(qlcstopport, '/Stop') >> Discard(),
-
+        [
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
+            SendOSC(klickport, '/klick/metro/stop'),
+            # SendOSC(audioseqport, '/Audioseq/DisableAll'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Disable', '*'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Stop', '*'),
+        ]  >> Discard(),
 ]
 
 

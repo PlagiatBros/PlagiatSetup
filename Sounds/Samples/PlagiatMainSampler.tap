@@ -17,7 +17,7 @@
         <instrument name="RiresConnasses" minnote="62" maxnote="62" rootnote="62" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/48k_conassesSACEM_3.9@50.wav" sampleRelative="ConnassesSACEM/48k_conassesSACEM_3.9@50.wav"/>
         </instrument>
-        <instrument name="FrayedEnds" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="FrayedEnds" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="1.300000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/48k_FrayedEnds.2.wav" sampleRelative="ConnassesSACEM/48k_FrayedEnds.2.wav"/>
         </instrument>
         <instrument name="Laughters" minnote="65" maxnote="72" rootnote="65" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">

@@ -21,6 +21,13 @@ climat = [
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
+    [orl, jeannot] >> ProgramFilter([range(2,12)]) >> [
+        SendOSC(lightseqport, '/Lightseq/Sequence/Disable', '*'),
+        SendOSC(lightseqport, '/Lightseq/Scene/Stop', '*'),
+        SendOSC(vporlport, '/pyta/slide/visible', -1, 0),
+        SendOSC(vpjeannotport, '/pyta/slide/visible', -1, 0),
+        SendOSC(qlcstopport, '/Stop'),
+    ] >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     jeannot >> ProgramFilter(2) >> [ # Intro mandela - Bouton 2
         Program(69) >> cseqtrigger, # seq vocodeur à caler
@@ -164,8 +171,9 @@ climat = [
                 [samplestremoloport, '/strip/Samples4/Gain/Gain%20(dB)/unscaled', -18.],
                 [samplestremoloport, '/strip/SamplesPitch/Gain/Gain%20(dB)/unscaled', 0.0],
                 [samplesscapeport, '/strip/SamplesPitch/Gain/Gain%20(dB)/unscaled', -7.50],
-                [samplespitchport, '/strip/SamplesPitch1/AM%20pitchshifter/Pitch%20shift/unscaled', 2],
+                [samplespitchport, '/strip/SamplesPitch1/AM%20pitchshifter/Pitch%20shift/unscaled', 2.],
                 [samplespitchport, '/strip/SamplesPitch2/AM%20pitchshifter/Pitch%20shift/unscaled', 2.3],
+                [samplespitchport, '/strip/Samples4/Gain/Gain%20(dB)/unscaled', -10.6],
                 [samplesdelaymungeport, '/strip/Samples3/Gain/Gain%20(dB)/unscaled', -7.0],
                 [samplesringmodport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -2.0],
 
@@ -187,10 +195,10 @@ climat = [
 
             ] >> Discard(),
         [
-            bassdetunest_on,
+            bassdetunest_off,
             bassringst_on,
-            bassvibest_off,
-            bassbufferst_off,
+            bassvibest_on,
+            bassbufferst_on,
             ]
         ],
     orl >> ProgramFilter(3) >> [ # couplet - Bouton 3

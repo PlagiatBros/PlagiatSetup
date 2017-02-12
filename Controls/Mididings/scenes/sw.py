@@ -19,6 +19,13 @@ sw = [
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
+    [orl, jeannot] >> ProgramFilter([range(2,12)]) >> [
+        SendOSC(lightseqport, '/Lightseq/Sequence/Disable', '*'),
+        SendOSC(lightseqport, '/Lightseq/Scene/Stop', '*'),
+        SendOSC(vporlport, '/pyta/slide/visible', -1, 0),
+        SendOSC(vpjeannotport, '/pyta/slide/visible', -1, 0),
+        SendOSC(qlcstopport, '/Stop'),
+    ] >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # intro - Bouton 2
         #TODO filtre --> Degrade déjà en place ?

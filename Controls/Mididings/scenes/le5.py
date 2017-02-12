@@ -20,7 +20,14 @@ le5 = [
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
-        ] >> Discard(),
+    ] >> Discard(),
+    [orl, jeannot] >> ProgramFilter([range(2,12)]) >> [
+        SendOSC(lightseqport, '/Lightseq/Sequence/Disable', '*'),
+        SendOSC(lightseqport, '/Lightseq/Scene/Stop', '*'),
+        SendOSC(vporlport, '/pyta/slide/visible', -1, 0),
+        SendOSC(vpjeannotport, '/pyta/slide/visible', -1, 0),
+        SendOSC(qlcstopport, '/Stop'),
+    ] >> Discard(),
     jeannot >> ProgramFilter(2) >> [ # Intro Shut your dickhole - Bouton 2
         Program(65) >> cseqtrigger,
         NoteOn(66,127) >> Output('PBTapeutape', 3), # gunshot
