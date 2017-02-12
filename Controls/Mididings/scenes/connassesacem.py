@@ -18,7 +18,14 @@ connassessacem = [
         SendOSC(mk2inport, '/mididings/switch_scene', 3),
     ]),
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
-        SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
+        SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*'),
+    ] >> Discard(),
+    [orl, jeannot] >> ProgramFilter([range(2,12)]) >> [
+        SendOSC(lightseqport, '/Lightseq/Sequence/Disable', '*'),
+        SendOSC(lightseqport, '/Lightseq/Scene/Stop', '*'),
+        SendOSC(vporlport, '/pyta/slide/visible', -1, 0),
+        SendOSC(vpjeannotport, '/pyta/slide/visible', -1, 0),
+        SendOSC(qlcstopport, '/Stop'),
     ] >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     [orl, jeannot] >> ProgramFilter(2) >> [ # Thème Intro - Bouton 2
@@ -89,6 +96,9 @@ connassessacem = [
             SendOSC(lightseqport, '/Lightseq/Bpm', 125),
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'connasses_metallica_clignote'),
 
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'connassesacem_1', timestamp),
+
+
             SendOscState([
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
                 [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
@@ -123,16 +133,20 @@ connassessacem = [
             ]
         ],
     orl >> ProgramFilter(4) >> [
-        SendOSC(slport, '/sl/6/hit', 'record')
+        SendOSC(slport, '/sl/6/hit', 'record'),
+        SendOSC(lightseqport, '/Lightseq/Scene/Play', 'connassesacem_1', timestamp),
         ] >> Discard(),
     orl >> ProgramFilter(5) >> [
-        SendOSC(slport, '/sl/7/hit', 'record')
+        SendOSC(slport, '/sl/7/hit', 'record'),
+        SendOSC(lightseqport, '/Lightseq/Scene/Play', 'connassesacem_1', timestamp),
         ] >> Discard(),
     orl >> ProgramFilter(6) >> [
-        SendOSC(slport, '/sl/8/hit', 'record')
+        SendOSC(slport, '/sl/8/hit', 'record'),
+        SendOSC(lightseqport, '/Lightseq/Scene/Play', 'connassesacem_1', timestamp),
         ] >> Discard(),
     orl >> ProgramFilter(7) >> [
-        SendOSC(slport, '/sl/-1/hit', 'pauseon')
+        SendOSC(slport, '/sl/-1/hit', 'pauseon'),
+        SendOSC(lightseqport, '/Lightseq/Scene/Play', 'connassesacem_1', timestamp),
         ] >> Discard(),
     orl >> ProgramFilter(11) >> [
         SceneSwitch(2) >> Discard(),

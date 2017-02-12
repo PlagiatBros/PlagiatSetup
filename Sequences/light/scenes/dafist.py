@@ -4,7 +4,6 @@ sys.path.append("../Controls/Mididings/")
 from ports import *
 
 def dafist_intro(seq, timer):
-    seq.send(qlcstopport, 'stop')
     seq.send('/CC/White/Segment/All', 255)
     seq.send('/CJ/White/Segment/All', 255)
 
@@ -17,7 +16,6 @@ def dafist_intro(seq, timer):
     seq.send(vpjeannotport,'/pyta/slide/visible', 63, 1)
 
 def dafist_entreeinstru(seq, timer):
-    seq.send(qlcstopport, 'stop')
     seq.send('/CC/White/Segment/1', 100)
     seq.send('/CC/White/Segment/2', 75)
     seq.send('/CC/White/Segment/3', 50)
@@ -36,27 +34,27 @@ def dafist_entreeinstru(seq, timer):
     seq.send(vpjeannotport,'/pyta/slide/visible', 63, 1)
 
 def dafist_leslie_j(seq, timer):
-    seq.animate([vpjeannotport, '/pyta/slide/scale_y', 63], 768, 0, 1.95, 'beat', framerate=50, blocking=True)
+    seq.animate([vpjeannotport, '/pyta/slide/scale_y', 63], 768, 0, 1.95, 'beat', framerate=50)
     timer.wait(2, 'beat')
     seq.send(vpjeannotport, '/pyta/slide/rotate_z', 63, -90)
-    seq.animate([vpjeannotport, '/pyta/slide/scale_y', 63], 0, 768, 1.95, 'beat', framerate=50, blocking=True)
+    seq.animate([vpjeannotport, '/pyta/slide/scale_y', 63], 0, 768, 1.95, 'beat', framerate=50)
     timer.wait(2, 'beat')
-    seq.animate([vpjeannotport, '/pyta/slide/scale_y', 63], 768, 0, 1.95, 'beat', framerate=50, blocking=True)
+    seq.animate([vpjeannotport, '/pyta/slide/scale_y', 63], 768, 0, 1.95, 'beat', framerate=50)
     timer.wait(2, 'beat')
     seq.send(vpjeannotport, '/pyta/slide/rotate_z', 63, 90)
-    seq.animate([vpjeannotport, '/pyta/slide/scale_y', 63], 0, 768, 1.95, 'beat', framerate=50, blocking=True)
+    seq.animate([vpjeannotport, '/pyta/slide/scale_y', 63], 0, 768, 1.95, 'beat', framerate=50)
     timer.wait(2, 'beat')
 
 def dafist_leslie_o(seq, timer):
-    seq.animate([vporlport, '/pyta/slide/scale_y', 63], 768, 0, 1.95, 'beat', framerate=50, blocking=True)
+    seq.animate([vporlport, '/pyta/slide/scale_y', 63], 768, 0, 1.95, 'beat', framerate=50)
     timer.wait(2, 'beat')
     seq.send(vporlport, '/pyta/slide/rotate_z', 63, -90)
-    seq.animate([vporlport, '/pyta/slide/scale_y', 63], 0, 768, 1.95, 'beat', framerate=50, blocking=True)
+    seq.animate([vporlport, '/pyta/slide/scale_y', 63], 0, 768, 1.95, 'beat', framerate=50)
     timer.wait(2, 'beat')
-    seq.animate([vporlport, '/pyta/slide/scale_y', 63], 768, 0, 1.95, 'beat', framerate=50, blocking=True)
+    seq.animate([vporlport, '/pyta/slide/scale_y', 63], 768, 0, 1.95, 'beat', framerate=50)
     timer.wait(2, 'beat')
     seq.send(vporlport, '/pyta/slide/rotate_z', 63, 90)
-    seq.animate([vporlport, '/pyta/slide/scale_y', 63], 0, 768, 1.95, 'beat', framerate=50, blocking=True)
+    seq.animate([vporlport, '/pyta/slide/scale_y', 63], 0, 768, 1.95, 'beat', framerate=50)
     timer.wait(2, 'beat')
 
 def dafist_clignotageA(seq, timer):

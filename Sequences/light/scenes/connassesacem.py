@@ -2,11 +2,9 @@ import sys
 sys.path.append("../Controls/Mididings/")
 
 from ports import *
-vporlport = '192.168.0.31:56418'
-vpjeannotport = '192.168.0.30:56418'
+
 
 def connassesacem_1(seq, timer):
-    seq.send(qlcstopport, 'stop')
     seq.send('/CC/White/Segment/1', 100)
     seq.send('/CC/White/Segment/2', 75)
     seq.send('/CC/White/Segment/3', 50)
@@ -28,9 +26,9 @@ def connassesacem_2(seq, timer):
     seq.send(vpjeannotport, '/pyta/slide/alpha', 99, 0)
     seq.send(vpjeannotport, '/pyta/slide/rgb', 99, 1, 0, 0)
     seq.send(vpjeannotport, '/pyta/slide/visible', 99, 1)
-    seq.animate([vpjeannotport, '/pyta/slide/alpha', 99], 0., 1., 220, 'beat', framerate=50, blocking=True)
+    seq.animate([vpjeannotport, '/pyta/slide/alpha', 99], 0., 1., 120, 'sex', framerate=50)
 
     seq.send(vporlport, '/pyta/slide/alpha', 99, 0)
     seq.send(vporlport, '/pyta/slide/rgb', 99, 1, 0, 0)
     seq.send(vporlport, '/pyta/slide/visible', 99, 1)
-    seq.animate([vporlport, '/pyta/slide/alpha', 99], 0., 1., 220, 'beat', framerate=50, blocking=True)
+    seq.animate([vporlport, '/pyta/slide/alpha', 99], 0., 1., 120, 'sex', framerate=50)

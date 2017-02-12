@@ -20,6 +20,13 @@ dafist = [
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
+    [orl, jeannot] >> ProgramFilter([range(2,12)]) >> [
+        SendOSC(lightseqport, '/Lightseq/Sequence/Disable', '*'),
+        SendOSC(lightseqport, '/Lightseq/Scene/Stop', '*'),
+        SendOSC(vporlport, '/pyta/slide/visible', -1, 0),
+        SendOSC(vpjeannotport, '/pyta/slide/visible', -1, 0),
+        SendOSC(qlcstopport, '/Stop'),
+    ] >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # Intro Thème - Bouton 2
         Program(65) >> cseqtrigger,
@@ -76,10 +83,10 @@ dafist = [
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.6716),
             SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.3333),
 
-            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_entreeinstru'),
-            SendOSC(lightseqport, '/Lightseq/Play'),
             SendOSC(lightseqport, '/Lightseq/Bpm', 120),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_entreeinstru'),
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_entreeinstru_leslie'),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
             SendOscState([
 
@@ -272,6 +279,11 @@ dafist = [
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 120),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_entreeinstru'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_entreeinstru_leslie'),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.6716),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.6716),
