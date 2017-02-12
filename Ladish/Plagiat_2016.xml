@@ -2,7 +2,7 @@
 <!--
 ladish Studio configuration.
 -->
-<!-- Fri Feb 10 22:05:57 2017 -->
+<!-- Sun Feb 12 12:57:31 2017 -->
 <studio>
   <jack>
     <conf>
@@ -637,6 +637,7 @@ ladish Studio configuration.
           <port name="BassSynth/out-2" uuid="d6da648b-761e-4a13-9a21-b3aafee65730" />
           <port name="BassWobblePre/in-1" uuid="ffef2655-86d4-4b70-a707-8461e2d72d7c" />
           <port name="BassWobblePre/out-1" uuid="0e95cb88-16a5-471e-ab24-26e7fcd56229" />
+          <port name="BassDry/out-2" uuid="9d1e7a84-2ae2-4cc8-b8a3-f74b19fce3bc" />
         </ports>
       </client>
       <client name="MonitorsORL (NM)" uuid="3ea515bd-6ceb-4511-93fb-6fb75262ae57">
@@ -2033,6 +2034,7 @@ ladish Studio configuration.
         <port name="BassSynth/out-2" uuid="d6da648b-761e-4a13-9a21-b3aafee65730" type="audio" direction="output" />
         <port name="BassWobblePre/in-1" uuid="ffef2655-86d4-4b70-a707-8461e2d72d7c" type="audio" direction="input" />
         <port name="BassWobblePre/out-1" uuid="0e95cb88-16a5-471e-ab24-26e7fcd56229" type="audio" direction="output" />
+        <port name="BassDry/out-2" uuid="9d1e7a84-2ae2-4cc8-b8a3-f74b19fce3bc" type="audio" direction="output" />
       </ports>
       <dict>
         <key name="http://ladish.org/ns/canvas/x">658.064231</key>
@@ -2049,8 +2051,8 @@ ladish Studio configuration.
         <port name="BassDegradePost/in-1" uuid="61389820-3a02-47e7-87c5-a43c5ad0e116" type="audio" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1324.334982</key>
-        <key name="http://ladish.org/ns/canvas/y">1138.162764</key>
+        <key name="http://ladish.org/ns/canvas/x">1175.204173</key>
+        <key name="http://ladish.org/ns/canvas/y">1190.634715</key>
       </dict>
     </client>
     <client name="BassMain (NM)" uuid="e243b67e-746a-477b-b5a0-5f04089dd5f5" naming="app" app="9950811d-a2ff-48c6-84f7-d569f415b4bd">
@@ -2059,8 +2061,8 @@ ladish Studio configuration.
         <port name="BassMain/in-2" uuid="b1cfe7f9-3eac-4794-8e71-62cbfcef22ff" type="audio" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1594.847553</key>
-        <key name="http://ladish.org/ns/canvas/y">1367.192610</key>
+        <key name="http://ladish.org/ns/canvas/x">1622.464369</key>
+        <key name="http://ladish.org/ns/canvas/y">1381.001018</key>
       </dict>
     </client>
     <client name="SLServer" uuid="5eac2eb4-f24a-441f-91b3-063f8b8ff5a0" naming="app" app="6048d3ab-ecf3-4545-901a-2a842e8dbd93">
@@ -2257,8 +2259,8 @@ ladish Studio configuration.
         <port name="fluidsynth Out #2" uuid="5e95c059-25a9-4f04-805f-28218023200e" type="audio" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1167.165975</key>
-        <key name="http://ladish.org/ns/canvas/y">1420.104265</key>
+        <key name="http://ladish.org/ns/canvas/x">1186.497747</key>
+        <key name="http://ladish.org/ns/canvas/y">1475.337898</key>
       </dict>
     </client>
     <client name="ZitaORL" uuid="6eb40854-4297-4f03-95ab-7f7fae3c2d1b" naming="app" app="87318598-bfef-4411-b30f-060d5c7f85dc">
@@ -2268,8 +2270,8 @@ ladish Studio configuration.
         <port name="pitch" uuid="e1e28cc7-af85-4f46-ab41-0f242946e7cb" type="midi" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1482.676675</key>
-        <key name="http://ladish.org/ns/canvas/y">1583.537260</key>
+        <key name="http://ladish.org/ns/canvas/x">1450.917336</key>
+        <key name="http://ladish.org/ns/canvas/y">1600.107350</key>
       </dict>
     </client>
     <client name="ZitaJeannot" uuid="f0698758-b8b4-4c84-8ba7-e42bf62c71aa" naming="app" app="a22b80ca-d674-4681-812d-e12014da4f7d">
@@ -2279,8 +2281,8 @@ ladish Studio configuration.
         <port name="pitch" uuid="bd835273-25d4-448e-9ac3-44258030999f" type="midi" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1489.992542</key>
-        <key name="http://ladish.org/ns/canvas/y">1429.000000</key>
+        <key name="http://ladish.org/ns/canvas/x">1556.272902</key>
+        <key name="http://ladish.org/ns/canvas/y">1527.039698</key>
       </dict>
     </client>
     <client name="Keyboards (NM)" uuid="873e1db4-34d6-4d69-9320-756f7706f1cf" naming="app" app="c34bb6c1-d772-496d-8598-5b6c1e9a7d5d">
@@ -2307,8 +2309,8 @@ ladish Studio configuration.
         <port name="ZynAddSubFX" uuid="a11781c6-fa48-45a8-a526-b1dd78f2ee77" type="midi" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1281.469475</key>
-        <key name="http://ladish.org/ns/canvas/y">997.856400</key>
+        <key name="http://ladish.org/ns/canvas/x">1256.614340</key>
+        <key name="http://ladish.org/ns/canvas/y">1069.660123</key>
       </dict>
     </client>
     <client name="Zyn (Bass)" uuid="8aeb8e65-920b-45d0-a45e-1e12cfa1cdad" naming="app" app="ec63aad8-c625-45d1-82c7-c90baa9a183c">
@@ -2325,14 +2327,14 @@ ladish Studio configuration.
     </client>
     <client name="Guitarix (Bass)" uuid="060e91b9-b69a-4ef0-8dcd-43702b60c147" naming="app" app="7fdbc150-b9d1-414e-8411-c275c76afd62">
       <ports>
-        <port name="in_0" uuid="4070bdb1-efe9-47d8-ade8-bb64730411bb" type="audio" direction="output" />
-        <port name="midi_in_1" uuid="896df337-ac56-466c-9de0-111e8e9604f8" type="audio" direction="output" />
+        <port name="in_0" uuid="4070bdb1-efe9-47d8-ade8-bb64730411bb" type="audio" direction="input" />
+        <port name="midi_in_1" uuid="896df337-ac56-466c-9de0-111e8e9604f8" type="midi" direction="input" />
         <port name="out_0" uuid="ca149f4d-6ad4-41d1-805f-bc1ab37fedf0" type="audio" direction="output" />
-        <port name="midi_out_1" uuid="dd354f7d-2828-47a1-8186-b048c504f279" type="audio" direction="output" />
+        <port name="midi_out_1" uuid="dd354f7d-2828-47a1-8186-b048c504f279" type="midi" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">175.777842</key>
-        <key name="http://ladish.org/ns/canvas/y">1018.308483</key>
+        <key name="http://ladish.org/ns/canvas/x">1377.109358</key>
+        <key name="http://ladish.org/ns/canvas/y">1254.432264</key>
       </dict>
     </client>
     <client name="gx_head_amp" uuid="2f381a97-8be5-487c-951f-05b61dbce29b" naming="app">
@@ -2343,8 +2345,8 @@ ladish Studio configuration.
         <port name="midi_out_1" uuid="fbfa734c-dff7-472f-91c2-34cd8d6fac2b" type="midi" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1266.861312</key>
-        <key name="http://ladish.org/ns/canvas/y">1245.243570</key>
+        <key name="http://ladish.org/ns/canvas/x">1178.487499</key>
+        <key name="http://ladish.org/ns/canvas/y">1317.047293</key>
       </dict>
     </client>
     <client name="gx_head_fx" uuid="a82feed4-6870-4dfe-bc60-1e2b997bb92a" naming="app">
@@ -2354,8 +2356,8 @@ ladish Studio configuration.
         <port name="out_1" uuid="cd5e6842-49d7-427d-9db5-94882bae6496" type="audio" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1380.914332</key>
-        <key name="http://ladish.org/ns/canvas/y">1261.649580</key>
+        <key name="http://ladish.org/ns/canvas/x">1351.916675</key>
+        <key name="http://ladish.org/ns/canvas/y">1361.070119</key>
       </dict>
     </client>
     <client name="CME KeyBoard Filter" uuid="79642869-512f-4fa2-a072-560badb5f5be" naming="app" app="ce8e80fd-4088-4ea8-b186-ab28732e4058">
@@ -2381,8 +2383,8 @@ ladish Studio configuration.
         <port name="Mk2OutWobble" uuid="a03fb51c-75e9-4713-b986-6ba0a9e228ea" type="midi" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1529.834881</key>
-        <key name="http://ladish.org/ns/canvas/y">1041.263509</key>
+        <key name="http://ladish.org/ns/canvas/x">1649.968033</key>
+        <key name="http://ladish.org/ns/canvas/y">1015.027533</key>
       </dict>
     </client>
     <client name="wobbleCtrl" uuid="fe7ef614-82c2-4678-9a5a-aadfa5507b5b" naming="app" app="d05dd957-12ce-4814-9733-d2df4fb92692">
@@ -2391,8 +2393,8 @@ ladish Studio configuration.
         <port name="out_1" uuid="cd87342d-412f-48dc-80b0-ec478e463383" type="midi" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1562.136542</key>
-        <key name="http://ladish.org/ns/canvas/y">1235.825000</key>
+        <key name="http://ladish.org/ns/canvas/x">1762.358461</key>
+        <key name="http://ladish.org/ns/canvas/y">1110.168485</key>
       </dict>
     </client>
     <client name="Arturia MiniLab mkII" uuid="b472e10c-0103-4c30-9331-40bff842914f" naming="app">
@@ -2930,9 +2932,9 @@ ladish Studio configuration.
     <connection port1="53679272-23d4-4f41-ad08-1f0a087e75cd" port2="2c9b52ec-31fc-4b1f-be62-23b022ddd675" />
     <connection port1="53679272-23d4-4f41-ad08-1f0a087e75cd" port2="d43244ed-1aec-45e7-99e8-5eb6235f6340" />
     <connection port1="4e9b9e14-498e-4644-a407-b817641af003" port2="ff117881-f553-4dbf-b190-014df27a9298" />
-    <connection port1="0e95cb88-16a5-471e-ab24-26e7fcd56229" port2="23f6b292-264d-44f9-b248-8e954758045a" />
     <connection port1="6980c990-a1ee-4107-89a7-a341e077ec87" port2="ac9d29b9-0c97-4708-99b4-10f840c9d930" />
     <connection port1="6980c990-a1ee-4107-89a7-a341e077ec87" port2="93adb0f9-65dd-476f-8c39-2bb16f720995" />
+    <connection port1="9f19567c-fe0a-4d30-8665-0077fb82c5f8" port2="23f6b292-264d-44f9-b248-8e954758045a" />
   </connections>
   <applications>
     <application name="a2j" uuid="65bce9a0-8285-4cb3-9630-321ba19b43a4" terminal="false" level="0" autorun="true">a2j -e</application>
@@ -2965,8 +2967,8 @@ ladish Studio configuration.
     <application name="SamplesPitch (NM)" uuid="29e48490-4c5d-47d9-8602-d3a7e8d63676" terminal="false" level="0" autorun="true">non-mixer --osc-port 7000 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FSamplesPitch</application>
     <application name="drumKlit (MIdidings)" uuid="50114045-9636-4c01-869f-e2b0b1ff1200" terminal="false" level="0" autorun="true">python %2Fhome%2Fwoii%2FPlagiat%2FStage%2FControls%2FMididings%2FdrumKlit.py</application>
     <application name="BassSubCALF" uuid="9f82ed21-0cd3-4d4e-8595-7d825d3ff094" terminal="false" level="0" autorun="true">calfjackhost --load %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FCalf%2FBassSub</application>
-    <application name="ZitaORL" uuid="87318598-bfef-4411-b30f-060d5c7f85dc" terminal="false" level="0" autorun="true">zita-at1 -f 0.02</application>
-    <application name="ZitaJeannot" uuid="a22b80ca-d674-4681-812d-e12014da4f7d" terminal="false" level="0" autorun="true">zita-at1 -f 0.02</application>
+    <application name="ZitaORL" uuid="87318598-bfef-4411-b30f-060d5c7f85dc" terminal="false" level="0" autorun="true">zita-at1 -f 0.02 -c 1</application>
+    <application name="ZitaJeannot" uuid="a22b80ca-d674-4681-812d-e12014da4f7d" terminal="false" level="0" autorun="true">zita-at1 -f 0.02 -c 1</application>
     <application name="TrapCut" uuid="46938c56-5dc1-4fb5-8615-9a653ee95ee6" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_tC.sh</application>
     <application name="OscSequencers" uuid="e93544e1-f2fa-4aea-b058-4b1c5c54da29" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_aS.sh</application>
     <application name="HdspMixer" uuid="263ff569-8e78-4493-bab3-071446f997cb" terminal="false" level="0" autorun="true">hdspmixer</application>
@@ -2980,7 +2982,7 @@ ladish Studio configuration.
     <application name="wobbleCtrl" uuid="d05dd957-12ce-4814-9733-d2df4fb92692" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_wC.sh</application>
     <application name="QLC+" uuid="6247c29f-437a-492f-bab0-2c6474f19ebb" terminal="false" level="0" autorun="true">qlcplus -p -o %2Fhome%2Fwoii%2FPlagiat%2FStage%2FLights%2Fplagiat.qxw</application>
     <application name="QLC Manager" uuid="56d9deaf-5745-47f4-b4a7-e47a25e5a3f0" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_qLC.sh</application>
-    <application name="OSC Control Surface" uuid="31ca0d05-49db-4b09-9d83-e925b9262e99" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_gUI.sh</application>
+    <application name="OSC Control Surface" uuid="31ca0d05-49db-4b09-9d83-e925b9262e99" terminal="false" level="0" autorun="false">open-stage-control -l %2Fhome%2Fwoii%2FPlagiat%2FStage%2FInterfaces%2Forl.js -c %2Fhome%2Fwoii%2FPlagiat%2FStage%2FInterfaces%2Forl-custom-module.js -p 11000</application>
     <application name="OSC Control to MIDI" uuid="59351a7d-de17-4db2-80b0-9b56dbbf4ce6" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_gUItoMidi.sh</application>
   </applications>
 </studio>
