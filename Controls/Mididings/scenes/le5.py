@@ -453,8 +453,7 @@ le5 = [
             vxjeannotdisint_off,
             vxorlvocode_off,
 
-            bassscape,
-            bassdegrade,
+            bassdry,
             basswobble,
 
             ] >> Discard(),

@@ -186,8 +186,11 @@ dafist = [
             SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.3333),
 
             SendOSC(lightseqport, '/Lightseq/Bpm', 120),
-            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_themerefrain_clignotagestrob'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_roulettearabesques'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_roulettearabesques'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_themerefrain_clignotagestrob'),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
 
             SendOscState([
 

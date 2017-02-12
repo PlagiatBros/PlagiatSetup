@@ -149,6 +149,8 @@ wholeworld = [
 
             ]),
 
+            SendOSC(cmeinport, '/mididings/switch_scene', 5),
+
             vxorlgars_on,
             vxorlmeuf_off,
             vxorldisint_off,
@@ -172,6 +174,7 @@ wholeworld = [
         ],
 
     orl >> ProgramFilter(5) >> [ # Outro - Bouton 5
+        stop,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 90),
@@ -190,6 +193,8 @@ wholeworld = [
                 [samplesscapeport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -6.0],
 
             ]),
+
+            SendOSC(cmeinport, '/mididings/switch_scene', 8),
 
             vxorlgars_on,
             vxorlmeuf_on,

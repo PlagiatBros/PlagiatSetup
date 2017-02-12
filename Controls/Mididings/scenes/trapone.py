@@ -111,6 +111,7 @@ trapone = [
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
+
             ] >> Discard(),
         [
             bassdetunest_on,
@@ -170,24 +171,20 @@ trapone = [
             ],
 
         ],
-    jeannot >> ProgramFilter(2) >> [ # WE IS DA REAL RABBITS (stop milieu couplet) - Bouton 2
-        stop,
+    jeannot >> ProgramFilter(2) >> [ # Couplet 1 (rattrapage) - Bouton 2
+        Program(66) >> cseqtrigger,
         [
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 120),
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
-            vxorlmeuf_on,
-            vxorlgars_on,
-            vxorldisint_off,
-            vxorldelay_off,
-            vxorlvocode_off,
+            SendOSC(klickport, '/klick/simple/set_tempo', 120),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),
 
-            vxjeannotgars_on,
-            vxjeannotmeuf_on,
-            vxjeannotdelay_off,
-            vxjeannotdisint_off,
-            vxjeannotvocode_off,
-
-            ] >> Discard()
         ],
+    ],
     jeannot >> ProgramFilter(3) >> [ # Couplet Altern vers couplet - Bouton 3
         Program(67) >> cseqtrigger,
         SendOSC(audioseqport, '/Audioseq/Bpm', 120),

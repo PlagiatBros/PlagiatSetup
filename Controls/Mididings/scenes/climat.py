@@ -48,9 +48,6 @@ climat = [
             vxjeannotdelay_off, #??
             vxjeannotvocode_on,
 
-            SendOSC(vxjeannotmeufport, '/strip/VxJeannotVocod/AM%20pitchshifter/Pitch%20shift/unscaled', 1.0),
-            SendOSC(vxorlmeufport,     '/strip/VxORLVocod/AM%20pitchshifter/Pitch%20shift/unscaled', 1.0),
-
             SendOscState([
                 [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
                 [samplesmainport, '/strip/SamplesMunge/Gain/Mute', 0.0],

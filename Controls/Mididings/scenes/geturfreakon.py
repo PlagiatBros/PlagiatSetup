@@ -54,6 +54,7 @@ geturfreakon = [
             vxorldisint_off,
             vxorldelay_off,
             vxorlvocode_on,
+            SendOSC(vxorlmeufport,     '/strip/VxORLVocod/AM%20pitchshifter/Pitch%20shift/unscaled', 1.2),
 
             vxjeannotdelay_on,
             vxjeannotgars_on,
@@ -71,33 +72,6 @@ geturfreakon = [
             bassvibest_on,
             bassbufferst_on,
             ]
-        ],
-    jeannot >> ProgramFilter(2) >> [ # SlowMotium (vxdelay off) - Bouton 2
-            vxorlgars_off,
-            vxorlmeuf_off,
-            vxorldisint_off,
-            vxorldelay_off,
-            vxorlvocode_on,
-
-            vxjeannotdelay_on,
-            vxjeannotgars_on,
-            vxjeannotmeuf_off,
-            vxjeannotdisint_off,
-            vxjeannotvocode_off,
-        ],
-
-    jeannot >> ProgramFilter(3) >> [ # SlowMotium (vxdelay on) - Bouton 3
-            vxorlgars_off,
-            vxorlmeuf_off,
-            vxorldisint_off,
-            vxorldelay_on,
-            vxorlvocode_on,
-
-            vxjeannotdelay_on,
-            vxjeannotgars_on,
-            vxjeannotmeuf_off,
-            vxjeannotdisint_off,
-            vxjeannotvocode_off,
         ],
     orl >> ProgramFilter(3) >> [ # Refrain - Bouton 3
         stop,

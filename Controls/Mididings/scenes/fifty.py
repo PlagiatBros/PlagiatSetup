@@ -30,7 +30,7 @@ fifty = [
     orl >> ProgramFilter(2) >> [ # Intro (fin du sample) - Bouton 2
         Program(65) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eighth_per_cycle', 4),
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 117),
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
@@ -334,6 +334,11 @@ fifty = [
         ],
 
     jeannot >> ProgramFilter(2) >> [
+        SendOSC(56418, '/pedalBoard/button', 2),
+        SendOSC(audioseqport, '/Audioseq/Bpm', 117),
+        SendOSC(audioseqport, '/Audioseq/Scene/Play', 'fifty_couplet_auto', timestamp),
+    ],
+    jeannot >> ProgramFilter(3) >> [
         SceneSwitch(5) >> Discard(),
         Ctrl(102, 127) >> Output('Mk2CtrlOut', 1)
         ],

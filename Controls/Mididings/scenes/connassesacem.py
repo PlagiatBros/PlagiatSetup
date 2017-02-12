@@ -17,10 +17,10 @@ connassessacem = [
         SendOSC(zyntrebleport, '/microtonal/tunings', '100.0\n200.0\n300.0\n435.0\n500.0\n600.0\n700.0\n800.0\n900.0\n1000.0\n1135.0\n2/1'),
         SendOSC(mk2inport, '/mididings/switch_scene', 3),
     ]),
-    [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
+    [orl, jeannot] >> ProgramFilter([range(2,4)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*'),
     ] >> Discard(),
-    [orl, jeannot] >> ProgramFilter([range(2,12)]) >> [
+    [orl, jeannot] >> ProgramFilter([range(2,4)]) >> [
         SendOSC(lightseqport, '/Lightseq/Sequence/Disable', '*'),
         SendOSC(lightseqport, '/Lightseq/Scene/Stop', '*'),
         SendOSC(vporlport, '/pyta/slide/visible', -1, 0),

@@ -125,6 +125,8 @@ vxorldelay_off = [
 vxorlvocode_on= [
     SendOSC(vxorlpreport, '/strip/VxORLMeuf/Gain/Mute', 0.0),
     SendOSC(vxorlpostport, '/strip/VxORLVocodePost/Gain/Mute', 0.0),
+    SendOSC(vxorlpostport, '/strip/VxORLVocodePost/Gain/Mute', 0.0),
+    SendOSC(vxorlmeufport,     '/strip/VxORLVocod/AM%20pitchshifter/Pitch%20shift/unscaled', 1.0),
     SendOSC(surfaceorlport, '/vxorl', 'vocode', 1),
     ] >> Discard()
 
@@ -181,6 +183,7 @@ vxjeannotdelay_off = [
 vxjeannotvocode_on= [
     SendOSC(vxjeannotpreport, '/strip/VxJeannotMeuf/Gain/Mute', 0.0),
     SendOSC(vxjeannotpostport, '/strip/VxJeannotVocodePost/Gain/Mute', 0.0),
+    SendOSC(vxjeannotmeufport, '/strip/VxJeannotVocod/AM%20pitchshifter/Pitch%20shift/unscaled', 1.0),
     ] >> Discard()
 vxjeannotvocode_off= [
     SendOSC(vxjeannotpostport, '/strip/VxJeannotVocodePost/Gain/Mute', 1.0),

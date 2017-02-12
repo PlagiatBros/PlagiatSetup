@@ -200,6 +200,7 @@ horrorcore = [
         ],
     orl >> ProgramFilter(5) >> [ # Refrain grand messe - bouton 5
         stop,
+        Program(68) >> cseqtrigger,
         [
 
 
@@ -210,16 +211,16 @@ horrorcore = [
             SendOSC(cmeinport, '/mididings/switch_scene', 12),
 
             vxorlmeuf_off,
-            vxorlgars_on,
+            vxorlgars_off,
             vxorldisint_off,
             vxorldelay_off,
-            vxorlvocode_off,
+            vxorlvocode_on,
 
             vxjeannotdelay_off,
-            vxjeannotgars_on,
+            vxjeannotgars_off,
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
-            vxjeannotvocode_off,
+            vxjeannotvocode_on,
 
             bassdry,
 
@@ -267,6 +268,8 @@ horrorcore = [
             vxjeannotdisint_off,
             vxjeannotdelay_on,
             vxjeannotvocode_on,
+
+            SubSceneSwitch(1),
 
             ] >> Discard()
         ],
