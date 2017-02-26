@@ -68,7 +68,7 @@ sw = [
             vxjeannotvocode_off,
             ] >> Discard()
         ],
-    jeannot >> ProgramFilter(2) >> [ # [delay] Lanceur du Couplet - Bouton 2
+    jeannot >> ProgramFilter(2) >> [ # Lanceur du Couplet (delais = 2 mesures) - Bouton 2
         [
             SendOSC(audioseqport, '/Audioseq/Bpm', 178.5),
             SendOSC(audioseqport, '/Audioseq/Scene/Play', 'sw_couplet_auto', timestamp),

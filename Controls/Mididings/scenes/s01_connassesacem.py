@@ -76,7 +76,7 @@ connassessacem = [
 
             ] >> Discard()
         ],
-    [orl, jeannot] >> ProgramFilter(3) >> [ # Thème Intro - Bouton 3
+    [orl, jeannot] >> ProgramFilter(3) >> [ # Thème Intro + guitare - Bouton 3
         Program(66) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -132,23 +132,23 @@ connassessacem = [
             bassbufferst_off,
             ]
         ],
-    orl >> ProgramFilter(4) >> [
+    orl >> ProgramFilter(4) >> [ # sl 6 record
         SendOSC(slport, '/sl/6/hit', 'record'),
         SendOSC(lightseqport, '/Lightseq/Scene/Play', 'connassesacem_1', timestamp),
         ] >> Discard(),
-    orl >> ProgramFilter(5) >> [
+    orl >> ProgramFilter(5) >> [ # sl 7 record
         SendOSC(slport, '/sl/7/hit', 'record'),
         SendOSC(lightseqport, '/Lightseq/Scene/Play', 'connassesacem_1', timestamp),
         ] >> Discard(),
-    orl >> ProgramFilter(6) >> [
+    orl >> ProgramFilter(6) >> [ # sl 8 record
         SendOSC(slport, '/sl/8/hit', 'record'),
         SendOSC(lightseqport, '/Lightseq/Scene/Play', 'connassesacem_1', timestamp),
         ] >> Discard(),
-    orl >> ProgramFilter(7) >> [
-        SendOSC(slport, '/sl/-1/hit', 'pauseon'),
+    orl >> ProgramFilter(7) >> [ # sl -1 pause
+        SendOSC(slport, '/sl/-1/hit', 'pause'),
         SendOSC(lightseqport, '/Lightseq/Scene/Play', 'connassesacem_1', timestamp),
         ] >> Discard(),
-    orl >> ProgramFilter(11) >> [
+    orl >> ProgramFilter(11) >> [ # SceneSwitch -> Dafist
         SceneSwitch(2) >> Discard(),
         Program(2) >> Output('PBCtrlOut', 1)
         ],

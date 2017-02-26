@@ -124,6 +124,10 @@ trapone = [
     orl >> ProgramFilter(4) >> [ # Couplet 1  - Bouton 4
         Program(66) >> cseqtrigger,
         [
+            SendOSC(audioseqport, '/Audioseq/Scene/Stop', 'trapone_altern_couplet', timestamp),
+            SendOSC(audioseqport, '/Audioseq/Scene/Stop', 'trapone_altern_refrain', timestamp),
+            SendOSC(audioseqport, '/Audioseq/Scene/Stop', 'trapone_altern_final', timestamp),
+
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 120),
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
@@ -174,6 +178,10 @@ trapone = [
     jeannot >> ProgramFilter(2) >> [ # Couplet 1 (rattrapage) - Bouton 2
         Program(66) >> cseqtrigger,
         [
+            SendOSC(audioseqport, '/Audioseq/Scene/Stop', 'trapone_altern_couplet', timestamp),
+            SendOSC(audioseqport, '/Audioseq/Scene/Stop', 'trapone_altern_refrain', timestamp),
+            SendOSC(audioseqport, '/Audioseq/Scene/Stop', 'trapone_altern_final', timestamp),
+
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 120),
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
@@ -199,6 +207,10 @@ trapone = [
     orl >> ProgramFilter(5) >> [ # Refrain - Bouton 5
         Program(68) >> cseqtrigger,
         [
+            SendOSC(audioseqport, '/Audioseq/Scene/Stop', 'trapone_altern_couplet', timestamp),
+            SendOSC(audioseqport, '/Audioseq/Scene/Stop', 'trapone_altern_refrain', timestamp),
+            SendOSC(audioseqport, '/Audioseq/Scene/Stop', 'trapone_altern_final', timestamp),
+
             SendOSC(slport, '/set', 'eighth_per_cycle', 33),
             SendOSC(slport, '/set', 'tempo', 120),
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
@@ -253,6 +265,10 @@ trapone = [
     orl >> ProgramFilter(6) >> [ # Couplet 2  - Bouton 6
         Program(66) >> cseqtrigger,
         [
+            SendOSC(audioseqport, '/Audioseq/Scene/Stop', 'trapone_altern_couplet', timestamp),
+            SendOSC(audioseqport, '/Audioseq/Scene/Stop', 'trapone_altern_refrain', timestamp),
+            SendOSC(audioseqport, '/Audioseq/Scene/Stop', 'trapone_altern_final', timestamp),
+
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 120),
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
@@ -342,10 +358,10 @@ trapone = [
 
             ] >> Discard()
         ],
-        orl >> ProgramFilter(11) >> [
-            SceneSwitch(7) >> Discard(),
-            Program(2) >> Output('PBCtrlOut', 1)
-            ],
-        jeannot >> ProgramFilter(8) >> SendOSC(trapcutport, '/Trapcut/Scene/Play', 'I') >> Discard(),
+    orl >> ProgramFilter(11) >> [ # SceneSwitch -> SW
+        SceneSwitch(7) >> Discard(),
+        Program(2) >> Output('PBCtrlOut', 1)
+        ],
+    jeannot >> ProgramFilter(8) >> SendOSC(trapcutport, '/Trapcut/Scene/Play', 'I') >> Discard(),
 
     ]

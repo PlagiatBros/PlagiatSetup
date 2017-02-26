@@ -28,7 +28,7 @@ dafist = [
         SendOSC(qlcstopport, '/Stop'),
     ] >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
-    orl >> ProgramFilter(2) >> [ # Intro Thème - Bouton 2
+    orl >> ProgramFilter(2) >> [ # Intro Thème glockentspiel - Bouton 2
         Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -68,7 +68,7 @@ dafist = [
             vxjeannotvocode_off,
             ] >> Discard()
         ],
-    orl >> ProgramFilter(3) >> [ # Intro Thème 2 - Bouton 3
+    orl >> ProgramFilter(3) >> [ # Intro Thème 2 avec instrus - Bouton 3
         Program(66) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -489,10 +489,10 @@ dafist = [
             bassbufferst_off,
             ]
         ],
-    orl >> ProgramFilter(9) >> [
+    orl >> ProgramFilter(9) >> [ # sl 7 record
         SendOSC(slport, '/sl/7/hit', 'record')
         ] >> Discard(),
-    orl >> ProgramFilter(10) >> [
+    orl >> ProgramFilter(10) >> [ # sl 7 overdub
         SendOSC(slport, '/sl/7/hit', 'overdub')
         ] >> Discard(),
     jeannot >> ProgramFilter(4) >> [ # RELANCE Transe goa - Bouton 9
@@ -565,7 +565,7 @@ dafist = [
             bassbufferst_off,
             ]
         ],
-    orl >> ProgramFilter(11) >> [
+    orl >> ProgramFilter(11) >> [ # SceneSwitch -> climat
         stop,
         SendOSC(audioseqport, '/Audioseq/Scene/Play', 'dafist_outro_filter_open', timestamp) >> Discard(),
         SceneSwitch(3) >> Discard(),
