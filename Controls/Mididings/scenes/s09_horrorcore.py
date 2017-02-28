@@ -18,7 +18,7 @@ horrorcore = [
         SubSceneSwitch(2),
         mk2lights([1,2,3,4]),
     ]),
-    jeannot >> Filter(PROGRAM) >> mk2lights([1,2,3,4]),
+    [orl, jeannot] >> Filter(PROGRAM) >> mk2lights([1,2,3,4]),
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(mk2inport, '/mididings/switch_scene', 4),
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*'),

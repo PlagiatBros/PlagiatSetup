@@ -18,7 +18,7 @@ connassessacem = [
         SendOSC(mk2inport, '/mididings/switch_scene', 3),
         mk2lights([1,2,3]),
     ]),
-    jeannot >> Filter(PROGRAM) >> mk2lights([1,2,3]),
+    [orl, jeannot] >> Filter(PROGRAM) >> mk2lights([1,2,3]),
     [orl, jeannot] >> ProgramFilter([range(2,4)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*'),
     ] >> Discard(),

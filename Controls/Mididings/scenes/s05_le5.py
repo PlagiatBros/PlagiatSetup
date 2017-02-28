@@ -19,7 +19,7 @@ le5 = [
         mk2lights([1,2,3,4,5,8]),
         ]),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
-    jeannot >> Filter(PROGRAM) >> mk2lights([1,2,3,4,5,8]),
+    [orl, jeannot] >> Filter(PROGRAM) >> mk2lights([1,2,3,4,5,8]),
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
