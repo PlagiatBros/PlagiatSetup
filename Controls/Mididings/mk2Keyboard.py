@@ -45,7 +45,7 @@ run(
           ),
         2: 	Scene("VxDelayCtrl",
                 [
-                [
+                KeyFilter(notes=['f2','c3','g3']) >> [
                     Filter(NOTEON) >> SendOSC(vxorlpreport, '/strip/VxORLDelayPre/Gain/Mute', 0.0),
                     Filter(NOTEOFF) >> SendOSC(vxorlpreport, '/strip/VxORLDelayPre/Gain/Mute', 1.0),
                     ] >> Discard(),
@@ -62,10 +62,10 @@ run(
               ),
         4: Scene("Samples cut",
                 [
-                    Filter(NOTEON) >> [
+                    KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEON) >> [
                         SendOSC(samplesmainport, '/strip/SamplesMain/Gain/Mute', 1.0)
                     ],
-                    Filter(NOTEOFF) >> [
+                    KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEOFF) >> [
                         SendOSC(samplesmainport, '/strip/SamplesMain/Gain/Mute', 0.0)
                     ],
                     bassfilter,
@@ -74,7 +74,7 @@ run(
               ),
         5: Scene("HorroCore RIP",
                 [
-                    Filter(NOTEON) >> [
+                    KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEON) >> [
 
                         SendOSC(vxorlpreport, '/strip/VxORLMeuf/Gain/Mute', 0.0),
                         SendOSC(vxorlpostport, '/strip/VxORLMeufPost/Gain/Mute', 0.0),
@@ -88,7 +88,7 @@ run(
                         SendOSC(vxjeannotpostport, '/strip/VxJeannotGarsPost/Gain/Mute', 1.0),
 
                     ],
-                    Filter(NOTEOFF) >> [
+                    KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEOFF) >> [
 
                         SendOSC(vxorlpreport, '/strip/VxORLGars/Gain/Mute', 0.0),
                         SendOSC(vxorlpostport, '/strip/VxORLGarsPost/Gain/Mute', 0.0),
