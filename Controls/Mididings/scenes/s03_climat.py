@@ -17,7 +17,9 @@ climat = [
         zynmicrotonal_on,
         SendOSC(zyntrebleport, '/microtonal/tunings', '135.0\n200.0\n300.0\n400.0\n500.0\n600.0\n700.0\n835.0\n900.0\n1000.0\n1135.0\n2/1'),
         SendOSC(mk2inport, '/mididings/switch_scene', 1),
+        mk2lights([1,2,3,4,8]),
     ]),
+    jeannot >> Filter(PROGRAM) >> mk2lights([1,2,3,4,8]),
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),

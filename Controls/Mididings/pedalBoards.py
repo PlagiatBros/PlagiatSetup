@@ -8,7 +8,7 @@ from utils import OSCCustomInterface
 config(
 	backend='jack',
 	client_name='PedalBoardsRoutes',
-	out_ports=['PBseq24', 'PBAMSClassicalSynth', 'PBTapeutape', 'PBCtrlOut', 'Mk2CtrlOut', 'PBguitarix'],
+	out_ports=['PBseq24', 'PBAMSClassicalSynth', 'PBTapeutape', 'PBCtrlOut', 'Mk2CtrlOut', 'PBguitarix', 'Mk2SysexOut'],
 	in_ports=['PBCtrlIn', 'PBMk2In', 'PBCmeIn']
 )
 

@@ -412,3 +412,27 @@ def vocoderscale(notes, port=[vocoderjeannotport, vocoderorlport]):
 
 def timestamp(ev):
     return 't:%f' % time()
+
+mk2colors = {
+    'red':1,
+    'blue':16,
+    'green':4,
+    'purple':17,
+    'cyan':20,
+    'yellow':5,
+    'white':127
+}
+def mk2lights(pads):
+    m = []
+    for i in range(1,17):
+        color = 0x00
+        if i in pads:
+            color = mk2colors['purple']
+            if type(pads) == dict:
+                color =  mk2colors[pads[i+1]]
+            elif i == 1:
+                color = mk2colors['blue']
+            elif i == 8:
+                color = mk2colors['red']
+        m.append(SysEx('Mk2SysexOut', [0xf0,0x00,0x20,0x6b,0x7f,0x42,0x02,0x00,0x10,111+i,color,0xf7]))
+    return m

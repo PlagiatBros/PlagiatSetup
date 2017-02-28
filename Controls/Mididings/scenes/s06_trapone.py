@@ -16,7 +16,9 @@ trapone = [
         zynmicrotonal_off,
         SubSceneSwitch(2),
         SendOSC(mk2inport, '/mididings/switch_scene', 4),
+        mk2lights([1,2,3,4,5,8]),
     ]),
+    jeannot >> Filter(PROGRAM) >> mk2lights([1,2,3,4,5,8]),
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*'),
         SubSceneSwitch(2), # vx pedal

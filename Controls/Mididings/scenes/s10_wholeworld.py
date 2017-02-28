@@ -14,9 +14,10 @@ wholeworld = [
         Program(seq24PageMap[10]) >> seq24once,
         Ctrl(0, 5) >> tapeutapecontrol,
         zynmicrotonal_on,
-        SendOSC(zyntrebleport, '/microtonal/tunings', '135.0\n200.0\n300.0\n400.0\n500.0\n635.0\n700.0\n800.0\n900.0\n1000.0\n1100.0\n2/1')
-
+        SendOSC(zyntrebleport, '/microtonal/tunings', '135.0\n200.0\n300.0\n400.0\n500.0\n635.0\n700.0\n800.0\n900.0\n1000.0\n1100.0\n2/1'),
+        mk2lights([1,2]),
     ]),
+    jeannot >> Filter(PROGRAM) >> mk2lights([1,2]),
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
