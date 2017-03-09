@@ -24,7 +24,7 @@ hook(
     AutoRestart()
 )
 
-gatecancel = CtrlFilter(41) >> [
+gatecancel = CtrlFilter(41,64) >> [
     SendOSC(vxjeannotpreport, '/strip/VxJeannotGars/Gate/Threshold%20(dB)/unscaled', lambda ev: -ev.value/127 * 54.0 - 24),
     SendOSC(vxjeannotpreport, '/strip/VxJeannotMeuf/Gate/Threshold%20(dB)/unscaled', lambda ev: -ev.value/127 * 54.0 - 24),
     ] >> Discard()

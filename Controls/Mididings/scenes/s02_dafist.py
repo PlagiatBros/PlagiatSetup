@@ -224,6 +224,8 @@ dafist = [
             bassvibest_on,
             bassbufferst_on,
 
+            SendOSC(cmeinport, '/mididings/switch_scene', 5),
+
             ] >> Discard()
         ],
     orl >> ProgramFilter(4) >> [ # Couplet - Bouton 4

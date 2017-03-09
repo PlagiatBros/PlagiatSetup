@@ -16,9 +16,9 @@ trapone = [
         zynmicrotonal_off,
         SubSceneSwitch(2),
         SendOSC(mk2inport, '/mididings/switch_scene', 4),
-        mk2lights([1,2,3,4,5,8]),
+        mk2lights([1,2,3,4,5,6,8]),
     ]),
-    [orl, jeannot] >> Filter(PROGRAM) >> mk2lights([1,2,3,4,5,8]),
+    [orl, jeannot] >> Filter(PROGRAM) >> mk2lights([1,2,3,4,5,6,8]),
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*'),
         SubSceneSwitch(2), # vx pedal
@@ -178,33 +178,24 @@ trapone = [
 
         ],
     jeannot >> ProgramFilter(2) >> [ # Couplet 1 (rattrapage) - Bouton 2
-        Program(66) >> cseqtrigger,
-        [
-            SendOSC(audioseqport, '/Audioseq/Scene/Stop', 'trapone_altern_couplet', timestamp),
-            SendOSC(audioseqport, '/Audioseq/Scene/Stop', 'trapone_altern_refrain', timestamp),
-            SendOSC(audioseqport, '/Audioseq/Scene/Stop', 'trapone_altern_final', timestamp),
-
-            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
-            SendOSC(slport, '/set', 'tempo', 120),
-            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
-
-            SendOSC(klickport, '/klick/simple/set_tempo', 120),
-            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
-            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
-            SendOSC(klickport, '/klick/metro/start'),
-
-        ],
+        SendOSC(56418, '/pedalBoard/button', 4) >> Discard(),
     ],
-    jeannot >> ProgramFilter(3) >> [ # Couplet Altern vers couplet - Bouton 3
+    jeannot >> ProgramFilter(3) >> [ # Refrain - Bouton 3 (rattrapage)
+        SendOSC(56418, '/pedalBoard/button', 5)  >> Discard(),
+    ],
+    jeannot >> ProgramFilter(4) >> [ # Couplet Altern vers couplet - Bouton 4
         Program(67) >> cseqtrigger,
-        SendOSC(audioseqport, '/Audioseq/Bpm', 120),
-        SendOSC(audioseqport, '/Audioseq/Scene/Play', 'trapone_altern_couplet', timestamp),
-
+            [
+                SendOSC(audioseqport, '/Audioseq/Bpm', 120),
+                SendOSC(audioseqport, '/Audioseq/Scene/Play', 'trapone_altern_couplet', timestamp),
+            ] >> Discard()
         ],
-    jeannot >> ProgramFilter(4) >> [ # Couplet Altern vers refrain - Bouton 4
+    jeannot >> ProgramFilter(5) >> [ # Couplet Altern vers refrain - Bouton 5
         Program(67) >> cseqtrigger,
-        SendOSC(audioseqport, '/Audioseq/Bpm', 120),
-        SendOSC(audioseqport, '/Audioseq/Scene/Play', 'trapone_altern_refrain', timestamp),
+        [
+            SendOSC(audioseqport, '/Audioseq/Bpm', 120),
+            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'trapone_altern_refrain', timestamp),
+        ] >> Discard()
         ],
     orl >> ProgramFilter(5) >> [ # Refrain - Bouton 5
         Program(68) >> cseqtrigger,
@@ -258,7 +249,7 @@ trapone = [
             ],
 
         ],
-    jeannot >> ProgramFilter(5) >> [ # Couplet Altern vers fin - Bouton 5
+    jeannot >> ProgramFilter(6) >> [ # Couplet Altern vers fin - Bouton 6
         Program(67) >> cseqtrigger,
         SendOSC(audioseqport, '/Audioseq/Bpm', 120),
         SendOSC(audioseqport, '/Audioseq/Scene/Play', 'trapone_altern_final', timestamp),

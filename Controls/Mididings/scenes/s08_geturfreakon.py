@@ -121,6 +121,9 @@ geturfreakon = [
             bassbufferst_off,
             ]
         ],
-
+    orl >> ProgramFilter(11) >> [ # SceneSwitch -> HorroCore
+        SceneSwitch(9) >> Discard(),
+        Program(2) >> Output('PBCtrlOut', 1)
+        ],
 
     ]
