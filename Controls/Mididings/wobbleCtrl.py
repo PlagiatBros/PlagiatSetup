@@ -26,7 +26,7 @@ def wobbleRythm(denom):
         param = (log10((sltemposerver.tempo/60.)*denom) + 1.5) / 3
         sltemposerver.send('osc.udp://127.0.0.1:%i' % bassmainport, '/strip/BassWobblePost/MDA%20RezFilter/LFO%20Rate/unscaled', param)
         sltemposerver.send('osc.udp://127.0.0.1:%i' % bassmainport, '/strip/BassWobblePost/MDA%20RezFilter/Max%20Freq/unscaled', 1.0)
-        sltemposerver.send('osc.udp://127.0.0.1:%i' % samplesmainport, '/strip/Keyboards/Gain/Mute', 1.0)
+        # sltemposerver.send('osc.udp://127.0.0.1:%i' % samplesmainport, '/strip/Keyboards/Gain/Mute', 1.0)
         print 'hi'
     return wobble
 
@@ -57,7 +57,7 @@ run([
         SendOSC(bassmainport, '/strip/BassWobblePost/MDA%20RezFilter/Max%20Freq/unscaled', 0.0),
         SendOSC(bassmainport, '/strip/BassWobblePost/AM%20pitchshifter/Pitch%20shift/unscaled', 1.0),
         SendOSC(bassmainport, '/strip/BassWobblePost/MDA%20RezFilter/Freq/unscaled', 0.25),
-        SendOSC(samplesmainport, '/strip/Keyboards/Gain/Mute', 0.0),
+        # SendOSC(samplesmainport, '/strip/Keyboards/Gain/Mute', 0.0),
     ] >> Discard()
 
 ])
