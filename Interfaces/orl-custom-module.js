@@ -19,8 +19,8 @@
         3:'wait'
     }
 
-    sl_map = [6,7,8]
-    sl_range = '[6-8]'
+    sl_map = [5,6,7]
+    sl_range = '[5-7]'
 
     non_host = '127.0.0.1'
 
