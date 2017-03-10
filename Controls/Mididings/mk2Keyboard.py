@@ -105,6 +105,13 @@ run(
                     gatecancel
                 ] >> Discard()
               ),
+          6: 	Scene("Clap",
+                  [
+                  KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEON) >> NoteOn(64,127) >> Output('Mk2OutTapeutape', 1),
+                  bassfilter,
+                  gatecancel
+                  ]
+                ),
 
     },
     control = Filter(PROGRAM) >> SceneSwitch(),
