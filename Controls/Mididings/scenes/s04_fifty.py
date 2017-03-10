@@ -240,6 +240,8 @@ fifty = [
         #TODO son synthé
         Program(68) >> cseqtrigger,
         [
+
+            SendOSC(audioseqport, '/Audioseq/Scene/Stop', '*'),
             SendOSC(audioseqport, '/Audioseq/Bpm', 117),
             SendOSC(audioseqport, '/Audioseq/Scene/Play', 'fifty_refrain_auto', timestamp),
 
@@ -289,6 +291,7 @@ fifty = [
     orl >> ProgramFilter(7) >> [ # Refrain - Bouton 7
         Program(69) >> cseqtrigger,
         [
+            SendOSC(audioseqport, '/Audioseq/Scene/Stop', '*'),
             SendOSC(audioseqport, '/Audioseq/Bpm', 117),
             SendOSC(audioseqport, '/Audioseq/Play', timestamp),
             SendOSC(audioseqport, '/Audioseq/Sequence/Enable', 'fifty_refrain_cutdown'),
@@ -341,12 +344,9 @@ fifty = [
         SendOSC(audioseqport, '/Audioseq/Scene/Play', 'fifty_couplet_auto', timestamp),
     ],
     jeannot >> ProgramFilter(3) >> [ # refrain auto
-        SendOSC(audioseqport, '/Audioseq/Scene/Stop', '*'),
         SendOSC(56418, '/pedalBoard/button', 6),
-
     ],
     jeannot >> ProgramFilter(4) >> [ # refrain direct
-        SendOSC(audioseqport, '/Audioseq/Scene/Stop', '*'),
         SendOSC(56418, '/pedalBoard/button', 7),
     ],
     jeannot >> ProgramFilter(5) >> [ # shut your dickhole -> Le5
