@@ -341,13 +341,13 @@ fifty = [
         SendOSC(audioseqport, '/Audioseq/Scene/Play', 'fifty_couplet_auto', timestamp),
     ],
     jeannot >> ProgramFilter(3) >> [ # refrain auto
-        SendOSC(56418, '/pedalBoard/button', 6),
         SendOSC(audioseqport, '/Audioseq/Scene/Stop', '*'),
+        SendOSC(56418, '/pedalBoard/button', 6),
 
     ],
     jeannot >> ProgramFilter(4) >> [ # refrain direct
-        SendOSC(56418, '/pedalBoard/button', 7),
         SendOSC(audioseqport, '/Audioseq/Scene/Stop', '*'),
+        SendOSC(56418, '/pedalBoard/button', 7),
     ],
     jeannot >> ProgramFilter(5) >> [ # shut your dickhole -> Le5
         SceneSwitch(5) >> Discard(),
