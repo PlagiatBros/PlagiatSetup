@@ -15,9 +15,9 @@ fifty = [
         Ctrl(0, 2) >> tapeutapecontrol,
         zynmicrotonal_off,
         SendOSC(mk2inport, '/mididings/switch_scene', 1),
-        mk2lights([1,2,3,4,5,8]),
+        mk2lights([1,2,3,4,5,6,8]),
         ]),
-    [orl, jeannot] >> Filter(PROGRAM) >> mk2lights([1,2,3,4,5,8]),
+    [orl, jeannot] >> Filter(PROGRAM) >> mk2lights([1,2,3,4,5,6,8]),
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
@@ -337,19 +337,21 @@ fifty = [
             bassbufferst_off,
             ]
         ],
-
-    jeannot >> ProgramFilter(2) >> [ # couplet auto
+    jeannot >> ProgramFilter(2) >> [ # boucle rationnelle
+        SendOSC(56418, '/pedalBoard/button', 4),
+    ],
+    jeannot >> ProgramFilter(3) >> [ # couplet auto
         SendOSC(56418, '/pedalBoard/button', 2),
         SendOSC(audioseqport, '/Audioseq/Bpm', 117),
         SendOSC(audioseqport, '/Audioseq/Scene/Play', 'fifty_couplet_auto', timestamp),
     ],
-    jeannot >> ProgramFilter(3) >> [ # refrain auto
+    jeannot >> ProgramFilter(4) >> [ # refrain auto
         SendOSC(56418, '/pedalBoard/button', 6),
     ],
-    jeannot >> ProgramFilter(4) >> [ # refrain direct
+    jeannot >> ProgramFilter(5) >> [ # refrain direct
         SendOSC(56418, '/pedalBoard/button', 7),
     ],
-    jeannot >> ProgramFilter(5) >> [ # shut your dickhole -> Le5
+    jeannot >> ProgramFilter(6) >> [ # shut your dickhole -> Le5
         SceneSwitch(5) >> Discard(),
         Ctrl(102, 127) >> Output('Mk2CtrlOut', 1)
         ],

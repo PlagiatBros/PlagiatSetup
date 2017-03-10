@@ -147,7 +147,7 @@ connassessacem = [
         SendOSC(lightseqport, '/Lightseq/Scene/Play', 'connassesacem_1', timestamp),
         ] >> Discard(),
     orl >> ProgramFilter(7) >> [ # sl -1 pause
-        SendOSC(slport, '/sl/-1/hit', 'pause'),
+        SendOSC(slport, '/sl/-1/hit', 'pause_on'),
         SendOSC(lightseqport, '/Lightseq/Scene/Play', 'connassesacem_1', timestamp),
         ] >> Discard(),
     orl >> ProgramFilter(11) >> [ # SceneSwitch -> Dafist
