@@ -571,7 +571,7 @@ dafist = [
         ],
     orl >> ProgramFilter(11) >> [ # SceneSwitch -> climat
         stop,
-        SendOSC(audioseqport, '/Audioseq/Scene/Play', 'dafist_outro_filter_open', timestamp) >> Discard(),
+        SendOSC(audioseqport, '/Audioseq/Scene/Play', 'dafist_outro_filter_reset', timestamp) >> Discard(),
         SceneSwitch(3) >> Discard(),
         Ctrl(102, 127) >> Output('Mk2CtrlOut', 1)
         ],
