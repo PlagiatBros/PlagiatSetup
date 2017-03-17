@@ -7,7 +7,7 @@ from ports import *
 
 from oscSendProxy import OscSendProxy
 
-from time import time
+from liblo import time
 
 #### Functions #############################################
 #### Trigger seq24 ####
@@ -411,7 +411,7 @@ def vocoderscale(notes, port=[vocoderjeannotport, vocoderorlport]):
     return ev
 
 def timestamp(ev):
-    return 't:%f' % time()
+    return ('t', time())
 
 mk2colors = {
     'red':1,
