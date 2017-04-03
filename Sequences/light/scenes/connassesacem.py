@@ -7,25 +7,21 @@ from ports import *
 
 
 def connassesacem_anim(seq, timer):
+
     while True:
         r = range(1,9)
         for i in range(1,9):
 
-            #
-            # seq.animate(['/CC/Segment/%i' % r[(i-1)%8], '$', '$', '$'], 50, 0, 0.5, "beat", mode="integer",framerate=30, timestamp=timer.clock)
-            # seq.animate(['/CC/Segment/%i' % r[( i )%8], '$', '$', '$'], 50, 100, 0.5, "beat", mode="integer",framerate=30, timestamp=timer.clock)
-            # seq.animate(['/CC/Segment/%i' % r[(i+1)%8], '$', '$', '$'], 0, 50, 0.5, "beat", mode="integer",framerate=30, timestamp=timer.clock)
+            seq.animate(['/CC/Segment/%i' % r[(i-2)%8], '$', '$', '$'], 50, 0, 0.5, "beat", mode="integer")
+            seq.animate(['/CC/Segment/%i' % r[(i-1)%8], '$', '$', '$'], 150, 50, 0.5, "beat", mode="integer")
+            seq.animate(['/CC/Segment/%i' % r[( i )%8], '$', '$', '$'], 50, 150, 0.5, "beat", mode="integer")
+            seq.animate(['/CC/Segment/%i' % r[(i+1)%8], '$', '$', '$'], 0, 50, 0.5, "beat", mode="integer")
 
+            seq.animate(['/CJ/Segment/%i' % (9-r[(i-2)%8]), '$', '$', '$'], 50, 0, 0.5, "beat", mode="integer")
+            seq.animate(['/CJ/Segment/%i' % (9-r[(i-1)%8]), '$', '$', '$'], 150, 50, 0.5, "beat", mode="integer")
+            seq.animate(['/CJ/Segment/%i' % (9-r[( i )%8]), '$', '$', '$'], 50, 150, 0.5, "beat", mode="integer")
+            seq.animate(['/CJ/Segment/%i' % (9-r[(i+1)%8]), '$', '$', '$'], 0, 50, 0.5, "beat", mode="integer")
 
-            seq.animate(['/CC/Segment/%i' % r[(i+1)%8], '$', '$', '$'], 50, 100, 0.5, "beat", mode="integer",framerate=30, timestamp=timer.clock)
-            seq.animate(['/CJ/Segment/%i' % (9-r[(i+1)%8]), '$', '$', '$'], 50, 100, 0.5, "beat", mode="integer",framerate=30, timestamp=timer.clock)
-            seq.animate(['/CC/Segment/%i' % r[(i+2)%8], '$', '$', '$'], 0, 50, 0.5, "beat", mode="integer",framerate=30, timestamp=timer.clock)
-            seq.animate(['/CJ/Segment/%i' % (9-r[(i+2)%8]), '$', '$', '$'], 0,  50, 0.5, "beat", mode="integer",framerate=30, timestamp=timer.clock)
-
-            seq.animate(['/CC/Segment/%i' % r[(i-1)%8], '$', '$', '$'], 100, 50, 0.5, "beat", mode="integer",framerate=30, timestamp=timer.clock)
-            seq.animate(['/CJ/Segment/%i' % (9-r[(i-1)%8]), '$', '$', '$'], 100, 50, 0.5, "beat", mode="integer",framerate=30, timestamp=timer.clock)
-            seq.animate(['/CC/Segment/%i' % r[(i-2)%8], '$', '$', '$'], 50, 0, 0.5, "beat", mode="integer",framerate=30, timestamp=timer.clock)
-            seq.animate(['/CJ/Segment/%i' % (9-r[(i-2)%8]), '$', '$', '$'], 59, 0, 0.5, "beat", mode="integer",framerate=30, timestamp=timer.clock)
             timer.wait(.5, "beat")
 
 
