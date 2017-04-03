@@ -43,10 +43,18 @@ class qlcDelayer(object):
 
     @make_method(None, 'i')
     def sendToQlc(self, path, args):
-	sleep(.001)
+    	sleep(.001)
         self.server.send(qlcappport, path, args[0])
 
 
+    @make_method(None, 'fff') # /BC/1 R G B
+    @make_method(None, 'iii') # /BC/1 R G B
+    def sendToQlcRgb(self, path, args):
+        if '/Segment' in path:
+            sleep(.001)
+            self.server.send(qlcappport, path.replace('/Segment', '/Red/Segment'), args[0])
+            self.server.send(qlcappport, path.replace('/Segment', '/Green/Segment'), args[1])
+            self.server.send(qlcappport, path.replace('/Segment', '/Blue/Segment'), args[2])
 
 
 
