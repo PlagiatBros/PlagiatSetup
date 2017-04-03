@@ -19,8 +19,8 @@
         3:'wait'
     }
 
-    sl_map = [5,6,7]
-    sl_range = '[5-7]'
+    sl_map = [0,1,2,3,4,5,6,7,8]
+    sl_range = '[0-8]'
 
     non_host = '127.0.0.1'
 
@@ -70,10 +70,14 @@
 
 
     pitch_addresses = {
-        samples:['/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled']
+        samples:'/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled',
+        vxjeannot:'/strip/VxJeannotMain/AM%20pitchshifter/Pitch%20shift/unscaled',
+        vxorl:'/strip/VxORLMain/AM%20pitchshifter/Pitch%20shift/unscaled'
     }
     pitch_ports = {
-        samples:7008
+        samples:7008,
+        vxjeannot:6669,
+        vxorl:6669
     }
 
     mididings_host = '127.0.0.1'
@@ -383,20 +387,18 @@
 
             else if (address == '/pitch') {
 
-                var type = args[0].value,
-                    v    = args[1].value
+                var v = args[0].value
 
 
-                if (!pitch_ports[type]) throw 'Unknown Pitch strip ' + type
 
-                var addresses = pitch_addresses[type]
+                var addresses = pitch_addresses
 
                 for (i in addresses) {
                     sendOsc({
                         address: addresses[i],
                         args: [{type:'f', value:v}],
                         host: non_host,
-                        port: pitch_ports[type]
+                        port: pitch_ports[i]
                     })
                 }
 

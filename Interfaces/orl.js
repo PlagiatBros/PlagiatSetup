@@ -9,7 +9,7 @@
                 "id": "panel_4",
                 "label": false,
                 "width": "100%",
-                "height": "70%",
+                "height": "85%",
                 "scroll": true,
                 "color": "auto",
                 "css": "",
@@ -28,12 +28,13 @@
                         "horizontal": false,
                         "noPip": false,
                         "compact": true,
-                        "color": "auto",
+                        "color": "lime",
                         "css": "--display-input:none;",
                         "snap": false,
                         "spring": true,
                         "range": {
-                            "min": 0,
+                            "min": 0.25,
+                            "50%": 1,
                             "max": 2
                         },
                         "origin": 1,
@@ -42,522 +43,29 @@
                         "precision": 2,
                         "meter": false,
                         "address": "/pitch",
-                        "preArgs": [
-                            "samples"
-                        ],
                         "target": [
                             "non:pitch"
-                        ]
+                        ],
+                        "preArgs": []
                     },
                     {
                         "type": "panel",
                         "top": 0,
                         "left": "11%",
                         "id": "panel_2",
-                        "label": "Ctrlz",
+                        "label": false,
                         "width": "89%",
                         "scroll": true,
                         "color": "auto",
                         "widgets": [
                             {
-                                "type": "strip",
-                                "top": 0,
-                                "left": 0,
-                                "id": "sooperlooper",
-                                "label": "Sooperlooper",
-                                "width": "100%",
-                                "height": "80%",
-                                "horizontal": false,
-                                "color": "auto",
-                                "widgets": [
-                                    {
-                                        "type": "panel",
-                                        "id": "panel_1",
-                                        "label": 1,
-                                        "width": "100%",
-                                        "scroll": true,
-                                        "color": "auto",
-                                        "css": "",
-                                        "widgets": [
-                                            {
-                                                "type": "push",
-                                                "top": 0,
-                                                "left": 0,
-                                                "id": "sl_record_0",
-                                                "linkId": "",
-                                                "label": "Record",
-                                                "width": "20%",
-                                                "height": "90%",
-                                                "color": "red",
-                                                "on": 1,
-                                                "off": 0,
-                                                "norelease": true,
-                                                "precision": 2,
-                                                "preArgs": [
-                                                    "record"
-                                                ],
-                                                "target": [
-                                                    "sl:port"
-                                                ],
-                                                "address": "/sl/0/hit",
-                                                "css": ""
-                                            },
-                                            {
-                                                "type": "push",
-                                                "left": "20%",
-                                                "id": "sl_overdub_0",
-                                                "label": "Overdub",
-                                                "width": "20%",
-                                                "height": "90%",
-                                                "color": "orange",
-                                                "css": "",
-                                                "precision": 2,
-                                                "preArgs": [
-                                                    "overdub"
-                                                ],
-                                                "target": [
-                                                    "sl:port"
-                                                ],
-                                                "linkId": "",
-                                                "top": "auto",
-                                                "on": 1,
-                                                "off": 0,
-                                                "norelease": true,
-                                                "address": "/sl/0/hit"
-                                            },
-                                            {
-                                                "type": "push",
-                                                "top": 0,
-                                                "left": "40%",
-                                                "id": "sl_pause_0",
-                                                "label": "Pause",
-                                                "width": "20%",
-                                                "height": "90%",
-                                                "color": "yellow",
-                                                "css": "",
-                                                "on": 1,
-                                                "off": 0,
-                                                "norelease": true,
-                                                "precision": 2,
-                                                "preArgs": [
-                                                    "pause"
-                                                ],
-                                                "target": [
-                                                    "sl:port"
-                                                ],
-                                                "linkId": "",
-                                                "address": "/sl/0/hit"
-                                            },
-                                            {
-                                                "type": "push",
-                                                "top": 0,
-                                                "left": "60%",
-                                                "id": "sl_trigger_0",
-                                                "label": "Trigger",
-                                                "width": "20%",
-                                                "height": "90%",
-                                                "color": "auto",
-                                                "css": "",
-                                                "on": 1,
-                                                "off": 0,
-                                                "norelease": true,
-                                                "precision": 2,
-                                                "preArgs": [
-                                                    "trigger"
-                                                ],
-                                                "target": [
-                                                    "sl:port"
-                                                ],
-                                                "linkId": "",
-                                                "address": "/sl/0/hit"
-                                            },
-                                            {
-                                                "type": "knob",
-                                                "left": "80%",
-                                                "id": "sl_position_0",
-                                                "label": false,
-                                                "unit": "",
-                                                "width": "20%",
-                                                "height": "100%",
-                                                "color": "auto",
-                                                "css": "--display-input:none;",
-                                                "range": {
-                                                    "min": 0,
-                                                    "max": 1
-                                                },
-                                                "logScale": false,
-                                                "origin": "auto",
-                                                "value": "",
-                                                "preArgs": [],
-                                                "address": "/sl_position_0",
-                                                "compact": true,
-                                                "linkId": "",
-                                                "noPip": true,
-                                                "angle": 360,
-                                                "snap": false,
-                                                "spring": false,
-                                                "precision": 2,
-                                                "target": [],
-                                                "top": "auto"
-                                            },
-                                            {
-                                                "type": "meter",
-                                                "top": "90%",
-                                                "left": 0,
-                                                "id": "sl_wait_0",
-                                                "label": false,
-                                                "width": "80%",
-                                                "height": "10%",
-                                                "color": "red",
-                                                "css": "--display-input:none;--color-knob:transparent;",
-                                                "range": {
-                                                    "min": 0,
-                                                    "max": 1
-                                                },
-                                                "logScale": false,
-                                                "value": "",
-                                                "preArgs": [
-                                                    "wait"
-                                                ],
-                                                "unit": "",
-                                                "horizontal": true,
-                                                "origin": "auto",
-                                                "address": "/sl/0/hit",
-                                                "compact": true
-                                            }
-                                        ],
-                                        "tabs": [],
-                                        "height": "auto"
-                                    },
-                                    {
-                                        "type": "panel",
-                                        "id": "panel_1",
-                                        "label": 2,
-                                        "width": "100%",
-                                        "scroll": true,
-                                        "color": "auto",
-                                        "css": "",
-                                        "widgets": [
-                                            {
-                                                "type": "push",
-                                                "top": 0,
-                                                "left": 0,
-                                                "id": "sl_record_1",
-                                                "linkId": "",
-                                                "label": "Record",
-                                                "width": "20%",
-                                                "height": "90%",
-                                                "color": "red",
-                                                "css": "",
-                                                "on": 1,
-                                                "off": 0,
-                                                "norelease": true,
-                                                "precision": 2,
-                                                "preArgs": [
-                                                    "record"
-                                                ],
-                                                "target": [
-                                                    "sl:port"
-                                                ],
-                                                "address": "/sl/1/hit"
-                                            },
-                                            {
-                                                "type": "push",
-                                                "top": 0,
-                                                "left": "40%",
-                                                "id": "sl_pause_1",
-                                                "label": "Pause",
-                                                "width": "20%",
-                                                "height": "90%",
-                                                "color": "yellow",
-                                                "css": "",
-                                                "on": 1,
-                                                "off": 0,
-                                                "norelease": true,
-                                                "precision": 2,
-                                                "preArgs": [
-                                                    "pause"
-                                                ],
-                                                "target": [
-                                                    "sl:port"
-                                                ],
-                                                "linkId": "",
-                                                "address": "/sl/1/hit"
-                                            },
-                                            {
-                                                "type": "push",
-                                                "top": 0,
-                                                "left": "60%",
-                                                "id": "sl_trigger_1",
-                                                "label": "Trigger",
-                                                "width": "20%",
-                                                "height": "90%",
-                                                "color": "auto",
-                                                "css": "",
-                                                "on": 1,
-                                                "off": 0,
-                                                "norelease": true,
-                                                "precision": 2,
-                                                "preArgs": [
-                                                    "trigger"
-                                                ],
-                                                "target": [
-                                                    "sl:port"
-                                                ],
-                                                "linkId": "",
-                                                "address": "/sl/1/hit"
-                                            },
-                                            {
-                                                "type": "knob",
-                                                "left": "80%",
-                                                "id": "sl_position_1",
-                                                "label": false,
-                                                "unit": "",
-                                                "width": "20%",
-                                                "height": "100%",
-                                                "color": "auto",
-                                                "css": "--display-input:none;",
-                                                "range": {
-                                                    "min": 0,
-                                                    "max": 1
-                                                },
-                                                "logScale": false,
-                                                "origin": "auto",
-                                                "value": "",
-                                                "preArgs": [],
-                                                "address": "/sl_position_1",
-                                                "compact": true,
-                                                "linkId": "",
-                                                "noPip": true,
-                                                "angle": 360,
-                                                "snap": false,
-                                                "spring": false,
-                                                "precision": 2,
-                                                "target": [],
-                                                "top": "auto"
-                                            },
-                                            {
-                                                "type": "push",
-                                                "left": "20%",
-                                                "id": "sl_overdub_1",
-                                                "label": "Overdub",
-                                                "width": "20%",
-                                                "height": "90%",
-                                                "color": "orange",
-                                                "css": "",
-                                                "precision": 2,
-                                                "preArgs": [
-                                                    "overdub"
-                                                ],
-                                                "target": [
-                                                    "sl:port"
-                                                ],
-                                                "linkId": "",
-                                                "top": 0,
-                                                "on": 1,
-                                                "off": 0,
-                                                "norelease": true,
-                                                "address": "/sl/1/hit"
-                                            },
-                                            {
-                                                "type": "meter",
-                                                "top": "90%",
-                                                "left": 0,
-                                                "id": "sl_wait_1",
-                                                "label": false,
-                                                "width": "80%",
-                                                "height": "10%",
-                                                "color": "red",
-                                                "css": "--display-input:none;--color-knob:transparent;",
-                                                "range": {
-                                                    "min": 0,
-                                                    "max": 1
-                                                },
-                                                "logScale": false,
-                                                "value": "",
-                                                "preArgs": [
-                                                    "wait"
-                                                ],
-                                                "unit": "",
-                                                "horizontal": true,
-                                                "origin": "auto",
-                                                "address": "/sl/1/hit",
-                                                "compact": true
-                                            }
-                                        ],
-                                        "tabs": [],
-                                        "height": "auto"
-                                    },
-                                    {
-                                        "type": "panel",
-                                        "id": "panel_1",
-                                        "label": 3,
-                                        "width": "100%",
-                                        "scroll": true,
-                                        "color": "auto",
-                                        "css": "",
-                                        "widgets": [
-                                            {
-                                                "type": "push",
-                                                "top": 0,
-                                                "left": 0,
-                                                "id": "sl_record_2",
-                                                "linkId": "",
-                                                "label": "Record",
-                                                "width": "20%",
-                                                "height": "90%",
-                                                "color": "red",
-                                                "css": "",
-                                                "on": 1,
-                                                "off": 0,
-                                                "norelease": true,
-                                                "precision": 2,
-                                                "preArgs": [
-                                                    "record"
-                                                ],
-                                                "target": [
-                                                    "sl:port"
-                                                ],
-                                                "address": "/sl/2/hit"
-                                            },
-                                            {
-                                                "type": "push",
-                                                "left": "20%",
-                                                "id": "sl_overdub_2",
-                                                "label": "Overdub",
-                                                "width": "20%",
-                                                "height": "90%",
-                                                "color": "orange",
-                                                "css": "",
-                                                "precision": 2,
-                                                "preArgs": [
-                                                    "overdub"
-                                                ],
-                                                "target": [
-                                                    "sl:port"
-                                                ],
-                                                "linkId": "",
-                                                "top": "auto",
-                                                "on": 1,
-                                                "off": 0,
-                                                "norelease": true,
-                                                "address": "/sl/2/hit"
-                                            },
-                                            {
-                                                "type": "push",
-                                                "top": 0,
-                                                "left": "40%",
-                                                "id": "sl_pause_2",
-                                                "label": "Pause",
-                                                "width": "20%",
-                                                "height": "90%",
-                                                "color": "yellow",
-                                                "css": "",
-                                                "on": 1,
-                                                "off": 0,
-                                                "norelease": true,
-                                                "precision": 2,
-                                                "preArgs": [
-                                                    "pause"
-                                                ],
-                                                "target": [
-                                                    "sl:port"
-                                                ],
-                                                "linkId": "",
-                                                "address": "/sl/2/hit"
-                                            },
-                                            {
-                                                "type": "push",
-                                                "top": 0,
-                                                "left": "60%",
-                                                "id": "sl_trigger_2",
-                                                "label": "Trigger",
-                                                "width": "20%",
-                                                "height": "90%",
-                                                "color": "auto",
-                                                "css": "",
-                                                "on": 1,
-                                                "off": 0,
-                                                "norelease": true,
-                                                "precision": 2,
-                                                "preArgs": [
-                                                    "trigger"
-                                                ],
-                                                "target": [
-                                                    "sl:port"
-                                                ],
-                                                "linkId": "",
-                                                "address": "/sl/2/hit"
-                                            },
-                                            {
-                                                "type": "knob",
-                                                "left": "80%",
-                                                "id": "sl_position_2",
-                                                "label": false,
-                                                "unit": "",
-                                                "width": "20%",
-                                                "height": "100%",
-                                                "color": "auto",
-                                                "css": "--display-input:none;",
-                                                "range": {
-                                                    "min": 0,
-                                                    "max": 1
-                                                },
-                                                "logScale": false,
-                                                "origin": "auto",
-                                                "value": "",
-                                                "preArgs": [],
-                                                "address": "/sl_position_2",
-                                                "compact": true,
-                                                "linkId": "",
-                                                "noPip": true,
-                                                "angle": 360,
-                                                "snap": false,
-                                                "spring": false,
-                                                "precision": 2,
-                                                "target": [],
-                                                "top": "auto"
-                                            },
-                                            {
-                                                "type": "meter",
-                                                "top": "90%",
-                                                "left": 0,
-                                                "id": "sl_wait_2",
-                                                "label": false,
-                                                "width": "80%",
-                                                "height": "10%",
-                                                "color": "red",
-                                                "css": "--display-input:none;--color-knob:transparent;",
-                                                "range": {
-                                                    "min": 0,
-                                                    "max": 1
-                                                },
-                                                "logScale": false,
-                                                "value": "",
-                                                "preArgs": [
-                                                    "wait"
-                                                ],
-                                                "unit": "",
-                                                "horizontal": true,
-                                                "origin": "auto",
-                                                "address": "/sl/2/hit",
-                                                "compact": true
-                                            }
-                                        ],
-                                        "tabs": [],
-                                        "height": "auto"
-                                    }
-                                ],
-                                "css": ""
-                            },
-                            {
                                 "type": "panel",
-                                "top": "80%",
+                                "top": "85%",
                                 "left": 0,
                                 "id": "Vx",
                                 "label": "auto",
                                 "width": "100%",
-                                "height": "20%",
+                                "height": "15%",
                                 "scroll": true,
                                 "color": "auto",
                                 "css": "",
@@ -678,24 +186,1545 @@
                                         "value": ""
                                     }
                                 ],
-                                "tabs": []
+                                "tabs": [],
+                                "layout": "",
+                                "spacing": 0
+                            },
+                            {
+                                "type": "panel",
+                                "top": 0,
+                                "left": 0,
+                                "id": "panel_3",
+                                "label": "SOOPERLOOPER",
+                                "width": "100%",
+                                "height": "85%",
+                                "scroll": true,
+                                "css": "",
+                                "layout": "",
+                                "spacing": 0,
+                                "widgets": [],
+                                "tabs": [
+                                    {
+                                        "id": "",
+                                        "label": "PRE",
+                                        "widgets": [
+                                            {
+                                                "type": "strip",
+                                                "id": "sooperlooper",
+                                                "label": false,
+                                                "width": "100%",
+                                                "height": "100%",
+                                                "horizontal": false,
+                                                "widgets": [
+                                                    {
+                                                        "type": "panel",
+                                                        "id": "panel_bass_pre",
+                                                        "label": "Basse",
+                                                        "width": "100%",
+                                                        "scroll": true,
+                                                        "color": "auto",
+                                                        "css": "",
+                                                        "widgets": [
+                                                            {
+                                                                "type": "push",
+                                                                "top": 0,
+                                                                "left": 0,
+                                                                "id": "sl_record_0",
+                                                                "linkId": "",
+                                                                "label": "Record",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "red",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "record"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "address": "/sl/0/hit",
+                                                                "css": ""
+                                                            },
+                                                            {
+                                                                "type": "push",
+                                                                "left": "20%",
+                                                                "id": "sl_overdub_0",
+                                                                "label": "Overdub",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "orange",
+                                                                "css": "",
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "overdub"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "linkId": "",
+                                                                "top": "auto",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "address": "/sl/0/hit"
+                                                            },
+                                                            {
+                                                                "type": "push",
+                                                                "top": 0,
+                                                                "left": "40%",
+                                                                "id": "sl_pause_0",
+                                                                "label": "Pause",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "yellow",
+                                                                "css": "",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "pause"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "linkId": "",
+                                                                "address": "/sl/0/hit"
+                                                            },
+                                                            {
+                                                                "type": "push",
+                                                                "top": 0,
+                                                                "left": "60%",
+                                                                "id": "sl_trigger_0",
+                                                                "label": "Trigger",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "auto",
+                                                                "css": "",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "trigger"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "linkId": "",
+                                                                "address": "/sl/0/hit"
+                                                            },
+                                                            {
+                                                                "type": "knob",
+                                                                "left": "80%",
+                                                                "id": "sl_position_0",
+                                                                "label": false,
+                                                                "unit": "",
+                                                                "width": "20%",
+                                                                "height": "100%",
+                                                                "color": "auto",
+                                                                "css": "--display-input:none; canvas {pointer-events:none}",
+                                                                "range": {
+                                                                    "min": 0,
+                                                                    "max": 1
+                                                                },
+                                                                "logScale": false,
+                                                                "origin": "auto",
+                                                                "value": "",
+                                                                "preArgs": [],
+                                                                "address": "/sl_position_0",
+                                                                "compact": true,
+                                                                "linkId": "",
+                                                                "noPip": true,
+                                                                "angle": 360,
+                                                                "snap": false,
+                                                                "spring": false,
+                                                                "precision": 2,
+                                                                "target": [],
+                                                                "top": "auto"
+                                                            },
+                                                            {
+                                                                "type": "meter",
+                                                                "top": "90%",
+                                                                "left": 0,
+                                                                "id": "sl_wait_0",
+                                                                "label": false,
+                                                                "width": "80%",
+                                                                "height": "10%",
+                                                                "color": "red",
+                                                                "css": "--display-input:none;--color-knob:transparent;",
+                                                                "range": {
+                                                                    "min": 0,
+                                                                    "max": 1
+                                                                },
+                                                                "logScale": false,
+                                                                "value": "",
+                                                                "preArgs": [
+                                                                    "wait"
+                                                                ],
+                                                                "unit": "",
+                                                                "horizontal": true,
+                                                                "origin": "auto",
+                                                                "address": "/sl/0/hit",
+                                                                "widgetId": "",
+                                                                "compact": true
+                                                            }
+                                                        ],
+                                                        "tabs": [],
+                                                        "height": "auto",
+                                                        "layout": "",
+                                                        "spacing": 0
+                                                    },
+                                                    {
+                                                        "type": "panel",
+                                                        "id": "panel_vxorl_pre",
+                                                        "label": "Vx ORL",
+                                                        "width": "100%",
+                                                        "scroll": true,
+                                                        "color": "auto",
+                                                        "css": "",
+                                                        "widgets": [
+                                                            {
+                                                                "type": "push",
+                                                                "top": 0,
+                                                                "left": 0,
+                                                                "id": "sl_record_2",
+                                                                "linkId": "",
+                                                                "label": "Record",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "red",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "record"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "address": "/sl/2/hit",
+                                                                "css": ""
+                                                            },
+                                                            {
+                                                                "type": "push",
+                                                                "left": "20%",
+                                                                "id": "sl_overdub_2",
+                                                                "label": "Overdub",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "orange",
+                                                                "css": "",
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "overdub"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "linkId": "",
+                                                                "top": "auto",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "address": "/sl/2/hit"
+                                                            },
+                                                            {
+                                                                "type": "push",
+                                                                "top": 0,
+                                                                "left": "40%",
+                                                                "id": "sl_pause_2",
+                                                                "label": "Pause",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "yellow",
+                                                                "css": "",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "pause"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "linkId": "",
+                                                                "address": "/sl/2/hit"
+                                                            },
+                                                            {
+                                                                "type": "push",
+                                                                "top": 0,
+                                                                "left": "60%",
+                                                                "id": "sl_trigger_2",
+                                                                "label": "Trigger",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "auto",
+                                                                "css": "",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "trigger"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "linkId": "",
+                                                                "address": "/sl/2/hit"
+                                                            },
+                                                            {
+                                                                "type": "knob",
+                                                                "left": "80%",
+                                                                "id": "sl_position_2",
+                                                                "label": false,
+                                                                "unit": "",
+                                                                "width": "20%",
+                                                                "height": "100%",
+                                                                "color": "auto",
+                                                                "css": "--display-input:none; canvas {pointer-events:none}",
+                                                                "range": {
+                                                                    "min": 0,
+                                                                    "max": 1
+                                                                },
+                                                                "logScale": false,
+                                                                "origin": "auto",
+                                                                "value": "",
+                                                                "preArgs": [],
+                                                                "address": "/sl_position_2",
+                                                                "compact": true,
+                                                                "linkId": "",
+                                                                "noPip": true,
+                                                                "angle": 360,
+                                                                "snap": false,
+                                                                "spring": false,
+                                                                "precision": 2,
+                                                                "target": [],
+                                                                "top": "auto"
+                                                            },
+                                                            {
+                                                                "type": "meter",
+                                                                "top": "90%",
+                                                                "left": 0,
+                                                                "id": "sl_wait_2",
+                                                                "label": false,
+                                                                "width": "80%",
+                                                                "height": "10%",
+                                                                "color": "red",
+                                                                "css": "--display-input:none;--color-knob:transparent;",
+                                                                "range": {
+                                                                    "min": 0,
+                                                                    "max": 1
+                                                                },
+                                                                "logScale": false,
+                                                                "value": "",
+                                                                "preArgs": [
+                                                                    "wait"
+                                                                ],
+                                                                "unit": "",
+                                                                "horizontal": true,
+                                                                "origin": "auto",
+                                                                "address": "/sl/2/hit",
+                                                                "widgetId": "",
+                                                                "compact": true
+                                                            }
+                                                        ],
+                                                        "tabs": [],
+                                                        "height": "auto",
+                                                        "layout": "",
+                                                        "spacing": 0
+                                                    },
+                                                    {
+                                                        "type": "panel",
+                                                        "id": "panel_vxjeannot_pre",
+                                                        "label": "Vx Jeannot",
+                                                        "width": "100%",
+                                                        "scroll": true,
+                                                        "color": "auto",
+                                                        "css": "",
+                                                        "widgets": [
+                                                            {
+                                                                "type": "push",
+                                                                "top": 0,
+                                                                "left": 0,
+                                                                "id": "sl_record_4",
+                                                                "linkId": "",
+                                                                "label": "Record",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "red",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "record"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "address": "/sl/4/hit",
+                                                                "css": ""
+                                                            },
+                                                            {
+                                                                "type": "push",
+                                                                "left": "20%",
+                                                                "id": "sl_overdub_4",
+                                                                "label": "Overdub",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "orange",
+                                                                "css": "",
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "overdub"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "linkId": "",
+                                                                "top": "auto",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "address": "/sl/4/hit"
+                                                            },
+                                                            {
+                                                                "type": "push",
+                                                                "top": 0,
+                                                                "left": "40%",
+                                                                "id": "sl_pause_4",
+                                                                "label": "Pause",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "yellow",
+                                                                "css": "",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "pause"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "linkId": "",
+                                                                "address": "/sl/4/hit"
+                                                            },
+                                                            {
+                                                                "type": "push",
+                                                                "top": 0,
+                                                                "left": "60%",
+                                                                "id": "sl_trigger_4",
+                                                                "label": "Trigger",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "auto",
+                                                                "css": "",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "trigger"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "linkId": "",
+                                                                "address": "/sl/4/hit"
+                                                            },
+                                                            {
+                                                                "type": "knob",
+                                                                "left": "80%",
+                                                                "id": "sl_position_4",
+                                                                "label": false,
+                                                                "unit": "",
+                                                                "width": "20%",
+                                                                "height": "100%",
+                                                                "color": "auto",
+                                                                "css": "--display-input:none; canvas {pointer-events:none}",
+                                                                "range": {
+                                                                    "min": 0,
+                                                                    "max": 1
+                                                                },
+                                                                "logScale": false,
+                                                                "origin": "auto",
+                                                                "value": "",
+                                                                "preArgs": [],
+                                                                "address": "/sl_position_4",
+                                                                "compact": true,
+                                                                "linkId": "",
+                                                                "noPip": true,
+                                                                "angle": 360,
+                                                                "snap": false,
+                                                                "spring": false,
+                                                                "precision": 2,
+                                                                "target": [],
+                                                                "top": "auto"
+                                                            },
+                                                            {
+                                                                "type": "meter",
+                                                                "top": "90%",
+                                                                "left": 0,
+                                                                "id": "sl_wait_4",
+                                                                "label": false,
+                                                                "width": "80%",
+                                                                "height": "10%",
+                                                                "color": "red",
+                                                                "css": "--display-input:none;--color-knob:transparent;",
+                                                                "range": {
+                                                                    "min": 0,
+                                                                    "max": 1
+                                                                },
+                                                                "logScale": false,
+                                                                "value": "",
+                                                                "preArgs": [
+                                                                    "wait"
+                                                                ],
+                                                                "unit": "",
+                                                                "horizontal": true,
+                                                                "origin": "auto",
+                                                                "address": "/sl/4/hit",
+                                                                "widgetId": "",
+                                                                "compact": true
+                                                            }
+                                                        ],
+                                                        "tabs": [],
+                                                        "height": "auto",
+                                                        "layout": "",
+                                                        "spacing": 0
+                                                    },
+                                                    {
+                                                        "type": "panel",
+                                                        "id": "panel_synth_bass",
+                                                        "label": "Synth BASS",
+                                                        "width": "100%",
+                                                        "scroll": true,
+                                                        "color": "auto",
+                                                        "css": "",
+                                                        "widgets": [
+                                                            {
+                                                                "type": "push",
+                                                                "top": 0,
+                                                                "left": 0,
+                                                                "id": "sl_record_6",
+                                                                "linkId": "",
+                                                                "label": "Record",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "red",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "record"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "address": "/sl/6/hit",
+                                                                "css": ""
+                                                            },
+                                                            {
+                                                                "type": "push",
+                                                                "left": "20%",
+                                                                "id": "sl_overdub_6",
+                                                                "label": "Overdub",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "orange",
+                                                                "css": "",
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "overdub"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "linkId": "",
+                                                                "top": "auto",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "address": "/sl/6/hit"
+                                                            },
+                                                            {
+                                                                "type": "push",
+                                                                "top": 0,
+                                                                "left": "40%",
+                                                                "id": "sl_pause_6",
+                                                                "label": "Pause",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "yellow",
+                                                                "css": "",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "pause"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "linkId": "",
+                                                                "address": "/sl/6/hit"
+                                                            },
+                                                            {
+                                                                "type": "push",
+                                                                "top": 0,
+                                                                "left": "60%",
+                                                                "id": "sl_trigger_6",
+                                                                "label": "Trigger",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "auto",
+                                                                "css": "",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "trigger"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "linkId": "",
+                                                                "address": "/sl/6/hit"
+                                                            },
+                                                            {
+                                                                "type": "knob",
+                                                                "left": "80%",
+                                                                "id": "sl_position_6",
+                                                                "label": false,
+                                                                "unit": "",
+                                                                "width": "20%",
+                                                                "height": "100%",
+                                                                "color": "auto",
+                                                                "css": "--display-input:none; canvas {pointer-events:none}",
+                                                                "range": {
+                                                                    "min": 0,
+                                                                    "max": 1
+                                                                },
+                                                                "logScale": false,
+                                                                "origin": "auto",
+                                                                "value": "",
+                                                                "preArgs": [],
+                                                                "address": "/sl_position_6",
+                                                                "compact": true,
+                                                                "linkId": "",
+                                                                "noPip": true,
+                                                                "angle": 360,
+                                                                "snap": false,
+                                                                "spring": false,
+                                                                "precision": 2,
+                                                                "target": [],
+                                                                "top": "auto"
+                                                            },
+                                                            {
+                                                                "type": "meter",
+                                                                "top": "90%",
+                                                                "left": 0,
+                                                                "id": "sl_wait_6",
+                                                                "label": false,
+                                                                "width": "80%",
+                                                                "height": "10%",
+                                                                "color": "red",
+                                                                "css": "--display-input:none;--color-knob:transparent;",
+                                                                "range": {
+                                                                    "min": 0,
+                                                                    "max": 1
+                                                                },
+                                                                "logScale": false,
+                                                                "value": "",
+                                                                "preArgs": [
+                                                                    "wait"
+                                                                ],
+                                                                "unit": "",
+                                                                "horizontal": true,
+                                                                "origin": "auto",
+                                                                "address": "/sl/6/hit",
+                                                                "widgetId": "",
+                                                                "compact": true
+                                                            }
+                                                        ],
+                                                        "tabs": [],
+                                                        "height": "auto",
+                                                        "layout": "",
+                                                        "spacing": 0
+                                                    },
+                                                    {
+                                                        "type": "panel",
+                                                        "id": "panel_synth_aigu",
+                                                        "label": "Synth AIGU",
+                                                        "width": "100%",
+                                                        "scroll": true,
+                                                        "color": "auto",
+                                                        "css": "",
+                                                        "widgets": [
+                                                            {
+                                                                "type": "push",
+                                                                "top": 0,
+                                                                "left": 0,
+                                                                "id": "sl_record_7",
+                                                                "linkId": "",
+                                                                "label": "Record",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "red",
+                                                                "css": "",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "record"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "address": "/sl/7/hit"
+                                                            },
+                                                            {
+                                                                "type": "push",
+                                                                "top": 0,
+                                                                "left": "40%",
+                                                                "id": "sl_pause_7",
+                                                                "label": "Pause",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "yellow",
+                                                                "css": "",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "pause"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "linkId": "",
+                                                                "address": "/sl/7/hit"
+                                                            },
+                                                            {
+                                                                "type": "push",
+                                                                "top": 0,
+                                                                "left": "60%",
+                                                                "id": "sl_trigger_7",
+                                                                "label": "Trigger",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "auto",
+                                                                "css": "",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "trigger"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "linkId": "",
+                                                                "address": "/sl/7/hit"
+                                                            },
+                                                            {
+                                                                "type": "knob",
+                                                                "left": "80%",
+                                                                "id": "sl_position_7",
+                                                                "label": false,
+                                                                "unit": "",
+                                                                "width": "20%",
+                                                                "height": "100%",
+                                                                "color": "auto",
+                                                                "css": "--display-input:none; canvas {pointer-events:none}",
+                                                                "range": {
+                                                                    "min": 0,
+                                                                    "max": 1
+                                                                },
+                                                                "logScale": false,
+                                                                "origin": "auto",
+                                                                "value": "",
+                                                                "preArgs": [],
+                                                                "address": "/sl_position_7",
+                                                                "compact": true,
+                                                                "linkId": "",
+                                                                "noPip": true,
+                                                                "angle": 360,
+                                                                "snap": false,
+                                                                "spring": false,
+                                                                "precision": 2,
+                                                                "target": [],
+                                                                "top": "auto"
+                                                            },
+                                                            {
+                                                                "type": "push",
+                                                                "left": "20%",
+                                                                "id": "sl_overdub_7",
+                                                                "label": "Overdub",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "orange",
+                                                                "css": "",
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "overdub"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "linkId": "",
+                                                                "top": 0,
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "address": "/sl/7/hit"
+                                                            },
+                                                            {
+                                                                "type": "meter",
+                                                                "top": "90%",
+                                                                "left": 0,
+                                                                "id": "sl_wait_7",
+                                                                "label": false,
+                                                                "width": "80%",
+                                                                "height": "10%",
+                                                                "color": "red",
+                                                                "css": "--display-input:none;--color-knob:transparent;",
+                                                                "range": {
+                                                                    "min": 0,
+                                                                    "max": 1
+                                                                },
+                                                                "logScale": false,
+                                                                "value": "",
+                                                                "preArgs": [
+                                                                    "wait"
+                                                                ],
+                                                                "unit": "",
+                                                                "horizontal": true,
+                                                                "origin": "auto",
+                                                                "address": "/sl/7/hit",
+                                                                "widgetId": "",
+                                                                "compact": true
+                                                            }
+                                                        ],
+                                                        "tabs": [],
+                                                        "height": "auto",
+                                                        "layout": "",
+                                                        "spacing": 0
+                                                    },
+                                                    {
+                                                        "type": "panel",
+                                                        "id": "panel_synth_rhodes",
+                                                        "label": "RHODES",
+                                                        "width": "100%",
+                                                        "scroll": true,
+                                                        "color": "auto",
+                                                        "css": "",
+                                                        "widgets": [
+                                                            {
+                                                                "type": "push",
+                                                                "top": 0,
+                                                                "left": 0,
+                                                                "id": "sl_record_8",
+                                                                "linkId": "",
+                                                                "label": "Record",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "red",
+                                                                "css": "",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "record"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "address": "/sl/8/hit"
+                                                            },
+                                                            {
+                                                                "type": "push",
+                                                                "left": "20%",
+                                                                "id": "sl_overdub_8",
+                                                                "label": "Overdub",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "orange",
+                                                                "css": "",
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "overdub"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "linkId": "",
+                                                                "top": "auto",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "address": "/sl/8/hit"
+                                                            },
+                                                            {
+                                                                "type": "push",
+                                                                "top": 0,
+                                                                "left": "40%",
+                                                                "id": "sl_pause_8",
+                                                                "label": "Pause",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "yellow",
+                                                                "css": "",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "pause"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "linkId": "",
+                                                                "address": "/sl/8/hit"
+                                                            },
+                                                            {
+                                                                "type": "push",
+                                                                "top": 0,
+                                                                "left": "60%",
+                                                                "id": "sl_trigger_8",
+                                                                "label": "Trigger",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "auto",
+                                                                "css": "",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "trigger"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "linkId": "",
+                                                                "address": "/sl/8/hit"
+                                                            },
+                                                            {
+                                                                "type": "knob",
+                                                                "left": "80%",
+                                                                "id": "sl_position_8",
+                                                                "label": false,
+                                                                "unit": "",
+                                                                "width": "20%",
+                                                                "height": "100%",
+                                                                "color": "auto",
+                                                                "css": "--display-input:none; canvas {pointer-events:none}",
+                                                                "range": {
+                                                                    "min": 0,
+                                                                    "max": 1
+                                                                },
+                                                                "logScale": false,
+                                                                "origin": "auto",
+                                                                "value": "",
+                                                                "preArgs": [],
+                                                                "address": "/sl_position_8",
+                                                                "compact": true,
+                                                                "linkId": "",
+                                                                "noPip": true,
+                                                                "angle": 360,
+                                                                "snap": false,
+                                                                "spring": false,
+                                                                "precision": 2,
+                                                                "target": [],
+                                                                "top": "auto"
+                                                            },
+                                                            {
+                                                                "type": "meter",
+                                                                "top": "90%",
+                                                                "left": 0,
+                                                                "id": "sl_wait_8",
+                                                                "label": false,
+                                                                "width": "80%",
+                                                                "height": "10%",
+                                                                "color": "red",
+                                                                "css": "--display-input:none;--color-knob:transparent;",
+                                                                "range": {
+                                                                    "min": 0,
+                                                                    "max": 1
+                                                                },
+                                                                "logScale": false,
+                                                                "value": "",
+                                                                "preArgs": [
+                                                                    "wait"
+                                                                ],
+                                                                "unit": "",
+                                                                "horizontal": true,
+                                                                "origin": "auto",
+                                                                "address": "/sl/8/hit",
+                                                                "widgetId": "",
+                                                                "compact": true
+                                                            }
+                                                        ],
+                                                        "tabs": [],
+                                                        "height": "auto",
+                                                        "layout": "",
+                                                        "spacing": 0
+                                                    }
+                                                ],
+                                                "css": "",
+                                                "left": 0,
+                                                "top": 0,
+                                                "color": "auto"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "",
+                                        "label": "POST",
+                                        "widgets": [
+                                            {
+                                                "type": "strip",
+                                                "id": "sooperlooper",
+                                                "label": false,
+                                                "width": "100%",
+                                                "height": "100%",
+                                                "horizontal": false,
+                                                "widgets": [
+                                                    {
+                                                        "type": "panel",
+                                                        "id": "panel_bass_post",
+                                                        "label": "Bass",
+                                                        "width": "100%",
+                                                        "scroll": true,
+                                                        "color": "auto",
+                                                        "css": "",
+                                                        "widgets": [
+                                                            {
+                                                                "type": "push",
+                                                                "top": 0,
+                                                                "left": 0,
+                                                                "id": "sl_record_1",
+                                                                "linkId": "",
+                                                                "label": "Record",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "red",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "record"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "address": "/sl/1/hit",
+                                                                "css": ""
+                                                            },
+                                                            {
+                                                                "type": "push",
+                                                                "left": "20%",
+                                                                "id": "sl_overdub_1",
+                                                                "label": "Overdub",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "orange",
+                                                                "css": "",
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "overdub"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "linkId": "",
+                                                                "top": "auto",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "address": "/sl/1/hit"
+                                                            },
+                                                            {
+                                                                "type": "push",
+                                                                "top": 0,
+                                                                "left": "40%",
+                                                                "id": "sl_pause_1",
+                                                                "label": "Pause",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "yellow",
+                                                                "css": "",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "pause"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "linkId": "",
+                                                                "address": "/sl/1/hit"
+                                                            },
+                                                            {
+                                                                "type": "push",
+                                                                "top": 0,
+                                                                "left": "60%",
+                                                                "id": "sl_trigger_1",
+                                                                "label": "Trigger",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "auto",
+                                                                "css": "",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "trigger"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "linkId": "",
+                                                                "address": "/sl/1/hit"
+                                                            },
+                                                            {
+                                                                "type": "knob",
+                                                                "left": "80%",
+                                                                "id": "sl_position_1",
+                                                                "label": false,
+                                                                "unit": "",
+                                                                "width": "20%",
+                                                                "height": "100%",
+                                                                "color": "auto",
+                                                                "css": "--display-input:none; canvas {pointer-events:none}",
+                                                                "range": {
+                                                                    "min": 0,
+                                                                    "max": 1
+                                                                },
+                                                                "logScale": false,
+                                                                "origin": "auto",
+                                                                "value": "",
+                                                                "preArgs": [],
+                                                                "address": "/sl_position_1",
+                                                                "compact": true,
+                                                                "linkId": "",
+                                                                "noPip": true,
+                                                                "angle": 360,
+                                                                "snap": false,
+                                                                "spring": false,
+                                                                "precision": 2,
+                                                                "target": [],
+                                                                "top": "auto"
+                                                            },
+                                                            {
+                                                                "type": "meter",
+                                                                "top": "90%",
+                                                                "left": 0,
+                                                                "id": "sl_wait_1",
+                                                                "label": false,
+                                                                "width": "80%",
+                                                                "height": "10%",
+                                                                "color": "red",
+                                                                "css": "--display-input:none;--color-knob:transparent;",
+                                                                "range": {
+                                                                    "min": 0,
+                                                                    "max": 1
+                                                                },
+                                                                "logScale": false,
+                                                                "value": "",
+                                                                "preArgs": [
+                                                                    "wait"
+                                                                ],
+                                                                "unit": "",
+                                                                "horizontal": true,
+                                                                "origin": "auto",
+                                                                "address": "/sl/1/hit",
+                                                                "widgetId": "",
+                                                                "compact": true
+                                                            }
+                                                        ],
+                                                        "tabs": [],
+                                                        "height": "auto",
+                                                        "layout": "",
+                                                        "spacing": 0
+                                                    },
+                                                    {
+                                                        "type": "panel",
+                                                        "id": "panel_vxorl_post",
+                                                        "label": "Vx ORL",
+                                                        "width": "100%",
+                                                        "scroll": true,
+                                                        "color": "auto",
+                                                        "css": "",
+                                                        "widgets": [
+                                                            {
+                                                                "type": "push",
+                                                                "top": 0,
+                                                                "left": 0,
+                                                                "id": "sl_record_3",
+                                                                "linkId": "",
+                                                                "label": "Record",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "red",
+                                                                "css": "",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "record"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "address": "/sl/3/hit"
+                                                            },
+                                                            {
+                                                                "type": "push",
+                                                                "top": 0,
+                                                                "left": "40%",
+                                                                "id": "sl_pause_3",
+                                                                "label": "Pause",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "yellow",
+                                                                "css": "",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "pause"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "linkId": "",
+                                                                "address": "/sl/3/hit"
+                                                            },
+                                                            {
+                                                                "type": "push",
+                                                                "top": 0,
+                                                                "left": "60%",
+                                                                "id": "sl_trigger_3",
+                                                                "label": "Trigger",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "auto",
+                                                                "css": "",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "trigger"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "linkId": "",
+                                                                "address": "/sl/3/hit"
+                                                            },
+                                                            {
+                                                                "type": "knob",
+                                                                "left": "80%",
+                                                                "id": "sl_position_3",
+                                                                "label": false,
+                                                                "unit": "",
+                                                                "width": "20%",
+                                                                "height": "100%",
+                                                                "color": "auto",
+                                                                "css": "--display-input:none; canvas {pointer-events:none}",
+                                                                "range": {
+                                                                    "min": 0,
+                                                                    "max": 1
+                                                                },
+                                                                "logScale": false,
+                                                                "origin": "auto",
+                                                                "value": "",
+                                                                "preArgs": [],
+                                                                "address": "/sl_position_3",
+                                                                "compact": true,
+                                                                "linkId": "",
+                                                                "noPip": true,
+                                                                "angle": 360,
+                                                                "snap": false,
+                                                                "spring": false,
+                                                                "precision": 2,
+                                                                "target": [],
+                                                                "top": "auto"
+                                                            },
+                                                            {
+                                                                "type": "push",
+                                                                "left": "20%",
+                                                                "id": "sl_overdub_3",
+                                                                "label": "Overdub",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "orange",
+                                                                "css": "",
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "overdub"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "linkId": "",
+                                                                "top": 0,
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "address": "/sl/3/hit"
+                                                            },
+                                                            {
+                                                                "type": "meter",
+                                                                "top": "90%",
+                                                                "left": 0,
+                                                                "id": "sl_wait_3",
+                                                                "label": false,
+                                                                "width": "80%",
+                                                                "height": "10%",
+                                                                "color": "red",
+                                                                "css": "--display-input:none;--color-knob:transparent;",
+                                                                "range": {
+                                                                    "min": 0,
+                                                                    "max": 1
+                                                                },
+                                                                "logScale": false,
+                                                                "value": "",
+                                                                "preArgs": [
+                                                                    "wait"
+                                                                ],
+                                                                "unit": "",
+                                                                "horizontal": true,
+                                                                "origin": "auto",
+                                                                "address": "/sl/3/hit",
+                                                                "widgetId": "",
+                                                                "compact": true
+                                                            }
+                                                        ],
+                                                        "tabs": [],
+                                                        "height": "auto",
+                                                        "layout": "",
+                                                        "spacing": 0
+                                                    },
+                                                    {
+                                                        "type": "panel",
+                                                        "id": "panel_vxjeannot_post",
+                                                        "label": "Vx Jeannot",
+                                                        "width": "100%",
+                                                        "scroll": true,
+                                                        "color": "auto",
+                                                        "css": "",
+                                                        "widgets": [
+                                                            {
+                                                                "type": "push",
+                                                                "top": 0,
+                                                                "left": 0,
+                                                                "id": "sl_record_5",
+                                                                "linkId": "",
+                                                                "label": "Record",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "red",
+                                                                "css": "",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "record"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "address": "/sl/5/hit"
+                                                            },
+                                                            {
+                                                                "type": "push",
+                                                                "left": "20%",
+                                                                "id": "sl_overdub_5",
+                                                                "label": "Overdub",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "orange",
+                                                                "css": "",
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "overdub"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "linkId": "",
+                                                                "top": "auto",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "address": "/sl/5/hit"
+                                                            },
+                                                            {
+                                                                "type": "push",
+                                                                "top": 0,
+                                                                "left": "40%",
+                                                                "id": "sl_pause_5",
+                                                                "label": "Pause",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "yellow",
+                                                                "css": "",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "pause"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "linkId": "",
+                                                                "address": "/sl/5/hit"
+                                                            },
+                                                            {
+                                                                "type": "push",
+                                                                "top": 0,
+                                                                "left": "60%",
+                                                                "id": "sl_trigger_5",
+                                                                "label": "Trigger",
+                                                                "width": "20%",
+                                                                "height": "90%",
+                                                                "color": "auto",
+                                                                "css": "",
+                                                                "on": 1,
+                                                                "off": 0,
+                                                                "norelease": true,
+                                                                "precision": 2,
+                                                                "preArgs": [
+                                                                    "trigger"
+                                                                ],
+                                                                "target": [
+                                                                    "sl:port"
+                                                                ],
+                                                                "linkId": "",
+                                                                "address": "/sl/5/hit"
+                                                            },
+                                                            {
+                                                                "type": "knob",
+                                                                "left": "80%",
+                                                                "id": "sl_position_5",
+                                                                "label": false,
+                                                                "unit": "",
+                                                                "width": "20%",
+                                                                "height": "100%",
+                                                                "color": "auto",
+                                                                "css": "--display-input:none; canvas {pointer-events:none}",
+                                                                "range": {
+                                                                    "min": 0,
+                                                                    "max": 1
+                                                                },
+                                                                "logScale": false,
+                                                                "origin": "auto",
+                                                                "value": "",
+                                                                "preArgs": [],
+                                                                "address": "/sl_position_5",
+                                                                "compact": true,
+                                                                "linkId": "",
+                                                                "noPip": true,
+                                                                "angle": 360,
+                                                                "snap": false,
+                                                                "spring": false,
+                                                                "precision": 2,
+                                                                "target": [],
+                                                                "top": "auto"
+                                                            },
+                                                            {
+                                                                "type": "meter",
+                                                                "top": "90%",
+                                                                "left": 0,
+                                                                "id": "sl_wait_5",
+                                                                "label": false,
+                                                                "width": "80%",
+                                                                "height": "10%",
+                                                                "color": "red",
+                                                                "css": "--display-input:none;--color-knob:transparent;",
+                                                                "range": {
+                                                                    "min": 0,
+                                                                    "max": 1
+                                                                },
+                                                                "logScale": false,
+                                                                "value": "",
+                                                                "preArgs": [
+                                                                    "wait"
+                                                                ],
+                                                                "unit": "",
+                                                                "horizontal": true,
+                                                                "origin": "auto",
+                                                                "address": "/sl/5/hit",
+                                                                "widgetId": "",
+                                                                "compact": true
+                                                            }
+                                                        ],
+                                                        "tabs": [],
+                                                        "height": "auto",
+                                                        "layout": "",
+                                                        "spacing": 0
+                                                    }
+                                                ],
+                                                "css": "",
+                                                "left": "auto",
+                                                "top": "auto",
+                                                "color": "auto"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "color": "auto"
                             }
                         ],
                         "tabs": [],
                         "height": "100%",
-                        "css": ""
+                        "css": "",
+                        "layout": "",
+                        "spacing": 0
                     }
                 ],
-                "tabs": []
+                "tabs": [],
+                "layout": "",
+                "spacing": 0
             },
             {
                 "type": "panel",
-                "top": "70%",
+                "top": "85%",
                 "left": 0,
                 "id": "mididings",
                 "label": "Mididings",
                 "width": "100%",
-                "height": "30%",
+                "height": "15%",
                 "scroll": true,
                 "color": "auto",
                 "css": "",
@@ -707,7 +1736,7 @@
                         "id": "mididings_scenes",
                         "label": false,
                         "width": "100%",
-                        "height": "50%",
+                        "height": "30%",
                         "horizontal": true,
                         "color": "auto",
                         "css": "",
@@ -734,21 +1763,22 @@
                     },
                     {
                         "type": "switch",
-                        "top": "50%",
+                        "top": "30%",
                         "left": 0,
                         "id": "mididings_subscenes",
                         "label": "Subscenes",
                         "width": "100%",
-                        "height": "50%",
+                        "height": "70%",
                         "horizontal": true,
                         "color": "auto",
                         "css": "",
                         "linkId": "",
                         "values": {
                             "Bass ORL": 1,
-                            "Nope": 8,
-                            "Tune Select": 9,
-                            "Vx ORL": 2
+                            "Vx ORL": 2,
+                            "Nope": 7,
+                            "Pedal Select": 8,
+                            "Tune Select": 9
                         },
                         "value": "",
                         "precision": 0,
@@ -759,9 +1789,12 @@
                         ]
                     }
                 ],
-                "tabs": []
+                "tabs": [],
+                "layout": "",
+                "spacing": 0
             }
-        ]
+        ],
+        "id": ""
     },
     {
         "label": "SACEM",
@@ -1787,8 +2820,11 @@
                         "off": 0
                     }
                 ],
-                "tabs": []
+                "tabs": [],
+                "layout": "",
+                "spacing": 0
             }
-        ]
+        ],
+        "id": ""
     }
 ]
