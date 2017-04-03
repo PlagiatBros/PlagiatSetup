@@ -47,7 +47,8 @@ connassessacem = [
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.708955),
             SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.35185),
 
-            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'connassesacem_1', timestamp),
+            # SendOSC(lightseqport, '/Lightseq/Scene/Play', 'connassesacem_1', timestamp),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'connassesacem_anim', timestamp),
 
             SendOscState([
 

@@ -4,15 +4,41 @@ sys.path.append("../Controls/Mididings/")
 from ports import *
 
 
+
+
+def connassesacem_anim(seq, timer):
+    while True:
+        r = range(1,9)
+        for i in range(1,9):
+
+            #
+            # seq.animate(['/CC/Segment/%i' % r[(i-1)%8], '$', '$', '$'], 50, 0, 0.5, "beat", mode="integer",framerate=30, timestamp=timer.clock)
+            # seq.animate(['/CC/Segment/%i' % r[( i )%8], '$', '$', '$'], 50, 100, 0.5, "beat", mode="integer",framerate=30, timestamp=timer.clock)
+            # seq.animate(['/CC/Segment/%i' % r[(i+1)%8], '$', '$', '$'], 0, 50, 0.5, "beat", mode="integer",framerate=30, timestamp=timer.clock)
+
+
+            seq.animate(['/CC/Segment/%i' % r[(i+1)%8], '$', '$', '$'], 50, 100, 0.5, "beat", mode="integer",framerate=30, timestamp=timer.clock)
+            seq.animate(['/CJ/Segment/%i' % (9-r[(i+1)%8]), '$', '$', '$'], 50, 100, 0.5, "beat", mode="integer",framerate=30, timestamp=timer.clock)
+            seq.animate(['/CC/Segment/%i' % r[(i+2)%8], '$', '$', '$'], 0, 50, 0.5, "beat", mode="integer",framerate=30, timestamp=timer.clock)
+            seq.animate(['/CJ/Segment/%i' % (9-r[(i+2)%8]), '$', '$', '$'], 0,  50, 0.5, "beat", mode="integer",framerate=30, timestamp=timer.clock)
+
+            seq.animate(['/CC/Segment/%i' % r[(i-1)%8], '$', '$', '$'], 100, 50, 0.5, "beat", mode="integer",framerate=30, timestamp=timer.clock)
+            seq.animate(['/CJ/Segment/%i' % (9-r[(i-1)%8]), '$', '$', '$'], 100, 50, 0.5, "beat", mode="integer",framerate=30, timestamp=timer.clock)
+            seq.animate(['/CC/Segment/%i' % r[(i-2)%8], '$', '$', '$'], 50, 0, 0.5, "beat", mode="integer",framerate=30, timestamp=timer.clock)
+            seq.animate(['/CJ/Segment/%i' % (9-r[(i-2)%8]), '$', '$', '$'], 59, 0, 0.5, "beat", mode="integer",framerate=30, timestamp=timer.clock)
+            timer.wait(.5, "beat")
+
+
+
 def connassesacem_1(seq, timer):
-    seq.send('/CC/White/Segment/1', 100)
-    seq.send('/CC/White/Segment/2', 75)
-    seq.send('/CC/White/Segment/3', 50)
-    seq.send('/CC/White/Segment/4', 25)
-    seq.send('/CJ/White/Segment/8', 100)
-    seq.send('/CJ/White/Segment/7', 75)
-    seq.send('/CJ/White/Segment/6', 50)
-    seq.send('/CJ/White/Segment/5', 25)
+    seq.send('/CC/Segment/1', 100, 100, 100)
+    seq.send('/CC/Segment/2', 75, 75, 75)
+    seq.send('/CC/Segment/3', 50, 50, 50)
+    seq.send('/CC/Segment/4', 25, 25, 25)
+    seq.send('/CJ/Segment/8', 100, 100, 100)
+    seq.send('/CJ/Segment/7', 75, 75, 75)
+    seq.send('/CJ/Segment/6', 50, 50, 50)
+    seq.send('/CJ/Segment/5', 25, 25, 25)
 
     seq.send(vporlport,'/pyta/slide/rotate_z', 98, -90)
     seq.send(vporlport,'/pyta/slide/rgb', 98, 0.7, 0, 0)
