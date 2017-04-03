@@ -26,6 +26,16 @@
 
             if (address.indexOf('/Segment')!=-1 && args.length == 3) {
 
+                receiveOsc({
+                    address: '/led',
+                    args: [
+                        {
+                            type:'f',
+                            value: 1
+                        }
+                    ]
+                })
+
                 var [_, bar, _, seg] = address.split('/')
 
                 if (seg == 'All') {
