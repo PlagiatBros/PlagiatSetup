@@ -364,6 +364,7 @@ oscsendproxy = OscSendProxy([
 
 SendOscState = oscsendproxy.sendOscState
 
+"""
 
 zitaNotes = {
     'c': 7,
@@ -409,6 +410,8 @@ def vocoderscale(notes, port=[vocoderjeannotport, vocoderorlport]):
             )
 
     return ev
+
+"""
 
 def timestamp(ev):
     return ('t', time())
