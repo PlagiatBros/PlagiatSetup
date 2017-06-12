@@ -14,147 +14,99 @@
                 "color": "rgb(0,0,0)",
                 "widgets": [
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "BC_1",
                         "label": false,
                         "width": "auto",
                         "height": "auto",
-                        "color": "rgb(0, 0, 0)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/BC_1",
                         "preArgs": []
                     },
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "BC_2",
                         "label": false,
-                        "color": "rgb(0, 0, 0)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/BC_2",
                         "width": "auto",
                         "height": "auto",
                         "preArgs": []
                     },
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "BC_3",
                         "label": false,
-                        "color": "rgb(0, 0, 0)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/BC_3",
                         "width": "auto",
                         "height": "auto",
                         "preArgs": []
                     },
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "BC_4",
                         "label": false,
-                        "color": "rgb(0, 0, 0)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/BC_4",
                         "width": "auto",
                         "height": "auto",
                         "preArgs": []
                     },
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "BC_5",
                         "label": false,
                         "width": "auto",
                         "height": "auto",
-                        "color": "rgb(0, 0, 0)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/BC_5",
                         "preArgs": []
                     },
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "BC_6",
                         "label": false,
                         "width": "auto",
                         "height": "auto",
-                        "color": "rgb(0, 0, 0)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/BC_6",
                         "preArgs": []
                     },
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "BC_7",
                         "label": false,
                         "width": "auto",
                         "height": "auto",
-                        "color": "rgb(0, 0, 0)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/BC_7",
                         "preArgs": []
                     },
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "BC_8",
                         "label": false,
                         "width": "auto",
                         "height": "auto",
-                        "color": "rgb(0, 0, 0)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/BC_8",
                         "preArgs": []
                     }
                 ],
@@ -173,147 +125,99 @@
                 "css": "& {flex-direction:row-reverse}",
                 "widgets": [
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "BJ_1",
                         "label": false,
                         "width": "auto",
                         "height": "auto",
-                        "color": "rgb(0, 0, 0)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/BJ_1",
                         "preArgs": []
                     },
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "BJ_2",
                         "label": false,
-                        "color": "rgb(0, 0, 0)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/BJ_2",
                         "width": "auto",
                         "height": "auto",
                         "preArgs": []
                     },
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "BJ_3",
                         "label": false,
-                        "color": "rgb(0, 0, 0)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/BJ_3",
                         "width": "auto",
                         "height": "auto",
                         "preArgs": []
                     },
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "BJ_4",
                         "label": false,
-                        "color": "rgb(0, 0, 0)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/BJ_4",
                         "width": "auto",
                         "height": "auto",
                         "preArgs": []
                     },
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "BJ_5",
                         "label": false,
                         "width": "auto",
                         "height": "auto",
-                        "color": "rgb(0, 0, 0)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/BJ_5",
                         "preArgs": []
                     },
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "BJ_6",
                         "label": false,
                         "width": "auto",
                         "height": "auto",
-                        "color": "rgb(0, 0, 0)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/BJ_6",
                         "preArgs": []
                     },
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "BJ_7",
                         "label": false,
                         "width": "auto",
                         "height": "auto",
-                        "color": "rgb(0, 0, 0)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/BJ_7",
                         "preArgs": []
                     },
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "BJ_8",
                         "label": false,
                         "width": "auto",
                         "height": "auto",
-                        "color": "rgb(0, 0, 0)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/BJ_8",
                         "preArgs": []
                     }
                 ],
@@ -331,147 +235,99 @@
                 "css": ".widget {height:12.5%}",
                 "widgets": [
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "CC_1",
                         "label": false,
                         "width": "auto",
                         "height": "auto",
-                        "color": "rgb(100, 100, 100)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/CC_1",
                         "preArgs": []
                     },
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "CC_2",
                         "label": false,
-                        "color": "rgb(75, 75, 75)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/CC_2",
                         "width": "auto",
                         "height": "auto",
                         "preArgs": []
                     },
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "CC_3",
                         "label": false,
-                        "color": "rgb(50, 50, 50)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/CC_3",
                         "width": "auto",
                         "height": "auto",
                         "preArgs": []
                     },
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "CC_4",
                         "label": false,
-                        "color": "rgb(25, 25, 25)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/CC_4",
                         "width": "auto",
                         "height": "auto",
                         "preArgs": []
                     },
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "CC_5",
                         "label": false,
                         "width": "auto",
                         "height": "auto",
-                        "color": "rgb(0,0,0)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/CC_5",
                         "preArgs": []
                     },
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "CC_6",
                         "label": false,
                         "width": "auto",
                         "height": "auto",
-                        "color": "rgb(0,0,0)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/CC_6",
                         "preArgs": []
                     },
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "CC_7",
                         "label": false,
                         "width": "auto",
                         "height": "auto",
-                        "color": "rgb(0,0,0)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/CC_7",
                         "preArgs": []
                     },
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "CC_8",
                         "label": false,
                         "width": "auto",
                         "height": "auto",
-                        "color": "rgb(0,0,0)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/CC_8",
                         "preArgs": []
                     }
                 ],
@@ -488,147 +344,99 @@
                 "color": "rgb(0,0,0)",
                 "widgets": [
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "CJ_1",
                         "label": false,
                         "width": "auto",
                         "height": "auto",
-                        "color": "rgb(0,0,0)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/CJ_1",
                         "preArgs": []
                     },
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "CJ_2",
                         "label": false,
-                        "color": "rgb(0,0,0)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/CJ_2",
                         "width": "auto",
                         "height": "auto",
                         "preArgs": []
                     },
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "CJ_3",
                         "label": false,
-                        "color": "rgb(0,0,0)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/CJ_3",
                         "width": "auto",
                         "height": "auto",
                         "preArgs": []
                     },
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "CJ_4",
                         "label": false,
-                        "color": "rgb(0,0,0)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/CJ_4",
                         "width": "auto",
                         "height": "auto",
                         "preArgs": []
                     },
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "CJ_5",
                         "label": false,
                         "width": "auto",
                         "height": "auto",
-                        "color": "rgb(25, 25, 25)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/CJ_5",
                         "preArgs": []
                     },
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "CJ_6",
                         "label": false,
                         "width": "auto",
                         "height": "auto",
-                        "color": "rgb(50, 50, 50)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/CJ_6",
                         "preArgs": []
                     },
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "CJ_7",
                         "label": false,
                         "width": "auto",
                         "height": "auto",
-                        "color": "rgb(75, 75, 75)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/CJ_7",
                         "preArgs": []
                     },
                     {
-                        "type": "led",
+                        "type": "rgbled",
                         "id": "CJ_8",
                         "label": false,
                         "width": "auto",
                         "height": "auto",
-                        "color": "rgb(100, 100, 100)",
                         "css": "",
                         "widgetId": "",
-                        "range": {
-                            "min": 0,
-                            "max": 1
-                        },
-                        "logScale": false,
                         "value": 1,
-                        "address": "/led",
+                        "address": "/CJ_8",
                         "preArgs": []
                     }
                 ],

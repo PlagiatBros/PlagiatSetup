@@ -13,66 +13,50 @@
 
 
             if (address.indexOf('/Stop')!=-1) {
-                var [_, bar, _, seg] = address.split('/')
 
-                address = '/led'
-                args = [
-                    {
-                        type:'f',
-                        value: 0
-                    }
-                ]
-            }
-
-            if (address.indexOf('/Segment')!=-1 && args.length == 3) {
-
-                receiveOsc({
-                    address: '/led',
-                    args: [
-                        {
-                            type:'f',
-                            value: 1
-                        }
-                    ]
-                })
-
-                var [_, bar, _, seg] = address.split('/')
-
-                if (seg == 'All') {
-
-                    for (var i = 1; i < 9; i++) {
+                for (var bar of ['CC','CJ','BJ','BC']) {
+                    for (var i of [1,2,3,4,5,6,7,8]) {
                         receiveOsc({
-                            address: '/EDIT_SOFT',
+                            address: `/${bar}_${i}`,
                             args: [
                                 {
-                                    type:'s',
-                                    value: `${bar}_${i}`
+                                    type:'f',
+                                    value: 0
                                 },
                                 {
-                                    type:'s',
-                                    value:JSON.stringify({
-                                        color:`rgb(${args[0].value}, ${args[1].value}, ${args[2].value})`
-                                    })
+                                    type:'f',
+                                    value: 0
+                                },
+                                {
+                                    type:'f',
+                                    value: 0
                                 }
                             ]
                         })
                     }
+                }
+
+                return
+            }
+
+            if (address.indexOf('/Segment')!=-1 && args.length == 3) {
+
+                var [_, bar, _, i] = address.split('/')
+
+                if (i == 'All') {
+
+                    for (var i = 1; i < 9; i++) {
+                        receiveOsc({
+                            address: `/${bar}_${i}`,
+                            args: args
+                        })
+                    }
+
+                    return
 
                 } else {
 
-                    address = '/EDIT_SOFT'
-                    args = [
-                        {
-                            type:'s',
-                            value: `${bar}_${seg}`
-                        },
-                        {
-                            type:'s',
-                            value:JSON.stringify({
-                                color:`rgb(${args[0].value}, ${args[1].value}, ${args[2].value})`
-                            })
-                        }
-                    ]
+                    address = `/${bar}_${i}`
 
                 }
             }
