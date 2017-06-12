@@ -92,6 +92,9 @@ trapone = [
             SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.6296),
 
 
+            SendOSC(bassmainport, '/strip/BassMain/Calf%20Filter/Frequency/unscaled', 20000.),
+            SendOSC(bassmainport, '/strip/BassDry/Calf%20Filter/Frequency/unscaled', 20000.),
+
             SendOscState([
 
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
