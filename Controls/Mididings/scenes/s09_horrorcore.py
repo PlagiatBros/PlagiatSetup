@@ -46,7 +46,8 @@ horrorcore = [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(150)),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(150)),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(150)),
 
             SendOSC(mk2inport, '/mididings/switch_scene', 5), # rip backing
 
@@ -103,8 +104,8 @@ horrorcore = [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(150)),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(150)),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
-
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(150)),
 
             SendOscState([
 
@@ -158,8 +159,8 @@ horrorcore = [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(150)),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(150)),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
-
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(150)),
 
             SendOscState([
 
@@ -249,8 +250,8 @@ horrorcore = [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(150)),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(150)),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
-
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(150)),
 
             SendOscState([
 

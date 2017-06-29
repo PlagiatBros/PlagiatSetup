@@ -48,9 +48,10 @@ le5 = [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),
 
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.48148),
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(160)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(160)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(160)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(160)),
 
             SendOscState([
 
@@ -92,9 +93,10 @@ le5 = [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),
 
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.48148),
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(160)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(160)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(160)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(160)),
 
             SendOscState([
 
@@ -137,9 +139,10 @@ le5 = [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),
 
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.48148),
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(160)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(160)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(160)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(160)),
 
             SendOscState([
 
@@ -182,9 +185,10 @@ le5 = [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),
 
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.48148),
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(160)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(160)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(160)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(160)),
 
             SendOscState([
 
@@ -231,9 +235,10 @@ le5 = [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),
 
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.48148),
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(160)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(160)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(160)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(160)),
 
             SendOscState([
 
@@ -276,9 +281,10 @@ le5 = [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),
 
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.48148),
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(160)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(160)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(160)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(160)),
 
             SendOscState([
 
@@ -323,9 +329,10 @@ le5 = [
 
             SendOSC(trapcutport, '/Trapcut/Bpm', 320),
 
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.48148),
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(160)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(160)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(160)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(160)),
 
             SendOscState([
 
@@ -369,9 +376,14 @@ le5 = [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),
 
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.48148),
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(160)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(160)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(160)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(160)),
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(160)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(160)),
+            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(160)),
 
             SendOscState([
 
@@ -436,9 +448,10 @@ le5 = [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),
 
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.48148),
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(120)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(120)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(120)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
 
             SendOscState([
 
@@ -482,9 +495,10 @@ le5 = [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),
 
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.48148),
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(120)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(120)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(120)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
 
             SendOscState([
 
@@ -528,9 +542,10 @@ le5 = [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
             SendOSC(klickport, '/klick/metro/start'),
 
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.9701),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.9701),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.48148),
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(120)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(120)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(120)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
 
             SendOscState([
 

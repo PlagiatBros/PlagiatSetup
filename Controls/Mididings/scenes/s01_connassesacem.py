@@ -43,9 +43,10 @@ connassessacem = [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),
 
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.708955),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.708955),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.35185),
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(125)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(125)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(125)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(125)),
 
             # SendOSC(lightseqport, '/Lightseq/Scene/Play', 'connassesacem_1', timestamp),
             SendOSC(lightseqport, '/Lightseq/Scene/Play', 'connassesacem_anim', timestamp),
@@ -90,9 +91,10 @@ connassessacem = [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),
 
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.708955),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.708955),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.35185),
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(125)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(125)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(125)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(125)),
 
             SendOSC(lightseqport, '/Lightseq/Scene/Play', 'connassesacem_2', timestamp),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),

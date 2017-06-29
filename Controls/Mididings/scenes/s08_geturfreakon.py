@@ -43,6 +43,10 @@ geturfreakon = [
             SendOSC(klickport, '/klick/simple/set_pattern', 'xxxx'),
             SendOSC(klickport, '/klick/metro/start'),
 
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(75)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(75)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(75)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(75)),
 
             SendOscState([
 
@@ -87,9 +91,10 @@ geturfreakon = [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),
 
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.522388),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.522388),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.6296),
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(225)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(225)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(225)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(225)),
 
             SendOscState([
 

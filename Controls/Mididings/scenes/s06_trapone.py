@@ -87,10 +87,10 @@ trapone = [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),
 
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.522388),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.522388),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.6296),
-
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(120)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(120)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(120)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
 
             SendOSC(bassmainport, '/strip/BassMain/Calf%20Filter/Frequency/unscaled', 20000.),
             SendOSC(bassmainport, '/strip/BassDry/Calf%20Filter/Frequency/unscaled', 20000.),
@@ -144,10 +144,10 @@ trapone = [
 
             SendOSC(trapcutport, '/Trapcut/Bpm', 240),
 
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.522388),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.522388),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.6296),
-
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(120)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(120)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(120)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
 
             SendOscState([
 
@@ -216,10 +216,10 @@ trapone = [
             SendOSC(klickport, '/klick/simple/set_pattern', 'X-x-x-x-X-x-x-x-xX-x-x-x-X-x-x-x-'),
             SendOSC(klickport, '/klick/metro/start'),
 
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.522388),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.522388),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.6296),
-
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(120)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(120)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(120)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
 
             SendOscState([
 
@@ -276,10 +276,10 @@ trapone = [
 
             SendOSC(trapcutport, '/Trapcut/Bpm', 240),
 
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.522388),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.522388),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.6296),
-
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(120)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(120)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(120)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
 
             SendOscState([
 
@@ -324,10 +324,10 @@ trapone = [
             # SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'), #TODO ?? (instru qui sonne metronom déjà)
             # SendOSC(klickport, '/klick/metro/start'),
 
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, 0.522388),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, 0.522388),
-            SendOSC(samplesscapeport, '/strip/VxORLDelayPost/' + delaybpmpath, 0.6296),
-
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(120)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(120)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(120)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
 
             SendOscState([
 
