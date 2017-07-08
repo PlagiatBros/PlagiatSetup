@@ -432,7 +432,7 @@ def mk2lights(pads):
         if i in pads:
             color = mk2colors['purple']
             if type(pads) == dict:
-                color =  mk2colors[pads[i+1]]
+                color =  mk2colors[pads[i]]
             elif i == 1:
                 color = mk2colors['blue']
             elif i == 8:

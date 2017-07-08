@@ -2,7 +2,7 @@
 <!--
 ladish Studio configuration.
 -->
-<!-- Thu Jun 29 12:08:40 2017 -->
+<!-- Thu Jun 29 14:34:58 2017 -->
 <studio>
   <jack>
     <conf>
@@ -116,6 +116,8 @@ ladish Studio configuration.
           <port name="USB Device 0x7104:0x2202 (playback): USB Device 0x7104:0x2202 MIDI 2" uuid="48d46af9-2846-41d9-8d94-b83e85400e2f" />
           <port name="QLC+ (capture): __QLC__" uuid="0dca8864-6032-456b-8328-564078b62df1" />
           <port name="QLC+ (playback): __QLC__" uuid="3df1ba51-f336-49ca-a666-e817291664cd" />
+          <port name="Net Client (capture): Network" uuid="b16444a6-10fa-4b80-865a-c1a8705eda6e" />
+          <port name="Net Client (playback): Network" uuid="5a10445e-f147-435a-ba89-fd46fe6eb388" />
         </ports>
       </client>
       <client name="SLServer" uuid="75627883-d5f1-47fe-a2d9-daf52fcb8b8d">
@@ -2335,8 +2337,8 @@ ladish Studio configuration.
         <port name="pitch" uuid="e1e28cc7-af85-4f46-ab41-0f242946e7cb" type="midi" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1481.917336</key>
-        <key name="http://ladish.org/ns/canvas/y">1503.107350</key>
+        <key name="http://ladish.org/ns/canvas/x">1609.917336</key>
+        <key name="http://ladish.org/ns/canvas/y">1641.107350</key>
       </dict>
     </client>
     <client name="ZitaJeannot" uuid="f0698758-b8b4-4c84-8ba7-e42bf62c71aa" naming="app" app="a22b80ca-d674-4681-812d-e12014da4f7d">
@@ -2601,6 +2603,16 @@ ladish Studio configuration.
       <dict>
         <key name="http://ladish.org/ns/canvas/x">1004.992542</key>
         <key name="http://ladish.org/ns/canvas/y">1398.000000</key>
+      </dict>
+    </client>
+    <client name="Net Client" uuid="f95a2def-0615-45d9-ad30-0c893434672e" naming="app">
+      <ports>
+        <port name="Network" uuid="b16444a6-10fa-4b80-865a-c1a8705eda6e" type="midi" direction="output" />
+        <port name="Network" uuid="5a10445e-f147-435a-ba89-fd46fe6eb388" type="midi" direction="input" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">1684.992542</key>
+        <key name="http://ladish.org/ns/canvas/y">1286.000000</key>
       </dict>
     </client>
   </clients>
@@ -3112,6 +3124,7 @@ ladish Studio configuration.
     <connection port1="58bb8a70-4564-4b56-9c88-e069a7231d5b" port2="f105b5a4-5e9d-4039-bf3e-c0ee3cc12b7c" />
     <connection port1="ce82a262-8766-4c0e-996f-b1a8061a647f" port2="84871754-7a5a-49b0-a4e0-d3a8d8ca77a7" />
     <connection port1="ce82a262-8766-4c0e-996f-b1a8061a647f" port2="cf8774e5-916b-4c07-b857-d386e268deda" />
+    <connection port1="1c957f96-fb96-47f0-b8d5-2789a05cf8d7" port2="8bab1173-af33-48e7-a126-fd05a87b7023" />
   </connections>
   <applications>
     <application name="a2j" uuid="65bce9a0-8285-4cb3-9630-321ba19b43a4" terminal="false" level="0" autorun="true">a2j -e</application>

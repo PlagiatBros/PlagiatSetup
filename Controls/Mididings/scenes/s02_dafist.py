@@ -264,8 +264,8 @@ dafist = [
             ]),
 
 
-            vxorlgars_off,
-            vxorlmeuf_on,
+            vxorlgars_on,
+            vxorlmeuf_off,
             vxorldisint_off,
             vxorldelay_off,
             vxorlvocode_off,
@@ -433,8 +433,8 @@ dafist = [
             ]),
 
 
-            vxorlgars_off,
-            vxorlmeuf_on,
+            vxorlgars_on,
+            vxorlmeuf_off,
             vxorldisint_off,
             vxorldelay_off,
             vxorlvocode_off,

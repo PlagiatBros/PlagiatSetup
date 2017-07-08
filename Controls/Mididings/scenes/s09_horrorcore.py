@@ -8,6 +8,15 @@ from mididings.extra.osc import SendOSC
 
 #######################################
 
+horrorcore_mk2lights = {
+    1:'blue',
+    2:'purple',
+    3:'purple',
+    4:'purple',
+    5:'yellow',
+    6:'yellow',
+}
+
 #### HorroCore ####
 horrorcore = [
     Init([
@@ -16,9 +25,9 @@ horrorcore = [
         zynmicrotonal_on,
         SendOSC(zyntrebleport, '/microtonal/tunings', '135.0\n200.0\n300.0\n400.0\n500.0\n600.0\n700.0\n835.0\n900.0\n1000.0\n1065.0\n2/1'),
         SubSceneSwitch(2),
-        mk2lights([1,2,3,4]),
+        mk2lights(horrorcore_mk2lights),
     ]),
-    [orl, jeannot] >> Filter(PROGRAM) >> mk2lights([1,2,3,4]),
+    [orl, jeannot] >> Filter(PROGRAM) >> mk2lights(horrorcore_mk2lights),
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(mk2inport, '/mididings/switch_scene', 4),
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*'),
@@ -162,6 +171,8 @@ horrorcore = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(150)),
 
+            SendOSC(cmeinport, '/mididings/switch_scene', 7),
+
             SendOscState([
 
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
@@ -180,10 +191,10 @@ horrorcore = [
 
 
             vxorlmeuf_on,
-            vxorlgars_on,
+            vxorlgars_off,
             vxorldisint_off,
             vxorldelay_off,
-            vxorlvocode_off,
+            vxorlvocode_on,
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
@@ -261,25 +272,43 @@ horrorcore = [
 
 
             vxorlmeuf_off,
-            vxorlgars_off,
+            vxorlgars_on,
             vxorldisint_off,
-            vxorldelay_on,
-            vxorlvocode_on,
+            vxorldelay_off,
+            vxorlvocode_off,
 
-            vxjeannotgars_off,
+            vxjeannotgars_on,
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
-            vxjeannotdelay_on,
-            vxjeannotvocode_on,
+            vxjeannotdelay_off,
+            vxjeannotvocode_off,
 
             SubSceneSwitch(1),
 
             ] >> Discard()
         ],
-    orl >> ProgramFilter(7) >> [ # Bouclage synths - bouton 7
-        SendOSC(slport, '/sl/7/hit', 'record')
+    orl >> ProgramFilter(7) >> [ # relance boucles
+
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
+
+            SendOSC(slport, '/sl/[0,3,5]/set', 'sync', 0),
+            SendOSC(slport, '/sl/[0,3,5]/hit', 'pause_off'),
+            SendOSC(slport, '/sl/[0,3,5]/hit', 'trigger'),
+            SendOSC(slport, '/sl/[0,3,5]/set', 'sync', 1),
+
         ] >> Discard(),
-    orl >> ProgramFilter(8) >> [ # Overdub synths - bouton 8
-        SendOSC(slport, '/sl/7/hit', 'overdub')
-        ] >> Discard(),
+    jeannot >> ProgramFilter(5) >> [
+        vxjeannotdelay_off,
+        vxjeannotgars_off,
+        vxjeannotmeuf_on,
+        vxjeannotdisint_off,
+        vxjeannotvocode_off,
+    ] >> Discard(),
+    jeannot >> ProgramFilter(6) >> [
+        vxjeannotgars_on,
+        vxjeannotmeuf_off,
+        vxjeannotdisint_off,
+        vxjeannotdelay_off,
+        vxjeannotvocode_off,
+    ] >> Discard(),
     ]
