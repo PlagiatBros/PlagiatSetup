@@ -411,6 +411,11 @@
                 port= mididings_port
             }
 
+            else if (address == '/sl/-1/hit' && args[0].value == 'reverse') {
+                // strip 2nd arg out as it only used for gui (fake) state
+                args = [args[0]]
+            }
+
             return {address, args, host, port}
         }
     }

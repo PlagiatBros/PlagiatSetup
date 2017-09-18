@@ -19,19 +19,18 @@
                         "widgets": [
                             {
                                 "type": "fader",
-                                "top": 0,
+                                "top": 70,
                                 "left": 0,
                                 "id": "pitch_samples",
                                 "linkId": "",
                                 "label": "Pitch",
                                 "unit": "",
                                 "width": "10%",
-                                "height": "100%",
                                 "alignRight": false,
                                 "horizontal": false,
                                 "compact": true,
                                 "color": "lime",
-                                "css": "--display-input:none;",
+                                "css": "--display-input:none;\nheight:calc(100% - 70rem)",
                                 "snap": false,
                                 "spring": true,
                                 "range": {
@@ -49,11 +48,13 @@
                                     "non:pitch"
                                 ],
                                 "preArgs": [],
-                                "pips": true,
+                                "pips": false,
                                 "dashed": false,
                                 "doubleTap": false,
                                 "touchAddress": "",
-                                "meterAddress": ""
+                                "meterAddress": "",
+                                "input": false,
+                                "height": "auto"
                             },
                             {
                                 "type": "panel",
@@ -98,7 +99,9 @@
                                                     "non:vx"
                                                 ],
                                                 "address": "/vxorl",
-                                                "value": ""
+                                                "value": "",
+                                                "doubleTap": false,
+                                                "led": true
                                             },
                                             {
                                                 "type": "toggle",
@@ -121,7 +124,9 @@
                                                     "non:vx"
                                                 ],
                                                 "address": "/vxorl",
-                                                "value": ""
+                                                "value": "",
+                                                "doubleTap": false,
+                                                "led": true
                                             },
                                             {
                                                 "type": "toggle",
@@ -144,7 +149,9 @@
                                                     "non:vx"
                                                 ],
                                                 "address": "/vxorl",
-                                                "value": ""
+                                                "value": "",
+                                                "doubleTap": false,
+                                                "led": true
                                             },
                                             {
                                                 "type": "toggle",
@@ -155,7 +162,7 @@
                                                 "label": "DELAY",
                                                 "width": "20%",
                                                 "height": "100%",
-                                                "color": "purple",
+                                                "color": "rgb(200,100,255)",
                                                 "css": "",
                                                 "on": 1,
                                                 "off": 0,
@@ -167,7 +174,9 @@
                                                     "non:vx"
                                                 ],
                                                 "address": "/vxorl",
-                                                "value": ""
+                                                "value": "",
+                                                "doubleTap": false,
+                                                "led": true
                                             },
                                             {
                                                 "type": "toggle",
@@ -178,7 +187,7 @@
                                                 "label": "VOCOD",
                                                 "width": "20%",
                                                 "height": "100%",
-                                                "color": "green",
+                                                "color": "lime",
                                                 "css": "",
                                                 "on": 1,
                                                 "off": 0,
@@ -190,7 +199,9 @@
                                                     "non:vx"
                                                 ],
                                                 "address": "/vxorl",
-                                                "value": ""
+                                                "value": "",
+                                                "doubleTap": false,
+                                                "led": true
                                             }
                                         ],
                                         "tabs": [],
@@ -201,7 +212,8 @@
                                         "address": "/Vx",
                                         "preArgs": [],
                                         "target": [],
-                                        "variables": "@{parent.variables}"
+                                        "variables": "@{parent.variables}",
+                                        "border": true
                                     },
                                     {
                                         "type": "panel",
@@ -338,7 +350,7 @@
                                                                         "width": "20%",
                                                                         "height": "100%",
                                                                         "color": "auto",
-                                                                        "css": "--display-input:none; .wrapper {pointer-events:none}",
+                                                                        "css": ".wrapper {pointer-events:none}",
                                                                         "range": {
                                                                             "min": 0,
                                                                             "max": 1
@@ -358,7 +370,8 @@
                                                                         "pips": false,
                                                                         "dashed": false,
                                                                         "doubleTap": false,
-                                                                        "touchAddress": ""
+                                                                        "touchAddress": "",
+                                                                        "input": false
                                                                     },
                                                                     {
                                                                         "type": "meter",
@@ -386,7 +399,9 @@
                                                                         "widgetId": "",
                                                                         "pips": false,
                                                                         "dashed": false,
-                                                                        "compact": true
+                                                                        "alignRight": false,
+                                                                        "compact": true,
+                                                                        "input": false
                                                                     }
                                                                 ],
                                                                 "tabs": [],
@@ -398,7 +413,8 @@
                                                                 "address": "/panel_bass_pre",
                                                                 "preArgs": [],
                                                                 "target": [],
-                                                                "variables": "@{parent.variables}"
+                                                                "variables": "@{parent.variables}",
+                                                                "border": true
                                                             },
                                                             {
                                                                 "type": "panel",
@@ -509,7 +525,7 @@
                                                                         "width": "20%",
                                                                         "height": "100%",
                                                                         "color": "auto",
-                                                                        "css": "--display-input:none; .wrapper {pointer-events:none}",
+                                                                        "css": ".wrapper {pointer-events:none}",
                                                                         "range": {
                                                                             "min": 0,
                                                                             "max": 1
@@ -529,7 +545,8 @@
                                                                         "pips": false,
                                                                         "dashed": false,
                                                                         "doubleTap": false,
-                                                                        "touchAddress": ""
+                                                                        "touchAddress": "",
+                                                                        "input": false
                                                                     },
                                                                     {
                                                                         "type": "meter",
@@ -557,7 +574,9 @@
                                                                         "widgetId": "",
                                                                         "pips": false,
                                                                         "dashed": false,
-                                                                        "compact": true
+                                                                        "alignRight": false,
+                                                                        "compact": true,
+                                                                        "input": false
                                                                     }
                                                                 ],
                                                                 "tabs": [],
@@ -569,7 +588,8 @@
                                                                 "address": "/panel_vxorl_pre",
                                                                 "preArgs": [],
                                                                 "target": [],
-                                                                "variables": "@{parent.variables}"
+                                                                "variables": "@{parent.variables}",
+                                                                "border": true
                                                             },
                                                             {
                                                                 "type": "panel",
@@ -680,7 +700,7 @@
                                                                         "width": "20%",
                                                                         "height": "100%",
                                                                         "color": "auto",
-                                                                        "css": "--display-input:none; .wrapper {pointer-events:none}",
+                                                                        "css": ".wrapper {pointer-events:none}",
                                                                         "range": {
                                                                             "min": 0,
                                                                             "max": 1
@@ -700,7 +720,8 @@
                                                                         "pips": false,
                                                                         "dashed": false,
                                                                         "doubleTap": false,
-                                                                        "touchAddress": ""
+                                                                        "touchAddress": "",
+                                                                        "input": false
                                                                     },
                                                                     {
                                                                         "type": "meter",
@@ -728,7 +749,9 @@
                                                                         "widgetId": "",
                                                                         "pips": false,
                                                                         "dashed": false,
-                                                                        "compact": true
+                                                                        "alignRight": false,
+                                                                        "compact": true,
+                                                                        "input": false
                                                                     }
                                                                 ],
                                                                 "tabs": [],
@@ -740,7 +763,8 @@
                                                                 "address": "/panel_vxjeannot_pre",
                                                                 "preArgs": [],
                                                                 "target": [],
-                                                                "variables": "@{parent.variables}"
+                                                                "variables": "@{parent.variables}",
+                                                                "border": true
                                                             },
                                                             {
                                                                 "type": "panel",
@@ -851,7 +875,7 @@
                                                                         "width": "20%",
                                                                         "height": "100%",
                                                                         "color": "auto",
-                                                                        "css": "--display-input:none; .wrapper {pointer-events:none}",
+                                                                        "css": ".wrapper {pointer-events:none}",
                                                                         "range": {
                                                                             "min": 0,
                                                                             "max": 1
@@ -871,7 +895,8 @@
                                                                         "pips": false,
                                                                         "dashed": false,
                                                                         "doubleTap": false,
-                                                                        "touchAddress": ""
+                                                                        "touchAddress": "",
+                                                                        "input": false
                                                                     },
                                                                     {
                                                                         "type": "meter",
@@ -899,7 +924,9 @@
                                                                         "widgetId": "",
                                                                         "pips": false,
                                                                         "dashed": false,
-                                                                        "compact": true
+                                                                        "alignRight": false,
+                                                                        "compact": true,
+                                                                        "input": false
                                                                     }
                                                                 ],
                                                                 "tabs": [],
@@ -911,7 +938,8 @@
                                                                 "address": "/panel_synth_bass",
                                                                 "preArgs": [],
                                                                 "target": [],
-                                                                "variables": "@{parent.variables}"
+                                                                "variables": "@{parent.variables}",
+                                                                "border": true
                                                             },
                                                             {
                                                                 "type": "panel",
@@ -999,7 +1027,7 @@
                                                                         "width": "20%",
                                                                         "height": "100%",
                                                                         "color": "auto",
-                                                                        "css": "--display-input:none; .wrapper {pointer-events:none}",
+                                                                        "css": ".wrapper {pointer-events:none}",
                                                                         "range": {
                                                                             "min": 0,
                                                                             "max": 1
@@ -1019,7 +1047,8 @@
                                                                         "pips": false,
                                                                         "dashed": false,
                                                                         "doubleTap": false,
-                                                                        "touchAddress": ""
+                                                                        "touchAddress": "",
+                                                                        "input": false
                                                                     },
                                                                     {
                                                                         "type": "push",
@@ -1070,7 +1099,9 @@
                                                                         "widgetId": "",
                                                                         "pips": false,
                                                                         "dashed": false,
-                                                                        "compact": true
+                                                                        "alignRight": false,
+                                                                        "compact": true,
+                                                                        "input": false
                                                                     }
                                                                 ],
                                                                 "tabs": [],
@@ -1082,7 +1113,8 @@
                                                                 "address": "/panel_synth_aigu",
                                                                 "preArgs": [],
                                                                 "target": [],
-                                                                "variables": "@{parent.variables}"
+                                                                "variables": "@{parent.variables}",
+                                                                "border": true
                                                             },
                                                             {
                                                                 "type": "panel",
@@ -1193,7 +1225,7 @@
                                                                         "width": "20%",
                                                                         "height": "100%",
                                                                         "color": "auto",
-                                                                        "css": "--display-input:none; .wrapper {pointer-events:none}",
+                                                                        "css": ".wrapper {pointer-events:none}",
                                                                         "range": {
                                                                             "min": 0,
                                                                             "max": 1
@@ -1213,7 +1245,8 @@
                                                                         "pips": false,
                                                                         "dashed": false,
                                                                         "doubleTap": false,
-                                                                        "touchAddress": ""
+                                                                        "touchAddress": "",
+                                                                        "input": false
                                                                     },
                                                                     {
                                                                         "type": "meter",
@@ -1241,7 +1274,9 @@
                                                                         "widgetId": "",
                                                                         "pips": false,
                                                                         "dashed": false,
-                                                                        "compact": true
+                                                                        "alignRight": false,
+                                                                        "compact": true,
+                                                                        "input": false
                                                                     }
                                                                 ],
                                                                 "tabs": [],
@@ -1253,7 +1288,8 @@
                                                                 "address": "/panel_synth_rhodes",
                                                                 "preArgs": [],
                                                                 "target": [],
-                                                                "variables": "@{parent.variables}"
+                                                                "variables": "@{parent.variables}",
+                                                                "border": true
                                                             }
                                                         ],
                                                         "css": "",
@@ -1265,15 +1301,17 @@
                                                         "variables": "@{parent.variables}",
                                                         "_style": "style",
                                                         "scroll": true,
-                                                        "_layout": "layout",
+                                                        "_children": "children",
+                                                        "border": true,
+                                                        "_geometry": "geometry",
+                                                        "_panel": "panel",
                                                         "layout": "",
-                                                        "_osc": "osc",
                                                         "value": "",
+                                                        "_osc": "osc",
                                                         "precision": 0,
                                                         "address": "auto",
                                                         "preArgs": [],
                                                         "target": [],
-                                                        "_children": "children",
                                                         "tabs": []
                                                     }
                                                 ],
@@ -1412,7 +1450,7 @@
                                                                         "width": "20%",
                                                                         "height": "100%",
                                                                         "color": "auto",
-                                                                        "css": "--display-input:none; .wrapper {pointer-events:none}",
+                                                                        "css": ".wrapper {pointer-events:none}",
                                                                         "range": {
                                                                             "min": 0,
                                                                             "max": 1
@@ -1432,7 +1470,8 @@
                                                                         "pips": false,
                                                                         "dashed": false,
                                                                         "doubleTap": false,
-                                                                        "touchAddress": ""
+                                                                        "touchAddress": "",
+                                                                        "input": false
                                                                     },
                                                                     {
                                                                         "type": "meter",
@@ -1460,7 +1499,9 @@
                                                                         "widgetId": "",
                                                                         "pips": false,
                                                                         "dashed": false,
-                                                                        "compact": true
+                                                                        "alignRight": false,
+                                                                        "compact": true,
+                                                                        "input": false
                                                                     }
                                                                 ],
                                                                 "tabs": [],
@@ -1472,7 +1513,8 @@
                                                                 "address": "/panel_bass_post",
                                                                 "preArgs": [],
                                                                 "target": [],
-                                                                "variables": "@{parent.variables}"
+                                                                "variables": "@{parent.variables}",
+                                                                "border": true
                                                             },
                                                             {
                                                                 "type": "panel",
@@ -1560,7 +1602,7 @@
                                                                         "width": "20%",
                                                                         "height": "100%",
                                                                         "color": "auto",
-                                                                        "css": "--display-input:none; .wrapper {pointer-events:none}",
+                                                                        "css": ".wrapper {pointer-events:none}",
                                                                         "range": {
                                                                             "min": 0,
                                                                             "max": 1
@@ -1580,7 +1622,8 @@
                                                                         "pips": false,
                                                                         "dashed": false,
                                                                         "doubleTap": false,
-                                                                        "touchAddress": ""
+                                                                        "touchAddress": "",
+                                                                        "input": false
                                                                     },
                                                                     {
                                                                         "type": "push",
@@ -1631,7 +1674,9 @@
                                                                         "widgetId": "",
                                                                         "pips": false,
                                                                         "dashed": false,
-                                                                        "compact": true
+                                                                        "alignRight": false,
+                                                                        "compact": true,
+                                                                        "input": false
                                                                     }
                                                                 ],
                                                                 "tabs": [],
@@ -1643,7 +1688,8 @@
                                                                 "address": "/panel_vxorl_post",
                                                                 "preArgs": [],
                                                                 "target": [],
-                                                                "variables": "@{parent.variables}"
+                                                                "variables": "@{parent.variables}",
+                                                                "border": true
                                                             },
                                                             {
                                                                 "type": "panel",
@@ -1754,7 +1800,7 @@
                                                                         "width": "20%",
                                                                         "height": "100%",
                                                                         "color": "auto",
-                                                                        "css": "--display-input:none; .wrapper {pointer-events:none}",
+                                                                        "css": ".wrapper {pointer-events:none}",
                                                                         "range": {
                                                                             "min": 0,
                                                                             "max": 1
@@ -1774,7 +1820,8 @@
                                                                         "pips": false,
                                                                         "dashed": false,
                                                                         "doubleTap": false,
-                                                                        "touchAddress": ""
+                                                                        "touchAddress": "",
+                                                                        "input": false
                                                                     },
                                                                     {
                                                                         "type": "meter",
@@ -1802,7 +1849,9 @@
                                                                         "widgetId": "",
                                                                         "pips": false,
                                                                         "dashed": false,
-                                                                        "compact": true
+                                                                        "alignRight": false,
+                                                                        "compact": true,
+                                                                        "input": false
                                                                     }
                                                                 ],
                                                                 "tabs": [],
@@ -1814,7 +1863,8 @@
                                                                 "address": "/panel_vxjeannot_post",
                                                                 "preArgs": [],
                                                                 "target": [],
-                                                                "variables": "@{parent.variables}"
+                                                                "variables": "@{parent.variables}",
+                                                                "border": true
                                                             }
                                                         ],
                                                         "css": "",
@@ -1826,15 +1876,17 @@
                                                         "variables": "@{parent.variables}",
                                                         "_style": "style",
                                                         "scroll": true,
-                                                        "_layout": "layout",
+                                                        "_children": "children",
+                                                        "border": true,
+                                                        "_geometry": "geometry",
+                                                        "_panel": "panel",
                                                         "layout": "",
-                                                        "_osc": "osc",
                                                         "value": "",
+                                                        "_osc": "osc",
                                                         "precision": 0,
                                                         "address": "auto",
                                                         "preArgs": [],
                                                         "target": [],
-                                                        "_children": "children",
                                                         "tabs": []
                                                     }
                                                 ],
@@ -1859,7 +1911,8 @@
                                         "address": "/panel_3",
                                         "preArgs": [],
                                         "target": [],
-                                        "variables": "@{parent.variables}"
+                                        "variables": "@{parent.variables}",
+                                        "border": true
                                     }
                                 ],
                                 "tabs": [],
@@ -1872,7 +1925,33 @@
                                 "address": "/panel_2",
                                 "preArgs": [],
                                 "target": [],
-                                "variables": "@{parent.variables}"
+                                "variables": "@{parent.variables}",
+                                "border": true
+                            },
+                            {
+                                "type": "toggle",
+                                "top": 10,
+                                "left": 0,
+                                "id": "reverse",
+                                "linkId": "",
+                                "width": "10%",
+                                "height": 60,
+                                "label": "auto",
+                                "color": "orange",
+                                "css": "",
+                                "doubleTap": true,
+                                "led": false,
+                                "on": 1,
+                                "off": 0,
+                                "value": "",
+                                "precision": 2,
+                                "address": "/sl/-1/hit",
+                                "preArgs": [
+                                    "reverse"
+                                ],
+                                "target": [
+                                    "sl:port"
+                                ]
                             }
                         ],
                         "tabs": [],
@@ -1883,7 +1962,8 @@
                         "address": "/panel_4",
                         "preArgs": [],
                         "target": [],
-                        "variables": "@{parent.variables}"
+                        "variables": "@{parent.variables}",
+                        "border": true
                     },
                     {
                         "type": "panel",
@@ -1965,7 +2045,8 @@
                         "address": "/mididings",
                         "preArgs": [],
                         "target": [],
-                        "variables": "@{parent.variables}"
+                        "variables": "@{parent.variables}",
+                        "border": true
                     }
                 ],
                 "id": "tab_1",
@@ -1991,7 +2072,7 @@
                         "top": 0,
                         "left": 0,
                         "id": "sacem_samples",
-                        "label": "Samples ^heart",
+                        "label": "Samples",
                         "width": "100%",
                         "height": "100%",
                         "scroll": true,
@@ -3015,7 +3096,8 @@
                         "address": "/sacem_samples",
                         "preArgs": [],
                         "target": [],
-                        "variables": "@{parent.variables}"
+                        "variables": "@{parent.variables}",
+                        "border": true
                     }
                 ],
                 "id": "tab_4",
