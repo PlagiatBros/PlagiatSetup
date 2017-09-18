@@ -354,7 +354,8 @@
             var {address, args, host, port} = data
 
             if (address.indexOf('/sl') != -1) {
-                address = '/sl/' + sl_map[address.split('/')[2]] + '/hit'
+                let i = address.split('/')[2]
+                if (i!=-1) address = '/sl/' + sl_map[i] + '/hit'
                 args.splice(1,1)
                 host = sl_host
                 port = sl_port
