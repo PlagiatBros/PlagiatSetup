@@ -19,7 +19,7 @@ le5 = [
         mk2lights([1,2,3,4,5,6,7,8]),
         ]),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
-    [orl, jeannot] >> Filter(PROGRAM) >> mk2lights([1,2,3,4,5,6,8]),
+    [orl, jeannot] >> Filter(PROGRAM) >> mk2lights([1,2,3,4,5,6,7,8]),
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*'),
         SendOSC(samplesmainport, '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.),
@@ -578,9 +578,28 @@ le5 = [
             bassbufferst_on,
             ]
         ],
+    orl >> ProgramFilter(9) >> [
+        Program(77) >> cseqtrigger,
+        [
+
+            SendOSC(slport, '/sl/0/hit', 'record') # bass pre
+            SendOSC(slport, '/sl/3/hit', 'record') # vxorl post
+            SendOSC(slport, '/sl/5/hit', 'record') # vxjeannot post
+
+            ] >> Discard()
+        ],
     jeannot >> ProgramFilter(7) >> [
         Program(77) >> cseqtrigger,
         [
+
+            SendOSC(slport, '/set', 'eighth_per_cycle', 5),
+            SendOSC(slport, '/set', 'tempo', 120),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 120),
+            SendOSC(klickport, '/klick/simple/set_meter', 5, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
+            SendOSC(klickport, '/klick/metro/start'),
+
             SendOSC(audioseqport, '/Audioseq/Bpm', 120),
             SendOSC(audioseqport, '/Audioseq/Play', timestamp),
             SendOSC(audioseqport, '/Audioseq/Sequence/Enable', 'le5_louboutin'),
