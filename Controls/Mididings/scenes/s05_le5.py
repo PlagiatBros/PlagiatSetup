@@ -16,7 +16,7 @@ le5 = [
         zynmicrotonal_on,
         SendOSC(zyntrebleport, '/microtonal/tunings', '100.0\n200.0\n300.0\n435.0\n500.0\n635.0\n700.0\n800.0\n900.0\n1000.0\n1135.0\n2/1'),
         SendOSC(mk2inport, '/mididings/switch_scene', 1),
-        mk2lights([1,2,3,4,5,6,8]),
+        mk2lights([1,2,3,4,5,6,7,8]),
         ]),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     [orl, jeannot] >> Filter(PROGRAM) >> mk2lights([1,2,3,4,5,6,8]),
@@ -578,7 +578,7 @@ le5 = [
             bassbufferst_on,
             ]
         ],
-    orl >> ProgramFilter(9) >> [
+    jeannot >> ProgramFilter(7) >> [
         Program(77) >> cseqtrigger,
         [
             SendOSC(audioseqport, '/Audioseq/Bpm', 120),
