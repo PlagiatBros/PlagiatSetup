@@ -25,6 +25,6 @@ le5_louboutin = [
     None,None,None,None,None,
     None,None,None,None,None,
     None,None,None,None,None,
-    None,[':/Audioseq/Scene/Play','le5_louboutin_close'],None,None,([':/Audioseq/Scene/Play','le5_louboutin_open'], None, None, None),
+    None,[':/Audioseq/Scene/Play','le5_louboutin_close'],None,None,None,
 
 ]

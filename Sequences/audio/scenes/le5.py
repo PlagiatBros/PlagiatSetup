@@ -20,6 +20,7 @@ def le5_refrain_cutdown_close(sequencer, timer):
     sequencer.send(bassmainport, '/strip/BassMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.)
 
 def le5_louboutin_close(sequencer, timer):
+    t = timer.time()
 
     # vxorldelay_off
     sequencer.send((vxorlpreport, '/strip/VxORLDelayPre/Gain/Mute', 1.0)
@@ -29,8 +30,8 @@ def le5_louboutin_close(sequencer, timer):
     # mute  SAMPLES
     sequencer.animate([samplesmainport, '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled'], 1., .25, 1, 'beat', framerate=50, timestamp=t)
 
-
-def le5_louboutin_open(sequencer, timer):
+    timer.wait(3.25, 'bites')
+    t = timer.time()
 
     # vxorldelay_on
     sequencer.send((vxorlpreport, '/strip/VxORLDelayPre/Gain/Mute', 0.0)
