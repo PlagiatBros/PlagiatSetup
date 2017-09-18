@@ -563,6 +563,7 @@ le5 = [
             ]
         ],
     orl >> ProgramFilter(9) >> [
+        Program(77) >> cseqtrigger,
         [
             SendOSC(audioseqport, '/Audioseq/Bpm', 120),
             SendOSC(audioseqport, '/Audioseq/Play', timestamp),
