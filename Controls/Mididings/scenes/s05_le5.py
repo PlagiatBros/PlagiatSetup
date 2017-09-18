@@ -560,6 +560,8 @@ le5 = [
             vxjeannotdisint_off,
             vxorlvocode_off,
 
+            SendOSC(samplesmainport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled',200.),
+
 
             SendOscState([
 
