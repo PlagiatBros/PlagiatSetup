@@ -2,8 +2,10 @@
 from mididings import *
 from mididings.extra.osc import OSCInterface
 from mididings.extra.inotify import AutoRestart
+from mididings.extra.osc import SendOSC
 from utils import OSCCustomInterface
 from ports import *
+from math import log10
 
 
 config(
@@ -69,6 +71,9 @@ run(
         12: Scene("ZynTreble 3", zyntreble3),
         13: Scene("zyntrebleGMandela", zyntrebleGMandela),
     },
-    control = Filter(PROGRAM) >> SceneSwitch(),
+    control = [
+        Filter(CTRL) >> SendOSC(samplesmainport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled', lambda ev: 20000. * pow(10, ((-log10(71/20000.))*ev.value) / 127. + log10(71/20000.))) >> Discard(),
+        Filter(PROGRAM) >> SceneSwitch(),
+        ],
     pre = ~Filter(PROGRAM)
 )
