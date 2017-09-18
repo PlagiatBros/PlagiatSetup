@@ -554,13 +554,21 @@ le5 = [
                 [samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0],
 
             ]),
-        ],
+        ] >> Discard(),
         [
             bassdetunest_on,
             bassringst_on,
             bassvibest_on,
             bassbufferst_on,
             ]
+        ],
+    orl >> ProgramFilter(9) >> [
+        [
+            SendOSC(audioseqport, '/Audioseq/Bpm', 120),
+            SendOSC(audioseqport, '/Audioseq/Play', timestamp),
+            SendOSC(audioseqport, '/Audioseq/Sequence/Enable', 'le5_louboutin'),
+
+            ] >> Discard()
         ],
     jeannot >> ProgramFilter(8) >> SendOSC(trapcutport, '/Trapcut/Scene/Play', 'IIII') >> Discard(),
     orl >> ProgramFilter(11) >> [
