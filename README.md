@@ -4,23 +4,31 @@ The Plagiat Brothers' audio/video/light live setup
 
 ## Requirements
 
-- x42 fat1.lv2 (patched)
-- zita-at1-plagiat
-- infamousPlugins
-- gladish
-- non-mixer (with lv2 support
-- seq24-plagiat
-- tapeutape
-- guitarix
-- calf
-- sooperlooper
-- zynaddsubfx
-- python 2.7
-- mididings
-- klick
-- qlc+
-- open-stage-control
-- alsa-tools-gui (rme soundcard)
+- apps
+    - gladish
+    - non-mixer (with lv2 support
+    - seq24-plagiat
+    - tapeutape
+    - guitarix
+    - sooperlooper
+    - zynaddsubfx
+    - x42 fat1.lv2 (patched)
+    - zita-at1-plagiat
+    - python 2.7
+    - mididings
+    - klick
+    - qlc+
+    - open-stage-control >= 0.20.3
+    - alsa-tools-gui (rme soundcard)
+- plugins
+    - swh-plugins (Steve Harris LADSPA plugins)
+    - caps (the C* Audio Plugin Suite)
+    - mda-lv2 (Paul Kellett's MDA plugins ported to LV2)
+    - cmt (Computer Music Toolkit, ladspa)
+    - calf-plugins
+    - infamousPlugins
+
+
 
 ## Setup
 
