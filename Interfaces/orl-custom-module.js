@@ -16,7 +16,8 @@
         5:'overdub',
         14:'pause',
         1:'wait',
-        3:'wait'
+        3:'wait',
+	4:'reverse'
     }
 
     sl_map = [0,1,2,3,4,5,6,7,8]
@@ -248,20 +249,22 @@
             else if (address == '/sl_state') {
 
                 var i    = args[0].value,
-                    v    = args[2].value
+                    v    = args[2].value,
+		    loop_n  = i == -1 ? -1 : sl_map.indexOf(i)
 
                 var state = {
                     record:0,
                     overdub:0,
                     pause:0,
-                    wait:0
+                    wait:0,
+                    reverse:0
                 }
 
                 state[sl_states[v]] = 1
 
                 for (k in state) {
                     receiveOsc({
-                        address: '/sl/' + sl_map.indexOf(i) + '/hit',
+                        address: '/sl/' + loop_n + '/hit',
                         args: [{type:'s', value:k}, {type:'s', value:state[k]}]
                     })
                 }
