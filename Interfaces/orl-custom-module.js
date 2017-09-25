@@ -16,8 +16,7 @@
         5:'overdub',
         14:'pause',
         1:'wait',
-        3:'wait',
-	4:'reverse'
+        3:'wait'
     }
 
     sl_map = [0,1,2,3,4,5,6,7,8]
@@ -246,18 +245,17 @@
 
             }
 
-            else if (address == '/sl_state') {
+            else if (address == '/sl_state' && args[2].value != 4) {
 
                 var i    = args[0].value,
                     v    = args[2].value,
-		    loop_n  = i == -1 ? -1 : sl_map.indexOf(i)
+		    loop_n  = sl_map.indexOf(i)
 
                 var state = {
                     record:0,
                     overdub:0,
                     pause:0,
-                    wait:0,
-                    reverse:0
+                    wait:0
                 }
 
                 state[sl_states[v]] = 1
@@ -271,9 +269,8 @@
 
                 return
 
-            }
 
-            else if (address.indexOf('/mididings') != -1) {
+            } else if (address.indexOf('/mididings') != -1) {
 
                 mididings_registered = true
 
