@@ -12,7 +12,7 @@ try:
 	# 				]
 
     jeannotKeys = PortFilter('PBMk2In') >> [
-        Filter(CTRL) >> ~CtrlFilter(range(101,109)),
+        Filter(CTRL) >> ~CtrlFilter(range(101,118)),
         ~Filter(CTRL)
     ]
 
