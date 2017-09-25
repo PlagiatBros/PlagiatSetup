@@ -34,15 +34,15 @@ bassfilter = CtrlFilter(18) >> [
     SendOSC(bassmainport, '/strip/BassDry/Calf%20Filter/Frequency/unscaled', lambda ev: 20000. * pow(10,((-log10(71/20000.))*ev.value) / 127. + log10(71/20000.)))
 ]
 
-looperctl = CtrlFilter(110,117) >> [
+looperctl = CtrlFilter(range(109,117)) >> [
 
-	CtrlFilter(110) >> SendOSC(slport, '/sl/4/hit', 'record'), #pre
-	CtrlFilter(111) >> SendOSC(slport, '/sl/4/hit', 'overdub'),
-	CtrlFilter(112) >> SendOSC(slport, '/sl/4/hit', 'pause_on'),
-	CtrlFilter(113) >> SendOSC(slport, '/sl/5/hit', 'record'), #post
-	CtrlFilter(114) >> SendOSC(slport, '/sl/5/hit', 'overdub'),
-	CtrlFilter(115) >> SendOSC(slport, '/sl/5/hit', 'pause_on'),
-	CtrlFilter(117) >> SendOSC(slport, '/sl/-1/hit', 'reverse'), #reverse
+	CtrlFilter(109) >> SendOSC(slport, '/sl/4/hit', 'record'), #pre
+	CtrlFilter(110) >> SendOSC(slport, '/sl/4/hit', 'overdub'),
+	CtrlFilter(111) >> SendOSC(slport, '/sl/4/hit', 'pause_on'),
+	CtrlFilter(112) >> SendOSC(slport, '/sl/5/hit', 'record'), #post
+	CtrlFilter(113) >> SendOSC(slport, '/sl/5/hit', 'overdub'),
+	CtrlFilter(114) >> SendOSC(slport, '/sl/5/hit', 'pause_on'),
+	CtrlFilter(116) >> SendOSC(slport, '/sl/-1/hit', 'reverse'), #reverse
 
 ]
 
