@@ -66,7 +66,7 @@ le5 = [
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
-            vxorlvocode_off,
+            vxorlvocode_on,
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
