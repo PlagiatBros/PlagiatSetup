@@ -617,7 +617,7 @@ le5 = [
             ] >> Discard()
         ],
     orl >> ProgramFilter(10) >> [  # stop reverse louboutin
-        Program(2) >> cseqtrigger,
+        Program(73) >> cseqtrigger,
         [
 
             SendOSC(slport, '/sl/-1/hit', 'reverse'),
