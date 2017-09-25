@@ -578,7 +578,7 @@ le5 = [
             bassbufferst_on,
             ]
         ],
-    orl >> ProgramFilter(9) >> [
+    orl >> ProgramFilter(9) >> [ # mise en place pre-instouboul record voix + bass
         Program(77) >> cseqtrigger,
         [
 
@@ -588,7 +588,7 @@ le5 = [
 
             ] >> Discard()
         ],
-    jeannot >> ProgramFilter(7) >> [
+    jeannot >> ProgramFilter(7) >> [ # louboutin meshuggah
         Program(77) >> cseqtrigger,
         [
 
@@ -606,7 +606,28 @@ le5 = [
 
             ] >> Discard()
         ],
+    orl >> ProgramFilter(10) >> [  # stop reverse louboutin
+        Program(2) >> cseqtrigger,
+        [
+
+            SendOSC(slport, '/sl/-1/hit', 'reverse'),
+            SendOSC(surfaceorlport, '/sl/-1/hit', 'reverse', 1),
+
+            ] >> Discard()
+        ],
     jeannot >> ProgramFilter(8) >> SendOSC(trapcutport, '/Trapcut/Scene/Play', 'IIII') >> Discard(),
+    jeannot >> ProgramFilter(9) >> [ # secu reverse on
+        [
+            SendOSC(slport, '/sl/-1/hit', 'reverse'),
+            SendOSC(surfaceorlport, '/sl/-1/hit', 'reverse', 1),
+            ] >> Discard()
+        ],
+    jeannot >> ProgramFilter(10) >> [ #secu reverse off
+        [
+            SendOSC(slport, '/sl/-1/hit', 'reverse'),
+            SendOSC(surfaceorlport, '/sl/-1/hit', 'reverse', 0),
+            ] >> Discard()
+        ],
     orl >> ProgramFilter(11) >> [
         SceneSwitch(6) >> Discard(),
         Program(2) >> Output('PBCtrlOut', 1)
