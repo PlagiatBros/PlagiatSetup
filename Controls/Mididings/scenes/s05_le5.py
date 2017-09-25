@@ -605,6 +605,15 @@ le5 = [
             SendOSC(audioseqport, '/Audioseq/Play', timestamp),
             SendOSC(audioseqport, '/Audioseq/Sequence/Enable', 'le5_louboutin'),
 
+            SendOSC(slport, '/sl/2/hit', 'pause_on'),
+            SendOSC(slport, '/sl/2/hit', 'pause_on'),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+            vxorldelay_off,
+            vxorlvocode_off,
+
             ] >> Discard()
         ],
     orl >> ProgramFilter(10) >> [  # stop reverse louboutin
