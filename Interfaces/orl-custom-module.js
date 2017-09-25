@@ -245,11 +245,11 @@
 
             }
 
-            else if (address == '/sl_state' && args[2].value != 4) {
+            else if (address == '/sl_state') {
 
                 var i    = args[0].value,
                     v    = args[2].value,
-		    loop_n  = sl_map.indexOf(i)
+                    loop_n  = sl_map.indexOf(i)
 
                 var state = {
                     record:0,
