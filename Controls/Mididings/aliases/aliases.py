@@ -425,10 +425,16 @@ mk2colors = {
     'yellow':5,
     'white':127
 }
+mk2colordefaults = [
+	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00, # pedalboards scenes btns
+	mk2colors['red'], mk2colors['yellow'],mk2colors['cyan'], # sl vx pre rec/overdub/pause
+	mk2colors['red'], mk2colors['yellow'],mk2colors['cyan'], # sl vx post rec/overdub/pause
+	0x00, mk2colors['purple']
+]
 def mk2lights(pads):
     m = []
     for i in range(1,17):
-        color = 0x00
+        color = mk2colordefaults[i-1]
         if i in pads:
             color = mk2colors['purple']
             if type(pads) == dict:

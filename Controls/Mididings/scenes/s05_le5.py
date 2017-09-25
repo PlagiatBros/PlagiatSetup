@@ -584,8 +584,8 @@ le5 = [
             SendOSC(samplesmainport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled',200.),
 
             SendOSC(slport, '/sl/0/hit', 'record'), # bass pre
-            SendOSC(slport, '/sl/3/hit', 'record'), # vxorl post
-            SendOSC(slport, '/sl/5/hit', 'record'), # vxjeannot post
+            SendOSC(slport, '/sl/2/hit', 'record'), # vxorl pre
+            SendOSC(slport, '/sl/4/hit', 'record'), # vxjeannot pre
 
             ] >> Discard()
         ],
@@ -617,18 +617,6 @@ le5 = [
             ] >> Discard()
         ],
     jeannot >> ProgramFilter(8) >> SendOSC(trapcutport, '/Trapcut/Scene/Play', 'IIII') >> Discard(),
-    jeannot >> ProgramFilter(9) >> [ # secu reverse on
-        [
-            SendOSC(slport, '/sl/-1/hit', 'reverse'),
-            SendOSC(surfaceorlport, '/sl/-1/hit', 'reverse', 1),
-            ] >> Discard()
-        ],
-    jeannot >> ProgramFilter(10) >> [ #secu reverse off
-        [
-            SendOSC(slport, '/sl/-1/hit', 'reverse'),
-            SendOSC(surfaceorlport, '/sl/-1/hit', 'reverse', 0),
-            ] >> Discard()
-        ],
     orl >> ProgramFilter(11) >> [
         SceneSwitch(6) >> Discard(),
         Program(2) >> Output('PBCtrlOut', 1)

@@ -34,13 +34,26 @@ bassfilter = CtrlFilter(18) >> [
     SendOSC(bassmainport, '/strip/BassDry/Calf%20Filter/Frequency/unscaled', lambda ev: 20000. * pow(10,((-log10(71/20000.))*ev.value) / 127. + log10(71/20000.)))
 ]
 
+looperctl = CtrlFilter(110,117) >> [
+
+	CtrlFilter(110) >> SendOSC(slport, '/sl/4/hit', 'record'), #pre
+	CtrlFilter(111) >> SendOSC(slport, '/sl/4/hit', 'overdub'),
+	CtrlFilter(112) >> SendOSC(slport, '/sl/4/hit', 'pause_on'),
+	CtrlFilter(113) >> SendOSC(slport, '/sl/5/hit', 'record'), #post
+	CtrlFilter(114) >> SendOSC(slport, '/sl/5/hit', 'overdub'),
+	CtrlFilter(115) >> SendOSC(slport, '/sl/5/hit', 'pause_on'),
+	CtrlFilter(117) >> SendOSC(slport, '/sl/-1/hit', 'reverse'), #reverse
+
+]
+
 run(
     scenes = {
         1: 	Scene("BassWobbleCtrl",
                 [
                 [Filter(NOTE), Filter(PITCHBEND)] >> Output('Mk2OutWobble', 1),
                 bassfilter,
-                gatecancel
+                gatecancel,
+				looperctl
                 ]
           ),
         2: 	Scene("VxDelayCtrl",
@@ -50,14 +63,16 @@ run(
                     Filter(NOTEOFF) >> SendOSC(vxorlpreport, '/strip/VxORLDelayPre/Gain/Mute', 1.0),
                     ] >> Discard(),
                 bassfilter,
-                gatecancel
+                gatecancel,
+				looperctl
                 ]
               ),
         3: Scene("Connasses SACEM samples",
                 [
                 Filter(NOTEON) >> Output('Mk2OutTapeutape', 1),
                 bassfilter,
-                gatecancel
+                gatecancel,
+				looperctl
                 ]
               ),
         4: Scene("Samples cut",
@@ -69,7 +84,8 @@ run(
                         SendOSC(samplesmainport, '/strip/SamplesMain/Gain/Mute', 0.0)
                     ],
                     bassfilter,
-                    gatecancel
+                    gatecancel,
+					looperctl
                 ] >> Discard()
               ),
         5: Scene("HorroCore RIP",
@@ -102,14 +118,16 @@ run(
 
                     ],
                     bassfilter,
-                    gatecancel
+                    gatecancel,
+					looperctl
                 ] >> Discard()
               ),
           6: 	Scene("Clap",
                   [
                   KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEON) >> NoteOn(64,127) >> Output('Mk2OutTapeutape', 1),
                   bassfilter,
-                  gatecancel
+                  gatecancel,
+				  looperctl
                   ]
                 ),
 
