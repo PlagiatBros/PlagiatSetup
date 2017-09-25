@@ -582,6 +582,8 @@ le5 = [
         Program(77) >> cseqtrigger,
         [
 
+            SendOSC(samplesmainport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled',200.),
+
             SendOSC(slport, '/sl/0/hit', 'record'), # bass pre
             SendOSC(slport, '/sl/3/hit', 'record'), # vxorl post
             SendOSC(slport, '/sl/5/hit', 'record'), # vxjeannot post
