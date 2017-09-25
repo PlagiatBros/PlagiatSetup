@@ -579,7 +579,6 @@ le5 = [
             ]
         ],
     orl >> ProgramFilter(9) >> [ # mise en place pre-instouboul record voix + bass
-        Program(77) >> cseqtrigger,
         [
 
             SendOSC(samplesmainport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled',200.),
