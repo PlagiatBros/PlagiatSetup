@@ -582,9 +582,9 @@ le5 = [
         Program(77) >> cseqtrigger,
         [
 
-            SendOSC(slport, '/sl/0/hit', 'record') # bass pre
-            SendOSC(slport, '/sl/3/hit', 'record') # vxorl post
-            SendOSC(slport, '/sl/5/hit', 'record') # vxjeannot post
+            SendOSC(slport, '/sl/0/hit', 'record'), # bass pre
+            SendOSC(slport, '/sl/3/hit', 'record'), # vxorl post
+            SendOSC(slport, '/sl/5/hit', 'record'), # vxjeannot post
 
             ] >> Discard()
         ],
