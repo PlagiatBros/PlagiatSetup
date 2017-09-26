@@ -51,6 +51,18 @@ run([
             Call(wobbleRythm(3)),
             SendOSC(bassmainport, '/strip/BassWobblePost/MDA%20RezFilter/Freq/unscaled', 0.35),
         ] >> Discard(),
+        KeyFilter('f3') >> [
+            Call(wobbleRythm(2)),
+            SendOSC(bassmainport, '/strip/BassWobblePost/MDA%20RezFilter/Freq/unscaled', 0.35),
+        ] >> Discard(),
+        KeyFilter('c4') >>  [
+            Call(wobbleRythm(4)),
+            SendOSC(bassmainport, '/strip/BassWobblePost/MDA%20RezFilter/Freq/unscaled', 0.35),
+        ] >> Discard(),
+        KeyFilter('g4') >>  [
+            Call(wobbleRythm(6)),
+            SendOSC(bassmainport, '/strip/BassWobblePost/MDA%20RezFilter/Freq/unscaled', 0.35),
+        ] >> Discard(),
     ],
 
     Filter(NOTEOFF) >> KeyFilter(notes=['f2', 'c3', 'g3']) >> [
