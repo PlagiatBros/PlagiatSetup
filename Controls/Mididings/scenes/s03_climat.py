@@ -19,7 +19,7 @@ climat = [
         SendOSC(mk2inport, '/mididings/switch_scene', 1),
         mk2lights([1,2,3,4,8]),
     ]),
-    [orl, jeannot] >> Filter(PROGRAM) >> mk2lights([1,2,3,4,8]),
+    [jeannot_padrelease] >> mk2lights([1,2,3,4,8]),
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
