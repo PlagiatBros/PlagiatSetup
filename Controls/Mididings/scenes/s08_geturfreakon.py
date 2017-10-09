@@ -19,7 +19,7 @@ geturfreakon = [
         SendOSC(mk2inport, '/mididings/switch_scene', 6),
         mk2lights([1]),
     ]),
-    [jeannot_padrelease] >> mk2lights([1]),
+    jeannot_padrelease >> mk2lights([1]),
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),

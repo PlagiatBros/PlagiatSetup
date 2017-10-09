@@ -19,7 +19,7 @@ le5 = [
         mk2lights([1,2,3,4,5,6,7,8]),
         ]),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
-    [jeannot_padrelease] >> mk2lights([1,2,3,4,5,6,7,8]),
+    jeannot_padrelease >> mk2lights([1,2,3,4,5,6,7,8]),
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*'),
         SendOSC(samplesmainport, '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.),

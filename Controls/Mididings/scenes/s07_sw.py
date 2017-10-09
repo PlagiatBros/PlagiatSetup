@@ -17,7 +17,7 @@ sw = [
         SendOSC(mk2inport, '/mididings/switch_scene', 2),
         mk2lights([1,2,3]),
     ]),
-    [jeannot_padrelease] >> mk2lights([1,2,3]),
+    jeannot_padrelease >> mk2lights([1,2,3]),
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
