@@ -34,7 +34,7 @@ bassfilter = CtrlFilter(18) >> [
     SendOSC(bassmainport, '/strip/BassDry/Calf%20Filter/Frequency/unscaled', lambda ev: 20000. * pow(10,((-log10(71/20000.))*ev.value) / 127. + log10(71/20000.)))
 ]
 
-looperctl = CtrlFilter(range(109,117)) >> [
+looperctl = CtrlFilter(range(109,117)) >> CtrlValueFilter(127) >> [
 
 	CtrlFilter(109) >> SendOSC(slport, '/sl/4/hit', 'record'), #pre
 	CtrlFilter(110) >> SendOSC(slport, '/sl/4/hit', 'overdub'),
