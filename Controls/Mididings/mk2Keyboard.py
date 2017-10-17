@@ -162,7 +162,7 @@ run(
   			            vxorldelay_off,
   			            vxorlvocode_on,
 
-				        Program(2) >> seq24once,
+				        Program(1) >> cseqtrigger,
 
                       ],
   					samples_mute,
