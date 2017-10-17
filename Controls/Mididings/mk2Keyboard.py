@@ -145,6 +145,12 @@ run(
               ),
 		  6: Scene("HorroCore Couplet 2",
                   [
+					KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEOFF) >> [
+
+					    Program(3) >> cseqtrigger,
+
+					],
+				  	[
                       KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEON) >> [
 
   	                    vxorlmeuf_off,
@@ -170,7 +176,7 @@ run(
                     gatecancel,
   					looperctl,
   					pitch
-                  ] >> Discard()
+                  ] >> Discard()],
                 ),
           7: 	Scene("Clap",
                   [
