@@ -2,7 +2,7 @@
 <!--
 ladish Studio configuration.
 -->
-<!-- Thu Jun 29 14:34:58 2017 -->
+<!-- Tue Oct 17 18:03:06 2017 -->
 <studio>
   <jack>
     <conf>
@@ -110,14 +110,10 @@ ladish Studio configuration.
           <port name="Zyn (Bass) (playback): ZynAddSubFX" uuid="7d618618-5047-4218-842f-cdd996b04aed" />
           <port name="Arturia MiniLab mkII (capture): Arturia MiniLab mkII MIDI 1" uuid="b73434f2-52d3-4165-b4c5-cb6340ef4f15" />
           <port name="Arturia MiniLab mkII (playback): Arturia MiniLab mkII MIDI 1" uuid="e3ffd1fa-0312-4ffa-ba5c-c60e920a4da5" />
-          <port name="USB Device 0x7104:0x2202 (capture): USB Device 0x7104:0x2202 MIDI 1" uuid="86f4ff59-f5c4-4892-a5c3-e4205cdd11bd" />
-          <port name="USB Device 0x7104:0x2202 (playback): USB Device 0x7104:0x2202 MIDI 1" uuid="ba7038cf-0105-401e-bba5-734f232668d9" />
-          <port name="USB Device 0x7104:0x2202 (capture): USB Device 0x7104:0x2202 MIDI 2" uuid="1e9e573e-3c72-47a2-9836-5187e963f322" />
-          <port name="USB Device 0x7104:0x2202 (playback): USB Device 0x7104:0x2202 MIDI 2" uuid="48d46af9-2846-41d9-8d94-b83e85400e2f" />
           <port name="QLC+ (capture): __QLC__" uuid="0dca8864-6032-456b-8328-564078b62df1" />
           <port name="QLC+ (playback): __QLC__" uuid="3df1ba51-f336-49ca-a666-e817291664cd" />
-          <port name="Net Client (capture): Network" uuid="b16444a6-10fa-4b80-865a-c1a8705eda6e" />
-          <port name="Net Client (playback): Network" uuid="5a10445e-f147-435a-ba89-fd46fe6eb388" />
+          <port name="Oxygen 88 (capture): Oxygen 88 MIDI 1" uuid="aaaa769d-9836-4f74-9a6c-5887da72e3fc" />
+          <port name="Oxygen 88 (playback): Oxygen 88 MIDI 1" uuid="e143da91-9348-419d-ab86-82a8b94dd2c2" />
         </ports>
       </client>
       <client name="SLServer" uuid="75627883-d5f1-47fe-a2d9-daf52fcb8b8d">
@@ -838,21 +834,6 @@ ladish Studio configuration.
           <port name="midi_out_1" uuid="dd354f7d-2828-47a1-8186-b048c504f279" />
         </ports>
       </client>
-      <client name="gx_head_amp" uuid="c5f25db5-5f98-4533-abf1-bc12100affcb">
-        <ports>
-          <port name="in_0" uuid="165dc129-53f4-4bba-8526-b6f17ce5b914" />
-          <port name="midi_in_1" uuid="033dfe81-bb82-44d4-a445-6a1e19f830f4" />
-          <port name="out_0" uuid="572ce77f-3a52-4d88-b18c-dc51201f95d2" />
-          <port name="midi_out_1" uuid="fbfa734c-dff7-472f-91c2-34cd8d6fac2b" />
-        </ports>
-      </client>
-      <client name="gx_head_fx" uuid="b5ec2b6d-4c69-491b-a2ee-cb6150f66937">
-        <ports>
-          <port name="in_0" uuid="be3787d5-4d31-45f1-938d-55a75d77b9c6" />
-          <port name="out_0" uuid="3200c28c-7b81-47bf-86f4-10f15257deaa" />
-          <port name="out_1" uuid="cd5e6842-49d7-427d-9db5-94882bae6496" />
-        </ports>
-      </client>
       <client name="CME KeyBoard Filter" uuid="ad834044-2400-4c94-acaf-4bb1b1ac9bae">
         <ports>
           <port name="CMEIn" uuid="cfca9e3d-5dd8-4601-afe0-6eb45383ad55" />
@@ -870,6 +851,9 @@ ladish Studio configuration.
           <port name="Mk2OutRhodes" uuid="0193a090-c285-43bd-bdab-7471fa35b632" />
           <port name="Mk2OutTapeutape" uuid="6e0dc1e2-a2b4-4d4f-ac63-6b0d5bbb9626" />
           <port name="Mk2OutWobble" uuid="a03fb51c-75e9-4713-b986-6ba0a9e228ea" />
+          <port name="PBseq24" uuid="45b76a33-67b4-4f68-8ee9-c0d461ca64cc" />
+          <port name="PBTapeutape" uuid="381bdbb7-bce8-410c-846d-09ea89a28e0e" />
+          <port name="PBguitarix" uuid="0f0282f7-accb-41aa-9ce0-3655e3db7968" />
         </ports>
       </client>
       <client name="wobbleCtrl" uuid="a605b4e5-3a8a-4bc9-b038-2d172bec6322">
@@ -947,6 +931,45 @@ ladish Studio configuration.
           <port name="to-x42-fat1-down" uuid="ce82a262-8766-4c0e-996f-b1a8061a647f" />
         </ports>
       </client>
+      <client name="ZitaPublic 2" uuid="2b662fdd-9da9-4e6f-ad2c-5b9ea59fb179">
+        <ports>
+          <port name="in" uuid="275282b3-db7a-42f4-b2e8-0474f43c7706" />
+          <port name="out" uuid="d1d9cfbb-5203-4872-9960-11bfe30be01b" />
+          <port name="pitch" uuid="6e77152f-146b-44ec-b8bf-e2f3529f6c58" />
+        </ports>
+      </client>
+      <client name="ZitaPublic1" uuid="5746ef65-0b51-4809-989e-713f0e854ea7">
+        <ports>
+          <port name="in" uuid="5272945a-3154-4515-8926-10260c22269c" />
+          <port name="out" uuid="e83fe4de-8f33-4bdc-80b5-6a5196837f51" />
+          <port name="pitch" uuid="ce657c5b-0147-451a-a696-6c14158e682c" />
+        </ports>
+      </client>
+      <client name="VxPublic" uuid="7bb4619e-e11f-4307-b567-b003923802d4">
+        <ports>
+          <port name="VxPublic1/in-1" uuid="1eeef296-eecc-4db4-84dd-60eff8e84c10" />
+          <port name="VxPublic1/out-1" uuid="e785fe1f-7d8c-41a2-bec9-6a8d7eb67d2a" />
+          <port name="VxPublic2/in-1" uuid="cf440f8e-f7d5-4339-b57b-816439a139e4" />
+          <port name="VxPublic2/out-1" uuid="b1a2b49d-4d17-4021-8422-5fd313fa0253" />
+          <port name="VxPublicMain/in-1" uuid="0c0553d7-be1a-4b4b-afff-ae3cf0a0aea8" />
+          <port name="VxPublicMain/out-1" uuid="7175a41c-39e1-41aa-b83d-1f2ea17be1e7" />
+        </ports>
+      </client>
+      <client name="gx_head_amp" uuid="2e0d01b7-3cab-4852-b5ef-53e3f7e62f28">
+        <ports>
+          <port name="in_0" uuid="99d17b74-6358-49b8-9b56-998d2a323d59" />
+          <port name="midi_in_1" uuid="f62d3ee2-45ba-4166-9543-bc50e1ba284b" />
+          <port name="out_0" uuid="2be13066-aaca-4601-ae33-6a436fa3097a" />
+          <port name="midi_out_1" uuid="1a3a31ed-d06a-4960-ab4a-e947d5b9d138" />
+        </ports>
+      </client>
+      <client name="gx_head_fx" uuid="116b2ff5-2be1-41a0-853a-d0cf3ae0d919">
+        <ports>
+          <port name="in_0" uuid="f5843b9b-c125-4e66-8ef7-36066f3159a0" />
+          <port name="out_0" uuid="93aa995c-373e-4c62-996b-69300439f3ec" />
+          <port name="out_1" uuid="9dfbc13a-908a-456f-9982-218f1556fd61" />
+        </ports>
+      </client>
     </clients>
   </jack>
   <clients>
@@ -980,8 +1003,8 @@ ladish Studio configuration.
         <port name="capture_26" uuid="58d5d640-2cc5-400f-94b3-06fc7835573b" type="audio" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">399.280004</key>
-        <key name="http://ladish.org/ns/canvas/y">917.302959</key>
+        <key name="http://ladish.org/ns/canvas/x">149.280004</key>
+        <key name="http://ladish.org/ns/canvas/y">817.302959</key>
       </dict>
     </client>
     <client name="Hardware Playback" uuid="b2a0bb06-28d8-4bfe-956e-eb24378f9629" naming="app">
@@ -1068,8 +1091,8 @@ ladish Studio configuration.
         <port name="loop8_out_2" uuid="a491c3fc-a8ed-40c1-8bf7-f4a850f16649" type="audio" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">959.517273</key>
-        <key name="http://ladish.org/ns/canvas/y">731.329592</key>
+        <key name="http://ladish.org/ns/canvas/x">1062.030896</key>
+        <key name="http://ladish.org/ns/canvas/y">668.878764</key>
       </dict>
     </client>
     <client name="Tapeutape" uuid="315eece9-4510-4bc5-9c79-c1eff5d40b8e" naming="app" app="4fa27312-1cbb-486e-bcfd-3d484756dcb0">
@@ -1121,8 +1144,8 @@ ladish Studio configuration.
         <port name="loop5_in_1" uuid="e6e1d475-4a21-4da8-a880-c604a9db6ca8" type="audio" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">772.890325</key>
-        <key name="http://ladish.org/ns/canvas/y">750.293665</key>
+        <key name="http://ladish.org/ns/canvas/x">902.890325</key>
+        <key name="http://ladish.org/ns/canvas/y">744.293665</key>
       </dict>
     </client>
     <client name="Drums (NM)" uuid="8c816cc7-e4bd-4596-9544-6a0dd2632c01" naming="app" app="7bca603d-3692-43a1-a7f8-4c88aefa8b82">
@@ -1306,8 +1329,8 @@ ladish Studio configuration.
         <port name="Mk2SysexOut" uuid="daa77317-aed4-44c1-8f23-d1b2f5554f0c" type="midi" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">438.447324</key>
-        <key name="http://ladish.org/ns/canvas/y">1933.134260</key>
+        <key name="http://ladish.org/ns/canvas/x">475.447324</key>
+        <key name="http://ladish.org/ns/canvas/y">1813.134260</key>
       </dict>
     </client>
     <client name="seq24" uuid="31353d3b-e86a-4bd1-b01d-073395ceca12" naming="app" app="b1b78940-cc7c-4394-8a02-401a18f75388">
@@ -2118,8 +2141,8 @@ ladish Studio configuration.
         <port name="BassDegradePost/in-1" uuid="61389820-3a02-47e7-87c5-a43c5ad0e116" type="audio" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1175.204173</key>
-        <key name="http://ladish.org/ns/canvas/y">1190.634715</key>
+        <key name="http://ladish.org/ns/canvas/x">1360.204173</key>
+        <key name="http://ladish.org/ns/canvas/y">1193.634715</key>
       </dict>
     </client>
     <client name="BassMain (NM)" uuid="e243b67e-746a-477b-b5a0-5f04089dd5f5" naming="app" app="9950811d-a2ff-48c6-84f7-d569f415b4bd">
@@ -2257,8 +2280,8 @@ ladish Studio configuration.
         <port name="SamplesPitch/out-2" uuid="c679b376-c5f8-4a7e-a20a-383be8ce1ce1" type="audio" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1850.638742</key>
-        <key name="http://ladish.org/ns/canvas/y">1316.971900</key>
+        <key name="http://ladish.org/ns/canvas/x">1846.936256</key>
+        <key name="http://ladish.org/ns/canvas/y">1326.228114</key>
       </dict>
     </client>
     <client name="SamplesPitch (NM)" uuid="2fef1baf-d18a-4564-a5fa-dd38a10918c8" naming="app" app="29e48490-4c5d-47d9-8602-d3a7e8d63676">
@@ -2348,8 +2371,8 @@ ladish Studio configuration.
         <port name="pitch" uuid="bd835273-25d4-448e-9ac3-44258030999f" type="midi" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1556.272902</key>
-        <key name="http://ladish.org/ns/canvas/y">1527.039698</key>
+        <key name="http://ladish.org/ns/canvas/x">1563.272902</key>
+        <key name="http://ladish.org/ns/canvas/y">1566.039698</key>
       </dict>
     </client>
     <client name="Keyboards (NM)" uuid="873e1db4-34d6-4d69-9320-756f7706f1cf" naming="app" app="c34bb6c1-d772-496d-8598-5b6c1e9a7d5d">
@@ -2404,29 +2427,6 @@ ladish Studio configuration.
         <key name="http://ladish.org/ns/canvas/y">1254.432264</key>
       </dict>
     </client>
-    <client name="gx_head_amp" uuid="2f381a97-8be5-487c-951f-05b61dbce29b" naming="app">
-      <ports>
-        <port name="in_0" uuid="165dc129-53f4-4bba-8526-b6f17ce5b914" type="audio" direction="input" />
-        <port name="midi_in_1" uuid="033dfe81-bb82-44d4-a445-6a1e19f830f4" type="midi" direction="input" />
-        <port name="out_0" uuid="572ce77f-3a52-4d88-b18c-dc51201f95d2" type="audio" direction="output" />
-        <port name="midi_out_1" uuid="fbfa734c-dff7-472f-91c2-34cd8d6fac2b" type="midi" direction="output" />
-      </ports>
-      <dict>
-        <key name="http://ladish.org/ns/canvas/x">1178.487499</key>
-        <key name="http://ladish.org/ns/canvas/y">1317.047293</key>
-      </dict>
-    </client>
-    <client name="gx_head_fx" uuid="a82feed4-6870-4dfe-bc60-1e2b997bb92a" naming="app">
-      <ports>
-        <port name="in_0" uuid="be3787d5-4d31-45f1-938d-55a75d77b9c6" type="audio" direction="input" />
-        <port name="out_0" uuid="3200c28c-7b81-47bf-86f4-10f15257deaa" type="audio" direction="output" />
-        <port name="out_1" uuid="cd5e6842-49d7-427d-9db5-94882bae6496" type="audio" direction="output" />
-      </ports>
-      <dict>
-        <key name="http://ladish.org/ns/canvas/x">1351.916675</key>
-        <key name="http://ladish.org/ns/canvas/y">1361.070119</key>
-      </dict>
-    </client>
     <client name="CME KeyBoard Filter" uuid="79642869-512f-4fa2-a072-560badb5f5be" naming="app" app="ce8e80fd-4088-4ea8-b186-ab28732e4058">
       <ports>
         <port name="CMEIn" uuid="cfca9e3d-5dd8-4601-afe0-6eb45383ad55" type="midi" direction="input" />
@@ -2448,10 +2448,13 @@ ladish Studio configuration.
         <port name="Mk2OutRhodes" uuid="0193a090-c285-43bd-bdab-7471fa35b632" type="midi" direction="output" />
         <port name="Mk2OutTapeutape" uuid="6e0dc1e2-a2b4-4d4f-ac63-6b0d5bbb9626" type="midi" direction="output" />
         <port name="Mk2OutWobble" uuid="a03fb51c-75e9-4713-b986-6ba0a9e228ea" type="midi" direction="output" />
+        <port name="PBseq24" uuid="45b76a33-67b4-4f68-8ee9-c0d461ca64cc" type="midi" direction="output" />
+        <port name="PBTapeutape" uuid="381bdbb7-bce8-410c-846d-09ea89a28e0e" type="midi" direction="output" />
+        <port name="PBguitarix" uuid="0f0282f7-accb-41aa-9ce0-3655e3db7968" type="midi" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1649.968033</key>
-        <key name="http://ladish.org/ns/canvas/y">1015.027533</key>
+        <key name="http://ladish.org/ns/canvas/x">1101.219668</key>
+        <key name="http://ladish.org/ns/canvas/y">1002.725844</key>
       </dict>
     </client>
     <client name="wobbleCtrl" uuid="fe7ef614-82c2-4678-9a5a-aadfa5507b5b" naming="app" app="d05dd957-12ce-4814-9733-d2df4fb92692">
@@ -2472,18 +2475,6 @@ ladish Studio configuration.
       <dict>
         <key name="http://ladish.org/ns/canvas/x">161.320996</key>
         <key name="http://ladish.org/ns/canvas/y">1293.767230</key>
-      </dict>
-    </client>
-    <client name="USB Device 0x7104:0x2202" uuid="4517719f-536a-4f18-8dff-ec9553ba70b0" naming="app">
-      <ports>
-        <port name="USB Device 0x7104:0x2202 MIDI 1" uuid="86f4ff59-f5c4-4892-a5c3-e4205cdd11bd" type="midi" direction="output" />
-        <port name="USB Device 0x7104:0x2202 MIDI 1" uuid="ba7038cf-0105-401e-bba5-734f232668d9" type="midi" direction="input" />
-        <port name="USB Device 0x7104:0x2202 MIDI 2" uuid="1e9e573e-3c72-47a2-9836-5187e963f322" type="midi" direction="output" />
-        <port name="USB Device 0x7104:0x2202 MIDI 2" uuid="48d46af9-2846-41d9-8d94-b83e85400e2f" type="midi" direction="input" />
-      </ports>
-      <dict>
-        <key name="http://ladish.org/ns/canvas/x">302.577806</key>
-        <key name="http://ladish.org/ns/canvas/y">1548.670321</key>
       </dict>
     </client>
     <client name="QLC+" uuid="be77564f-0ecf-49e6-8b90-4f7e0e337c03" naming="app" app="6247c29f-437a-492f-bab0-2c6474f19ebb">
@@ -2524,8 +2515,8 @@ ladish Studio configuration.
         <port name="out" uuid="ef2f0297-b7be-4b03-af49-58764417985c" type="audio" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1932.992542</key>
-        <key name="http://ladish.org/ns/canvas/y">1963.000000</key>
+        <key name="http://ladish.org/ns/canvas/x">1939.992542</key>
+        <key name="http://ladish.org/ns/canvas/y">1996.000000</key>
       </dict>
     </client>
     <client name="x42JeannotMeuf-L" uuid="6f720d51-64f4-46ff-8fe6-d1c4e96f955b" naming="app" app="68e199a1-ea0b-434c-98c6-5b53a73a9dae">
@@ -2546,8 +2537,8 @@ ladish Studio configuration.
         <port name="out" uuid="ec0caf60-9e04-4007-b9a8-03a76e3c94d1" type="audio" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1919.992542</key>
-        <key name="http://ladish.org/ns/canvas/y">2110.000000</key>
+        <key name="http://ladish.org/ns/canvas/x">1935.992542</key>
+        <key name="http://ladish.org/ns/canvas/y">2059.000000</key>
       </dict>
     </client>
     <client name="x42ORLGars-L" uuid="55f83f8d-afee-4203-b419-57f8ecc0a84d" naming="app" app="16c3e0d8-a118-4180-9c7c-46e9952e7461">
@@ -2605,10 +2596,69 @@ ladish Studio configuration.
         <key name="http://ladish.org/ns/canvas/y">1398.000000</key>
       </dict>
     </client>
-    <client name="Net Client" uuid="f95a2def-0615-45d9-ad30-0c893434672e" naming="app">
+    <client name="ZitaPublic 2" uuid="2ad7e272-7df5-4989-8523-bffd000815c7" naming="app" app="69add5f4-131a-4cd7-9df4-4d78d7ead744">
       <ports>
-        <port name="Network" uuid="b16444a6-10fa-4b80-865a-c1a8705eda6e" type="midi" direction="output" />
-        <port name="Network" uuid="5a10445e-f147-435a-ba89-fd46fe6eb388" type="midi" direction="input" />
+        <port name="in" uuid="275282b3-db7a-42f4-b2e8-0474f43c7706" type="audio" direction="input" />
+        <port name="out" uuid="d1d9cfbb-5203-4872-9960-11bfe30be01b" type="audio" direction="output" />
+        <port name="pitch" uuid="6e77152f-146b-44ec-b8bf-e2f3529f6c58" type="midi" direction="input" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">126.660981</key>
+        <key name="http://ladish.org/ns/canvas/y">1875.557511</key>
+      </dict>
+    </client>
+    <client name="ZitaPublic1" uuid="fddc9033-7818-4fea-b88f-d572a80846a6" naming="app" app="4d41ef22-00d8-433a-9f56-145b88d6be77">
+      <ports>
+        <port name="in" uuid="5272945a-3154-4515-8926-10260c22269c" type="audio" direction="input" />
+        <port name="out" uuid="e83fe4de-8f33-4bdc-80b5-6a5196837f51" type="audio" direction="output" />
+        <port name="pitch" uuid="ce657c5b-0147-451a-a696-6c14158e682c" type="midi" direction="input" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">126.735158</key>
+        <key name="http://ladish.org/ns/canvas/y">1821.291812</key>
+      </dict>
+    </client>
+    <client name="VxPublic" uuid="3ed4a511-d397-442c-9605-bc48958f4412" naming="app" app="db4efae3-af1d-4c48-95fd-2f2b977b4c78">
+      <ports>
+        <port name="VxPublic1/in-1" uuid="1eeef296-eecc-4db4-84dd-60eff8e84c10" type="audio" direction="input" />
+        <port name="VxPublic1/out-1" uuid="e785fe1f-7d8c-41a2-bec9-6a8d7eb67d2a" type="audio" direction="output" />
+        <port name="VxPublic2/in-1" uuid="cf440f8e-f7d5-4339-b57b-816439a139e4" type="audio" direction="input" />
+        <port name="VxPublic2/out-1" uuid="b1a2b49d-4d17-4021-8422-5fd313fa0253" type="audio" direction="output" />
+        <port name="VxPublicMain/in-1" uuid="0c0553d7-be1a-4b4b-afff-ae3cf0a0aea8" type="audio" direction="input" />
+        <port name="VxPublicMain/out-1" uuid="7175a41c-39e1-41aa-b83d-1f2ea17be1e7" type="audio" direction="output" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">106.423058</key>
+        <key name="http://ladish.org/ns/canvas/y">1686.539833</key>
+      </dict>
+    </client>
+    <client name="gx_head_amp" uuid="abd066e0-3891-41b9-8b07-58ac1867e0a3" naming="app">
+      <ports>
+        <port name="in_0" uuid="99d17b74-6358-49b8-9b56-998d2a323d59" type="audio" direction="input" />
+        <port name="midi_in_1" uuid="f62d3ee2-45ba-4166-9543-bc50e1ba284b" type="midi" direction="input" />
+        <port name="out_0" uuid="2be13066-aaca-4601-ae33-6a436fa3097a" type="audio" direction="output" />
+        <port name="midi_out_1" uuid="1a3a31ed-d06a-4960-ab4a-e947d5b9d138" type="midi" direction="output" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">1426.992542</key>
+        <key name="http://ladish.org/ns/canvas/y">1469.000000</key>
+      </dict>
+    </client>
+    <client name="gx_head_fx" uuid="b5add541-7b68-4551-b4da-57d1ba8941db" naming="app">
+      <ports>
+        <port name="in_0" uuid="f5843b9b-c125-4e66-8ef7-36066f3159a0" type="audio" direction="input" />
+        <port name="out_0" uuid="93aa995c-373e-4c62-996b-69300439f3ec" type="audio" direction="output" />
+        <port name="out_1" uuid="9dfbc13a-908a-456f-9982-218f1556fd61" type="audio" direction="output" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">1578.992542</key>
+        <key name="http://ladish.org/ns/canvas/y">1115.000000</key>
+      </dict>
+    </client>
+    <client name="Oxygen 88" uuid="abcf4ab1-3880-44b1-b3bc-b1414b1d3caa" naming="app">
+      <ports>
+        <port name="Oxygen 88 MIDI 1" uuid="aaaa769d-9836-4f74-9a6c-5887da72e3fc" type="midi" direction="output" />
+        <port name="Oxygen 88 MIDI 1" uuid="e143da91-9348-419d-ab86-82a8b94dd2c2" type="midi" direction="input" />
       </ports>
       <dict>
         <key name="http://ladish.org/ns/canvas/x">1684.992542</key>
@@ -3040,10 +3090,6 @@ ladish Studio configuration.
     <connection port1="c5f924f0-7e94-4bae-a447-ca3270caf68a" port2="6d6a1c7b-0c46-44a7-9249-187797aa4467" />
     <connection port1="d0e00765-3442-4342-bbcd-6f48170860e6" port2="a11781c6-fa48-45a8-a526-b1dd78f2ee77" />
     <connection port1="e71daff2-9aac-40ab-9c50-ec80646d4ce6" port2="7d618618-5047-4218-842f-cdd996b04aed" />
-    <connection port1="572ce77f-3a52-4d88-b18c-dc51201f95d2" port2="be3787d5-4d31-45f1-938d-55a75d77b9c6" />
-    <connection port1="8802f7f0-6129-4d8e-ac9f-ced692aa9c97" port2="165dc129-53f4-4bba-8526-b6f17ce5b914" />
-    <connection port1="3200c28c-7b81-47bf-86f4-10f15257deaa" port2="daaec82e-1603-4ee2-936e-573f397a55ac" />
-    <connection port1="cd5e6842-49d7-427d-9db5-94882bae6496" port2="b1cfe7f9-3eac-4794-8e71-62cbfcef22ff" />
     <connection port1="0e95cb88-16a5-471e-ab24-26e7fcd56229" port2="ad81feb4-7788-4279-8124-b85fc6cb2ae2" />
     <connection port1="0e95cb88-16a5-471e-ab24-26e7fcd56229" port2="103cfe17-23cc-4a88-aa48-7adc3acb65a5" />
     <connection port1="9f19567c-fe0a-4d30-8665-0077fb82c5f8" port2="daaec82e-1603-4ee2-936e-573f397a55ac" />
@@ -3085,8 +3131,6 @@ ladish Studio configuration.
     <connection port1="b73434f2-52d3-4165-b4c5-cb6340ef4f15" port2="753a7774-1286-4053-949c-f9e4c6615277" />
     <connection port1="16a1ae57-b048-402c-8520-72e682910e39" port2="321751a7-b207-4a24-af04-9b5812261288" />
     <connection port1="a6d065b9-cf29-47bf-a11d-8d0c802b0303" port2="dedc980a-fa69-4a22-a7c1-2a6a8060abb0" />
-    <connection port1="1e9e573e-3c72-47a2-9836-5187e963f322" port2="cfca9e3d-5dd8-4601-afe0-6eb45383ad55" />
-    <connection port1="592da900-3cf7-4f9f-9bc2-877a9516ce3b" port2="033dfe81-bb82-44d4-a445-6a1e19f830f4" />
     <connection port1="6e0dc1e2-a2b4-4d4f-ac63-6b0d5bbb9626" port2="ff117881-f553-4dbf-b190-014df27a9298" />
     <connection port1="41fa98da-3f1a-4145-9888-d72b726ed4bc" port2="c7066241-14cc-4bad-b619-105b36cf9f8b" />
     <connection port1="c0e5ca85-570d-48b1-94f3-a80ccc3756ad" port2="507a0c0f-45de-447e-a010-d29760cb8eca" />
@@ -3125,6 +3169,22 @@ ladish Studio configuration.
     <connection port1="ce82a262-8766-4c0e-996f-b1a8061a647f" port2="84871754-7a5a-49b0-a4e0-d3a8d8ca77a7" />
     <connection port1="ce82a262-8766-4c0e-996f-b1a8061a647f" port2="cf8774e5-916b-4c07-b857-d386e268deda" />
     <connection port1="1c957f96-fb96-47f0-b8d5-2789a05cf8d7" port2="8bab1173-af33-48e7-a126-fd05a87b7023" />
+    <connection port1="1cbcba0b-4f06-4495-a209-837b9c3453d9" port2="ce657c5b-0147-451a-a696-6c14158e682c" />
+    <connection port1="1cbcba0b-4f06-4495-a209-837b9c3453d9" port2="6e77152f-146b-44ec-b8bf-e2f3529f6c58" />
+    <connection port1="e785fe1f-7d8c-41a2-bec9-6a8d7eb67d2a" port2="5272945a-3154-4515-8926-10260c22269c" />
+    <connection port1="b1a2b49d-4d17-4021-8422-5fd313fa0253" port2="275282b3-db7a-42f4-b2e8-0474f43c7706" />
+    <connection port1="e83fe4de-8f33-4bdc-80b5-6a5196837f51" port2="0c0553d7-be1a-4b4b-afff-ae3cf0a0aea8" />
+    <connection port1="d1d9cfbb-5203-4872-9960-11bfe30be01b" port2="0c0553d7-be1a-4b4b-afff-ae3cf0a0aea8" />
+    <connection port1="67ca54d8-27a3-4aa8-9e4f-cff1aa24c354" port2="1eeef296-eecc-4db4-84dd-60eff8e84c10" />
+    <connection port1="754831ff-b11f-4ae7-a085-11d5d96a8b44" port2="cf440f8e-f7d5-4339-b57b-816439a139e4" />
+    <connection port1="7175a41c-39e1-41aa-b83d-1f2ea17be1e7" port2="2d259ab5-6670-4a84-aeab-c9908460b07d" />
+    <connection port1="8802f7f0-6129-4d8e-ac9f-ced692aa9c97" port2="99d17b74-6358-49b8-9b56-998d2a323d59" />
+    <connection port1="2be13066-aaca-4601-ae33-6a436fa3097a" port2="f5843b9b-c125-4e66-8ef7-36066f3159a0" />
+    <connection port1="93aa995c-373e-4c62-996b-69300439f3ec" port2="daaec82e-1603-4ee2-936e-573f397a55ac" />
+    <connection port1="9dfbc13a-908a-456f-9982-218f1556fd61" port2="b1cfe7f9-3eac-4794-8e71-62cbfcef22ff" />
+    <connection port1="592da900-3cf7-4f9f-9bc2-877a9516ce3b" port2="f62d3ee2-45ba-4166-9543-bc50e1ba284b" />
+    <connection port1="aaaa769d-9836-4f74-9a6c-5887da72e3fc" port2="cfca9e3d-5dd8-4601-afe0-6eb45383ad55" />
+    <connection port1="45b76a33-67b4-4f68-8ee9-c0d461ca64cc" port2="ea53353f-3418-47db-ba32-dcdcc5e09815" />
   </connections>
   <applications>
     <application name="a2j" uuid="65bce9a0-8285-4cb3-9630-321ba19b43a4" terminal="false" level="0" autorun="true">a2j -e</application>
@@ -3166,13 +3226,13 @@ ladish Studio configuration.
     <application name="Keyboards (NM)" uuid="c34bb6c1-d772-496d-8598-5b6c1e9a7d5d" terminal="false" level="0" autorun="true">non-mixer --osc-port 7010 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FKeyboards</application>
     <application name="Zyn (aigu)" uuid="74c7352c-1ca9-46fa-acb0-ac70829e0783" terminal="false" level="0" autorun="true">zynaddsubfx -P 10000 -l %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FZyn%2FSynths.xmz</application>
     <application name="Zyn (Bass)" uuid="ec63aad8-c625-45d1-82c7-c90baa9a183c" terminal="false" level="0" autorun="true">zynaddsubfx -P 10001 -l %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FZyn%2FBasses.xmz</application>
-    <application name="Guitarix (Bass)" uuid="7fdbc150-b9d1-414e-8411-c275c76afd62" terminal="true" level="0" autorun="false">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_gx.sh</application>
+    <application name="Guitarix (Bass)" uuid="7fdbc150-b9d1-414e-8411-c275c76afd62" terminal="false" level="0" autorun="false">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_gx.sh</application>
     <application name="CME KeyBoard Filter" uuid="ce8e80fd-4088-4ea8-b186-ab28732e4058" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_cK.sh</application>
     <application name="MKII Keyboard Filter" uuid="879e36a1-2289-493e-afca-810f133f1346" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_mK.sh</application>
     <application name="wobbleCtrl" uuid="d05dd957-12ce-4814-9733-d2df4fb92692" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_wC.sh</application>
     <application name="QLC+" uuid="6247c29f-437a-492f-bab0-2c6474f19ebb" terminal="false" level="0" autorun="true">qlcplus -p -o %2Fhome%2Fwoii%2FPlagiat%2FStage%2FLights%2Fplagiat.qxw</application>
     <application name="QLC Manager" uuid="56d9deaf-5745-47f4-b4a7-e47a25e5a3f0" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_qLC.sh</application>
-    <application name="OSC Control Surface" uuid="31ca0d05-49db-4b09-9d83-e925b9262e99" terminal="false" level="0" autorun="true">open-stage-control -l %2Fhome%2Fwoii%2FPlagiat%2FStage%2FInterfaces%2Forl.js -c %2Fhome%2Fwoii%2FPlagiat%2FStage%2FInterfaces%2Forl-custom-module.js -p 11000</application>
+    <application name="OSC Control Surface" uuid="31ca0d05-49db-4b09-9d83-e925b9262e99" terminal="false" level="0" autorun="true">open-stage-control -l %2Fhome%2Fwoii%2FPlagiat%2FStage%2FInterfaces%2Forl.json -c %2Fhome%2Fwoii%2FPlagiat%2FStage%2FInterfaces%2Forl-custom-module.js -p 11000</application>
     <application name="OSC Control to MIDI" uuid="59351a7d-de17-4db2-80b0-9b56dbbf4ce6" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_gUItoMidi.sh</application>
     <application name="x42JeannotGars-L" uuid="5ef3732f-e022-4670-894a-72f14704f375" terminal="false" level="0" autorun="false">x42-fat1 --osc 7050 -p 3:1 -p 4:0.02 -p 5:1</application>
     <application name="x42JeannotGars-R" uuid="da2b6ef4-2338-4619-b42b-208040e00c96" terminal="false" level="0" autorun="true">x42-fat1 --osc 7051 -p 3:0 -p 4:0.02 -p 5:1 -p 6:-4</application>
@@ -3183,5 +3243,8 @@ ladish Studio configuration.
     <application name="x42ORLMeuf-L" uuid="6d0c6ce9-c0f9-48f4-a748-c881b02db797" terminal="false" level="0" autorun="false">x42-fat1 --osc 7062 -p 3:1 -p 4:0.02 -p 5:1 -p 6:2.4</application>
     <application name="x42ORLMeuf-R" uuid="6d4c94a7-d2cf-45c4-ab4d-bfedbeb5d24d" terminal="false" level="0" autorun="true">x42-fat1 --osc 7063 -p 3:0 -p 4:0.02 -p 5:1 -p 6:4</application>
     <application name="vocodeTranspose" uuid="2e467cbb-6b92-4bb2-a323-065de5ef5d2a" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_vT.sh</application>
+    <application name="ZitaPublic1" uuid="4d41ef22-00d8-433a-9f56-145b88d6be77" terminal="false" level="0" autorun="true">zita-at1 -f 0.02 -c 1</application>
+    <application name="ZitaPublic 2" uuid="69add5f4-131a-4cd7-9df4-4d78d7ead744" terminal="false" level="0" autorun="true">zita-at1 -f 0.02 -c 1</application>
+    <application name="VxPublic" uuid="db4efae3-af1d-4c48-95fd-2f2b977b4c78" terminal="false" level="0" autorun="true">%2Fusr%2Flocal%2Fbin%2Fnon-mixer --osc-port 17001 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FVxPublic</application>
   </applications>
 </studio>
