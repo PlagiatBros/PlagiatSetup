@@ -212,7 +212,7 @@ horrorcore = [
             ]
         ],
     jeannot >> ProgramFilter(4) >> [ # Couplet 2 - Bouton 4
-        Program(69) >> cseqtrigger,
+        # Program(69) >> cseqtrigger,
         Program(1) >> cseqtrigger,
 
         [
