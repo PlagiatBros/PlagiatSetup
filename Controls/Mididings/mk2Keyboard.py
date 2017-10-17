@@ -4,7 +4,6 @@ from mididings.extra.osc import OSCInterface
 from mididings.extra.inotify import AutoRestart
 from mididings.extra.osc import SendOSC
 from utils import OSCCustomInterface
-from ports import *
 from math import log10
 
 from liblo import ServerThread
@@ -14,10 +13,12 @@ from time import sleep
 config(
 	backend='jack',
 	client_name='Mk2KeyBoardRoutes',
-	out_ports=['Mk2OutBass', 'Mk2OutTreble', 'Mk2OutRhodes', 'Mk2OutTapeutape', 'Mk2OutWobble'],
+	out_ports=['Mk2OutBass', 'Mk2OutTreble', 'Mk2OutRhodes', 'Mk2OutTapeutape', 'Mk2OutWobble', 'PBseq24', 'PBTapeutape', 'PBguitarix'],
 	in_ports=['Mk2In']
 )
 
+from ports import *
+from aliases import *
 
 hook(
     OSCInterface(mk2inport, mk2outport),
@@ -162,7 +163,7 @@ run(
   			            vxorlvocode_on,
 
 				        Program(65) >> seq24once,
-						
+
                       ],
   					samples_mute,
                     bassfilter,
