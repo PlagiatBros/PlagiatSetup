@@ -227,6 +227,7 @@ horrorcore = [
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(150)),
 
             SendOSC(cmeinport, '/mididings/switch_scene', 7),
+            SendOSC(mk2inport, '/mididings/switch_scene', 6),
 
             SendOscState([
 
@@ -283,8 +284,6 @@ horrorcore = [
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(150)),
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(150)),
-
-            SendOSC(mk2inport, '/mididings/switch_scene', 5),
 
             SendOscState([
 
