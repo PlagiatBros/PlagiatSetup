@@ -162,7 +162,7 @@ run(
   			            vxorldelay_off,
   			            vxorlvocode_on,
 
-				        Program(65) >> seq24once,
+				        Program(2) >> seq24once,
 
                       ],
   					samples_mute,
