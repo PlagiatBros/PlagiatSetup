@@ -53,6 +53,15 @@ pitch = Filter(PITCHBEND) >> [
     SendOSC(bassmainport, '/strip/BassMain/AM%20pitchshifter/Pitch%20shift/unscaled',  	 	lambda ev: 1 - (abs(ev.value) / (8191.0)) * 0.75),
 ]  >> Discard()
 
+samples_mute = Filter(NOTE) >> [
+    KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEON) >> [
+        SendOSC(samplesmainport, '/strip/SamplesMain/Gain/Mute', 1.0)
+    ],
+    KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEOFF) >> [
+        SendOSC(samplesmainport, '/strip/SamplesMain/Gain/Mute', 0.0)
+    ],
+]
+
 run(
     scenes = {
         1: 	Scene("BassWobbleCtrl",
@@ -87,54 +96,82 @@ run(
               ),
         4: Scene("Samples cut",
                 [
-                    KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEON) >> [
-                        SendOSC(samplesmainport, '/strip/SamplesMain/Gain/Mute', 1.0)
-                    ],
-                    KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEOFF) >> [
-                        SendOSC(samplesmainport, '/strip/SamplesMain/Gain/Mute', 0.0)
-                    ],
+                    samples_mute,
                     bassfilter,
                     gatecancel,
 					looperctl,
 					pitch
                 ] >> Discard()
               ),
-        5: Scene("HorroCore RIP",
+        5: Scene("HorroCore Couplet 1",
                 [
                     KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEON) >> [
 
-                        SendOSC(vxorlpreport, '/strip/VxORLMeuf/Gain/Mute', 0.0),
-                        SendOSC(vxorlpostport, '/strip/VxORLMeufPost/Gain/Mute', 0.0),
-                        SendOSC(surfaceorlport, '/vxorl', 'meuf', 1),
-                        SendOSC(vxorlpreport, '/strip/VxORLGars/Gain/Mute', 1.0),
-                        SendOSC(vxorlpostport, '/strip/VxORLGarsPost/Gain/Mute', 1.0),
-                        SendOSC(surfaceorlport, '/vxorl', 'gars', 0),
-                        SendOSC(vxjeannotpreport, '/strip/VxJeannotMeuf/Gain/Mute', 0.0),
-                        SendOSC(vxjeannotpostport, '/strip/VxJeannotMeufPost/Gain/Mute', 0.0),
-                        SendOSC(vxjeannotpreport, '/strip/VxJeannotGars/Gain/Mute', 1.0),
-                        SendOSC(vxjeannotpostport, '/strip/VxJeannotGarsPost/Gain/Mute', 1.0),
+	                    vxorlmeuf_on,
+			            vxorlgars_off,
+			            vxorldisint_off,
+			            vxorldelay_off,
+			            vxorlvocode_on,
+
+			            vxjeannotdelay_off,
+			            vxjeannotgars_off,
+			            vxjeannotmeuf_on,
+			            vxjeannotdisint_off,
+			            vxjeannotvocode_off,
 
                     ],
                     KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEOFF) >> [
 
-                        SendOSC(vxorlpreport, '/strip/VxORLGars/Gain/Mute', 0.0),
-                        SendOSC(vxorlpostport, '/strip/VxORLGarsPost/Gain/Mute', 0.0),
-                        SendOSC(surfaceorlport, '/vxorl', 'gars', 1),
-                        SendOSC(vxorlpostport, '/strip/VxORLMeufPost/Gain/Mute', 1.0),
-                        SendOSC(surfaceorlport, '/vxorl', 'meuf', 0),
-                        SendOSC(vxjeannotpreport, '/strip/VxJeannotGars/Gain/Mute', 0.0),
-                        SendOSC(vxjeannotpostport, '/strip/VxJeannotGarsPost/Gain/Mute', 0.0),
-                        SendOSC(vxjeannotpreport, '/strip/VxJeannotMeuf/Gain/Mute', 1.0),
-                        SendOSC(vxjeannotpostport, '/strip/VxJeannotMeufPost/Gain/Mute', 1.0),
+	                    vxorlmeuf_on,
+			            vxorlgars_off,
+			            vxorldisint_off,
+			            vxorldelay_off,
+			            vxorlvocode_off,
+
+			            vxjeannotdelay_off,
+			            vxjeannotgars_on,
+			            vxjeannotmeuf_off,
+			            vxjeannotdisint_off,
+			            vxjeannotvocode_off,
 
                     ],
+					samples_mute,
                     bassfilter,
                     gatecancel,
 					looperctl,
 					pitch
                 ] >> Discard()
               ),
-          6: 	Scene("Clap",
+		  6: Scene("HorroCore Couplet 2",
+                  [
+                      KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEON) >> [
+
+  	                    vxorlmeuf_off,
+  			            vxorlgars_on,
+  			            vxorldisint_off,
+  			            vxorldelay_off,
+  			            vxorlvocode_off,
+
+                      ],
+                      KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEOFF) >> [
+
+  	                    vxorlmeuf_on,
+  			            vxorlgars_off,
+  			            vxorldisint_off,
+  			            vxorldelay_off,
+  			            vxorlvocode_on,
+
+				        Program(65) >> seq24once,
+						
+                      ],
+  					samples_mute,
+                    bassfilter,
+                    gatecancel,
+  					looperctl,
+  					pitch
+                  ] >> Discard()
+                ),
+          7: 	Scene("Clap",
                   [
                   KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEON) >> NoteOn(64,127) >> Output('Mk2OutTapeutape', 1),
                   bassfilter,
