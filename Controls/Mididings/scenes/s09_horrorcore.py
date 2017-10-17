@@ -13,8 +13,10 @@ horrorcore_mk2lights = {
     2:'purple',
     3:'purple',
     4:'purple',
-    5:'yellow',
+    5:'purple',
     6:'yellow',
+    7:'yellow',
+    8:'yellow',
 }
 
 #### HorroCore ####
@@ -211,6 +213,8 @@ horrorcore = [
         ],
     jeannot >> ProgramFilter(4) >> [ # Couplet 2 - Bouton 4
         Program(69) >> cseqtrigger,
+        Program(1) >> cseqtrigger,
+
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 150),
