@@ -213,7 +213,7 @@ horrorcore = [
         ],
     jeannot >> ProgramFilter(4) >> [ # Couplet 2 - Bouton 4
         # Program(69) >> cseqtrigger,
-        Program(2) >> cseqtrigger,
+        Program(3) >> cseqtrigger,
 
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
