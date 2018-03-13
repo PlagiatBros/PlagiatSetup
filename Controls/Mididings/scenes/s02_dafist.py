@@ -52,6 +52,7 @@ dafist = [
 
             SendOscState([
 
+
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
                 [samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0],
 
@@ -246,7 +247,7 @@ dafist = [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(120)),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(120)),
-            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(120)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(240)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
 
             SendOscState([
@@ -326,7 +327,7 @@ dafist = [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
-            vxorldelay_off,
+            vxorldelay_on,
             vxorlvocode_off,
 
             vxjeannotdelay_off,
@@ -415,7 +416,7 @@ dafist = [
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(120)),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(120)),
-            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(120)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(240)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
 
             SendOscState([

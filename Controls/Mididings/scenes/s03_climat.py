@@ -65,6 +65,8 @@ climat = [
                 [samplesdelaymungeport, '/strip/Samples3/Gain/Gain%20(dB)/unscaled', -7.0],
                 [samplesreversedelayport, '/strip/Samples4/Gain/Gain%20(dB)/unscaled', -2.0],
                 [samplesringmodport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -2.0],
+
+
             ]),
 
             SendOSC(cmeinport, '/mididings/switch_scene', 13),

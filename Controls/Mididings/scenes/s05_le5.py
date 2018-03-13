@@ -79,8 +79,8 @@ le5 = [
         [
             bassdetunest_on,
             bassringst_on,
-            bassvibest_off,
-            bassbufferst_off,
+            bassvibest_on,
+            bassbufferst_on,
             ]
         ],
     orl >> ProgramFilter(2) >> [ # Couplet A - Bouton 2
@@ -125,8 +125,8 @@ le5 = [
         [
             bassdetunest_on,
             bassringst_on,
-            bassvibest_off,
-            bassbufferst_off,
+            bassvibest_on,
+            bassbufferst_on,
             ]
         ],
     orl >> ProgramFilter(3) >> [ # Couplet B - Bouton 3

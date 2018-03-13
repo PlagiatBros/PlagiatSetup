@@ -102,16 +102,16 @@ horrorcore = [
             ]
         ],
     orl >> ProgramFilter(3) >> [ # Stupid donkey - Bouton 3
-        Program(67) >> cseqtrigger,
+        Program(5) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
-            SendOSC(slport, '/set', 'tempo', 150),
-            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
+#            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
+#            SendOSC(slport, '/set', 'tempo', 150),
+#            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
-            SendOSC(klickport, '/klick/simple/set_tempo', 150),
-            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
-            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
-            SendOSC(klickport, '/klick/metro/start'),
+#            SendOSC(klickport, '/klick/simple/set_tempo', 150),
+#            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+#            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+#            SendOSC(klickport, '/klick/metro/start'),
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(150)),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(150)),
@@ -202,6 +202,10 @@ horrorcore = [
             vxjeannotvocode_on,
 
             bassdry,
+
+            SendOSC(cmeinport, '/mididings/switch_scene', 5),
+
+
 
             ] >> Discard(),
         [
@@ -414,8 +418,8 @@ horrorcore = [
         ] >> Discard(),
     jeannot >> ProgramFilter(6) >> [
         vxjeannotdelay_off,
-        vxjeannotgars_off,
-        vxjeannotmeuf_on,
+        vxjeannotgars_on,
+        vxjeannotmeuf_off,
         vxjeannotdisint_off,
         vxjeannotvocode_off,
     ] >> Discard(),
