@@ -17,9 +17,9 @@ climat = [
         zynmicrotonal_on,
         SendOSC(zyntrebleport, '/microtonal/tunings', '135.0\n200.0\n300.0\n400.0\n500.0\n600.0\n700.0\n835.0\n900.0\n1000.0\n1135.0\n2/1'),
         SendOSC(mk2inport, '/mididings/switch_scene', 1),
-        mk2lights([1,2,3,4,8]),
+        mk2lights([1,2,4,6,8]),
     ]),
-    jeannot_padrelease >> mk2lights([1,2,3,4,8]),
+    jeannot_padrelease >> mk2lights([1,2,4,6,8]),
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
@@ -133,7 +133,7 @@ climat = [
             ]
 
         ],
-    jeannot >> ProgramFilter(3) >> [ # Couplet sans wobble - bouton 3
+    jeannot >> ProgramFilter(4) >> [ # Couplet sans wobble - bouton 3
         #TODO arreter seq-wobble (à priori bassdry suffit)
         Program(6) >> seq24once,
         Program(4) >> seq24once,
@@ -148,7 +148,7 @@ climat = [
         ] >> Discard()
 
     ],
-    jeannot >> ProgramFilter(4) >> [ # Refrain - Bouton 4
+    jeannot >> ProgramFilter(6) >> [ # Refrain - Bouton 4
         Program(66) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 74),
