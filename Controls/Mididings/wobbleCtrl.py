@@ -65,7 +65,7 @@ run([
         ] >> Discard(),
     ],
 
-    Filter(NOTEOFF) >> KeyFilter(notes=['f2', 'c3', 'g3']) >> [
+    Filter(NOTEOFF) >> KeyFilter(notes=['f2', 'c3', 'g3', 'f3', 'c4' 'g4']) >> [
         SendOSC(bassmainport, '/strip/BassWobblePost/MDA%20RezFilter/Max%20Freq/unscaled', 0.0),
         SendOSC(bassmainport, '/strip/BassWobblePost/AM%20pitchshifter/Pitch%20shift/unscaled', 1.0),
         SendOSC(bassmainport, '/strip/BassWobblePost/MDA%20RezFilter/Freq/unscaled', 0.25),
