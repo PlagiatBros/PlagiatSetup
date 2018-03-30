@@ -56,7 +56,7 @@
                 '/strip/VxORLDelayPost/Gain/Mute'
             ]
         },
-        vocod: {
+        vocode: {
             on: [
                 '/strip/VxORLMeuf/Gain/Mute',
                 '/strip/VxORLVocodePost/Gain/Mute'

@@ -8,6 +8,17 @@ from mididings.extra.osc import SendOSC
 
 #######################################
 
+le5_mk2lights = {
+    1:'blue',
+    2:'purple',
+    3:'purple',
+    4:'purple',
+    5:'white',
+    6:'white',
+    7:'white',
+    8:'red',
+}
+
 #### Le5 ####
 le5 = [
     Init([
@@ -16,10 +27,10 @@ le5 = [
         zynmicrotonal_on,
         SendOSC(zyntrebleport, '/microtonal/tunings', '100.0\n200.0\n300.0\n435.0\n500.0\n635.0\n700.0\n800.0\n900.0\n1000.0\n1135.0\n2/1'),
         SendOSC(mk2inport, '/mididings/switch_scene', 1),
-        mk2lights([1,2,3,4,5,6,7,8]),
+        mk2lights(le5_mk2lights),
         ]),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
-    jeannot_padrelease >> mk2lights([1,2,3,4,5,6,7,8]),
+    jeannot_padrelease >> mk2lights(le5_mk2lights),
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*'),
         SendOSC(samplesmainport, '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.),
@@ -36,7 +47,7 @@ le5 = [
         SendOSC(vpjeannotport, '/pyta/slide/visible', -1, 0),
         SendOSC(qlcstopport, '/Stop'),
     ] >> Discard(),
-    jeannot >> ProgramFilter(2) >> [ # Intro Shut your dickhole - Bouton 2
+    jeannot >> ProgramFilter(2) >> [ # Intro Shut your dickhole + break fitting me suit - Bouton 2
         Program(65) >> cseqtrigger,
         NoteOn(66,127) >> Output('PBTapeutape', 3), # gunshot
         [
@@ -366,7 +377,7 @@ le5 = [
             bassbufferst_off,
             ]
         ],
-    orl >> ProgramFilter(6) >> [ # Couplet Cbis (ain't no challenger left)- Bouton 7
+    orl >> ProgramFilter(6) >> [ # Couplet Cbis (ain't no challenger left)- Bouton 6
         Program(72) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
@@ -417,15 +428,29 @@ le5 = [
             ]
         ],
 
-    orl >> ProgramFilter(7) >> [ # Ballade rhodes vocodeur - Bouton 8
-        #TODO son rhodes
+    orl >> ProgramFilter(7) >> [ # Cloud rap ballade rhodes - Bouton 7
         stop,
         Program(73) >> cseqtrigger,
-        SendOSC(cmeinport, '/mididings/switch_scene', 10),
+        [
+            SendOSC(slport, '/set', 'eighth_per_cycle', 5),
+            SendOSC(slport, '/set', 'tempo', 60),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 60),
+            SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
+            SendOSC(klickport, '/klick/metro/start'),
+            SendOSC(cmeinport, '/mididings/switch_scene', 10),
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(60)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(60)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(60)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(60)),
+
+            ] >> Discard(),
         [
 
-            vxorlgars_off,
-            vxorlmeuf_on,
+            vxorlgars_on,
+            vxorlmeuf_off,
             vxorldisint_off,
             vxorldelay_off,
             vxorlvocode_off,
@@ -438,59 +463,17 @@ le5 = [
 
             ] >> Discard()
         ],
-    jeannot >> ProgramFilter(5) >> [ # Sebkha 5/8 (batterie ternaire sur synthé, puis death sebkha, puis meshugagah)
-        Program(74) >> cseqtrigger,
-        [
-            SendOSC(slport, '/set', 'eighth_per_cycle', 5),
-            SendOSC(slport, '/set', 'tempo', 120),
-
-            SendOSC(klickport, '/klick/simple/set_tempo', 120),
-            SendOSC(klickport, '/klick/simple/set_meter', 5, 4),
-            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
-            SendOSC(klickport, '/klick/metro/start'),
-
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(120)),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(120)),
-            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(120)),
-            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
-
-            SendOscState([
-
-                [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
-                [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
-                [samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0],
-
-            ]),
-
-            vxorlgars_off,
-            vxorlmeuf_on,
-            vxorldisint_off,
-            vxorldelay_off,
-            vxorlvocode_off,
-
-            vxjeannotdelay_off,
-            vxjeannotgars_on,
-            vxjeannotmeuf_off,
-            vxjeannotdisint_off,
-            vxorlvocode_off,
-
-            bassdry,
-            basswobble,
-
-            ] >> Discard(),
-        [
-            bassdetunest_on,
-            bassringst_on,
-            bassvibest_off,
-            bassbufferst_off,
-            ]
+    orl >> ProgramFilter(8) >> [ # Bouclage rhodes  - Bouton 7
+            SendOSC(slport, '/sl/8/hit', 'record'),
         ],
-    jeannot >> ProgramFilter(6) >> [ # death 5/8
+    jeannot >> ProgramFilter(5) >> [ # gros ragga (coupure cloud rap let's party) - bouton 5
         Program(75) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
             SendOSC(slport, '/set', 'tempo', 120),
 
+            SendOSC(slport, '/sl/8/hit', 'pause_on'),
+
             SendOSC(klickport, '/klick/simple/set_tempo', 120),
             SendOSC(klickport, '/klick/simple/set_meter', 5, 4),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
@@ -509,17 +492,17 @@ le5 = [
 
             ]),
 
-            vxorlgars_off,
-            vxorlmeuf_on,
+            vxorlgars_on,
+            vxorlmeuf_off,
             vxorldisint_off,
             vxorldelay_off,
-            vxorlvocode_off,
+            vxorlvocode_on,
 
             vxjeannotdelay_off,
             vxjeannotgars_on,
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
-            vxorlvocode_off,
+            vxjeannotvocode_off,
 
             bassdry,
             basswobble,
@@ -532,7 +515,7 @@ le5 = [
             bassbufferst_off,
             ]
     ],
-    orl >> ProgramFilter(8) >> [ # Son Basse - Bouton 9
+    orl >> ProgramFilter(9) >> [ # Instouboul sans batterie - Bouton 8
         Program(76) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
@@ -578,7 +561,7 @@ le5 = [
             bassbufferst_on,
             ]
         ],
-    orl >> ProgramFilter(9) >> [ # mise en place pre-instouboul record voix + bass
+    orl >> ProgramFilter(10) >> [ # Instouboul bouclage voix + bass - Bouton 9
         [
 
             SendOSC(samplesmainport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled',200.),
@@ -589,7 +572,7 @@ le5 = [
 
             ] >> Discard()
         ],
-    jeannot >> ProgramFilter(7) >> [ # louboutin meshuggah
+    jeannot >> ProgramFilter(6) >> [ # Instouboul entrée batterie meshuggah - bouton 7
         Program(77) >> cseqtrigger,
         [
 
@@ -605,8 +588,9 @@ le5 = [
             SendOSC(audioseqport, '/Audioseq/Play', timestamp),
             SendOSC(audioseqport, '/Audioseq/Sequence/Enable', 'le5_louboutin'),
 
-            SendOSC(slport, '/sl/2/hit', 'pause_on'),
-            SendOSC(slport, '/sl/4/hit', 'pause_on'),
+            SendOSC(slport, '/sl/0/hit', 'pause_on'), # bass
+            SendOSC(slport, '/sl/2/hit', 'pause_on'), # vxorlpre
+            SendOSC(slport, '/sl/4/hit', 'pause_on'), # vxjeannotpre
 
             vxorlgars_off,
             vxorlmeuf_on,
@@ -616,7 +600,7 @@ le5 = [
 
             ] >> Discard()
         ],
-    orl >> ProgramFilter(10) >> [  # stop reverse louboutin
+    jeannot >> ProgramFilter(7) >> [  # stop reverse Instouboul => Louboutin - Bouton 10
         Program(73) >> cseqtrigger,
         [
 

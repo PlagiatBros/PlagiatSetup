@@ -580,7 +580,7 @@ dafist = [
             bassbufferst_off,
             ]
         ],
-    orl >> ProgramFilter(11) >> [ # SceneSwitch -> climat
+    orl >> ProgramFilter(11) >> [ # SceneSwitch -> climat (bouton jeannot 2)
         stop,
         SendOSC(audioseqport, '/Audioseq/Scene/Play', 'dafist_outro_filter_reset', timestamp) >> Discard(),
         SceneSwitch(3) >> Discard(),
