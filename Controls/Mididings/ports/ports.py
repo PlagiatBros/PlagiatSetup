@@ -38,10 +38,12 @@ bassmainport = 7020
 monitorsorlport = 7030
 monitorsjeannotport = 7031
 
-vocoderjeannotportgars = 7050
+vocoderjeannotport = 7050
+vocoderjeannotportgars = 7051
 vocoderjeannotportmeuf = 7052
 
-vocoderorlportgars = 7060
+vocoderorlport = 7060
+vocoderorlportgars = 7061
 vocoderorlportmeuf = 7062
 
 

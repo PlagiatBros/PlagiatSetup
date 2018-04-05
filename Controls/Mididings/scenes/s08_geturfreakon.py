@@ -13,8 +13,12 @@ geturfreakon = [
     Init([
         Program(seq24PageMap[8]) >> seq24once,
         Ctrl(0, 7) >> tapeutapecontrol,
-        zynmicrotonal_on,
-        SendOSC(zyntrebleport, '/microtonal/tunings', '100.0\n200.0\n335.0\n400.0\n500.0\n600.0\n700.0\n835.0\n900.0\n1000.0\n1135.0\n2/1'),
+
+
+        enable_microtonal,
+        set_microtonal(0, 0, 0, 0, 0.35, 0, 0, 0.35, 0, 0, 0 ,0.35),
+        # zynmicrotonal_on,
+        # SendOSC(zyntrebleport, '/microtonal/tunings', '100.0\n200.0\n335.0\n400.0\n500.0\n600.0\n700.0\n835.0\n900.0\n1000.0\n1135.0\n2/1'),
 
         SendOSC(mk2inport, '/mididings/switch_scene', 6),
         mk2lights([1]),

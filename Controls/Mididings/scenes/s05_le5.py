@@ -24,8 +24,12 @@ le5 = [
     Init([
         Program(seq24PageMap[5]) >> seq24once,
         Ctrl(0, 3) >> tapeutapecontrol,
-        zynmicrotonal_on,
-        SendOSC(zyntrebleport, '/microtonal/tunings', '100.0\n200.0\n300.0\n435.0\n500.0\n635.0\n700.0\n800.0\n900.0\n1000.0\n1135.0\n2/1'),
+
+        enable_microtonal,
+        set_microtonal(0.35, 0, 0.35, 0, 0, 0, 0, 0.35, 0, 0, 0 ,0),
+        # zynmicrotonal_on,
+        # SendOSC(zyntrebleport, '/microtonal/tunings', '100.0\n200.0\n300.0\n435.0\n500.0\n635.0\n700.0\n800.0\n900.0\n1000.0\n1135.0\n2/1'),
+
         SendOSC(mk2inport, '/mididings/switch_scene', 1),
         mk2lights(le5_mk2lights),
         ]),

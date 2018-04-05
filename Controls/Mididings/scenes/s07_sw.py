@@ -13,7 +13,10 @@ sw = [
     Init([
         Program(seq24PageMap[7]) >> seq24once,
         Ctrl(0, 4) >> tapeutapecontrol,
-        zynmicrotonal_off,
+
+        disable_microtonal,
+        # zynmicrotonal_off,
+
         SendOSC(mk2inport, '/mididings/switch_scene', 2),
         mk2lights([1,2,3]),
     ]),

@@ -13,7 +13,10 @@ trapone = [
     Init([
         Program(seq24PageMap[6]) >> seq24once,
         Ctrl(0, 10) >> tapeutapecontrol,
-        zynmicrotonal_off,
+
+        disable_microtonal,
+        # zynmicrotonal_off,
+
         SubSceneSwitch(2),
         SendOSC(mk2inport, '/mididings/switch_scene', 4),
         mk2lights([1,2,3,4,5,6,8]),

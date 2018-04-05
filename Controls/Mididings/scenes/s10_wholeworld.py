@@ -13,8 +13,12 @@ wholeworld = [
     Init([
         Program(seq24PageMap[10]) >> seq24once,
         Ctrl(0, 5) >> tapeutapecontrol,
-        zynmicrotonal_on,
-        SendOSC(zyntrebleport, '/microtonal/tunings', '135.0\n200.0\n300.0\n400.0\n500.0\n635.0\n700.0\n800.0\n900.0\n1000.0\n1100.0\n2/1'),
+
+        enable_microtonal,
+        set_microtonal(0, 0, 0.35, 0, 0, 0, 0, 0, 0, 0.35, 0 ,0),
+        # zynmicrotonal_on,
+        # SendOSC(zyntrebleport, '/microtonal/tunings', '135.0\n200.0\n300.0\n400.0\n500.0\n635.0\n700.0\n800.0\n900.0\n1000.0\n1100.0\n2/1'),
+
         mk2lights([1,2]),
     ]),
     jeannot_padrelease >> mk2lights([1,2]),

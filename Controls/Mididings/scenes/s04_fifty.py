@@ -13,7 +13,10 @@ fifty = [
     Init([
         Program(seq24PageMap[4]) >> seq24once,
         Ctrl(0, 2) >> tapeutapecontrol,
-        zynmicrotonal_off,
+
+        disable_microtonal,
+        # zynmicrotonal_off,
+
         SendOSC(mk2inport, '/mididings/switch_scene', 1),
         mk2lights([1,2,3,4,5,6,8]),
         ]),

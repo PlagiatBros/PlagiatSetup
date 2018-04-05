@@ -274,10 +274,41 @@ stop = [
 ]
 
 
-### Synths ###
+### Microtonal ###
+
+vocodports = [vocoderjeannotport, vocoderjeannotportgars, vocoderjeannotportmeuf, vocoderorlport, vocoderorlportgars, vocoderorlportmeuf]
 
 zynmicrotonal_on = SendOSC(zyntrebleport, '/microtonal/Penabled', True)
 zynmicrotonal_off = SendOSC(zyntrebleport, '/microtonal/Penabled', False)
+
+enable_microtonal = [
+	SendOSC(zyntrebleport, '/microtonal/Penabled', True)
+]
+
+disable_microtonal = [
+	SendOSC(zyntrebleport, '/microtonal/Penabled', True)
+]
+
+for port in vocodports:
+	for i in range(12):
+		disable_microtonal.append(SendOSC(port, '/x42/parameter', i, 0.0))
+
+
+def set_microtonal(*tunings):
+
+	commands = []
+
+	zynshift = tunings[9:] + tunings[:9] # zyn commence au LA
+	zynscale = "\n".join([str(100.0 + i * 100 + zynshift[i] * 100) for i in range(12)]).replace('1200.0', '2/1')
+
+	commands.append(SendOSC(zyntrebleport, '/microtonal/tunings', zynscale))
+
+	for port in vocodports:
+		for i in range(12):
+			commands.append(SendOSC(port, '/x42/parameter', i + 20, float(tunings[i])))
+
+
+	return commands
 
 ### OSC send proxy #####################################
 
