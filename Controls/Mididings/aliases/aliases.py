@@ -291,21 +291,29 @@ disable_microtonal = [
 
 for port in vocodports:
 	for i in range(12):
-		disable_microtonal.append(SendOSC(port, '/x42/parameter', i, 0.0))
+		disable_microtonal.append(SendOSC(port, '/x42/parameter', i + 24, 0.0))
 
 
 def set_microtonal(*tunings):
 
 	commands = []
 
-	zynshift = tunings[9:] + tunings[:9] # zyn commence au LA
+	zynshift = tunings[10:] + tunings[:10] # zyn commence au Si bémol
 	zynscale = "\n".join([str(100.0 + i * 100 + zynshift[i] * 100) for i in range(12)]).replace('1200.0', '2/1')
 
 	commands.append(SendOSC(zyntrebleport, '/microtonal/tunings', zynscale))
 
 	for port in vocodports:
-		for i in range(12):
-			commands.append(SendOSC(port, '/x42/parameter', i + 20, float(tunings[i])))
+		transpo = range(12)
+		if port is vocoderjeannotportgars or port is vocoderorlportgars:
+			transpo = transpo[-4:] + transpo[:-4]
+		elif port is vocoderjeannotportmeuf or port is vocoderorlportmeuf:
+			transpo = transpo[4:] + transpo[:4]
+		else:
+			transpo = transpo[:]
+
+		for i in transpo:
+			commands.append(SendOSC(port, '/x42/parameter', i + 24, float(tunings[i])))
 
 
 	return commands

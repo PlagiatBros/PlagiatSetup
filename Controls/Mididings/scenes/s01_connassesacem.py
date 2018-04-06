@@ -15,7 +15,7 @@ connassessacem = [
         Ctrl(0, 0) >> tapeutapecontrol,
 
         enable_microtonal,
-        set_microtonal(0.35, 0, 0, 0, 0, 0, 0, 0.35, 0, 0, 0, 0),
+        set_microtonal(0, 0.35, 0, 0, 0, 0, 0, 0, 0.35, 0, 0, 0),
         # zynmicrotonal_on,
         # SendOSC(zyntrebleport, '/microtonal/tunings', '100.0\n200.0\n300.0\n435.0\n500.0\n600.0\n700.0\n800.0\n900.0\n1000.0\n1135.0\n2/1'),
 

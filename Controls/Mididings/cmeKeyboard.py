@@ -33,13 +33,29 @@ zynbass6 = Output('CMEOutBass', 6)
 zynbass7 = Output('CMEOutBass', 7)
 
 zyntreble1 = [
-    ~Filter(CTRL) >> Output('CMEOutTreble', 1),
+    [
+        ~Filter(CTRL),
+        CtrlFilter(1),
+        CtrlFilter(64)
+        ] >> Output('CMEOutTreble', 1),
 
 ]
 
-zyntreble2 = ~Filter(CTRL) >> Output('CMEOutTreble', 2)
+zyntreble2 = [ 
+    [
+        ~Filter(CTRL),
+        CtrlFilter(1),
+        CtrlFilter(64)
+        ] >> Output('CMEOutTreble', 2)
+]
 
-zyntreble3 = ~Filter(CTRL) >> Output('CMEOutTreble', 3)
+zyntreble3 = [
+    [
+        ~Filter(CTRL),
+        CtrlFilter(1),
+        CtrlFilter(64)
+        ] >> Output('CMEOutTreble', 3)
+]
 
 zyntrebleGMandela = ~Filter(CTRL) >> [
     KeyFilter(notes=['g2','g#2','a#2','g3','g#3','a#3','g3','g#3','a#3','g4','g#4','a#4']),
@@ -72,7 +88,7 @@ run(
         13: Scene("zyntrebleGMandela", zyntrebleGMandela),
     },
     control = [
-        Filter(CTRL) >> SendOSC(samplesmainport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled', lambda ev: 20000. * pow(10, ((-log10(71/20000.))*ev.value) / 127. + log10(71/20000.))) >> Discard(),
+        Filter(CTRL) >> ~CtrlFilter(1) >> ~CtrlFilter(64) >> SendOSC(samplesmainport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled', lambda ev: 20000. * pow(10, ((-log10(71/20000.))*ev.value) / 127. + log10(71/20000.))) >> Discard(),
         Filter(PROGRAM) >> SceneSwitch(),
         ],
     pre = ~Filter(PROGRAM)
