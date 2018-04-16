@@ -167,7 +167,7 @@
                 })
                 if (!sl_registered) {
                     setTimeout(ping,1000)
-                } else {
+                } else {                    
                     sendOsc({
                         address: '/sl/'+sl_range+'/register_auto_update',
                         args: [{type:'s',value:'state'}, {type:'f',value:1}, {type:'s', value:host}, {type:'s', value:'/sl_state'}],
@@ -206,17 +206,17 @@
 
             setTimeout(ping, 1000)
 
-            setTimeout(()=>{
-                var address = '/EXEC',
-                    args = [
-                        {type:'s', value: 'edit'},
-                        {type:'s', value: 'sacem_samples'},
-                        {type:'s', value: JSON.stringify({widgets:sacem_buttons})}
-                    ]
-
-                receiveOsc({address, args})
-
-            },5000)
+            // setTimeout(()=>{
+            //     var address = '/EXEC',
+            //         args = [
+            //             {type:'s', value: 'edit'},
+            //             {type:'s', value: 'sacem_samples'},
+            //             {type:'s', value: JSON.stringify({widgets:sacem_buttons})}
+            //         ]
+            //
+            //     receiveOsc({address, args})
+            //
+            // },5000)
         },
         oscInFilter: function(data){
             // Filter incomming osc messages
