@@ -67,10 +67,10 @@ connassessacem = [
 
             ]),
 
-            vxorlgars_off,
-            vxorlmeuf_on,
+            vxorlgars_on,
+            vxorlmeuf_off,
             vxorldisint_off,
-            vxorldelay_on,
+            vxorldelay_off,
             vxorlvocode_off,
 
             vxjeannotdelay_on,

@@ -28,7 +28,10 @@ zynbass1 = Output('CMEOutBass', 1)
 zynbass2 = Output('CMEOutBass', 2)
 zynbass3 = Output('CMEOutBass', 3)
 zynbass4 = Output('CMEOutBass', 4)
-zynbass5 = Output('CMEOutBass', 5)
+zynbass5 = [
+    Output('CMEOutBass', 5),
+    Output('CMEOutBass', 1),
+    ]
 zynbass6 = Output('CMEOutBass', 6)
 zynbass7 = Output('CMEOutBass', 7)
 
@@ -71,6 +74,13 @@ zynrhodes1 = Output('CMEOutRhodes', 1)
 
 tapeutape1 = ~Filter(CTRL) >> Output('CMEOutTapeutape', 1)
 
+gatecancel = [
+    SendOSC(vxorlpreport, '/strip/VxORLGars/Gate/Threshold%20(dB)/unscaled', lambda ev: -ev.value/127. * 54.0 - 48),
+    SendOSC(vxorlpreport, '/strip/VxORLMeuf/Gate/Threshold%20(dB)/unscaled', lambda ev: -ev.value/127. * 54.0 - 48),
+    ] >> Discard()
+
+
+
 run(
     scenes = {
         1: 	Scene("ZynBass 1", zynbass1),
@@ -88,7 +98,10 @@ run(
         13: Scene("zyntrebleGMandela", zyntrebleGMandela),
     },
     control = [
-        Filter(CTRL) >> ~CtrlFilter(1) >> ~CtrlFilter(64) >> SendOSC(samplesmainport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled', lambda ev: 20000. * pow(10, ((-log10(71/20000.))*ev.value) / 127. + log10(71/20000.))) >> Discard(),
+        Filter(CTRL) >> [
+            CtrlFilter(110) >>  SendOSC(samplesmainport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled', lambda ev: 20000. * pow(10, ((-log10(71/20000.))*ev.value) / 127. + log10(71/20000.))),
+            CtrlFilter(75) >> gatecancel
+        ] >> Discard(),
         Filter(PROGRAM) >> SceneSwitch(),
         ],
     pre = ~Filter(PROGRAM)

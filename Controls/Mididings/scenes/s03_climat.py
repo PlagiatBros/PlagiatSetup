@@ -180,13 +180,13 @@ climat = [
 
                 [samplestremoloport, '/strip/SamplesTremolo/Gain/Gain%20(dB)/unscaled', -6.0],
                 [samplesscapeport, '/strip/SamplesTremolo/Gain/Gain%20(dB)/unscaled', -7.50],
-                [samplestremoloport, '/strip/Samples4/Gain/Gain%20(dB)/unscaled', -18.],
+                [samplestremoloport, '/strip/Samples4/Gain/Gain%20(dB)/unscaled', -12.],
                 [samplestremoloport, '/strip/SamplesPitch/Gain/Gain%20(dB)/unscaled', 0.0],
                 [samplesscapeport, '/strip/SamplesPitch/Gain/Gain%20(dB)/unscaled', -7.50],
                 [samplespitchport, '/strip/SamplesPitch1/AM%20pitchshifter/Pitch%20shift/unscaled', 2.],
-                [samplespitchport, '/strip/SamplesPitch2/AM%20pitchshifter/Pitch%20shift/unscaled', 2.3],
+                [samplespitchport, '/strip/SamplesPitch2/AM%20pitchshifter/Pitch%20shift/unscaled', 2.],
                 [samplespitchport, '/strip/Samples4/Gain/Gain%20(dB)/unscaled', -10.6],
-                [samplesdelaymungeport, '/strip/Samples3/Gain/Gain%20(dB)/unscaled', -7.0],
+                [samplesdelaymungeport, '/strip/Samples3/Gain/Gain%20(dB)/unscaled', -40.0],
                 [samplesringmodport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -2.0],
 
             ]),

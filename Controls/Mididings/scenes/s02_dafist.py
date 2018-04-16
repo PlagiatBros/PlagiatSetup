@@ -464,17 +464,17 @@ dafist = [
         Program(71) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
-            SendOSC(slport, '/set', 'tempo', 120),
+            SendOSC(slport, '/set', 'tempo', 130),
 
-            SendOSC(klickport, '/klick/simple/set_tempo', 120),
+            SendOSC(klickport, '/klick/simple/set_tempo', 130),
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),
 
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(120)),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(120)),
-            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(120)),
-            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(130)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(130)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(130)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(130)),
 
             SendOscState([
 
@@ -518,7 +518,7 @@ dafist = [
         Ctrl(0, 0) >> tapeutapecontrol,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
-            SendOSC(slport, '/set', 'tempo', 120),
+            SendOSC(slport, '/set', 'tempo', 130),
 
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
@@ -527,19 +527,19 @@ dafist = [
             SendOSC(slport, '/sl/7/hit', 'trigger'),
             SendOSC(slport, '/sl/7/set', 'sync', 1),
 
-            SendOSC(klickport, '/klick/simple/set_tempo', 120),
+            SendOSC(klickport, '/klick/simple/set_tempo', 130),
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),
 
-            SendOSC(audioseqport, '/Audioseq/Bpm', 120),
+            SendOSC(audioseqport, '/Audioseq/Bpm', 130),
             SendOSC(audioseqport, '/Audioseq/Play', timestamp),
             SendOSC(audioseqport, '/Audioseq/Sequence/Enable', 'dafist_outro_filter'),
 
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(120)),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(120)),
-            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(120)),
-            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(130)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(130)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(130)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(130)),
 
             SendOscState([
 
