@@ -34,9 +34,16 @@ horrorcore = [
         mk2lights(horrorcore_mk2lights),
     ]),
     jeannot_padrelease >> mk2lights(horrorcore_mk2lights),
-    [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
+    orl >> ProgramFilter([range(1,12)]) >> [
         SendOSC(mk2inport, '/mididings/switch_scene', 4),
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*'),
+        SubSceneSwitch(2),
+    ] >> Discard(),
+    jeannot >> ProgramFilter([range(1,9)]) >> [
+        SendOSC(mk2inport, '/mididings/switch_scene', 4),
+        SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*'),
+    ] >> Discard(),
+    jeannot >> ProgramFilter([range(1,6)]) >> [
         SubSceneSwitch(2),
     ] >> Discard(),
     [orl, jeannot] >> ProgramFilter([range(2,12)]) >> [
