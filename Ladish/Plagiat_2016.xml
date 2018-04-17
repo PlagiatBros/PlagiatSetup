@@ -2,7 +2,7 @@
 <!--
 ladish Studio configuration.
 -->
-<!-- Mon Apr 16 16:26:19 2018 -->
+<!-- Tue Apr 17 11:38:13 2018 -->
 <studio>
   <jack>
     <conf>
@@ -260,6 +260,10 @@ ladish Studio configuration.
           <port name="VxJeannotMain/in-2" uuid="7080d500-68d1-49fc-8993-6042c1ffeb86" />
           <port name="VxJeannotMain/out-1" uuid="bd9c23b7-6520-4570-b274-03a9892138cd" />
           <port name="VxJeannotMain/out-2" uuid="a624d230-a093-4380-81e6-57674b70d458" />
+          <port name="VxJeannotVerb/in-1" uuid="3e51c972-ce26-4b1f-a4e8-061bc874c438" />
+          <port name="VxJeannotVerb/out-1" uuid="2a715d89-1300-4235-8c66-4162568ecb89" />
+          <port name="VxJeannotVerb/in-2" uuid="a76fccd6-7059-4307-82f6-de5139f86a28" />
+          <port name="VxJeannotVerb/out-2" uuid="40cdb3cb-bf90-42ed-b988-bfe5c6118dad" />
         </ports>
       </client>
       <client name="VxORLGars (NM)" uuid="398a7713-0674-4c82-9758-369c105c62c5">
@@ -946,12 +950,6 @@ ladish Studio configuration.
           <port name="out" uuid="a11c6768-dd34-486d-ba9e-02f1489c4ccc" />
         </ports>
       </client>
-      <client name="MIDIMON" uuid="ba14476a-9c87-464d-9093-42bd7f478344">
-        <ports>
-          <port name="Print" uuid="9efab682-cea4-4649-96b8-93f761c2dc27" />
-          <port name="out_1" uuid="03d76ff3-f395-468c-ba7a-37e0b2d6bafe" />
-        </ports>
-      </client>
     </clients>
   </jack>
   <clients>
@@ -1548,10 +1546,12 @@ ladish Studio configuration.
         <port name="VxORLMain/out-2" uuid="c6e1832a-862f-41c3-81e2-92397d053215" type="audio" direction="output" />
         <port name="VxJeannotMain/out-1" uuid="bd9c23b7-6520-4570-b274-03a9892138cd" type="audio" direction="output" />
         <port name="VxJeannotMain/out-2" uuid="a624d230-a093-4380-81e6-57674b70d458" type="audio" direction="output" />
+        <port name="VxJeannotVerb/out-1" uuid="2a715d89-1300-4235-8c66-4162568ecb89" type="audio" direction="output" />
+        <port name="VxJeannotVerb/out-2" uuid="40cdb3cb-bf90-42ed-b988-bfe5c6118dad" type="audio" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1483.165678</key>
-        <key name="http://ladish.org/ns/canvas/y">903.110367</key>
+        <key name="http://ladish.org/ns/canvas/x">1524.165678</key>
+        <key name="http://ladish.org/ns/canvas/y">891.110367</key>
       </dict>
     </client>
     <client name="VxMain (NM)" uuid="353c268f-d0fb-4e0e-82ec-b926b37339e4" naming="app" app="8710a376-0475-41d9-bc9c-111d3405389a">
@@ -2615,14 +2615,14 @@ ladish Studio configuration.
         <key name="http://ladish.org/ns/canvas/y">2009.000000</key>
       </dict>
     </client>
-    <client name="MIDIMON" uuid="e0260093-853b-4a7e-8ffd-5c8079fb4498" naming="app">
+    <client name="VxMain (NM)" uuid="a741ca44-2296-499e-8640-4789c1c054a7" naming="app" app="8710a376-0475-41d9-bc9c-111d3405389a">
       <ports>
-        <port name="Print" uuid="9efab682-cea4-4649-96b8-93f761c2dc27" type="midi" direction="input" />
-        <port name="out_1" uuid="03d76ff3-f395-468c-ba7a-37e0b2d6bafe" type="midi" direction="output" />
+        <port name="VxJeannotVerb/in-1" uuid="3e51c972-ce26-4b1f-a4e8-061bc874c438" type="audio" direction="input" />
+        <port name="VxJeannotVerb/in-2" uuid="a76fccd6-7059-4307-82f6-de5139f86a28" type="audio" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1647.992542</key>
-        <key name="http://ladish.org/ns/canvas/y">1193.000000</key>
+        <key name="http://ladish.org/ns/canvas/x">2268.992541</key>
+        <key name="http://ladish.org/ns/canvas/y">1737.000000</key>
       </dict>
     </client>
   </clients>
@@ -3145,7 +3145,18 @@ ladish Studio configuration.
     <connection port1="1cbcba0b-4f06-4495-a209-837b9c3453d9" port2="48604d50-23d7-469a-bbaf-1462ef73344b" />
     <connection port1="8802f7f0-6129-4d8e-ac9f-ced692aa9c97" port2="daaec82e-1603-4ee2-936e-573f397a55ac" />
     <connection port1="8802f7f0-6129-4d8e-ac9f-ced692aa9c97" port2="b1cfe7f9-3eac-4794-8e71-62cbfcef22ff" />
-    <connection port1="aaaa769d-9836-4f74-9a6c-5887da72e3fc" port2="9efab682-cea4-4649-96b8-93f761c2dc27" />
+    <connection port1="2a715d89-1300-4235-8c66-4162568ecb89" port2="e6e1d475-4a21-4da8-a880-c604a9db6ca8" />
+    <connection port1="40cdb3cb-bf90-42ed-b988-bfe5c6118dad" port2="97fe94ac-3a29-4b7f-aaa1-ea178fe15ccb" />
+    <connection port1="7f7161ba-48b2-4374-b626-bb51a193a254" port2="3e51c972-ce26-4b1f-a4e8-061bc874c438" />
+    <connection port1="a1d6eabe-eb89-45b9-88a1-3eceea045822" port2="3e51c972-ce26-4b1f-a4e8-061bc874c438" />
+    <connection port1="d3304e42-0584-4072-beaa-d22a1849da36" port2="3e51c972-ce26-4b1f-a4e8-061bc874c438" />
+    <connection port1="d3304e42-0584-4072-beaa-d22a1849da36" port2="a76fccd6-7059-4307-82f6-de5139f86a28" />
+    <connection port1="1bdd8974-aec3-49fb-b418-b8f281b303d2" port2="3e51c972-ce26-4b1f-a4e8-061bc874c438" />
+    <connection port1="da8a735e-6a78-4283-bf4b-34c4f5ea22bc" port2="3e51c972-ce26-4b1f-a4e8-061bc874c438" />
+    <connection port1="63d55c3d-c35f-4d0b-a7dd-c04e081e8368" port2="a76fccd6-7059-4307-82f6-de5139f86a28" />
+    <connection port1="7f3a676b-7b87-4158-bd40-cf28e93a55fb" port2="a76fccd6-7059-4307-82f6-de5139f86a28" />
+    <connection port1="3bccbd6b-9310-45e1-9f63-0fb0f9ffc23a" port2="a76fccd6-7059-4307-82f6-de5139f86a28" />
+    <connection port1="501c5f1a-547e-43c3-ac7d-870c3aeb61e5" port2="a76fccd6-7059-4307-82f6-de5139f86a28" />
   </connections>
   <applications>
     <application name="a2j" uuid="65bce9a0-8285-4cb3-9630-321ba19b43a4" terminal="false" level="0" autorun="true">a2j -e</application>
@@ -3193,7 +3204,7 @@ ladish Studio configuration.
     <application name="wobbleCtrl" uuid="d05dd957-12ce-4814-9733-d2df4fb92692" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_wC.sh</application>
     <application name="QLC+" uuid="6247c29f-437a-492f-bab0-2c6474f19ebb" terminal="false" level="0" autorun="true">qlcplus -p -o %2Fhome%2Fwoii%2FPlagiat%2FStage%2FLights%2Fplagiat.qxw</application>
     <application name="QLC Manager" uuid="56d9deaf-5745-47f4-b4a7-e47a25e5a3f0" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_qLC.sh</application>
-    <application name="OSC Control Surface" uuid="31ca0d05-49db-4b09-9d83-e925b9262e99" terminal="false" level="0" autorun="true">open-stage-control -l %2Fhome%2Fwoii%2FPlagiat%2FStage%2FInterfaces%2Forl.json -c %2Fhome%2Fwoii%2FPlagiat%2FStage%2FInterfaces%2Forl-custom-module.js -p 11000</application>
+    <application name="OSC Control Surface" uuid="31ca0d05-49db-4b09-9d83-e925b9262e99" terminal="false" level="0" autorun="true">open-stage-control -l %2Fhome%2Fwoii%2FPlagiat%2FStage%2FInterfaces%2Forl.json -c %2Fhome%2Fwoii%2FPlagiat%2FStage%2FInterfaces%2Forl-custom-module.js -p 11000 --fullscreen</application>
     <application name="OSC Control to MIDI" uuid="59351a7d-de17-4db2-80b0-9b56dbbf4ce6" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_gUItoMidi.sh</application>
     <application name="x42JeannotGars" uuid="da2b6ef4-2338-4619-b42b-208040e00c96" terminal="false" level="0" autorun="true">x42-fat1 --osc 7051 -p 3:0 -p 4:0.02 -p 5:1 -p 6:-4</application>
     <application name="x42JeannotMeuf" uuid="b9211739-13c0-4b17-b8d4-25afcefd893c" terminal="false" level="0" autorun="true">x42-fat1 --osc 7052 -p 3:0 -p 4:0.02 -p 5:1 -p 6:4</application>
