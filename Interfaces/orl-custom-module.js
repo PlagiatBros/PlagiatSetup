@@ -72,12 +72,14 @@
     pitch_addresses = {
         samples:'/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled',
         vxjeannot:'/strip/VxJeannotMain/AM%20pitchshifter/Pitch%20shift/unscaled',
-        vxorl:'/strip/VxORLMain/AM%20pitchshifter/Pitch%20shift/unscaled'
+        vxorl:'/strip/VxORLMain/AM%20pitchshifter/Pitch%20shift/unscaled',
+        basssynth:'/strip/BassSynth/AM%20pitchshifter/Pitch%20shift/unscaled',
     }
     pitch_ports = {
         samples:7008,
         vxjeannot:6669,
-        vxorl:6669
+        vxorl:6669,
+	basssynth:7020
     }
 
     mididings_host = '127.0.0.1'

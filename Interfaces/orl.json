@@ -383,7 +383,7 @@
                                                         "_children": "children"
                                                     },
                                                     {
-                                                        "type": "meter",
+                                                        "type": "knob",
                                                         "id": "sl_position_@{parent.variables.n}",
                                                         "label": false,
                                                         "unit": "",
@@ -399,13 +399,13 @@
                                                         "preArgs": [],
                                                         "address": "/sl_position_@{parent.variables.n}",
                                                         "linkId": "",
-                                                        "angle": 180,
+                                                        "angle": 360,
                                                         "snap": false,
                                                         "spring": false,
                                                         "precision": 2,
                                                         "target": [],
                                                         "pips": false,
-                                                        "dashed": true,
+                                                        "dashed": false,
                                                         "doubleTap": false,
                                                         "touchAddress": "",
                                                         "input": false,
@@ -2028,7 +2028,7 @@
                                                     "variables": {
                                                         "color": "cyan",
                                                         "n": 5,
-                                                        "label": "Synth Aigu POST"
+                                                        "label": "Vx Jeannot POST"
                                                     },
                                                     "id": "panel_sl_5"
                                                 }

@@ -78,7 +78,10 @@ climat = [
         ] >> Discard()
 
     ],
-    orl >> ProgramFilter(2) >> [ # preCouplet Wobble - Bouton 2
+    orl >> [ 
+        ProgramFilter(2),
+        ProgramFilter(10)
+        ] >> [ # preCouplet Wobble - Bouton 2
         Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 74),
@@ -113,7 +116,7 @@ climat = [
             vxorlgars_on,
             vxorlmeuf_off,
             vxorldisint_off,
-            vxorldelay_off,
+            vxorldelay_on,
             vxorlvocode_off,
 
             vxjeannotdelay_off,
@@ -148,6 +151,7 @@ climat = [
             bassringst_on,
             bassvibest_off,
             bassbufferst_off,
+            vxorldelay_off,
 
         ] >> Discard()
 

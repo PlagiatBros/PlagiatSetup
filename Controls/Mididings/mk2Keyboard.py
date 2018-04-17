@@ -52,6 +52,7 @@ pitch = Filter(PITCHBEND) >> [
     SendOSC(vxmainport, '/strip/VxORLMain/AM%20pitchshifter/Pitch%20shift/unscaled', 		lambda ev: 1 - (abs(ev.value) / (8191.0)) * 0.75),
     SendOSC(vxmainport, '/strip/VxJeannotMain/AM%20pitchshifter/Pitch%20shift/unscaled',  	lambda ev: 1 - (abs(ev.value) / (8191.0)) * 0.75),
     SendOSC(bassmainport, '/strip/BassMain/AM%20pitchshifter/Pitch%20shift/unscaled',  	 	lambda ev: 1 - (abs(ev.value) / (8191.0)) * 0.75),
+    SendOSC(bassmainport, '/strip/BassSynth/AM%20pitchshifter/Pitch%20shift/unscaled',  	lambda ev: 1 - (abs(ev.value) / (8191.0)) * 0.75),
 ]  >> Discard()
 
 samples_mute = Filter(NOTE) >> [

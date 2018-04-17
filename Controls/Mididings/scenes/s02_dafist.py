@@ -465,6 +465,7 @@ dafist = [
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 130),
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 130),
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
