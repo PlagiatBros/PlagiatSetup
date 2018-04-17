@@ -151,7 +151,11 @@ climat = [
             bassringst_on,
             bassvibest_off,
             bassbufferst_off,
+
             vxorldelay_off,
+
+
+	    vxjeannotverb_on,
 
         ] >> Discard()
 

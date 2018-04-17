@@ -138,6 +138,8 @@ vxorlvocode_off= [
 vxjeannotmeuf_on = [
     SendOSC(vxjeannotpreport, '/strip/VxJeannotMeuf/Gain/Mute', 0.0),
     SendOSC(vxjeannotpostport, '/strip/VxJeannotMeufPost/Gain/Mute', 0.0),
+    SendOSC(vxmainport, '/strip/VxJeannotVerb/Gain/Mute', 1.0),
+    SendOSC(vxmainport, '/strip/VxJeannotMain/Gain/Mute', 0.0),
     ] >> Discard()
 
 vxjeannotmeuf_off = [
@@ -149,6 +151,8 @@ vxjeannotmeuf_off = [
 vxjeannotgars_on = [
     SendOSC(vxjeannotpreport, '/strip/VxJeannotGars/Gain/Mute', 0.0),
     SendOSC(vxjeannotpostport, '/strip/VxJeannotGarsPost/Gain/Mute', 0.0),
+    SendOSC(vxmainport, '/strip/VxJeannotVerb/Gain/Mute', 1.0),
+    SendOSC(vxmainport, '/strip/VxJeannotMain/Gain/Mute', 0.0),
     ] >> Discard()
 
 vxjeannotgars_off = [
@@ -160,6 +164,8 @@ vxjeannotgars_off = [
 vxjeannotdisint_on = [
     SendOSC(vxjeannotpreport, '/strip/VxJeannotDisint/Gain/Mute', 0.0),
     SendOSC(vxjeannotpostport, '/strip/VxJeannotDisintPost/Gain/Mute', 0.0),
+    SendOSC(vxmainport, '/strip/VxJeannotVerb/Gain/Mute', 1.0),
+    SendOSC(vxmainport, '/strip/VxJeannotMain/Gain/Mute', 0.0),
     ] >> Discard()
 
 vxjeannotdisint_off = [
@@ -171,6 +177,8 @@ vxjeannotdisint_off = [
 vxjeannotdelay_on = [
     SendOSC(vxjeannotpreport, '/strip/VxJeannotDelayPre/Gain/Mute', 0.0),
     SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/Gain/Mute', 0.0),
+    SendOSC(vxmainport, '/strip/VxJeannotVerb/Gain/Mute', 1.0),
+    SendOSC(vxmainport, '/strip/VxJeannotMain/Gain/Mute', 0.0),
     ] >> Discard()
 
 vxjeannotdelay_off = [
@@ -182,10 +190,18 @@ vxjeannotdelay_off = [
 vxjeannotvocode_on= [
     SendOSC(vxjeannotpreport, '/strip/VxJeannotMeuf/Gain/Mute', 0.0),
     SendOSC(vxjeannotpostport, '/strip/VxJeannotVocodePost/Gain/Mute', 0.0),
+    SendOSC(vxmainport, '/strip/VxJeannotVerb/Gain/Mute', 1.0),
+    SendOSC(vxmainport, '/strip/VxJeannotMain/Gain/Mute', 0.0),
     # SendOSC(vxjeannotmeufport, '/strip/VxJeannotVocod/AM%20pitchshifter/Pitch%20shift/unscaled', 1.0),
     ] >> Discard()
 vxjeannotvocode_off= [
     SendOSC(vxjeannotpostport, '/strip/VxJeannotVocodePost/Gain/Mute', 1.0),
+    ] >> Discard()
+
+# VxJeannotVerb (pas de off, desactivé par défaut sur les autres _on)
+vxjeannotverb_on = [
+    SendOSC(vxmainport, '/strip/VxJeannotVerb/Gain/Mute', 0.0),
+    SendOSC(vxmainport, '/strip/VxJeannotMain/Gain/Mute', 1.0),
     ] >> Discard()
 
 
