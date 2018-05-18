@@ -18,7 +18,7 @@ fifty = [
         # zynmicrotonal_off,
 
         SendOSC(mk2inport, '/mididings/switch_scene', 1),
-        mk2lights([1,2,3,4,5,6,8]),
+        mk2lights([1,5,8]),
         ]),
     jeannot_padrelease >> mk2lights([1,2,3,4,5,6,8]),
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
@@ -76,13 +76,12 @@ fifty = [
 
             ] >> Discard()
         ],
-    orl >> ProgramFilter(3) >> [ # Intro (bouclage basse, cycle complet) - Bouton 3
+    orl >> ProgramFilter(3) >> [ # Intro stagiaire - Bouton 3
         Program(66) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 64),
             SendOSC(slport, '/set', 'tempo', 117),
-            SendOSC(slport, '/sl/[2-8]/hit', 'pause_on'),
-            SendOSC(slport, '/sl/0/hit', 'pause_on'),
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 117),
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
@@ -189,8 +188,7 @@ fifty = [
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 64),
             SendOSC(slport, '/set', 'tempo', 117),
-            SendOSC(slport, '/sl/[2-8]/hit', 'pause_on'),
-            SendOSC(slport, '/sl/0/hit', 'pause_on'),
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
 
             SendOSC(audioseqport, '/Audioseq/Scene/Stop', '*'),
@@ -287,71 +285,71 @@ fifty = [
             bassbufferst_off,
             ]
         ],
-    orl >> ProgramFilter(7) >> [ # Refrain - Bouton 7
-        Program(69) >> cseqtrigger,
-        [
-            SendOSC(audioseqport, '/Audioseq/Scene/Stop', '*'),
-            SendOSC(audioseqport, '/Audioseq/Bpm', 117),
-            SendOSC(audioseqport, '/Audioseq/Play', timestamp),
-            SendOSC(audioseqport, '/Audioseq/Sequence/Enable', 'fifty_refrain_cutdown'),
-
-            SendOSC(slport, '/set', 'eighth_per_cycle', 8), # bolos c du 3/4
-            SendOSC(slport, '/set', 'tempo', 117),
-            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
-
-            SendOSC(klickport, '/klick/simple/set_tempo', 117),
-            SendOSC(klickport, '/klick/simple/set_meter', 3, 4),
-            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxx'),
-            SendOSC(klickport, '/klick/metro/start'),
-
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(117)),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(117)),
-            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(117)),
-            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(117)),
-
-            SendOscState([
-
-                [samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0],
-
-            ]),
-
-            vxorlgars_on,
-            vxorlmeuf_off,
-            vxorldisint_off,
-            vxorldelay_off,
-            vxorlvocode_off,
-
-            vxjeannotdelay_off,
-            vxjeannotgars_on,
-            vxjeannotmeuf_off,
-            vxjeannotdisint_off,
-            vxjeannotvocode_off,
-
-            bassdry,
-
-            ] >> Discard(),
-        [
-            bassdetunest_on,
-            bassringst_on,
-            bassvibest_off,
-            bassbufferst_off,
-            ]
-        ],
-    jeannot >> ProgramFilter(2) >> [ # boucle rationnelle
-        SendOSC(56418, '/pedalBoard/button', 4),
-    ],
-    jeannot >> ProgramFilter(3) >> [ # couplet auto
-        SendOSC(56418, '/pedalBoard/button', 2),
-        SendOSC(audioseqport, '/Audioseq/Bpm', 117),
-        SendOSC(audioseqport, '/Audioseq/Scene/Play', 'fifty_couplet_auto', timestamp),
-    ],
-    jeannot >> ProgramFilter(4) >> [ # refrain auto
-        SendOSC(56418, '/pedalBoard/button', 6),
-    ],
-    jeannot >> ProgramFilter(5) >> [ # refrain direct
-        SendOSC(56418, '/pedalBoard/button', 7),
-    ],
-    jeannot >> ProgramFilter(6) >> [ # shut your dickhole -> Le5
+    # orl >> ProgramFilter(7) >> [ # Refrain - Bouton 7
+    #     Program(69) >> cseqtrigger,
+    #     [
+    #         SendOSC(audioseqport, '/Audioseq/Scene/Stop', '*'),
+    #         SendOSC(audioseqport, '/Audioseq/Bpm', 117),
+    #         SendOSC(audioseqport, '/Audioseq/Play', timestamp),
+    #         SendOSC(audioseqport, '/Audioseq/Sequence/Enable', 'fifty_refrain_cutdown'),
+    #
+    #         SendOSC(slport, '/set', 'eighth_per_cycle', 8), # bolos c du 3/4
+    #         SendOSC(slport, '/set', 'tempo', 117),
+    #         SendOSC(slport, '/sl/-1/hit', 'pause_on'),
+    #
+    #         SendOSC(klickport, '/klick/simple/set_tempo', 117),
+    #         SendOSC(klickport, '/klick/simple/set_meter', 3, 4),
+    #         SendOSC(klickport, '/klick/simple/set_pattern', 'Xxx'),
+    #         SendOSC(klickport, '/klick/metro/start'),
+    #
+    #         SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(117)),
+    #         SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(117)),
+    #         SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(117)),
+    #         SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(117)),
+    #
+    #         SendOscState([
+    #
+    #             [samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0],
+    #
+    #         ]),
+    #
+    #         vxorlgars_on,
+    #         vxorlmeuf_off,
+    #         vxorldisint_off,
+    #         vxorldelay_off,
+    #         vxorlvocode_off,
+    #
+    #         vxjeannotdelay_off,
+    #         vxjeannotgars_on,
+    #         vxjeannotmeuf_off,
+    #         vxjeannotdisint_off,
+    #         vxjeannotvocode_off,
+    #
+    #         bassdry,
+    #
+    #         ] >> Discard(),
+    #     [
+    #         bassdetunest_on,
+    #         bassringst_on,
+    #         bassvibest_off,
+    #         bassbufferst_off,
+    #         ]
+    #     ],
+    # jeannot >> ProgramFilter(2) >> [ # boucle rationnelle
+    #     SendOSC(56418, '/pedalBoard/button', 4),
+    # ],
+    # jeannot >> ProgramFilter(3) >> [ # couplet auto
+    #     SendOSC(56418, '/pedalBoard/button', 2),
+    #     SendOSC(audioseqport, '/Audioseq/Bpm', 117),
+    #     SendOSC(audioseqport, '/Audioseq/Scene/Play', 'fifty_couplet_auto', timestamp),
+    # ],
+    # jeannot >> ProgramFilter(4) >> [ # refrain auto
+    #     SendOSC(56418, '/pedalBoard/button', 6),
+    # ],
+    # jeannot >> ProgramFilter(5) >> [ # refrain direct
+    #     SendOSC(56418, '/pedalBoard/button', 7),
+    # ],
+    jeannot >> ProgramFilter(5) >> [ # shut your dickhole -> Le5
         SceneSwitch(5) >> Discard(),
         Ctrl(102, 127) >> Output('Mk2CtrlOut', 1)
         ],
