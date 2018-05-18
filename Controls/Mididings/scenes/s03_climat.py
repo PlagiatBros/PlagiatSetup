@@ -275,6 +275,8 @@ climat = [
             vxjeannotdisint_off,
             vxjeannotvocode_off,
 
+            vxjeannotverb_on,
+
             bassdry,
             bassscape,
 
