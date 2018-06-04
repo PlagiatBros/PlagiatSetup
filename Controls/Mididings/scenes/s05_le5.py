@@ -437,7 +437,7 @@ le5 = [
         Program(73) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
-            SendOSC(slport, '/set', 'tempo', 60),
+            SendOSC(slport, '/set', 'tempo', 120),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 60),
             SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
@@ -467,7 +467,7 @@ le5 = [
 
             ] >> Discard()
         ],
-    orl >> ProgramFilter(8) >> [ # Bouclage rhodes  - Bouton 7
+    orl >> ProgramFilter(8) >> [ # Bouclage rhodes  - Bouton 8
             SendOSC(slport, '/sl/8/hit', 'record'),
         ],
     jeannot >> ProgramFilter(5) >> [ # gros ragga (coupure cloud rap let's party) - bouton 5
@@ -519,7 +519,7 @@ le5 = [
             bassbufferst_off,
             ]
     ],
-    orl >> ProgramFilter(9) >> [ # Instouboul sans batterie - Bouton 8
+    orl >> ProgramFilter(9) >> [ # Instouboul sans batterie - Bouton 9
         Program(76) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),

@@ -478,6 +478,10 @@ dafist = [
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(130)),
 
             SendOscState([
+                [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/Samples5Dry/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/SamplesScape/Gain/Mute', 0.0],
 
                 [samplesscapeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -5.0],
 
