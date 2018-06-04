@@ -437,7 +437,7 @@ le5 = [
         Program(73) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
-            SendOSC(slport, '/set', 'tempo', 120),
+            SendOSC(slport, '/set', 'tempo', 60),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 60),
             SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
