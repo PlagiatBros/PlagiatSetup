@@ -8,6 +8,14 @@ from mididings.extra.osc import SendOSC
 
 #######################################
 
+fifty_mk2lights = {
+    1:'blue',
+    4:'yellow',
+    5:'yellow',
+    6:'yellow',
+    8:'red',
+}
+
 #### Fifty ####
 fifty = [
     Init([
@@ -18,9 +26,9 @@ fifty = [
         # zynmicrotonal_off,
 
         SendOSC(mk2inport, '/mididings/switch_scene', 1),
-        mk2lights([1,5,8]),
+        mk2lights(fifty_mk2lights),
         ]),
-    jeannot_padrelease >> mk2lights([1,2,3,4,5,6,8]),
+    jeannot_padrelease >> mk2lights(fifty_mk2lights),
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
@@ -349,10 +357,34 @@ fifty = [
     # jeannot >> ProgramFilter(5) >> [ # refrain direct
     #     SendOSC(56418, '/pedalBoard/button', 7),
     # ],
-    jeannot >> ProgramFilter(5) >> [ # shut your dickhole -> Le5
-        SceneSwitch(5) >> Discard(),
+    orl >> ProgramFilter(11) >> [ # SceneSwitch -> climat (bouton jeannot 2)
+        stop,
+        SendOSC(audioseqport, '/Audioseq/Scene/Play', 'dafist_outro_filter_reset', timestamp) >> Discard(),
+        SceneSwitch(3) >> Discard(),
         Ctrl(102, 127) >> Output('Mk2CtrlOut', 1)
         ],
+
+    jeannot >> ProgramFilter(4) >> [ # Vx jeannot
+        vxjeannotdelay_off,
+        vxjeannotgars_on,
+        vxjeannotmeuf_off,
+        vxjeannotdisint_off,
+        vxjeannotvocode_off,
+    ] >> Discard(),
+    jeannot >> ProgramFilter(5) >> [ # Vx jeannot
+        vxjeannotgars_off,
+        vxjeannotmeuf_on,
+        vxjeannotdisint_off,
+        vxjeannotdelay_off,
+        vxjeannotvocode_off,
+    ] >> Discard(),
+    jeannot >> ProgramFilter(6) >> [ # Vx jeannot
+        vxjeannotgars_off,
+        vxjeannotmeuf_off,
+        vxjeannotdisint_off,
+        vxjeannotdelay_off,
+        vxjeannotvocode_on,
+    ] >> Discard(),
 
     jeannot >> ProgramFilter(8) >> SendOSC(trapcutport, '/Trapcut/Scene/Play', 'I') >> Discard(),
 

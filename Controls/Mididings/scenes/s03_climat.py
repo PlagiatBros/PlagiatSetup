@@ -78,7 +78,7 @@ climat = [
         ] >> Discard()
 
     ],
-    orl >> [ 
+    orl >> [
         ProgramFilter(2),
         ProgramFilter(10)
         ] >> [ # preCouplet Wobble - Bouton 2
@@ -343,14 +343,12 @@ climat = [
             bassbufferst_off,
             ]
         ],
+
+    jeannot >> ProgramFilter(5) >> [ # shut your dickhole -> Le5
+        SceneSwitch(5) >> Discard(),
+        Ctrl(102, 127) >> Output('Mk2CtrlOut', 1)
+    ],
+
     jeannot >> ProgramFilter(8) >> SendOSC(trapcutport, '/Trapcut/Scene/Play', 'IIII') >> Discard(),
-    orl >> ProgramFilter(11) >> [ # Passage vers Fifty - Bouton 11
-        SceneSwitch(4) >> Discard(),
-        Program(2) >> Output('PBCtrlOut', 1),
-        SendOSC(audioseqport, '/Audioseq/Bpm', 117),
-        SendOSC(audioseqport, '/Audioseq/Scene/Play', 'fifty_intro', timestamp),
-
-
-        ],
 
     ]

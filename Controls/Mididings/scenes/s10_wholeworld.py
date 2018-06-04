@@ -8,6 +8,16 @@ from mididings.extra.osc import SendOSC
 
 #######################################
 
+
+wholeworld_mk2lights = {
+    1:'blue',
+    2:'purple',
+    6:'yellow',
+    7:'yellow',
+    8:'yellow',
+}
+
+
 #### Whole World ####
 wholeworld = [
     Init([
@@ -19,9 +29,9 @@ wholeworld = [
         # zynmicrotonal_on,
         # SendOSC(zyntrebleport, '/microtonal/tunings', '135.0\n200.0\n300.0\n400.0\n500.0\n635.0\n700.0\n800.0\n900.0\n1000.0\n1100.0\n2/1'),
 
-        mk2lights([1,2]),
+        mk2lights(wholeworld_mk2lights),
     ]),
-    jeannot_padrelease >> mk2lights([1,2]),
+    jeannot_padrelease >> mk2lights(wholeworld_mk2lights),
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
@@ -59,15 +69,15 @@ wholeworld = [
 
             ]),
 
-            vxorlgars_off,
-            vxorlmeuf_on,
+            vxorlgars_on,
+            vxorlmeuf_off,
             vxorldisint_off,
             vxorldelay_off,
             vxorlvocode_off,
 
             vxjeannotdelay_off,
-            vxjeannotgars_off,
-            vxjeannotmeuf_on,
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
             bassdry,
@@ -232,4 +242,29 @@ wholeworld = [
     orl >> ProgramFilter(7) >> [ # Overdub synths - bouton 7
         SendOSC(slport, '/sl/7/hit', 'overdub')
         ] >> Discard(),
-    ]
+    orl >> ProgramFilter(11) >> [ # SceneSwitch -> Dafist
+        SceneSwitch(2) >> Discard(),
+        Program(3) >> Output('PBCtrlOut', 1)
+    ],
+    jeannot >> ProgramFilter(6) >> [ # Vx jeannot
+        vxjeannotdelay_off,
+        vxjeannotgars_on,
+        vxjeannotmeuf_off,
+        vxjeannotdisint_off,
+        vxjeannotvocode_off,
+    ] >> Discard(),
+    jeannot >> ProgramFilter(7) >> [ # Vx jeannot
+        vxjeannotgars_off,
+        vxjeannotmeuf_on,
+        vxjeannotdisint_off,
+        vxjeannotdelay_off,
+        vxjeannotvocode_off,
+    ] >> Discard(),
+    jeannot >> ProgramFilter(8) >> [ # Vx jeannot
+        vxjeannotgars_off,
+        vxjeannotmeuf_off,
+        vxjeannotdisint_off,
+        vxjeannotdelay_off,
+        vxjeannotvocode_on,
+    ] >> Discard(),
+]

@@ -20,9 +20,9 @@ dafist = [
         # SendOSC(zyntrebleport, '/microtonal/tunings', '135.0\n200.0\n300.0\n400.0\n500.0\n600.0\n700.0\n835.0\n900.0\n1000.0\n1135.0\n2/1'),
 
         SendOSC(mk2inport, '/mididings/switch_scene', 1),
-        mk2lights([1,2,3,4]),
+        mk2lights([1,2,3,6]),
         ]),
-    jeannot_padrelease >> mk2lights([1,2,3,4]),
+    jeannot_padrelease >> mk2lights([1,2,3,6]),
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
@@ -518,7 +518,7 @@ dafist = [
     orl >> ProgramFilter(10) >> [ # sl 7 overdub
         SendOSC(slport, '/sl/7/hit', 'overdub')
         ] >> Discard(),
-    jeannot >> ProgramFilter(4) >> [ # RELANCE Transe goa - Bouton 9
+    jeannot >> ProgramFilter(6) >> [ # RELANCE Transe goa - Bouton 9
         # Program(71) >> cseqtrigger,
         Ctrl(0, 0) >> tapeutapecontrol,
         [
@@ -589,10 +589,13 @@ dafist = [
             bassbufferst_off,
             ]
         ],
-    orl >> ProgramFilter(11) >> [ # SceneSwitch -> climat (bouton jeannot 2)
-        stop,
-        SendOSC(audioseqport, '/Audioseq/Scene/Play', 'dafist_outro_filter_reset', timestamp) >> Discard(),
-        SceneSwitch(3) >> Discard(),
-        Ctrl(102, 127) >> Output('Mk2CtrlOut', 1)
+        orl >> ProgramFilter(11) >> [ # Passage vers Fifty - Bouton 11
+            SceneSwitch(4) >> Discard(),
+            Program(2) >> Output('PBCtrlOut', 1),
+            SendOSC(audioseqport, '/Audioseq/Bpm', 117),
+            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'fifty_intro', timestamp),
+
+
         ],
+
     ]

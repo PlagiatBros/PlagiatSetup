@@ -614,8 +614,12 @@ le5 = [
             ] >> Discard()
         ],
     jeannot >> ProgramFilter(8) >> SendOSC(trapcutport, '/Trapcut/Scene/Play', 'IIII') >> Discard(),
-    orl >> ProgramFilter(11) >> [
-        SceneSwitch(6) >> Discard(),
+    # orl >> ProgramFilter(11) >> [ # trapone (disabled)
+    #     SceneSwitch(6) >> Discard(),
+    #     Program(2) >> Output('PBCtrlOut', 1)
+    #     ],
+    orl >> ProgramFilter(11) >> [ # SW
+        SceneSwitch(7) >> Discard(),
         Program(2) >> Output('PBCtrlOut', 1)
         ],
 

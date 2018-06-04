@@ -296,5 +296,9 @@ sw = [
             ] >> Discard()
         ],
 
+    orl >> ProgramFilter(11) >> [ # SlowMotium
+        SceneSwitch(8) >> Discard(),
+        Program(2) >> Output('PBCtrlOut', 1)
+        ],
 
     ]
