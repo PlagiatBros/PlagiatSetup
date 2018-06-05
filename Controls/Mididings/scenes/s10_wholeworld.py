@@ -174,8 +174,8 @@ wholeworld = [
 
             SendOSC(cmeinport, '/mididings/switch_scene', 5),
 
-            vxorlgars_off,
-            vxorlmeuf_on,
+            vxorlgars_on,
+            vxorlmeuf_off,
             vxorldisint_off,
             vxorldelay_on,
             vxorlvocode_off,
