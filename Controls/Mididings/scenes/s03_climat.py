@@ -8,6 +8,14 @@ from mididings.extra.osc import SendOSC
 
 #######################################
 
+climat_mk2lights = {
+    1:'blue',
+    2:'purple',
+    3:'purple',
+    4:'purple',
+    6:'white',
+    8:'red',
+}
 
 #### Climat ####
 climat = [
@@ -21,9 +29,9 @@ climat = [
         # SendOSC(zyntrebleport, '/microtonal/tunings', '135.0\n200.0\n300.0\n400.0\n500.0\n600.0\n700.0\n835.0\n900.0\n1000.0\n1135.0\n2/1'),
 
         SendOSC(mk2inport, '/mididings/switch_scene', 1),
-        mk2lights([1,2,4,6,8]),
+        mk2lights(climat_mk2lights),
     ]),
-    jeannot_padrelease >> mk2lights([1,2,4,6,8]),
+    jeannot_padrelease >> mk2lights(climat_mk2lights),
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
@@ -140,7 +148,7 @@ climat = [
             ]
 
         ],
-    jeannot >> ProgramFilter(4) >> [ # Couplet sans wobble - bouton 3
+    jeannot >> ProgramFilter(3) >> [ # Couplet sans wobble - bouton 3
         #TODO arreter seq-wobble (à priori bassdry suffit)
         Program(6) >> seq24once,
         Program(4) >> seq24once,
@@ -160,7 +168,7 @@ climat = [
         ] >> Discard()
 
     ],
-    jeannot >> ProgramFilter(6) >> [ # Refrain - Bouton 4
+    jeannot >> ProgramFilter(4) >> [ # Refrain - Bouton 4
         Program(66) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 74),
@@ -344,11 +352,11 @@ climat = [
             ]
         ],
 
-    jeannot >> ProgramFilter(5) >> [ # shut your dickhole -> Le5
+    jeannot >> ProgramFilter(6) >> [ # shut your dickhole -> Le5
         SceneSwitch(5) >> Discard(),
         Ctrl(102, 127) >> Output('Mk2CtrlOut', 1)
     ],
 
-    jeannot >> ProgramFilter(8) >> SendOSC(trapcutport, '/Trapcut/Scene/Play', 'IIII') >> Discard(),
+    jeannot >> ProgramFilter(8) >> SendOSC(trapcutport, '/Trapcut/Scene/Play', 'I') >> Discard(),
 
     ]

@@ -151,6 +151,12 @@ wholeworld = [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),
 
+
+            SendOSC(audioseqport, '/Audioseq/Scene/Stop', '*'),
+            SendOSC(audioseqport, '/Audioseq/Bpm', 90),
+            SendOSC(audioseqport, '/Audioseq/Play', timestamp),
+            SendOSC(audioseqport, '/Audioseq/Sequence/Enable', 'wholeworld_refrain'),
+
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(90)),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(90)),
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(90)),

@@ -450,6 +450,8 @@ le5 = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(60)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(60)),
 
+            SendOSC(monitorsjeannotport, '/strip/Klick/Gain/Mute', 1.0),
+
             ] >> Discard(),
         [
 
@@ -613,7 +615,7 @@ le5 = [
 
             ] >> Discard()
         ],
-    jeannot >> ProgramFilter(8) >> SendOSC(trapcutport, '/Trapcut/Scene/Play', 'IIII') >> Discard(),
+    jeannot >> ProgramFilter(8) >> SendOSC(trapcutport, '/Trapcut/Scene/Play', 'I') >> Discard(),
     # orl >> ProgramFilter(11) >> [ # trapone (disabled)
     #     SceneSwitch(6) >> Discard(),
     #     Program(2) >> Output('PBCtrlOut', 1)
