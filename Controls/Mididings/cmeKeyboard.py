@@ -44,7 +44,7 @@ zyntreble1 = [
 
 ]
 
-zyntreble2 = [ 
+zyntreble2 = [
     [
         ~Filter(CTRL),
         CtrlFilter(1),
@@ -73,12 +73,12 @@ zyntrebleGMandela = ~Filter(CTRL) >> [
 zynrhodes1 = Output('CMEOutRhodes', 1)
 
 tapeutape1 = ~Filter(CTRL) >> Output('CMEOutTapeutape', 1)
+tapeutape16 = ~Filter(CTRL) >> Output('CMEOutTapeutape', 16)
 
 gatecancel = [
     SendOSC(vxorlpreport, '/strip/VxORLGars/Gate/Threshold%20(dB)/unscaled', lambda ev: -ev.value/127. * 54.0 - 48),
     SendOSC(vxorlpreport, '/strip/VxORLMeuf/Gate/Threshold%20(dB)/unscaled', lambda ev: -ev.value/127. * 54.0 - 48),
     ] >> Discard()
-
 
 
 run(
@@ -100,8 +100,16 @@ run(
     control = [
         Filter(CTRL) >> [
             CtrlFilter(110) >>  SendOSC(samplesmainport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled', lambda ev: 20000. * pow(10, ((-log10(71/20000.))*ev.value) / 127. + log10(71/20000.))),
-            CtrlFilter(75) >> gatecancel
+            CtrlFilter(75) >> gatecancel,
         ] >> Discard(),
+        Filter(CTRL) >> [
+            CtrlFilter(107) >> CtrlValueSplit(64, NoteOff(60), [NoteOff(60), NoteOn(60, 127)]) >> tapeutape16,
+            CtrlFilter(108) >> CtrlValueSplit(64, NoteOff(61), [NoteOff(61), NoteOn(61, 127)]) >> tapeutape16,
+            CtrlFilter(109) >> CtrlValueSplit(64, NoteOff(62), [NoteOff(62), NoteOn(62, 127)]) >> tapeutape16,
+            CtrlFilter(80) >> CtrlValueSplit(64, NoteOff(63), [NoteOff(63), NoteOn(63, 127)]) >> tapeutape16,
+            CtrlFilter(16) >> CtrlValueSplit(64, NoteOff(59), [NoteOff(59), NoteOn(59, 127)]) >> tapeutape1,
+            CtrlFilter(18) >> CtrlValueSplit(64, NoteOff(58), [NoteOff(58), NoteOn(58, 127)]) >> tapeutape1,
+        ],
         Filter(PROGRAM) >> SceneSwitch(),
         ],
     pre = ~Filter(PROGRAM)

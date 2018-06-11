@@ -26,11 +26,11 @@ hook(
 )
 
 gatecancel = Filter(CTRL) >> [
-	CtrlFilter(41,64) >> [
+	CtrlFilter(41) >> [
 	    SendOSC(vxjeannotpreport, '/strip/VxJeannotGars/Gate/Threshold%20(dB)/unscaled', lambda ev: -ev.value/127 * 54.0 - 24),
 	    SendOSC(vxjeannotpreport, '/strip/VxJeannotMeuf/Gate/Threshold%20(dB)/unscaled', lambda ev: -ev.value/127 * 54.0 - 24),
     ],
-	CtrlFilter(42,65) >> [
+        CtrlFilter(42) >> [
 	    SendOSC(monitorsjeannotport, '/strip/Klick/Gain/Mute', lambda ev: ev.value/127.),
 	    SendOSC(monitorsjeannotport, '/strip/Klick/Gain/Mute', lambda ev: ev.value/127.),
     ]
