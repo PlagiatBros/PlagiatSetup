@@ -20,17 +20,17 @@ def intro_respect(sequencer, timer):
         sequencer.send(port, '/pyta/text', 0, 'RESPECT')
 
 def intro_urinoir(sequencer, timer):
-    timer.wait(2, 's')
+    timer.wait(3.5, 's')
     sequencer.send(rpijardinport, '/pyta/text/strobe', 0, 1, 2, 0.3)
     sequencer.send(rpicourport, '/pyta/text/strobe', 0, 1, 2, .4)
     timer.wait(0.4, 's')
-    sequencer.send(rpijardinport, '/pyta/text/strobe', 0, 1, 6, 0.8)
-    sequencer.send(rpicourport, '/pyta/text/strobe', 0, 1, 4, .7)
-    timer.wait(2, 's')
+    sequencer.send(rpijardinport, '/pyta/text/strobe', 0, 1, 12, 0.1)
+    sequencer.send(rpicourport, '/pyta/text/strobe', 0, 1, 14, .2)
+    timer.wait(3.5, 's')
     sequencer.send(rpijardinport, '/pyta/text/strobe', 0, 1, 2, 0.5)
     sequencer.send(rpicourport, '/pyta/text/strobe', 0, 1, 2, .5)
 
-    timer.wait(2, 's')
+    timer.wait(0.5, 's')
 
     sequencer.send(56418, '/pedalBoard/button', 8)
 
@@ -47,7 +47,7 @@ def intro_plagiat(sequencer, timer):
     sequencer.send(rpijardinport, '/pyta/text/strobe', 2, 0)
     sequencer.send(rpicourport, '/pyta/text/strobe', 2, 0)
 
-    timer.wait(2, 's')
+    timer.wait(2.5, 's')
     for port in [rpijardinport, rpicourport]:
         sequencer.send(port, '/pyta/text/visible', 3, 1)
         sequencer.send(port, '/pyta/text/size', 3, 0.08)
@@ -113,9 +113,10 @@ def wholeworld_refrain_rough(sequencer, timer):
     pi = ''
     for port in [rpijardinport, rpicourport]:
         sequencer.send(port, '/pyta/slide/alpha', _dark_eyes, 0)
-        sequencer.send(port, '/pyta/slide/rgb', _mutt_imgs_str, 1.0, 0, 0)
-        sequencer.send(port, '/pyta/slide/animate', _mutt_imgs_str, 'scale_x', 200, 800, 0.3)
-        sequencer.send(port, '/pyta/slide/animate', _mutt_imgs_str, 'scale_y', 150, 600, 0.3)
+        sequencer.send(port, '/pyta/slide/rgb', _mutt_imgs_str, 1.0, 0.3, 0.3)
+        sequencer.send(port, '/pyta/slide/position_z', _mutt_imgs_str, -1)
+        sequencer.send(port, '/pyta/slide/animate', _mutt_imgs_str, 'scale_x', 200, 1000, 0.3)
+        sequencer.send(port, '/pyta/slide/animate', _mutt_imgs_str, 'scale_y', 150, 800, 0.3)
     for i in _mutt_imgs:
         for port in [rpijardinport, rpicourport]:
             if pi:
@@ -128,6 +129,7 @@ def wholeworld_refrain_rough(sequencer, timer):
 def wholeworld_refrain_snapshat(sequencer, timer):
 
     for port in [rpijardinport, rpicourport]:
+        sequencer.send(port, '/pyta/slide/alpha', _dark_eyes, 0)
         sequencer.send(port, '/pyta/text', 3, '?')
         sequencer.send(port, '/pyta/text/rgb', 3, 255, 255, 255)
         sequencer.send(port, '/pyta/text/size', 3, 0.5)
@@ -138,6 +140,7 @@ def wholeworld_refrain_snapshat(sequencer, timer):
     timer.wait(1.5, 'beats')
 
     for port in [rpijardinport, rpicourport]:
+        sequencer.send(port, '/pyta/slide/alpha', _dark_eyes, 1)
         sequencer.send(port, '/pyta/text/visible', 3, 0)
 
 
@@ -178,12 +181,12 @@ def wholeworld_one_sheet(sequencer, timer):
     for port in [rpijardinport, rpicourport]:
         sequencer.send(port, '/pyta/text', 3, '::')
         sequencer.send(port, '/pyta/text/rotate_z', 3, 0)
-        sequencer.send(port, '/pyta/text/size', 3, 0.35)
+        sequencer.send(port, '/pyta/text/size', 3, 0.4)
         sequencer.send(port, '/pyta/text/rgb', 3, 255, 0, 180)
         sequencer.send(port, '/pyta/text/align', 3, 'center', 'center')
         sequencer.send(port, '/pyta/text/visible', 3, 1)
 
-    for i in range(1,8):
+    for i in range(1,4):
         for port in [rpijardinport, rpicourport]:
-            sequencer.send(port, '/pyta/text/strobe', 3, 1, 128 / (i*i) , 0.5)
-        timer.wait(0.5, 'b')
+            sequencer.send(port, '/pyta/text/strobe', 3, 1, 16 / (i*2) , 0.5)
+        timer.wait(1, 'b')

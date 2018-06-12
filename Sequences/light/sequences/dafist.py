@@ -1,6 +1,9 @@
 import sys
 sys.path.append("../Controls/Mididings/")
 
+from random import randint
+
+
 from ports import *
 
 dafist_clignotage = [
@@ -32,16 +35,26 @@ dafist_themerefrain_clignotagestrob = [
 
 ]
 
+def _on():
+    return [
+        ['/pyta/slide/visible', 'GoatEye_10', 1],
+        ['/pyta/slide/animate', 'GoatEye_10', 'scale_'+ ('y' if randint(0,1) else 'x'), 350, 800, 0.1 ],
+    ]
+
+_off = [
+    ['/pyta/slide/visible', 'GoatEye_10', 0],
+    ['/pyta/slide/scale_x', 'GoatEye_10', 350],
+    ['/pyta/slide/scale_y', 'GoatEye_10', 350],
+]
+
 dafist_refrain = [
+    (_on(), _off, None, None), (_on(), _off, None, None), (None, _on(), _off, None), (None, _on(), _off, None),
+    (None, None, None ,_on()), (_off, _on(), _off, None), (None, _on(), _off, None), (None, None, None ,_on()),
+    (_off, _on(), _off, None), None, (None, _on(), _off, None), (None, _on(), _off, None),
+    (None, None, None ,_on()), (_off, _on(), _off, None), (_on(), _off, _on(), _off, _on(), _off), (_on(), _off, None, None, None, None),
 
-    [[rpijardinport, '/pyta/slide/animate', 'GoatEye_10', 'scale_x', 350, 800, 0.1 ],[rpijardinport, '/pyta/slide/visible', 'GoatEye_10', 1],[rpijardinport, '/pyta/slide/rgb', 'GoatEye_10', 0, 0, 0]], [[rpijardinport, '/pyta/slide/animate', 'GoatEye_10', 'scale_x', 350, 800, 0.1 ],[rpijardinport, '/pyta/slide/visible', 'GoatEye_10', 1], [rpijardinport, '/pyta/slide/rgb', 'GoatEye_10', 0.9, 0, 0]], [rpijardinport, '/pyta/slide/visible', -1, 0], None,
-    [[rpijardinport, '/pyta/slide/animate', 'GoatEye_10', 'scale_x', 350, 800, 0.1 ],[rpijardinport, '/pyta/slide/visible', 'GoatEye_10', 1], [rpijardinport, '/pyta/slide/rgb', 'GoatEye_10', 0.9, 0, 0]], [rpijardinport, '/pyta/slide/visible', -1, 0], None, [[rpijardinport, '/pyta/slide/animate', 'GoatEye_10', 'scale_x', 350, 800, 0.1 ],[rpijardinport, '/pyta/slide/visible', 'GoatEye_10', 1], [rpijardinport, '/pyta/slide/rgb', 'GoatEye_10', 0.9, 0, 0]],
-    [rpijardinport, '/pyta/slide/visible', -1, 0], None, None, None,
-    [[rpijardinport, '/pyta/slide/animate', 'GoatEye_10', 'scale_x', 350, 800, 0.1 ],[rpijardinport, '/pyta/slide/visible', 'GoatEye_10', 1], [rpijardinport, '/pyta/slide/rgb', 'GoatEye_10', 0.9, 0, 0]], [rpijardinport, '/pyta/slide/visible', -1, 0], None, [[rpijardinport, '/pyta/slide/animate', 'GoatEye_10', 'scale_x', 350, 800, 0.1 ],[rpijardinport, '/pyta/slide/visible', 'GoatEye_10', 1], [rpijardinport, '/pyta/slide/rgb', 'GoatEye_10', 0.9, 0, 0]],
-
-    [[rpijardinport, '/pyta/slide/animate', 'GoatEye_10', 'scale_x', 350, 800, 0.1 ],[rpijardinport, '/pyta/slide/visible', 'GoatEye_10', 1],[rpijardinport, '/pyta/slide/rgb', 'GoatEye_10', 0, 0, 0]], [[rpijardinport, '/pyta/slide/animate', 'GoatEye_10', 'scale_x', 350, 800, 0.1 ],[rpijardinport, '/pyta/slide/visible', 'GoatEye_10', 1], [rpijardinport, '/pyta/slide/rgb', 'GoatEye_10', 0.9, 0, 0]], [rpijardinport, '/pyta/slide/visible', -1, 0], None,
-    [[rpijardinport, '/pyta/slide/animate', 'GoatEye_10', 'scale_x', 350, 800, 0.1 ],[rpijardinport, '/pyta/slide/visible', 'GoatEye_10', 1], [rpijardinport, '/pyta/slide/rgb', 'GoatEye_10', 0.9, 0, 0]], [rpijardinport, '/pyta/slide/visible', -1, 0], None, [[rpijardinport, '/pyta/slide/animate', 'GoatEye_10', 'scale_x', 350, 800, 0.1 ],[rpijardinport, '/pyta/slide/visible', 'GoatEye_10', 1], [rpijardinport, '/pyta/slide/rgb', 'GoatEye_10', 0.9, 0, 0]],
-    [rpijardinport, '/pyta/slide/visible', -1, 0], None, None, None,
-    None, None, None, [[rpijardinport, '/pyta/slide/animate', 'GoatEye_10', 'scale_x', 350, 800, 0.1 ],[rpijardinport, '/pyta/slide/visible', 'GoatEye_10', 1], [rpijardinport, '/pyta/slide/rgb', 'GoatEye_10', 0.9, 0, 0]]
-
+    (_on(), _off, None, None), (_on(), _off, None, None), (None, _on(), _off, None), (None, _on(), _off, None),
+    (None, None, None ,_on()), (_off, _on(), _off, None), (None, _on(), _off, None), (None, None, None ,_on()),
+    (_off, _on(), _off, None), (None, None, None, _on()), (_off, None, None, None), (None, _on(), _off, None),
+    (None, None, None ,_on()), (_off, _on(), _off, None), (_on(), _off, _on(), _off, _on(), _off), (_on(), _off, None, None, None, None),
 ]
