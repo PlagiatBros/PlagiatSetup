@@ -81,8 +81,10 @@ qlcport = 12001 # delayed messages
 qlcstopport = 12002 # stop (all off)
 
 ## pyta
-vporlport = 'osc.udp://192.168.0.31:56418'
-vpjeannotport = 'osc.udp://192.168.0.30:56418'
+rpijardinport = 'osc.udp://192.168.0.102:56418'
+rpicourport = 'osc.udp://192.168.0.103:56418'
+vporlport = 'osc.udp://192.168.0.102:56418'
+vpjeannotport = 'osc.udp://192.168.0.103:56418'
 
 
 

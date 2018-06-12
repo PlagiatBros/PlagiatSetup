@@ -31,3 +31,17 @@ dafist_themerefrain_clignotagestrob = [
     None, None, None, [[':/Lightseq/Sequence/Disable', 'dafist_clignotage'], [':/Lightseq/Scene/Play', 'dafist_blinderstrob'], [':/Lightseq/Scene/Play', 'dafist_vpoff']]
 
 ]
+
+dafist_refrain = [
+
+    [[rpijardinport, '/pyta/slide/animate', 'GoatEye_10', 'scale_x', 350, 800, 0.1 ],[rpijardinport, '/pyta/slide/visible', 'GoatEye_10', 1],[rpijardinport, '/pyta/slide/rgb', 'GoatEye_10', 0, 0, 0]], [[rpijardinport, '/pyta/slide/animate', 'GoatEye_10', 'scale_x', 350, 800, 0.1 ],[rpijardinport, '/pyta/slide/visible', 'GoatEye_10', 1], [rpijardinport, '/pyta/slide/rgb', 'GoatEye_10', 0.9, 0, 0]], [rpijardinport, '/pyta/slide/visible', -1, 0], None,
+    [[rpijardinport, '/pyta/slide/animate', 'GoatEye_10', 'scale_x', 350, 800, 0.1 ],[rpijardinport, '/pyta/slide/visible', 'GoatEye_10', 1], [rpijardinport, '/pyta/slide/rgb', 'GoatEye_10', 0.9, 0, 0]], [rpijardinport, '/pyta/slide/visible', -1, 0], None, [[rpijardinport, '/pyta/slide/animate', 'GoatEye_10', 'scale_x', 350, 800, 0.1 ],[rpijardinport, '/pyta/slide/visible', 'GoatEye_10', 1], [rpijardinport, '/pyta/slide/rgb', 'GoatEye_10', 0.9, 0, 0]],
+    [rpijardinport, '/pyta/slide/visible', -1, 0], None, None, None,
+    [[rpijardinport, '/pyta/slide/animate', 'GoatEye_10', 'scale_x', 350, 800, 0.1 ],[rpijardinport, '/pyta/slide/visible', 'GoatEye_10', 1], [rpijardinport, '/pyta/slide/rgb', 'GoatEye_10', 0.9, 0, 0]], [rpijardinport, '/pyta/slide/visible', -1, 0], None, [[rpijardinport, '/pyta/slide/animate', 'GoatEye_10', 'scale_x', 350, 800, 0.1 ],[rpijardinport, '/pyta/slide/visible', 'GoatEye_10', 1], [rpijardinport, '/pyta/slide/rgb', 'GoatEye_10', 0.9, 0, 0]],
+
+    [[rpijardinport, '/pyta/slide/animate', 'GoatEye_10', 'scale_x', 350, 800, 0.1 ],[rpijardinport, '/pyta/slide/visible', 'GoatEye_10', 1],[rpijardinport, '/pyta/slide/rgb', 'GoatEye_10', 0, 0, 0]], [[rpijardinport, '/pyta/slide/animate', 'GoatEye_10', 'scale_x', 350, 800, 0.1 ],[rpijardinport, '/pyta/slide/visible', 'GoatEye_10', 1], [rpijardinport, '/pyta/slide/rgb', 'GoatEye_10', 0.9, 0, 0]], [rpijardinport, '/pyta/slide/visible', -1, 0], None,
+    [[rpijardinport, '/pyta/slide/animate', 'GoatEye_10', 'scale_x', 350, 800, 0.1 ],[rpijardinport, '/pyta/slide/visible', 'GoatEye_10', 1], [rpijardinport, '/pyta/slide/rgb', 'GoatEye_10', 0.9, 0, 0]], [rpijardinport, '/pyta/slide/visible', -1, 0], None, [[rpijardinport, '/pyta/slide/animate', 'GoatEye_10', 'scale_x', 350, 800, 0.1 ],[rpijardinport, '/pyta/slide/visible', 'GoatEye_10', 1], [rpijardinport, '/pyta/slide/rgb', 'GoatEye_10', 0.9, 0, 0]],
+    [rpijardinport, '/pyta/slide/visible', -1, 0], None, None, None,
+    None, None, None, [[rpijardinport, '/pyta/slide/animate', 'GoatEye_10', 'scale_x', 350, 800, 0.1 ],[rpijardinport, '/pyta/slide/visible', 'GoatEye_10', 1], [rpijardinport, '/pyta/slide/rgb', 'GoatEye_10', 0.9, 0, 0]]
+
+]
