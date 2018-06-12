@@ -2,7 +2,7 @@
 <!--
 ladish Studio configuration.
 -->
-<!-- Tue Apr 17 11:38:13 2018 -->
+<!-- Mon Jun 11 17:12:41 2018 -->
 <studio>
   <jack>
     <conf>
@@ -2436,8 +2436,8 @@ ladish Studio configuration.
         <port name="PBguitarix" uuid="0f0282f7-accb-41aa-9ce0-3655e3db7968" type="midi" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1101.219668</key>
-        <key name="http://ladish.org/ns/canvas/y">1002.725844</key>
+        <key name="http://ladish.org/ns/canvas/x">598.219668</key>
+        <key name="http://ladish.org/ns/canvas/y">1082.725844</key>
       </dict>
     </client>
     <client name="wobbleCtrl" uuid="fe7ef614-82c2-4678-9a5a-aadfa5507b5b" naming="app" app="d05dd957-12ce-4814-9733-d2df4fb92692">
@@ -3216,5 +3216,6 @@ ladish Studio configuration.
     <application name="VxPublic" uuid="db4efae3-af1d-4c48-95fd-2f2b977b4c78" terminal="false" level="0" autorun="true">%2Fusr%2Flocal%2Fbin%2Fnon-mixer --osc-port 17001 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FVxPublic</application>
     <application name="x42Jeannot" uuid="224bfd43-443d-4075-8acd-2496a0b15703" terminal="false" level="0" autorun="true">x42-fat1 --osc 7050 -p 3:0 -p 4:0.02 -p 5:1</application>
     <application name="x42ORL" uuid="8fd817fb-ca84-4360-ac93-75105bcbe8fe" terminal="false" level="0" autorun="true">x42-fat1 --osc 7060 -p 3:0 -p 4:0.02 -p 5:1</application>
+    <application name="LightsSequencer" uuid="53b3efe4-15be-4764-8a27-49719997399a" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_lS.sh</application>
   </applications>
 </studio>
