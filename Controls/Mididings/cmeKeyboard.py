@@ -107,12 +107,7 @@ run(
             CtrlFilter(108) >> CtrlValueSplit(64, NoteOff(61), [NoteOff(61), NoteOn(61, 127)]) >> tapeutape16,
             CtrlFilter(109) >> CtrlValueSplit(64, NoteOff(62), [NoteOff(62), NoteOn(62, 127)]) >> tapeutape16,
             CtrlFilter(80) >> CtrlValueSplit(64, NoteOff(63), [NoteOff(63), NoteOn(63, 127)]) >> tapeutape16,
-            CtrlFilter(16) >> [
-                CtrlValueSplit(64, NoteOff(59), [NoteOff(59), NoteOn(59, 127)]) >> tapeutape1,
-                [
-                    SendOSC(lightseqport, "/lightseq/scene/play", "intro_respect")
-                    ] >> Discard()
-                ],
+            CtrlFilter(16) >> CtrlValueSplit(64, NoteOff(59), [NoteOff(59), NoteOn(59, 127), SendOSC(lightseqport, "/lightseq/scene/play", "intro_respect")]) >> tapeutape1,
             CtrlFilter(18) >> CtrlValueSplit(64, NoteOff(58), [NoteOff(58), NoteOn(58, 127)]) >> tapeutape1,
         ],
         Filter(PROGRAM) >> SceneSwitch(),
