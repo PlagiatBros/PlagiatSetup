@@ -111,7 +111,6 @@ dafist_mooncupwaters_alpha = [
     ['/pyta/slide/alpha', mooncupwaters_slides, 0.16],
     ['/pyta/slide/alpha', mooncupwaters_slides, 0.17],
 ]
-
 dafist_mooncupwaters_rgb = [
     ['/pyta/slide/rgb', mooncupwaters_slides, 0, 0, 0],
     ['/pyta/slide/rgb', mooncupwaters_slides, 1, 0, 0],
@@ -140,4 +139,9 @@ dafist_mooncupwaters_rgb = [
     ['/pyta/slide/rgb', mooncupwaters_slides, 0.8, 0, 0.8],
     ['/pyta/slide/rgb', mooncupwaters_slides, 0.8, 0.8, 0.8],
     
+]
+
+barre = 'cadre remplissage'
+dafist_transe_blinkload = [
+    ['/pyta/slide/visible', barre, 1], [/'pyta/slide/visible', barre, 0]
 ]
