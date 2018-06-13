@@ -549,7 +549,11 @@ dafist = [
             SendOSC(rpicourport, '/pyta/text/strobe', 2, 10, 0.4),
             SendOSC(rpicourport, '/pyta/text/visible', 2, 1),
             SendOSC(rpicourport, '/pyta/text/align', 2, 'right', 'bottom'),
-
+            
+            # Création de la barre de chargement
+            #TODO faire l'échelle et le positionnement - le cadre est le cadre de la barre de chargement
+            SendOSC(rpijardinport, '/pyta/slide/visible', 'cadre', 1)
+               
             SendOscState([
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
                 [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
@@ -586,10 +590,16 @@ dafist = [
             ]
         ],
     orl >> ProgramFilter(9) >> [ # sl 7 record
-        SendOSC(slport, '/sl/7/hit', 'record')
+        SendOSC(slport, '/sl/7/hit', 'record'),
+        
+        # Barre de chargement monte
+        SendOSC(rpijardinport, '/pyta/slide/animate', 'scale_x', 'remplissage', 0, 300, 3),
         ] >> Discard(),
     orl >> ProgramFilter(10) >> [ # sl 7 overdub
-        SendOSC(slport, '/sl/7/hit', 'overdub')
+        SendOSC(slport, '/sl/7/hit', 'overdub'),
+        
+        # Barre de chargement monte encore
+        # TODO j'aurais besoin d'un truc qui permette d'ajouter du scale. Par exemple, un truc qui ajoute 50 au scale à chaque fois que j'appuie dessus, si possible, avec un animate sur 1 seconde
         ] >> Discard(),
     jeannot >> ProgramFilter(6) >> [ # RELANCE Transe goa - Bouton 9
         # Program(71) >> cseqtrigger,
@@ -618,6 +628,9 @@ dafist = [
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(130)),
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(130)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(130)),
+            
+            # Barre de chargement
+            SendOSC(rpijardinport, '/pyta/slide/animate', 'scale_x', 'remplissage', 600, 800, 0.5),
 
             SendOscState([
 
