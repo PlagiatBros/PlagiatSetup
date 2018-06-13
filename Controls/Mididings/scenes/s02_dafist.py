@@ -631,6 +631,11 @@ dafist = [
             
             # Barre de chargement
             SendOSC(rpijardinport, '/pyta/slide/animate', 'scale_x', 'remplissage', 600, 800, 0.5),
+            
+            SendOSC(lightseqport, '/Lightseq/Bpm', 130),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_transe_blinkload', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_transe_blinkload'),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
             SendOscState([
 
