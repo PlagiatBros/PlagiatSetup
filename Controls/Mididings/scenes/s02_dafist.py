@@ -475,7 +475,18 @@ dafist = [
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(120)),
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(240)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
-
+            
+            SendOSC(lightseqport, '/Lightseq/Bpm', 1800),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+            SendOSc(lightseqport, '/Lightseq/Sequence/Random', 'dafist_mooncupwaters_alpha', 1),
+            SendOSc(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_mooncupwaters_alpha'),
+            SendOSc(lightseqport, '/Lightseq/Sequence/Random', 'dafist_mooncupwaters_rgb', 1),
+            SendOSc(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_mooncupwaters_rgb'),
+            SendOSc(lightseqport, '/Lightseq/Sequence/Random', 'dafist_mooncupwaters_jardin', 1),
+            SendOSc(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_mooncupwaters_jardin'),
+            SendOSc(lightseqport, '/Lightseq/Sequence/Random', 'dafist_mooncupwaters_cour', 1),
+            SendOSc(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_mooncupwaters_cour'),
+            
             SendOscState([
 
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
