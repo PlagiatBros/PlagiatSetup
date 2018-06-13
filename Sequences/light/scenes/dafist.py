@@ -1,5 +1,6 @@
 import sys
 sys.path.append("../Controls/Mididings/")
+import random
 
 from ports import *
 
@@ -260,3 +261,20 @@ def dafist_patatesyncope(seq, timer):
 
 def dafist_vpoff(seq, timer):
     seq.send(vporlport, '/pyta/slide/visible', -1, 0)
+    
+def dafist_look(seq, timer):
+    slide_rpiJ = random.randint(0,2)
+    slide_rpiC = random.randint(0,2)
+    txt= ("Look", "LOOK", "L00K", "lOoK", "LoOk", "LooK", "l00k", "k00l")
+    txt_idxJ = random.randint(0,len(txt)-1)
+    txt_idxC = random.randint(0,len(txt)-1)
+    seq.send(rpicourport, '/pyta/text', slide_rpiC, txt[txt_idxC])
+    seq.send(rpicourport, '/pyta/text/visible', slide_rpiC, 1)
+    timer.wait(0.12, 'beat')
+    seq.send(rpijardinport, '/pyta/text', slide_rpiJ, txt[txt_idxJ])
+    seq.send(rpijardinport, '/pyta/text/visible', slide_rpiJ, 1)
+    timer.wait(0.75, 'beat')
+    seq.send(rpicourport, '/pyta/text', slide_rpiC, "")
+    seq.send(rpicourport, '/pyta/text/visible', slide_rpiC, 0)
+    seq.send(rpijardinport, '/pyta/text', slide_rpiJ, "")
+    seq.send(rpijardinport, '/pyta/text/visible', slide_rpiJ, 0)
