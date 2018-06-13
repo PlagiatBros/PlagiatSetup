@@ -26,19 +26,15 @@ dafist = [
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
-    [orl, jeannot] >> ProgramFilter([range(2,12)]) >> [
+    [orl, jeannot] >> ProgramFilter([range(2,9)]) >> [
        SendOSC(lightseqport, '/Lightseq/Sequence/Disable', '*'),
         SendOSC(lightseqport, '/Lightseq/Scene/Stop', '*'),
         SendOSC(rpijardinport, '/pyta/animate/stop'),
         SendOSC(rpicourport, '/pyta/animate/stop'),
         SendOSC(rpijardinport, '/pyta/slide/visible', -1, 0),
         SendOSC(rpicourport, '/pyta/slide/visible', -1, 0),
-        SendOSC(rpijardinport, '/pyta/text/visible', -1, 0),
-        SendOSC(rpicourport,   '/pyta/text/visible', -1, 0),
-        SendOSC(rpijardinport, '/pyta/text/strobe', -1, 0),
-        SendOSC(rpicourport, '/pyta/text/strobe', -1, 0),
-        SendOSC(rpijardinport, '/pyta/text/align', -1, 'center', 'center'),
-        SendOSC(rpicourport, '/pyta/text/align', -1, 'center', 'center'),
+        SendOSC(rpijardinport, '/pyta/text/reset', -1)
+        SendOSC(rpicourport, '/pyta/text/reset', -1)
         SendOSC(qlcstopport, '/Stop'),
     ] >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
@@ -191,7 +187,7 @@ dafist = [
             SendOSC(rpicourport, '/pyta/text/size', 2, 1),
             SendOSC(rpicourport, '/pyta/text/visible', 2, 1),
             SendOSC(rpicourport, '/pyta/text/strobe', 2, 1, 5, 0.6),
-            
+
 
 
 
@@ -475,7 +471,7 @@ dafist = [
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(120)),
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(240)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
-            
+
             SendOSC(lightseqport, '/Lightseq/Bpm', 1800),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
             SendOSc(lightseqport, '/Lightseq/Sequence/Random', 'dafist_mooncupwaters_alpha', 1),
@@ -486,7 +482,7 @@ dafist = [
             SendOSc(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_mooncupwaters_jardin'),
             SendOSc(lightseqport, '/Lightseq/Sequence/Random', 'dafist_mooncupwaters_cour', 1),
             SendOSc(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_mooncupwaters_cour'),
-            
+
             SendOscState([
 
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
@@ -540,7 +536,7 @@ dafist = [
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(130)),
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(130)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(130)),
-            
+
             SendOSC(rpijardinport, '/pyta/text', 2, 'Transe Loading'),
             SendOSC(rpijardinport, '/pyta/text/strobe', 2, 8, 0.6),
             SendOSC(rpijardinport, '/pyta/text/visible', 2, 1),
@@ -549,11 +545,16 @@ dafist = [
             SendOSC(rpicourport, '/pyta/text/strobe', 2, 10, 0.4),
             SendOSC(rpicourport, '/pyta/text/visible', 2, 1),
             SendOSC(rpicourport, '/pyta/text/align', 2, 'right', 'bottom'),
-            
+
             # Création de la barre de chargement
             #TODO faire l'échelle et le positionnement - le cadre est le cadre de la barre de chargement
             SendOSC(rpijardinport, '/pyta/slide/visible', 'cadre', 1)
-               
+            SendOSC(rpijardinport, '/pyta/slide/clone', 'White', 'Dafist_trance_bar'),
+            SendOSC(rpijardinport, '/pyta/slide/scale_x', 'Dafist_trance_bar', 0),
+            SendOSC(rpijardinport, '/pyta/slide/position_x', 'Dafist_trance_bar', -400),
+            SendOSC(rpijardinport, '/pyta/slide/position_z', 'Dafist_trance_bar', 0),
+            SendOSC(rpijardinport, '/pyta/slide/visible', 'Dafist_trance_bar', 1),
+
             SendOscState([
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
                 [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
@@ -589,19 +590,21 @@ dafist = [
             bassbufferst_off,
             ]
         ],
-    orl >> ProgramFilter(9) >> [ # sl 7 record
+    orl >> ProgramFilter(9) >> [ # sl 9 record
         SendOSC(slport, '/sl/7/hit', 'record'),
-        
+
         # Barre de chargement monte
-        SendOSC(rpijardinport, '/pyta/slide/animate', 'scale_x', 'remplissage', 0, 300, 3),
+        SendOSC(rpijardinport, '/pyta/slide/animate', 'scale_x', 'Dafist_trance_bar', 0, 300, 3),
+        SendOSC(rpijardinport, '/pyta/slide/animate', 'position_x', 'Dafist_trance_bar', 0, 150, 3),
         ] >> Discard(),
-    orl >> ProgramFilter(10) >> [ # sl 7 overdub
+    orl >> ProgramFilter(10) >> [ # sl 10 overdub
         SendOSC(slport, '/sl/7/hit', 'overdub'),
-        
+
         # Barre de chargement monte encore
-        # TODO j'aurais besoin d'un truc qui permette d'ajouter du scale. Par exemple, un truc qui ajoute 50 au scale à chaque fois que j'appuie dessus, si possible, avec un animate sur 1 seconde
+        SendOSC(rpijardinport, '/pyta/slide/animate', 'scale_x', 'Dafist_trance_bar', '+0', '+50', 1),
+        SendOSC(rpijardinport, '/pyta/slide/animate', 'position_x', 'Dafist_trance_bar', '+0', '+25', 1),
         ] >> Discard(),
-    jeannot >> ProgramFilter(6) >> [ # RELANCE Transe goa - Bouton 9
+    jeannot >> ProgramFilter(6) >> [ # RELANCE Transe goa - Bouton 6
         # Program(71) >> cseqtrigger,
         Ctrl(0, 0) >> tapeutapecontrol,
         [
@@ -628,10 +631,10 @@ dafist = [
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(130)),
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(130)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(130)),
-            
+
             # Barre de chargement
             SendOSC(rpijardinport, '/pyta/slide/animate', 'scale_x', 'remplissage', 600, 800, 0.5),
-            
+
             SendOSC(lightseqport, '/Lightseq/Bpm', 130),
             SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_transe_blinkload', 1),
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_transe_blinkload'),
