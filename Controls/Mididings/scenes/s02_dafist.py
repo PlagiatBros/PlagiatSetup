@@ -116,7 +116,7 @@ dafist = [
             SendOSC(rpijardinport, '/pyta/text', 2, 'petites             s'),
             SendOSC(rpijardinport, '/pyta/text/visible', 2, 1),
             SendOSC(rpijardinport, '/pyta/text/align', 2, 'right', 'top'),
-            SendOSC(rpijardinport, '/pyta/text/position', 2, -110, -20),
+            SendOSC(rpijardinport, '/pyta/text/position', 2, -110, -50),
             SendOSC(rpijardinport, '/pyta/text/size', 2, 0.03),
             SendOSC(rpijardinport, '/pyta/text/strobe', 2, 1, 13, 0.66),
             SendOSC(rpicourport, '/pyta/text', 0, 'PLAGIAT'),
@@ -131,7 +131,7 @@ dafist = [
             SendOSC(rpicourport, '/pyta/text/visible', 2, 1),
             SendOSC(rpicourport, '/pyta/text/size', 2, 0.03),
             SendOSC(rpicourport, '/pyta/text/align', 2, 'right', 'top'),
-            SendOSC(rpicourport, '/pyta/text/position', 2, -110, -35),
+            SendOSC(rpicourport, '/pyta/text/position', 2, -110, -65),
             SendOSC(rpicourport, '/pyta/text/strobe', 2, 1, 15, 0.7),
 
 
