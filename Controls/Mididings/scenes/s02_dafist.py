@@ -309,7 +309,7 @@ dafist = [
                 [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
                 [samplesmainport, '/strip/Samples4Dry/Gain/Mute', 0.0],
                 [samplesmainport, '/strip/SamplesMunge/Gain/Mute', 0.0],
-                [samplesmainport, '/strip/SamplesScape/Gain/Mute', 0.0],
+​                [samplesmainport, '/strip/SamplesScape/Gain/Mute', 0.0],
 
                 [samplesscapeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -5.0],
                 [samplesscapeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -10.0],
@@ -331,7 +331,7 @@ dafist = [
             vxjeannotvocode_off,
 
             SendOSC(cmeinport, '/mididings/switch_scene', 9),
-
+​
             bassdry,
             bassdetunest_on,
             bassringst_on,
@@ -358,9 +358,10 @@ dafist = [
             SendOSC(klickport, '/klick/metro/start'),
 
             SendOSC(lightseqport, '/Lightseq/Bpm', 120),
-            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_entreeinstru'),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_entreeinstru_leslie'),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_clignotage'),
+            # SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_entreeinstru'),
+            #SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_entreeinstru_leslie'),
+            #SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_clignotage'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_prerefrain'),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(120)),
