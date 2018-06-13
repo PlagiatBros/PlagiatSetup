@@ -341,6 +341,9 @@ dafist = [
 
             ] >> Discard()
         ],
+    jeannot >> ProgramFilter(4) >> [ # "Look" - Bouton 4
+        SendOSC(lightsequencer, '/Lightseq/Scene/Play', 'dafist_look') >> Discard()
+    ],
     orl >> ProgramFilter(5) >> [ # Couplet part 2 - Bouton 5
         Program(68) >> cseqtrigger,
         [
