@@ -545,6 +545,16 @@ dafist = [
             SendOSC(rpicourport, '/pyta/text/strobe', 2, 10, 0.4),
             SendOSC(rpicourport, '/pyta/text/visible', 2, 1),
             SendOSC(rpicourport, '/pyta/text/align', 2, 'right', 'bottom'),
+            
+            SendOSC(lightseqport, '/Lightseq/', 'Bpm', 520),
+            #TODO créer alias SMOKES
+            SendOSC(rpijardinport, '/pyta/slide/alpha', smokes, 0.1),
+            SendOSC(rpicourport, '/pyta/slide/alpha', smokes, 0.1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_transe_smokes_jardin', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Play', 'dafist_transe_smokes_jardin'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_transe_smokes_cour', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Play', 'dafist_transe_smokes_cour'),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
             # Création de la barre de chargement
             #TODO faire l'échelle et le positionnement - le cadre est le cadre de la barre de chargement
@@ -554,6 +564,13 @@ dafist = [
             SendOSC(rpijardinport, '/pyta/slide/position_x', 'Dafist_trance_bar', -400),
             SendOSC(rpijardinport, '/pyta/slide/position_z', 'Dafist_trance_bar', 0),
             SendOSC(rpijardinport, '/pyta/slide/visible', 'Dafist_trance_bar', 1),
+            
+            SendOSC(rpicourport, '/pyta/slide/visible', 'cadre', 1)
+            SendOSC(rpicourport, '/pyta/slide/clone', 'White', 'Dafist_trance_bar'),
+            SendOSC(rpicourport, '/pyta/slide/scale_x', 'Dafist_trance_bar', 0),
+            SendOSC(rpicourport, '/pyta/slide/position_x', 'Dafist_trance_bar', -400),
+            SendOSC(rpicourport, '/pyta/slide/position_z', 'Dafist_trance_bar', 0),
+            SendOSC(rpicourport, '/pyta/slide/visible', 'Dafist_trance_bar', 1),
 
             SendOscState([
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
@@ -596,6 +613,10 @@ dafist = [
         # Barre de chargement monte
         SendOSC(rpijardinport, '/pyta/slide/animate', 'scale_x', 'Dafist_trance_bar', 0, 300, 3),
         SendOSC(rpijardinport, '/pyta/slide/animate', 'position_x', 'Dafist_trance_bar', 0, 150, 3),
+        SendOSC(rpicourport, '/pyta/slide/animate', 'scale_x', 'Dafist_trance_bar', 0, 300, 3),
+        SendOSC(rpicourport, '/pyta/slide/animate', 'position_x', 'Dafist_trance_bar', 0, 150, 3),
+        SendOSC(rpijardinport, '/pyta/slide/animate', 'alpha', smokes, '+0', '+0.05', 3),
+        SendOSC(rpicourport, '/pyta/slide/animate', 'alpha', smokes, '+0', '+0.05', 3),
         ] >> Discard(),
     orl >> ProgramFilter(10) >> [ # sl 10 overdub
         SendOSC(slport, '/sl/7/hit', 'overdub'),
@@ -603,6 +624,9 @@ dafist = [
         # Barre de chargement monte encore
         SendOSC(rpijardinport, '/pyta/slide/animate', 'scale_x', 'Dafist_trance_bar', '+0', '+50', 1),
         SendOSC(rpijardinport, '/pyta/slide/animate', 'position_x', 'Dafist_trance_bar', '+0', '+25', 1),
+        SendOSC(rpicourport, '/pyta/slide/animate', 'scale_x', 'Dafist_trance_bar', '+0', '+50', 1),
+        SendOSC(rpijardinport, '/pyta/slide/animate', 'alpha', smokes, '+0', '+0.15', 1),
+        SendOSC(rpicourport, '/pyta/slide/animate', 'alpha', smokes, '+0', '+0.15', 1),
         ] >> Discard(),
     jeannot >> ProgramFilter(6) >> [ # RELANCE Transe goa - Bouton 6
         # Program(71) >> cseqtrigger,
