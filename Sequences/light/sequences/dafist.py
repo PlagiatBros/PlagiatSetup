@@ -70,7 +70,7 @@ dafist_prerefrain = [
     [['/pyta/text', 2, 'YYYE$$$$'], ['/pyta/text/visible', 2, 1]], ['/pyta/text/visible', 2, 0], None, None,
 ]
 
-mooncupwaters_slides = 'MoiseWaters_1 MoiseWaters_2 MoiseWaters_3 Butts_1 Butts_2 Mooncup_1 Monncup_2 Mooncup_3']
+mooncupwaters_slides = 'MoiseWaters_1 MoiseWaters_2 MoiseWaters_3 Butts_1 Butts_2 Mooncup_1 Monncup_2 Mooncup_3'
 dafist_mooncupwaters_jardin = [
     [[rpijardinport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'MoiseWaters_1', 1]],
     [[rpijardinport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'MoiseWaters_2', 1]],
