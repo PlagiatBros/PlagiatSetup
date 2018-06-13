@@ -154,3 +154,7 @@ dafist_transe_smokes_jardin = []
 for i in range (1,35):
     dafist_transe_smokes_jardin.append([[rpijardinport, '/pyta/slide/visible', smokes, 0], [rpijardinport, '/pyta/slide/visible', 'Smoke_'+str(i), 1], [rpijardinport, '/pyta/slide/animate', 'scale_x', 'Smoke_'+str(i), 790, 800, 0.4]])    
 ]
+dafist_transe_smokes_cour = []
+for i in range (1,35):
+    dafist_transe_smokes_cour.append([[rpicourport, '/pyta/slide/visible', smokes, 0], [rpicourport, '/pyta/slide/visible', 'Smoke_'+str(i), 1], [rpicourport, '/pyta/slide/animate', 'scale_x', 'Smoke_'+str(i), 790, 800, 0.4]])    
+]
