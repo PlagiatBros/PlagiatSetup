@@ -58,3 +58,14 @@ dafist_refrain = [
     (_off, _on(), _off, None), (None, None, None, _on()), (_off, None, None, None), (None, _on(), _off, None),
     (None, None, None ,_on()), (_off, _on(), _off, None), (_on(), _off, _on(), _off, _on(), _off), (_on(), _off, None, None, None, None),
 ]
+ 
+dafist_prerefrain = [
+    [['/pyta/text', 2, 'YE$'], ['/pyta/text/visible', 2, 1]], ['/pyta/text/visible', 2, 0], None, None,
+    [['/pyta/text', 2, 'Ye$s'], ['/pyta/text/visible', 2, 1]], ['/pyta/text/visible', 2, 0], None, None,
+    [['/pyta/text', 2, 'ye$$$'], ['/pyta/text/visible', 2, 1]], ['/pyta/text/visible', 2, 0], None, None,
+    [['/pyta/text', 2, 'yE$$'], ['/pyta/text/visible', 2, 1]], ['/pyta/text/visible', 2, 0], None, None,
+    [['/pyta/text', 2, 'yyYEs$'], ['/pyta/text/visible', 2, 1]], ['/pyta/text/visible', 2, 0], None, None,
+    [['/pyta/text', 2, 'Ye$s$$'], ['/pyta/text/visible', 2, 1]], ['/pyta/text/visible', 2, 0], None, None,
+    [['/pyta/text', 2, 'ye$$$$'], ['/pyta/text/visible', 2, 1]], ['/pyta/text/visible', 2, 0], None, None,
+    [['/pyta/text', 2, 'YYYE$$$$'], ['/pyta/text/visible', 2, 1]], ['/pyta/text/visible', 2, 0], None, None,
+]
