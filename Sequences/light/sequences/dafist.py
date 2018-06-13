@@ -69,3 +69,25 @@ dafist_prerefrain = [
     [['/pyta/text', 2, 'ye$$$$'], ['/pyta/text/visible', 2, 1]], ['/pyta/text/visible', 2, 0], None, None,
     [['/pyta/text', 2, 'YYYE$$$$'], ['/pyta/text/visible', 2, 1]], ['/pyta/text/visible', 2, 0], None, None,
 ]
+
+mooncupwaters_slides = 'MoiseWaters_1 MoiseWaters_2 MoiseWaters_3 Butts_1 Butts_2 Mooncup_1 Monncup_2 Mooncup_3']
+dafist_mooncupwaters_jardin = [
+    [[rpijardinport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'MoiseWaters_1', 1]],
+    [[rpijardinport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'MoiseWaters_2', 1]],
+    [[rpijardinport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'MoiseWaters_3', 1]],
+    [[rpijardinport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Butts_1', 1]],
+    [[rpijardinport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Butts_2', 1]],
+    [[rpijardinport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Mooncup_1', 1]],
+    [[rpijardinport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Mooncup_2', 1]],
+    [[rpijardinport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Mooncup_3', 1]],
+]
+dafist_mooncupwaters_cour = [
+    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'MoiseWaters_1', 1]],
+    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'MoiseWaters_2', 1]],
+    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'MoiseWaters_3', 1]],
+    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Butts_1', 1]],
+    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Butts_2', 1]],
+    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Mooncup_1', 1]],
+    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Mooncup_2', 1]],
+    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Mooncup_3', 1]],
+]
