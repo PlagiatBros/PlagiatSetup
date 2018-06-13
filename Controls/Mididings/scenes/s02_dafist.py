@@ -540,6 +540,15 @@ dafist = [
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(130)),
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(130)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(130)),
+            
+            SendOSC(rpijardinport, '/pyta/text', 2, 'Transe Loading'),
+            SendOSC(rpijardinport, '/pyta/text/strobe', 2, 8, 0.6),
+            SendOSC(rpijardinport, '/pyta/text/visible', 2, 1),
+            SendOSC(rpijardinport, '/pyta/text/align', 2, 'left', 'bottom'),
+            SendOSC(rpicourport, '/pyta/text', 2, 'Transloading'),
+            SendOSC(rpicourport, '/pyta/text/strobe', 2, 10, 0.4),
+            SendOSC(rpicourport, '/pyta/text/visible', 2, 1),
+            SendOSC(rpicourport, '/pyta/text/align', 2, 'right', 'bottom'),
 
             SendOscState([
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
