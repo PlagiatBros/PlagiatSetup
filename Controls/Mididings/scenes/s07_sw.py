@@ -149,6 +149,16 @@ sw = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(178.5)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(178.5)),
 
+            SendOSC(rpijardinport, '/pyta/text', 0, 'MORONESS'),
+            SendOSC(rpijardinport, '/pyta/text/strobe', 0, 1, 5, 0.5),
+            SendOSC(rpijardinport, '/pyta/text/colorstrobe', 0, 1, 7, 0.5),
+            SendOSC(rpijardinport, '/pyta/slide/strobe', 'White', 1, 4, 0.5),
+            SendOSC(rpijardinport, '/pyta/slide/visible', 'White', 1),
+            SendOSC(rpicourport, '/pyta/slide/strobe', 'White', 1, 4, 0.5),
+            SendOSC(rpicourport, '/pyta/slide/visible', 'White', 1),
+
+            
+
             SendOscState([
 
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
