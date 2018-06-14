@@ -247,6 +247,19 @@ sw = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(178.5)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(178.5)),
 
+            SendOSC(lightseqport, '/Lightseq/Bpm', 22.3125),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'sw_onetwo_jardin', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'sw_onetwo_jardin'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'sw_onetwo_cour', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'sw_onetwo_cour'),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
+            SendOSC(rpijardinport, '/pyta/slide/animate', 'Water_1', 'alpha', 0.1, 1, 200),
+            SendOSC(rpijardinport, '/pyta/slide/strobe', 'Water_1', 1, 4, 0.5),
+            SendOSC(rpijardinport, '/pyta/slide/visible', 'Water_1', 1),
+            SendOSC(rpijardinport, '/pyta/slide/strobe', 'Water_1', 1, 6, 0.5),
+            SendOSC(rpijardinport, '/pyta/slide/visible', 'Water_1', 1),
+
             SendOscState([
 
                 [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
