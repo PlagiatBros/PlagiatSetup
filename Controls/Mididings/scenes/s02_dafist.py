@@ -665,12 +665,16 @@ dafist = [
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(130)),
 
             # Barre de chargement
-            SendOSC(rpijardinport, '/pyta/slide/animate', 'Dafist_trance_bar', 'position_y', '+0', 0, 0.1),
-            SendOSC(rpijardinport, '/pyta/slide/animate', 'Dafist_trance_bar', 'position_y', '+0', 0, 0.1),
+            SendOSC(rpijardinport, '/pyta/slide/position_x', 'Dafist_trance_bar', 0),
+            SendOSC(rpicourport, '/pyta/slide/position_y', 'Dafist_trance_bar', 0),
+            SendOSC(rpijardinport, '/pyta/slide/position_x', 'Dafist_trance_bar', 0),
+            SendOSC(rpicourport, '/pyta/slide/position_y', 'Dafist_trance_bar', 0),
             SendOSC(rpijardinport, '/pyta/slide/strobe', 'Dafist_trance_bar', 1),
+            SendOSC(rpicourport, '/pyta/slide/strobe', 'Dafist_trance_bar', 1),
 
             SendOSC(lightseqport, '/Lightseq/Bpm', 130),
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_transe_blinkload'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_transe_cutoff'),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
             SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_transe_blinkload', 1),
 

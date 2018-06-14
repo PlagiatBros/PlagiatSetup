@@ -147,6 +147,21 @@ dafist_transe_blinkload = [
     ['/pyta/slide/visible', barre, 1], ['/pyta/slide/visible', barre, 0]
 ] * 2
 
+_hide_bar = ['/pyta/slide/animate', 'Dafist_trance_bar', 'zoom', 1, 0, 0.15]
+_show_bar = ['/pyta/slide/animate', 'Dafist_trance_bar', 'zoom', 0, 1, 0.15]
+
+dafist_transe_cutoff = [
+    _show_bar, None, None, None,
+    None, None, None, None,
+    None, None, None, None,
+    None, None, None, None,
+
+    None, None, None, None,
+    None, None, None, None,
+    None, None, None, None,
+    None, (_hide_bar, None, None, None), None, (_show_bar, None),
+]
+
 smokes = " ".join(['Smoke_'+str(i) for i in range(1,20)])
 
 dafist_transe_smokes_jardin = []
