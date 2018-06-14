@@ -64,3 +64,4 @@ le5_refrain=[
     [t_off, [rpicourport, '/pyta/text', 0, "MEAN"], [rpicourport, '/pyta/text/animate', 0, 'zoom', 0.7, 1.2, 0.3], [rpicourport, '/pyta/text/visible', 0, 1]], None, None, None, None,
     [t_off, [, '/pyta/text', 0, "UGLY"], ['/pyta/text/animate', 0, 'zoom', 0.7, 1.2, 0.3], ['/pyta/text/visible', 0, 1]], None, None, None, None,
 ]
+
