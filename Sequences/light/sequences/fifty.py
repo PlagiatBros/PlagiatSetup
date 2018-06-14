@@ -129,3 +129,19 @@ fifty_coffee = [
   None, None, None, None,
   None, None, [':/Lightseq/Scene/Play', 'fifty_tea'], None
 ]
+
+twerks=""
+for i in range(1,100):
+  twerks.append("Twerk_"+str(i)+" ")
+
+fifty_twerk_jardin=[]
+fifty_twerk_cour=[]             
+for i in range(0,5):
+    fifty_twerk_jardin.append([[rpijardinport, '/pyta/slide/visible', twerks, 0],[rpijardinport, '/pyta/slide/visible', 'Twerk_1.gif']])
+    fifty_twerk_cour.append([[rpicourport, '/pyta/slide/visible', twerks, 0],[rpicourport, '/pyta/slide/visible', 'Twerk_1.gif']])
+for i in range(0,2):
+    fifty_twerk_jardin.append([[rpijardinport, '/pyta/slide/visible', twerks, 0],[rpijardinport, '/pyta/slide/visible', 'Twerk_2.gif']])
+    fifty_twerk_cour.append([[rpicourport, '/pyta/slide/visible', twerks, 0],[rpicourport, '/pyta/slide/visible', 'Twerk_2.gif']])
+
+fifty_twerk_jardin.append([[rpijardinport, '/pyta/slide/visible', twerks, 0],[rpijardinport, '/pyta/slide/visible', 'Twerk_3.gif']])
+fifty_twerk_cour.append([[rpicourport, '/pyta/slide/visible', twerks, 0],[rpicourport, '/pyta/slide/visible', 'Twerk_3.gif']])
