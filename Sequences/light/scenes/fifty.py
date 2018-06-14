@@ -20,7 +20,7 @@ def fifty_tea(seq, timer):
 
 butters = ['Butter', 'BuTtEr', 'butter', 'BUTTER', 'bUtTeR', 'BuRgEr' , 'BeTTeR']
 shits = ['Shit', '$hIt', '$HIT', '$hit', '$hibre', '$HiT', 'ChIt', 'ChIbrr']
-
+  
 def fifty_butter(seq, timer):
   i = random.randomint(0,2)
   j = random.randomint(0,7)
@@ -28,11 +28,12 @@ def fifty_butter(seq, timer):
   seq.send('/pyta/text/visible', i, 1)
   timer.wait(2, 'beat')
   seq.send('/pyta/text/visible', i, 0)
-
+             
 def fifty_shit(seq, timer):
   i = random.randomint(0,2)
   j = random.randomint(0,8)
   seq.send('/pyta/text', i, shits[j]),
   seq.send('/pyta/text/visible', i, 1)
   timer.wait(2, 'beat')
-  seq.send('/pyta/text/visible', i, 0)
+  seq.send('/pyta/text/visible', i, 0)        
+
