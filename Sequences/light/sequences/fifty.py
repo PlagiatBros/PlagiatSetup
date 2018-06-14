@@ -110,3 +110,14 @@ fifty_offre_emploi_strobe = [
   [['/pyta/text/strobe', 0, 0], [ '/pyta/text/strobe', 1, 0], [ '/pyta/text/strobe', 2, 0]],
 
 ]
+
+colos=""
+for i in range(1,47):
+  colos.append('Colo_'+str(i)+' ')
+
+fifty_colo_jardin = []
+fifty_colo_cour = []
+for i in range(0,46):
+  fifty_colo.append(['/pyta/slide/visible', colos[i]])
+  
+fifty_coffee = []
