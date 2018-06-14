@@ -337,9 +337,10 @@ fifty = [
 	    SendOSC(rpijardinport, '/pyta/text/alpha', 2, 0.5),		
 	    SendOSC(rpicourport, '/pyta/text/visible', 1, 1),
 	    SendOSC(rpicourport, '/pyta/text/strobe', 1, 1, 11, 0.5),
-	    SendOSC(rpijardinport, '/pyta/text/alpha', 1, 0.5),	
+	    SendOSC(rpijardinport, '/pyta/text/alpha', 1, 0.5),
 		
 	    SendOSC(lightseqport, '/Lightseq/Bpm', 125),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'fifty_nymphotrap_blow'),
 	    SendOSC(rpijardinport, '/pyta/slide/alpha', twerks, 0.15),
 	    SendOSC(rpicourport, '/pyta/slide/alpha', twerks, 0.15),		
 	    SendOSC(lightseqport, '/Lightseq/Sequence/Random, 'fifty_twerk_jardin', 1),
