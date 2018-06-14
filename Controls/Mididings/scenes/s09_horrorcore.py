@@ -276,6 +276,15 @@ horrorcore = [
             SendOSC(cmeinport, '/mididings/switch_scene', 7),
             SendOSC(mk2inport, '/mididings/switch_scene', 6),
 
+            SendOSC(rpijardinport, '/pyta/slide/alpha', 'Sun_1', 0.1),
+            SendOSC(rpicourport, '/pyta/slide/alpha', 'Sun_2', 0.1),
+            SendOSC(rpijardinport, '/pyta/slide/strobe', 'Sun_1', 1, 4, 0.5),
+            SendOSC(rpicourport, '/pyta/slide/alpha', 'Sun_2', 1, 6, 0.5),
+            SendOSC(rpijardinport, '/pyta/slide/visible', 'Sun_1', 1),
+            SendOSC(rpicourport, '/pyta/slide/visible', 'Sun_2', 1),
+
+            
+
             SendOscState([
 
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
@@ -377,6 +386,17 @@ horrorcore = [
         [
 
 
+            SendOSC(rpijardinport, '/pyta/text', 0, 'PLAGIAT'),
+            SendOSC(rpijardinport, '/pyta/text/visible', 0, 1),
+            SendOSC(rpijardinport, '/pyta/text', 2, 'tkt, c bi1to fini'),
+            SendOSC(rpijardinport, '/pyta/text/visible', 2, 1),
+            SendOSC(rpicourport, '/pyta/text', 0, 'PLAGIAT'),
+            SendOSC(rpicourport, '/pyta/text', 2, 'c bo mé c lon'),
+            SendOSC(rpicourport, '/pyta/text/visible', 0, 1),
+            SendOSC(rpicourport, '/pyta/text/visible', 2, 1),
+            
+
+            
             SendOscState([
 
             ]),
@@ -430,6 +450,15 @@ horrorcore = [
             ]),
 
 
+            SendOSC(rpijardinport, '/pyta/text', 0, 'PLAGIAT'),
+            SendOSC(rpijardinport, '/pyta/text/strobe', 0, 1, 4, 0.5),
+            SendOSC(rpijardinport, '/pyta/text/animate', 0, 'alpha', 0.1, 0.5, 30),
+            SendOSC(rpijardinport, '/pyta/text/visible', 0, 1),
+            SendOSC(rpicourport, '/pyta/text', 0, 'PLAGIAT'),
+            SendOSC(rpicourport, '/pyta/text/strobe', 0, 1, 4, 0.5),
+            SendOSC(rpicourport, '/pyta/text/animate', 0, 'alpha', 0.1, 0.5, 30),
+            SendOSC(rpicourport, '/pyta/text/visible', 0, 1),
+            
             vxorlmeuf_off,
             vxorlgars_on,
             vxorldisint_off,
@@ -454,6 +483,23 @@ horrorcore = [
             SendOSC(slport, '/sl/[0,3,5]/hit', 'pause_off'),
             SendOSC(slport, '/sl/[0,3,5]/hit', 'trigger'),
             SendOSC(slport, '/sl/[0,3,5]/set', 'sync', 1),
+        
+            SendOSC(rpijardinport, '/pyta/text', 0, 'PLAGIAT'),
+            SendOSC(rpijardinport, '/pyta/text/strobe', 0, 1, 4, 0.5),
+            SendOSC(rpijardinport, '/pyta/text/colorstrobe', 0, 1, 11, 0.5),
+            SendOSC(rpijardinport, '/pyta/text/alpha', 0, 1),
+            SendOSC(rpijardinport, '/pyta/text/visible', 0, 1),
+            SendOSC(rpicourport, '/pyta/text', 0, 'PLAGIAT'),
+            SendOSC(rpicourport, '/pyta/text/strobe', 0, 1, 4, 0.5),
+            SendOSC(rpijardinport, '/pyta/text/colorstrobe', 0, 1, 11, 0.5),
+            SendOSC(rpicourport, '/pyta/text/alpha', 0, 1),
+            SendOSC(rpicourport, '/pyta/text/visible', 0, 1),
+
+            SendOSC(rpijardinport, '/pyta/slide/strobe', 'White', 1, 5, 0.5),
+            SendOSC(rpijardinport, '/pyta/slide/visible', 'White', 1),
+            SendOSC(rpicourport, '/pyta/slide/strobe', 'White', 1, 5, 0.5),
+            SendOSC(rpicourport, '/pyta/slide/visible', 'White', 1),
+        
 
         ] >> Discard(),
     jeannot >> ProgramFilter(6) >> [
