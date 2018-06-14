@@ -17,13 +17,8 @@ fifty_mk2lights = {
 }
 
 
-colos=""
-for i in range(1,47):
-colos.append('Colo_'+str(i)+' ')
-
-twerks=""
-for i in range(1,100):
-twerks.append("Twerk_"+str(i)+" ")
+colos = " ".join(['Colo_'+str(i) for i in range(1,47)])
+twerks = " ".join(['Twerk_'+str(i) for i in range(1,100)])
 
 #### Fifty ####
 fifty = [
@@ -278,14 +273,14 @@ fifty = [
 
 	    SendOSC(lightseqport, '/Lightseq/Bpm', 125),
 	    SendOSC(rpijardinport, '/pyta/slide/alpha', twerks, 1),
-	    SendOSC(rpicourport, '/pyta/slide/alpha', twerks, 1),		
-	    SendOSC(lightseqport, '/Lightseq/Sequence/Random, 'fifty_twerk_jardin', 1),
-	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable, 'fifty_twerk_jardin'),
-	    SendOSC(lightseqport, '/Lightseq/Sequence/Random, 'fifty_twerk_cour', 1),
-	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable, 'fifty_twerk_cour'),
+	    SendOSC(rpicourport, '/pyta/slide/alpha', twerks, 1),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'fifty_twerk_jardin', 1),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'fifty_twerk_jardin'),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'fifty_twerk_cour', 1),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'fifty_twerk_cour'),
 	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'fifty_stagier'),
-	    SendOSC(lightseqport, '/Lightseq/Play', timestamp),			
-		
+	    SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
             SendOscState([
 
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0], # gtr
@@ -338,26 +333,26 @@ fifty = [
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(125)),
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(125)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(125)),
-		
+
 		#TODO Positionnement
-	    SendOSC(rpijardinport, '/pyta/text', 2, 'nAfr0-tRap'), 
+	    SendOSC(rpijardinport, '/pyta/text', 2, 'nAfr0-tRap'),
 	    SendOSC(rpicourport, '/pyta/text', 1, 'NYMPH0 TRAP'),
 	    SendOSC(rpijardinport, '/pyta/text/visible', 2, 1),
 	    SendOSC(rpijardinport, '/pyta/text/strobe', 2, 1, 12, 0.5),
-	    SendOSC(rpijardinport, '/pyta/text/alpha', 2, 0.5),		
+	    SendOSC(rpijardinport, '/pyta/text/alpha', 2, 0.5),
 	    SendOSC(rpicourport, '/pyta/text/visible', 1, 1),
 	    SendOSC(rpicourport, '/pyta/text/strobe', 1, 1, 11, 0.5),
 	    SendOSC(rpijardinport, '/pyta/text/alpha', 1, 0.5),
-		
+
 	    SendOSC(lightseqport, '/Lightseq/Bpm', 125),
 	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'fifty_nymphotrap_blow'),
 	    SendOSC(rpijardinport, '/pyta/slide/alpha', twerks, 0.15),
-	    SendOSC(rpicourport, '/pyta/slide/alpha', twerks, 0.15),		
-	    SendOSC(lightseqport, '/Lightseq/Sequence/Random, 'fifty_twerk_jardin', 1),
-	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable, 'fifty_twerk_jardin'),
-	    SendOSC(lightseqport, '/Lightseq/Sequence/Random, 'fifty_twerk_cour', 1),
-	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable, 'fifty_twerk_cour'),
-	    SendOSC(lightseqport, '/Lightseq/Play', timestamp),		    
+	    SendOSC(rpicourport, '/pyta/slide/alpha', twerks, 0.15),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'fifty_twerk_jardin', 1),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'fifty_twerk_jardin'),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'fifty_twerk_cour', 1),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'fifty_twerk_cour'),
+	    SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
@@ -401,16 +396,16 @@ fifty = [
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(125)),
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(125)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(125)),
-		
-		#TODO Positionnement		
+
+		#TODO Positionnement
 	    SendOSC(lightseqport, '/Lightseq/Bpm', 125),
 	    SendOSC(rpijardinport, '/pyta/slide/alpha', twerks, 0.15),
-	    SendOSC(rpicourport, '/pyta/slide/alpha', twerks, 0.15),		
-	    SendOSC(lightseqport, '/Lightseq/Sequence/Random, 'fifty_twerk_jardin', 1),
-	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable, 'fifty_twerk_jardin'),
-	    SendOSC(lightseqport, '/Lightseq/Sequence/Random, 'fifty_twerk_cour', 1),
-	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable, 'fifty_twerk_cour'),
-	    SendOSC(lightseqport, '/Lightseq/Play', timestamp),		    
+	    SendOSC(rpicourport, '/pyta/slide/alpha', twerks, 0.15),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'fifty_twerk_jardin', 1),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'fifty_twerk_jardin'),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'fifty_twerk_cour', 1),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'fifty_twerk_cour'),
+	    SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
@@ -437,7 +432,7 @@ fifty = [
             bassbufferst_off,
             ]
         ],
-		    
+
     # orl >> ProgramFilter(7) >> [ # Refrain - Bouton 7
     #     Program(69) >> cseqtrigger,
     #     [
