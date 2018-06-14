@@ -119,8 +119,8 @@ twerks = " ".join(['Twerk_'+str(i) for i in range(1,9)])
 fifty_colo_jardin = []
 fifty_colo_cour = []
 for i in range(0,46):
-  fifty_colo_jardin.append([[rpijardinport, '/pyta/slide/visible', colos, 0], [rpijardinport, '/pyta/slide/visible'], 'Colo_'+str(i), 1])
-  fifty_colo_cour.append([[rpicourport, '/pyta/slide/visible', colos, 0], [rpicourport, '/pyta/slide/visible'], 'Colo_'+str(i), 1])
+  fifty_colo_jardin.append([[rpijardinport, '/pyta/slide/visible', colos, 0], [rpijardinport, '/pyta/slide/visible', 'Colo_'+str(i), 1]])
+  fifty_colo_cour.append([[rpicourport, '/pyta/slide/visible', colos, 0], [rpicourport, '/pyta/slide/visible', 'Colo_'+str(i), 1]])
 
 fifty_coffee = [
   None, None, None, None,

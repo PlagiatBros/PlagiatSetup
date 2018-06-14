@@ -65,16 +65,34 @@ fifty = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(117)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(117)),
 
+        SendOSC(rpijardinport, '/pyta/text/size', -1, 0.05),
+        SendOSC(rpicourport, '/pyta/text/size', -1, 0.05),
+
+
 		#TODO Scaling, Position en mode logo (en haut du cadre)
 	    SendOSC(rpijardinport, '/pyta/text', 0, "PLAGIAT"),
+        SendOSC(rpijardinport, '/pyta/text/size', 0, 0.2),
+        SendOSC(rpijardinport, '/pyta/text/align', 0, 'center', 'top'),
 	    SendOSC(rpijardinport, '/pyta/text/visible', 0, 1),
-	    SendOSC(rpijardinport, '/pyta/text', 2, "makes ~art~ wizz $hit"),
-	    SendOSC(rpijardinport, '/pyta/text/visible', 2, 1),
 
-	    SendOSC(rpijardinport, '/pyta/text', 2, "[plaʒia]"),
-	    SendOSC(rpijardinport, '/pyta/text/visible', 0, 1),
-	    SendOSC(rpijardinport, '/pyta/text', 1, "bakes $hit wiv butter"),
-	    SendOSC(rpijardinport, '/pyta/text/visible', 1, 1),
+	    SendOSC(rpijardinport, '/pyta/text', 3, "makes ~art~ wizz $hit"),
+        SendOSC(rpijardinport, '/pyta/text/size', 3, 0.07),
+        SendOSC(rpijardinport, '/pyta/text/align', 3, 'center', 'top'),
+        SendOSC(rpijardinport, '/pyta/text/position', 3, 0, -130),
+        SendOSC(rpijardinport, '/pyta/text/visible', 3, 1),
+
+	    SendOSC(rpicourport, '/pyta/text', 2, "[plaʒia]"),
+	    SendOSC(rpicourport, '/pyta/text/size', 2, 0.2),
+        SendOSC(rpicourport, '/pyta/text/align', 2, 'center', 'top'),
+        SendOSC(rpicourport, '/pyta/text/position', 2, 0, -50),
+	    SendOSC(rpicourport, '/pyta/text/visible', 2, 1),
+
+	    SendOSC(rpicourport, '/pyta/text', 1, "bakes $hit wiv butter"),
+        SendOSC(rpicourport, '/pyta/text/size', 1, 0.2),
+        SendOSC(rpicourport, '/pyta/text/align', 1, 'center', 'top'),
+        SendOSC(rpicourport, '/pyta/text/position', 1, 0, -50),
+        SendOSC(rpicourport, '/pyta/text/visible', 1, 1),
+
 
 	    SendOSC(lightseqport, '/Lightseq/Bpm', '117'),
 	    SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'fifty_offre_emploi', 1),
