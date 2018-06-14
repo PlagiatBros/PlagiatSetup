@@ -77,6 +77,16 @@ horrorcore = [
 
             SendOSC(mk2inport, '/mididings/switch_scene', 5),
 
+            SendOSC(rpijardinport, '/pyta/text', 0, 'PLAGIAT'),
+            SendOSC(rpijardinport, '/pyta/text/visible', 0, 1),
+            SendOSC(rpicourport, '/pyta/text', 0, 'PLAGIAT'),
+            SendOSC(rpicourport, '/pyta/text/visible', 0, 1),
+
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'hc_notheft'),
+            
+
+            
+
             SendOscState([
 
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
@@ -133,6 +143,13 @@ horrorcore = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(150)),
 
+            SendOSC(lightseqport, '/Lightseq/Bpm', 150),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'hc_wood_jardin', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'hc_wood_jardin'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'hc_wood_cour', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'hc_wood_cour'),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
             SendOscState([
 
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
@@ -187,6 +204,14 @@ horrorcore = [
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(150)),
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(150)),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 75),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'hc_wood_jardin', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'hc_wood_jardin'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'hc_wood_cour', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'hc_wood_cour'),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+            
 
             SendOscState([
 
