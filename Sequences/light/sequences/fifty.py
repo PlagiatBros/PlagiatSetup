@@ -151,12 +151,12 @@ fifty_nymphotrap_blow = [
 ]
 
 fifty_stagier = [
-  None, None, None, [['/pyta/text', 0, '??'], ['/pyta/text/visible', 0, 1]],
-  ['/pyta/text/visible', 0, 0], None, None, [['/pyta/text', 2, 'Stagière'], ['/pyta/text/visible', 2, 1]],
-  None, ['/pyta/text/visible', 2, 0], None, None,
-  None, None, None, [['/pyta/text', 2, 'Stajiärhee'], ['/pyta/text/visible', 2, 1]],
-  None, ['/pyta/text/visible', 2, 0], None, [['/pyta/text', 0, '????'], ['/pyta/text/visible', 0, 1]],
-  ['/pyta/text/visible', 0, 0], None, None, [['/pyta/text', 2, 'Stajillère'], ['/pyta/text/visible', 2, 1]],
-  None, None, None, [['/pyta/text', 0, 'Qqqq ??'], ['/pyta/text/visible', 0, 1]],
-  None, None, None, None
+  None, None, None, [['/pyta/text', 0, '??'], ['/pyta/text/visible', 0, 1], ['/pyta/slide/alpha', twerks, 0.01]],
+  [['/pyta/text/visible', 0, 0], ['/pyta/slide/alpha', twerks, 1]], None, None, [['/pyta/text', 2, 'Stagière'], ['/pyta/text/visible', 2, 1], ['/pyta/slide/alpha', twerks, 0.01]],
+  None, [['/pyta/text/visible', 2, 0],['/pyta/slide/alpha', twerks, 1]], None, None,
+  None, None, None, [['/pyta/text', 2, 'Stajiärhee'], ['/pyta/text/visible', 2, 1], ['/pyta/slide/alpha', twerks, 0.01]],
+  None, [['/pyta/text/visible', 2, 0],['/pyta/slide/alpha', twerks, 0.01]], None, [['/pyta/text', 0, '????'], ['/pyta/text/visible', 0, 1], ['/pyta/slide/alpha', twerks, 0.01]],
+  [['/pyta/text/visible', 0, 0], ['/pyta/slide/alpha', twerks, 1]], None, None, [['/pyta/text', 2, 'Stajillère'], ['/pyta/text/visible', 2, 1], ['/pyta/slide/alpha', twerks, 0.01]],
+  None, [['/pyta/text/visible', 2, 0],['/pyta/slide/alpha', twerks, 1]], None, [['/pyta/text', 0, 'Qqqq ??'], ['/pyta/text/visible', 0, 1], ['/pyta/slide/alpha', twerks, 0.01]],
+  [['/pyta/text/visible', 0, 0], ['/pyta/slide/alpha', twerks, 1]], None, None, None
 ]
