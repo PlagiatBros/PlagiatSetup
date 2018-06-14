@@ -145,13 +145,13 @@ dafist_mooncupwaters_rgb = [
 barre = 'Dafist_trance_bar'
 dafist_transe_blinkload = [
     ['/pyta/slide/visible', barre, 1], ['/pyta/slide/visible', barre, 0]
-]
+] * 2
 
 smokes = " ".join(['Smoke_'+str(i) for i in range(1,20)])
 
 dafist_transe_smokes_jardin = []
 for i in range (1,20):
-    dafist_transe_smokes_jardin.append([[rpijardinport, '/pyta/slide/visible', smokes, 0], [rpijardinport, '/pyta/slide/visible', 'Smoke_'+str(i), 1], [rpijardinport, '/pyta/slide/animate', 'Smoke_'+str(i), 'scale_x', 790, 800, 0.4]])
+    dafist_transe_smokes_jardin.append([[rpijardinport, '/pyta/slide/visible', smokes, 0], [rpijardinport, '/pyta/slide/visible', 'Smoke_'+str(i), 1], [rpijardinport, '/pyta/slide/animate', 'Smoke_'+str(i), 'scale_x', 790, 800, 0.4], [rpijardinport, '/pyta/slide/animate', 'Smoke_'+str(i), 'rotate_y', '+0', '+180', 0]])
 dafist_transe_smokes_cour = []
 for i in range (1,20):
-    dafist_transe_smokes_cour.append([[rpicourport, '/pyta/slide/visible', smokes, 0], [rpicourport, '/pyta/slide/visible', 'Smoke_'+str(i), 1], [rpicourport, '/pyta/slide/animate', 'Smoke_'+str(i), 'scale_x', 790, 800, 0.4]])
+    dafist_transe_smokes_cour.append([[rpicourport, '/pyta/slide/visible', smokes, 0], [rpicourport, '/pyta/slide/visible', 'Smoke_'+str(i), 1], [rpicourport, '/pyta/slide/animate', 'Smoke_'+str(i), 'scale_x', 790, 800, 0.4], [rpicourport, '/pyta/slide/animate', 'Smoke_'+str(i), 'rotate_y', '+0', '+180', 0]])
