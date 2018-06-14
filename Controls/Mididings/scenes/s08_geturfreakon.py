@@ -50,6 +50,29 @@ geturfreakon = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(75)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(75)),
 
+
+            SendOSC(rpijardinport, '/pyta/slide/animate', 'TearEye_1', 'alpha', 0, 1, 180 ),
+            SendOSC(rpijardinport, '/pyta/slide/visible', 'TearEye_1', 1),
+            SendOSC(rpicourport, '/pyta/slide/animate', 'TearEye_1', 'alpha', 0, 1, 180 ),
+            SendOSC(rpicourport, '/pyta/slide/visible', 'TearEye_1', 1),
+
+
+            SendOSC(rpijardinport, '/pyta/text/align', 2, 'left', 'top'),
+            SendOSC(rpijardinport, '/pyta/text', 2, '[plaʒia]                             '),
+            SendOSC(rpijardinport, '/pyta/text/animate', 2, 'size', 0.8, 0.1, 4),            
+            SendOSC(rpijardinport, '/pyta/text', 1, 'for sensitive people'),
+            SendOSC(rpijardinport, '/pyta/text', 0, 'sensitivepeople@plagiat.org'),
+            SendOSC(rpijardinport, '/pyta/text/visible', -1, 1),
+            SendOSC(rpicourport, '/pyta/text', 2, '[plaʒia]                             '),
+            SendOSC(rpicourport, '/pyta/text/align', 2, 'left', 'top'),
+            SendOSC(rpicourport, '/pyta/text/animate', 2, 'size', 0.8, 0.1, 4),            
+            SendOSC(rpicourport, '/pyta/text', 1, 'for sensitive people'),
+            SendOSC(rpicourport, '/pyta/text', 0, 'sensitivepeople@plagiat.org'),
+            SendOSC(rpicourport, '/pyta/text/visible', -1, 1),
+
+            SendOSc(lightseqport, '/Lightseq/Bpm', 20),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'sm_blinkinterns'),
+
             SendOscState([
 
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
