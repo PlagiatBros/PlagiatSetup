@@ -560,10 +560,11 @@ dafist = [
             SendOSC(rpicourport, '/pyta/text/position', 2, -10, 20),
             SendOSC(rpicourport, '/pyta/text/align', 2, 'right', 'bottom'),
 
-            SendOSC(lightseqport, '/Lightseq/', 'Bpm', 520),
-            #TODO créer alias SMOKES
+
             SendOSC(rpijardinport, '/pyta/slide/alpha', smokes, 0.1),
             SendOSC(rpicourport, '/pyta/slide/alpha', smokes, 0.1),
+
+            SendOSC(lightseqport, '/Lightseq/', 'Bpm', 520),
             SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_transe_smokes_jardin', 1),
             SendOSC(lightseqport, '/Lightseq/Sequence/Play', 'dafist_transe_smokes_jardin'),
             SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_transe_smokes_cour', 1),
@@ -571,7 +572,7 @@ dafist = [
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
             # Création de la barre de chargement
-            #TODO faire l'échelle et le positionnement - le cadre est le cadre de la barre de chargement
+            #TODO barre de chargement plus jolie ?
             SendOSC(rpijardinport, '/pyta/slide/visible', 'Mask_4', 1),
             SendOSC(rpijardinport, '/pyta/slide/position_x', 'Dafist_trance_bar', -800),
             SendOSC(rpijardinport, '/pyta/slide/position_z', 'Dafist_trance_bar', 0),
