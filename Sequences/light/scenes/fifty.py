@@ -1,16 +1,13 @@
+#encoding: utf-8
 import sys
 sys.path.append("../Controls/Mididings/")
 import random
 
 from ports import *
 
-colos=""
-for i in range(1,47):
-  colos+='Colo_'+str(i)+' '
+colos = " ".join(['Colo_'+str(i) for i in range(1,47)])
+twerks = " ".join(['Twerk_'+str(i) for i in range(1,9)])
 
-colos=""
-for i in range(1,9):
-  colos+='Colo_'+str(i)+' '
 
 def fifty_tea(seq, timer):
   seq.send('/pyta/slide/alpha', colos, 0.01)
@@ -39,5 +36,4 @@ def fifty_shit(seq, timer):
   seq.send('/pyta/text/visible', i, 1)
   timer.wait(2, 'beat')
   seq.send('/pyta/text/visible', i, 0)        
-
 

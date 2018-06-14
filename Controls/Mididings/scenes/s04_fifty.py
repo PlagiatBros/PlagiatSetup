@@ -39,8 +39,8 @@ fifty = [
     [orl, jeannot] >> ProgramFilter([range(2,12)]) >> [
         SendOSC(lightseqport, '/Lightseq/Sequence/Disable', '*'),
         SendOSC(lightseqport, '/Lightseq/Scene/Stop', '*'),
-        SendOSC(rpijardinport, '/pyta/animate/stop'),
-        SendOSC(rpicourport, '/pyta/animate/stop'),
+        SendOSC(rpijardinport, '/pyta/slide/animate/stop'),
+        SendOSC(rpicourport, '/pyta/slide/animate/stop'),
         SendOSC(rpijardinport, '/pyta/slide/visible', -1, 0),
         SendOSC(rpicourport, '/pyta/slide/visible', -1, 0),
         SendOSC(rpijardinport, '/pyta/text/reset', -1),
@@ -65,24 +65,53 @@ fifty = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(117)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(117)),
 
+
 		#TODO Scaling, Position en mode logo (en haut du cadre)
 	    SendOSC(rpijardinport, '/pyta/text', 0, "PLAGIAT"),
+        SendOSC(rpijardinport, '/pyta/text/size', 0, 0.2),
+        SendOSC(rpijardinport, '/pyta/text/align', 0, 'center', 'top'),
+        SendOSC(rpijardinport, '/pyta/text/position', 0, 0, -100),
 	    SendOSC(rpijardinport, '/pyta/text/visible', 0, 1),
-	    SendOSC(rpijardinport, '/pyta/text', 2, "makes ~art~ wizz $hit"),
-	    SendOSC(rpijardinport, '/pyta/text/visible', 2, 1),
 
-	    SendOSC(rpijardinport, '/pyta/text', 2, "[plaʒia]"),
-	    SendOSC(rpijardinport, '/pyta/text/visible', 0, 1),
-	    SendOSC(rpijardinport, '/pyta/text', 1, "bakes $hit wiv butter"),
-	    SendOSC(rpijardinport, '/pyta/text/visible', 1, 1),
+	    SendOSC(rpijardinport, '/pyta/text', 3, "makes ~art~ wizz $hit"),
+        SendOSC(rpijardinport, '/pyta/text/size', 3, 0.07),
+        SendOSC(rpijardinport, '/pyta/text/align', 3, 'center', 'top'),
+        SendOSC(rpijardinport, '/pyta/text/position', 3, 0, -230),
+        SendOSC(rpijardinport, '/pyta/text/visible', 3, 1),
+
+        SendOSC(rpijardinport, '/pyta/text/size', 1, 0.05),
+        SendOSC(rpijardinport, '/pyta/text/align', 1, 'center', 'center'),
+        SendOSC(rpijardinport, '/pyta/text/position', 1, 0, -100),
+        SendOSC(rpijardinport, '/pyta/text/visible', 1, 1),
+
+
+
+
+	    SendOSC(rpicourport, '/pyta/text', 3, "[plaʒia]"),
+        SendOSC(rpicourport, '/pyta/text/size', 3, 0.15),
+        SendOSC(rpicourport, '/pyta/text/align', 3, 'center', 'top'),
+        SendOSC(rpicourport, '/pyta/text/position', 3, 0, -100),
+	    SendOSC(rpicourport, '/pyta/text/visible', 3, 1),
+
+	    SendOSC(rpicourport, '/pyta/text', 1, "bakes $hit wiv butter"),
+        SendOSC(rpicourport, '/pyta/text/size', 1, 0.07),
+        SendOSC(rpicourport, '/pyta/text/align', 1, 'center', 'top'),
+        SendOSC(rpicourport, '/pyta/text/position', 1, 0, -230),
+        SendOSC(rpicourport, '/pyta/text/visible', 1, 1),
+
+        SendOSC(rpicourport, '/pyta/text', 2, ''),
+        SendOSC(rpicourport, '/pyta/text/size', 2, 0.05),
+        SendOSC(rpicourport, '/pyta/text/align', 2, 'center', 'center'),
+        SendOSC(rpicourport, '/pyta/text/position', 2, 0, -100),
+        SendOSC(rpicourport, '/pyta/text/visible', 2, 1),
+        
 
 	    SendOSC(lightseqport, '/Lightseq/Bpm', '117'),
 	    SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'fifty_offre_emploi', 1),
 	    SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'fifty_offre_emploi_strobe', 1),
 	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'fifty_offre_emploi'),
 	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'fifty_offre_emploi_strobe'),
-	    SendOSC(rpijardinport, '/pyta/text/visible', 1, 1),
-	    SendOSC(rpicourport, '/pyta/text/visible', 2, 1),
+
 
             SendOscState([
 
