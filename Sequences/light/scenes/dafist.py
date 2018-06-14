@@ -1,3 +1,4 @@
+#encoding: utf-8
 import sys
 sys.path.append("../Controls/Mididings/")
 import random
@@ -261,7 +262,7 @@ def dafist_patatesyncope(seq, timer):
 
 def dafist_vpoff(seq, timer):
     seq.send(vporlport, '/pyta/slide/visible', -1, 0)
-    
+
 def dafist_look(seq, timer):
     slide_rpiJ = random.randint(0,2)
     slide_rpiC = random.randint(0,2)

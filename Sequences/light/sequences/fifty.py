@@ -113,16 +113,15 @@ fifty_offre_emploi_strobe = [
 
 ]
 
-colos=""
-for i in range(1,47):
-  colos.append('Colo_'+str(i)+' ')
+colos = " ".join(['Colo_'+str(i) for i in range(1,47)])
+twerks = " ".join(['Twerk_'+str(i) for i in range(1,9)])
 
 fifty_colo_jardin = []
 fifty_colo_cour = []
 for i in range(0,46):
   fifty_colo_jardin.append([[rpijardinport, '/pyta/slide/visible', colos, 0], [rpijardinport, '/pyta/slide/visible'], 'Colo_'+str(i), 1])
   fifty_colo_cour.append([[rpicourport, '/pyta/slide/visible', colos, 0], [rpicourport, '/pyta/slide/visible'], 'Colo_'+str(i), 1])
-  
+
 fifty_coffee = [
   None, None, None, None,
   None, None, None, None,
@@ -130,12 +129,8 @@ fifty_coffee = [
   None, None, [':/Lightseq/Scene/Play', 'fifty_tea'], None
 ]
 
-twerks=""
-for i in range(1,100):
-  twerks.append("Twerk_"+str(i)+" ")
-
 fifty_twerk_jardin=[]
-fifty_twerk_cour=[]             
+fifty_twerk_cour=[]
 for i in range(0,5):
     fifty_twerk_jardin.append([[rpijardinport, '/pyta/slide/visible', twerks, 0],[rpijardinport, '/pyta/slide/visible', 'Twerk_1.gif']])
     fifty_twerk_cour.append([[rpicourport, '/pyta/slide/visible', twerks, 0],[rpicourport, '/pyta/slide/visible', 'Twerk_1.gif']])

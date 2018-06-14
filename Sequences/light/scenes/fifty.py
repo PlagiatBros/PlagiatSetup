@@ -1,16 +1,13 @@
+#encoding: utf-8
 import sys
 sys.path.append("../Controls/Mididings/")
 import random
 
 from ports import *
 
-colos=""
-for i in range(1,47):
-colos.append('Colo_'+str(i)+' ')
+colos = " ".join(['Colo_'+str(i) for i in range(1,47)])
+twerks = " ".join(['Twerk_'+str(i) for i in range(1,9)])
 
-colos=""
-for i in range(1,9):
-colos.append('Colo_'+str(i)+' ')
 
 def fifty_tea(seq, timer):
   seq.send('/pyta/slide/alpha', colos, 0.01)
@@ -23,19 +20,19 @@ def fifty_tea(seq, timer):
 
 butters = ['Butter', 'BuTtEr', 'butter', 'BUTTER', 'bUtTeR', 'BuRgEr' , 'BeTTeR']
 shits = ['Shit', '$hIt', '$HIT', '$hit', '$hibre', '$HiT', 'ChIt', 'ChIbrr']
-  
+
 def fifty_butter(seq, timer):
   i = random.randomint(0,2)
   j = random.randomint(0,7)
   seq.send('/pyta/text', i, butters[j]),
   seq.send('/pyta/text/visible', i, 1)
-  timer.wait(2, 'beat)
+  timer.wait(2, 'beat')
   seq.send('/pyta/text/visible', i, 0)
-             
+
 def fifty_shit(seq, timer):
   i = random.randomint(0,2)
   j = random.randomint(0,8)
   seq.send('/pyta/text', i, shits[j]),
   seq.send('/pyta/text/visible', i, 1)
-  timer.wait(2, 'beat)
-  seq.send('/pyta/text/visible', i, 0)        
+  timer.wait(2, 'beat')
+  seq.send('/pyta/text/visible', i, 0)

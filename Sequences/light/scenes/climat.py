@@ -1,9 +1,10 @@
+#encoding: utf-8
 import sys
 sys.path.append("../Controls/Mididings/")
 
 from ports import *
 
-def climat_granmounoute(seq.timer):
+def climat_granmounoute(seq, timer):
   seq.send('/pyta/text', 2, 'Gran Mounoute  ')
   seq.send('/pyta/text/visible', 2, 1)
   timer.wait(1, 's')
@@ -15,9 +16,9 @@ def climat_granmounoute(seq.timer):
   timer.wait(2, 's')
   seq.send(rpijardinport, '/pyta/text', 2, 'Kondom...')
   timer.wait(1, 's')
-  seq.send('/pyta/text/visible', 2, 0)  
+  seq.send('/pyta/text/visible', 2, 0)
 
-def climat_dignite(seq.timer):
+def climat_dignite(seq, timer):
   seq.send('/pyta/text', 2, 'Dignité  ')
   seq.send('/pyta/text/visible', 2, 1)
   timer.wait(0.5, 's')
@@ -40,7 +41,7 @@ def climat_dignite(seq.timer):
   seq.send('/pyta/text/visible', 2, 0)
 
 
-def climat_eternite(seq.timer):
+def climat_eternite(seq, timer):
   seq.send('/pyta/text', 2, 'Eternité')
   seq.send('/pyta/text/visible', 2, 1)
   timer.wait(0.5, 's')
@@ -59,4 +60,4 @@ def climat_eternite(seq.timer):
   seq.send(rpijardinport, '/pyta/text', 2, 'Z')
   seq.send(rpicourport, '/pyta/text', 2, 'Z')
   timer.wait(1, 's')
-  seq.send('/pyta/text/visible', 2, 0)  
+  seq.send('/pyta/text/visible', 2, 0)
