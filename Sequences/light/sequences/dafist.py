@@ -83,14 +83,14 @@ dafist_mooncupwaters_jardin = [
     [[rpijardinport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Mooncup_3', 1]],
 ]
 dafist_mooncupwaters_cour = [
-    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Moise_1', 1]],
-    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Moise_2', 1]],
-    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Moise_3', 1]],
-    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Butts_1', 1]],
-    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Butts_2', 1]],
-    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Mooncup_1', 1]],
-    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Mooncup_2', 1]],
-    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Mooncup_3', 1]],
+    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpicourport, '/pyta/slide/visible', 'Moise_1', 1]],
+    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpicourport, '/pyta/slide/visible', 'Moise_2', 1]],
+    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpicourport, '/pyta/slide/visible', 'Moise_3', 1]],
+    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpicourport, '/pyta/slide/visible', 'Butts_1', 1]],
+    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpicourport, '/pyta/slide/visible', 'Butts_2', 1]],
+    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpicourport, '/pyta/slide/visible', 'Mooncup_1', 1]],
+    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpicourport, '/pyta/slide/visible', 'Mooncup_2', 1]],
+    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpicourport, '/pyta/slide/visible', 'Mooncup_3', 1]],
 ]
 dafist_mooncupwaters_alpha = [
     ['/pyta/slide/alpha', mooncupwaters_slides, 0],
@@ -154,11 +154,6 @@ dafist_transe_cutoff = [
     _show_bar, None, None, None,
     None, None, None, None,
     None, None, None, None,
-    None, None, None, None,
-
-    None, None, None, None,
-    None, None, None, None,
-    None, None, None, None,
     None, (_hide_bar, None, None, None), None, (_show_bar, None),
 ]
 
@@ -166,7 +161,7 @@ smokes = " ".join(['Smoke_'+str(i) for i in range(1,20)])
 
 dafist_transe_smokes_jardin = []
 for i in range (1,20):
-    dafist_transe_smokes_jardin.append([[rpijardinport, '/pyta/slide/visible', smokes, 0], [rpijardinport, '/pyta/slide/visible', 'Smoke_'+str(i), 1], [rpijardinport, '/pyta/slide/animate', 'Smoke_'+str(i), 'scale_x', 790, 800, 0.4], [rpijardinport, '/pyta/slide/animate', 'Smoke_'+str(i), 'rotate_y', '+0', '+180', 0]])
+    dafist_transe_smokes_jardin.append([[rpijardinport, '/pyta/slide/visible', smokes, 0], [rpijardinport, '/pyta/slide/visible', 'Smoke_'+str(i), 1], [rpijardinport, '/pyta/slide/animate', 'Smoke_'+str(i), 'scale_x', 790, 800, 0.2], [rpijardinport, '/pyta/slide/animate', 'Smoke_'+str(i), 'rotate_y', '+0', '+180', 0]])
 dafist_transe_smokes_cour = []
 for i in range (1,20):
-    dafist_transe_smokes_cour.append([[rpicourport, '/pyta/slide/visible', smokes, 0], [rpicourport, '/pyta/slide/visible', 'Smoke_'+str(i), 1], [rpicourport, '/pyta/slide/animate', 'Smoke_'+str(i), 'scale_x', 790, 800, 0.4], [rpicourport, '/pyta/slide/animate', 'Smoke_'+str(i), 'rotate_y', '+0', '+180', 0]])
+    dafist_transe_smokes_cour.append([[rpicourport, '/pyta/slide/visible', smokes, 0], [rpicourport, '/pyta/slide/visible', 'Smoke_'+str(i), 1], [rpicourport, '/pyta/slide/animate', 'Smoke_'+str(i), 'scale_x', 790, 800, 0.2], [rpicourport, '/pyta/slide/animate', 'Smoke_'+str(i), 'rotate_y', '+0', '+180', 0]])
