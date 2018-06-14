@@ -384,6 +384,60 @@ fifty = [
             bassbufferst_off,
             ]
         ],
+    orl >> ProgramFilter(7) >> [ # Pont afro 2 - Bount 7
+        #TODO son synthé
+        Program(69) >> cseqtrigger,
+        [
+
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 125),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 125),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(125)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(125)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(125)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(125)),
+		
+		#TODO Positionnement		
+	    SendOSC(lightseqport, '/Lightseq/Bpm', 125),
+	    SendOSC(rpijardinport, '/pyta/slide/alpha', twerks, 0.15),
+	    SendOSC(rpicourport, '/pyta/slide/alpha', twerks, 0.15),		
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Random, 'fifty_twerk_jardin', 1),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable, 'fifty_twerk_jardin'),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Random, 'fifty_twerk_cour', 1),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable, 'fifty_twerk_cour'),
+	    SendOSC(lightseqport, '/Lightseq/Play', timestamp),		    
+
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
+
+
+            vxorlgars_on,
+            vxorlmeuf_off,
+            vxorldisint_off,
+            vxorldelay_off,
+            vxorlvocode_off,
+
+            vxjeannotdelay_off,
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
+            vxjeannotdisint_off,
+            vxjeannotvocode_off,
+
+            bassdry,
+
+            ] >> Discard(),
+        [
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
+            ]
+        ],
+		    
     # orl >> ProgramFilter(7) >> [ # Refrain - Bouton 7
     #     Program(69) >> cseqtrigger,
     #     [
