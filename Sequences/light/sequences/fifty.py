@@ -120,11 +120,43 @@ for i in range(1,47):
 fifty_colo_jardin = []
 fifty_colo_cour = []
 for i in range(0,46):
-  fifty_colo.append([['/pyta/slide/visible', colos, 0], ['/pyta/slide/visible'], 'Colo_'+str(i), 1])
+  fifty_colo_jardin.append([[rpijardinport, '/pyta/slide/visible', colos, 0], [rpijardinport, '/pyta/slide/visible'], 'Colo_'+str(i), 1])
+  fifty_colo_cour.append([[rpicourport, '/pyta/slide/visible', colos, 0], [rpicourport, '/pyta/slide/visible'], 'Colo_'+str(i), 1])
   
 fifty_coffee = [
   None, None, None, None,
   None, None, None, None,
   None, None, None, None,
   None, None, [':/Lightseq/Scene/Play', 'fifty_tea'], None
+]
+
+twerks=""
+for i in range(1,100):
+  twerks.append("Twerk_"+str(i)+" ")
+
+fifty_twerk_jardin=[]
+fifty_twerk_cour=[]             
+for i in range(0,5):
+    fifty_twerk_jardin.append([[rpijardinport, '/pyta/slide/visible', twerks, 0],[rpijardinport, '/pyta/slide/visible', 'Twerk_1.gif']])
+    fifty_twerk_cour.append([[rpicourport, '/pyta/slide/visible', twerks, 0],[rpicourport, '/pyta/slide/visible', 'Twerk_1.gif']])
+for i in range(0,2):
+    fifty_twerk_jardin.append([[rpijardinport, '/pyta/slide/visible', twerks, 0],[rpijardinport, '/pyta/slide/visible', 'Twerk_2.gif']])
+    fifty_twerk_cour.append([[rpicourport, '/pyta/slide/visible', twerks, 0],[rpicourport, '/pyta/slide/visible', 'Twerk_2.gif']])
+
+fifty_twerk_jardin.append([[rpijardinport, '/pyta/slide/visible', twerks, 0],[rpijardinport, '/pyta/slide/visible', 'Twerk_3.gif']])
+fifty_twerk_cour.append([[rpicourport, '/pyta/slide/visible', twerks, 0],[rpicourport, '/pyta/slide/visible', 'Twerk_3.gif']])
+
+fifty_nymphotrap_blow = [
+  [[rpijardinport, '/pyta/text/animate', 2, 'scale_x', 780, 800, 0.1],[rpicourport, '/pyta/text/animate', 1, 'scale_x', 780, 800, 0.1]]
+]
+
+fifty_stagier = [
+  None, None, None, [['/pyta/text', 0, '??'], ['/pyta/text/visible', 0, 1], ['/pyta/slide/alpha', twerks, 0.01]],
+  [['/pyta/text/visible', 0, 0], ['/pyta/slide/alpha', twerks, 1]], None, None, [['/pyta/text', 2, 'Stagière'], ['/pyta/text/visible', 2, 1], ['/pyta/slide/alpha', twerks, 0.01]],
+  None, [['/pyta/text/visible', 2, 0],['/pyta/slide/alpha', twerks, 1]], None, None,
+  None, None, None, [['/pyta/text', 2, 'Stajiärhee'], ['/pyta/text/visible', 2, 1], ['/pyta/slide/alpha', twerks, 0.01]],
+  None, [['/pyta/text/visible', 2, 0],['/pyta/slide/alpha', twerks, 0.01]], None, [['/pyta/text', 0, '????'], ['/pyta/text/visible', 0, 1], ['/pyta/slide/alpha', twerks, 0.01]],
+  [['/pyta/text/visible', 0, 0], ['/pyta/slide/alpha', twerks, 1]], None, None, [['/pyta/text', 2, 'Stajillère'], ['/pyta/text/visible', 2, 1], ['/pyta/slide/alpha', twerks, 0.01]],
+  None, [['/pyta/text/visible', 2, 0],['/pyta/slide/alpha', twerks, 1]], None, [['/pyta/text', 0, 'Qqqq ??'], ['/pyta/text/visible', 0, 1], ['/pyta/slide/alpha', twerks, 0.01]],
+  [['/pyta/text/visible', 0, 0], ['/pyta/slide/alpha', twerks, 1]], None, None, None
 ]
