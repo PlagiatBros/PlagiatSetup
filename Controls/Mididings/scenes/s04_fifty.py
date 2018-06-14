@@ -190,6 +190,12 @@ fifty = [
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(117)),
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(117)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(117)),
+		
+	    SendOSC(lightseqport, '/Lightseq/Bpm', 117),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'fifty_colo', 1),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'fifty_colo'),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'fifty_coffee'),
+	    SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
             SendOscState([
 
