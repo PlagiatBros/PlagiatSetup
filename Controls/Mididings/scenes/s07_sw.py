@@ -27,9 +27,13 @@ sw = [
     [orl, jeannot] >> ProgramFilter([range(2,12)]) >> [
         SendOSC(lightseqport, '/Lightseq/Sequence/Disable', '*'),
         SendOSC(lightseqport, '/Lightseq/Scene/Stop', '*'),
-        SendOSC(vporlport, '/pyta/slide/visible', -1, 0),
-        SendOSC(vpjeannotport, '/pyta/slide/visible', -1, 0),
-        SendOSC(qlcstopport, '/Stop'),
+        SendOSC(rpijardinport, '/pyta/slide/animate/stop'),
+        SendOSC(rpicourport, '/pyta/slide/animate/stop'),
+        SendOSC(rpijardinport, '/pyta/slide/visible', -1, 0),
+        SendOSC(rpicourport, '/pyta/slide/visible', -1, 0),
+        SendOSC(rpijardinport, '/pyta/text/reset', -1),
+        SendOSC(rpicourport, '/pyta/text/reset', -1),
+	SendOSC(qlcstopport, '/Stop'),	         
     ] >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # intro - Bouton 2
@@ -49,6 +53,10 @@ sw = [
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(178.5)),
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(178.5)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(178.5)),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 178.5),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'sw_leboncoin'),
+            
 
             SendOscState([
 
@@ -141,6 +149,22 @@ sw = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(178.5)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(178.5)),
 
+            SendOSC(rpijardinport, '/pyta/text', 0, 'MORONESS'),
+            SendOSC(rpijardinport, '/pyta/text/strobe', 0, 1, 5, 0.5),
+            SendOSC(rpijardinport, '/pyta/text/colorstrobe', 0, 1, 7, 0.5),
+            SendOSC(rpijardinport, '/pyta/slide/strobe', 'White', 1, 4, 0.5),
+            SendOSC(rpijardinport, '/pyta/slide/visible', 'White', 1),
+            SendOSC(rpicourport, '/pyta/slide/strobe', 'White', 1, 4, 0.5),
+            SendOSC(rpicourport, '/pyta/slide/visible', 'White', 1),
+            SendOSC(rpicourport, '/pyta/text', 0, 'MORONESS'),
+            SendOSC(rpicourport, '/pyta/text/strobe', 0, 1, 5, 0.5),
+            SendOSC(rpicourport, '/pyta/text/colorstrobe', 0, 1, 7, 0.5),
+            SendOSC(rpicourport, '/pyta/slide/strobe', 'White', 1, 4, 0.5),
+            SendOSC(rpicourport, '/pyta/slide/visible', 'White', 1),
+
+
+            
+
             SendOscState([
 
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
@@ -222,6 +246,19 @@ sw = [
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(178.5)),
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(178.5)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(178.5)),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 22.3125),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'sw_onetwo_jardin', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'sw_onetwo_jardin'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'sw_onetwo_cour', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'sw_onetwo_cour'),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
+            SendOSC(rpijardinport, '/pyta/slide/animate', 'Water_1', 'alpha', 0.1, 1, 200),
+            SendOSC(rpijardinport, '/pyta/slide/strobe', 'Water_1', 1, 4, 0.5),
+            SendOSC(rpijardinport, '/pyta/slide/visible', 'Water_1', 1),
+            SendOSC(rpijardinport, '/pyta/slide/strobe', 'Water_1', 1, 6, 0.5),
+            SendOSC(rpijardinport, '/pyta/slide/visible', 'Water_1', 1),
 
             SendOscState([
 
