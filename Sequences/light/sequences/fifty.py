@@ -115,7 +115,7 @@ fifty_offre_emploi_strobe = [
 
 colos=""
 for i in range(1,47):
-  colos.append('Colo_'+str(i)+' ')
+  colos+='Colo_'+str(i)+' '
 
 fifty_colo_jardin = []
 fifty_colo_cour = []
@@ -132,7 +132,7 @@ fifty_coffee = [
 
 twerks=""
 for i in range(1,100):
-  twerks.append("Twerk_"+str(i)+" ")
+  twerks+="Twerk_"+str(i)+" "
 
 fifty_twerk_jardin=[]
 fifty_twerk_cour=[]             

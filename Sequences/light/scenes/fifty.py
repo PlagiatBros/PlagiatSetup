@@ -6,11 +6,11 @@ from ports import *
 
 colos=""
 for i in range(1,47):
-colos.append('Colo_'+str(i)+' ')
+  colos+='Colo_'+str(i)+' '
 
 colos=""
 for i in range(1,9):
-colos.append('Colo_'+str(i)+' ')
+  colos+='Colo_'+str(i)+' '
 
 def fifty_tea(seq, timer):
   seq.send('/pyta/slide/alpha', colos, 0.01)
@@ -29,7 +29,7 @@ def fifty_butter(seq, timer):
   j = random.randomint(0,7)
   seq.send('/pyta/text', i, butters[j]),
   seq.send('/pyta/text/visible', i, 1)
-  timer.wait(2, 'beat)
+  timer.wait(2, 'beat')
   seq.send('/pyta/text/visible', i, 0)
              
 def fifty_shit(seq, timer):
@@ -37,5 +37,7 @@ def fifty_shit(seq, timer):
   j = random.randomint(0,8)
   seq.send('/pyta/text', i, shits[j]),
   seq.send('/pyta/text/visible', i, 1)
-  timer.wait(2, 'beat)
+  timer.wait(2, 'beat')
   seq.send('/pyta/text/visible', i, 0)        
+
+
