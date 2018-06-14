@@ -145,3 +145,7 @@ for i in range(0,2):
 
 fifty_twerk_jardin.append([[rpijardinport, '/pyta/slide/visible', twerks, 0],[rpijardinport, '/pyta/slide/visible', 'Twerk_3.gif']])
 fifty_twerk_cour.append([[rpicourport, '/pyta/slide/visible', twerks, 0],[rpicourport, '/pyta/slide/visible', 'Twerk_3.gif']])
+
+fifty_nymphotrap_blow = [
+  [[rpijardinport, '/pyta/text/animate', 2, 'scale_x', 780, 800, 0.1],[rpicourport, '/pyta/text/animate', 1, 'scale_x', 780, 800, 0.1]]
+]
