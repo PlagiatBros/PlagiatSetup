@@ -65,3 +65,28 @@ le5_refrain=[
     [t_off, [, '/pyta/text', 0, "UGLY"], ['/pyta/text/animate', 0, 'zoom', 0.7, 1.2, 0.3], ['/pyta/text/visible', 0, 1]], None, None, None, None,
 ]
 
+le5_twerk_jardin=[]
+le5_twerk_cour=[]
+for i in range(0,5):
+    le5_twerk_jardin.append([[rpijardinport, '/pyta/slide/visible', twerks, 0],[rpijardinport, '/pyta/slide/visible', 'Twerk_1.gif']])
+    le5_twerk_cour.append([[rpicourport, '/pyta/slide/visible', twerks, 0],[rpicourport, '/pyta/slide/visible', 'Twerk_1.gif']])
+for i in range(0,2):
+    le5_twerk_jardin.append([[rpijardinport, '/pyta/slide/visible', twerks, 0],[rpijardinport, '/pyta/slide/visible', 'Twerk_2.gif']])
+    le5_twerk_cour.append([[rpicourport, '/pyta/slide/visible', twerks, 0],[rpicourport, '/pyta/slide/visible', 'Twerk_2.gif']])
+
+le5_twerk_jardin.append([[rpijardinport, '/pyta/slide/visible', twerks, 0],[rpijardinport, '/pyta/slide/visible', 'Twerk_3.gif']])
+le5_twerk_cour.append([[rpicourport, '/pyta/slide/visible', twerks, 0],[rpicourport, '/pyta/slide/visible', 'Twerk_3.gif']])
+
+le5_nymphotrap_blow = [
+  [[rpijardinport, '/pyta/text/animate', 2, 'scale_x', 780, 800, 0.1],[rpicourport, '/pyta/text/animate', 1, 'scale_x', 780, 800, 0.1]]
+]
+
+gouttes = ""
+for i in range(1, 5):
+    gouttes+="Gouttes_"+str(i)+" "
+    
+le5_boum_jardin = []
+le5_boum_cour = []
+for i in range(1, 5):
+    le5_boum_jardin.append([[rpijardinport, '/pyta/slide/visible', gouttes, 0],[rpijardinport, '/pyta/slide/visible', 'Gouttes_'+str(i), 1], [rpijardinport, '/pyta/slide/animate', 'Gouttes_'+str(i), 'scale_x', 770, 800, 0.4]])
+    le5_boum_cour.append([[rpicourport, '/pyta/slide/visible', gouttes, 0],[rpicourport, '/pyta/slide/visible', 'Gouttes_'+str(i), 1], [rpicourport, '/pyta/slide/animate', 'Gouttes_'+str(i), 'scale_x', 770, 800, 0.4]])

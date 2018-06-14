@@ -32,6 +32,7 @@ coffee_redseas+="Mars_2 "
 coffee_redseas+="Mountains_1 "
 coffee_redseas+="Mountains_2 "
 
+twerks = " ".join(['Twerk_'+str(i) for i in range(1,100)])
 
 #### Le5 ####
 le5 = [
@@ -523,6 +524,17 @@ le5 = [
 
             SendOSC(monitorsjeannotport, '/strip/Klick/Gain/Mute', 1.0),
 
+            SendOSC(rpijardinport, '/pyta/slide/animate', 'stars1', 'scale_x', 0, 800, 300),
+            SendOSC(rpicourport, '/pyta/slide/animate', 'stars2', 'scale_x', 0, 800, 300),
+            SendOSC(rpijardinport, '/pyta/slide/visible', 'stars1', 1),
+            SendOSC(rpicourport, '/pyta/slide/visible', 'stars2', 1),
+            SendOSC(rpijardinport, '/pyta/text', 2, 'cute is obvious'),
+            SendOSC(rpijardinport, '/pyta/text/align', 2, 'top', 'left'),            
+            SendOSC(rpijardinport, '/pyta/text/visible', 2, 1),
+            SendOSC(rpicourport, '/pyta/text', 2, 'cute is obvious'),
+            SendOSC(rpicourport, '/pyta/text/align', 2, 'top', 'right'),            
+            SendOSC(rpicourport, '/pyta/text/visible', 2, 1),
+            
             ] >> Discard(),
         [
 
@@ -561,6 +573,28 @@ le5 = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(120)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
 
+
+		#TODO Positionnement
+	    SendOSC(rpijardinport, '/pyta/text', 2, 'nAfr0-tRap'),
+	    SendOSC(rpicourport, '/pyta/text', 1, 'NYMPH0 TRAP'),
+	    SendOSC(rpijardinport, '/pyta/text/visible', 2, 1),
+	    SendOSC(rpijardinport, '/pyta/text/strobe', 2, 1, 12, 0.5),
+	    SendOSC(rpijardinport, '/pyta/text/alpha', 2, 0.5),
+	    SendOSC(rpicourport, '/pyta/text/visible', 1, 1),
+	    SendOSC(rpicourport, '/pyta/text/strobe', 1, 1, 11, 0.5),
+	    SendOSC(rpijardinport, '/pyta/text/alpha', 1, 0.5),
+
+	    SendOSC(lightseqport, '/Lightseq/Bpm', 125),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_nymphotrap_blow'),
+	    SendOSC(rpijardinport, '/pyta/slide/alpha', twerks, 0.15),
+	    SendOSC(rpicourport, '/pyta/slide/alpha', twerks, 0.15),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'le5_twerk_jardin', 1),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_twerk_jardin'),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'le5_twerk_cour', 1),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_twerk_cour'),
+	    SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+            
+            
             SendOscState([
 
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
@@ -608,6 +642,23 @@ le5 = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(120)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
 
+            SendOSC(lightseqport, '/Lightseq/Bpm', 120),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'le5_boum_jardin', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'le5_boum_cour', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Play', 'le5_boum_jardin'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Play', 'le5_boum_cour'),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+            SendOSC(rpijardinport, '/pyta/text', 0, "Instouboul"),
+            SendOSC(rpicourport, '/pyta/text', 0, "Instouboul"),
+            SendOSC(rpijardinport, '/pyta/text/align', 0, 'top', 'left'),
+            SendOSC(rpicourport, '/pyta/text/align', 0, 'top', 'right'),
+            SendOSC(rpijardinport, '/pyta/text/animate', 0, 'size', 0, 1, 300),
+            SendOSC(rpicourport, '/pyta/text/animate', 0, 'size', 0, 1, 300),
+            SendOSC(rpijardinport, '/pyta/text/animate', 0, 'alpha', 0.1, 1, 300),
+            SendOSC(rpicourport, '/pyta/text/animate', 0, 'alpha', 0.1, 1, 300),
+            SendOSC(rpijardinport, '/pyta/text/visible', 0, 1),
+            SendOSC(rpicourport, '/pyta/text/visible', 0, 1),            
+
             vxorlgars_on,
             vxorlmeuf_off,
             vxorldisint_off,
@@ -638,7 +689,7 @@ le5 = [
             bassbufferst_on,
             ]
         ],
-    orl >> ProgramFilter(10) >> [ # Instouboul bouclage voix + bass - Bouton 9
+    orl >> ProgramFilter(10) >> [ # Instouboul bouclage voix + bass - Bouton 10
         [
 
             SendOSC(samplesmainport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled',200.),
@@ -669,6 +720,13 @@ le5 = [
             SendOSC(slport, '/sl/2/hit', 'pause_on'), # vxorlpre
             SendOSC(slport, '/sl/4/hit', 'pause_on'), # vxjeannotpre
 
+            SendOSC(lightseqport, '/Lightseq/Bpm', 960),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'le5_boum_jardin', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'le5_boum_cour', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Play', 'le5_boum_jardin'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Play', 'le5_boum_cour'),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+            
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
@@ -683,6 +741,11 @@ le5 = [
 
             SendOSC(slport, '/sl/-1/hit', 'reverse'),
             SendOSC(surfaceorlport, '/sl/-1/hit', 'reverse', 1),
+            
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_instouboulouboutin'),
+            SendOSC(rpijardinport, '/pyta/text/visible', 0, 1),
+            SendOSC(rpicourport, '/pyta/text/visible', 0, 1),     
+            
 
             ] >> Discard()
         ],
