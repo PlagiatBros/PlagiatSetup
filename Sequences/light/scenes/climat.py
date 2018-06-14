@@ -1,3 +1,4 @@
+#encoding: utf-8
 import sys
 sys.path.append("../Controls/Mididings/")
 
@@ -19,7 +20,7 @@ def climat_granmounoute(seq, timer):
   timer.wait(1, 's')
   seq.send('/pyta/text', 2, 'Gran Mounoute  ')
   timer.wait(1.5, 's')
-  seq.send('/pyta/text/visible', 2, 0)  
+  seq.send('/pyta/text/visible', 2, 0)
 
 def climat_dignite(seq, timer):
   seq.send('/pyta/text', 2, 'Dignité  ')
@@ -99,5 +100,3 @@ def climat_smell(seq, timer):
   timer.wait(0.3, 'beat')
   seq.send(rpicourport, '/pyta/text', 2, 'Now')
   seq.send(rpicourport, '/pyta/text/visible', 2, 1)
-
-

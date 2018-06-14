@@ -38,6 +38,9 @@ climat_theme_cour = [
     [eye_shut_cour, [rpicourport, '/pyta/slide/visible', dark_eyes[4], 1]]
 ]
 
+colos = " ".join(['Colo_'+str(i) for i in range(1,47)])
+twerks = " ".join(['Twerk_'+str(i) for i in range(1,9)])
+
 for i in range(0,46):
   climat_theme_jardin.append([[rpijardinport, '/pyta/slide/visible', colos, 0], [rpijardinport, '/pyta/slide/visible'], 'Colo_'+str(i), 1])
   climat_theme_cour.append([[rpicourport, '/pyta/slide/visible', colos, 0], [rpicourport, '/pyta/slide/visible'], 'Colo_'+str(i), 1])
