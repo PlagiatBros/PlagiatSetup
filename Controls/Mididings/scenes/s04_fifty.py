@@ -21,6 +21,10 @@ colos=""
 for i in range(1,47):
 colos.append('Colo_'+str(i)+' ')
 
+twerks=""
+for i in range(1,100):
+twerks.append("Twerk_"+str(i)+" ")
+
 #### Fifty ####
 fifty = [
     Init([
@@ -333,7 +337,16 @@ fifty = [
 	    SendOSC(rpijardinport, '/pyta/text/alpha', 2, 0.5),		
 	    SendOSC(rpicourport, '/pyta/text/visible', 1, 1),
 	    SendOSC(rpicourport, '/pyta/text/strobe', 1, 1, 11, 0.5),
-	    SendOSC(rpijardinport, '/pyta/text/alpha', 1, 0.5),				
+	    SendOSC(rpijardinport, '/pyta/text/alpha', 1, 0.5),	
+		
+	    SendOSC(lightseqport, '/Lightseq/Bpm', 125),
+	    SendOSC(rpijardinport, '/pyta/slide/alpha', twerks, 0.15),
+	    SendOSC(rpicourport, '/pyta/slide/alpha', twerks, 0.15),		
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Random, 'fifty_twerk_jardin', 1),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable, 'fifty_twerk_jardin'),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Random, 'fifty_twerk_cour', 1),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable, 'fifty_twerk_cour'),
+	    SendOSC(lightseqport, '/Lightseq/Play', timestamp),		    
 
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
