@@ -156,6 +156,12 @@ sw = [
             SendOSC(rpijardinport, '/pyta/slide/visible', 'White', 1),
             SendOSC(rpicourport, '/pyta/slide/strobe', 'White', 1, 4, 0.5),
             SendOSC(rpicourport, '/pyta/slide/visible', 'White', 1),
+            SendOSC(rpicourport, '/pyta/text', 0, 'MORONESS'),
+            SendOSC(rpicourport, '/pyta/text/strobe', 0, 1, 5, 0.5),
+            SendOSC(rpicourport, '/pyta/text/colorstrobe', 0, 1, 7, 0.5),
+            SendOSC(rpicourport, '/pyta/slide/strobe', 'White', 1, 4, 0.5),
+            SendOSC(rpicourport, '/pyta/slide/visible', 'White', 1),
+
 
             
 
