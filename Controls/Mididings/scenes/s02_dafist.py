@@ -8,6 +8,8 @@ from mididings.extra.osc import SendOSC
 
 #######################################
 
+smokes = " ".join(['Smoke_'+str(i) for i in range(1,5)])
+
 #### Da Fist ####
 dafist = [
     Init([
@@ -20,6 +22,10 @@ dafist = [
         # SendOSC(zyntrebleport, '/microtonal/tunings', '135.0\n200.0\n300.0\n400.0\n500.0\n600.0\n700.0\n835.0\n900.0\n1000.0\n1135.0\n2/1'),
 
         SendOSC(mk2inport, '/mididings/switch_scene', 1),
+
+        SendOSC(rpijardinport, '/pyta/slide/clone', 'White', 'Dafist_trance_bar'),
+        SendOSC(rpicourport, '/pyta/slide/clone', 'White', 'Dafist_trance_bar'),
+
         mk2lights([1,2,3,6]),
         ]),
     jeannot_padrelease >> mk2lights([1,2,3,6]),
@@ -29,12 +35,12 @@ dafist = [
     [orl, jeannot] >> ProgramFilter([range(2,9)]) >> [
        SendOSC(lightseqport, '/Lightseq/Sequence/Disable', '*'),
         SendOSC(lightseqport, '/Lightseq/Scene/Stop', '*'),
-        SendOSC(rpijardinport, '/pyta/animate/stop'),
-        SendOSC(rpicourport, '/pyta/animate/stop'),
+        SendOSC(rpijardinport, '/pyta/slide/animate/stop', -1),
+        SendOSC(rpicourport, '/pyta/slide/animate/stop', -1),
         SendOSC(rpijardinport, '/pyta/slide/visible', -1, 0),
         SendOSC(rpicourport, '/pyta/slide/visible', -1, 0),
-        SendOSC(rpijardinport, '/pyta/text/reset', -1)
-        SendOSC(rpicourport, '/pyta/text/reset', -1)
+        SendOSC(rpijardinport, '/pyta/text/reset', -1),
+        SendOSC(rpicourport, '/pyta/text/reset', -1),
         SendOSC(qlcstopport, '/Stop'),
     ] >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
@@ -305,7 +311,7 @@ dafist = [
                 [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
                 [samplesmainport, '/strip/Samples4Dry/Gain/Mute', 0.0],
                 [samplesmainport, '/strip/SamplesMunge/Gain/Mute', 0.0],
-​                [samplesmainport, '/strip/SamplesScape/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/SamplesScape/Gain/Mute', 0.0],
 
                 [samplesscapeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -5.0],
                 [samplesscapeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -10.0],
@@ -327,7 +333,7 @@ dafist = [
             vxjeannotvocode_off,
 
             SendOSC(cmeinport, '/mididings/switch_scene', 9),
-​
+
             bassdry,
             bassdetunest_on,
             bassringst_on,
@@ -338,7 +344,7 @@ dafist = [
             ] >> Discard()
         ],
     jeannot >> ProgramFilter(4) >> [ # "Look" - Bouton 4
-        SendOSC(lightsequencer, '/Lightseq/Scene/Play', 'dafist_look') >> Discard()
+        SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_look') >> Discard()
     ],
     orl >> ProgramFilter(5) >> [ # Couplet part 2 - Bouton 5
         Program(68) >> cseqtrigger,
@@ -357,6 +363,10 @@ dafist = [
             # SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_entreeinstru'),
             #SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_entreeinstru_leslie'),
             #SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_clignotage'),
+
+            SendOSC(rpijardinport, '/pyta/text/size', 2, 0.2),
+            SendOSC(rpicourport, '/pyta/text/size', 2, 0.2),
+
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_prerefrain'),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
@@ -474,14 +484,14 @@ dafist = [
 
             SendOSC(lightseqport, '/Lightseq/Bpm', 1800),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
-            SendOSc(lightseqport, '/Lightseq/Sequence/Random', 'dafist_mooncupwaters_alpha', 1),
-            SendOSc(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_mooncupwaters_alpha'),
-            SendOSc(lightseqport, '/Lightseq/Sequence/Random', 'dafist_mooncupwaters_rgb', 1),
-            SendOSc(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_mooncupwaters_rgb'),
-            SendOSc(lightseqport, '/Lightseq/Sequence/Random', 'dafist_mooncupwaters_jardin', 1),
-            SendOSc(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_mooncupwaters_jardin'),
-            SendOSc(lightseqport, '/Lightseq/Sequence/Random', 'dafist_mooncupwaters_cour', 1),
-            SendOSc(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_mooncupwaters_cour'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_mooncupwaters_alpha', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_mooncupwaters_alpha'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_mooncupwaters_rgb', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_mooncupwaters_rgb'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_mooncupwaters_jardin', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_mooncupwaters_jardin'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_mooncupwaters_cour', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_mooncupwaters_cour'),
 
             SendOscState([
 
@@ -537,15 +547,19 @@ dafist = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(130)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(130)),
 
-            SendOSC(rpijardinport, '/pyta/text', 2, 'Transe Loading'),
-            SendOSC(rpijardinport, '/pyta/text/strobe', 2, 8, 0.6),
+            SendOSC(rpijardinport, '/pyta/text', 2, ' Transe Loading'),
+            SendOSC(rpijardinport, '/pyta/text/strobe', 2, 1, 8, 0.6),
+            SendOSC(rpijardinport, '/pyta/text/size', 2, 0.05),
             SendOSC(rpijardinport, '/pyta/text/visible', 2, 1),
             SendOSC(rpijardinport, '/pyta/text/align', 2, 'left', 'bottom'),
-            SendOSC(rpicourport, '/pyta/text', 2, 'Transloading'),
-            SendOSC(rpicourport, '/pyta/text/strobe', 2, 10, 0.4),
+            SendOSC(rpijardinport, '/pyta/text/position', 2, 10, 20),
+            SendOSC(rpicourport, '/pyta/text', 2, 'Transloading '),
+            SendOSC(rpicourport, '/pyta/text/strobe', 2, 1, 10, 0.4),
+            SendOSC(rpicourport, '/pyta/text/size', 2, 0.05),
             SendOSC(rpicourport, '/pyta/text/visible', 2, 1),
+            SendOSC(rpicourport, '/pyta/text/position', 2, -10, 20),
             SendOSC(rpicourport, '/pyta/text/align', 2, 'right', 'bottom'),
-            
+
             SendOSC(lightseqport, '/Lightseq/', 'Bpm', 520),
             #TODO créer alias SMOKES
             SendOSC(rpijardinport, '/pyta/slide/alpha', smokes, 0.1),
@@ -558,17 +572,13 @@ dafist = [
 
             # Création de la barre de chargement
             #TODO faire l'échelle et le positionnement - le cadre est le cadre de la barre de chargement
-            SendOSC(rpijardinport, '/pyta/slide/visible', 'cadre', 1)
-            SendOSC(rpijardinport, '/pyta/slide/clone', 'White', 'Dafist_trance_bar'),
-            SendOSC(rpijardinport, '/pyta/slide/scale_x', 'Dafist_trance_bar', 0),
-            SendOSC(rpijardinport, '/pyta/slide/position_x', 'Dafist_trance_bar', -400),
+            SendOSC(rpijardinport, '/pyta/slide/visible', 'Mask_4', 1),
+            SendOSC(rpijardinport, '/pyta/slide/position_x', 'Dafist_trance_bar', -800),
             SendOSC(rpijardinport, '/pyta/slide/position_z', 'Dafist_trance_bar', 0),
             SendOSC(rpijardinport, '/pyta/slide/visible', 'Dafist_trance_bar', 1),
-            
-            SendOSC(rpicourport, '/pyta/slide/visible', 'cadre', 1)
-            SendOSC(rpicourport, '/pyta/slide/clone', 'White', 'Dafist_trance_bar'),
-            SendOSC(rpicourport, '/pyta/slide/scale_x', 'Dafist_trance_bar', 0),
-            SendOSC(rpicourport, '/pyta/slide/position_x', 'Dafist_trance_bar', -400),
+
+            SendOSC(rpicourport, '/pyta/slide/visible', 'Mask_4', 1),
+            SendOSC(rpicourport, '/pyta/slide/position_x', 'Dafist_trance_bar', 800),
             SendOSC(rpicourport, '/pyta/slide/position_z', 'Dafist_trance_bar', 0),
             SendOSC(rpicourport, '/pyta/slide/visible', 'Dafist_trance_bar', 1),
 
@@ -611,22 +621,20 @@ dafist = [
         SendOSC(slport, '/sl/7/hit', 'record'),
 
         # Barre de chargement monte
-        SendOSC(rpijardinport, '/pyta/slide/animate', 'scale_x', 'Dafist_trance_bar', 0, 300, 3),
-        SendOSC(rpijardinport, '/pyta/slide/animate', 'position_x', 'Dafist_trance_bar', 0, 150, 3),
-        SendOSC(rpicourport, '/pyta/slide/animate', 'scale_x', 'Dafist_trance_bar', 0, 300, 3),
-        SendOSC(rpicourport, '/pyta/slide/animate', 'position_x', 'Dafist_trance_bar', 0, 150, 3),
-        SendOSC(rpijardinport, '/pyta/slide/animate', 'alpha', smokes, '+0', '+0.05', 3),
-        SendOSC(rpicourport, '/pyta/slide/animate', 'alpha', smokes, '+0', '+0.05', 3),
+        SendOSC(rpijardinport, '/pyta/slide/animate', 'Dafist_trance_bar', 'position_x', -800, -800 + 300, 3),
+        SendOSC(rpijardinport, '/pyta/slide/animate', smokes, 'alpha', '+0', '+0.05', 3),
+
+        SendOSC(rpicourport, '/pyta/slide/animate', 'Dafist_trance_bar', 'position_x', 800, 800-300, 3),
+        SendOSC(rpicourport, '/pyta/slide/animate', smokes, 'alpha', '+0', '+0.05', 3),
         ] >> Discard(),
     orl >> ProgramFilter(10) >> [ # sl 10 overdub
         SendOSC(slport, '/sl/7/hit', 'overdub'),
 
         # Barre de chargement monte encore
-        SendOSC(rpijardinport, '/pyta/slide/animate', 'scale_x', 'Dafist_trance_bar', '+0', '+50', 1),
-        SendOSC(rpijardinport, '/pyta/slide/animate', 'position_x', 'Dafist_trance_bar', '+0', '+25', 1),
-        SendOSC(rpicourport, '/pyta/slide/animate', 'scale_x', 'Dafist_trance_bar', '+0', '+50', 1),
-        SendOSC(rpijardinport, '/pyta/slide/animate', 'alpha', smokes, '+0', '+0.15', 1),
-        SendOSC(rpicourport, '/pyta/slide/animate', 'alpha', smokes, '+0', '+0.15', 1),
+        SendOSC(rpijardinport, '/pyta/slide/animate', 'Dafist_trance_bar', 'position_x', '+0', '+100', 1),
+        SendOSC(rpijardinport, '/pyta/slide/animate', smokes, 'alpha', '+0', '+0.15', 1),
+        SendOSC(rpicourport, '/pyta/slide/animate', 'Dafist_trance_bar',  'position_x', '+0', '-100', 1),
+        SendOSC(rpicourport, '/pyta/slide/animate', smokes, 'alpha', '+0', '+0.15', 1),
         ] >> Discard(),
     jeannot >> ProgramFilter(6) >> [ # RELANCE Transe goa - Bouton 6
         # Program(71) >> cseqtrigger,

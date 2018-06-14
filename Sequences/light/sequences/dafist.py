@@ -1,8 +1,9 @@
+#encoding: utf-8
+
 import sys
 sys.path.append("../Controls/Mididings/")
 
 from random import randint
-
 
 from ports import *
 
@@ -58,7 +59,7 @@ dafist_refrain = [
     (_off, _on(), _off, None), (None, None, None, _on()), (_off, None, None, None), (None, _on(), _off, None),
     (None, None, None ,_on()), (_off, _on(), _off, None), (_on(), _off, _on(), _off, _on(), _off), (_on(), _off, None, None, None, None),
 ]
- 
+
 dafist_prerefrain = [
     [['/pyta/text', 2, 'YE$'], ['/pyta/text/visible', 2, 1]], ['/pyta/text/visible', 2, 0], None, None,
     [['/pyta/text', 2, 'Ye$s'], ['/pyta/text/visible', 2, 1]], ['/pyta/text/visible', 2, 0], None, None,
@@ -70,11 +71,11 @@ dafist_prerefrain = [
     [['/pyta/text', 2, 'YYYE$$$$'], ['/pyta/text/visible', 2, 1]], ['/pyta/text/visible', 2, 0], None, None,
 ]
 
-mooncupwaters_slides = 'MoiseWaters_1 MoiseWaters_2 MoiseWaters_3 Butts_1 Butts_2 Mooncup_1 Monncup_2 Mooncup_3'
+mooncupwaters_slides = 'Moise_1 Moise_2 Moise_3 Butts_1 Butts_2 Mooncup_1 Mooncup_2 Mooncup_3'
 dafist_mooncupwaters_jardin = [
-    [[rpijardinport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'MoiseWaters_1', 1]],
-    [[rpijardinport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'MoiseWaters_2', 1]],
-    [[rpijardinport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'MoiseWaters_3', 1]],
+    [[rpijardinport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Moise_1', 1]],
+    [[rpijardinport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Moise_2', 1]],
+    [[rpijardinport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Moise_3', 1]],
     [[rpijardinport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Butts_1', 1]],
     [[rpijardinport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Butts_2', 1]],
     [[rpijardinport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Mooncup_1', 1]],
@@ -82,9 +83,9 @@ dafist_mooncupwaters_jardin = [
     [[rpijardinport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Mooncup_3', 1]],
 ]
 dafist_mooncupwaters_cour = [
-    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'MoiseWaters_1', 1]],
-    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'MoiseWaters_2', 1]],
-    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'MoiseWaters_3', 1]],
+    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Moise_1', 1]],
+    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Moise_2', 1]],
+    [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Moise_3', 1]],
     [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Butts_1', 1]],
     [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Butts_2', 1]],
     [[rpicourport, '/pyta/slide/visible', mooncupwaters_slides, 0], [rpijardinport, '/pyta/slide/visible', 'Mooncup_1', 1]],
@@ -138,23 +139,19 @@ dafist_mooncupwaters_rgb = [
     ['/pyta/slide/rgb', mooncupwaters_slides, 0, 0.8, 0.8],
     ['/pyta/slide/rgb', mooncupwaters_slides, 0.8, 0, 0.8],
     ['/pyta/slide/rgb', mooncupwaters_slides, 0.8, 0.8, 0.8],
-    
+
 ]
 
 barre = 'cadre remplissage'
 dafist_transe_blinkload = [
-    ['/pyta/slide/visible', barre, 1], [/'pyta/slide/visible', barre, 0]
+    ['/pyta/slide/visible', barre, 1], ['/pyta/slide/visible', barre, 0]
 ]
 
-smokes = ""
-for i in range (1,35):
-    smokes+='Smoke_'+str(i)+" "
+smokes = " ".join(['Smoke_'+str(i) for i in range(1,5)])
 
 dafist_transe_smokes_jardin = []
-for i in range (1,35):
-    dafist_transe_smokes_jardin.append([[rpijardinport, '/pyta/slide/visible', smokes, 0], [rpijardinport, '/pyta/slide/visible', 'Smoke_'+str(i), 1], [rpijardinport, '/pyta/slide/animate', 'scale_x', 'Smoke_'+str(i), 790, 800, 0.4]])    
-]
+for i in range (1,5):
+    dafist_transe_smokes_jardin.append([[rpijardinport, '/pyta/slide/visible', smokes, 0], [rpijardinport, '/pyta/slide/visible', 'Smoke_'+str(i), 1], [rpijardinport, '/pyta/slide/animate', 'scale_x', 'Smoke_'+str(i), 790, 800, 0.4]])
 dafist_transe_smokes_cour = []
-for i in range (1,35):
-    dafist_transe_smokes_cour.append([[rpicourport, '/pyta/slide/visible', smokes, 0], [rpicourport, '/pyta/slide/visible', 'Smoke_'+str(i), 1], [rpicourport, '/pyta/slide/animate', 'scale_x', 'Smoke_'+str(i), 790, 800, 0.4]])    
-]
+for i in range (1,5):
+    dafist_transe_smokes_cour.append([[rpicourport, '/pyta/slide/visible', smokes, 0], [rpicourport, '/pyta/slide/visible', 'Smoke_'+str(i), 1], [rpicourport, '/pyta/slide/animate', 'scale_x', 'Smoke_'+str(i), 790, 800, 0.4]])

@@ -39,9 +39,9 @@ fifty = [
         SendOSC(rpicourport, '/pyta/animate/stop'),
         SendOSC(rpijardinport, '/pyta/slide/visible', -1, 0),
         SendOSC(rpicourport, '/pyta/slide/visible', -1, 0),
-        SendOSC(rpijardinport, '/pyta/text/reset', -1)
-        SendOSC(rpicourport, '/pyta/text/reset', -1)
-        SendOSC(qlcstopport, '/Stop'),	    
+        SendOSC(rpijardinport, '/pyta/text/reset', -1),
+        SendOSC(rpicourport, '/pyta/text/reset', -1),
+        SendOSC(qlcstopport, '/Stop'),
     ] >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # Intro (fin du sample) - Bouton 2
@@ -60,18 +60,18 @@ fifty = [
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(117)),
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(117)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(117)),
-		
+
 		#TODO Scaling, Position en mode logo (en haut du cadre)
 	    SendOSC(rpijardinport, '/pyta/text', 0, "PLAGIAT"),
 	    SendOSC(rpijardinport, '/pyta/text/visible', 0, 1),
 	    SendOSC(rpijardinport, '/pyta/text', 2, "makes ~art~ wizz $hit"),
 	    SendOSC(rpijardinport, '/pyta/text/visible', 2, 1),
-		
+
 	    SendOSC(rpijardinport, '/pyta/text', 2, "[plaʒia]"),
 	    SendOSC(rpijardinport, '/pyta/text/visible', 0, 1),
 	    SendOSC(rpijardinport, '/pyta/text', 1, "bakes $hit wiv butter"),
 	    SendOSC(rpijardinport, '/pyta/text/visible', 1, 1),
-		
+
 	    SendOSC(lightseqport, '/Lightseq/Bpm', '117'),
 	    SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'fifty_offre_emploi', 1),
 	    SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'fifty_offre_emploi_strobe', 1),
