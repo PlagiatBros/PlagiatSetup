@@ -276,6 +276,16 @@ fifty = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(125 * 2)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(125 * 2)),
 
+	    SendOSC(lightseqport, '/Lightseq/Bpm', 125),
+	    SendOSC(rpijardinport, '/pyta/slide/alpha', twerks, 1),
+	    SendOSC(rpicourport, '/pyta/slide/alpha', twerks, 1),		
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Random, 'fifty_twerk_jardin', 1),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable, 'fifty_twerk_jardin'),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Random, 'fifty_twerk_cour', 1),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable, 'fifty_twerk_cour'),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'fifty_stagier'),
+	    SendOSC(lightseqport, '/Lightseq/Play', timestamp),			
+		
             SendOscState([
 
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0], # gtr
