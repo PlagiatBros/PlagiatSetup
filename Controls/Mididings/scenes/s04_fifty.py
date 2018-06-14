@@ -16,6 +16,11 @@ fifty_mk2lights = {
     8:'red',
 }
 
+
+colos=""
+for i in range(1,47):
+colos.append('Colo_'+str(i)+' ')
+
 #### Fifty ####
 fifty = [
     Init([
@@ -199,9 +204,13 @@ fifty = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(117)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(117)),
 
+	    SendOSC(rpijardinport, '/pyta/slide/alpha', colos, 0.1),
+	    SendOSC(rpicourport, '/pyta/slide/alpha', colos, 0.1),
     	    SendOSC(lightseqport, '/Lightseq/Bpm', 117),
-    	    SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'fifty_colo', 1),
-    	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'fifty_colo'),
+    	    SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'fifty_colo_jardin', 1),
+    	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'fifty_colo_jardin'),
+	    SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'fifty_colo_jardin', 1),
+    	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'fifty_colo_jardin'),
     	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'fifty_coffee'),
     	    SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
@@ -315,6 +324,16 @@ fifty = [
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(125)),
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(125)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(125)),
+		
+		#TODO Positionnement
+	    SendOSC(rpijardinport, '/pyta/text', 2, 'nAfr0-tRap'), 
+	    SendOSC(rpicourport, '/pyta/text', 1, 'NYMPH0 TRAP'),
+	    SendOSC(rpijardinport, '/pyta/text/visible', 2, 1),
+	    SendOSC(rpijardinport, '/pyta/text/strobe', 2, 1, 12, 0.5),
+	    SendOSC(rpijardinport, '/pyta/text/alpha', 2, 0.5),		
+	    SendOSC(rpicourport, '/pyta/text/visible', 1, 1),
+	    SendOSC(rpicourport, '/pyta/text/strobe', 1, 1, 11, 0.5),
+	    SendOSC(rpijardinport, '/pyta/text/alpha', 1, 0.5),				
 
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
