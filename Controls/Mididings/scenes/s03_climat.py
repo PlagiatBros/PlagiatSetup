@@ -17,6 +17,11 @@ climat_mk2lights = {
     8:'red',
 }
 
+darkEyes=""
+dark_eyes = ['FreakyEye_1', 'BlueOnBlackEye_1', 'OrangeOnBlackEye_1', 'OrangeOnBlackEye_2', 'RedOnBlackEye_1']
+for i in range (1,5):
+    darkEyes+=dark_eyes[i]+" "
+
 #### Climat ####
 climat = [
     Init([
@@ -92,7 +97,7 @@ climat = [
 
     ],
     orl >> ProgramFilter(6) >> [
-	    SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_mounoute') >> Discard(),
+	    SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_granmounoute') >> Discard(),
     ],
     orl >> ProgramFilter(7) >> [
 	    SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_dignite') >> Discard(),
@@ -122,6 +127,19 @@ climat = [
 
             SendOSC(mk2inport, '/mididings/switch_scene', 1),
 
+
+            SendOSC(rpijardinport, '/pyta/slide/animate', 'FreakyEye_1 BlueOnBlackEye_1 OrangeOnBlackEye_1 OrangeOnBlackEye_2 RedOnBlackEye_1', 'scale_x', 800, 1200, 30),
+            SendOSC(rpicourport, '/pyta/slide/animate', 'FreakyEye_1 BlueOnBlackEye_1 OrangeOnBlackEye_1 OrangeOnBlackEye_2 RedOnBlackEye_1', 'scale_x', 800, 1200, 30),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_plagiat'),
+            SendOSC(lightseqport, '/Lightseq/Bpm', 300),
+            SendOSC(rpijardinport, '/pyta/slide/alpha', darkEyes, 1),
+            SendOSC(rpicourport, '/pyta/slide/alpha', darkEyes, 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'climat_theme_strobe',1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'climat_theme_strobe'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'climat_theme_jardin', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'climat_theme_jardin'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'climat_theme_cour', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'climat_theme_cour'),
 
             SendOscState([
                 [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
@@ -164,6 +182,10 @@ climat = [
         ],
     jeannot >> ProgramFilter(3) >> [ # Couplet sans wobble - bouton 3
         #TODO arreter seq-wobble (à priori bassdry suffit)
+        [
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_smell'),
+            ] >> Discard(),
+
         Program(6) >> seq24once,
         Program(4) >> seq24once,
         [
