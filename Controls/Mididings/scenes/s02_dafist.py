@@ -8,7 +8,7 @@ from mididings.extra.osc import SendOSC
 
 #######################################
 
-smokes = " ".join(['Smoke_'+str(i) for i in range(1,5)])
+smokes = " ".join(['Smoke_'+str(i) for i in range(1,20)])
 
 #### Da Fist ####
 dafist = [
@@ -561,24 +561,25 @@ dafist = [
             SendOSC(rpicourport, '/pyta/text/align', 2, 'right', 'bottom'),
 
 
+            SendOSC(rpijardinport, '/pyta/slide/position_z', 'Dafist_trance_bar', -10),
+            SendOSC(rpicourport, '/pyta/slide/position_z', 'Dafist_trance_bar', -10),
             SendOSC(rpijardinport, '/pyta/slide/alpha', smokes, 0.1),
             SendOSC(rpicourport, '/pyta/slide/alpha', smokes, 0.1),
 
-            SendOSC(lightseqport, '/Lightseq/', 'Bpm', 520),
+            SendOSC(lightseqport, '/Lightseq/Bpm', 520),
             SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_transe_smokes_jardin', 1),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Play', 'dafist_transe_smokes_jardin'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_transe_smokes_jardin'),
             SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_transe_smokes_cour', 1),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Play', 'dafist_transe_smokes_cour'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_transe_smokes_cour'),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
             # Création de la barre de chargement
-            #TODO barre de chargement plus jolie ?
-            SendOSC(rpijardinport, '/pyta/slide/visible', 'Mask_4', 1),
+            SendOSC(rpijardinport, '/pyta/slide/position_y', 'Dafist_trance_bar', -580),
             SendOSC(rpijardinport, '/pyta/slide/position_x', 'Dafist_trance_bar', -800),
             SendOSC(rpijardinport, '/pyta/slide/position_z', 'Dafist_trance_bar', 0),
             SendOSC(rpijardinport, '/pyta/slide/visible', 'Dafist_trance_bar', 1),
 
-            SendOSC(rpicourport, '/pyta/slide/visible', 'Mask_4', 1),
+            SendOSC(rpicourport, '/pyta/slide/position_y', 'Dafist_trance_bar', -580),
             SendOSC(rpicourport, '/pyta/slide/position_x', 'Dafist_trance_bar', 800),
             SendOSC(rpicourport, '/pyta/slide/position_z', 'Dafist_trance_bar', 0),
             SendOSC(rpicourport, '/pyta/slide/visible', 'Dafist_trance_bar', 1),
@@ -666,12 +667,14 @@ dafist = [
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(130)),
 
             # Barre de chargement
-            SendOSC(rpijardinport, '/pyta/slide/animate', 'scale_x', 'remplissage', 600, 800, 0.5),
+            SendOSC(rpijardinport, '/pyta/slide/animate', 'Dafist_trance_bar', 'position_y', '+0', 0, 0.1),
+            SendOSC(rpijardinport, '/pyta/slide/animate', 'Dafist_trance_bar', 'position_y', '+0', 0, 0.1),
+            SendOSC(rpijardinport, '/pyta/slide/strobe', 'Dafist_trance_bar', 1),
 
             SendOSC(lightseqport, '/Lightseq/Bpm', 130),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_transe_blinkload', 1),
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_transe_blinkload'),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_transe_blinkload', 1),
 
             SendOscState([
 
