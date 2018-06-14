@@ -149,3 +149,14 @@ fifty_twerk_cour.append([[rpicourport, '/pyta/slide/visible', twerks, 0],[rpicou
 fifty_nymphotrap_blow = [
   [[rpijardinport, '/pyta/text/animate', 2, 'scale_x', 780, 800, 0.1],[rpicourport, '/pyta/text/animate', 1, 'scale_x', 780, 800, 0.1]]
 ]
+
+fifty_stagier = [
+  None, None, None, [['/pyta/text', 0, '??'], ['/pyta/text/visible', 0, 1]],
+  ['/pyta/text/visible', 0, 0], None, None, [['/pyta/text', 2, 'Stagière'], ['/pyta/text/visible', 2, 1]],
+  None, ['/pyta/text/visible', 2, 0], None, None,
+  None, None, None, [['/pyta/text', 2, 'Stajiärhee'], ['/pyta/text/visible', 2, 1]],
+  None, ['/pyta/text/visible', 2, 0], None, [['/pyta/text', 0, '????'], ['/pyta/text/visible', 0, 1]],
+  ['/pyta/text/visible', 0, 0], None, None, [['/pyta/text', 2, 'Stajillère'], ['/pyta/text/visible', 2, 1]],
+  None, None, None, [['/pyta/text', 0, 'Qqqq ??'], ['/pyta/text/visible', 0, 1]],
+  None, None, None, None
+]
