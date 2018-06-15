@@ -28,13 +28,13 @@ geturfreakon = [
     [orl, jeannot] >> ProgramFilter([range(2,12)]) >> [
         SendOSC(lightseqport, '/Lightseq/Sequence/Disable', '*'),
         SendOSC(lightseqport, '/Lightseq/Scene/Stop', '*'),
-        SendOSC(rpijardinport, '/pyta/slide/animate/stop'),
-        SendOSC(rpicourport, '/pyta/slide/animate/stop'),
+        SendOSC(rpijardinport, '/pyta/slide/animate/stop', -1),
+        SendOSC(rpicourport, '/pyta/slide/animate/stop', -1),
         SendOSC(rpijardinport, '/pyta/slide/visible', -1, 0),
         SendOSC(rpicourport, '/pyta/slide/visible', -1, 0),
         SendOSC(rpijardinport, '/pyta/text/reset', -1),
         SendOSC(rpicourport, '/pyta/text/reset', -1),
-	SendOSC(qlcstopport, '/Stop'),	         
+	SendOSC(qlcstopport, '/Stop'),
     ] >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # SlowMotium (bouclage bass) - Bouton 2
@@ -63,18 +63,18 @@ geturfreakon = [
 
             SendOSC(rpijardinport, '/pyta/text/align', 2, 'left', 'top'),
             SendOSC(rpijardinport, '/pyta/text', 2, '[plaʒia]                             '),
-            SendOSC(rpijardinport, '/pyta/text/animate', 2, 'size', 0.8, 0.1, 4),            
+            SendOSC(rpijardinport, '/pyta/text/animate', 2, 'size', 0.8, 0.1, 4),
             SendOSC(rpijardinport, '/pyta/text', 1, 'for sensitive people'),
             SendOSC(rpijardinport, '/pyta/text', 0, 'sensitivepeople@plagiat.org'),
             SendOSC(rpijardinport, '/pyta/text/visible', -1, 1),
             SendOSC(rpicourport, '/pyta/text', 2, '[plaʒia]                             '),
             SendOSC(rpicourport, '/pyta/text/align', 2, 'left', 'top'),
-            SendOSC(rpicourport, '/pyta/text/animate', 2, 'size', 0.8, 0.1, 4),            
+            SendOSC(rpicourport, '/pyta/text/animate', 2, 'size', 0.8, 0.1, 4),
             SendOSC(rpicourport, '/pyta/text', 1, 'for sensitive people'),
             SendOSC(rpicourport, '/pyta/text', 0, 'sensitivepeople@plagiat.org'),
             SendOSC(rpicourport, '/pyta/text/visible', -1, 1),
 
-            SendOSc(lightseqport, '/Lightseq/Bpm', 20),
+            SendOSC(lightseqport, '/Lightseq/Bpm', 20),
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'sm_blinkinterns'),
 
             SendOscState([

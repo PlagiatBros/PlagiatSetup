@@ -5,30 +5,46 @@ sys.path.append("../Controls/Mididings/")
 from ports import *
 
 def le5_niggahdontyou(seq, timer):
-    seq.send('/pyta/text', 2, "Niggah, 
-don't you know it ain't no heavy duty
-for Mi$$y $chneck One Two?")
+    text = '\ndon\'t you know it ain\'t\n\
+no heavy duty too heavy\n\
+for Mi$$y $chneck One Two?'
+
+    seq.send('/pyta/text', 2, 'Niggah,\n' + text)
     seq.send('/pyta/text/visible', 2, 1)
     timer.wait(1, 's')
-    seq.send('/pyta/text', 2, "Nigrid, 
-don't you know it ain't no heavy duty
-for Mi$$y $chneck One Two?")
+    seq.send('/pyta/text', 2, 'Nigrid,\n' + text)
     timer.wait(0.3, 's')
-    seq.send('/pyta/text', 2, "iNgrid, 
-don't you know it ain't no heavy duty
-for Mi$$y $chneck One Two?")
+    seq.send('/pyta/text', 2, 'iNgrid,\n' + text)
     timer.wait(0.3, 's')
-    seq.send('/pyta/text', 2, "Nigroo, 
-don't you know it ain't no heavy duty
-for Mi$$y $chneck One Two?")
+    seq.send('/pyta/text', 2, 'Nigroo,\n' + text)
     timer.wait(1, 's')
-    seq.send('/pyta/text', 2, "Nicole 
-don't you know it ain't no heavy duty
-for Mi$$y $chneck One Two?")
+    seq.send('/pyta/text', 2, 'Nicole,\n' + text)
     timer.wait(0.3, 's')
-    seq.send('/pyta/text', 2, "Niggah, 
-don't you know it ain't no heavy duty
-for Mi$$y $chneck One Two?")
+    seq.send('/pyta/text', 2, 'Niggah,\n' + text)
+
+
+_words = ['DO YOU', 'USE', 'CRUISE', 'CONTROL?']
+_i = 0
+def le5_trapcup(seq, timer):
+    global _i
+    word = _words[_i%len(_words)]
+    size = 2.5 / len(word)
+    _i += 1
+    seq.send('/pyta/slide/lock', 'White', 1)
+    seq.send('/pyta/slide/strobe', 'White', 1, 2, 0.5)
+    seq.send('/pyta/text/rgb', 0, 0, 0, 0)
+    seq.send('/pyta/text', 0, word)
+    seq.send('/pyta/text/size', 0, size)
+
+    seq.send('/pyta/slide/visible', 'White', 1)
+    seq.send('/pyta/text/visible', 0, 1)
+    timer.wait(0.5, 'b')
+    seq.send('/pyta/text/visible', 0, 0)
+    seq.send('/pyta/slide/visible', 'White', 0)
+    seq.send('/pyta/slide/lock', 'White', 0)
+
+
+
 
 def le5_instouboulouboutin(seq, timer):
     seq.send('/pyta/text', 0, 'Instouboul')
@@ -69,4 +85,3 @@ def le5_instouboulouboutin(seq, timer):
     timer.wait(0.1, 's')
     seq.send('/pyta/text', 0, 'Louboutin')
     timer.wait(0.1, 's')
-    

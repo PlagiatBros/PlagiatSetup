@@ -3642,6 +3642,37 @@
                         "preArgs": [],
                         "target": [],
                         "bypass": false
+                    },
+                    {
+                        "type": "switch",
+                        "top": 80,
+                        "left": 530,
+                        "id": "rpi_read",
+                        "linkId": "",
+                        "width": 120,
+                        "height": 130,
+                        "label": "rpi ready",
+                        "color": "auto",
+                        "css": "",
+                        "range": {
+                            "min": 0,
+                            "max": 1
+                        },
+                        "logScale": false,
+                        "default": "none",
+                        "value": "",
+                        "preArgs": [],
+                        "address": "/ready",
+                        "horizontal": false,
+                        "showValues": false,
+                        "values": {
+                            "NONE": "none",
+                            "LOADING": "loading",
+                            "READY": "ready"
+                        },
+                        "precision": 2,
+                        "target": [],
+                        "bypass": false
                     }
                 ],
                 "tabs": [],

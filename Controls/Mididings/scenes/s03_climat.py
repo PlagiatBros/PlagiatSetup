@@ -43,13 +43,13 @@ climat = [
     [orl, jeannot] >> ProgramFilter([range(2,12)]) >> [
         SendOSC(lightseqport, '/Lightseq/Sequence/Disable', '*'),
         SendOSC(lightseqport, '/Lightseq/Scene/Stop', '*'),
-        SendOSC(rpijardinport, '/pyta/slide/animate/stop'),
-        SendOSC(rpicourport, '/pyta/slide/animate/stop'),
+        SendOSC(rpijardinport, '/pyta/slide/animate/stop', -1),
+        SendOSC(rpicourport, '/pyta/slide/animate/stop', -1),
         SendOSC(rpijardinport, '/pyta/slide/visible', -1, 0),
         SendOSC(rpicourport, '/pyta/slide/visible', -1, 0),
         SendOSC(rpijardinport, '/pyta/text/reset', -1),
         SendOSC(rpicourport, '/pyta/text/reset', -1),
-	SendOSC(qlcstopport, '/Stop'),	    
+	SendOSC(qlcstopport, '/Stop'),
     ] >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     jeannot >> ProgramFilter(2) >> [ # Intro mandela - Bouton 2
@@ -58,7 +58,7 @@ climat = [
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
             SendOSC(slport, '/set', 'eighth_per_cycle', 74),
             SendOSC(slport, '/set', 'tempo', 150),
-	    
+
 
             vxorlgars_off,
             vxorlmeuf_off,

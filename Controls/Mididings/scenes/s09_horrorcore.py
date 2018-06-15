@@ -49,13 +49,13 @@ horrorcore = [
     [orl, jeannot] >> ProgramFilter([range(2,12)]) >> [
         SendOSC(lightseqport, '/Lightseq/Sequence/Disable', '*'),
         SendOSC(lightseqport, '/Lightseq/Scene/Stop', '*'),
-        SendOSC(rpijardinport, '/pyta/slide/animate/stop'),
-        SendOSC(rpicourport, '/pyta/slide/animate/stop'),
+        SendOSC(rpijardinport, '/pyta/slide/animate/stop', -1),
+        SendOSC(rpicourport, '/pyta/slide/animate/stop', -1),
         SendOSC(rpijardinport, '/pyta/slide/visible', -1, 0),
         SendOSC(rpicourport, '/pyta/slide/visible', -1, 0),
         SendOSC(rpijardinport, '/pyta/text/reset', -1),
         SendOSC(rpicourport, '/pyta/text/reset', -1),
-	SendOSC(qlcstopport, '/Stop'),	         
+	SendOSC(qlcstopport, '/Stop'),
     ] >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     [orl, jeannot] >> ProgramFilter(2) >> [ # Couplet (orl meuf) - Bouton 2 (mk2 notes = vx jean meuf; vx orl vocod; stop samples)
@@ -83,9 +83,9 @@ horrorcore = [
             SendOSC(rpicourport, '/pyta/text/visible', 0, 1),
 
             SendOSC(lightseqport, '/Lightseq/Scene/Play', 'hc_notheft'),
-            
 
-            
+
+
 
             SendOscState([
 
@@ -211,7 +211,7 @@ horrorcore = [
             SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'hc_wood_cour', 1),
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'hc_wood_cour'),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
-            
+
 
             SendOscState([
 
@@ -283,7 +283,7 @@ horrorcore = [
             SendOSC(rpijardinport, '/pyta/slide/visible', 'Sun_1', 1),
             SendOSC(rpicourport, '/pyta/slide/visible', 'Sun_2', 1),
 
-            
+
 
             SendOscState([
 
@@ -394,9 +394,9 @@ horrorcore = [
             SendOSC(rpicourport, '/pyta/text', 2, 'c bo mé c lon'),
             SendOSC(rpicourport, '/pyta/text/visible', 0, 1),
             SendOSC(rpicourport, '/pyta/text/visible', 2, 1),
-            
 
-            
+
+
             SendOscState([
 
             ]),
@@ -458,7 +458,7 @@ horrorcore = [
             SendOSC(rpicourport, '/pyta/text/strobe', 0, 1, 4, 0.5),
             SendOSC(rpicourport, '/pyta/text/animate', 0, 'alpha', 0.1, 0.5, 30),
             SendOSC(rpicourport, '/pyta/text/visible', 0, 1),
-            
+
             vxorlmeuf_off,
             vxorlgars_on,
             vxorldisint_off,
@@ -483,7 +483,7 @@ horrorcore = [
             SendOSC(slport, '/sl/[0,3,5]/hit', 'pause_off'),
             SendOSC(slport, '/sl/[0,3,5]/hit', 'trigger'),
             SendOSC(slport, '/sl/[0,3,5]/set', 'sync', 1),
-        
+
             SendOSC(rpijardinport, '/pyta/text', 0, 'PLAGIAT'),
             SendOSC(rpijardinport, '/pyta/text/strobe', 0, 1, 4, 0.5),
             SendOSC(rpijardinport, '/pyta/text/colorstrobe', 0, 1, 11, 0.5),
@@ -499,7 +499,7 @@ horrorcore = [
             SendOSC(rpijardinport, '/pyta/slide/visible', 'White', 1),
             SendOSC(rpicourport, '/pyta/slide/strobe', 'White', 1, 5, 0.5),
             SendOSC(rpicourport, '/pyta/slide/visible', 'White', 1),
-        
+
 
         ] >> Discard(),
     jeannot >> ProgramFilter(6) >> [

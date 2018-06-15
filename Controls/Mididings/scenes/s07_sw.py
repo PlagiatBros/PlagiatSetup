@@ -27,13 +27,13 @@ sw = [
     [orl, jeannot] >> ProgramFilter([range(2,12)]) >> [
         SendOSC(lightseqport, '/Lightseq/Sequence/Disable', '*'),
         SendOSC(lightseqport, '/Lightseq/Scene/Stop', '*'),
-        SendOSC(rpijardinport, '/pyta/slide/animate/stop'),
-        SendOSC(rpicourport, '/pyta/slide/animate/stop'),
+        SendOSC(rpijardinport, '/pyta/slide/animate/stop', -1),
+        SendOSC(rpicourport, '/pyta/slide/animate/stop', -1),
         SendOSC(rpijardinport, '/pyta/slide/visible', -1, 0),
         SendOSC(rpicourport, '/pyta/slide/visible', -1, 0),
         SendOSC(rpijardinport, '/pyta/text/reset', -1),
         SendOSC(rpicourport, '/pyta/text/reset', -1),
-	SendOSC(qlcstopport, '/Stop'),	         
+	SendOSC(qlcstopport, '/Stop'),
     ] >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # intro - Bouton 2
@@ -56,7 +56,7 @@ sw = [
 
             SendOSC(lightseqport, '/Lightseq/Bpm', 178.5),
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'sw_leboncoin'),
-            
+
 
             SendOscState([
 
@@ -163,7 +163,7 @@ sw = [
             SendOSC(rpicourport, '/pyta/slide/visible', 'White', 1),
 
 
-            
+
 
             SendOscState([
 

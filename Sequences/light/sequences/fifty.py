@@ -134,12 +134,14 @@ fifty_coffee = [
 
 fifty_twerk = [
     [':/lightseq/scene/play', 'fifty_twerk_1'],
+    [':/lightseq/scene/play', 'fifty_twerk_1'],
+    [':/lightseq/scene/play', 'fifty_twerk_1'],
     [':/lightseq/scene/play', 'fifty_twerk_2'],
     [':/lightseq/scene/play', 'fifty_twerk_3'],
 ]
 
 fifty_nymphotrap_blow = [
-  [[rpijardinport, '/pyta/text/animate', 2, 'scale_x', 780, 800, 0.1],[rpicourport, '/pyta/text/animate', 1, 'scale_x', 780, 800, 0.1]]
+  [[rpijardinport, '/pyta/text/animate', 2, 'size', 0.12, 0.13, 0.1],[rpicourport, '/pyta/text/animate', 1, 'size', 0.2, 0.21, 0.1]]
 ]
 
 fifty_stagier = [
