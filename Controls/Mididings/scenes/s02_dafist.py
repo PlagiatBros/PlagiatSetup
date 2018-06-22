@@ -337,7 +337,7 @@ dafist = [
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
-            vxjeannotmeuf_off,
+            vxjeannotmeuf_on,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
             vxjeannotverb_on,
@@ -526,7 +526,7 @@ dafist = [
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
-            vxjeannotmeuf_off,
+            vxjeannotmeuf_on,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
             vxjeannotverb_on,
