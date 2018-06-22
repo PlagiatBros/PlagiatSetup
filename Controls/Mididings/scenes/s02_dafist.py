@@ -10,6 +10,18 @@ from mididings.extra.osc import SendOSC
 
 smokes = " ".join(['Smoke_'+str(i) for i in range(1,20)])
 
+dafist_mk2lights = {
+    1:'blue',
+    2:'purple',
+    3:'purple',
+    4:'green',
+    4:'green',
+    6:'purple',
+    7:'yellow',
+    8:'yellow',
+}
+
+
 #### Da Fist ####
 dafist = [
     Init([
@@ -23,9 +35,9 @@ dafist = [
 
         SendOSC(mk2inport, '/mididings/switch_scene', 1),
 
-        mk2lights([1,2,3,6]),
+        mk2lights(dafist_mk2lights),
         ]),
-    jeannot_padrelease >> mk2lights([1,2,3,6]),
+    jeannot_padrelease >> mk2lights(dafist_mk2lights),
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
@@ -325,9 +337,10 @@ dafist = [
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
-            vxjeannotmeuf_on,
+            vxjeannotmeuf_off,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
+            vxjeannotverb_on,
 
             SendOSC(cmeinport, '/mididings/switch_scene', 9),
 
@@ -513,9 +526,10 @@ dafist = [
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
-            vxjeannotmeuf_on,
+            vxjeannotmeuf_off,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
+            vxjeannotverb_on,
 
             SendOSC(cmeinport, '/mididings/switch_scene', 9),
 
@@ -727,6 +741,13 @@ dafist = [
             bassbufferst_off,
             ]
         ],
+        jeannot >> ProgramFilter(7) >> [ # Delay Jeannot Off
+            vxjeannotdelay_off >> Discard(),
+        ],
+            jeannot >> ProgramFilter(7) >> [ # Delay Jeannot On
+            vxjeannotdelay_on >> Discard(),
+        ],
+
         orl >> ProgramFilter(11) >> [ # Passage vers Fifty - Bouton 11
             SceneSwitch(4) >> Discard(),
             Program(2) >> Output('PBCtrlOut', 1),
