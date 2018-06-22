@@ -246,10 +246,10 @@ climat = [
             vxorlgars_on,
             vxorlmeuf_off,
             vxorldisint_off,
-            vxorldelay_off,
+            vxorldelay_on,
             vxorlvocode_off,
 
-            vxjeannotdelay_off,
+            vxjeannotdelay_on,
             vxjeannotgars_on,
             vxjeannotmeuf_off,
             vxjeannotdisint_off,

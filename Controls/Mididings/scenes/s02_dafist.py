@@ -617,7 +617,7 @@ dafist = [
             vxorldelay_on,
             vxorlvocode_off,
 
-            vxjeannotdelay_on,
+            vxjeannotdelay_off,
             vxjeannotgars_off,
             vxjeannotmeuf_on,
             vxjeannotdisint_off,

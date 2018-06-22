@@ -47,8 +47,8 @@ pitch_down = [
 fifty_refrain_stagiaire = [
     None,None,None,None,
     None,None,None,delay_on,
-    None,None,pitch_up,None,
-    None,pitch_down,None,None,
+    None,pitch_up,None,None,
+    None,None,pitch_down,None,
     None,delay_off,None,None,
     None,None,None,delay_on,
     None,delay_off,None,None,

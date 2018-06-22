@@ -91,7 +91,7 @@ geturfreakon = [
             vxorlvocode_off,
             SendOSC(vxorlmeufport,     '/strip/VxORLVocod/AM%20pitchshifter/Pitch%20shift/unscaled', 1.2),
 
-            vxjeannotdelay_on,
+            vxjeannotdelay_off,
             vxjeannotgars_on,
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
