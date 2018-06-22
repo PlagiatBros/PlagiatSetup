@@ -35,7 +35,7 @@ run([
 
     ],
 	Filter(PITCHBEND),
-	Filter(CTRL) >> CtrlFilter(4) >> [Ctrl(75, 127), Ctrl(110, 127)],
-	Filter(CTRL) >> CtrlFilter(8) >> [Ctrl(75, 0), Ctrl(110, 0)],
+	Filter(CTRL) >> CtrlFilter(4) >> Ctrl(75, EVENT_VALUE),
+	Filter(CTRL) >> CtrlFilter(8) >> Ctrl(110, EVENT_VALUE),
 
 ] >> out)
