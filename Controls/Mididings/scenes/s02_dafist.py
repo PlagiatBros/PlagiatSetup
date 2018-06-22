@@ -747,7 +747,6 @@ dafist = [
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
             vxjeannotvocode_on,
-            vxjeannotverb_off,
         ] >> Discard(),
             jeannot >> ProgramFilter(8) >> [ # Delay Jeannot On
             vxjeannotdelay_off,
