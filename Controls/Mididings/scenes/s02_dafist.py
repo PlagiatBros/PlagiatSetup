@@ -742,11 +742,21 @@ dafist = [
             ]
         ],
         jeannot >> ProgramFilter(7) >> [ # Delay Jeannot Off
-            vxjeannotdelay_off >> Discard(),
-        ],
-            jeannot >> ProgramFilter(7) >> [ # Delay Jeannot On
-            vxjeannotdelay_on >> Discard(),
-        ],
+            vxjeannotdelay_on,
+            vxjeannotgars_on,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
+            vxjeannotvocode_on,
+            vxjeannotverb_off,
+        ] >> Discard(),
+            jeannot >> ProgramFilter(8) >> [ # Delay Jeannot On
+            vxjeannotdelay_off,
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
+            vxjeannotvocode_off,
+            vxjeannotverb_on,
+        ] >> Discard(),
 
         orl >> ProgramFilter(11) >> [ # Passage vers Fifty - Bouton 11
             SceneSwitch(4) >> Discard(),
