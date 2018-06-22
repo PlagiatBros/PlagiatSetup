@@ -73,11 +73,11 @@ samples_mute = Filter(NOTE) >> [
 
 bass_and_samples_mute = Filter(NOTE) >> [
     KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEON) >> [
-        SendOSC(samplesmainport, '/strip/SamplesMain/Gain/Mute', 1.0)
+        SendOSC(samplesmainport, '/strip/SamplesMain/Gain/Mute', 1.0),
         SendOSC(bassmainport, '/strip/BassMain/Gain/Mute', 1.0)
     ],
     KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEOFF) >> [
-        SendOSC(samplesmainport, '/strip/SamplesMain/Gain/Mute', 0.0)
+        SendOSC(samplesmainport, '/strip/SamplesMain/Gain/Mute', 0.0),
         SendOSC(bassmainport, '/strip/BassMain/Gain/Mute', 0.0)
     ],
 ]
