@@ -33,7 +33,7 @@ dafist = [
         # zynmicrotonal_on,
         # SendOSC(zyntrebleport, '/microtonal/tunings', '135.0\n200.0\n300.0\n400.0\n500.0\n600.0\n700.0\n835.0\n900.0\n1000.0\n1135.0\n2/1'),
 
-        SendOSC(mk2inport, '/mididings/switch_scene', 1),
+        SendOSC(mk2inport, '/mididings/switch_scene', 8),
 
         mk2lights(dafist_mk2lights),
         ]),
