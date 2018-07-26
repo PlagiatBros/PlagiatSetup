@@ -169,7 +169,7 @@
                 })
                 if (!sl_registered) {
                     setTimeout(ping,1000)
-                } else {                    
+                } else {
                     sendOsc({
                         address: '/sl/'+sl_range+'/register_auto_update',
                         args: [{type:'s',value:'state'}, {type:'f',value:1}, {type:'s', value:host}, {type:'s', value:'/sl_state'}],
@@ -358,6 +358,11 @@
             if (address.indexOf('/sl') != -1) {
                 let i = address.split('/')[2]
                 if (i!=-1) address = '/sl/' + sl_map[i] + '/hit'
+
+                if (args[0].value === 'reverse' && !args[1].value) {
+                    address = '/sl/' + sl_map[i] + '/up'
+                }
+
                 args.splice(1,1)
                 host = sl_host
                 port = sl_port
