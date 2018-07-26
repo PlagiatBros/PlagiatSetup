@@ -362,6 +362,9 @@
                 if (args[0].value === 'reverse' && !args[1].value) {
                     address = '/sl/-1/up'
                 }
+                if (args[0].value === 'reverse' && args[1].value) {
+                    address = '/sl/-1/down'
+                }
 
                 args.splice(1,1)
                 host = sl_host
