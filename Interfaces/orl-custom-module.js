@@ -360,7 +360,7 @@
                 if (i!=-1) address = '/sl/' + sl_map[i] + '/hit'
 
                 if (args[0].value === 'reverse' && !args[1].value) {
-                    address = '/sl/' + sl_map[i] + '/up'
+                    address = '/sl/-1/up'
                 }
 
                 args.splice(1,1)
