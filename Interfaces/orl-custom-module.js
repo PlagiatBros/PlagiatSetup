@@ -359,12 +359,12 @@
                 let i = address.split('/')[2]
                 if (i!=-1) address = '/sl/' + sl_map[i] + '/hit'
 
-                if (args[0].value === 'reverse' && !args[1].value) {
-                    address = '/sl/-1/up'
-                }
-                if (args[0].value === 'reverse' && args[1].value) {
-                    address = '/sl/-1/down'
-                }
+                // if (args[0].value === 'reverse' && !args[1].value) {
+                //     address = '/sl/-1/up'
+                // }
+                // if (args[0].value === 'reverse' && args[1].value) {
+                //     address = '/sl/-1/down'
+                // }
 
                 args.splice(1,1)
                 host = sl_host
