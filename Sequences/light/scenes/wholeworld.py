@@ -15,7 +15,7 @@ def intro_respect(sequencer, timer):
     for port in [rpijardinport, rpicourport]:
         # sequencer.send(port, '/pyta/text/visible', -1, 0)
         sequencer.send(port, '/pyta/text/size', 0, 0.45)
-        sequencer.send(port, '/pyta/text/animate', 0, 'size', 0.45, 0.5, 50)
+        sequencer.send(port, '/pyta/text/animate', 0, 'zoom', 0.9, 1, 50)
         sequencer.send(port, '/pyta/text/visible', 0, 1)
         sequencer.send(port, '/pyta/text', 0, 'RESPECT')
 
