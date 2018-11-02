@@ -58,21 +58,44 @@ def fifty_twerk_3(seq, timer):
 
 
 
-butters = ['Butter', 'BuTtEr', 'butter', 'BUTTER', 'bUtTeR', 'BuRgEr' , 'BeTTeR']
-shits = ['Shit', '$hIt', '$HIT', '$hit', '$hibre', '$HiT', 'ChIt', 'ChIbrr']
+butters = ['baaaaaââ', 'Butter', 'BuTtEr', 'butter', 'BUTTER', 'bUtTeR', 'BuRgEr' , 'BeTTeR']
+shits = ['Shit', 'jeeeeez', '$hIt', '$HIT', 'chips', 'Chipo ?' '$hit', '$hibre', '$HiT', 'ChIt', 'ChIbrr']
 
 def fifty_butter(seq, timer):
-  i = random.randomint(0,2)
-  j = random.randomint(0,7)
+  i = random.randint(0,2)
+  j = random.randint(0,7)
   seq.send('/pyta/text', i, butters[j]),
   seq.send('/pyta/text/visible', i, 1)
   timer.wait(2, 'beat')
   seq.send('/pyta/text/visible', i, 0)
 
 def fifty_shit(seq, timer):
-  i = random.randomint(0,2)
-  j = random.randomint(0,8)
+  i = random.randint(0,2)
+  j = random.randint(0,8)
   seq.send('/pyta/text', i, shits[j]),
   seq.send('/pyta/text/visible', i, 1)
   timer.wait(2, 'beat')
   seq.send('/pyta/text/visible', i, 0)
+
+
+
+
+_words = ['I dra', 'dose', 'kartin', 'machinz']
+_i = 0
+def fifty_trapcup(seq, timer):
+    global _i
+    word = _words[_i%len(_words)]
+    size = 2.5 / len(word)
+    _i += 1
+    seq.send('/pyta/slide/lock', 'White', 1)
+    seq.send('/pyta/slide/strobe', 'White', 1, 2, 0.5)
+    seq.send('/pyta/text/rgb', 0, 0, 0, 0)
+    seq.send('/pyta/text', 0, word)
+    seq.send('/pyta/text/size', 0, size)
+
+    seq.send('/pyta/slide/visible', 'White', 1)
+    seq.send('/pyta/text/visible', 0, 1)
+    timer.wait(0.5, 'b')
+    seq.send('/pyta/text/visible', 0, 0)
+    seq.send('/pyta/slide/visible', 'White', 0)
+    seq.send('/pyta/slide/lock', 'White', 0)

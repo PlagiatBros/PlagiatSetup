@@ -12,6 +12,9 @@ from mididings.extra.osc import SendOSC
 wholeworld_mk2lights = {
     1:'blue',
     2:'purple',
+    3: 'green',
+    4: 'green',
+    5: 'green',
     6:'yellow',
     7:'yellow',
     8:'yellow',
@@ -79,8 +82,8 @@ wholeworld = [
 
             ]),
 
-            vxorlgars_on,
-            vxorlmeuf_off,
+            vxorlgars_off,
+            vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
             vxorlvocode_off,

@@ -15,7 +15,6 @@ dafist_mk2lights = {
     2:'purple',
     3:'purple',
     4:'green',
-    4:'green',
     6:'purple',
     7:'yellow',
     8:'yellow',
@@ -41,7 +40,10 @@ dafist = [
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
-    [orl, jeannot] >> ProgramFilter([range(2,9)]) >> [
+    [
+        orl >> ProgramFilter([range(2,9)]),
+        jeannot >> ProgramFilter([range(2,7)]),
+    ]  >> [
        SendOSC(lightseqport, '/Lightseq/Sequence/Disable', '*'),
         SendOSC(lightseqport, '/Lightseq/Scene/Stop', '*'),
         SendOSC(rpijardinport, '/pyta/slide/animate/stop', -1),

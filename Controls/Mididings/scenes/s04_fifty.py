@@ -10,9 +10,12 @@ from mididings.extra.osc import SendOSC
 
 fifty_mk2lights = {
     1:'blue',
+    2:'green',
+    3:'green',
     4:'yellow',
     5:'yellow',
     6:'yellow',
+    7:'green',
     8:'red',
 }
 
@@ -38,7 +41,10 @@ fifty = [
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
-    [orl, jeannot] >> ProgramFilter([range(2,12)]) >> [
+    [
+        orl >> ProgramFilter([range(2,12)]),
+        jeannot >> ProgramFilter([range(2,4) + [7]])
+    ] >> [
         SendOSC(lightseqport, '/Lightseq/Sequence/Disable', '*'),
         SendOSC(lightseqport, '/Lightseq/Scene/Stop', '*'),
         SendOSC(rpijardinport, '/pyta/slide/animate/stop', -1),
@@ -590,6 +596,13 @@ fifty = [
         Ctrl(102, 127) >> Output('Mk2CtrlOut', 1)
         ],
 
+    jeannot >> ProgramFilter(2) >> [ # Butter
+	    SendOSC(lightseqport, '/Lightseq/Scene/Play', 'fifty_butter',timestamp),
+    ] >> Discard(),
+    jeannot >> ProgramFilter(3) >> [ # Shit
+	    SendOSC(lightseqport, '/Lightseq/Scene/Play', 'fifty_shit',timestamp),
+    ] >> Discard(),
+
     jeannot >> ProgramFilter(4) >> [ # Vx jeannot
         vxjeannotdelay_off,
         vxjeannotgars_on,
@@ -612,10 +625,13 @@ fifty = [
         vxjeannotvocode_on,
     ] >> Discard(),
 
-    jeannot >> ProgramFilter(8) >> SendOSC(trapcutport, '/Trapcut/Scene/Play', 'I') >> Discard(),
+    jeannot >> ProgramFilter(8) >> [
+        SendOSC(trapcutport, '/Trapcut/Scene/Play', 'I'),
+	    SendOSC(lightseqport, '/Lightseq/Scene/Play', 'fifty_trapcup', timestamp),
+    ] >> Discard()
 
 
 
 
 
-    ]
+]

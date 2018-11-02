@@ -7,8 +7,8 @@ import random
 from ports import *
 
 def sm_blinkinterns(seq, timer):
-    i = randomint(0,1)
-    rpis=[rpijardinport,rpicourport] 
+    i = random.randint(0,1)
+    rpis=[rpijardinport,rpicourport]
     seq.send(rpis[i], '/pyta/text', 2, '[plaʒia] is still looking for interns')
     timer.wait(0.8, 's')
     seq.send(rpis[i], '/pyta/text', 2, '[plaʒia]                             ')

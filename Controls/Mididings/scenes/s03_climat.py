@@ -17,10 +17,7 @@ climat_mk2lights = {
     8:'red',
 }
 
-darkEyes=""
-dark_eyes = ['FreakyEye_1', 'BlueOnBlackEye_1', 'OrangeOnBlackEye_1', 'OrangeOnBlackEye_2', 'RedOnBlackEye_1']
-for i in range (1,5):
-    darkEyes+=dark_eyes[i]+" "
+darkEyes = " ".join(['FreakyEye_1', 'BlueOnBlackEye_1', 'OrangeOnBlackEye_1', 'OrangeOnBlackEye_2', 'RedOnBlackEye_1'])
 
 #### Climat ####
 climat = [
