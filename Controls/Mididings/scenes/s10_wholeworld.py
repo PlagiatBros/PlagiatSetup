@@ -33,22 +33,14 @@ wholeworld = [
         # SendOSC(zyntrebleport, '/microtonal/tunings', '135.0\n200.0\n300.0\n400.0\n500.0\n635.0\n700.0\n800.0\n900.0\n1000.0\n1100.0\n2/1'),
 
         mk2lights(wholeworld_mk2lights),
+        SendOSC(rpijardinport, '/pyta/slide/unload', -1),
+        SendOSC(rpicourport, '/pyta/slide/unload', -1),
     ]),
     jeannot_padrelease >> mk2lights(wholeworld_mk2lights),
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
-    [orl, jeannot] >> ProgramFilter([range(2,12)]) >> [
-        SendOSC(lightseqport, '/Lightseq/Sequence/Disable', '*'),
-        SendOSC(lightseqport, '/Lightseq/Scene/Stop', '*'),
-        SendOSC(rpijardinport, '/pyta/slide/animate/stop', -1),
-        SendOSC(rpicourport, '/pyta/slide/animate/stop', -1),
-        SendOSC(rpijardinport, '/pyta/slide/visible', -1, 0),
-        SendOSC(rpicourport, '/pyta/slide/visible', -1, 0),
-        SendOSC(rpijardinport, '/pyta/text/reset', -1),
-        SendOSC(rpicourport, '/pyta/text/reset', -1),
-        SendOSC(qlcstopport, '/Stop'),
-    ] >> Discard(),
+    [orl, jeannot] >> ProgramFilter([range(2,12)]) >> light_reset >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     jeannot_sustain >> [ # Intro cymbaloume - Sustain
         SendOSC(rpijardinport, "/Test"),

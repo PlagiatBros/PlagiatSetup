@@ -57,28 +57,8 @@ le5 = [
         SendOSC(samplesmainport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled',20000.),
 
     ] >> Discard(),
-    orl >> ProgramFilter([range(2,12)]) >> [
-        SendOSC(lightseqport, '/Lightseq/Sequence/Disable', '*'),
-        SendOSC(lightseqport, '/Lightseq/Scene/Stop', '*'),
-        SendOSC(rpijardinport, '/pyta/slide/animate/stop', -1),
-        SendOSC(rpicourport, '/pyta/slide/animate/stop', -1),
-        SendOSC(rpijardinport, '/pyta/slide/visible', -1, 0),
-        SendOSC(rpicourport, '/pyta/slide/visible', -1, 0),
-        SendOSC(rpijardinport, '/pyta/text/reset', -1),
-        SendOSC(rpicourport, '/pyta/text/reset', -1),
-    	SendOSC(qlcstopport, '/Stop'),
-    ] >> Discard(),
-    jeannot >> ProgramFilter([range(2,8)]) >> [
-        SendOSC(lightseqport, '/Lightseq/Sequence/Disable', '*'),
-        SendOSC(lightseqport, '/Lightseq/Scene/Stop', '*'),
-        SendOSC(rpijardinport, '/pyta/slide/animate/stop'),
-        SendOSC(rpicourport, '/pyta/slide/animate/stop'),
-        SendOSC(rpijardinport, '/pyta/slide/visible', -1, 0),
-        SendOSC(rpicourport, '/pyta/slide/visible', -1, 0),
-        SendOSC(rpijardinport, '/pyta/text/reset', -1),
-        SendOSC(rpicourport, '/pyta/text/reset', -1),
-    	SendOSC(qlcstopport, '/Stop'),
-    ] >> Discard(),
+    orl >> ProgramFilter([range(2,12)]) >> light_reset >> Discard(),
+    jeannot >> ProgramFilter([range(2,8)]) >> light_reset >> Discard(),
     jeannot >> ProgramFilter(2) >> [ # Intro Shut your dickhole + break fitting me suit - Bouton 2
         Program(65) >> cseqtrigger,
         NoteOn(66,127) >> Output('PBTapeutape', 3), # gunshot
@@ -609,10 +589,6 @@ le5 = [
 	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_nymphotrap_blow'),
 	    SendOSC(rpijardinport, '/pyta/slide/alpha', twerks, 0.15),
 	    SendOSC(rpicourport, '/pyta/slide/alpha', twerks, 0.15),
-	    SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'le5_twerk_jardin', 1),
-	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_twerk_jardin'),
-	    SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'le5_twerk_cour', 1),
-	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_twerk_cour'),
 	    SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
 

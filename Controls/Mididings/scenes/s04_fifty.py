@@ -25,6 +25,20 @@ twerks = " ".join(['Twerk_'+str(i) for i in range(1,33)])
 twerks_beauf = " ".join(['Twerk_'+str(i) for i in range(11,26)])
 teas = " ".join(['Tea_'+str(i) for i in range(1,9)])
 
+light_reset = [
+    SendOSC(lightseqport, '/Lightseq/Sequence/Disable', '*'),
+    SendOSC(lightseqport, '/Lightseq/Scene/Stop', '*'),
+    SendOSC(rpijardinport, '/pyta/slide/animate/stop', -1),
+    SendOSC(rpicourport, '/pyta/slide/animate/stop', -1),
+    SendOSC(rpijardinport, '/pyta/slide/visible', -1, 0),
+    SendOSC(rpicourport, '/pyta/slide/visible', -1, 0),
+    SendOSC(rpijardinport, '/pyta/slide/unload', -1),
+    SendOSC(rpicourport, '/pyta/slide/unload', -1),
+    SendOSC(rpijardinport, '/pyta/text/reset', -1),
+    SendOSC(rpicourport, '/pyta/text/reset', -1),
+    SendOSC(qlcstopport, '/Stop'),
+]
+
 #### Fifty ####
 fifty = [
     Init([
@@ -41,20 +55,8 @@ fifty = [
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
-    [
-        orl >> ProgramFilter([range(2,12)]),
-        jeannot >> ProgramFilter([range(2,4) + [7]])
-    ] >> [
-        SendOSC(lightseqport, '/Lightseq/Sequence/Disable', '*'),
-        SendOSC(lightseqport, '/Lightseq/Scene/Stop', '*'),
-        SendOSC(rpijardinport, '/pyta/slide/animate/stop', -1),
-        SendOSC(rpicourport, '/pyta/slide/animate/stop', -1),
-        SendOSC(rpijardinport, '/pyta/slide/visible', -1, 0),
-        SendOSC(rpicourport, '/pyta/slide/visible', -1, 0),
-        SendOSC(rpijardinport, '/pyta/text/reset', -1),
-        SendOSC(rpicourport, '/pyta/text/reset', -1),
-        SendOSC(qlcstopport, '/Stop'),
-    ] >> Discard(),
+    orl >> ProgramFilter([range(2,12)]) >> light_reset >> Discard(),
+    jeannot >> ProgramFilter([range(2,4) + [7]]) >> light_reset >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # Intro (fin du sample) - Bouton 2
         Program(65) >> cseqtrigger,

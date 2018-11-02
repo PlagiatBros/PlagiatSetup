@@ -46,17 +46,7 @@ horrorcore = [
     jeannot >> ProgramFilter([range(1,6)]) >> [
         SubSceneSwitch(2),
     ] >> Discard(),
-    [orl, jeannot] >> ProgramFilter([range(2,12)]) >> [
-        SendOSC(lightseqport, '/Lightseq/Sequence/Disable', '*'),
-        SendOSC(lightseqport, '/Lightseq/Scene/Stop', '*'),
-        SendOSC(rpijardinport, '/pyta/slide/animate/stop', -1),
-        SendOSC(rpicourport, '/pyta/slide/animate/stop', -1),
-        SendOSC(rpijardinport, '/pyta/slide/visible', -1, 0),
-        SendOSC(rpicourport, '/pyta/slide/visible', -1, 0),
-        SendOSC(rpijardinport, '/pyta/text/reset', -1),
-        SendOSC(rpicourport, '/pyta/text/reset', -1),
-	SendOSC(qlcstopport, '/Stop'),
-    ] >> Discard(),
+    [orl, jeannot] >> ProgramFilter([range(2,12)]) >> light_reset >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     [orl, jeannot] >> ProgramFilter(2) >> [ # Couplet (orl meuf) - Bouton 2 (mk2 notes = vx jean meuf; vx orl vocod; stop samples)
         Program(65) >> cseqtrigger,

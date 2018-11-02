@@ -26,13 +26,7 @@ connassessacem = [
     [orl, jeannot] >> ProgramFilter([range(2,4)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*'),
     ] >> Discard(),
-    [orl, jeannot] >> ProgramFilter([range(2,4)]) >> [
-        SendOSC(lightseqport, '/Lightseq/Sequence/Disable', '*'),
-        SendOSC(lightseqport, '/Lightseq/Scene/Stop', '*'),
-        SendOSC(vporlport, '/pyta/slide/visible', -1, 0),
-        SendOSC(vpjeannotport, '/pyta/slide/visible', -1, 0),
-        SendOSC(qlcstopport, '/Stop'),
-    ] >> Discard(),
+    [orl, jeannot] >> ProgramFilter([range(2,4)]) >> light_reset >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     [orl, jeannot] >> ProgramFilter(2) >> [ # Thème Intro - Bouton 2
         Program(65) >> cseqtrigger,
