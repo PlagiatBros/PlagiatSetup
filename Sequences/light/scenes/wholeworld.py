@@ -104,44 +104,37 @@ _mutt_imgs_str = " ".join(_mutt_imgs)
 
 def wholeworld_refrain_rough_off(sequencer, timer):
 
-    for port in [rpijardinport, rpicourport]:
-        sequencer.send(port, '/pyta/slide/alpha', _dark_eyes, 1)
-        sequencer.send(port, '/pyta/slide/visible', _mutt_imgs_str, 0)
+    sequencer.send('/pyta/slide/alpha', _dark_eyes, 1.0)
+    sequencer.send('/pyta/slide/visible', _mutt_imgs_str, 0)
 
 def wholeworld_refrain_rough(sequencer, timer):
     shuffle(_mutt_imgs)
-    pi = ''
-    for port in [rpijardinport, rpicourport]:
-        sequencer.send(port, '/pyta/slide/alpha', _dark_eyes, 0)
-        sequencer.send(port, '/pyta/slide/rgb', _mutt_imgs_str, 1.0, 0.3, 0.3)
-        sequencer.send(port, '/pyta/slide/position_z', _mutt_imgs_str, -1)
-        sequencer.send(port, '/pyta/slide/animate', _mutt_imgs_str, 'scale_x', 200, 1000, 0.3)
-        sequencer.send(port, '/pyta/slide/animate', _mutt_imgs_str, 'scale_y', 150, 800, 0.3)
-    for i in _mutt_imgs:
-        for port in [rpijardinport, rpicourport]:
-            if pi:
-                sequencer.send(port, '/pyta/slide/visible', pi, 0)
-            sequencer.send(port, '/pyta/slide/visible', i, 1)
+    # sequencer.send('/pyta/slide/alpha', _dark_eyes, 0)
+    sequencer.send('/pyta/slide/rgb', _mutt_imgs_str, 1.0, -1.0, 0.3)
+    # sequencer.send('/pyta/slide/position_z', _mutt_imgs_str, -1)
+    # sequencer.send('/pyta/slide/animate', _mutt_imgs_str, 'zoom', .8, 1.2, 0.3)
+    # sequencer.send(port, '/pyta/slide/animate', _mutt_imgs_str, 'scale_y', 150, 800, 0.3)
+    for i in range(10):
+        sequencer.send( '/pyta/slide/visible', _mutt_imgs[(i-1)%len(_mutt_imgs)], 0)
+        sequencer.send( '/pyta/slide/visible', _mutt_imgs[(i)%len(_mutt_imgs)], 1)
         timer.wait(1/10.,'b')
-        pi = i
     wholeworld_refrain_rough_off(sequencer, timer)
 
 def wholeworld_refrain_snapshat(sequencer, timer):
 
+    sequencer.send('/pyta/slide/alpha', _dark_eyes, 0.0)
+    sequencer.send('/pyta/text', 3, '?')
+    sequencer.send('/pyta/text/rgb', 3, 255, 255, 255)
+    sequencer.send('/pyta/text/size', 3, 0.5)
+    sequencer.send('/pyta/text/strobe', 3, 1)
     for port in [rpijardinport, rpicourport]:
-        sequencer.send(port, '/pyta/slide/alpha', _dark_eyes, 0)
-        sequencer.send(port, '/pyta/text', 3, '?')
-        sequencer.send(port, '/pyta/text/rgb', 3, 255, 255, 255)
-        sequencer.send(port, '/pyta/text/size', 3, 0.5)
-        sequencer.send(port, '/pyta/text/strobe', 3, 1)
         sequencer.send(port, '/pyta/text/align', 3, 'center', 'right' if port == rpijardinport else 'left')
-        sequencer.send(port, '/pyta/text/visible', 3, 1)
+    sequencer.send('/pyta/text/visible', 3, 1)
 
-    timer.wait(1.5, 'beats')
+    timer.wait(2, 'beats')
 
-    for port in [rpijardinport, rpicourport]:
-        sequencer.send(port, '/pyta/slide/alpha', _dark_eyes, 1)
-        sequencer.send(port, '/pyta/text/visible', 3, 0)
+    sequencer.send('/pyta/slide/alpha', _dark_eyes, 1.0)
+    sequencer.send('/pyta/text/visible', 3, 0)
 
 
 def wholeworld_one_sheet(sequencer, timer):

@@ -133,11 +133,17 @@ horrorcore = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(150)),
 
-            SendOSC(lightseqport, '/Lightseq/Bpm', 150),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'hc_wood_jardin', 1),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'hc_wood_jardin'),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'hc_wood_cour', 1),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'hc_wood_cour'),
+
+
+            SendOSC(rpijardinport, '/pyta/slide/rgb', 'Worms_1', 0, 0, 0),
+            SendOSC(rpicourport, '/pyta/slide/rgb', 'Worms_1', 0, 0, 0),
+            SendOSC(rpijardinport, '/pyta/slide/alpha', 'Wood_1 Wood_2 Wood_3 Wood_4 Worms_1', .4),
+            SendOSC(rpicourport, '/pyta/slide/alpha', 'Wood_1 Wood_2 Wood_3 Wood_4 Worms_1', .4),
+            SendOSC(rpicourport, '/pyta/slide/alpha', 'Wood_1 Wood_2 Wood_3 Wood_4', .4),
+            SendOSC(lightseqport, '/Lightseq/Bpm', 1500),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'hc_wood'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'hc_worm', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'hc_worm'),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
             SendOscState([
@@ -195,12 +201,18 @@ horrorcore = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(150)),
 
-            SendOSC(lightseqport, '/Lightseq/Bpm', 75),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'hc_wood_jardin', 1),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'hc_wood_jardin'),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'hc_wood_cour', 1),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'hc_wood_cour'),
+            SendOSC(rpijardinport, '/pyta/slide/alpha', 'Wood_1 Wood_2 Wood_3 Wood_4 Worms_1', .4),
+            SendOSC(rpicourport, '/pyta/slide/alpha', 'Wood_1 Wood_2 Wood_3 Wood_4 Worms_1', .4),
+
+            SendOSC(rpijardinport, '/pyta/slide/rgb/strobe', 'Wood_1 Wood_2 Wood_3 Wood_4 Worms_1', 1),
+            SendOSC(rpicourport, '/pyta/slide/rgb/strobe', 'Wood_1 Wood_2 Wood_3 Wood_4 Worms_1', 1),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 1500),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'hc_wood'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'hc_worm', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'hc_worm'),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
 
 
             SendOscState([
@@ -379,9 +391,11 @@ horrorcore = [
             SendOSC(rpijardinport, '/pyta/text', 0, 'PLAGIAT'),
             SendOSC(rpijardinport, '/pyta/text/visible', 0, 1),
             SendOSC(rpijardinport, '/pyta/text', 2, 'tkt, c bi1to fini'),
+            SendOSC(rpijardinport, '/pyta/text/position_y', 2, 150),
             SendOSC(rpijardinport, '/pyta/text/visible', 2, 1),
-            SendOSC(rpicourport, '/pyta/text', 0, 'PLAGIAT'),
+            SendOSC(rpicourport, '/pyta/text', 0, 'PLAGIATE'),
             SendOSC(rpicourport, '/pyta/text', 2, 'c bo mé c lon'),
+            SendOSC(rpicourport, '/pyta/text/position_y', 2, 100),
             SendOSC(rpicourport, '/pyta/text/visible', 0, 1),
             SendOSC(rpicourport, '/pyta/text/visible', 2, 1),
 

@@ -62,13 +62,13 @@ dafist_refrain = [
 
 dafist_prerefrain = [
     [['/pyta/text', 2, 'YE$'], ['/pyta/text/visible', 2, 1]], ['/pyta/text/visible', 2, 0], None, None,
-    [['/pyta/text', 2, 'Ye$s'], ['/pyta/text/visible', 2, 1]], ['/pyta/text/visible', 2, 0], None, None,
+    [['/pyta/text', 2, 'ZøøM3'], ['/pyta/text/visible', 2, 1]], ['/pyta/text/visible', 2, 0], None, None,
     [['/pyta/text', 2, 'ye$$$'], ['/pyta/text/visible', 2, 1]], ['/pyta/text/visible', 2, 0], None, None,
-    [['/pyta/text', 2, 'yE$$'], ['/pyta/text/visible', 2, 1]], ['/pyta/text/visible', 2, 0], None, None,
+    [['/pyta/text', 2, 'Lâ$T'], ['/pyta/text/visible', 2, 1]], ['/pyta/text/visible', 2, 0], None, None,
     [['/pyta/text', 2, 'yyYEs$'], ['/pyta/text/visible', 2, 1]], ['/pyta/text/visible', 2, 0], None, None,
-    [['/pyta/text', 2, 'Ye$s$$'], ['/pyta/text/visible', 2, 1]], ['/pyta/text/visible', 2, 0], None, None,
+    [['/pyta/text', 2, 'ZoN'], ['/pyta/text/visible', 2, 1]], ['/pyta/text/visible', 2, 0], None, None,
     [['/pyta/text', 2, 'ye$$$$'], ['/pyta/text/visible', 2, 1]], ['/pyta/text/visible', 2, 0], None, None,
-    [['/pyta/text', 2, 'YYYE$$$$'], ['/pyta/text/visible', 2, 1]], ['/pyta/text/visible', 2, 0], None, None,
+    [['/pyta/text', 2, 'Smurf'], ['/pyta/text/visible', 2, 1]], ['/pyta/text/visible', 2, 0], None, None,
 ]
 
 mooncupwaters_slides = 'Moise_1 Moise_2 Moise_3 Butts_1 Butts_2 Mooncup_1 Mooncup_2 Mooncup_3'

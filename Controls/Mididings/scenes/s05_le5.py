@@ -169,11 +169,12 @@ le5 = [
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(160)),
 
 
-            SendOSC(rpijardinport, '/pyta/slide/alpha', coffee_redseas, 0.2),
-            SendOSC(rpicourport, '/pyta/slide/alpha', coffee_redseas, 0.2),
-            SendOSC(rpijardinport, '/pyta/slide/scale', coffee_redseas, 800, 600, 1),
-            SendOSC(rpicourport, '/pyta/slide/scale', coffee_redseas, 800, 600, 1),
-            SendOSC(lightseqport, '/Lightseq/Bpm', 160),
+
+            SendOSC(rpijardinport, '/pyta/slide/animate', coffee_redseas, 'alpha', 0.2, 0.4, 2),
+            SendOSC(rpicourport, '/pyta/slide/animate', coffee_redseas, 'alpha', 0.2, 0.4, 2),
+            SendOSC(rpijardinport, '/pyta/slide/rgb', coffee_redseas, -1, 0, 1),
+            SendOSC(rpicourport, '/pyta/slide/rgb', coffee_redseas, -1, 0, 1),
+            SendOSC(lightseqport, '/Lightseq/Bpm', 1500),
             SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'le5_coffee_redsea_jardin', 1),
             SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'le5_coffee_redsea_cour', 1),
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_coffee_redsea_jardin'),
@@ -226,11 +227,11 @@ le5 = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(160)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(160)),
 
-            SendOSC(rpijardinport, '/pyta/slide/animate', coffee_redseas, 'alpha', 0.3, 0.9, 2),
-            SendOSC(rpicourport, '/pyta/slide/animate', coffee_redseas, 'alpha', 0.3, 0.9, 2),
-            SendOSC(rpijardinport, '/pyta/slide/rgb', coffee_redseas, 1, 0, 0),
-            SendOSC(rpicourport, '/pyta/slide/rgb', coffee_redseas, 1, 0, 0),
-            SendOSC(lightseqport, '/Lightseq/Bpm', 160),
+            SendOSC(rpijardinport, '/pyta/slide/animate', coffee_redseas, 'alpha', 0.2, 0.4, 2),
+            SendOSC(rpicourport, '/pyta/slide/animate', coffee_redseas, 'alpha', 0.2, 0.4, 2),
+            SendOSC(rpijardinport, '/pyta/slide/rgb', coffee_redseas, 1, 0, -1),
+            SendOSC(rpicourport, '/pyta/slide/rgb', coffee_redseas, 1, 0, -1),
+            SendOSC(lightseqport, '/Lightseq/Bpm', 1500),
             SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'le5_coffee_redsea_jardin', 1),
             SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'le5_coffee_redsea_cour', 1),
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_coffee_redsea_jardin'),
@@ -467,7 +468,12 @@ le5 = [
             # SendOSC(rpijardinport, '/pyta/slide/animate', coffee_redseas, 'zoom', 1, 1, 12),
             # SendOSC(rpicourport, '/pyta/slide/animate', coffee_redseas, 'zoom', 1, 2, 12),
 
-            SendOSC(lightseqport, '/Lightseq/Bpm', 160),
+
+            SendOSC(rpijardinport, '/pyta/slide/animate', coffee_redseas, 'alpha', 0.2, 0.4, 2),
+            SendOSC(rpicourport, '/pyta/slide/animate', coffee_redseas, 'alpha', 0.2, 0.4, 2),
+            SendOSC(rpijardinport, '/pyta/slide/rgb', coffee_redseas, 1, 0, -1),
+            SendOSC(rpicourport, '/pyta/slide/rgb', coffee_redseas, 1, 0, -1),
+            SendOSC(lightseqport, '/Lightseq/Bpm', 1500),
             SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'le5_coffee_redsea_jardin', 1),
             SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'le5_coffee_redsea_cour', 1),
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_coffee_redsea_jardin'),
@@ -523,13 +529,15 @@ le5 = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(60)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(60)),
 
+
             SendOSC(monitorsjeannotport, '/strip/Klick/Gain/Mute', 1.0),
 
-            SendOSC(rpijardinport, '/pyta/slide/animate', 'stars1', 'scale_x', 0, 800, 300),
-            SendOSC(rpicourport, '/pyta/slide/animate', 'stars2', 'scale_x', 0, 800, 300),
-            SendOSC(rpijardinport, '/pyta/slide/visible', 'stars1', 1),
-            SendOSC(rpicourport, '/pyta/slide/visible', 'stars2', 1),
-            SendOSC(rpijardinport, '/pyta/text', 2, 'cute is obvious'),
+
+            SendOSC(rpijardinport, '/pyta/slide/animate', 'Stars_1', 'zoom', 2, 6, 300),
+            SendOSC(rpicourport, '/pyta/slide/animate', 'Stars_2', 'zoom', 2, 6, 300),
+            SendOSC(rpijardinport, '/pyta/slide/visible', 'Stars_1', 1),
+            SendOSC(rpicourport, '/pyta/slide/visible', 'Stars_2', 1),
+            SendOSC(rpijardinport, '/pyta/text', 2, 'cu   is obvious'),
             SendOSC(rpijardinport, '/pyta/text/align', 2, 'top', 'left'),
             SendOSC(rpijardinport, '/pyta/text/visible', 2, 1),
             SendOSC(rpicourport, '/pyta/text', 2, 'cute is obvious'),

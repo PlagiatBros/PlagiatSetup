@@ -228,13 +228,12 @@ wholeworld = [
 #            SendOSC(rpicourport, '/pyta/slide/scale', 'FreakyEye_1 BlueOnBlackEye_1 OrangeOnBlackEye_1 OrangeOnBlackEye_2 RedOnBlackEye_1', 800, 600, 1),
 
             SendOSC(lightseqport, '/Lightseq/Bpm', 90),
-            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
             SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'wholeworld_reveil_sournois_jardin', 1),
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'wholeworld_reveil_sournois_jardin'),
             SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'wholeworld_reveil_sournois_cour', 1),
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'wholeworld_reveil_sournois_cour'),
-
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'wholeworld_refrain'),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
 
             vxorlgars_on,

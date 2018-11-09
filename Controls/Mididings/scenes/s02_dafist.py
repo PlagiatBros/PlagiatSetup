@@ -248,9 +248,17 @@ dafist = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(120)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
 
+
+            SendOSC(rpijardinport, '/pyta/slide/strobe', 'GoatEye_10'),
+            SendOSC(rpicourport, '/pyta/slide/strobe', 'GoatEye_10'),
+            SendOSC(rpijardinport, '/pyta/slide/rgb/strobe', 'GoatEye_10', 10),
+            SendOSC(rpicourport, '/pyta/slide/rgb/strobe', 'GoatEye_10', 10),
+            SendOSC(rpijardinport, '/pyta/slide/alpha', 'GoatEye_10', 3),
+            SendOSC(rpicourport, '/pyta/slide/alpha', 'GoatEye_10', 3),
+
             SendOSC(lightseqport, '/Lightseq/Bpm', 120),
-            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_refrain'),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
             # SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_roulettearabesques'),
             # SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_themerefrain_clignotagestrob'),
             # SendOSC(lightseqport, '/Lightseq/Play', timestamp),
@@ -485,7 +493,6 @@ dafist = [
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
 
             SendOSC(lightseqport, '/Lightseq/Bpm', 1800),
-            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
             SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_mooncupwaters_alpha', 1),
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_mooncupwaters_alpha'),
             SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_mooncupwaters_rgb', 1),
@@ -494,6 +501,7 @@ dafist = [
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_mooncupwaters_jardin'),
             SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_mooncupwaters_cour', 1),
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_mooncupwaters_cour'),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
             SendOscState([
 
@@ -687,8 +695,8 @@ dafist = [
             SendOSC(lightseqport, '/Lightseq/Bpm', 130),
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_transe_blinkload'),
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_transe_cutoff'),
-            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
             SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_transe_blinkload', 1),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
             SendOscState([
 

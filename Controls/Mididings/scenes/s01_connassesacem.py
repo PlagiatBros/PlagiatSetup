@@ -95,11 +95,10 @@ connassessacem = [
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(125)),
 
             SendOSC(lightseqport, '/Lightseq/Scene/Play', 'connassesacem_2', timestamp),
-            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
             SendOSC(lightseqport, '/Lightseq/Bpm', 125),
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'connasses_metallica_clignote'),
-
             SendOSC(lightseqport, '/Lightseq/Scene/Play', 'connassesacem_1', timestamp),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
 
             SendOscState([
