@@ -54,12 +54,18 @@ looperctl = CtrlFilter(range(109,117)) >> CtrlValueFilter(127) >> [
 
 ]
 
+def pitchwheel_cb(ev):
+	pitch = 1.0 - (abs(ev.value) / (8192.0)) * 0.75
+	if 1 - pitch < 0.05:
+		pitch = 1.0
+	return pitch
+
 pitch = Filter(PITCHBEND) >> [
-    SendOSC(samplesmainport, '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled', lambda ev: 1 - (abs(ev.value) / (8191.0)) * 0.75),
-    SendOSC(vxmainport, '/strip/VxORLMain/AM%20pitchshifter/Pitch%20shift/unscaled', 		lambda ev: 1 - (abs(ev.value) / (8191.0)) * 0.75),
-    SendOSC(vxmainport, '/strip/VxJeannotMain/AM%20pitchshifter/Pitch%20shift/unscaled',  	lambda ev: 1 - (abs(ev.value) / (8191.0)) * 0.75),
-    SendOSC(bassmainport, '/strip/BassMain/AM%20pitchshifter/Pitch%20shift/unscaled',  	 	lambda ev: 1 - (abs(ev.value) / (8191.0)) * 0.75),
-    SendOSC(bassmainport, '/strip/BassSynth/AM%20pitchshifter/Pitch%20shift/unscaled',  	lambda ev: 1 - (abs(ev.value) / (8191.0)) * 0.75),
+    SendOSC(samplesmainport, '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled', pitchwheel_cb),
+    SendOSC(vxmainport, '/strip/VxORLMain/AM%20pitchshifter/Pitch%20shift/unscaled', 		pitchwheel_cb),
+    SendOSC(vxmainport, '/strip/VxJeannotMain/AM%20pitchshifter/Pitch%20shift/unscaled',  	pitchwheel_cb),
+    SendOSC(bassmainport, '/strip/BassMain/AM%20pitchshifter/Pitch%20shift/unscaled',  	 	pitchwheel_cb),
+    SendOSC(bassmainport, '/strip/BassSynth/AM%20pitchshifter/Pitch%20shift/unscaled',  	pitchwheel_cb),
 ]  >> Discard()
 
 samples_mute = Filter(NOTE) >> [
