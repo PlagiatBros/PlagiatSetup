@@ -1,6 +1,22 @@
 # PlagiatSetup
 
-The Plagiat Brothers' audio/video/light live setup
+The Plagiat Brothers' audio/video/light live setup:
+
+23 x mixers & plugin hosts (non mixer)
+2 x synthesizer (zynaddsubfx)
+1 x main midi/osc routing patches (mididings)
+5 x secondary midi/osc routing patches (mididings)
+1 x loopstation (sooperlooper)
+1 x midi sequencer (seq24)
+3 x osc sequencers (seqzero)
+1 x sampler (Tapeutape)
+1 x klick
+8 x autotuners (zita-at1 / x42-fat1)
+1 x calf jack host
+1 x osc control surface (open stage control)
+1 x qlc+
+
+![jack patch](https://user-images.githubusercontent.com/5261671/52136607-b3f21b80-2648-11e9-9cd9-c8dd62a4f180.png)
 
 ## Requirements
 
@@ -18,7 +34,7 @@ The Plagiat Brothers' audio/video/light live setup
     - mididings
     - klick
     - qlc+
-    - open-stage-control >= 0.20.3
+    - open-stage-control
     - alsa-tools-gui (rme soundcard)
 - plugins
     - swh-plugins (Steve Harris LADSPA plugins)
