@@ -3,6 +3,8 @@ from s02_dafist import *
 from s03_climat import *
 from s04_fifty import *
 from s05_le5 import *
+from s05a_nymphotrap import *
+from s05b_instouboul import *
 from s06_trapone import *
 from s07_sw import *
 from s08_geturfreakon import *

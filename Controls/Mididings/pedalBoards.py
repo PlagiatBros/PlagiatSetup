@@ -254,6 +254,120 @@ run(
 		),
 	    ]
         ),
+        6: SceneGroup("Nymphotrap", [
+  		Scene("Bass ORL",
+                      [
+                        nymphotrap,
+                        basspedal,
+                        ]
+		),
+		Scene("Vx ORL",
+                      [
+                        nymphotrap,
+                        vxpedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        nymphotrap,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        nymphotrap,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        nymphotrap,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        nymphotrap,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        nymphotrap,
+                        basspedal,
+                        ]
+		),
+		Scene("Pedal Select",
+                      [
+                        nymphotrap,
+                        pedalselect,
+                        ]
+		),
+		Scene("Tune Select",
+                      [
+                        nymphotrap,
+                        basspedal,
+                        ]
+		),
+	    ]
+        ),
+        61: SceneGroup("Instouboul", [
+  		Scene("Bass ORL",
+                      [
+                        instouboul,
+                        basspedal,
+                        ]
+		),
+		Scene("Vx ORL",
+                      [
+                        instouboul,
+                        vxpedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        instouboul,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        instouboul,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        instouboul,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        instouboul,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        instouboul,
+                        basspedal,
+                        ]
+		),
+		Scene("Pedal Select",
+                      [
+                        instouboul,
+                        pedalselect,
+                        ]
+		),
+		Scene("Tune Select",
+                      [
+                        instouboul,
+                        basspedal,
+                        ]
+		),
+	    ]
+        ),
         7: SceneGroup("SW", [
   		Scene("Bass ORL",
                       [
@@ -539,7 +653,7 @@ run(
 		),
 	    ]
         ),
-        6: SceneGroup("Trapone", [
+        99: SceneGroup("Trapone", [
   		Scene("Bass ORL",
                       [
                         trapone,
