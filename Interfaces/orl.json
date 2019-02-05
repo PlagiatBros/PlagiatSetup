@@ -815,16 +815,18 @@
                                         "css": "#{\n@{arm_cancel};\n@{arm_scenes} == \"ARMED\" ? \"\" : `\n:host {pointer-events:none;\\}\n.value:not(.on) { opacity:.5;\\}\n`\n}",
                                         "linkId": "",
                                         "values": {
-                                            "Connasses <br/>SACEM": 1,
+                                            "ConnassesSACEM": 1,
                                             "Da Fist": 2,
                                             "Climat": 3,
                                             "Fifty": 4,
                                             "Le5": 5,
-                                            "Trapone": 6,
+                                            "Nymphotrap": 6,
                                             "SW": 7,
-                                            "Don't forget me": 8,
+                                            "GetYourFreakOn": 8,
                                             "Horrorcore": 9,
-                                            "Snapshat": 10
+                                            "Wholeworld": 10,
+                                            "Instouboul": 61,
+                                            "Trapone": 99
                                         },
                                         "value": "",
                                         "precision": 0,
@@ -1070,7 +1072,9 @@
                                         "address": "/note",
                                         "preArgs": "[@{kbd_channel}]",
                                         "split": false,
-                                        "target": "midi:keyboard_out",
+                                        "target": [
+                                            "midi:keyboard_out"
+                                        ],
                                         "bypass": false,
                                         "width": "auto"
                                     }

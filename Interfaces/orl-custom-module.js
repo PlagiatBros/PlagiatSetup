@@ -296,9 +296,8 @@
                     for (var i in mididings_scenes) {
                         scenes_buttons[mididings_scenes[i].title] = parseInt(i)
                     }
-                    address = '/EXEC'
+                    address = '/EDIT'
                     args = [
-                        {type:'s', value: 'edit'},
                         {type:'s', value: 'mididings_scenes'},
                         {type:'s', value: JSON.stringify({values:scenes_buttons})}
                     ]
@@ -323,9 +322,8 @@
                         for (var i in mididings_scenes[args[0].value].subscenes) {
                             subscenes_buttons[mididings_scenes[args[0].value].subscenes[i]] = parseInt(i) + 1
                         }
-                        address = '/EXEC'
+                        address = '/EDIT'
                         editargs = [
-                            {type:'s', value: 'edit'},
                             {type:'s', value: 'mididings_subscenes'},
                             {type:'s', value: JSON.stringify({values:subscenes_buttons})}
                         ]
