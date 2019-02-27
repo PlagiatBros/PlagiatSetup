@@ -155,6 +155,29 @@
         i++
     }
 
+    time_zero = Date.now();
+
+    setInterval(()=>{
+
+        setTimer((Date.now() - time_zero )/ 1000)
+
+    }, 1000)
+
+    function setTimer(time){
+        var h = Math.floor(time / 3600),
+            m = Math.floor((time - h * 3600) / 60),
+            s = Math.round((time - m * 3600))
+
+        receiveOsc({
+            address: '/timer',
+            args: [
+                {
+                    type: 's',
+                    value: `${h<10?'0':''}${h}:${m<10?'0':''}${m}:${s<10?'0':''}${s}`
+                }
+            ]
+        })
+    }
 
 
     return {
@@ -423,6 +446,12 @@
             else if (address == '/sl/-1/hit' && args[0].value == 'reverse') {
                 // strip 2nd arg out as it only used for gui (fake) state
                 args = [args[0]]
+            }
+
+            else if (address == '/timer_reset') {
+                time_zero = Date.now()
+                setTimer(0)
+                return
             }
 
             return {address, args, host, port}
