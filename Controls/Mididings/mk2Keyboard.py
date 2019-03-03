@@ -55,12 +55,18 @@ looperctl = CtrlFilter(range(109,117)) >> CtrlValueFilter(127) >> [
 ]
 
 def pitchwheel_cb(ev):
-	pitch = 1.0 - (abs(ev.value) / (8192.0)) * 0.75
-	if 1 - pitch < 0.05:
-		pitch = 1.0
-	return pitch
+	return 1.0 - (abs(ev.value) / (8192.0)) * 0.75
 
-pitch = Filter(PITCHBEND) >> [
+last_pitch = 0
+def dedupe(ev):
+	global last_pitch
+	if ev.value != last_pitch:
+		last_pitch = ev.value
+		return ev
+	else:
+		return None
+
+pitch = Filter(PITCHBEND) >> Process(dedupe) >> [
     SendOSC(samplesmainport, '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled', pitchwheel_cb),
     SendOSC(vxmainport, '/strip/VxORLMain/AM%20pitchshifter/Pitch%20shift/unscaled', 		pitchwheel_cb),
     SendOSC(vxmainport, '/strip/VxJeannotMain/AM%20pitchshifter/Pitch%20shift/unscaled',  	pitchwheel_cb),
