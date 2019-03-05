@@ -19,7 +19,7 @@
       "widgets": [
         {
           "type": "matrix",
-          "top": 80,
+          "top": 90,
           "left": 110,
           "id": "mk2",
           "width": 440,
@@ -44,7 +44,7 @@
           "linkId": "",
           "widgetType": "push",
           "border": true,
-          "props": "{\n  \"address\": \"@{this.address}\",\n  \"preArgs\": [1, #{$+101}],\n  \"on\": 127\n}",
+          "props": "{\n  \"address\": \"@{this.address}\",\n  \"preArgs\": [1, #{$}],\n  \"on\": 127\n}",
           "default": "",
           "value": ""
         },
@@ -72,13 +72,10 @@
           ],
           "start": 1,
           "spacing": 0,
-          "traversing": true,
+          "traversing": false,
           "widgetType": "push",
           "border": true,
-          "props": {
-            "norelease": true,
-            "address": "@{this.address}"
-          }
+          "props": "{\n  \"norelease\": true,\n  \"address\": \"@{this.address}\",\n  \"on\": #{$}\n}"
         },
         {
           "type": "fader",
