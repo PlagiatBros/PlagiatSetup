@@ -72,7 +72,7 @@
           ],
           "start": 1,
           "spacing": 0,
-          "traversing": false,
+          "traversing": true,
           "widgetType": "push",
           "border": true,
           "props": "{\n  \"norelease\": true,\n  \"address\": \"@{this.address}\",\n  \"on\": #{$}\n}"
