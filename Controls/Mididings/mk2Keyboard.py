@@ -66,12 +66,27 @@ def dedupe(ev):
 	else:
 		return None
 
+def post_process_cb(ev):
+	val = []
+	v = abs(ev.value/8192.)
+	val.append(float(1 != 0)) # active ?
+	val.append(v) # strength
+	val.append(v) # nois
+	val.append(v/2.) # hue
+	val.append(1.0) # saturation
+	val.append(1.0 + v * 10) # value
+	return val
+
+	return 1.0 - (abs(ev.value) / (8192.0)) * 0.75
+
 pitch = Filter(PITCHBEND) >> Process(dedupe) >> [
     SendOSC(samplesmainport, '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled', pitchwheel_cb),
     SendOSC(vxmainport, '/strip/VxORLMain/AM%20pitchshifter/Pitch%20shift/unscaled', 		pitchwheel_cb),
     SendOSC(vxmainport, '/strip/VxJeannotMain/AM%20pitchshifter/Pitch%20shift/unscaled',  	pitchwheel_cb),
     SendOSC(bassmainport, '/strip/BassMain/AM%20pitchshifter/Pitch%20shift/unscaled',  	 	pitchwheel_cb),
     SendOSC(bassmainport, '/strip/BassSynth/AM%20pitchshifter/Pitch%20shift/unscaled',  	pitchwheel_cb),
+	SendOSC(rpijardinport, '/pyta/post_process/set_all', post_process_cb),
+	SendOSC(rpicourport, '/pyta/post_process/set_all', post_process_cb),
 ]  >> Discard()
 
 
