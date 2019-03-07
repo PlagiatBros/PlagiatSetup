@@ -14,7 +14,6 @@ instouboul_mk2lights = {
     3:'yellow',
     4:'yellow',
     5:'white',
-    7:'white',
     8:'blue',
 }
 

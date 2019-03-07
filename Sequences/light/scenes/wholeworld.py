@@ -110,9 +110,9 @@ def wholeworld_refrain_rough_off(sequencer, timer):
 def wholeworld_refrain_rough(sequencer, timer):
     shuffle(_mutt_imgs)
     # sequencer.send('/pyta/slide/alpha', _dark_eyes, 0)
-    sequencer.send('/pyta/slide/rgb', _mutt_imgs_str, 1.0, -1.0, 0.3)
+    sequencer.send('/pyta/slide/rgb', _mutt_imgs_str, 0.2, -1.0, 0.3)
     # sequencer.send('/pyta/slide/position_z', _mutt_imgs_str, -1)
-    # sequencer.send('/pyta/slide/animate', _mutt_imgs_str, 'zoom', .8, 1.2, 0.3)
+    sequencer.send('/pyta/slide/animate', _mutt_imgs_str, 'zoom', .8, 1.2, 0.3)
     # sequencer.send(port, '/pyta/slide/animate', _mutt_imgs_str, 'scale_y', 150, 800, 0.3)
     for i in range(10):
         sequencer.send( '/pyta/slide/visible', _mutt_imgs[(i-1)%len(_mutt_imgs)], 0)

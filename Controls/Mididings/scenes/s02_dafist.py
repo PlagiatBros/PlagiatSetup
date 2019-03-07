@@ -251,8 +251,8 @@ dafist = [
 
             SendOSC(rpijardinport, '/pyta/slide/strobe', 'GoatEye_10'),
             SendOSC(rpicourport, '/pyta/slide/strobe', 'GoatEye_10'),
-            SendOSC(rpijardinport, '/pyta/slide/rgb/strobe', 'GoatEye_10', 10),
-            SendOSC(rpicourport, '/pyta/slide/rgb/strobe', 'GoatEye_10', 10),
+            SendOSC(rpijardinport, '/pyta/slide/rgb/strobe', 'GoatEye_10', 3),
+            SendOSC(rpicourport, '/pyta/slide/rgb/strobe', 'GoatEye_10', 3),
             SendOSC(rpijardinport, '/pyta/slide/alpha', 'GoatEye_10', 3),
             SendOSC(rpicourport, '/pyta/slide/alpha', 'GoatEye_10', 3),
 
