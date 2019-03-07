@@ -68,6 +68,7 @@ pitch = Filter(PITCHBEND) >> [
     SendOSC(bassmainport, '/strip/BassSynth/AM%20pitchshifter/Pitch%20shift/unscaled',  	pitchwheel_cb),
 ]  >> Discard()
 
+
 samples_mute = Filter(NOTE) >> [
     KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEON) >> [
         SendOSC(samplesmainport, '/strip/SamplesMain/Gain/Mute', 1.0)
