@@ -74,6 +74,7 @@ pitch = Filter(PITCHBEND) >> Process(dedupe) >> [
     SendOSC(bassmainport, '/strip/BassSynth/AM%20pitchshifter/Pitch%20shift/unscaled',  	pitchwheel_cb),
 ]  >> Discard()
 
+
 samples_mute = Filter(NOTE) >> [
     KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEON) >> [
         SendOSC(samplesmainport, '/strip/SamplesMain/Gain/Mute', 1.0)
@@ -83,16 +84,16 @@ samples_mute = Filter(NOTE) >> [
     ],
 ]
 
-bass_and_samples_mute = Filter(NOTE) >> [
+bass_mute = Filter(NOTE) >> [
     KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEON) >> [
-        SendOSC(samplesmainport, '/strip/SamplesMain/Gain/Mute', 1.0),
         SendOSC(bassmainport, '/strip/BassMain/Gain/Mute', 1.0)
     ],
     KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEOFF) >> [
-        SendOSC(samplesmainport, '/strip/SamplesMain/Gain/Mute', 0.0),
         SendOSC(bassmainport, '/strip/BassMain/Gain/Mute', 0.0)
     ],
 ]
+
+bass_and_samples_mute = Filter(NOTE) >> [bass_mute, samples_mute]
 
 run(
     scenes = {
@@ -227,6 +228,15 @@ run(
 					pitch
                 ] >> Discard()
               ),
+      9: Scene("Bass cut",
+              [
+                  bass_mute,
+                  bassfilter,
+                  gatecancel,
+					looperctl,
+					pitch
+              ] >> Discard()
+            ),
     },
     control = Filter(PROGRAM) >> SceneSwitch(),
     pre = ~Filter(PROGRAM)

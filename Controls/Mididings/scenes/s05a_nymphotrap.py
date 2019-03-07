@@ -48,7 +48,7 @@ nymphotrap = [
         ]),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     jeannot_padrelease >> mk2lights(nymphotrap_mk2lights),
-    [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
+    [orl >> ProgramFilter([range(1,12)]), jeannot >>  ProgramFilter([1,5,6,7])] >> Filter(PROGRAM) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*'),
         SendOSC(samplesmainport, '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.),
         SendOSC(vxmainport, '/strip/VxJeannotMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.),
@@ -146,7 +146,8 @@ nymphotrap = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(120)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
 
-        SendOSC(cmeinport, '/mididings/switch_scene', 7),
+        SendOSC(mk2inport, '/mididings/switch_scene', 9), # sample cut
+        SendOSC(cmeinport, '/mididings/switch_scene', 8),
 
 		#TODO Positionnement
 	    SendOSC(rpijardinport, '/pyta/text', 2, 'nAfr0-tRap'),
@@ -193,7 +194,7 @@ nymphotrap = [
     jeannot >> ProgramFilter(5) >> [ # nymphotrap avec orl vx meuf (bouliotte) - bouton 5
         SendOSC(slport, '/set', 'eighth_per_cycle', 8),
         SendOSC(slport, '/set', 'tempo', 120),
-        SendOSC(slport, '/sl/[3,7,8]/hit', 'pause_on'),
+        SendOSC(slport, '/sl/[7,8]/hit', 'pause_on'),
 
         vxorlgars_off,
         vxorlmeuf_on,
@@ -204,7 +205,7 @@ nymphotrap = [
     jeannot >> ProgramFilter(6) >> [ # nymphotrap avec orl vx gars (refrain) - bouton 6
         SendOSC(slport, '/set', 'eighth_per_cycle', 10),
         SendOSC(slport, '/set', 'tempo', 120),
-        SendOSC(slport, '/sl/[3,7,8]/hit', 'pause_on'),
+        SendOSC(slport, '/sl/[7,8]/hit', 'pause_on'),
 
         vxorlgars_on,
         vxorlmeuf_off,
@@ -215,7 +216,7 @@ nymphotrap = [
     jeannot >> ProgramFilter(7) >> [ # nymphotrap avec orl vx vocod (couplet) - bouton 7
         SendOSC(slport, '/set', 'eighth_per_cycle', 10),
         SendOSC(slport, '/set', 'tempo', 120),
-        SendOSC(slport, '/sl/[3,7,8]/hit', 'pause_on'),
+        SendOSC(slport, '/sl/[7,8]/hit', 'pause_on'),
 
         vxorlgars_off,
         vxorlmeuf_off,
@@ -224,11 +225,10 @@ nymphotrap = [
         vxorlvocode_on,
     ] >> Discard(),
     jeannot >> ProgramFilter(8) >> [ # nymphotrap (couplet part 2, trig boucles bouliottes) - bouton 8
-        SendOSC(slport, '/sl/[3,7]/hit', 'trigger'),
+        SendOSC(slport, '/sl/7/hit', 'trigger'),
     ] >> Discard(),
 
-    orl >> ProgramFilter(9) >> [ # Bouclage vx + synth  - Bouton 9
-            SendOSC(slport, '/sl/3/hit', 'record'), # vx orl post
+    orl >> ProgramFilter(9) >> [ # Bouclage synth  - Bouton 9
             SendOSC(slport, '/sl/7/hit', 'record'), # synth aigu
         ],
     orl >> ProgramFilter(3) >> [ # thème ragga - bouton 3
@@ -297,6 +297,17 @@ nymphotrap = [
             bassvibest_off,
             bassbufferst_off,
             ]
+    ],
+
+    orl >> ProgramFilter(4) >> [
+        stop,
+        [
+            vxorlgars_on,
+            vxorlmeuf_off,
+            vxorldisint_off,
+            vxorldelay_off,
+            vxorlvocode_off,
+        ] >> Discard()
     ],
 
 
