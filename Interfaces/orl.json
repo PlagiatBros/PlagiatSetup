@@ -235,7 +235,7 @@
                           "precision": 2,
                           "address": "/timer_reset",
                           "preArgs": "",
-                          "target": "",
+                          "target": ":127.0.0.1:12345",
                           "bypass": false,
                           "on": 1,
                           "off": 0,
