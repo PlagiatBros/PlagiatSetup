@@ -2,7 +2,7 @@
 <!--
 ladish Studio configuration.
 -->
-<!-- Fri Jun 22 15:19:31 2018 -->
+<!-- Thu Mar  7 18:12:31 2019 -->
 <studio>
   <jack>
     <conf>
@@ -2403,8 +2403,8 @@ ladish Studio configuration.
         <port name="ZynAddSubFX" uuid="a11781c6-fa48-45a8-a526-b1dd78f2ee77" type="midi" direction="input" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1256.614340</key>
-        <key name="http://ladish.org/ns/canvas/y">1069.660123</key>
+        <key name="http://ladish.org/ns/canvas/x">1243.358268</key>
+        <key name="http://ladish.org/ns/canvas/y">1134.835810</key>
       </dict>
     </client>
     <client name="Zyn (Bass)" uuid="8aeb8e65-920b-45d0-a45e-1e12cfa1cdad" naming="app" app="ec63aad8-c625-45d1-82c7-c90baa9a183c">
@@ -2642,8 +2642,8 @@ ladish Studio configuration.
         <port name="AdapterOut" uuid="295afd09-266d-4e64-9f0a-1ee467d03bf8" type="midi" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1531.992542</key>
-        <key name="http://ladish.org/ns/canvas/y">1057.000000</key>
+        <key name="http://ladish.org/ns/canvas/x">1535.306560</key>
+        <key name="http://ladish.org/ns/canvas/y">1139.850449</key>
       </dict>
     </client>
     <client name="gx_head_amp" uuid="cc4feb6c-6162-4d39-a8a8-c0d2253b90b3" naming="app">
@@ -3143,11 +3143,7 @@ ladish Studio configuration.
     <connection port1="a03fb51c-75e9-4713-b986-6ba0a9e228ea" port2="a7e69124-82f5-4c98-ada0-5f1785490923" />
     <connection port1="b73434f2-52d3-4165-b4c5-cb6340ef4f15" port2="fdab8d56-718f-444d-9568-19582d3c96d1" />
     <connection port1="b73434f2-52d3-4165-b4c5-cb6340ef4f15" port2="753a7774-1286-4053-949c-f9e4c6615277" />
-    <connection port1="16a1ae57-b048-402c-8520-72e682910e39" port2="321751a7-b207-4a24-af04-9b5812261288" />
-    <connection port1="a6d065b9-cf29-47bf-a11d-8d0c802b0303" port2="dedc980a-fa69-4a22-a7c1-2a6a8060abb0" />
     <connection port1="6e0dc1e2-a2b4-4d4f-ac63-6b0d5bbb9626" port2="ff117881-f553-4dbf-b190-014df27a9298" />
-    <connection port1="41fa98da-3f1a-4145-9888-d72b726ed4bc" port2="c7066241-14cc-4bad-b619-105b36cf9f8b" />
-    <connection port1="c0e5ca85-570d-48b1-94f3-a80ccc3756ad" port2="507a0c0f-45de-447e-a010-d29760cb8eca" />
     <connection port1="943181c1-5c4a-409a-9529-409a065134ef" port2="ac9d29b9-0c97-4708-99b4-10f840c9d930" />
     <connection port1="943181c1-5c4a-409a-9529-409a065134ef" port2="93adb0f9-65dd-476f-8c39-2bb16f720995" />
     <connection port1="53679272-23d4-4f41-ad08-1f0a087e75cd" port2="2c9b52ec-31fc-4b1f-be62-23b022ddd675" />
@@ -3214,6 +3210,21 @@ ladish Studio configuration.
     <connection port1="89b2115a-e202-4239-be3a-c8ee27038993" port2="cfca9e3d-5dd8-4601-afe0-6eb45383ad55" />
     <connection port1="245e558e-ef53-48ea-88d9-c5998afc9df9" port2="9b96d2da-e604-4c7d-83f6-57e3ffe2e96b" />
     <connection port1="2c0170b2-7fbe-4300-bd42-84d3623aedbf" port2="cfca9e3d-5dd8-4601-afe0-6eb45383ad55" />
+    <connection port1="ea3e523a-31e7-4cae-a880-06669e5e4573" port2="321751a7-b207-4a24-af04-9b5812261288" />
+    <connection port1="3c925070-b798-403d-96df-76ac53944ff8" port2="dedc980a-fa69-4a22-a7c1-2a6a8060abb0" />
+    <connection port1="2800dd59-5250-41fd-b8c1-f69f8db81818" port2="0afdae1d-b7b3-4ced-8e0f-61de43d14e11" />
+    <connection port1="867a59de-7d2d-46c3-b232-c16a8df1aa95" port2="321751a7-b207-4a24-af04-9b5812261288" />
+    <connection port1="5398679e-4e0d-4be8-823a-60ef2b6c4bc9" port2="03057478-7059-48da-96e0-9ef08f28bbbd" />
+    <connection port1="8af9f270-2e03-4cf8-bfbb-cc221966f18c" port2="03057478-7059-48da-96e0-9ef08f28bbbd" />
+    <connection port1="f5c9f1e3-c1a0-4ee3-9fc1-d3381f3da3e2" port2="4b48dafb-6379-4350-a85b-fe196bea37bd" />
+    <connection port1="6a579c2c-b0d1-413c-be70-bba43a14c7ce" port2="4b48dafb-6379-4350-a85b-fe196bea37bd" />
+    <connection port1="c3991a9b-a145-43d6-bf61-b5741607ccda" port2="d74114ea-f79a-44d7-bd7c-c8fb559b6425" />
+    <connection port1="67a0a9a7-bcc1-4e27-8f99-03ca0fcbe58c" port2="c7066241-14cc-4bad-b619-105b36cf9f8b" />
+    <connection port1="bd9c23b7-6520-4570-b274-03a9892138cd" port2="c7066241-14cc-4bad-b619-105b36cf9f8b" />
+    <connection port1="2a715d89-1300-4235-8c66-4162568ecb89" port2="c7066241-14cc-4bad-b619-105b36cf9f8b" />
+    <connection port1="0b386ab2-1fff-49fd-8ae0-1a5e105e03f5" port2="c7066241-14cc-4bad-b619-105b36cf9f8b" />
+    <connection port1="67ca54d8-27a3-4aa8-9e4f-cff1aa24c354" port2="507a0c0f-45de-447e-a010-d29760cb8eca" />
+    <connection port1="754831ff-b11f-4ae7-a085-11d5d96a8b44" port2="507a0c0f-45de-447e-a010-d29760cb8eca" />
   </connections>
   <applications>
     <application name="a2j" uuid="65bce9a0-8285-4cb3-9630-321ba19b43a4" terminal="false" level="0" autorun="true">a2j -e</application>
