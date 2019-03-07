@@ -6,6 +6,7 @@ from mididings.extra.osc import SendOSC
 from utils import OSCCustomInterface
 from ports import *
 from math import log10
+from liblo import send
 
 
 config(
@@ -81,6 +82,26 @@ gatecancel = [
     ] >> Discard()
 
 
+
+def glitch(ev):
+		cc  = ev.ctrl
+		val = 1.0 * ev.value
+
+		glitch_state = [
+			float(val > 0), # active
+			val / 127, # strength
+			val / 127, # noise
+			0.0, # hue
+			1.0, # saturation
+			1.0, # value
+			1.0, # alpha
+			0.0, # invert
+		]
+
+		send(lightseqport, '/Lightseq/Scene/Play', 'glitch_timeout')
+		for port in [rpijardinport, rpicourport]:
+			send(port, '/pyta/post_process/set_all', *glitch_state)
+
 run(
     scenes = {
         1: 	Scene("ZynBass 1", zynbass1),
@@ -101,6 +122,7 @@ run(
         Filter(CTRL) >> [
             CtrlFilter(110) >>  SendOSC(samplesmainport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled', lambda ev: 20000. * pow(10, ((-log10(71/20000.))*ev.value) / 127. + log10(71/20000.))),
             CtrlFilter(75) >> gatecancel,
+            CtrlFilter(1) >> Call(glitch),
         ] >> Discard(),
         Filter(CTRL) >> [
             CtrlFilter(107) >> CtrlValueSplit(64, NoteOff(60), [NoteOff(60), NoteOn(60, 127)]) >> tapeutape16,

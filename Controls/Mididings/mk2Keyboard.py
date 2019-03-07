@@ -67,26 +67,56 @@ def dedupe(ev):
 	else:
 		return None
 
-def post_process_cb(ev):
-	val = []
-	v = abs(ev.value/8192.)
-	val.append(float(v != 0)) # active ?
-	val.append(v) # strength
-	val.append(v) # nois
-	val.append(v/2.) # hue
-	val.append(1.0) # saturation
-	val.append(1.0 + v * 10) # value
-	send(rpijardinport, '/pyta/post_process/set_all', *val)
-	send(rpicourport, '/pyta/post_process/set_all', *val)
-
 pitch = Filter(PITCHBEND) >> Process(dedupe) >> [
     SendOSC(samplesmainport, '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled', pitchwheel_cb),
     SendOSC(vxmainport, '/strip/VxORLMain/AM%20pitchshifter/Pitch%20shift/unscaled', 		pitchwheel_cb),
     SendOSC(vxmainport, '/strip/VxJeannotMain/AM%20pitchshifter/Pitch%20shift/unscaled',  	pitchwheel_cb),
     SendOSC(bassmainport, '/strip/BassMain/AM%20pitchshifter/Pitch%20shift/unscaled',  	 	pitchwheel_cb),
     SendOSC(bassmainport, '/strip/BassSynth/AM%20pitchshifter/Pitch%20shift/unscaled',  	pitchwheel_cb),
-   Call(post_process_cb)
 ]  >> Discard()
+
+
+glitch_state = [
+	0.0, # active
+	0.0, # strength
+	0.0, # noise
+	0.0, # hue
+	1.0, # saturation
+	1.0, # value
+	1.0, # alpha
+	0.0, # invert
+]
+
+def send_glitch_state(ev):
+	cc  = ev.ctrl
+	val = 1.0 * ev.value
+
+	if   cc == 1:
+		glitch_state[0] =  float(val>0)
+		glitch_state[1] =  val / 127
+	elif cc == 12:
+		glitch_state[1] =  5 * val / 127
+	elif cc == 13:
+		glitch_state[2] =  5 * val / 127
+	elif cc == 14:
+		glitch_state[3] =  5 * val / 127
+	elif cc == 15:
+		glitch_state[4] =  1.0 - (val / 127)
+	elif cc == 16:
+		glitch_state[5] =  1 + val
+	elif cc == 17:
+		glitch_state[7] =  val % 2
+	elif cc == 18:
+		# glitch_state[6] = 1.0 - (val / 127)
+		pass
+
+	send(lightseqport, '/Lightseq/Scene/Play', 'glitch_timeout')
+	for port in [rpijardinport, rpicourport]:
+		send(port, '/pyta/post_process/set_all', *glitch_state)
+
+
+video = Filter(CTRL) >> CtrlFilter([1] + range(12,19)) >> Call(send_glitch_state) >> Discard()
+
 
 
 samples_mute = Filter(NOTE) >> [
@@ -252,6 +282,9 @@ run(
               ] >> Discard()
             ),
     },
-    control = Filter(PROGRAM) >> SceneSwitch(),
+    control = [
+		video,
+		Filter(PROGRAM) >> SceneSwitch()
+	],
     pre = ~Filter(PROGRAM)
 )
