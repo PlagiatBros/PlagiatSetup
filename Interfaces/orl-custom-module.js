@@ -454,6 +454,35 @@
                 return
             }
 
+            else if (address == '/bigup') {
+                for (rpi of [
+                  "192.168.0.114",
+                  "192.168.0.115",
+              ]) {
+                  sendOsc({
+                      host:rpi,
+                      port:56418,
+                      address: '/pyta/text/visible',
+                      args: [{type:'i', value: -1}, {type:'i', value: 0}]
+                  })
+                  let n = Math.round(Math.random()*3)
+                  sendOsc({
+                      host:rpi,
+                      port:56418,
+                      address: '/pyta/text/visible',
+                      args: [{type:'i', value: n}, {type:'i', value: 1}]
+                  })
+                  sendOsc({
+                      host:rpi,
+                      port:56418,
+                      address: '/pyta/text',
+                      args: [{type:'i', value: n}, {type:'s', value: args[0].value}]
+                  })
+
+              }
+                return
+            }
+
             return {address, args, host, port}
         }
     }

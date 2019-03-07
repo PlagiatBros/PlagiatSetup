@@ -46,7 +46,8 @@ horrorcore = [
     jeannot >> ProgramFilter([range(1,6)]) >> [
         SubSceneSwitch(2),
     ] >> Discard(),
-    [orl, jeannot] >> ProgramFilter([range(2,12)]) >> light_reset >> Discard(),
+    orl >> ProgramFilter([range(2,12)]) >> light_reset >> Discard(),
+    jeannot >> ProgramFilter([range(2,6)]) >> light_reset >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     [orl, jeannot] >> ProgramFilter(2) >> [ # Couplet (orl meuf) - Bouton 2 (mk2 notes = vx jean meuf; vx orl vocod; stop samples)
         Program(65) >> cseqtrigger,

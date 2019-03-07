@@ -8,6 +8,17 @@ from mididings.extra.osc import SendOSC
 
 #######################################
 
+sw_mk2lights = {
+    1:'blue',
+    2:'purple',
+    3:'purple',
+    5:'yellow',
+    6:'yellow',
+    7:'yellow',
+    8:'green',
+}
+
+
 #### SW ####
 sw = [
     Init([
@@ -18,13 +29,14 @@ sw = [
         # zynmicrotonal_off,
 
         SendOSC(mk2inport, '/mididings/switch_scene', 2),
-        mk2lights([1,2,3]),
+        mk2lights(sw_mk2lights),
     ]),
-    jeannot_padrelease >> mk2lights([1,2,3]),
+    jeannot_padrelease >> mk2lights(sw_mk2lights),
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
-    [orl, jeannot] >> ProgramFilter([range(2,12)]) >> light_reset >> Discard(),
+    orl >> ProgramFilter([range(2,12)]) >> light_reset >> Discard(),
+    jeannot >> ProgramFilter([2) >> light_reset >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # intro - Bouton 2
         #TODO filtre --> Degrade déjà en place ?
@@ -321,6 +333,34 @@ sw = [
             SendOSC(audioseqport, '/Audioseq/Scene/Play', 'sw_shit_going', timestamp),
 
             ] >> Discard()
+        ],
+
+    jeannot >> ProgramFilter(5) >> [
+        vxjeannotdelay_off,
+        vxjeannotgars_on,
+        vxjeannotmeuf_off,
+        vxjeannotdisint_off,
+        vxjeannotvocode_off,
+    ] >> Discard(),
+    jeannot >> ProgramFilter(6) >> [
+        vxjeannotgars_off,
+        vxjeannotmeuf_on,
+        vxjeannotdisint_off,
+        vxjeannotdelay_off,
+        vxjeannotvocode_off,
+    ] >> Discard(),
+    jeannot >> ProgramFilter(7) >> [
+        vxjeannotgars_off,
+        vxjeannotmeuf_off,
+        vxjeannotdisint_off,
+        vxjeannotdelay_off,
+        vxjeannotvocode_on,
+    ] >> Discard(),
+
+    jeannot >> ProgramFilter(8) >> [ # video: one/two - Bouton 8
+        SendOSC(lightseqport, '/Lightseq/Bpm', 178.5),
+        SendOSC(lightseqport, '/Lightseq/Play', timestamp) >> Discard(),
+        SendOSC(lightseqport, "/Lightseq/Scene/Play", "wholeworld_one_sheet") >> Discard()
         ],
 
     orl >> ProgramFilter(11) >> [ # SlowMotium

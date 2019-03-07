@@ -137,27 +137,20 @@ def wholeworld_refrain_snapshat(sequencer, timer):
     sequencer.send('/pyta/text/visible', 3, 0)
 
 
-def wholeworld_one_sheet(sequencer, timer):
-    for port in [rpijardinport, rpicourport]:
-        sequencer.send(port, '/pyta/text', 3, '[uVm]')
-        sequencer.send(port, '/pyta/text/rotate_z', 3, 180)
-        sequencer.send(port, '/pyta/text/size', 3, 0.2)
-        sequencer.send(port, '/pyta/text/rgb', 3, 255, 0, 180)
-        sequencer.send(port, '/pyta/text/align', 3, 'center', 'center')
-        sequencer.send(port, '/pyta/text/visible', 3, 1)
+_ones = ['1', 'wa', '0ne', 'ONE', 'won','2', 'pteuh', 'Two', 'Toux', 'tu:']
 
-    timer.wait(4, 'beats')
-
-    for port in [rpijardinport, rpicourport]:
-        sequencer.send(port, '/pyta/text', 3, '[tu:]')
-        sequencer.send(port, '/pyta/text/rotate_z', 3, 0)
-        sequencer.send(port, '/pyta/text/size', 3, 0.25)
-        sequencer.send(port, '/pyta/text/rgb', 3, 255, 0, 180)
-        sequencer.send(port, '/pyta/text/align', 3, 'center', 'center')
-        sequencer.send(port, '/pyta/text/visible', 3, 1)
+def wholeworld_one_sheet(seq, timer):
+  seq.send('/pyta/text/visible', -1, 0)
+  i = random.randint(0,2)
+  j = random.randint(0,7)
+  seq.send('/pyta/text', i, _ones[j]),
+  seq.send('/pyta/text/visible', i, 1)
+  timer.wait(0.5, 'beat')
+  seq.send('/pyta/text/visible', i, 0)
 
 
-    timer.wait(4, 'beats')
+def wholeworld_three_sheets(sequencer, timer):
+    seq.send('/pyta/text/visible', -1, 0)
 
     for port in [rpijardinport, rpicourport]:
         sequencer.send(port, '/pyta/text', 3, '[øri:]')
@@ -172,9 +165,9 @@ def wholeworld_one_sheet(sequencer, timer):
     timer.wait(4, 'beats')
 
     for port in [rpijardinport, rpicourport]:
-        sequencer.send(port, '/pyta/text', 3, '::')
+        sequencer.send(port, '/pyta/text', 3, '4K')
         sequencer.send(port, '/pyta/text/rotate_z', 3, 0)
-        sequencer.send(port, '/pyta/text/size', 3, 0.4)
+        sequencer.send(port, '/pyta/text/size', 3, 0.8)
         sequencer.send(port, '/pyta/text/rgb', 3, 255, 0, 180)
         sequencer.send(port, '/pyta/text/align', 3, 'center', 'center')
         sequencer.send(port, '/pyta/text/visible', 3, 1)

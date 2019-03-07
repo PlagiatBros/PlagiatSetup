@@ -40,7 +40,8 @@ wholeworld = [
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
-    [orl, jeannot] >> ProgramFilter([range(2,12)]) >> light_reset >> Discard(),
+    orl >> ProgramFilter([range(2,12)]) >> light_reset >> Discard(),
+    jeannot >> ProgramFilter([range(2,6)]) >> light_reset >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     jeannot_sustain >> [ # Intro cymbaloume - Sustain
         SendOSC(rpijardinport, "/Test"),
@@ -161,11 +162,6 @@ wholeworld = [
             ] >> Discard()
 
     ],
-    jeannot >> ProgramFilter(3) >> [ # sniffed, eaten, mixed, jerked off - bouton 3
-        SendOSC(lightseqport, '/Lightseq/Bpm', 90),
-        SendOSC(lightseqport, '/Lightseq/Play', timestamp) >> Discard(),
-        SendOSC(lightseqport, "/Lightseq/Scene/Play", "wholeworld_jerked_off") >> Discard()
-        ],
     orl >> ProgramFilter(4) >> [ # Refrain - Bouton 4
         Program(67) >> cseqtrigger,
         [
@@ -258,13 +254,7 @@ wholeworld = [
             ]
         ],
 
-    jeannot >> ProgramFilter(4) >> [ # One sheet - Bouton 4
-        SendOSC(lightseqport, '/Lightseq/Bpm', 90),
-        SendOSC(lightseqport, '/Lightseq/Play', timestamp) >> Discard(),
-        SendOSC(lightseqport, "/Lightseq/Scene/Play", "wholeworld_one_sheet") >> Discard()
-        ],
-
-    jeannot >> ProgramFilter(5) >> [ # Trap - Bouton 5
+    jeannot >> ProgramFilter(3) >> [ # video: trap - Bouton 3
         # SendOSC(lightseqport, '/Lightseq/Bpm', 90),
         # SendOSC(lightseqport, '/Lightseq/Play', timestamp) >> Discard(),
         # SendOSC(lightseqport, "/Lightseq/Sequence/Enable", "wholeworld_trap") >> Discard()
@@ -276,6 +266,16 @@ wholeworld = [
         SendOSC(rpicourport, '/pyta/slide/scale', 'BlindEye_1', 1200, 800, 1),
         SendOSC(rpicourport, '/pyta/slide/position', 'BlindEye_1', -450, 0, 0),
         SendOSC(rpicourport, '/pyta/slide/animate', 'BlindEye_1', 'scale_x', 1200, 1400, 30),
+        ],
+    jeannot >> ProgramFilter(4) >> [ # video: one - Bouton 4
+        SendOSC(lightseqport, '/Lightseq/Bpm', 90),
+        SendOSC(lightseqport, '/Lightseq/Play', timestamp) >> Discard(),
+        SendOSC(lightseqport, "/Lightseq/Scene/Play", "wholeworld_one_sheet") >> Discard()
+        ],
+    jeannot >> ProgramFilter(5) >> [ # video: two - Bouton 5
+        SendOSC(lightseqport, '/Lightseq/Bpm', 90),
+        SendOSC(lightseqport, '/Lightseq/Play', timestamp) >> Discard(),
+        SendOSC(lightseqport, "/Lightseq/Scene/Play", "wholeworld_three_sheets") >> Discard()
         ],
 
     orl >> ProgramFilter(5) >> [ # Outro - Bouton 5

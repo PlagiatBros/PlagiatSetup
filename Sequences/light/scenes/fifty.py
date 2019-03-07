@@ -62,6 +62,7 @@ butters = ['baaaaaââ', 'Butter', 'BuTtEr', 'butter', 'BUTTER', 'bUtTeR', 'BuRg
 shits = ['Shit', 'jeeeeez', '$hIt', '$HIT', 'chips', 'Chipo ?' '$hit', '$hibre', '$HiT', 'ChIt', 'ChIbrr']
 
 def fifty_butter(seq, timer):
+  seq.send('/pyta/text/visible', -1, 0)
   i = random.randint(0,2)
   j = random.randint(0,7)
   seq.send('/pyta/text', i, butters[j]),
@@ -70,6 +71,7 @@ def fifty_butter(seq, timer):
   seq.send('/pyta/text/visible', i, 0)
 
 def fifty_shit(seq, timer):
+  seq.send('/pyta/text/visible', -1, 0)
   i = random.randint(0,2)
   j = random.randint(0,8)
   seq.send('/pyta/text', i, shits[j]),

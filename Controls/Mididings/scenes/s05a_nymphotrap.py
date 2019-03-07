@@ -58,7 +58,7 @@ nymphotrap = [
 
     ] >> Discard(),
     orl >> ProgramFilter([range(2,12)]) >> light_reset >> Discard(),
-    jeannot >> ProgramFilter([range(2,8)]) >> light_reset >> Discard(),
+    jeannot >> ProgramFilter([range(5,8)]) >> light_reset >> Discard(),
     orl >> ProgramFilter(2) >> [ # Cloud rap ballade rhodes - Bouton 2
         stop,
         Program(73) >> cseqtrigger,

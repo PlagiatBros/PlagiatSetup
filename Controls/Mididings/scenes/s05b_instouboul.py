@@ -56,7 +56,7 @@ instouboul = [
 
     ] >> Discard(),
     orl >> ProgramFilter([range(2,12)]) >> light_reset >> Discard(),
-    jeannot >> ProgramFilter([range(2,8)]) >> light_reset >> Discard(),
+    jeannot >> ProgramFilter([range(5,8)]) >> light_reset >> Discard(),
     orl >> ProgramFilter(2) >> [ # Instouboul sans batterie - Bouton 2
         Program(77) >> cseqtrigger,
         [
@@ -182,7 +182,7 @@ instouboul = [
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
-            vxorldelay_off,
+            vxorldelay_on,
             vxorlvocode_off,
 
             ] >> Discard()

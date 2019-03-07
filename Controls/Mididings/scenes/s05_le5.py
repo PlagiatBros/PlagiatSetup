@@ -286,8 +286,8 @@ le5 = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(160)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(160)),
 
-            SendOSC(rpijardinport, '/pyta/text/strobe', 0, 1, 4, 0.5),
-            SendOSC(rpicourport, '/pyta/text/strobe', 0, 1, 4, 0.5),
+            SendOSC(rpijardinport, '/pyta/text/strobe', 0, 1, 2, 0.5),
+            SendOSC(rpicourport, '/pyta/text/strobe', 0, 1, 2, 0.5),
             SendOSC(rpijardinport, '/pyta/text/size', 0, 0.8),
             SendOSC(rpicourport, '/pyta/text/size', 0, 0.8),
             SendOSC(lightseqport, '/Lightseq/Bpm', 320),

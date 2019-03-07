@@ -397,7 +397,7 @@ dafist = [
             ]),
 
 
-            vxorlgars_off,
+            vxorlgars_on,
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_on,
