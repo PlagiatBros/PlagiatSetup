@@ -36,7 +36,7 @@ sw = [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
     orl >> ProgramFilter([range(2,12)]) >> light_reset >> Discard(),
-    jeannot >> ProgramFilter([2) >> light_reset >> Discard(),
+    jeannot >> ProgramFilter([2]) >> light_reset >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # intro - Bouton 2
         #TODO filtre --> Degrade déjà en place ?
