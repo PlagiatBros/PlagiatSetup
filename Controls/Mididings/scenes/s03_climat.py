@@ -304,10 +304,8 @@ climat = [
             vxorlgars_on,
             vxorlmeuf_off,
             vxorldisint_off,
-            vxorldelay_on,
+            vxorldelay_off,
             vxorlvocode_off,
-
-            SendOSC(vxorlpreport, '/strip/VxORLDelayPre/Gain/Mute', 1.0),
 
 
             vxjeannotdelay_off,

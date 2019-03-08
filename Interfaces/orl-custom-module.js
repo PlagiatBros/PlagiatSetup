@@ -164,9 +164,10 @@
     }, 1000)
 
     function setTimer(time){
+
         var h = Math.floor(time / 3600),
             m = Math.floor((time - h * 3600) / 60),
-            s = Math.round((time - m * 3600))
+            s = Math.round((time - m * 60))
 
         receiveOsc({
             address: '/timer',
