@@ -142,7 +142,7 @@ _ones = ['1', 'wa', '0ne', 'ONE', 'won','2', 'pteuh', 'Two', 'Toux', 'tu:']
 def wholeworld_one_sheet(seq, timer):
   seq.send('/pyta/text/visible', -1, 0)
   i = random.randint(0,2)
-  j = random.randint(0,7)
+  j = random.randint(0,len(_ones)-1)
   seq.send('/pyta/text', i, _ones[j]),
   seq.send('/pyta/text/visible', i, 1)
   timer.wait(0.5, 'beat')
