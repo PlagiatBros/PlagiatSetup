@@ -408,6 +408,9 @@
         <instrument name="Bolos0" minnote="58" maxnote="58" rootnote="59" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="yes" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/WholeWorld/Intro_voix1.wav" sampleRelative="WholeWorld/Intro_voix1.wav"/>
         </instrument>
+        <instrument name="Bolos1" minnote="57" maxnote="57" rootnote="57" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="yes" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/WholeWorld/Intro_HenriGayNo.wav" sampleRelative="WholeWorld/Intro_HenriGayNo.wav"/>
+        </instrument>
       </kit>
       <kit name="Haggadah" volume="1.000000">
         <instrument name="BAM" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.250000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
