@@ -214,6 +214,8 @@ nymphotrap = [
         vxorlvocode_off,
     ] >> Discard(),
     jeannot >> ProgramFilter(7) >> [ # nymphotrap avec orl vx vocod (couplet) - bouton 7
+        [Program(84), Program(85)] >> seq24once, 
+        [
         SendOSC(slport, '/set', 'eighth_per_cycle', 10),
         SendOSC(slport, '/set', 'tempo', 120),
         SendOSC(slport, '/sl/[7,8]/hit', 'pause_on'),
@@ -223,10 +225,13 @@ nymphotrap = [
         vxorldisint_off,
         vxorldelay_off,
         vxorlvocode_on,
-    ] >> Discard(),
-    jeannot >> ProgramFilter(8) >> [ # nymphotrap (couplet part 2, trig boucles bouliottes) - bouton 8
-        SendOSC(slport, '/sl/7/hit', 'trigger'),
-    ] >> Discard(),
+        vxjeannotmeuf_on,
+        vxjeannotgars_off,
+        ] >> Discard(),
+    ],
+#    jeannot >> ProgramFilter(8) >> [ # nymphotrap (couplet part 2, trig boucles bouliottes) - bouton 8
+#        SendOSC(slport, '/sl/7/hit', 'trigger'),
+#    ] >> Discard(),
 
     orl >> ProgramFilter(9) >> [ # Bouclage synth  - Bouton 9
             SendOSC(slport, '/sl/7/hit', 'record'), # synth aigu
@@ -299,16 +304,16 @@ nymphotrap = [
             ]
     ],
 
-    orl >> ProgramFilter(4) >> [
-        stop,
-        [
-            vxorlgars_on,
-            vxorlmeuf_off,
-            vxorldisint_off,
-            vxorldelay_off,
-            vxorlvocode_off,
-        ] >> Discard()
-    ],
+#   orl >> ProgramFilter(4) >> [
+#        stop,
+#        [
+#            vxorlgars_on,
+#            vxorlmeuf_off,
+#            vxorldisint_off,
+#            vxorldelay_off,
+#            vxorlvocode_off,
+#        ] >> Discard()
+#    ],
 
 
     orl >> ProgramFilter(11) >> [ # Instouboul - bouton 11
