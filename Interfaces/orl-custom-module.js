@@ -463,8 +463,8 @@
                   sendOsc({
                       host:rpi,
                       port:56418,
-                      address: '/pyta/text/visible',
-                      args: [{type:'i', value: -1}, {type:'i', value: 0}]
+                      address: '/pyta/text/reset',
+                      args: [{type:'i', value: -1}]
                   })
                   let n = Math.round(Math.random()*3)
                   sendOsc({

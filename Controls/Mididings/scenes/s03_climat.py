@@ -358,6 +358,9 @@ climat = [
                 [samplespitchport, '/strip/SamplesPitch2/AM%20pitchshifter/Pitch%20shift/unscaled', 2.3],
             ]),
 
+            SendOSC(audioseqport, '/Audioseq/Play'),
+            SendOSC(samplesmainport,'/strip/SamplesMain/Calf%20Filter/Frequency/unscaled', 20.),
+            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'climat_outro_filter'),
 
             vxorlgars_on,
             vxorlmeuf_off,
