@@ -69,17 +69,18 @@
 
 
 
-    pitch_addresses = {
-        samples:'/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled',
-        vxjeannot:'/strip/VxJeannotMain/AM%20pitchshifter/Pitch%20shift/unscaled',
-        vxorl:'/strip/VxORLMain/AM%20pitchshifter/Pitch%20shift/unscaled',
-        basssynth:'/strip/BassSynth/AM%20pitchshifter/Pitch%20shift/unscaled',
-    }
+    pitch_addresses = [
+        ['samples', '/strip/Keyboards/AM%20pitchshifter/Pitch%20shift/unscaled'],
+        ['samples', '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled'],
+        ['vxjeannot','/strip/VxJeannotMain/AM%20pitchshifter/Pitch%20shift/unscaled'],
+        ['vxorl','/strip/VxORLMain/AM%20pitchshifter/Pitch%20shift/unscaled'],
+        ['basssynth','/strip/BassSynth/AM%20pitchshifter/Pitch%20shift/unscaled'],
+    ]
     pitch_ports = {
-        samples:7008,
-        vxjeannot:6669,
-        vxorl:6669,
-	basssynth:7020
+        'samples':7008,
+        'vxjeannot':6669,
+        'vxorl':6669,
+        'basssynth':7020
     }
 
     mididings_host = '127.0.0.1'
@@ -167,7 +168,7 @@
 
         var h = Math.floor(time / 3600),
             m = Math.floor((time - h * 3600) / 60),
-            s = Math.round((time - m * 60))
+            s = Math.round((time - h * 3600 - m * 60))
 
         receiveOsc({
             address: '/timer',
@@ -423,15 +424,13 @@
                 var v = args[0].value
 
 
-
-                var addresses = pitch_addresses
-
-                for (i in addresses) {
+                for (i in pitch_addresses) {
+                    var [portname, address] = pitch_addresses[i]
                     sendOsc({
-                        address: addresses[i],
+                        address: address,
                         args: [{type:'f', value:v}],
                         host: non_host,
-                        port: pitch_ports[i]
+                        port: pitch_ports[portname]
                     })
                 }
 
