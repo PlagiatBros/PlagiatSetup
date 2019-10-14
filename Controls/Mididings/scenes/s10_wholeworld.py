@@ -32,6 +32,9 @@ wholeworld = [
         # zynmicrotonal_on,
         # SendOSC(zyntrebleport, '/microtonal/tunings', '135.0\n200.0\n300.0\n400.0\n500.0\n635.0\n700.0\n800.0\n900.0\n1000.0\n1100.0\n2/1'),
 
+
+        SendOSC(mk2inport, '/mididings/switch_scene', 4),
+
         mk2lights(wholeworld_mk2lights),
         SendOSC(rpijardinport, '/pyta/slide/unload', -1),
         SendOSC(rpicourport, '/pyta/slide/unload', -1),

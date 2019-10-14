@@ -178,11 +178,6 @@ climat = [
 
         ],
     jeannot >> ProgramFilter(3) >> [ # Couplet sans wobble - bouton 3
-        #TODO arreter seq-wobble (à priori bassdry suffit)
-        [
-            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_smell'),
-            ] >> Discard(),
-
         Program(6) >> seq24once,
         Program(4) >> seq24once,
         [
@@ -360,6 +355,7 @@ climat = [
 
             SendOSC(audioseqport, '/Audioseq/Play'),
             SendOSC(samplesmainport,'/strip/SamplesMain/Calf%20Filter/Frequency/unscaled', 20.),
+            SendOSC(samplesmainport,'/strip/Keyboards/Calf%20Filter/Frequency/unscaled', 20.),
             SendOSC(audioseqport, '/Audioseq/Scene/Play', 'climat_outro_filter'),
 
             vxorlgars_on,
@@ -387,8 +383,13 @@ climat = [
         ],
 
     jeannot >> ProgramFilter(6) >> [ # shut your dickhole -> Le5
+	[
+            SendOSC(audioseqport, '/Audioseq/Scene/Stop', '*'),
+            SendOSC(samplesmainport,'/strip/SamplesMain/Calf%20Filter/Frequency/unscaled', 20000.),
+            SendOSC(samplesmainport,'/strip/Keyboards/Calf%20Filter/Frequency/unscaled', 20000.),
+	] >> Discard(),
         SceneSwitch(5) >> Discard(),
-        Ctrl(102, 127) >> Output('Mk2CtrlOut', 1)
+        Ctrl(102, 127) >> Output('Mk2CtrlOut', 1),
     ],
 
     jeannot >> ProgramFilter(8) >> SendOSC(trapcutport, '/Trapcut/Scene/Play', 'I') >> Discard(),

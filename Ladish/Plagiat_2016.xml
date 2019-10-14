@@ -2644,16 +2644,23 @@ ladish Studio configuration.
         <key name="http://ladish.org/ns/canvas/y">1139.850449</key>
       </dict>
     </client>
-    <client name="Oxygen 88" uuid="5e3a87d5-ea1d-43e0-baf2-26e99295fe97" naming="app">
     <client name="gxtuner" uuid="7d064086-edea-4f6d-9944-ea0369c4606c" naming="app" app="8fbf23a3-d9ce-4eec-9205-ffc1ca4d02f4">
       <ports>
-        <port name="Oxygen 88 MIDI 1" uuid="2c0170b2-7fbe-4300-bd42-84d3623aedbf" type="midi" direction="output" />
-        <port name="Oxygen 88 MIDI 1" uuid="169d5a30-4a78-4d5c-98fe-3f6cb8125720" type="midi" direction="input" />
         <port name="in_0" uuid="c6736434-dc2e-4f55-a545-f6a128f29eb0" type="audio" direction="input" />
       </ports>
       <dict>
         <key name="http://ladish.org/ns/canvas/x">1684.992542</key>
         <key name="http://ladish.org/ns/canvas/y">1286.000000</key>
+      </dict>
+    </client>
+    <client name="Oxygen 88" uuid="5e3a87d5-ea1d-43e0-baf2-26e99295fe97" naming="app">
+      <ports>
+        <port name="Oxygen 88 MIDI 1" uuid="2c0170b2-7fbe-4300-bd42-84d3623aedbf" type="midi" direction="output" />
+        <port name="Oxygen 88 MIDI 1" uuid="169d5a30-4a78-4d5c-98fe-3f6cb8125720" type="midi" direction="input" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">1484.992542</key>
+        <key name="http://ladish.org/ns/canvas/y">1086.000000</key>
       </dict>
     </client>
   </clients>

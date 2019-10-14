@@ -12,7 +12,7 @@ def hc_notheft(seq, timer):
     timer.wait(3, 's')
     seq.send('/pyta/text/strobe', 1, 1, 4, 0.5)
     seq.send(rpijardinport, '/pyta/text', 1, "Copying ain't no Theft"),
-    seq.send(rpicourport, '/pyta/text', 1, "Copulefting ain't no Rape"),
+    seq.send(rpicourport, '/pyta/text', 1, "Copylefting ain't no Violation"),
     timer.wait(1, 's')
     seq.send('/pyta/text/strobe', 1, 0)
     timer.wait(2, 's')

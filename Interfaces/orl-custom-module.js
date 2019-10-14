@@ -456,25 +456,27 @@
 
             else if (address == '/bigup') {
                 for (rpi of [
-                  "192.168.0.114",
-                  "192.168.0.115",
+                  "127.0.0.1:5555",
+                  "127.0.0.1:5556",
               ]) {
+		 var [host, port] = rpi.split(':')
+  		 port = parseInt(port)
                   sendOsc({
-                      host:rpi,
-                      port:56418,
+                      host,
+                      port,
                       address: '/pyta/text/reset',
                       args: [{type:'i', value: -1}]
                   })
                   let n = Math.round(Math.random()*3)
                   sendOsc({
-                      host:rpi,
-                      port:56418,
+                      host,
+                      port,
                       address: '/pyta/text/visible',
                       args: [{type:'i', value: n}, {type:'i', value: 1}]
                   })
                   sendOsc({
-                      host:rpi,
-                      port:56418,
+                      host,
+                      port,
                       address: '/pyta/text',
                       args: [{type:'i', value: n}, {type:'s', value: args[0].value}]
                   })
