@@ -139,14 +139,15 @@ horrorcore = [
     orl >> ProgramFilter(3) >> [ # Stupid donkey - Bouton 3
         Program(5) >> cseqtrigger,
         [
-#            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
-#            SendOSC(slport, '/set', 'tempo', 150),
-#            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'horrorcore_couplet_blinkBass'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'horrorcore_couplet_mooncup'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_mooncup_glitch'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_couplet_donkey'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_mooncup_obama'),
 
-#            SendOSC(klickport, '/klick/simple/set_tempo', 150),
-#            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
-#            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
-#            SendOSC(klickport, '/klick/metro/start'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'horrorcore_couplet_donkey'),
+            SendOSC(rpicourport, '/pyta/scene_recall', 'horrorcore_couplet_donkey'),
+
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(150)),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(150)),
@@ -155,16 +156,6 @@ horrorcore = [
 
 
 
-            SendOSC(rpijardinport, '/pyta/slide/rgb', 'Worms_1', 0, 0, 0),
-            SendOSC(rpicourport, '/pyta/slide/rgb', 'Worms_1', 0, 0, 0),
-            SendOSC(rpijardinport, '/pyta/slide/alpha', 'Wood_1 Wood_2 Wood_3 Wood_4 Worms_1', .4),
-            SendOSC(rpicourport, '/pyta/slide/alpha', 'Wood_1 Wood_2 Wood_3 Wood_4 Worms_1', .4),
-            SendOSC(rpicourport, '/pyta/slide/alpha', 'Wood_1 Wood_2 Wood_3 Wood_4', .4),
-            SendOSC(lightseqport, '/Lightseq/Bpm', 1500),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'hc_wood'),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'hc_worm', 1),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'hc_worm'),
-            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
             SendOscState([
 
@@ -344,6 +335,67 @@ horrorcore = [
             bassringst_on,
             bassvibest_off,
             bassbufferst_off,
+            ]
+        ],
+    orl >> ProgramFilter(4) >> [ # Should I - Bouton 4
+        Program(5) >> cseqtrigger,
+        [
+            SendOSC(lightseqport, '/Lightseq/Bpm', 1500),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_couplet2_dubstep_extinction'),
+#            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'horrorcore_couplet_blinkBass'),
+#            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'horrorcore_couplet_mooncup'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_mooncup_glitch'),
+            # SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_couplet_donkey'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_couplet_obama'),
+
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'horrorcore_couplet_donkey'),
+            SendOSC(rpicourport, '/pyta/scene_recall', 'horrorcore_couplet_donkey'),
+
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(150)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(150)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(150)),
+
+
+
+
+            SendOscState([
+
+                [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
+
+                [samplesmainport, '/strip/SamplesMunge/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/SamplesScape/Gain/Mute', 0.0],
+
+                [samplesdelaymungeport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', 0.0],
+                [samplesreversedelayport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', 0.0],
+                [samplesscapeport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', 0.0],
+
+
+            ]),
+
+
+            vxorlgars_on,
+            vxorlmeuf_off,
+            vxorldisint_off,
+            vxorldelay_off,
+            vxorlvocode_off,
+
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
+            vxjeannotdelay_off,
+            vxjeannotvocode_off,
+
+            bassdry,
+
+            ] >> Discard(),
+        [
+            bassdetunest_off,
+            bassringst_on,
+            bassvibest_on,
+            bassbufferst_on,
             ]
         ],
     jeannot >> ProgramFilter(5) >> [ # Yep (orl meuf) - Bouton 5
