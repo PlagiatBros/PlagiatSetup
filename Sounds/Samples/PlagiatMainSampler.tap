@@ -542,16 +542,16 @@
         <instrument name="Keziah3" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.200000" pan="0.220000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/HorrorCore/Horrocore_Keziah3.flac" sampleRelative="HorrorCore/Horrocore_Keziah3.flac"/>
         </instrument>
-        <instrument name="Keziah4" minnote="65" maxnote="65" rootnote="65" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.230000" pan="-0.270000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="Keziah4" minnote="65" maxnote="65" rootnote="65" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="0.230000" pan="-0.270000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/HorrorCore/Horrocore_Keziah4.flac" sampleRelative="HorrorCore/Horrocore_Keziah4.flac"/>
         </instrument>
-        <instrument name="Keziah5" minnote="67" maxnote="67" rootnote="67" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.280000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="Keziah5" minnote="67" maxnote="67" rootnote="67" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="0.280000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/HorrorCore/Horrocore_Keziah5.flac" sampleRelative="HorrorCore/Horrocore_Keziah5.flac"/>
         </instrument>
-        <instrument name="KeziahD1" minnote="48" maxnote="48" rootnote="48" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.140000" pan="-0.710000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="KeziahD1" minnote="48" maxnote="48" rootnote="48" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.100000" pan="-0.710000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/HorrorCore/Horrocore_KezD1.flac" sampleRelative="HorrorCore/Horrocore_KezD1.flac"/>
         </instrument>
-        <instrument name="KeziahD2" minnote="50" maxnote="50" rootnote="50" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.140000" pan="0.830000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="KeziahD2" minnote="50" maxnote="50" rootnote="50" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.100000" pan="0.830000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/HorrorCore/Horrocore_KezD2.flac" sampleRelative="HorrorCore/Horrocore_KezD2.flac"/>
         </instrument>
         <instrument name="Ambre" minnote="72" maxnote="72" rootnote="72" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="0.160000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">

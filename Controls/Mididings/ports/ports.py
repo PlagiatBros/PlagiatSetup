@@ -77,7 +77,7 @@ surfaceorltomidiport = 11001
 ## QLC
 
 qlcappport = 12000
-qlcport = 12001 # delayed messages
+qlcport = 12001 # delayed messages -> le port sur lequel écrire
 qlcstopport = 12002 # stop (all off)
 
 ## pyta

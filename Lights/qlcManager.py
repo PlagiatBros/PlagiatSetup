@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 import sys
 sys.path.append("../Controls/Mididings/")
 
@@ -5,6 +7,8 @@ from ports import *
 
 from liblo import ServerThread, make_method
 from time import sleep
+
+from qlcRegexp import osc_to_regexp
 
 bars = ['CJ','BJ','BC','CC']
 colors = ['Red','Green','Blue','White']
@@ -17,6 +21,18 @@ for bar in bars:
     for color in colors:
         for segment in segments:
             paths.append('/' + bar + '/' + color + '/Segment/' + segment)
+
+
+
+
+bars_aliases = ['Tutti', 'TuttiLointain','TuttiProche','TuttiJardin','TuttiCour', 'ProcheJardin', 'ProcheCour', 'LointainJardin', 'LointainCour']
+
+possible_paths = []
+for bar in bars_aliases:
+    for color in colors:
+        for segment in segments:
+            possible_paths.append('/' + bar + '/' + color + '/Segment/' + segment)
+
 
 
 
@@ -44,6 +60,17 @@ class qlcDelayer(object):
     @make_method(None, 'i')
     def sendToQlc(self, path, args):
 
+        # regexp
+        if '{' in path or '[' in path or '*' in path:
+            regexp = osc_to_regexp(path)
+            for path in possible_paths:
+                match = regexp.match(path)
+                if match != None and len(match.string) > 0:
+                    # print('regexp match:')
+                    # print(match.string)
+                    self.sendToQlc(match.string, args)
+            return
+
         # Changement des denominations pour matcher nouveau setup Plagiat (a cause de QLC qui utilise un code binaire pour le path OSC)
         path = path.replace('ProcheCour', 'CC').replace('ProcheJardin', 'BC').replace('LointainJardin', 'CJ').replace('LointainCour', 'BJ')
 
@@ -55,7 +82,7 @@ class qlcDelayer(object):
                 self.server.send(qlcappport, multipath[0], args[0])
                 self.server.send(qlcappport, multipath[1], args[0])
 
-            elif 'Proche' in path:    
+            elif 'Proche' in path:
                 multipath=[path.replace('TuttiProche', 'CC'), path.replace('TuttiProche', 'BC')]
                 sleep(.001)
                 self.server.send(qlcappport, multipath[0], args[0])

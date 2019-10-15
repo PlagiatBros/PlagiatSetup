@@ -47,9 +47,9 @@ horrorcore = [
         SubSceneSwitch(2),
     ] >> Discard(),
     orl >> ProgramFilter([range(2,12)]) >> light_reset >> Discard(),
-    jeannot >> ProgramFilter([range(2,6)]) >> light_reset >> Discard(),
+    jeannot >> ProgramFilter([range(3,6)]) >> light_reset >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
-    [orl, jeannot] >> ProgramFilter(2) >> [ # Couplet (orl meuf) - Bouton 2 (mk2 notes = vx jean meuf; vx orl vocod; stop samples)
+    orl >> ProgramFilter(2) >> [ # Intro - Bouton 2 (mk2 notes = vx jean meuf; vx orl vocod; stop samples)
         Program(65) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -68,15 +68,12 @@ horrorcore = [
 
             SendOSC(mk2inport, '/mididings/switch_scene', 5),
 
-            SendOSC(rpijardinport, '/pyta/text', 0, 'PLAGIAT'),
-            SendOSC(rpijardinport, '/pyta/text/visible', 0, 1),
-            SendOSC(rpicourport, '/pyta/text', 0, 'PLAGIAT'),
-            SendOSC(rpicourport, '/pyta/text/visible', 0, 1),
+            SendOSC(lightseqport, '/Lightseq/Bpm', 150),
+            SendOSC(lightseqport, '/Lightseq/Play',),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_intro'),
 
-            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'hc_notheft'),
-
-
-
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'horrorcore_intro_jardin'),
+            SendOSC(rpicourport, '/pyta/scene_recall', 'horrorcore_intro_cour'),
 
             SendOscState([
 
@@ -117,6 +114,28 @@ horrorcore = [
             bassbufferst_off,
             ]
         ],
+    jeannot >> ProgramFilter(2) >> [ # Couplet 1 - Bouton 2 (mk2 notes = vx jean meuf; vx orl vocod; stop samples)
+        # TODO: envoyer samples dans la reverb
+        # TODO: stereo samples
+        SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'horrorcore_couplet_blinkBass'),
+        SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+        SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_couplet_stable'),
+
+        SendOSC(rpijardinport, '/pyta/scene_recall', 'horrorcore_couplet_1'),
+        SendOSC(rpicourport, '/pyta/scene_recall', 'horrorcore_couplet_1'),
+
+        SendOscState([
+            [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
+            # [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
+            # [samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0],
+            # [samplesmainport, '/strip/Samples4Dry/Gain/Mute', 0.0],
+            # [samplesmainport, '/strip/Samples5Dry/Gain/Mute', 0.0],
+            [samplesmainport, '/strip/SamplesMunge/Gain/Mute', 0.0],
+            [samplesdelaymungeport, '/strip/Samples[1-5]/Gain/Gain%20(dB)/unscaled', -9.0],
+
+
+        ]),
+    ],
     orl >> ProgramFilter(3) >> [ # Stupid donkey - Bouton 3
         Program(5) >> cseqtrigger,
         [
