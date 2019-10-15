@@ -43,7 +43,46 @@ class qlcDelayer(object):
 
     @make_method(None, 'i')
     def sendToQlc(self, path, args):
-    	sleep(.001)
+
+        # Changement des denominations pour matcher nouveau setup Plagiat (a cause de QLC qui utilise un code binaire pour le path OSC)
+        path = path.replace('ProcheCour', 'CC').replace('ProcheJardin', 'BC').replace('LointainJardin', 'CJ').replace('LointainCour', 'BJ')
+
+        # Aliases
+        if 'Tutti' in path:
+            if 'Lointain' in path:
+                multipath=[path.replace('TuttiLointain', 'CJ'), path.replace('TuttiLointain', 'BJ')]
+                sleep(.001)
+                self.server.send(qlcappport, multipath[0], args[0])
+                self.server.send(qlcappport, multipath[1], args[0])
+
+            elif 'Proche' in path:    
+                multipath=[path.replace('TuttiProche', 'CC'), path.replace('TuttiProche', 'BC')]
+                sleep(.001)
+                self.server.send(qlcappport, multipath[0], args[0])
+                self.server.send(qlcappport, multipath[1], args[0])
+
+            elif 'Jardin' in path:
+                multipath=[path.replace('TuttiJardin', 'BC'), path.replace('TuttiJardin', 'CJ')]
+                sleep(.001)
+                self.server.send(qlcappport, multipath[0], args[0])
+                self.server.send(qlcappport, multipath[1], args[0])
+
+            elif 'Cour' in path:
+                multipath=[path.replace('TuttiCour', 'CC'), path.replace('TuttiCour', 'BJ')]
+                sleep(.001)
+                self.server.send(qlcappport, multipath[0], args[0])
+                self.server.send(qlcappport, multipath[1], args[0])
+
+            else:
+                multipath=[path.replace('Tutti', 'CJ'), path.replace('Tutti', 'BJ'), path.replace('Tutti', 'BC'), path.replace('Tutti', 'CC')]
+                sleep(.001)
+                self.server.send(qlcappport, multipath[0], args[0])
+                self.server.send(qlcappport, multipath[1], args[0])
+                self.server.send(qlcappport, multipath[2], args[0])
+                self.server.send(qlcappport, multipath[3], args[0])
+
+
+        sleep(.001)
         self.server.send(qlcappport, path, args[0])
 
 
