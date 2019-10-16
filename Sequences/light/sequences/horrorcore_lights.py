@@ -40,6 +40,8 @@ greenOnBoth=[qlcport, '/TuttiProche/Green/Segment/[1-3]', 255]
 greenOff=[qlcport, '/{ProcheJardin,ProcheCour}/Green/Segment/{1,2,3,6,7,8}', 0]
 redOff=[qlcport,  '/Tutti/Red/Segment/All', 0]
 horrorcore_meshuragga = [
-    (greenOnJeannot,None,greenOnOrl), (None,greenOnBoth,None), (greenOff, [':/Lightseq/Scene/Play', 'horrorcore_mooncup_maison'], None, None), None, 
-    [[':/Lightseq/Scene/Stop', 'horrorcore_mooncup_maison'], redOff], (None, [':/Lightseq/Scene/Play', 'horrorcore_mooncup_maison'], None, None), [[':/Lightseq/Scene/Stop', 'horrorcore_mooncup_maison'], redOff], None
+    (greenOnJeannot,None,greenOnOrl), (None,greenOnBoth,None), 
+    (greenOff, [':/Lightseq/Scene/Play', 'horrorcore_mooncup_maison'], None, None), None, 
+    [[':/Lightseq/Scene/Stop', 'horrorcore_mooncup_maison'], redOff], (None, [':/Lightseq/Scene/Play', 'horrorcore_mooncup_maison'], None, None), 
+    [[':/Lightseq/Scene/Stop', 'horrorcore_mooncup_maison'], redOff], None
 ]
