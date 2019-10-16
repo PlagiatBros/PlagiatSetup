@@ -212,18 +212,20 @@ horrorcore = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(150)),
 
-            SendOSC(rpijardinport, '/pyta/slide/alpha', 'Wood_1 Wood_2 Wood_3 Wood_4 Worms_1', .4),
-            SendOSC(rpicourport, '/pyta/slide/alpha', 'Wood_1 Wood_2 Wood_3 Wood_4 Worms_1', .4),
 
-            SendOSC(rpijardinport, '/pyta/slide/rgb/strobe', 'Wood_1 Wood_2 Wood_3 Wood_4 Worms_1', 1),
-            SendOSC(rpicourport, '/pyta/slide/rgb/strobe', 'Wood_1 Wood_2 Wood_3 Wood_4 Worms_1', 1),
+            SendOSC(lightseqport, '/Lightseq/Bpm', 150),
 
-            SendOSC(lightseqport, '/Lightseq/Bpm', 1500),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'hc_wood'),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'hc_worm', 1),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'hc_worm'),
+            #light
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_refrain_stable'),
+
+            #video
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'horrorcore_refrain_jardin'),
+            SendOSC(rpicourport, '/pyta/scene_recall', 'horrorcore_refrain_cour'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_autruche_glitch'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'horrorcore_refrain_jardin'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'horrorcore_refrain_cour'),
+
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
-
 
 
             SendOscState([
@@ -289,13 +291,21 @@ horrorcore = [
             SendOSC(cmeinport, '/mididings/switch_scene', 7),
             SendOSC(mk2inport, '/mididings/switch_scene', 6),
 
-            SendOSC(rpijardinport, '/pyta/slide/alpha', 'Sun_1', 0.1),
-            SendOSC(rpicourport, '/pyta/slide/alpha', 'Sun_2', 0.1),
-            SendOSC(rpijardinport, '/pyta/slide/strobe', 'Sun_1', 1, 4, 0.5),
-            SendOSC(rpicourport, '/pyta/slide/alpha', 'Sun_2', 1, 6, 0.5),
-            SendOSC(rpijardinport, '/pyta/slide/visible', 'Sun_1', 1),
-            SendOSC(rpicourport, '/pyta/slide/visible', 'Sun_2', 1),
 
+            SendOSC(lightseqport, '/Lightseq/Bpm', 150),
+
+            #light
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_couplet2_intro'),
+
+            #video
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'horrorcore_couplet_2'),
+            SendOSC(rpicourport, '/pyta/scene_recall', 'horrorcore_couplet_2'),
+            # SendOSC(rpicourport, '/pyta/scene_recall', 'horrorcore_refrain_cour'),
+            # SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_autruche_glitch'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'horrorcore_couplet_2_screenswitch'),
+            # SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'horrorcore_refrain_cour'),
+
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
 
             SendOscState([
@@ -414,6 +424,18 @@ horrorcore = [
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(150)),
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(150)),
+
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 150),
+            SendOSC(lightseqport, '/Lightseq/Play',),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_intro'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_couplet2_blinder_surcouche'),
+
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'horrorcore_couplet_blinkBass'),
+
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'horrorcore_couplet_2_fin'),
+            SendOSC(rpicourport, '/pyta/scene_recall', 'horrorcore_couplet_2_fin'),
+
 
             SendOscState([
 

@@ -78,7 +78,7 @@ surfaceorltomidiport = 11001
 
 qlcappport = 12000
 qlcport = 12001 # delayed messages -> le port sur lequel écrire
-qlcstopport = 12002 # stop (all off)
+qlcstopport = 12001 # stop (all off)
 
 ## pyta
 rpijardinport = 'osc.udp://127.0.0.1:5555'

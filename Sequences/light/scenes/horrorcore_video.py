@@ -34,3 +34,34 @@ def horrorcore_mooncup_obama(seq, timer):
         seq.send(rpicourport, '/pyta/slide/' + paths[randint(0, len(paths)-1)] + '/set', 'visible', 1)
 
         timer.wait(3, 'b')
+
+
+
+def horrorcore_autruche_glitch(seq, timer):
+    while True:
+        deviation = normalvariate(0, 0.5)
+        if deviation > 0.8:
+            deviation = 4
+        else :
+            deviation = 0
+
+        seq.send(rpicourport, '/pyta/slide/autruch*/set', 'charcoal', deviation)
+        seq.send(rpicourport, '/pyta/slide/autruch*/set', 'invert', deviation)
+
+        timer.wait(0.1, 's')
+
+_lyrics = [
+
+]
+def horrorcore_lyrics_glitch(seq, timer):
+    while True:
+        seq.send(rpicourport, '/pyta/text/0/set', 'alpha', 0)
+        seq.send(rpicourport, '/pyta/text/0/set', 'alpha', 0)
+        deviation = normalvariate(0, 0.5)
+        if deviation > 0.8:
+            port = [rpicourport, rpijardinport][random.randint(0, 1)]
+            seq.send(port, '/pyta/text/0/set', 'alpha', 1)
+            seq.send(port, '/pyta/text/0/set', 'text', _lyrics[random.randint(0, len(_lyrics) - 1)])
+
+
+        timer.wait(0.1, 's')

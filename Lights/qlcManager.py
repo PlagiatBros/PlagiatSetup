@@ -5,7 +5,7 @@ sys.path.append("../Controls/Mididings/")
 
 from ports import *
 
-from liblo import ServerThread, make_method
+from liblo import Server, make_method
 from time import sleep
 
 from qlcRegexp import osc_to_regexp
@@ -36,26 +36,18 @@ for bar in bars_aliases:
 
 
 
-class qlcStopper(object):
+class qlcDelayer(object):
     def __init__(self, port, qlcappport):
         self.port = port
         if self.port is not None:
-            self.server = ServerThread(self.port)
+            self.server = Server(self.port)
             self.server.register_methods(self)
-            self.server.start()
 
     @make_method('/Stop', None)
     def allStopQlc(self, path, args):
         for path in paths:
             self.server.send(qlcappport, path, 0)
-
-class qlcDelayer(object):
-    def __init__(self, port, qlcappport):
-        self.port = port
-        if self.port is not None:
-            self.server = ServerThread(self.port)
-            self.server.register_methods(self)
-            self.server.start()
+        sleep(0.001)
 
     @make_method(None, 'i')
     def sendToQlc(self, path, args):
@@ -78,55 +70,42 @@ class qlcDelayer(object):
         if 'Tutti' in path:
             if 'Lointain' in path:
                 multipath=[path.replace('TuttiLointain', 'CJ'), path.replace('TuttiLointain', 'BJ')]
-                sleep(.001)
                 self.server.send(qlcappport, multipath[0], args[0])
                 self.server.send(qlcappport, multipath[1], args[0])
 
             elif 'Proche' in path:
                 multipath=[path.replace('TuttiProche', 'CC'), path.replace('TuttiProche', 'BC')]
-                sleep(.001)
                 self.server.send(qlcappport, multipath[0], args[0])
                 self.server.send(qlcappport, multipath[1], args[0])
 
             elif 'Jardin' in path:
                 multipath=[path.replace('TuttiJardin', 'BC'), path.replace('TuttiJardin', 'CJ')]
-                sleep(.001)
                 self.server.send(qlcappport, multipath[0], args[0])
                 self.server.send(qlcappport, multipath[1], args[0])
 
             elif 'Cour' in path:
                 multipath=[path.replace('TuttiCour', 'CC'), path.replace('TuttiCour', 'BJ')]
-                sleep(.001)
                 self.server.send(qlcappport, multipath[0], args[0])
                 self.server.send(qlcappport, multipath[1], args[0])
 
             else:
                 multipath=[path.replace('Tutti', 'CJ'), path.replace('Tutti', 'BJ'), path.replace('Tutti', 'BC'), path.replace('Tutti', 'CC')]
-                sleep(.001)
                 self.server.send(qlcappport, multipath[0], args[0])
                 self.server.send(qlcappport, multipath[1], args[0])
                 self.server.send(qlcappport, multipath[2], args[0])
                 self.server.send(qlcappport, multipath[3], args[0])
 
+            return
 
-        sleep(.001)
+
         self.server.send(qlcappport, path, args[0])
 
 
-    @make_method(None, 'fff') # /BC/1 R G B
-    @make_method(None, 'iii') # /BC/1 R G B
-    def sendToQlcRgb(self, path, args):
-        if '/Segment' in path:
-            sleep(.001)
-            self.server.send(qlcappport, path.replace('/Segment', '/Red/Segment'), args[0])
-            self.server.send(qlcappport, path.replace('/Segment', '/Green/Segment'), args[1])
-            self.server.send(qlcappport, path.replace('/Segment', '/Blue/Segment'), args[2])
 
-
-
-s = qlcStopper(qlcstopport, qlcappport)
 d = qlcDelayer(qlcport, qlcappport)
 
 
+while d.server:
+    d.server.recv(0.001)
 
-raw_input('Listening on port '+ str(qlcstopport) + ' for Qlc+ AllStop messages and port ' + str(qlcport) + ' for regular messages (which will get a 1ms delay).\nPress enter to quit...')
+# raw_input('Listening on port '+ str(qlcstopport) + ' for Qlc+ AllStop messages and port ' + str(qlcport) + ' for regular messages (which will get a 1ms delay).\nPress enter to quit...')

@@ -23,3 +23,4 @@ horrorcore_couplet_blinkBass = [
     None, (None, whiteC_Stop), None, ([qlcport, '/TuttiLointain/Red/Segment/All', 70], [qlcport, '/TuttiLointain/Red/Segment/All', 0], None, None, None, None, None, None)
 ]
 
+
