@@ -6,6 +6,8 @@ state = {}
 # watcher
 def restart(event=None):
     global seq, restarting, state
+    if not seq:
+        return
     restarting = True
     state = {'bpm': seq.bpm, 'playing': seq.playing, 'cursor': seq.cursor}
     seq.exit()
