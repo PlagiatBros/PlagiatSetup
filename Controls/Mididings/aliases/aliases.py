@@ -293,10 +293,12 @@ stop = [
 light_reset = [
     SendOSC(lightseqport, '/Lightseq/Sequence/Disable', '*'),
     SendOSC(lightseqport, '/Lightseq/Scene/Stop', '*'),
-    SendOSC(rpijardinport, '/pyta/slide/-1/reset'),
-    SendOSC(rpijardinport, '/pyta/text/-1/reset'),
-    SendOSC(rpicourport, '/pyta/slide/-1/reset'),
-    SendOSC(rpicourport, '/pyta/text/-1/reset'),
+
+    SendOSC(rpijardinport, '/pyta/slide/*/set', 'visible', 0),
+    SendOSC(rpijardinport, '/pyta/text/*/set', 'visible', 0),
+    SendOSC(rpicourport, '/pyta/slide/*/set', 'visible', 0),
+    SendOSC(rpicourport, '/pyta/text/*/set', 'visible', 0),
+
     SendOSC(qlcstopport, '/Stop'),
 ]
 
