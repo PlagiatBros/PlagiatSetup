@@ -16,3 +16,8 @@ def dafist_look(seq, timer):
         seq.send(port, '/pyta/text/'+x+'/set', 'text', _look_txt[randint(0, len(_look_txt)-1)])
     timer.wait(0.8, 'beat')
     seq.send('/pyta/text/{0,2}/set', 'visible', 0)
+
+def dafist_loading_increment(seq, timer, *args):
+    seq.send('/pyta/slide/white/animate', 'scale', '+0', '+0', '+0.25', '+0', 10)
+    seq.send('/pyta/slide/smoke_[1-2]/animate', 'alpha', '+0', '+0.05', 10)
+    seq.send('/pyta/slide/smoke_[1-2]/animate', 'zoom', '+0', '-0.05', 10)
