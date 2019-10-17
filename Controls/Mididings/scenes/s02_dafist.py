@@ -322,8 +322,8 @@ dafist = [
 
             SendOSC(lightseqport, '/Lightseq/Bpm', 120),
 
-            SendOSC(rpicourport, '/pyta/scene_recall', 'dafist_refrain'),
-            SendOSC(rpijardinport, '/pyta/scene_recall', 'dafist_refrain'),
+            SendOSC(rpicourport, '/pyta/scene_recall', 'dafist_prerefrain'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'dafist_prerefrain'),
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_prerefrain'),
 
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
@@ -383,6 +383,15 @@ dafist = [
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(120)),
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(120)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
+
+
+            SendOSC(rpicourport, '/pyta/scene_recall', 'dafist_refrain'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'dafist_refrain'),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 120),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_refrain'),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
 
             SendOscState([
 
