@@ -594,15 +594,6 @@ dafist = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(130)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(130)),
 
-            # Barre de chargement
-            SendOSC(rpijardinport, '/pyta/slide/visible', 'Dafist_trance_bar', 1),
-            SendOSC(rpicourport, '/pyta/slide/visible', 'Dafist_trance_bar', 1),
-            SendOSC(rpijardinport, '/pyta/slide/position_x', 'Dafist_trance_bar', 0),
-            SendOSC(rpijardinport, '/pyta/slide/position_y', 'Dafist_trance_bar', 0),
-            SendOSC(rpicourport, '/pyta/slide/position_x', 'Dafist_trance_bar', 0),
-            SendOSC(rpicourport, '/pyta/slide/position_y', 'Dafist_trance_bar', 0),
-            SendOSC(rpijardinport, '/pyta/slide/strobe', 'Dafist_trance_bar', 1),
-            SendOSC(rpicourport, '/pyta/slide/strobe', 'Dafist_trance_bar', 1),
 
             SendOSC(lightseqport, '/Lightseq/Bpm', 130),
 
