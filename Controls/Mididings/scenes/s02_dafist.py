@@ -605,10 +605,15 @@ dafist = [
             SendOSC(rpicourport, '/pyta/slide/strobe', 'Dafist_trance_bar', 1),
 
             SendOSC(lightseqport, '/Lightseq/Bpm', 130),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_transe_blinkload'),
+
+
+            SendOSC(rpicourport, '/pyta/scene_recall', 'dafist_disco'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'dafist_disco'),
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_transe_cutoff'),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_transe_blinkload', 1),
+
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
+
 
             SendOscState([
 

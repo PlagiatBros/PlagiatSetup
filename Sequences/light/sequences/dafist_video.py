@@ -126,3 +126,28 @@ dafist_mooncupwaters_rgb = [
     ['/pyta/slide/'+mooncupwaters_slides+'/set', 'color', 0.8, 0.8, 0.8],
 
 ]
+
+
+## disco
+
+_transe_off = [
+    ['/pyta/slide/smoke_2/animate', 'fish', -10, 10, 0.8, 'exponential'],
+    ['/pyta/slide/white/animate', 'color', 0.5, 0.5, 0.5, 0, 0.1, 0.2, 0.8, 'exponential'],
+]
+
+_transe_on = [
+    ['/pyta/slide/smoke_2/animate', 'fish', 10, -10, 0.37],
+    ['/pyta/slide/white/animate', 'color', 0, 0.1, 0.2, 0.5, 0.5, 0.5, 0.37],
+]
+
+_transe_reset = [
+    ['/pyta/slide/smoke_2/set', 'fish', -10],
+    ['/pyta/slide/white/set', 'color',  0.5, 0.5, 0.5],
+]
+
+dafist_transe_cutoff = [
+    None, None, None, None,
+    None, None, None, None,
+    None, None, None, None,
+    None, (_transe_off , None, None, None), None, (_transe_on, None),
+]
