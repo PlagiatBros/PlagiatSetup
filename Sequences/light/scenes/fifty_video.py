@@ -12,12 +12,11 @@ def fifty_offre_emploi_strobe(seq, timer):
     while True:
         for port in [rpicourport, rpijardinport]:
             for t in [0, 1, 2, 3]:
-
-            deviation = normalvariate(0, 0.5)
-            if deviation > 0.8:
-                seq.send(port, '/pyta/text/'+t+'/strobe', 'alpha', 1, 0, random(), 0.4 + random()/5)
-            else:
-                seq.send(port, '/pyta/text/'+t+'/strobe_stop', 'alpha')
+                deviation = normalvariate(0, 0.5)
+                if deviation > 0.8:
+                    seq.send(port, '/pyta/text/'+str(t)+'/strobe', 'alpha', 1, 0, random(), 0.4 + random()/5)
+                else:
+                    seq.send(port, '/pyta/text/'+str(t)+'/strobe_stop', 'alpha')
 
         timer.wait(4, 's')
 
@@ -29,17 +28,17 @@ def fifty_butter(seq, timer):
   seq.send('/pyta/text/{1,2}/set', 'text', '')
   i = random.randint(1,2)
   j = random.randint(0,7)
-  seq.send('/pyta/text/'+i+'/set', 'text', butters[j], 0.2),
+  seq.send('/pyta/text/'+str(i)+'/set', 'text', butters[j], 0.2),
   timer.wait(2, 'beat')
-  seq.send('/pyta/text/'+i+'/set', 'text', ''),
+  seq.send('/pyta/text/'+str(i)+'/set', 'text', ''),
 
 def fifty_shit(seq, timer):
   seq.send('/pyta/text/{1,2}/set', 'text', '')
   i = random.randint(1,2)
   j = random.randint(0,7)
-  seq.send('/pyta/text/'+i+'/set', 'text', shits[j], 0.2),
+  seq.send('/pyta/text/'+str(i)+'/set', 'text', shits[j], 0.2),
   timer.wait(2, 'beat')
-  seq.send('/pyta/text/'+i+'/set', 'text', ''),
+  seq.send('/pyta/text/'+str(i)+'/set', 'text', ''),
 
 
   _words = ['I drop', 'DOSE', 'KaRtiN', 'mÀchinZ']
