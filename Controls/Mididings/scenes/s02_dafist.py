@@ -307,7 +307,7 @@ dafist = [
     jeannot >> ProgramFilter(4) >> [ # "Look" - Bouton 4
         SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_look') >> Discard()
     ],
-    orl >> ProgramFilter(5) >> [ # Couplet part 2 - Bouton 5
+    orl >> ProgramFilter(5) >> [ # Pre-refrain nano - Bouton 5
         Program(68) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -321,14 +321,11 @@ dafist = [
             SendOSC(klickport, '/klick/metro/start'),
 
             SendOSC(lightseqport, '/Lightseq/Bpm', 120),
-            # SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_entreeinstru'),
-            #SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_entreeinstru_leslie'),
-            #SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_clignotage'),
 
-            SendOSC(rpijardinport, '/pyta/text/size', 2, 0.2),
-            SendOSC(rpicourport, '/pyta/text/size', 2, 0.2),
-
+            SendOSC(rpicourport, '/pyta/scene_recall', 'dafist_refrain'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'dafist_refrain'),
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_prerefrain'),
+
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(120)),
