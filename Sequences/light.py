@@ -28,19 +28,23 @@ if sys.version_info[0] == 3:
 
 # sequencer starting loop
 while True:
-    import light
-    if seq and restarting:
-        seq.server.free()
-        restarting = False
-        reload(light)
-    seq = light.lightseq
-    if state:
-        seq.bpm = state['bpm']
-        seq.playing = state['playing']
-        seq.cursor = state['cursor']
-    seq.start()
-    if not restarting:
-        break
+    try:
+        import light
+        if seq and restarting:
+            seq.server.free()
+            restarting = False
+            reload(light)
+        seq = light.lightseq
+        if state:
+            seq.bpm = state['bpm']
+            seq.playing = state['playing']
+            seq.cursor = state['cursor']
+        seq.start()
+        if not restarting:
+            break
+    except Exception as e:
+        notifier.stop()
+        raise e
 
 
 # exit

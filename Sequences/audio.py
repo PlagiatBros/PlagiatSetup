@@ -28,19 +28,23 @@ if sys.version_info[0] == 3:
 
 # sequencer starting loop
 while True:
-    import audio
-    if seq and restarting:
-        seq.server.free()
-        restarting = False
-        reload(audio)
-    seq = audio.audioseq
-    if state:
-        seq.bpm = state['bpm']
-        seq.playing = state['playing']
-        seq.cursor = state['cursor']
-    seq.start()
-    if not restarting:
-        break
+    try:
+        import audio
+        if seq and restarting:
+            seq.server.free()
+            restarting = False
+            reload(audio)
+        seq = audio.audioseq
+        if state:
+            seq.bpm = state['bpm']
+            seq.playing = state['playing']
+            seq.cursor = state['cursor']
+        seq.start()
+        if not restarting:
+            break
+    except Exception as e:
+        notifier.stop()
+        raise e
 
 
 # exit
