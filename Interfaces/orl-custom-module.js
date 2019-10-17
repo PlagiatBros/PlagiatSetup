@@ -464,21 +464,21 @@
                   sendOsc({
                       host,
                       port,
-                      address: '/pyta/text/reset',
-                      args: [{type:'i', value: -1}]
+                      address: '/pyta/text/*/reset',
+                      args: []
                   })
                   let n = Math.round(Math.random()*3)
                   sendOsc({
                       host,
                       port,
-                      address: '/pyta/text/visible',
-                      args: [{type:'i', value: n}, {type:'i', value: 1}]
+                      address: '/pyta/text/'+n+'/set',
+                      args: [{type:'s', value: 'visible'}, {type:'i', value: 1}]
                   })
                   sendOsc({
                       host,
                       port,
-                      address: '/pyta/text',
-                      args: [{type:'i', value: n}, {type:'s', value: args[0].value}]
+                      address: '/pyta/text/'+n+'/set',
+                      args: [{type:'s', value: 'text'}, {type:'s', value: args[0].value}]
                   })
 
               }
