@@ -102,41 +102,9 @@ dafist = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(120)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
 
-            # SendOSC(lightseqport, '/Lightseq/Bpm', 120),
-            # SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_entreeinstru'),
-            # SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_entreeinstru_leslie'),
-            # SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_clignotage'),
-            # SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
-            SendOSC(rpijardinport, '/pyta/text', 0, 'PLAGIAT'),
-            SendOSC(rpijardinport, '/pyta/text/visible', 0, 1),
-            SendOSC(rpijardinport, '/pyta/text/size', 0, 0.5),
-            SendOSC(rpijardinport, '/pyta/text', 1, 'faute de          frappe '),
-            SendOSC(rpijardinport, '/pyta/text/visible', 1, 1),
-            SendOSC(rpijardinport, '/pyta/text/align', 1, 'center', 'top'),
-            SendOSC(rpijardinport, '/pyta/text/position', 1, 0, -20),
-            SendOSC(rpijardinport, '/pyta/text/size', 1, 0.15),
-            SendOSC(rpijardinport, '/pyta/text', 2, 'petites             s'),
-            SendOSC(rpijardinport, '/pyta/text/visible', 2, 1),
-            SendOSC(rpijardinport, '/pyta/text/align', 2, 'right', 'top'),
-            SendOSC(rpijardinport, '/pyta/text/position', 2, -110, -50),
-            SendOSC(rpijardinport, '/pyta/text/size', 2, 0.03),
-            SendOSC(rpijardinport, '/pyta/text/strobe', 2, 1, 13, 0.66),
-            SendOSC(rpicourport, '/pyta/text', 0, 'PLAGIAT'),
-            SendOSC(rpicourport, '/pyta/text/visible', 0, 1),
-            SendOSC(rpicourport, '/pyta/text/size', 0, 0.5),
-            SendOSC(rpicourport, '/pyta/text', 1, 'faute de          frappe '),
-            SendOSC(rpicourport, '/pyta/text/visible', 1, 1),
-            SendOSC(rpicourport, '/pyta/text/align', 1, 'center', 'top'),
-            SendOSC(rpicourport, '/pyta/text/position', 1, 0, 0),
-            SendOSC(rpicourport, '/pyta/text/size', 1, 0.15),
-            SendOSC(rpicourport, '/pyta/text', 2, 'petites              s'),
-            SendOSC(rpicourport, '/pyta/text/visible', 2, 1),
-            SendOSC(rpicourport, '/pyta/text/size', 2, 0.03),
-            SendOSC(rpicourport, '/pyta/text/align', 2, 'right', 'top'),
-            SendOSC(rpicourport, '/pyta/text/position', 2, -110, -65),
-            SendOSC(rpicourport, '/pyta/text/strobe', 2, 1, 15, 0.7),
-
+            SendOSC(rpicourport, '/pyta/scene_recall', 'dafist_intro'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'dafist_intro'),
 
             SendOscState([
 
@@ -183,20 +151,9 @@ dafist = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(120)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
 
-            # SendOSC(lightseqport, '/Lightseq/Bpm', 120),
-            # SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_clignotageA'),
 
-            SendOSC(rpijardinport, '/pyta/text', 0, '??'),
-            SendOSC(rpijardinport, '/pyta/text/size', 0, 1),
-            SendOSC(rpijardinport, '/pyta/text/visible', 0, 1),
-            SendOSC(rpijardinport, '/pyta/text/strobe', 0, 1, 3, 0.6),
-            SendOSC(rpicourport, '/pyta/text', 2, '??'),
-            SendOSC(rpicourport, '/pyta/text/size', 2, 1),
-            SendOSC(rpicourport, '/pyta/text/visible', 2, 1),
-            SendOSC(rpicourport, '/pyta/text/strobe', 2, 1, 5, 0.6),
-
-
-
+            SendOSC(rpicourport, '/pyta/scene_recall', 'dafist_psychose'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'dafist_psychose'),
 
             SendOscState([
 
@@ -249,19 +206,13 @@ dafist = [
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
 
 
-            SendOSC(rpijardinport, '/pyta/slide/strobe', 'GoatEye_10'),
-            SendOSC(rpicourport, '/pyta/slide/strobe', 'GoatEye_10'),
-            SendOSC(rpijardinport, '/pyta/slide/rgb/strobe', 'GoatEye_10', 3),
-            SendOSC(rpicourport, '/pyta/slide/rgb/strobe', 'GoatEye_10', 3),
-            SendOSC(rpijardinport, '/pyta/slide/alpha', 'GoatEye_10', 3),
-            SendOSC(rpicourport, '/pyta/slide/alpha', 'GoatEye_10', 3),
+            SendOSC(rpicourport, '/pyta/scene_recall', 'dafist_refrain'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'dafist_refrain'),
 
             SendOSC(lightseqport, '/Lightseq/Bpm', 120),
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_refrain'),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
-            # SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_roulettearabesques'),
-            # SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_themerefrain_clignotagestrob'),
-            # SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
 
             SendOscState([
 
