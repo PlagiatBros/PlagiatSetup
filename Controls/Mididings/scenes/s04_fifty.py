@@ -25,20 +25,6 @@ twerks = " ".join(['Twerk_'+str(i) for i in range(1,33)])
 twerks_beauf = " ".join(['Twerk_'+str(i) for i in range(11,26)])
 teas = " ".join(['Tea_'+str(i) for i in range(1,9)])
 
-light_reset = [
-    SendOSC(lightseqport, '/Lightseq/Sequence/Disable', '*'),
-    SendOSC(lightseqport, '/Lightseq/Scene/Stop', '*'),
-    SendOSC(rpijardinport, '/pyta/slide/animate/stop', -1),
-    SendOSC(rpicourport, '/pyta/slide/animate/stop', -1),
-    SendOSC(rpijardinport, '/pyta/slide/visible', -1, 0),
-    SendOSC(rpicourport, '/pyta/slide/visible', -1, 0),
-    SendOSC(rpijardinport, '/pyta/slide/unload', -1),
-    SendOSC(rpicourport, '/pyta/slide/unload', -1),
-    SendOSC(rpijardinport, '/pyta/text/reset', -1),
-    SendOSC(rpicourport, '/pyta/text/reset', -1),
-    SendOSC(qlcstopport, '/Stop'),
-]
-
 #### Fifty ####
 fifty = [
     Init([
