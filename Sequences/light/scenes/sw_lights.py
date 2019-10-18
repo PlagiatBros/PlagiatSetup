@@ -5,6 +5,7 @@ sys.path.append("../Controls/Mididings/")
 
 from ports import *
 from random import randint
+from scene_functions import *
 
 
 def sw_intro(seq, timer):
@@ -35,7 +36,6 @@ def sw_randomized_segment(seq, timer, dimmer):
 
 def sw_refrain(seq, timer):
     seq.send(qlcport, '/Tutti/White/Segment/{4,5}', 200)
-    
+
 def sw_refrain_strobe(seq, timer):
     strobelights(seq, timer, ['ProcheJardin','ProcheCour','LointainJardin','LointainCour'], ['Red','White'], [2,4,5,7], 'aleatoire', alea_type = ['tutti', 1, 1, 1])
-    
