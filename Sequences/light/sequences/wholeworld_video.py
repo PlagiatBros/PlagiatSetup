@@ -25,14 +25,14 @@ _refrain_snapchat = [
     ['/pyta/slide/eyes_2/set', 'invert', 1],
     ['/pyta/slide/eyes_2/set', 'gif_speed', 4],
 
-    ['/pyta/text/4/set', 'visible', 1]
-    ['/pyta/text/4/set', 'text', '?']
-    ['/pyta/text/4/set', 'noise', -10]
+    ['/pyta/text/4/set', 'visible', 1],
+    ['/pyta/text/4/set', 'text', '?'],
+    ['/pyta/text/4/set', 'noise', -10],
 
 ]
 
 _refrain_snapchat_off = [
-    ['/pyta/text/4/set', 'visible', 0]
+    ['/pyta/text/4/set', 'visible', 0],
     ['/pyta/slide/eyes_2/set', 'invert', 0],
     ['/pyta/slide/eyes_2/set', 'gif_speed', 1],
 ]
