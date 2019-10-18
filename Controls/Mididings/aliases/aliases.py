@@ -296,9 +296,12 @@ light_reset = [
 
     SendOSC(rpijardinport, '/pyta/slide/*/set', 'visible', 0),
     SendOSC(rpijardinport, '/pyta/text/*/set', 'visible', 0),
+    SendOSC(rpijardinport, '/pyta/post_process/set', 'visible', 0),
     SendOSC(rpicourport, '/pyta/slide/*/set', 'visible', 0),
     SendOSC(rpicourport, '/pyta/text/*/set', 'visible', 0),
+    SendOSC(rpicourport, '/pyta/post_process/set', 'visible', 0),
 
+    SendOSC(qlcport, '/damper/clean'),
     SendOSC(qlcstopport, '/Stop'),
 ]
 

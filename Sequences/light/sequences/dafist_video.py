@@ -12,7 +12,7 @@ from random import random
 def _on():
     return [
         ['/pyta/slide/goatz/set', 'visible', 1],
-        ['/pyta/slide/goatz/animate', 'scale', 0.8, 0.8, random()/2 + 0.8, random()/2 + 0.8, 0.1 ],
+        ['/pyta/slide/goatz/animate', 'scale', 0.8, 0.8, random() + 0.8, random()/2 + 0.8, 0.1 ],
     ]
 
 _off = [
@@ -20,11 +20,14 @@ _off = [
 ]
 
 _glitch = [
+    ['/pyta/post_process/set', 'visible', 1],
     ['/pyta/post_process/animate', 'fish', 0, -20, 1],
 ]
 
 _glitch_off = [
+    ['/pyta/post_process/set', 'visible', 0],
     ['/pyta/post_process/set', 'fish', 0],
+    ['/pyta/post_process/animate_stop', 'fish'],
 ]
 
 dafist_refrain = [
@@ -42,15 +45,21 @@ dafist_refrain = [
 
 ## pre Refrain
 
+
+dafist_prerefrain_zoom = [
+    ['/pyta/text/2/animate', 'zoom', 1, 1.2, 0.12],
+    None, None, None
+]
+
 dafist_prerefrain = [
-    [['/pyta/text', 2, 'YE$'], ['/pyta/text/2/set', 'visible', 1]], ['/pyta/text/2/set', 'visible', 0], None, None,
-    [['/pyta/text', 2, 'ZøøM3'], ['/pyta/text/2/set', 'visible', 1]], ['/pyta/text/2/set', 'visible', 0], None, None,
-    [['/pyta/text', 2, 'ye$$$'], ['/pyta/text/2/set', 'visible', 1]], ['/pyta/text/2/set', 'visible', 0], None, None,
-    [['/pyta/text', 2, 'Lâ$T'], ['/pyta/text/2/set', 'visible', 1]], ['/pyta/text/2/set', 'visible', 0], None, None,
-    [['/pyta/text', 2, 'yyYEs$'], ['/pyta/text/2/set', 'visible', 1]], ['/pyta/text/2/set', 'visible', 0], None, None,
-    [['/pyta/text', 2, 'ZoN'], ['/pyta/text/2/set', 'visible', 1]], ['/pyta/text/2/set', 'visible', 0], None, None,
-    [['/pyta/text', 2, 'ye$$$$'], ['/pyta/text/2/set', 'visible', 1]], ['/pyta/text/2/set', 'visible', 0], None, None,
-    [['/pyta/text', 2, 'Smurf'], ['/pyta/text/2/set', 'visible', 1]], ['/pyta/text/2/set', 'visible', 0], None, None,
+    [['/pyta/text/2/set', 'text', 'YE$'], ['/pyta/text/2/set', 'visible', 1]], ['/pyta/text/2/set', 'visible', 0], None, None,
+    [['/pyta/text/2/set', 'text', 'ZøøM3'], ['/pyta/text/2/set', 'visible', 1]], ['/pyta/text/2/set', 'visible', 0], None, None,
+    [['/pyta/text/2/set', 'text', 'ye$$$'], ['/pyta/text/2/set', 'visible', 1]], ['/pyta/text/2/set', 'visible', 0], None, None,
+    [['/pyta/text/2/set', 'text', 'Lâ$T'], ['/pyta/text/2/set', 'visible', 1]], ['/pyta/text/2/set', 'visible', 0], None, None,
+    [['/pyta/text/2/set', 'text', 'yyYEs$'], ['/pyta/text/2/set', 'visible', 1]], ['/pyta/text/2/set', 'visible', 0], None, None,
+    [['/pyta/text/2/set', 'text', 'ZoN'], ['/pyta/text/2/set', 'visible', 1]], ['/pyta/text/2/set', 'visible', 0], None, None,
+    [['/pyta/text/2/set', 'text', 'ye$$$$'], ['/pyta/text/2/set', 'visible', 1]], ['/pyta/text/2/set', 'visible', 0], None, None,
+    [['/pyta/text/2/set', 'text', 'Smurf'], ['/pyta/text/2/set', 'visible', 1]], ['/pyta/text/2/set', 'visible', 0], None, None,
 ]
 
 
@@ -78,24 +87,24 @@ dafist_mooncupwaters_cour = [
     [[rpicourport, '/pyta/slide/'+mooncupwaters_slides+'/set', 'visible', 0], [rpicourport, '/pyta/slide/Mooncup_3/set', 'visible', 1]],
 ]
 dafist_mooncupwaters_alpha = [
-    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0],
-    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.01],
-    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.02],
-    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.03],
-    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.04],
-    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.05],
-    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.06],
-    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.07],
-    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.08],
-    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.09],
-    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.1],
-    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.11],
-    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.12],
-    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.13],
-    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.14],
-    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.15],
-    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.16],
-    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.17],
+    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.05 + 0],
+    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.05 + 0.01],
+    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.05 + 0.02],
+    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.05 + 0.03],
+    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.05 + 0.04],
+    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.05 + 0.05],
+    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.05 + 0.06],
+    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.05 + 0.07],
+    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.05 + 0.08],
+    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.05 + 0.09],
+    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.05 + 0.1],
+    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.05 + 0.11],
+    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.05 + 0.12],
+    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.05 + 0.13],
+    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.05 + 0.14],
+    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.05 + 0.15],
+    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.05 + 0.16],
+    ['/pyta/slide/'+mooncupwaters_slides+'/set', 'alpha', 0.05 + 0.17],
 ]
 dafist_mooncupwaters_rgb = [
     ['/pyta/slide/'+mooncupwaters_slides+'/set', 'color', 0, 0, 0],
@@ -127,6 +136,11 @@ dafist_mooncupwaters_rgb = [
 
 ]
 
+## pdiddy
+
+dafist_couplet_ragga_pdiddz = [
+    ['/pyta/slide/pddz/animate', 'zoom', 1, 1.2, 0.2]
+]
 
 ## disco
 

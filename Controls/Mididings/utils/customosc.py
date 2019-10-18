@@ -69,11 +69,6 @@ class OSCCustomInterface(object):
 
     @_liblo.make_method('/pedalBoard/buttonRelease', 'i')
     def buttonRelease_cb(self, path, args):
-        # Anti-rebond
-        diff = time() * 1000 - self.timestamp
-        if diff < self.timeout:
-            return
-        self.timestamp = time() * 1000
         if args[0] == 15:
             _engine.output_event(_event.NoteOffEvent('WobbleCtrlOut', 1, 'f2', 0))
         elif args[0] == 16:

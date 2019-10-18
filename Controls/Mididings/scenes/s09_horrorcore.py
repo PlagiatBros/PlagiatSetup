@@ -69,7 +69,7 @@ horrorcore = [
             SendOSC(mk2inport, '/mididings/switch_scene', 5),
 
             SendOSC(lightseqport, '/Lightseq/Bpm', 150),
-            SendOSC(lightseqport, '/Lightseq/Play',),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
             SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_intro'),
 
             SendOSC(rpijardinport, '/pyta/scene_recall', 'horrorcore_intro_jardin'),
@@ -143,7 +143,9 @@ horrorcore = [
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'horrorcore_couplet_mooncup'),
             SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_mooncup_glitch'),
             SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_couplet_donkey'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_stupidDonkeys_trigger'),
             SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_mooncup_obama'),
+
 
             SendOSC(rpijardinport, '/pyta/scene_recall', 'horrorcore_couplet_donkey'),
             SendOSC(rpicourport, '/pyta/scene_recall', 'horrorcore_couplet_donkey'),
@@ -425,9 +427,13 @@ horrorcore = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(150)),
 
+            SendOSC(slport, '/sl/0/set', 'sync', 0),
+            SendOSC(slport, '/sl/0/hit', 'pause_off'),
+            SendOSC(slport, '/sl/0/hit', 'trigger'),
+            SendOSC(slport, '/sl/0/set', 'sync', 1),
 
             SendOSC(lightseqport, '/Lightseq/Bpm', 150),
-            SendOSC(lightseqport, '/Lightseq/Play',),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
             SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_intro'),
             SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_couplet2_blinder_surcouche'),
 
@@ -482,20 +488,8 @@ horrorcore = [
         Program(72) >> cseqtrigger,
         [
 
-
-            # SendOSC(rpijardinport, '/pyta/text', 0, 'PLAGIAT'),
-            # SendOSC(rpijardinport, '/pyta/text/visible', 0, 1),
-            # SendOSC(rpijardinport, '/pyta/text', 2, 'tkt, c bi1to fini'),
-            # SendOSC(rpijardinport, '/pyta/text/position_y', 2, 150),
-            # SendOSC(rpijardinport, '/pyta/text/visible', 2, 1),
-            # SendOSC(rpicourport, '/pyta/text', 0, 'PLAGIATE'),
-            # SendOSC(rpicourport, '/pyta/text', 2, 'c bo mé c lon'),
-            # SendOSC(rpicourport, '/pyta/text/position_y', 2, 100),
-            # SendOSC(rpicourport, '/pyta/text/visible', 0, 1),
-            # SendOSC(rpicourport, '/pyta/text/visible', 2, 1),
-
             SendOSC(lightseqport, '/Lightseq/Bpm', 150),
-            SendOSC(lightseqport, '/Lightseq/Play',),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
             SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_messe'),
 
             SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_messe_christ'),
@@ -556,7 +550,7 @@ horrorcore = [
 
 
             SendOSC(lightseqport, '/Lightseq/Bpm', 150),
-            SendOSC(lightseqport, '/Lightseq/Play',),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
             SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_ac4_intro1'),
             SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_ac4_intro2'),
             #
@@ -610,7 +604,7 @@ horrorcore = [
 
 
             SendOSC(lightseqport, '/Lightseq/Bpm', 150),
-            SendOSC(lightseqport, '/Lightseq/Play',),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
             SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_dropTheBass'),
 
             SendOSC(rpijardinport, '/pyta/scene_recall', 'horrorcore_drop_merde'),
@@ -637,33 +631,117 @@ horrorcore = [
 
             ] >> Discard()
         ],
-    orl >> ProgramFilter(45) >> [ # relance boucles
+    orlCtrl >> CtrlFilter(110) >> [
+        SendOSC(rpijardinport, '/pyta/slide/mecdansefondvert/set', 'gif_speed', lambda ev: 0.2 + pow(ev.value / 127., 2) * 2),
+        SendOSC(rpicourport, '/pyta/slide/mecdansefondvert/set', 'gif_speed', lambda ev: 0.2 + pow(ev.value / 127., 2) * 2),
+        SendOSC(rpicourport, '/pyta/slide/wood_1/animate', 'offset', '+0', 0, '-1', 0, lambda ev: 10 / (ev.value / 12.7) , 1),
+    ] >> Discard(),
+    orl >> ProgramFilter(8) >> [ # Ramner Mooncup Maison - Bouton 8
+        Program(71) >> cseqtrigger,
+        [
 
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 150),
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
-            SendOSC(slport, '/sl/[0,3,5]/set', 'sync', 0),
-            SendOSC(slport, '/sl/[0,3,5]/hit', 'pause_off'),
-            SendOSC(slport, '/sl/[0,3,5]/hit', 'trigger'),
-            SendOSC(slport, '/sl/[0,3,5]/set', 'sync', 1),
+            SendOSC(klickport, '/klick/simple/set_tempo', 150),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),
 
-            SendOSC(rpijardinport, '/pyta/text', 0, 'PLAGIAT'),
-            SendOSC(rpijardinport, '/pyta/text/strobe', 0, 1, 4, 0.5),
-            SendOSC(rpijardinport, '/pyta/text/colorstrobe', 0, 1, 11, 0.5),
-            SendOSC(rpijardinport, '/pyta/text/alpha', 0, 1),
-            SendOSC(rpijardinport, '/pyta/text/visible', 0, 1),
-            SendOSC(rpicourport, '/pyta/text', 0, 'PLAGIAT'),
-            SendOSC(rpicourport, '/pyta/text/strobe', 0, 1, 4, 0.5),
-            SendOSC(rpijardinport, '/pyta/text/colorstrobe', 0, 1, 11, 0.5),
-            SendOSC(rpicourport, '/pyta/text/alpha', 0, 1),
-            SendOSC(rpicourport, '/pyta/text/visible', 0, 1),
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(150)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(150)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(150)),
 
-            SendOSC(rpijardinport, '/pyta/slide/strobe', 'White', 1, 5, 0.5),
-            SendOSC(rpijardinport, '/pyta/slide/visible', 'White', 1),
-            SendOSC(rpicourport, '/pyta/slide/strobe', 'White', 1, 5, 0.5),
-            SendOSC(rpicourport, '/pyta/slide/visible', 'White', 1),
+            SendOscState([
+
+                [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
+
+            ]),
 
 
-        ] >> Discard(),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'horrorcore_relance'),
+            SendOSC(rpicourport, '/pyta/scene_recall', 'horrorcore_relance'),
+
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'horrorcore_ragga'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_mooncup_maison'),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 150),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
+
+            vxorlmeuf_off,
+            vxorlgars_on,
+            vxorldisint_off,
+            vxorldelay_off,
+            vxorlvocode_off,
+
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
+            vxjeannotdisint_off,
+            vxjeannotdelay_off,
+            vxjeannotvocode_off,
+
+            SubSceneSwitch(1),
+
+            SendOSC(cmeinport, '/mididings/switch_scene', 5),
+
+
+            ] >> Discard()
+        ],
+    orl >> ProgramFilter(9) >> [ # Meshuggah Ramner Mooncup Maison - Bouton 9
+        Program(71) >> cseqtrigger,
+        [
+
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 150),
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 150),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(150)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(150)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(150)),
+
+            SendOscState([
+
+                [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
+
+            ]),
+
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'horrorcore_meshuragga'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'horrorcore_mesh_jardin'),
+            SendOSC(rpicourport, '/pyta/scene_recall', 'horrorcore_mesh_cour'),
+
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 150),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
+
+            vxorlmeuf_off,
+            vxorlgars_on,
+            vxorldisint_off,
+            vxorldelay_off,
+            vxorlvocode_off,
+
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
+            vxjeannotdisint_off,
+            vxjeannotdelay_off,
+            vxjeannotvocode_off,
+
+            SubSceneSwitch(1),
+
+            SendOSC(cmeinport, '/mididings/switch_scene', 5),
+
+
+            ] >> Discard()
+        ],
     jeannot >> ProgramFilter(6) >> [
         vxjeannotdelay_off,
         vxjeannotgars_on,

@@ -6,12 +6,12 @@ sys.path.append("../Controls/Mididings/")
 from ports import *
 from random import randint
 from time import sleep
-from math import exp, log
+from math import exp, log, pi, sin
 
 
 
 #### CREPITEMENT LUMINEUX
-def crepitement(seq, timer, args): 
+def crepitement(seq, timer, args):
     # bars, colors et segments suivant syntaxe OSC
     while True:
         for i in range(0,len(args)):
@@ -52,7 +52,7 @@ def strobelights(seq, timer, bars, colors, segments, mode, ramped = None, step =
 
         if mode == 'together':
             seq.send(qlcport, path, dimmer)
-            
+
         elif mode == 'aleatoire':
             if alea_type[0] == 'segment':
                 seg = []
@@ -117,18 +117,26 @@ def strobelights(seq, timer, bars, colors, segments, mode, ramped = None, step =
 
 # EASED FADE
 def eased_fade(seq, timer, path, mino, maxo, duration, step):
-    # step : [duration, unit]
     coef = float(maxo-mino)/duration
-    coef = float(log(maxo-mino+1))/duration
-    boef = mino-1
+
+
+    max_i = int(round(duration / step))
+    step = duration / max_i
 
     i = 0
     dimmer = mino
-    while dimmer < maxo+1:
-        dimmer = round(exp(coef * i * step) + boef)
-        for j in (0:len(path)):
-            seq.send(qlcport, path[j], dimmer)
-        i = i+1
+    for i in range(0,max_i+1):
+        if mino < maxo:
+            a = (sin(pi * i * step / duration - pi/2) + 1) / 2
+        else:
+            a = 1 - (sin(pi * i * step / duration - pi/2) + 1) / 2
+        dimmer = round(a * (coef * i * step + mino))
+        if type(path[0]) is not list:
+            seq.send(qlcport, path, dimmer)
+        else:
+            for j in range(0,len(path)):
+                seq.send(qlcport, path[j], dimmer)
+                print("path  "+ path[j])
         timer.wait(step)
 
-        
+

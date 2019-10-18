@@ -115,10 +115,18 @@ def horrorcore_messe(seq, timer):
 
 def horrorcore_ac4_intro1(seq,timer):
     crepitement(seq, timer, [['TuttiJardin', 'Red', '{4,5}', 30, 100], ['TuttiJardin', 'Blue', '{4,5}', 30, 100], ['TuttiCour', 'Red', '{4,5}', 30, 100], ['TuttiCour', 'Blue', '{4,5}', 30, 100]])
-#    crepitement(seq, timer, [['LointainJardin', 'Red', '{1,3,5,7}', 30, 100], ['LointainJardin', 'Red', '{2,4,6,8}', 30, 100], ['LointainJardin', 'Blue', '{1,3,5,7}', 30, 100], ['LointainJardin', 'Blue', '{2,4,6,8}', 30, 100], ['LointainCour', 'Red', '{1,3,5,7}', 30, 100], ['LointainCour', 'Red', '{2,4,6,8}', 30, 100], ['LointainCour', 'Blue', '{1,3,5,7}', 30, 100], ['LointainCour', 'Blue', '{2,4,6,8}', 30, 100]])
+
 
 def horrorcore_ac4_intro2(seq,timer):
+    seq.animate([qlcport, '/damper', '/TuttiJardin/Red/Segment/{4,5}'], 1, 0, 60)
+    seq.animate([qlcport, '/damper', '/TuttiJardin/Blue/Segment/{4,5}'], 1, 0, 60)
+    seq.animate([qlcport, '/damper', '/TuttiCour/Red/Segment/{4,5}'], 1, 0, 60)
+    seq.animate([qlcport, '/damper', '/TuttiCour/Blue/Segment/{4,5}'], 1, 0, 60)
     strobelights(seq, timer, ['ProcheJardin', 'ProcheCour', 'LointainJardin', 'LointainCour'], ['White'], [1, 2, 3, 6, 7, 8], 'aleatoire', step= 0.01, ramped = [0, 255, 60], alea_type = ['tutti', 1, 1, 1])
+
+
+
+
 
 
 def horrorcore_dropTheBass(seq,timer):
@@ -127,4 +135,4 @@ def horrorcore_dropTheBass(seq,timer):
     seq.send(qlcport, '/Tutti/Red/Segment/8', 50)
 
 def horrorcore_mooncup_maison(seq,timer):
-    crepitement(seq, timer, [['Tutti', 'Red', 'All', 120, 255]])
+    crepitement(seq, timer, [['Tutti', 'Red', '[1-2]', 120, 255]])

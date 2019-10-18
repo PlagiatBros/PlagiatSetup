@@ -20,6 +20,7 @@ def horrorcore_mooncup_glitch(seq, timer):
 
 def horrorcore_stupidDonkeys_trigger(seq, timer):
     # du fait qu'on appuie n'importe quand
+    seq.send("/pyta/text/*/reset")
     seq.send(":/Lightseq/Sequence/Enable", "horrorcore_stupidDonkeys")
     timer.wait(8, 'b')
     seq.send(":/Lightseq/Sequence/Disable", "horrorcore_stupidDonkeys")
@@ -77,15 +78,15 @@ def horrorcore_lyrics_glitch(seq, timer):
 def horrorcore_messe_christ(seq, timer):
     seq.send(rpicourport, '/pyta/slide/christ_2/animate', 'key_threshold', 1.1, 0, 100)
     seq.send(rpijardinport, '/pyta/slide/christ_4/animate', 'key_threshold', 1.1, 0, 90)
-    timer.wait(5, 's')
+    timer.wait(15, 's')
     seq.send(rpicourport, '/pyta/text/*/animate', 'alpha', 1, 0, 1, 'sine')
     seq.send(rpijardinport, '/pyta/text/*/animate', 'alpha', 1, 0, 1, 'sine')
 
 
 
 def horrorcore_disco_christ(seq, timer):
-    seq.send(rpicourport, '/pyta/slide/christ_3/animate', 'alpha', 0, 1, 60)
-    seq.send(rpijardinport, '/pyta/slide/christ_3/animate', 'alpha', 0, 1, 60)
+    seq.send(rpicourport, '/pyta/slide/christ_3/animate', 'alpha', 0, 1, 60, 'exponentialin')
+    seq.send(rpijardinport, '/pyta/slide/christ_3/animate', 'alpha', 0, 1, 60, 'exponentialin')
     timer.wait(60, 's')
     for port in [rpijardinport, rpicourport]:
         seq.send(port, '/pyta/post_process/set', 'visible', 1)

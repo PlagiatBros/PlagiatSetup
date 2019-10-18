@@ -12,8 +12,8 @@ from mididings.extra.osc import SendOSC
 wholeworld_mk2lights = {
     1:'blue',
     2:'purple',
-    3: 'green',
-    4: 'green',
+    3: 'purple',
+    4: 'purple',
     5: 'green',
     6:'yellow',
     7:'yellow',
@@ -36,21 +36,28 @@ wholeworld = [
         SendOSC(mk2inport, '/mididings/switch_scene', 4),
 
         mk2lights(wholeworld_mk2lights),
-        SendOSC(rpijardinport, '/pyta/slide/unload', -1),
-        SendOSC(rpicourport, '/pyta/slide/unload', -1),
+
+        SendOSC(rpijardinport, '/pyta/slide/*/reset'),
+        SendOSC(rpijardinport, '/pyta/text/*/reset'),
+        SendOSC(rpijardinport, '/pyta/post_process/reset'),
+        SendOSC(rpicourport, '/pyta/slide/*/reset'),
+        SendOSC(rpicourport, '/pyta/text/*/reset'),
+        SendOSC(rpicourport, '/pyta/post_process/reset'),
+
     ]),
     jeannot_padrelease >> mk2lights(wholeworld_mk2lights),
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
     orl >> ProgramFilter([range(2,12)]) >> light_reset >> Discard(),
-    jeannot >> ProgramFilter([range(2,6)]) >> light_reset >> Discard(),
+    jeannot >> ProgramFilter([4]) >> light_reset >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     # jeannot_sustain >> [
     #     ## ça peut servir...?
     #     ] >> Discard(),
     orl >> ProgramFilter(2) >> [ # Pont cymbaloume - Bouton 2
         Program(65) >> cseqtrigger,
+        [NoteOff(57), NoteOff(59)] >> Output('PBTapeutape', 1), # intro cymbalum off
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 90),
@@ -66,8 +73,9 @@ wholeworld = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(90)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(90)),
 
-            SendOSC(rpijardinport, '/pyta/scene_recall', 'wholeworld_intro_plagiat'),
-            SendOSC(rpicourport, '/pyta/scene_recall', 'wholeworld_intro_plagiat'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'wholeworld_intro_jardin'),
+            SendOSC(rpicourport, '/pyta/scene_recall', 'wholeworld_intro_cour'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'wholeworld_pont'),
 
             SendOscState([
 
@@ -116,6 +124,15 @@ wholeworld = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(90)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(90)),
 
+
+            # SendOSC(rpijardinport, '/pyta/scene_recall', 'wholeworld_intro_jardin'),
+            # SendOSC(rpicourport, '/pyta/scene_recall', 'wholeworld_intro_cour'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'wholeworld_couplet'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'wholeworld_couplet_anim'),
+            SendOSC(lightseqport, '/Lightseq/Bpm', 90),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
+
             SendOscState([
 
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
@@ -152,6 +169,8 @@ wholeworld = [
             SendOSC(rpijardinport, '/pyta/scene_recall', 'wholeworld_couplet_synth_jardin'),
             SendOSC(rpicourport, '/pyta/scene_recall', 'wholeworld_couplet_synth_cour'),
             SendOSC(lightseqport, '/Lightseq/Scene/Play', 'wholeworld_couplet_synth_fade'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'wholeworld_couplet_anim_surcouche'),
+
         ] >> Discard()
     ],
     orl >> ProgramFilter(4) >> [ # Refrain - Bouton 4
@@ -190,9 +209,18 @@ wholeworld = [
 
 
 
-            SendOSC(rpijardinport, '/pyta/scene_recall', 'wholeworld_couplet_synth_jardin'),
-            SendOSC(rpicourport, '/pyta/scene_recall', 'wholeworld_couplet_synth_cour'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'wholeworld_refrain_jardin'),
+            SendOSC(rpicourport, '/pyta/scene_recall', 'wholeworld_refrain_cour'),
+
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'wholeworld_refrain'),
+
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'wholeworld_refrain_eyes_jardin', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'wholeworld_refrain_eyes_cour', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'wholeworld_refrain_eyes_jardin'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'wholeworld_refrain_eyes_cour'),
+
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'wholeworld_refrain_anim'),
+
 
             SendOSC(lightseqport, '/Lightseq/Bpm', 90),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
@@ -219,21 +247,37 @@ wholeworld = [
             ]
         ],
 
-    jeannot >> ProgramFilter(3) >> [ # video: trap - Bouton 3
-        # SendOSC(rpijardinport, '/pyta/slide/visible', 'BlindEye_1', 1),
-        # SendOSC(rpijardinport, '/pyta/slide/scale', 'BlindEye_1', 1200, 800, 1),
-        # SendOSC(rpijardinport, '/pyta/slide/position', 'BlindEye_1', 300, 0, 0),
-        # SendOSC(rpijardinport, '/pyta/slide/animate', 'BlindEye_1', 'scale_x', 1200, 1400, 30),
-        # SendOSC(rpicourport, '/pyta/slide/visible', 'BlindEye_1', 1),
-        # SendOSC(rpicourport, '/pyta/slide/scale', 'BlindEye_1', 1200, 800, 1),
-        # SendOSC(rpicourport, '/pyta/slide/position', 'BlindEye_1', -450, 0, 0),
-        # SendOSC(rpicourport, '/pyta/slide/animate', 'BlindEye_1', 'scale_x', 1200, 1400, 30),
+    jeannot >> ProgramFilter(3) >> [ # Trap - Bouton 3
+
+        SendOSC(rpijardinport, '/pyta/scene_recall', 'wholeworld_trap_jardin'),
+        SendOSC(rpicourport, '/pyta/scene_recall', 'wholeworld_trap_cour'),
+
         ],
-    jeannot >> ProgramFilter(4) >> [ # video: one - Bouton 4
-        # SendOSC(lightseqport, '/Lightseq/Bpm', 90),
-        # SendOSC(lightseqport, '/Lightseq/Play', timestamp) >> Discard(),
-        # SendOSC(lightseqport, "/Lightseq/Scene/Play", "wholeworld_one_sheet") >> Discard()
-        ],
+    orlCtrl >> CtrlFilter(110) >> [
+        SendOSC(qlcport, '/damper', '/TuttiProche/White/Segment/{2,8}', lambda ev: max(0, ev.value / 101. - 26/101.)),
+        SendOSC(qlcport, '/damper', '/TuttiLointain/{Green,Blue}/Segment/{4,5}', lambda ev: max(0, ev.value / 101. - 26/101.)),
+        SendOSC(qlcport, '/damper', '/TuttiLointain/Red/Segment/{4,5}', lambda ev: max(0, ev.value / 101. - 26/101.)),
+    ] >> Discard(),
+    jeannot >> ProgramFilter(4) >> [ # Boomboclatsome - Bouton 4
+
+
+        SendOSC(rpijardinport, '/pyta/scene_recall', 'wholeworld_boomboclaat_jardin'),
+        SendOSC(rpicourport, '/pyta/scene_recall', 'wholeworld_boomboclaat_cour'),
+        SendOSC(lightseqport, '/Lightseq/Scene/Play', 'wholeworld_boomboclaat_glitch'),
+
+
+        SendOSC(lightseqport, '/Lightseq/Scene/Stop', 'wholeworld_couplet'),
+        SendOSC(lightseqport, '/Lightseq/Scene/Play', 'wholeworld_boomboclaat'),
+        SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'wholeworld_couplet_anim'),
+
+
+        vxorlgars_on,
+        vxorlmeuf_off,
+        vxorldisint_off,
+        vxorldelay_off,
+        vxorlvocode_off,
+
+    ] >> Discard(),
     jeannot >> ProgramFilter(5) >> [ # video: two - Bouton 5
         # SendOSC(lightseqport, '/Lightseq/Bpm', 90),
         # SendOSC(lightseqport, '/Lightseq/Play', timestamp) >> Discard(),

@@ -141,7 +141,7 @@ warp_3 = [ 0.0, 0.0 ]
 warp_4 = [ 0.0, 0.0 ]
 
 [clones.white_bg]
-target = "white"
+target = ["white"]
 
 [texts.2]
 align = [ "left", "bottom" ]
