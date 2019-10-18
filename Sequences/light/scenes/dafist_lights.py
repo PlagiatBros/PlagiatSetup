@@ -103,10 +103,54 @@ def dafist_couplet_thirdpart_fixe(seq,timer):
     seq.send(qlcport, '/TuttiProche/Blue/Segment/8', 200)
     seq.send(qlcport, '/LointainCour/Blue/Segment/{2,6}', 130)
 
+
+transe_bass = 0
 def dafist_couplet_thirdpart_flash(seq,timer):
+    global transe_bass
+    transe_bass = 0 # sécu si jamais transe jouée en balances
     seq.scene_run_subscene(eased_fade,[seq, timer, '/Tutti/Blue/Segment/{1,4,5,7}', 0, 255, 0.1*seq.bpm/60, 0.01])
     timer.wait(0.45, 'b')
     eased_fade(seq, timer, '/Tutti/Green/Segment/{1,4,5,7}', 160, 255, 0.1*seq.bpm/60, 0.01)
     eased_fade(seq, timer, '/Tutti/{Blue,Green}/Segment/{1,4,5,7}', 255, 0, 0.1*seq.bpm/60, 0.01)
 
+
+    
+def dafist_transe_intro(seq,timer):
+    global transe_bass
+    crepitement(seq, timer, [['TuttiLointain', 'Red', '{1,4,5,8}', 85, 104], ['TuttiLointain', 'Green', '{1,4,5,8}', 125, 140], ['TuttiLointain', 'Blue', '{1,4,5,8}', 85, 100]])
+
+
+transe_step = 0
+prev_damp = 0
+def dafist_transe_intro_init(seq,timer):
+    global transe_step, prev_damp, transe_bass
+    transe_step = 0
+    prev_damp = 0.01
+    if transe_bass == 1:
+        prev_damp = 1
+    else:
+        transe_bass = 1
+    seq.send(qlcport, '/damper', '/TuttiLointain/Red/Segment/{1,4,5,8}', prev_damp)
+    seq.send(qlcport, '/damper', '/TuttiLointain/Green/Segment/{1,4,5,8}', prev_damp)
+    seq.send(qlcport, '/damper', '/TuttiLointain/Blue/Segment/{1,4,5,8}', prev_damp)
+    seq.send(qlcport, '/damper', '/TuttiProche/White/Segment/4', prev_damp)
+    transe_step = 1
+
+
+
+def dafist_transe_intro_step(seq,timer):
+    global transe_step, prev_damp
+    croissance = transe_step * 0.08
+    seq.animate([qlcport, '/damper', '/TuttiLointain/Red/Segment/{1,4,5,8}'], prev_damp, croissance, 5)
+    seq.animate([qlcport, '/damper', '/TuttiLointain/Green/Segment/{1,4,5,8}'], prev_damp, croissance, 5)
+    seq.animate([qlcport, '/damper', '/TuttiLointain/Blue/Segment/{1,4,5,8}'], prev_damp, croissance, 5)
+#    seq.animate([qlcport, '/damper', '/TuttiProche/White/Segment/4'], prev_damp, croissance, 10)
+    prev_damp = croissance
+    transe_step = transe_step + 1
+
+def dafist_transe_tot(seq,timer):
+    bar_chase(seq, timer, 'TuttiLointain', [[255, 255, 255]], ['bt'], [0.12, 'b'])
+
+def dafist_transe_tota(seq,timer):
+    bar_chase(seq, timer, 'TuttiProche', [[30, 120, 140]], ['bt'], [0.25, 'b'])
 

@@ -145,23 +145,48 @@ dafist_couplet_ragga_pdiddz = [
 ## disco
 
 _transe_off = [
-    ['/pyta/slide/smoke_2/animate', 'fish', -10, 10, 0.8, 'exponential'],
-    ['/pyta/slide/white/animate', 'color', 0.5, 0.5, 0.5, 0, 0.1, 0.2, 0.8, 'exponential'],
+    ['/pyta/slide/dansefrenetique/animate', 'fish', 0, -20, 0.8],
 ]
 
 _transe_on = [
-    ['/pyta/slide/smoke_2/animate', 'fish', 10, -10, 0.37],
-    ['/pyta/slide/white/animate', 'color', 0, 0.1, 0.2, 0.5, 0.5, 0.5, 0.37],
-]
-
-_transe_reset = [
-    ['/pyta/slide/smoke_2/set', 'fish', -10],
-    ['/pyta/slide/white/set', 'color',  0.5, 0.5, 0.5],
+    ['/pyta/slide/dansefrenetique/animate', 'fish', -20, 0, 0.45],
 ]
 
 dafist_transe_cutoff = [
     None, None, None, None,
     None, None, None, None,
     None, None, None, None,
+    None, None, None, None,
+    None, None, None, None,
+    None, None, None, None,
+    None, None, None, None,
     None, (_transe_off , None, None, None), None, (_transe_on, None),
+]
+
+dafist_transe_roll_jardin = [
+    [
+        [rpijardinport, '/pyta/slide/dansefrenetique/animate', 'rotate_x', 0, 1080, 2.5, 'exponentialout']
+    ],
+    [
+        [rpijardinport, '/pyta/slide/dansefrenetique/animate', 'rotate_x', 0, -1080, 2.5, 'exponentialout']
+    ],
+    None, None, None,
+    None, None, None, None,
+    None, None, None, None,
+    None, None, None, None,
+    None, None, None, None,
+    None, None, None, None,
+]
+dafist_transe_roll_cour = [
+    [
+        [rpicourport, '/pyta/slide/dansefrenetique/animate', 'rotate_x', 0, 1080, 2.5, 'exponentialout']
+    ], None, None, None,
+    [
+        [rpicourport, '/pyta/slide/dansefrenetique/animate', 'rotate_x', 0, 1440, 2.2, 'exponentialout']
+    ], None, None, None,
+    None, None, None, None,
+    None, None, None, None,
+    None, None, None, None,
+    None, None, None, None,
+    None, None, None, None,
 ]
