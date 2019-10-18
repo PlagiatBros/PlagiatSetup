@@ -28,24 +28,6 @@ class OSCCustomInterface(object):
             self.server.stop()
             del self.server
 
-    # @_liblo.make_method('/Sequencer/Intro', 'i')
-    # def intro_cb(self, path, args):
-    #     _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 0, int(args[0])))
-    #     _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 39, int(args[0])))
-    #     _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 38, int(args[0])))
-    #     _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 40, int(args[0])))
-    #     _engine.output_event(_event.ProgramEvent('PBCtrlOut', _util.NoDataOffset(1), 127))
-
-    # @_liblo.make_method('/Sequencer/Sabra', 'i')
-    # def sabra_cb(self, path, args):
-    #     _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 23, int(args[0])))
-    #     _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 39, int(args[0])))
-    #     _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 38, int(args[0])))
-    #     _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 40, int(args[0])))
-    #     _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 22, int(args[0])))
-    #     _engine.output_event(_event.NoteOnEvent('PBTapeutape', _util.NoDataOffset(9), 65, int(args[0])))
-
-
 
     @_liblo.make_method('/pedalBoard/button', 'i')
     def button_cb(self, path, args):
@@ -58,11 +40,6 @@ class OSCCustomInterface(object):
         if _engine.current_subscene() == 9 and args[0] < 12:
          _engine.switch_scene(args[0])
          _engine.switch_subscene(1)
-         # if args[0] == 1: # Rustine car acte 0 sur screen 14 !!!
-         #     _engine.output_event(_event.ProgramEvent('PBseq24', _util.NoDataOffset(1), 127))
-         # else:
-        #  _engine.output_event(_event.ProgramEvent('PBseq24', _util.NoDataOffset(1), seq24PageMap[args[0]]))
-#         _engine.output_event(_event.CtrlEvent('PBTapeutape', _util.NoDataOffset(0), 0, args[0]-1))
 	else:
             if args[0] == 12:
              _engine.switch_subscene(9)
@@ -74,5 +51,38 @@ class OSCCustomInterface(object):
 	    else:
                 if args[0] == 24:
                  _engine.switch_subscene(8)
-   	        if args[0] < 24 and args[0] > 12:
+   	        if (args[0] < 15 and args[0] > 12) or (args[0] < 24 and args[0] > 21):
                     _engine.output_event(_event.ProgramEvent('PBCtrlOut', _util.NoDataOffset(1), args[0]))
+                elif args[0] == 15:
+                    _engine.output_event(_event.NoteOnEvent('WobbleCtrlOut', 1, 'f2', 127))
+                elif args[0] == 16:
+                    _engine.output_event(_event.NoteOnEvent('WobbleCtrlOut', 1, 'c3', 127))
+                elif args[0] == 17:
+                    _engine.output_event(_event.NoteOnEvent('WobbleCtrlOut', 1, 'g3', 127))
+                elif args[0] == 19:
+                    _engine.output_event(_event.NoteOnEvent('WobbleCtrlOut', 1, 'f3', 127))
+                elif args[0] == 20:
+                    _engine.output_event(_event.NoteOnEvent('WobbleCtrlOut', 1, 'c4', 127))
+                elif args[0] == 21:
+                    _engine.output_event(_event.NoteOnEvent('WobbleCtrlOut', 1, 'g4', 127))
+                    
+
+    @_liblo.make_method('/pedalBoard/buttonRelease', 'i')
+    def buttonRelease_cb(self, path, args):
+        # Anti-rebond
+        diff = time() * 1000 - self.timestamp
+        if diff < self.timeout:
+            return
+        self.timestamp = time() * 1000
+        if args[0] == 15:
+            _engine.output_event(_event.NoteOffEvent('WobbleCtrlOut', 1, 'f2', 0))
+        elif args[0] == 16:
+            _engine.output_event(_event.NoteOffEvent('WobbleCtrlOut', 1, 'c3', 0))
+        elif args[0] == 17:
+            _engine.output_event(_event.NoteOffEvent('WobbleCtrlOut', 1, 'g3', 0))
+        elif args[0] == 19:
+            _engine.output_event(_event.NoteOffEvent('WobbleCtrlOut', 1, 'f3', 0))
+        elif args[0] == 20:
+            _engine.output_event(_event.NoteOffEvent('WobbleCtrlOut', 1, 'c4', 0))
+        elif args[0] == 21:
+            _engine.output_event(_event.NoteOffEvent('WobbleCtrlOut', 1, 'g4', 0))
