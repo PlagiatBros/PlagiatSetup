@@ -353,6 +353,7 @@ dafist = [
             SendOSC(rpicourport, '/pyta/scene_recall', 'dafist_couplet_ragga'),
             SendOSC(rpijardinport, '/pyta/scene_recall', 'dafist_couplet_ragga'),
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_couplet_ragga_pdiddz'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_transe_basse_reset'),
 
             # light
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_couplet_anim2'),
@@ -556,7 +557,14 @@ dafist = [
 
             SendOSC(rpicourport, '/pyta/scene_recall', 'dafist_loading_cour'),
             SendOSC(rpijardinport, '/pyta/scene_recall', 'dafist_loading_jardin'),
-            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_loading_increment'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_loading_increment_init', timestamp),
+
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_transe_anim'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_transe_intro'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_transe_intro_init'),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 130),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
             SendOscState([
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
@@ -597,12 +605,14 @@ dafist = [
         SendOSC(slport, '/sl/7/hit', 'record'),
 
         SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_loading_increment'),
+        SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_transe_intro_step'),
 
         ] >> Discard(),
     orl >> ProgramFilter(10) >> [ # sl 10 overdub
         SendOSC(slport, '/sl/7/hit', 'overdub'),
 
         SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_loading_increment'),
+        SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_transe_intro_step'),
 
         ] >> Discard(),
     jeannot >> ProgramFilter(6) >> [ # RELANCE Transe goa - Bouton 6
@@ -637,9 +647,17 @@ dafist = [
             SendOSC(lightseqport, '/Lightseq/Bpm', 130),
 
 
-            SendOSC(rpicourport, '/pyta/scene_recall', 'dafist_disco'),
-            SendOSC(rpijardinport, '/pyta/scene_recall', 'dafist_disco'),
+            SendOSC(rpicourport, '/pyta/scene_recall', 'dafist_disco_jardin'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'dafist_disco_cour'),
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_transe_cutoff'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_transe_roll_jardin'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_transe_roll_cour'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_transe_roll_jardin', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_transe_roll_cour', 1),
+
+            # SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_transe_toto'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_transe_tata'),
+
 
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 

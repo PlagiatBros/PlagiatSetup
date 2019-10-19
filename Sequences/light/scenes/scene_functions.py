@@ -140,3 +140,37 @@ def eased_fade(seq, timer, path, mino, maxo, duration, step):
         timer.wait(step)
 
 
+# CHASE par barre
+def bar_chase(seq, timer, bar, colors_s, segments_s = ['tb'], step = [1, 'b']):
+    # colors_s = [[255, 200, 200], [240, 200, 140],...]
+    # segments_s = [1, 3, 5, ...] | segments_s = ['tb'], segments_s = ['bt'], segments_s = ['alea']
+    # step = [duration, unit]
+    
+
+    if segments_s == ['tb']:
+        segments_s = []
+        for i in range(1,9):
+            segments_s.append(i)
+    elif segments_s == ['bt']:
+        segments_s = []
+        for i in range(1,9):
+            segments_s.append(9-i)
+    elif segments_s == ['alea']:
+        segments_s = []
+        for i in range(1,9):
+            x = randint(1,8)
+            while x in segments_s:
+                x = randint(1,8)
+            segments_s.append(x)
+    
+    for i in range(0,8):
+        seq.send(qlcport, '/'+str(bar)+'/*/Segment/*', 0)
+        seq.send(qlcport, '/'+str(bar)+'/Red/Segment/'+str(segments_s[i]), colors_s[i%len(colors_s)][0])
+        seq.send(qlcport, '/'+str(bar)+'/Green/Segment/'+str(segments_s[i]), colors_s[i%len(colors_s)][1])
+        seq.send(qlcport, '/'+str(bar)+'/Blue/Segment/'+str(segments_s[i]), colors_s[i%len(colors_s)][2])
+        timer.wait(step[0], step[1])
+
+    seq.send(qlcport, '/'+str(bar)+'/*/Segment/*', 0)
+                     
+
+
