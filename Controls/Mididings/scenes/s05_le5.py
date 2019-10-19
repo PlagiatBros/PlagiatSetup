@@ -11,8 +11,10 @@ from mididings.extra.osc import SendOSC
 le5_mk2lights = {
     1:'blue',
     2:'purple',
-    3:'purple',
-    4:'purple',
+    3:'white',
+    4:'white',
+    5:'purple',
+    6:'purple',
     8:'red',
 }
 
@@ -77,6 +79,7 @@ le5 = [
 
             SendOSC(rpicourport, '/pyta/scene_recall', 'le5_intro'),
             SendOSC(rpijardinport, '/pyta/scene_recall', 'le5_intro'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_intro'),
 
             SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_shotgun'),
             SendOSC(lightseqport, '/Lightseq/Bpm', 160 * 2),
@@ -127,6 +130,17 @@ le5 = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(160)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(160)),
 
+
+            SendOSC(rpicourport, '/pyta/scene_recall', 'le5_couplet1'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'le5_couplet1'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_couplet1', 1),
+
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_couplet1_part1_fixe'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_couplet1_anim1'),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 160 * 2),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
             SendOscState([
 
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
@@ -157,6 +171,71 @@ le5 = [
             bassbufferst_on,
             ]
         ],
+    jeannot >> ProgramFilter(3) >> [ # Stop vers Before Me - Bouton 3
+
+            stop,
+            SendOSC(rpicourport, '/pyta/scene_recall', 'climat_cock'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'climat_cock'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_climax_cock'),
+            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'le5_cock'),
+            NoteOn(65,127) >> Output('PBTapeutape', 3),
+    ],
+    jeannot >> ProgramFilter(4) >> [ # Before Me - Bouton 4
+        Program(65) >> cseqtrigger,
+        NoteOn(66,127) >> Output('PBTapeutape', 3), # gunshot
+        [
+            SendOSC(slport, '/set', 'eighth_per_cycle', 5),
+            SendOSC(slport, '/set', 'tempo', 160),
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 160),
+            SendOSC(klickport, '/klick/simple/set_meter', 5, 8),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
+            SendOSC(klickport, '/klick/metro/start'),
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(160)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(160)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(160)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(160)),
+
+
+            SendOSC(rpicourport, '/pyta/scene_recall', 'le5_couplet1_before_cour'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'le5_couplet1_before_jardin'),
+
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_couplet1_before_me'),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 160 * 2),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
+            SendOscState([
+
+                [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0],
+
+            ]),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+            vxorldelay_off,
+            vxorlvocode_on,
+
+            vxjeannotdelay_off,
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
+            vxjeannotvocode_off,
+
+            bassdry,
+            ] >> Discard(),
+        [
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_on,
+            bassbufferst_on,
+            ]
+        ],
     orl >> ProgramFilter(3) >> [ # Couplet B - Bouton 3
         Program(67) >> cseqtrigger,
         [
@@ -175,15 +254,15 @@ le5 = [
 
 
 
-            SendOSC(rpijardinport, '/pyta/slide/animate', coffee_redseas, 'alpha', 0.2, 0.4, 2),
-            SendOSC(rpicourport, '/pyta/slide/animate', coffee_redseas, 'alpha', 0.2, 0.4, 2),
-            SendOSC(rpijardinport, '/pyta/slide/rgb', coffee_redseas, -1, 0, 1),
-            SendOSC(rpicourport, '/pyta/slide/rgb', coffee_redseas, -1, 0, 1),
-            SendOSC(lightseqport, '/Lightseq/Bpm', 1500),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'le5_coffee_redsea_jardin', 1),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'le5_coffee_redsea_cour', 1),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_coffee_redsea_jardin'),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_coffee_redsea_cour'),
+            SendOSC(rpicourport, '/pyta/scene_recall', 'le5_couplet1'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'le5_couplet1'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_couplet1', 2),
+
+
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_couplet1_part1_fixe'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_couplet1_anim2'),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 160 * 2),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
             SendOscState([
@@ -216,7 +295,7 @@ le5 = [
             bassbufferst_off,
             ]
         ],
-    orl >> ProgramFilter(4) >> [ # Couplet C - Bouton 4
+    orl >> ProgramFilter(4) >> [ # Couplet C (salted) - Bouton 4
         Program(68) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),
@@ -232,15 +311,15 @@ le5 = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(160)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(160)),
 
-            SendOSC(rpijardinport, '/pyta/slide/animate', coffee_redseas, 'alpha', 0.2, 0.4, 2),
-            SendOSC(rpicourport, '/pyta/slide/animate', coffee_redseas, 'alpha', 0.2, 0.4, 2),
-            SendOSC(rpijardinport, '/pyta/slide/rgb', coffee_redseas, 1, 0, -1),
-            SendOSC(rpicourport, '/pyta/slide/rgb', coffee_redseas, 1, 0, -1),
-            SendOSC(lightseqport, '/Lightseq/Bpm', 1500),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'le5_coffee_redsea_jardin', 1),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'le5_coffee_redsea_cour', 1),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_coffee_redsea_jardin'),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_coffee_redsea_cour'),
+            SendOSC(rpicourport, '/pyta/scene_recall', 'le5_couplet1'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'le5_couplet1'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_couplet1', 3),
+
+
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_couplet1_part1_fixe'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_couplet1_anim3'),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 160 * 2),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
 
@@ -274,7 +353,7 @@ le5 = [
             bassbufferst_off,
             ]
         ],
-    jeannot >> ProgramFilter(3) >> [ # Refrain (meeeaaan) - Bouton 3
+    jeannot >> ProgramFilter(5) >> [ # Refrain (meeeaaan) - Bouton 3
         Program(69) >> cseqtrigger,
         [
             SendOSC(audioseqport, '/Audioseq/Bpm', 320),
@@ -294,14 +373,16 @@ le5 = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(160)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(160)),
 
-            SendOSC(rpijardinport, '/pyta/text/strobe', 0, 1, 2, 0.5),
-            SendOSC(rpicourport, '/pyta/text/strobe', 0, 1, 2, 0.5),
-            SendOSC(rpijardinport, '/pyta/text/size', 0, 0.8),
-            SendOSC(rpicourport, '/pyta/text/size', 0, 0.8),
-            SendOSC(lightseqport, '/Lightseq/Bpm', 320),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_refrain'),
-            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
+            SendOSC(rpicourport, '/pyta/scene_recall', 'le5_refrain_mean'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'le5_refrain_mean'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_refrain_mean'),
+
+
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_refrain_anim'),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 160 * 2),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
             SendOscState([
 
@@ -384,7 +465,7 @@ le5 = [
             bassbufferst_off,
             ]
         ],
-    jeannot >> ProgramFilter(4) >> [ # Couplet Bbis (call your jesus) - Bouton 4
+    jeannot >> ProgramFilter(6) >> [ # Couplet Bbis (call your jesus) - Bouton 4
         Program(71) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 5),

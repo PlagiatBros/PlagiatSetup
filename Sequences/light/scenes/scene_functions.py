@@ -93,7 +93,6 @@ def strobelights(seq, timer, bars, colors, segments, mode, ramped = None, step =
             path = path.replace("'", "").replace('[', '{').replace(']', '}').replace(' ', '')
             seq.send(qlcport, path, dimmer)
         
-        print(dimmer)
         sleep(step/2)
         seq.send(qlcport, path, 0)
         sleep(step/2)
