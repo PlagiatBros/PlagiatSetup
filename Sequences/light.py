@@ -25,6 +25,14 @@ notifier.start()
 if sys.version_info[0] == 3:
     from importlib import reload
 
+from types import ModuleType
+def rreload(module):
+    """Recursively reload modules."""
+    for attribute_name in dir(module):
+        attribute = getattr(module, attribute_name)
+        if type(attribute) is ModuleType:
+            rreload(attribute)
+    reload(module)
 
 # sequencer starting loop
 while True:
@@ -33,7 +41,7 @@ while True:
         if seq and restarting:
             seq.server.free()
             restarting = False
-            reload(light)
+            rreload(light)
         seq = light.lightseq
         if state:
             seq.bpm = state['bpm']
