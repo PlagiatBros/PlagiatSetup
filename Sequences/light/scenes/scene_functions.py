@@ -124,10 +124,6 @@ def eased_fade(seq, timer, path, mino, maxo, duration, step):
     i = 0
     dimmer = mino
     for i in range(0,max_i+1):
-        # if mino < maxo:
-        #     a = (sin(pi * i * step / duration - pi/2) + 1) / 2
-        # else:
-        #     a = 1 - (sin(pi * i * step / duration - pi/2) + 1) / 2
         dimmer = coef * i * step + mino
         if type(path[0]) is not list:
             seq.send(qlcport, path, dimmer)
