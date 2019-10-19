@@ -11,7 +11,8 @@ try:
     orl     = PortFilter('PBCtrlIn')
 
     orlCtrl = PortFilter('OrlCtrl')
-    jeannotCtrl     = PortFilter('jeannotCtrl')
+    jeannotCtrl = PortFilter('JeannotCtrl')
+
 
 except:
 

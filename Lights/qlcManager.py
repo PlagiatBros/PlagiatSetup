@@ -10,6 +10,7 @@ from time import sleep
 from math import ceil, sin, pi
 
 from qlcRegexp import osc_to_regexp
+from barDmxRangeAdapter import barDmxRangeAdapter as bar_adapter
 
 bars = ['CJ','BJ','BC','CC']
 colors = ['Red','Green','Blue','White']
@@ -41,9 +42,14 @@ class qlcDelayer(object):
     def __init__(self, port, qlcappport):
         self.port = port
         self.damper = {}
+
+
         if self.port is not None:
             self.server = Server(self.port)
             self.server.register_methods(self)
+
+    def send(self, port, path, dimmer):
+        self.server.send(port, path, bar_adapter(dimmer))
 
     @make_method('/damper', 'sf')
     def damper_met(self, path, args):
@@ -94,35 +100,35 @@ class qlcDelayer(object):
         if 'Tutti' in path:
             if 'Lointain' in path:
                 multipath=[path.replace('TuttiLointain', 'CJ'), path.replace('TuttiLointain', 'BJ')]
-                self.server.send(qlcappport, multipath[0], dimmer)
-                self.server.send(qlcappport, multipath[1], dimmer)
+                self.send(qlcappport, multipath[0], dimmer)
+                self.send(qlcappport, multipath[1], dimmer)
 
             elif 'Proche' in path:
                 multipath=[path.replace('TuttiProche', 'CC'), path.replace('TuttiProche', 'BC')]
-                self.server.send(qlcappport, multipath[0], dimmer)
-                self.server.send(qlcappport, multipath[1], dimmer)
+                self.send(qlcappport, multipath[0], dimmer)
+                self.send(qlcappport, multipath[1], dimmer)
 
             elif 'Jardin' in path:
                 multipath=[path.replace('TuttiJardin', 'BC'), path.replace('TuttiJardin', 'CJ')]
-                self.server.send(qlcappport, multipath[0], dimmer)
-                self.server.send(qlcappport, multipath[1], dimmer)
+                self.send(qlcappport, multipath[0], dimmer)
+                self.send(qlcappport, multipath[1], dimmer)
 
             elif 'Cour' in path:
                 multipath=[path.replace('TuttiCour', 'CC'), path.replace('TuttiCour', 'BJ')]
-                self.server.send(qlcappport, multipath[0], dimmer)
-                self.server.send(qlcappport, multipath[1], dimmer)
+                self.send(qlcappport, multipath[0], dimmer)
+                self.send(qlcappport, multipath[1], dimmer)
 
             else:
                 multipath=[path.replace('Tutti', 'CJ'), path.replace('Tutti', 'BJ'), path.replace('Tutti', 'BC'), path.replace('Tutti', 'CC')]
-                self.server.send(qlcappport, multipath[0], dimmer)
-                self.server.send(qlcappport, multipath[1], dimmer)
-                self.server.send(qlcappport, multipath[2], dimmer)
-                self.server.send(qlcappport, multipath[3], dimmer)
+                self.send(qlcappport, multipath[0], dimmer)
+                self.send(qlcappport, multipath[1], dimmer)
+                self.send(qlcappport, multipath[2], dimmer)
+                self.send(qlcappport, multipath[3], dimmer)
 
             return
 
 
-        self.server.send(qlcappport, path, dimmer)
+        self.send(qlcappport, path, dimmer)
 
 
 

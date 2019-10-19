@@ -3,100 +3,21 @@ import sys
 sys.path.append("../Controls/Mididings/")
 
 from ports import *
+from random import choice, shuffle
 
-def climat_granmounoute(seq, timer):
-  seq.send('/pyta/text', 2, 'Gran Mounoute   ')
-  seq.send('/pyta/text/size', 2, 0.1)
-  seq.send('/pyta/text/visible', 2, 1)
-  timer.wait(3, 's')
-  seq.send(rpicourport, '/pyta/text', 2, 'Grand Moumouté ?')
-  timer.wait(1.2, 's')
-  seq.send(rpijardinport, '/pyta/text', 2, 'Wisdom...')
-  timer.wait(2, 's')
-  seq.send(rpicourport, '/pyta/text/size', 2, 0.045)
-  seq.send(rpicourport, '/pyta/text', 2, 'Grand Mère sait faire un bon café ?')
-  timer.wait(2, 's')
-  seq.send(rpijardinport, '/pyta/text', 2, 'Kondom...')
-  timer.wait(1, 's')
-  seq.send('/pyta/text', 2, 'Gran Mounoute  ')
-  timer.wait(1.5, 's')
-  seq.send('/pyta/text/visible', 2, 0)
+_words = {
+    0: ['win32 error'],
+    1: ['Gran Mounouté', 'Grand Moumouté ?', 'Wizzzdom', 'Grand Mère sait faire\n un bon café ?', 'Kond0m'],
+    2: ['Dingité', 'Dingle Dongle', 'Infirmité', 'Soirée Infrimières ???' ],
+    3: ['Éternité', 'Enuclée', 'NUclear Weap', 'Zzzzzz', '?? ZnuKzz']
+}
+_backs = ['Kwakwa', 'Mandalaa', 'Mendicité', 'Mamacito', 'Gnagnagna', 'lälalA']
 
-def climat_dignite(seq, timer):
-  seq.send('/pyta/text', 2, 'Dignité  ')
-  seq.send('/pyta/text/size', 2, 0.1)
-  seq.send('/pyta/text/visible', 2, 1)
-  timer.wait(1, 's')
-  seq.send(rpijardinport, '/pyta/text', 2, 'Dingité')
-  timer.wait(1.3, 's')
-  seq.send(rpijardinport, '/pyta/text/size', 2, 0.05)
-  seq.send(rpijardinport, '/pyta/text', 2, 'Dingle Dongle Dungle')
-  seq.send(rpicourport, '/pyta/text', 2, 'Ignifugé')
-  timer.wait(0.8, 's')
-  seq.send(rpijardinport, '/pyta/text/size', 2, 0.05)
-  seq.send(rpijardinport, '/pyta/text', 2, 'Dingle Dongle Dungle')
-  timer.wait(0.3, 's')
-  seq.send(rpijardinport, '/pyta/text', 2, 'Infirmité')
-  timer.wait(0.6, 's')
-  seq.send(rpijardinport, '/pyta/text', 2, 'Dingle Dongle Dungle')
-  timer.wait(0.2, 's')
-  seq.send(rpijardinport, '/pyta/text', 2, 'InFRIMEité')
-  timer.wait(2, 's')
-  seq.send(rpijardinport, '/pyta/text', 2, 'Dingle Dongle Dungle')
-  seq.send(rpijardinport, '/pyta/text/size', 2, 0.05)
-  seq.send(rpicourport, '/pyta/text', 2, 'Soirée Infirmières ???')
-  timer.wait(2, 's')
-  seq.send('/pyta/text/size', 2, 0.1)
-  seq.send('/pyta/text', 2, 'Dignité  ')
-  seq.send(rpijardinport, '/pyta/text', 2, 'Dingité')
-  timer.wait(2, 's')
-  seq.send('/pyta/text/visible', 2, 0)
-
-
-def climat_eternite(seq, timer):
-  seq.send('/pyta/text/size', 2, 0.1)
-  seq.send('/pyta/text', 2, 'Eternité')
-  seq.send('/pyta/text/visible', 2, 1)
-  timer.wait(0.5, 's')
-  seq.send(rpijardinport, '/pyta/text', 2, 'Etrenite')
-  timer.wait(1.2, 's')
-  seq.send(rpicourport, '/pyta/text', 2, 'Enuclee')
-  timer.wait(0.4, 's')
-  seq.send(rpijardinport, '/pyta/text', 2, 'NUclear Weap')
-  timer.wait(0.1, 's')
-  seq.send(rpijardinport, '/pyta/text', 2, 'Z')
-  timer.wait(0.1, 's')
-  seq.send(rpicourport, '/pyta/text', 2, 'zzzzzzzzzzzzz')
-  timer.wait(0.1, 's')
-  seq.send(rpijardinport, '/pyta/text', 2, 'ZnuKzz')
-  timer.wait(2, 's')
-  seq.send(rpijardinport, '/pyta/text/reset', -1)
-  seq.send(rpijardinport, '/pyta/text', 2, 'Z')
-  seq.send(rpicourport, '/pyta/text', 2, 'Z')
-
-def climat_plagiat(seq, timer):
-  seq.send('/pyta/text', 0, 'PLAGIAT')
-  seq.send('/pyta/text/size', 0, 0.5)
-  seq.send('/pyta/text/animate', 0, 'zoom', 0, 1, 0.4)
-  seq.send('/pyta/text/visible', 0, 1)
-  timer.wait(0.7, 's')
-  seq.send('/pyta/text/visible', 0, 0)
-
-def climat_smell(seq, timer):
-  seq.send(rpijardinport, '/pyta/text', 2, 'Smell')
-  seq.send(rpijardinport, '/pyta/text/visible', 2, 1)
-  timer.wait(0.3, 'beat')
-  seq.send(rpicourport, '/pyta/text', 2, 'It')
-  seq.send(rpicourport, '/pyta/text/visible', 2, 1)
-  timer.wait(0.3, 'beat')
-  seq.send(rpijardinport, '/pyta/text', 2, 'Quick')
-  seq.send(rpijardinport, '/pyta/text/visible', 2, 1)
-  timer.wait(0.3, 'beat')
-  seq.send(rpicourport ,'/pyta/text', 2, 'Smell')
-  seq.send(rpicourport, '/pyta/text/visible', 2, 1)
-  timer.wait(0.3, 'beat')
-  seq.send(rpijardinport, '/pyta/text', 2, 'It')
-  seq.send(rpijardinport, '/pyta/text/visible', 2, 1)
-  timer.wait(0.3, 'beat')
-  seq.send(rpicourport, '/pyta/text', 2, 'Now')
-  seq.send(rpicourport, '/pyta/text/visible', 2, 1)
+def climat_mandela_subs(seq, timer, x=0):
+    words = [choice(_words[x]), choice(_backs)]
+    ports = [rpijardinport, rpijardinport]
+    shuffle(ports)
+    for i in range(2):
+        seq.send(ports[i], '/pyta/text/0/reset')
+        seq.send(ports[i], '/pyta/text/0/set', 'visible', 1)
+        seq.send(ports[i], '/pyta/text/0/set', 'text', words[i])

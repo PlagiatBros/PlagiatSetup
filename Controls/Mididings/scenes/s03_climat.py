@@ -13,8 +13,8 @@ climat_mk2lights = {
     2:'purple',
     3:'purple',
     4:'purple',
-    6:'white',
-    8:'red',
+    5:'green',
+    8:'white',
 }
 
 darkEyes = " ".join(['FreakyEye_1', 'BlueOnBlackEye_1', 'OrangeOnBlackEye_1', 'OrangeOnBlackEye_2', 'RedOnBlackEye_1'])
@@ -37,24 +37,17 @@ climat = [
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
-    [orl, jeannot] >> ProgramFilter([range(2,12)]) >> [
-        SendOSC(lightseqport, '/Lightseq/Sequence/Disable', '*'),
-        SendOSC(lightseqport, '/Lightseq/Scene/Stop', '*'),
-        SendOSC(rpijardinport, '/pyta/slide/animate/stop', -1),
-        SendOSC(rpicourport, '/pyta/slide/animate/stop', -1),
-        SendOSC(rpijardinport, '/pyta/slide/visible', -1, 0),
-        SendOSC(rpicourport, '/pyta/slide/visible', -1, 0),
-        SendOSC(rpijardinport, '/pyta/text/reset', -1),
-        SendOSC(rpicourport, '/pyta/text/reset', -1),
-	SendOSC(qlcstopport, '/Stop'),
-    ] >> Discard(),
+    orl >> ProgramFilter([range(2,12)]) >> light_reset >> Discard(),
+    jeannot >> ProgramFilter([2,4]) >> light_reset >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     jeannot >> ProgramFilter(2) >> [ # Intro mandela - Bouton 2
-        Program(69) >> cseqtrigger, # seq vocodeur à caler
+        Program(69) >> cseqtrigger,
         [
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
             SendOSC(slport, '/set', 'eighth_per_cycle', 74),
             SendOSC(slport, '/set', 'tempo', 150),
+
+            SendOSC(klickport, '/klick/metro/stop'),
 
 
             vxorlgars_off,
@@ -73,6 +66,19 @@ climat = [
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(150)),
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(150)),
+
+            SendOSC(rpicourport, '/pyta/scene_recall', 'climat_intro'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'climat_intro'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_intro'),
+
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_intro_fixe'),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 150 * 2),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
+
+            SendOSC(surfaceorlport, '/mandela_modal', 1),
+
 
             SendOscState([
                 [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
@@ -124,19 +130,21 @@ climat = [
 
             SendOSC(mk2inport, '/mididings/switch_scene', 1),
 
+            SendOSC(surfaceorlport, '/mandela_modal', 0),
 
-            SendOSC(rpijardinport, '/pyta/slide/animate', 'FreakyEye_1 BlueOnBlackEye_1 OrangeOnBlackEye_1 OrangeOnBlackEye_2 RedOnBlackEye_1', 'scale_x', 800, 1200, 30),
-            SendOSC(rpicourport, '/pyta/slide/animate', 'FreakyEye_1 BlueOnBlackEye_1 OrangeOnBlackEye_1 OrangeOnBlackEye_2 RedOnBlackEye_1', 'scale_x', 800, 1200, 30),
-            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_plagiat'),
-            SendOSC(lightseqport, '/Lightseq/Bpm', 300),
-            SendOSC(rpijardinport, '/pyta/slide/alpha', darkEyes, 1),
-            SendOSC(rpicourport, '/pyta/slide/alpha', darkEyes, 1),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'climat_theme_strobe',1),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'climat_theme_strobe'),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'climat_theme_jardin', 1),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'climat_theme_jardin'),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'climat_theme_cour', 1),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'climat_theme_cour'),
+
+            SendOSC(rpicourport, '/pyta/scene_recall', 'climat_precouplet'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'climat_precouplet'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_precouplet'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'climat_precouplet_moise'),
+
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_theme_fixe'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_theme_strobelights_alea_trig'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'climat_theme_anim'),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 150 * 2),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
 
             SendOscState([
                 [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
@@ -177,10 +185,25 @@ climat = [
             ]
 
         ],
+    jeannotCtrl >> CtrlFilter(1) >> [
+        SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_wobble_strobe', lambda ev: ev.value),
+    ] >> Discard(),
     jeannot >> ProgramFilter(3) >> [ # Couplet sans wobble - bouton 3
         Program(6) >> seq24once,
         Program(4) >> seq24once,
         [
+
+
+            SendOSC(rpicourport, '/pyta/scene_recall', 'climat_precouplet'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'climat_precouplet'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_precouplet_dimmer'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Disable', 'climat_precouplet_moise'),
+
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_couplet1'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Stop', 'climat_theme_strobelights_alea_trig'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Stop', 'climat_theme_strobelights_alea'),
+
+
             bassdry,
             bassscape,
             bassdetunest_on,
@@ -206,13 +229,26 @@ climat = [
             SendOSC(klickport, '/klick/simple/set_tempo', 150),
             SendOSC(klickport, '/klick/simple/set_meter', 74, 8),
             SendOSC(klickport, '/klick/simple/set_pattern', 'X.x.x.x.X.x.x.x.X.x.x.x.Xxx.x.x.X.x.x.xX.x.x.x.X.x.x.x.X.x.xxx.X.x.x.x.X.x'),
-#            SendOSC(klickport, '/klick/simple/set_pattern', 'X.x.x.x.X.x.x.x.X.x.x.x.X.x.x.x.X.x.x.xX.x.x.x.X.x.x.x.X.x.x.x.X.x.x.x.X.x'),
             SendOSC(klickport, '/klick/metro/start'),
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(150)),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(150)),
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(150)),
+
+
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'climat_refrain_jardin'),
+            SendOSC(rpicourport, '/pyta/scene_recall', 'climat_refrain_cour'),
+            # SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_precouplet'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'climat_refrain_bardanse'),
+
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_refrain_fixe'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'climat_refrain_anim'),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 150 * 2),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
+
 
             SendOscState([
 
@@ -284,6 +320,20 @@ climat = [
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(150)),
 
 
+
+            SendOSC(rpicourport, '/pyta/scene_recall', 'climat_precouplet'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'climat_precouplet'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_precouplet'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_precouplet_dimmer'),
+
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_theme_fixe'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'climat_theme_anim'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_couplet1'),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 150 * 2),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
+
             SendOscState([
                 [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
                 [samplesmainport, '/strip/SamplesMunge/Gain/Mute', 0.0],
@@ -324,8 +374,13 @@ climat = [
             bassbufferst_off,
             ]
         ],
-    orl >> ProgramFilter(4) >> [ # The shit - Bouton 4
-        Program(70) >> cseqtrigger,
+
+    jeannot >> ProgramFilter(5) >> [ # Trap cut boutros boutros - Bouton 5
+        SendOSC(trapcutport, '/Trapcut/Scene/Play', 'IIII', timestamp),
+        SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_boutros_cut', timestamp),
+    ],
+    orl >> ProgramFilter(4) >> [ # Mandela-A-A-A-A  - Bouton 4
+        Program(72) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 150),
@@ -340,23 +395,91 @@ climat = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(150)),
 
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'climat_mandela_danse'),
+            SendOSC(rpicourport, '/pyta/scene_recall', 'climat_mandela_danse'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_mandela_danse'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'climat_mandela_danse'),
+
+
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'climat_mandela_a_a_anim'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'climat_mandela_a_a_basse_anim'),
+
+
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 150),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
+
             SendOscState([
 
-                [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
-                [samplesmainport, '/strip/SamplesTremolo/Gain/Mute', 0.0],
-                [samplesmainport, '/strip/SamplesScape/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/Samples4Dry/Gain/Mute', 0.0],
 
-                [samplestremoloport, '/strip/SamplesTremolo/Gain/Gain%20(dB)/unscaled', -6.0],
-                [samplesscapeport, '/strip/SamplesTremolo/Gain/Gain%20(dB)/unscaled', -7.50],
-                [samplestremoloport, '/strip/Samples5/Gain/Gain%20(dB)/unscaled', -6.],
-                [samplespitchport, '/strip/SamplesPitch1/AM%20pitchshifter/Pitch%20shift/unscaled', 2],
-                [samplespitchport, '/strip/SamplesPitch2/AM%20pitchshifter/Pitch%20shift/unscaled', 2.3],
             ]),
 
-            SendOSC(audioseqport, '/Audioseq/Play'),
-            SendOSC(samplesmainport,'/strip/SamplesMain/Calf%20Filter/Frequency/unscaled', 20.),
-            SendOSC(samplesmainport,'/strip/Keyboards/Calf%20Filter/Frequency/unscaled', 20.),
-            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'climat_outro_filter'),
+
+            SendOSC(cmeinport, '/mididings/switch_scene', 7),
+
+            vxorlgars_on,
+            vxorlmeuf_off,
+            vxorldisint_on,
+            vxorldelay_off,
+            vxorlvocode_off,
+
+            vxjeannotdelay_off,
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
+            vxjeannotdisint_on,
+
+            bassdry,
+            bassscape,
+
+
+            ] >> Discard(),
+        [
+            bassdetunest_off,
+            bassringst_off,
+            bassvibest_off,
+            bassbufferst_off,
+            ]
+        ],
+    orl >> ProgramFilter(5) >> [ # Mandela-A-A-A-A  - Bouton 4
+        Program(73) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 150),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 150),
+            SendOSC(klickport, '/klick/simple/set_meter', 3, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(150)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(150)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(150)),
+
+            # SendOSC(rpijardinport, '/pyta/scene_recall', 'climat_mandela_danse'),
+            # SendOSC(rpicourport, '/pyta/scene_recall', 'climat_mandela_danse'),
+            # SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_mandela_danse'),
+            # SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'climat_mandela_danse'),
+
+
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'climat_climax_anim'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_climax_fixe'),
+
+
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 150),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
+
+            SendOscState([
+
+                [samplesmainport, '/strip/Samples4Dry/Gain/Mute', 0.0],
+
+            ]),
+
+            SendOSC(cmeinport, '/mididings/switch_scene', 7),
 
             vxorlgars_on,
             vxorlmeuf_off,
@@ -382,7 +505,8 @@ climat = [
             ]
         ],
 
-    jeannot >> ProgramFilter(6) >> [ # shut your dickhole -> Le5
+
+    jeannot >> ProgramFilter(8) >> [ # shut your dickhole -> Le5
 	[
             SendOSC(audioseqport, '/Audioseq/Scene/Stop', '*'),
             SendOSC(samplesmainport,'/strip/SamplesMain/Calf%20Filter/Frequency/unscaled', 20000.),
@@ -392,6 +516,4 @@ climat = [
         Ctrl(102, 127) >> Output('Mk2CtrlOut', 1),
     ],
 
-    jeannot >> ProgramFilter(8) >> SendOSC(trapcutport, '/Trapcut/Scene/Play', 'I') >> Discard(),
-
-    ]
+]

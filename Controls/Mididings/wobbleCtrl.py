@@ -10,7 +10,8 @@ from math import log10
 config(
 	backend='jack',
 	client_name='BassWobbleCtrl',
-	in_ports=['BassWobbleCtrlIn']
+	in_ports=['BassWobbleCtrlIn'],
+	out_ports=['WobbleCtrlOut'],
 )
 
 sltemposerver = SLTempoServer(18000, '127.0.0.1:' + str(slport))
@@ -39,37 +40,42 @@ run([
     ],
 
     Filter(NOTEON) >> [
-        KeyFilter('f2') >> [
+        KeyFilter('f2') >> [[
             Call(wobbleRythm(1)),
             SendOSC(bassmainport, '/strip/BassWobblePost/MDA%20RezFilter/Freq/unscaled', 0.35),
-        ] >> Discard(),
-        KeyFilter('c3') >>  [
+        ] >> Discard(), Ctrl(1, 1) >> Output('WobbleCtrlOut', 1)],
+
+		KeyFilter('c3') >>  [[
             Call(wobbleRythm(3/2.)),
             SendOSC(bassmainport, '/strip/BassWobblePost/MDA%20RezFilter/Freq/unscaled', 0.35),
-        ] >> Discard(),
-        KeyFilter('g3') >>  [
+        ] >> Discard(), Ctrl(1, 32) >> Output('WobbleCtrlOut', 1)],
+
+		KeyFilter('g3') >>  [[
             Call(wobbleRythm(3)),
             SendOSC(bassmainport, '/strip/BassWobblePost/MDA%20RezFilter/Freq/unscaled', 0.35),
-        ] >> Discard(),
-        KeyFilter('f3') >> [
-            Call(wobbleRythm(2)),
-            SendOSC(bassmainport, '/strip/BassWobblePost/MDA%20RezFilter/Freq/unscaled', 0.35),
-        ] >> Discard(),
-        KeyFilter('c4') >>  [
+        ] >> Discard(), Ctrl(1, 3) >> Output('WobbleCtrlOut', 1)],
+
+		KeyFilter('f3') >> [[
             Call(wobbleRythm(4)),
             SendOSC(bassmainport, '/strip/BassWobblePost/MDA%20RezFilter/Freq/unscaled', 0.35),
-        ] >> Discard(),
-        KeyFilter('g4') >>  [
+        ] >> Discard(), Ctrl(1, 4) >> Output('WobbleCtrlOut', 1)],
+
+		KeyFilter('c4') >>  [[
+            Call(wobbleRythm(4)),
+            SendOSC(bassmainport, '/strip/BassWobblePost/MDA%20RezFilter/Freq/unscaled', 0.35),
+        ] >> Discard(), Ctrl(4, 127) >> Output('WobbleCtrlOut', 1)],
+
+		KeyFilter('g4') >>  [[
             Call(wobbleRythm(6)),
             SendOSC(bassmainport, '/strip/BassWobblePost/MDA%20RezFilter/Freq/unscaled', 0.35),
-        ] >> Discard(),
+        ] >> Discard(), Ctrl(1, 6) >> Output('WobbleCtrlOut', 1)],
     ],
 
-    Filter(NOTEOFF) >> KeyFilter(notes=['f2', 'c3', 'g3', 'f3', 'c4', 'g4']) >> [
+    Filter(NOTEOFF) >> KeyFilter(notes=['f2', 'c3', 'g3', 'f3', 'c4', 'g4']) >> [[
         SendOSC(bassmainport, '/strip/BassWobblePost/MDA%20RezFilter/Max%20Freq/unscaled', 0.0),
         SendOSC(bassmainport, '/strip/BassWobblePost/AM%20pitchshifter/Pitch%20shift/unscaled', 1.0),
         SendOSC(bassmainport, '/strip/BassWobblePost/MDA%20RezFilter/Freq/unscaled', 0.25),
         # SendOSC(samplesmainport, '/strip/Keyboards/Gain/Mute', 0.0),
-    ] >> Discard()
+    ] >> Discard(), Ctrl(1, 0) >> Output('WobbleCtrlOut', 1)]
 
 ])

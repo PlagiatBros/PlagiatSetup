@@ -6,6 +6,8 @@
     sl_host = '127.0.0.1'
     sl_port = 9951
 
+    lightseq = 8003
+
     loop_time = {
         loop_pos:{},
         loop_len:{}
@@ -370,6 +372,7 @@
 
             }
 
+
             return {address, args, host, port}
 
         },
@@ -484,6 +487,19 @@
               }
                 return
             }
+
+            else if (address == '/mandela') {
+
+                address = '/Lightseq/Scene/Play'
+                host = '127.0.0.1'
+                port = lightseq
+                args = [
+                    {type: 's', value: 'climat_mandela_subs'},
+                    {type: 'i', value: args[0].value},
+                ]
+
+            }
+
 
             return {address, args, host, port}
         }
