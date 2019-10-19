@@ -35,13 +35,12 @@ def strobelights(seq, timer, bars, colors, segments, mode, ramped = None, step =
     if ramped is not None:
         mino, maxo, duration = ramped
         coef = float(maxo-mino)/duration
-        coef = float(log(maxo-mino+1))/duration
-        boef = mino-1
+        boef = mino
 
     i = 0
     while True:
         if ramped is not None:
-            dimmer = round(exp(coef * i * step) + boef)
+            dimmer = int(coef * i * step + boef)
 
             if dimmer > 255:
                 dimmer = 255
@@ -119,24 +118,23 @@ def strobelights(seq, timer, bars, colors, segments, mode, ramped = None, step =
 def eased_fade(seq, timer, path, mino, maxo, duration, step):
     coef = float(maxo-mino)/duration
 
-
     max_i = int(round(duration / step))
-    step = duration / max_i
+    step = float(duration) / max_i
 
     i = 0
     dimmer = mino
     for i in range(0,max_i+1):
-        if mino < maxo:
-            a = (sin(pi * i * step / duration - pi/2) + 1) / 2
-        else:
-            a = 1 - (sin(pi * i * step / duration - pi/2) + 1) / 2
-        dimmer = round(a * (coef * i * step + mino))
+        # if mino < maxo:
+        #     a = (sin(pi * i * step / duration - pi/2) + 1) / 2
+        # else:
+        #     a = 1 - (sin(pi * i * step / duration - pi/2) + 1) / 2
+        dimmer = coef * i * step + mino
         if type(path[0]) is not list:
             seq.send(qlcport, path, dimmer)
+
         else:
             for j in range(0,len(path)):
                 seq.send(qlcport, path[j], dimmer)
-                print("path  "+ path[j])
         timer.wait(step)
 
 
