@@ -163,6 +163,10 @@ def le5_couplet2_nigro(seq,timer):
     seq.scene_run_subscene(eased_fade, [seq, timer, '/ProcheCour/Green/Segment/3', 8, 24, 8 * 60. / seq.bpm, 0.01])
     seq.scene_run_subscene(eased_fade, [seq, timer, '/ProcheCour/Blue/Segment/3', 70, 200, 8 * 60./ seq.bpm, 0.01])
 
+    timer.wait(7.3, 'b')
+    seq.scene_run_subscene(eased_fade, [seq, timer, '/ProcheCour/Red/Segment/3', 200, 255, 0.1, 0.01])
+    seq.scene_run_subscene(eased_fade, [seq, timer, '/ProcheCour/Green/Segment/3', 24, 100, 0.1, 0.01])
+    seq.scene_run_subscene(eased_fade, [seq, timer, '/ProcheCour/Blue/Segment/3', 200, 255, 0.1, 0.01])
     seq.scene_run_subscene(eased_fade, [seq, timer, '/ProcheJardin/Red/Segment/1',  200, 70,  0.1, 0.01])
     seq.scene_run_subscene(eased_fade, [seq, timer, '/ProcheJardin/Green/Segment/1', 24, 8, 0.1, 0.01])
     seq.scene_run_subscene(eased_fade, [seq, timer, '/ProcheJardin/Blue/Segment/1', 200, 70, 0.1, 0.01])

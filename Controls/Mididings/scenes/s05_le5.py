@@ -431,9 +431,16 @@ le5 = [
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(160)),
 
 
-            SendOSC(rpijardinport, '/pyta/text/size', 2, 0.06),
-            SendOSC(rpicourport, '/pyta/text/size', 2, 0.06),
-            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_niggahdontyou'),
+
+            SendOSC(rpicourport, '/pyta/scene_recall', 'le5_niglou'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'le5_niglou'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_niglou'),
+
+
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_couplet2_nigro'),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 160 * 2),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
             SendOscState([
 
@@ -483,13 +490,15 @@ le5 = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(160)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(160)),
 
-            SendOSC(rpijardinport, '/pyta/slide/alpha', coffee_redseas, 0.2),
-            SendOSC(rpicourport, '/pyta/slide/alpha', coffee_redseas, 0.2),
-            SendOSC(lightseqport, '/Lightseq/Bpm', 160),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'le5_coffee_redsea_jardin', 1),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'le5_coffee_redsea_cour', 1),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_coffee_redsea_jardin'),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_coffee_redsea_cour'),
+            # SendOSC(rpicourport, '/pyta/scene_recall', 'le5_niglou'),
+            # SendOSC(rpijardinport, '/pyta/scene_recall', 'le5_niglou'),
+            # SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_niglou'),
+
+
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_couplet2_trap'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_couplet2_trap_anim'),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 160 * 2),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
 

@@ -75,15 +75,23 @@ redOnTrap2 = [qlcport, '/ProcheJardin/Red/Segment/{2,4,6,8}', 255]
 redOnTrap3 = [qlcport, '/ProcheCour/Red/Segment/{2,4,6,8}', 255]
 whiteOnTrap = [qlcport, '/TuttiLointain/White/Segment/{2,4,6,8}', 255]
 offTrap = [qlcport, '/*/*/Segment/{2,4,6,8}', 0]
-le5_couplet2_trap = [
+le5_couplet2_trap_anim = [
     redOnTrap1, offTrap, None, None, None,
-    None, whiteOnTrap, offTrap, None, None,
-    (redOnTrap3, None, offTrap), (None, redOnTrap2, None), (offTrap, None, redOnTrap1), (None, offTrap, None), None, 
-    None, whiteOnTrap, offTrap, None, None,
+    None, whiteOnTrap, None, None, None,
+    offTrap, None, None, None, None,
     None, None, None, None, None,
+    (redOnTrap3, None, offTrap), (None, redOnTrap2, None), (offTrap, None, redOnTrap1), (None, offTrap, None), None, 
+    None, whiteOnTrap, None, None, None,
+    offTrap, None, None, None, None,
+    None, None, None, None, None,
+    None, None, None, None, None,
+    None, whiteOnTrap, None, None, None,
+    offTrap, None, None, None, None,
     None, None, None, None, None,
     whiteOnTrap, offTrap, None, None, None,
-    None, [redOnTrap1, redOnTrap2, redOnTrap3], None, None, None, None
+    None, [redOnTrap1, redOnTrap2, redOnTrap3], None, None, None, None,
+    offTrap, None, None, None, None,
+    None, None, None, None, None,
 ]
 
 le5_couplet2_anim4 = [
