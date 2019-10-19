@@ -14,10 +14,10 @@ climat_mk2lights = {
     3:'purple',
     4:'purple',
     5:'green',
+    6:'purple',
+    7:'white',
     8:'white',
 }
-
-darkEyes = " ".join(['FreakyEye_1', 'BlueOnBlackEye_1', 'OrangeOnBlackEye_1', 'OrangeOnBlackEye_2', 'RedOnBlackEye_1'])
 
 #### Climat ####
 climat = [
@@ -38,7 +38,7 @@ climat = [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
     orl >> ProgramFilter([range(2,12)]) >> light_reset >> Discard(),
-    jeannot >> ProgramFilter([2,4]) >> light_reset >> Discard(),
+    jeannot >> ProgramFilter([2,4,7]) >> light_reset >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     jeannot >> ProgramFilter(2) >> [ # Intro mandela - Bouton 2
         Program(69) >> cseqtrigger,
@@ -458,10 +458,9 @@ climat = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(150)),
 
-            # SendOSC(rpijardinport, '/pyta/scene_recall', 'climat_mandela_danse'),
-            # SendOSC(rpicourport, '/pyta/scene_recall', 'climat_mandela_danse'),
-            # SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_mandela_danse'),
-            # SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'climat_mandela_danse'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'climat_climax_jardin'),
+            SendOSC(rpicourport, '/pyta/scene_recall', 'climat_climax_cour'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_climax_glitch1'),
 
 
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'climat_climax_anim'),
@@ -504,8 +503,21 @@ climat = [
             bassbufferst_off,
             ]
         ],
+    jeannot >> ProgramFilter(6) >> [ # sythé DRE - Bouton 6
+        Program(70) >> seq24once,
+        SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_climax_up'),
+        SendOSC(lightseqport, '/Lightseq/Scene/Stop', 'climat_climax_glitch1'),
+        SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_climax_glitch2'),
 
+    ],
+    jeannot >> ProgramFilter(7) >> [ # cock ya gun - Bouton 7
 
+            # stop,
+            SendOSC(rpicourport, '/pyta/scene_recall', 'climat_cock'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'climat_cock'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_climax_cock'),
+            NoteOn(65,127) >> Output('PBTapeutape', 3),
+    ],
     jeannot >> ProgramFilter(8) >> [ # shut your dickhole -> Le5
 	[
             SendOSC(audioseqport, '/Audioseq/Scene/Stop', '*'),

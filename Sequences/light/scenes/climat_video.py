@@ -4,7 +4,7 @@ import sys
 sys.path.append("../Controls/Mididings/")
 
 from ports import *
-from random import randint, random, shuffle, choice
+from random import randint, random, shuffle, choice, normalvariate
 
 def climat_intro(seq, timer):
     seq.send(rpijardinport, '/pyta/slide/moise_1/set', 'rotate_y', 180)
@@ -96,3 +96,30 @@ def climat_boutros_cut(seq, timer):
 
 def climat_mandela_danse(seq, timer):
     seq.send(rpijardinport, '/pyta/post_process/set', 'rotate_y', 180)
+
+
+def _glitch():
+    return normalvariate(0, 0.8)> 0.8
+
+def climat_climax_glitch1(seq, timer):
+    while True:
+        for i in [1,2,3]:
+            seq.send(rpijardinport, '/pyta/slide/pelle%i/set' % i, 'rgbwave', 0.6 if _glitch() else 0)
+            seq.send(rpicourport, '/pyta/slide/pelle%i/set' % i, 'rgbwave', 0.6 if _glitch() else 0)
+
+        timer.wait(0.1, 's')
+
+
+def climat_climax_glitch2(seq, timer):
+    while True:
+        for i in [1,2,3]:
+            seq.send(rpijardinport, '/pyta/slide/pelle%i/set' % i, 'invert', 1 if _glitch() else 0)
+            seq.send(rpicourport, '/pyta/slide/pelle%i/set' % i, 'invert', 1 if _glitch() else 0)
+
+        timer.wait(0.1, 's')
+
+
+def climat_climax_cock(seq, timer):
+    seq.send(rpijardinport, '/pyta/slide/mecdebilegun/set', 'rotate_y', 180)
+    timer.wait(1.4, 's')
+    seq.send('/pyta/slide/mecdebilegun/set', 'visible', 0)

@@ -74,6 +74,14 @@ le5 = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(160)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(160)),
 
+
+            SendOSC(rpicourport, '/pyta/scene_recall', 'le5_intro'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'le5_intro'),
+
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_shotgun'),
+            SendOSC(lightseqport, '/Lightseq/Bpm', 160 * 2),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
             SendOscState([
 
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
