@@ -17,18 +17,15 @@ instouboul_mk2lights = {
     8:'blue',
 }
 
-coffee_redseas = " ".join(["Coffee_" + str(i) for i in range(1,11)])
-coffee_redseas+=" Dunes_1"
-coffee_redseas+=" Rock_1"
-coffee_redseas+=" Moon_1"
-coffee_redseas+=" Moon_2"
-coffee_redseas+=" Mars_1"
-coffee_redseas+=" Mars_2"
-coffee_redseas+=" Mountains_1"
-coffee_redseas+=" Mountains_2"
+filter_reset = [
+    SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*'),
+    SendOSC(samplesmainport, '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.),
+    SendOSC(vxmainport, '/strip/VxJeannotMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.),
+    SendOSC(vxmainport, '/strip/VxORLMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.),
+    SendOSC(bassmainport, '/strip/BassMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.),
+    SendOSC(samplesmainport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled',20000.),
 
-
-twerks = " ".join(['Twerk_'+str(i) for i in range(1,33)])
+] >> Discard()
 
 #### Instouboul ####
 instouboul = [
@@ -46,17 +43,10 @@ instouboul = [
         ]),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     jeannot_padrelease >> mk2lights(instouboul_mk2lights),
-    [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
-        SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*'),
-        SendOSC(samplesmainport, '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.),
-        SendOSC(vxmainport, '/strip/VxJeannotMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.),
-        SendOSC(vxmainport, '/strip/VxORLMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.),
-        SendOSC(bassmainport, '/strip/BassMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.),
-        SendOSC(samplesmainport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled',20000.),
-
-    ] >> Discard(),
-    orl >> ProgramFilter([range(2,12)]) >> light_reset >> Discard(),
-    jeannot >> ProgramFilter([range(5,8)]) >> light_reset >> Discard(),
+    orl >> ProgramFilter(11) >> filter_reset,
+    jeannot >> ProgramFilter([5, 8]) >> filter_reset,
+    orl >> ProgramFilter([2,11]) >> light_reset >> Discard(),
+    jeannot >> ProgramFilter([5,8]) >> light_reset >> Discard(),
     orl >> ProgramFilter(2) >> [ # Instouboul sans batterie - Bouton 2
         Program(77) >> cseqtrigger,
         [
@@ -73,22 +63,14 @@ instouboul = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(120)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
 
+            SendOSC(rpicourport, '/pyta/scene_recall', 'le5_mesh'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'le5_mesh'),
+
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_meshug_fixe'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_meshug_patate_flash_anim1'),
+
             SendOSC(lightseqport, '/Lightseq/Bpm', 120),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'le5_boum_jardin', 1),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'le5_boum_cour', 1),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Play', 'le5_boum_jardin'),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Play', 'le5_boum_cour'),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
-            SendOSC(rpijardinport, '/pyta/text', 0, "Instouboul"),
-            SendOSC(rpicourport, '/pyta/text', 0, "Instouboul"),
-            SendOSC(rpijardinport, '/pyta/text/align', 0, 'top', 'left'),
-            SendOSC(rpicourport, '/pyta/text/align', 0, 'top', 'right'),
-            SendOSC(rpijardinport, '/pyta/text/animate', 0, 'size', 0, 1, 300),
-            SendOSC(rpicourport, '/pyta/text/animate', 0, 'size', 0, 1, 300),
-            SendOSC(rpijardinport, '/pyta/text/animate', 0, 'alpha', 0.1, 1, 300),
-            SendOSC(rpicourport, '/pyta/text/animate', 0, 'alpha', 0.1, 1, 300),
-            SendOSC(rpijardinport, '/pyta/text/visible', 0, 1),
-            SendOSC(rpicourport, '/pyta/text/visible', 0, 1),
 
             vxorlgars_on,
             vxorlmeuf_off,
@@ -120,14 +102,35 @@ instouboul = [
             bassbufferst_on,
             ]
         ],
-    orl >> ProgramFilter(3) >> [ # Instouboul bouclage voix + bass - Bouton 3
+    orl >> ProgramFilter(7) >> [ # Instouboul étage lumières - Bouton 7
         [
 
-            SendOSC(samplesmainport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled',200.),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_mesh_up'),
 
-            SendOSC(slport, '/sl/0/hit', 'record'), # bass pre
-            SendOSC(slport, '/sl/2/hit', 'record'), # vxorl pre
-            SendOSC(slport, '/sl/4/hit', 'record'), # vxjeannot pre
+            SendOSC(lightseqport, '/Lightseq/Sequence/Disable', 'le5_meshug_patate_flash_anim1'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_meshug_patate_flash_anim2'),
+
+
+            ] >> Discard()
+        ],
+    orl >> ProgramFilter(9) >> [ # Instouboul étage lumières - Bouton 8
+        [
+
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_mesh_up'),
+
+            SendOSC(lightseqport, '/Lightseq/Sequence/Disable', 'le5_meshug_patate_flash_anim2'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_meshug_patate_flash_anim3'),
+
+
+            ] >> Discard()
+        ],
+    orl >> ProgramFilter(9) >> [ # Instouboul étage lumières - Bouton 9
+        [
+
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_mesh_up'),
+
+            SendOSC(lightseqport, '/Lightseq/Sequence/Disable', 'le5_meshug_patate_flash_anim3'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_meshug_patate_flash_anim4'),
 
             ] >> Discard()
         ],
@@ -172,12 +175,18 @@ instouboul = [
             SendOSC(slport, '/sl/2/hit', 'pause_on'), # vxorlpre
             SendOSC(slport, '/sl/4/hit', 'pause_on'), # vxjeannotpre
 
-            SendOSC(lightseqport, '/Lightseq/Bpm', 960),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'le5_boum_jardin', 1),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'le5_boum_cour', 1),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Play', 'le5_boum_jardin'),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Play', 'le5_boum_cour'),
+            SendOSC(rpicourport, '/pyta/scene_recall', 'le5_mesh_strobe'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'le5_mesh_strobe'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_mesh_strobe_glitch'),
+
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_meshug_boum1', timestamp),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_meshug_boum2', timestamp),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_meshug_strobelights_alea_trig', timestamp),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_mechantmeshug'),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 120),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
 
             vxorlgars_off,
             vxorlmeuf_on,
@@ -194,9 +203,8 @@ instouboul = [
             SendOSC(slport, '/sl/-1/hit', 'reverse'),
             SendOSC(surfaceorlport, '/sl/-1/hit', 'reverse', 1),
 
-            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_instouboulouboutin'),
-            SendOSC(rpijardinport, '/pyta/text/visible', 0, 1),
-            SendOSC(rpicourport, '/pyta/text/visible', 0, 1),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_louboutin_words'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_meshug_casse'),
 
 
             ] >> Discard()

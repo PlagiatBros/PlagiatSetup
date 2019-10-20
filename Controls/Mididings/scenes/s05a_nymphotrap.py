@@ -19,19 +19,6 @@ nymphotrap_mk2lights = {
     8:'purple',
 }
 
-coffee_redseas = " ".join(["Coffee_" + str(i) for i in range(1,11)])
-coffee_redseas+=" Dunes_1"
-coffee_redseas+=" Rock_1"
-coffee_redseas+=" Moon_1"
-coffee_redseas+=" Moon_2"
-coffee_redseas+=" Mars_1"
-coffee_redseas+=" Mars_2"
-coffee_redseas+=" Mountains_1"
-coffee_redseas+=" Mountains_2"
-
-
-twerks = " ".join(['Twerk_'+str(i) for i in range(1,33)])
-
 #### Nymphotrap ####
 nymphotrap = [
     Init([
@@ -57,7 +44,7 @@ nymphotrap = [
         SendOSC(samplesmainport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled',20000.),
 
     ] >> Discard(),
-    orl >> ProgramFilter([range(2,12)]) >> light_reset >> Discard(),
+    orl >> ProgramFilter([2,3,11]) >> light_reset >> Discard(),
     jeannot >> ProgramFilter([range(5,8)]) >> light_reset >> Discard(),
     orl >> ProgramFilter(2) >> [ # Cloud rap ballade rhodes - Bouton 2
         stop,
@@ -81,16 +68,14 @@ nymphotrap = [
             SendOSC(monitorsjeannotport, '/strip/Klick/Gain/Mute', 1.0),
 
 
-            SendOSC(rpijardinport, '/pyta/slide/animate', 'Stars_1', 'zoom', 2, 6, 300),
-            SendOSC(rpicourport, '/pyta/slide/animate', 'Stars_2', 'zoom', 2, 6, 300),
-            SendOSC(rpijardinport, '/pyta/slide/visible', 'Stars_1', 1),
-            SendOSC(rpicourport, '/pyta/slide/visible', 'Stars_2', 1),
-            SendOSC(rpijardinport, '/pyta/text', 2, 'cu   is obvious'),
-            SendOSC(rpijardinport, '/pyta/text/align', 2, 'top', 'left'),
-            SendOSC(rpijardinport, '/pyta/text/visible', 2, 1),
-            SendOSC(rpicourport, '/pyta/text', 2, 'cute is obvious'),
-            SendOSC(rpicourport, '/pyta/text/align', 2, 'top', 'right'),
-            SendOSC(rpicourport, '/pyta/text/visible', 2, 1),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'le5_ballade_jardin'),
+            SendOSC(rpicourport, '/pyta/scene_recall', 'le5_ballade_cour'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_ballade_timer', 1),
+
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_slow_bouclage', 1), # reset
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_slow_intro'),
+            SendOSC(lightseqport, '/Lightseq/Bpm', 60),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
             ] >> Discard(),
         [
@@ -111,6 +96,8 @@ nymphotrap = [
         ],
     orl >> ProgramFilter(8) >> [ # Bouclage rhodes  - Bouton 8
             SendOSC(slport, '/sl/8/hit', 'record'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_ballade_timer'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_slow_bouclage'),
         ],
     jeannot >> ProgramFilter(2) >> [ # Vx jeannot
         vxjeannotdelay_off,
@@ -146,24 +133,8 @@ nymphotrap = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(120)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
 
-        SendOSC(mk2inport, '/mididings/switch_scene', 9), # sample cut
-        SendOSC(cmeinport, '/mididings/switch_scene', 8),
-
-		#TODO Positionnement
-	    SendOSC(rpijardinport, '/pyta/text', 2, 'nAfr0-tRap'),
-	    SendOSC(rpicourport, '/pyta/text', 1, 'NYMPH0 TRAP'),
-	    SendOSC(rpijardinport, '/pyta/text/visible', 2, 1),
-	    SendOSC(rpijardinport, '/pyta/text/strobe', 2, 1, 12, 0.5),
-	    SendOSC(rpijardinport, '/pyta/text/alpha', 2, 0.5),
-	    SendOSC(rpicourport, '/pyta/text/visible', 1, 1),
-	    SendOSC(rpicourport, '/pyta/text/strobe', 1, 1, 11, 0.5),
-	    SendOSC(rpijardinport, '/pyta/text/alpha', 1, 0.5),
-
-	    SendOSC(lightseqport, '/Lightseq/Bpm', 125),
-	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_nymphotrap_blow'),
-	    SendOSC(rpijardinport, '/pyta/slide/alpha', twerks, 0.15),
-	    SendOSC(rpicourport, '/pyta/slide/alpha', twerks, 0.15),
-	    SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+            SendOSC(mk2inport, '/mididings/switch_scene', 9), # sample cut
+            SendOSC(cmeinport, '/mididings/switch_scene', 8),
 
 
             SendOscState([
@@ -191,10 +162,20 @@ nymphotrap = [
             bassbufferst_off,
             ]
     ],
-    jeannot >> ProgramFilter(5) >> [ # nymphotrap avec orl vx meuf (bouliotte) - bouton 5
+    jeannot >> ProgramFilter(5) >> [ # intro chant/synth - bouton 5
         SendOSC(slport, '/set', 'eighth_per_cycle', 8),
         SendOSC(slport, '/set', 'tempo', 120),
         SendOSC(slport, '/sl/[7,8]/hit', 'pause_on'),
+
+        SendOSC(rpicourport, '/pyta/scene_recall', 'le5_rabza_money'),
+        SendOSC(rpijardinport, '/pyta/scene_recall', 'le5_rabza_money'),
+
+        SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_rabza_red_flash_anim'),
+        SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_rabza_red_ct_anim'),
+
+        SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_rabza_fixe'),
+        SendOSC(lightseqport, '/Lightseq/Bpm', 120),
+        SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
         vxorlgars_off,
         vxorlmeuf_on,
@@ -202,10 +183,21 @@ nymphotrap = [
         vxorldelay_off,
         vxorlvocode_off,
     ] >> Discard(),
-    jeannot >> ProgramFilter(6) >> [ # nymphotrap avec orl vx gars (refrain) - bouton 6
+    jeannot >> ProgramFilter(6) >> [ # refrain (i is da one)/ 2e couplet  (there's a hole)- bouton 6
         SendOSC(slport, '/set', 'eighth_per_cycle', 10),
         SendOSC(slport, '/set', 'tempo', 120),
         SendOSC(slport, '/sl/[7,8]/hit', 'pause_on'),
+
+        SendOSC(rpicourport, '/pyta/scene_recall', 'le5_rabza_refrain'),
+        SendOSC(rpijardinport, '/pyta/scene_recall', 'le5_rabza_refrain'),
+        SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_rabza_refrain_switcher'),
+
+        SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_rabza_red_flash_anim'),
+        SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_rabza_couplet_ct_flash_anim'),
+        SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_rabza_refrain_strobe'),
+
+        SendOSC(lightseqport, '/Lightseq/Bpm', 120),
+        SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
         vxorlgars_on,
         vxorlmeuf_off,
@@ -213,12 +205,24 @@ nymphotrap = [
         vxorldelay_off,
         vxorlvocode_off,
     ] >> Discard(),
-    jeannot >> ProgramFilter(7) >> [ # nymphotrap avec orl vx vocod (couplet) - bouton 7
-        [Program(84), Program(85)] >> seq24once, 
+    jeannot >> ProgramFilter(7) >> [ # nymphotrap avec orl vx vocod (couplet) / banana boat - bouton 7
+        [Program(84), Program(85)] >> seq24once,
         [
         SendOSC(slport, '/set', 'eighth_per_cycle', 10),
         SendOSC(slport, '/set', 'tempo', 120),
         SendOSC(slport, '/sl/[7,8]/hit', 'pause_on'),
+
+
+        SendOSC(rpicourport, '/pyta/scene_recall', 'le5_rabza_couplet'),
+        SendOSC(rpijardinport, '/pyta/scene_recall', 'le5_rabza_couplet'),
+        SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_rabza_refrain_disable'),
+
+        SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_rabza_red_flash_anim'),
+        SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_rabza_couplet_ct_flash_anim'),
+        SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_rabza_couplet_fixe'),
+
+        SendOSC(lightseqport, '/Lightseq/Bpm', 120),
+        SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
         vxorlgars_off,
         vxorlmeuf_off,
@@ -255,22 +259,15 @@ nymphotrap = [
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
 
 
-		#TODO Positionnement
-	    SendOSC(rpijardinport, '/pyta/text', 2, 'nAfr0-tRap'),
-	    SendOSC(rpicourport, '/pyta/text', 1, 'NYMPH0 TRAP'),
-	    SendOSC(rpijardinport, '/pyta/text/visible', 2, 1),
-	    SendOSC(rpijardinport, '/pyta/text/strobe', 2, 1, 12, 0.5),
-	    SendOSC(rpijardinport, '/pyta/text/alpha', 2, 0.5),
-	    SendOSC(rpicourport, '/pyta/text/visible', 1, 1),
-	    SendOSC(rpicourport, '/pyta/text/strobe', 1, 1, 11, 0.5),
-	    SendOSC(rpijardinport, '/pyta/text/alpha', 1, 0.5),
+            SendOSC(rpicourport, '/pyta/scene_recall', 'le5_rabza_theme'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'le5_rabza_theme'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_theme_danse'),
 
-	    SendOSC(lightseqport, '/Lightseq/Bpm', 125),
-	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_nymphotrap_blow'),
-	    SendOSC(rpijardinport, '/pyta/slide/alpha', twerks, 0.15),
-	    SendOSC(rpicourport, '/pyta/slide/alpha', twerks, 0.15),
-	    SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_rabza_theme_anim'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_rabza_couplet_ct_flash_anim'),
 
+            SendOSC(lightseqport, '/Lightseq/Bpm', 120),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
             SendOscState([
 
@@ -303,18 +300,6 @@ nymphotrap = [
             bassbufferst_off,
             ]
     ],
-
-#   orl >> ProgramFilter(4) >> [
-#        stop,
-#        [
-#            vxorlgars_on,
-#            vxorlmeuf_off,
-#            vxorldisint_off,
-#            vxorldelay_off,
-#            vxorlvocode_off,
-#        ] >> Discard()
-#    ],
-
 
     orl >> ProgramFilter(11) >> [ # Instouboul - bouton 11
         SceneSwitch(61) >> Discard(),
