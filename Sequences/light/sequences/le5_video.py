@@ -29,14 +29,14 @@ _reinit = [
 ]
 
 le5_refrain_mean = [
-    _mean, None, _mean2, None, None,
+    _reinit + _mean, None, _mean2, None, None,
     _mean, None, _mean2, None, None,
     _mean, None, _mean2, None, None,
     _mean, None, _mean2, None, None,
     _mean, None, _mean2, None, None,
     _mean, None, _mean2, None, None,
     _mean, None, _mean2, None, _and,
-    _ugly, None, None, None, _reinit
+    _ugly, None, None, None, None
 ]
 
 _hey = ['/pyta/scene_recall', 'le5_trap_jesus']
