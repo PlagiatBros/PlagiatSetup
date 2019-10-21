@@ -3,7 +3,7 @@
 [post_process]
 align = [ "center", "center" ]
 color = [ 0.8, 0.5, 0.7 ]
-alpha = [ 0.0 ]
+alpha = [ 1.0 ]
 color_strobe = [ 0.0 ]
 charcoal = [ 0.0 ]
 fish = [ 0.0 ]

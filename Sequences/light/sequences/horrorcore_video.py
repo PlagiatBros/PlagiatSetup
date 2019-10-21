@@ -95,7 +95,7 @@ horrorcore_couplet_2_screenswitch_strobe_stop = [
 
 
 horrorcore_couplet_2_screenswitch = [
-    horrorcore_couplet_2_screenswitch_strobe_stop+ [[rpijardinport, '/pyta/slide/talkingheads_3/set', 'gif_frame', 1], [rpijardinport, '/pyta/slide/talkingheads_3/set', 'alpha', 1], [rpicourport, '/pyta/slide/talkingheads_3/set', 'alpha', 0]],
+    horrorcore_couplet_2_screenswitch_strobe_stop + [[rpijardinport, '/pyta/slide/talkingheads_3/strobe', 'gif_speed', 1.22, -1.2, 3, 0.66], [rpijardinport, '/pyta/slide/talkingheads_3/set', 'alpha', 1], [rpicourport, '/pyta/slide/talkingheads_3/set', 'alpha', 0]],
     None, None,
     None, None, None, None,
     None, None, None, None,
@@ -104,8 +104,8 @@ horrorcore_couplet_2_screenswitch = [
     None, None, None, None,
     None, None, None, None,
     None, None, None, None,
-    None, None, None, horrorcore_couplet_2_screenswitch_strobe + [[rpicourport, '/pyta/slide/talkingheads_3/set', 'gif_frame', 1]],
-    horrorcore_couplet_2_screenswitch_strobe_stop + [[rpicourport, '/pyta/slide/talkingheads_3/set', 'alpha', 1], [rpijardinport, '/pyta/slide/talkingheads_3/set', 'alpha', 0]],
+    None, None, None, horrorcore_couplet_2_screenswitch_strobe + [[rpicourport, '/pyta/slide/talkingheads_3/strobe_stop', 'gif_speed'], [rpicourport, '/pyta/slide/talkingheads_3/set', 'gif_frame', 0]],
+    horrorcore_couplet_2_screenswitch_strobe_stop + [[rpicourport, '/pyta/slide/talkingheads_3/strobe', 'gif_speed', 1.22, -1.2, 3, 0.66], [rpicourport, '/pyta/slide/talkingheads_3/set', 'alpha', 1], [rpijardinport, '/pyta/slide/talkingheads_3/set', 'alpha', 0]],
     None, None, None,
     None, None, None, None,
     None, None, None, None,
@@ -113,5 +113,5 @@ horrorcore_couplet_2_screenswitch = [
     None, None, None, None,
     None, None, None, None,
     None, None, None, None,
-    None, None, None, horrorcore_couplet_2_screenswitch_strobe,
+    None, None, None, horrorcore_couplet_2_screenswitch_strobe + [[rpijardinport, '/pyta/slide/talkingheads_3/strobe_stop', 'gif_speed'], [rpijardinport, '/pyta/slide/talkingheads_3/set', 'gif_frame', 0]],
 ]
