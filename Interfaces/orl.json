@@ -259,7 +259,7 @@
                           "popupLeft": "auto",
                           "popupTop": "auto",
                           "default": "",
-                          "value": 1,
+                          "value": "",
                           "precision": 2,
                           "address": "/@{this.id}",
                           "preArgs": "",
@@ -605,7 +605,8 @@
                           "top": "auto",
                           "height": "auto",
                           "steps": "",
-                          "compact": false
+                          "compact": false,
+                          "sensitivity": 1
                         },
                         {
                           "type": "toggle",
@@ -931,7 +932,9 @@
                   "left": "auto",
                   "top": "auto",
                   "width": "auto",
-                  "steps": ""
+                  "steps": "",
+                  "gradient": [],
+                  "sensitivity": 1
                 }
               ],
               "horizontal": false,
@@ -2607,7 +2610,8 @@
           "address": "/bigup",
           "preArgs": "",
           "target": "aa:bb",
-          "bypass": false
+          "bypass": false,
+          "asYouType": false
         }
       ],
       "tabs": [],
@@ -2718,7 +2722,9 @@
                   "target": "@{parent.variables.target}",
                   "bypass": false,
                   "touchAddress": "",
-                  "meterAddress": ""
+                  "meterAddress": "",
+                  "gradient": [],
+                  "sensitivity": 1
                 },
                 {
                   "type": "fader",
@@ -2754,7 +2760,9 @@
                   "target": "@{parent.variables.target}",
                   "bypass": false,
                   "touchAddress": "",
-                  "meterAddress": ""
+                  "meterAddress": "",
+                  "gradient": [],
+                  "sensitivity": 1
                 },
                 {
                   "type": "fader",
@@ -2790,7 +2798,9 @@
                   "target": "@{parent.variables.target}",
                   "bypass": false,
                   "touchAddress": "",
-                  "meterAddress": ""
+                  "meterAddress": "",
+                  "gradient": [],
+                  "sensitivity": 1
                 },
                 {
                   "type": "fader",
@@ -2826,7 +2836,9 @@
                   "target": "@{parent.variables.target}",
                   "bypass": false,
                   "touchAddress": "",
-                  "meterAddress": ""
+                  "meterAddress": "",
+                  "gradient": [],
+                  "sensitivity": 1
                 },
                 {
                   "type": "fader",
@@ -2862,7 +2874,9 @@
                   "target": "@{parent.variables.target}",
                   "bypass": false,
                   "touchAddress": "",
-                  "meterAddress": ""
+                  "meterAddress": "",
+                  "gradient": [],
+                  "sensitivity": 1
                 },
                 {
                   "type": "fader",
@@ -2898,7 +2912,9 @@
                   "target": "@{parent.variables.target}",
                   "bypass": false,
                   "touchAddress": "",
-                  "meterAddress": ""
+                  "meterAddress": "",
+                  "gradient": [],
+                  "sensitivity": 1
                 },
                 {
                   "type": "fader",
@@ -2934,7 +2950,9 @@
                   "target": "@{parent.variables.target}",
                   "bypass": false,
                   "touchAddress": "",
-                  "meterAddress": ""
+                  "meterAddress": "",
+                  "gradient": [],
+                  "sensitivity": 1
                 },
                 {
                   "type": "fader",
@@ -2970,7 +2988,9 @@
                   "target": "@{parent.variables.target}",
                   "bypass": false,
                   "touchAddress": "",
-                  "meterAddress": ""
+                  "meterAddress": "",
+                  "gradient": [],
+                  "sensitivity": 1
                 },
                 {
                   "type": "fader",
@@ -3006,7 +3026,9 @@
                   "target": "@{parent.variables.target}",
                   "bypass": false,
                   "touchAddress": "",
-                  "meterAddress": ""
+                  "meterAddress": "",
+                  "gradient": [],
+                  "sensitivity": 1
                 },
                 {
                   "type": "fader",
@@ -3042,7 +3064,9 @@
                   "target": "@{parent.variables.target}",
                   "bypass": false,
                   "touchAddress": "",
-                  "meterAddress": ""
+                  "meterAddress": "",
+                  "gradient": [],
+                  "sensitivity": 1
                 }
               ],
               "tabs": []
@@ -3139,7 +3163,9 @@
                   "target": "@{parent.variables.target}",
                   "bypass": false,
                   "touchAddress": "",
-                  "meterAddress": ""
+                  "meterAddress": "",
+                  "gradient": [],
+                  "sensitivity": 1
                 },
                 {
                   "type": "fader",
@@ -3175,7 +3201,9 @@
                   "target": "@{parent.variables.target}",
                   "bypass": false,
                   "touchAddress": "",
-                  "meterAddress": ""
+                  "meterAddress": "",
+                  "gradient": [],
+                  "sensitivity": 1
                 },
                 {
                   "type": "fader",
@@ -3211,7 +3239,9 @@
                   "target": "@{parent.variables.target}",
                   "bypass": false,
                   "touchAddress": "",
-                  "meterAddress": ""
+                  "meterAddress": "",
+                  "gradient": [],
+                  "sensitivity": 1
                 },
                 {
                   "type": "fader",
@@ -3247,7 +3277,9 @@
                   "target": "@{parent.variables.target}",
                   "bypass": false,
                   "touchAddress": "",
-                  "meterAddress": ""
+                  "meterAddress": "",
+                  "gradient": [],
+                  "sensitivity": 1
                 },
                 {
                   "type": "fader",
@@ -3283,7 +3315,9 @@
                   "target": "@{parent.variables.target}",
                   "bypass": false,
                   "touchAddress": "",
-                  "meterAddress": ""
+                  "meterAddress": "",
+                  "gradient": [],
+                  "sensitivity": 1
                 },
                 {
                   "type": "fader",
@@ -3319,7 +3353,9 @@
                   "target": "@{parent.variables.target}",
                   "bypass": false,
                   "touchAddress": "",
-                  "meterAddress": ""
+                  "meterAddress": "",
+                  "gradient": [],
+                  "sensitivity": 1
                 },
                 {
                   "type": "fader",
@@ -3355,7 +3391,9 @@
                   "target": "@{parent.variables.target}",
                   "bypass": false,
                   "touchAddress": "",
-                  "meterAddress": ""
+                  "meterAddress": "",
+                  "gradient": [],
+                  "sensitivity": 1
                 },
                 {
                   "type": "fader",
@@ -3391,7 +3429,9 @@
                   "target": "@{parent.variables.target}",
                   "bypass": false,
                   "touchAddress": "",
-                  "meterAddress": ""
+                  "meterAddress": "",
+                  "gradient": [],
+                  "sensitivity": 1
                 },
                 {
                   "type": "fader",
@@ -3427,7 +3467,9 @@
                   "target": "@{parent.variables.target}",
                   "bypass": false,
                   "touchAddress": "",
-                  "meterAddress": ""
+                  "meterAddress": "",
+                  "gradient": [],
+                  "sensitivity": 1
                 },
                 {
                   "type": "fader",
@@ -3463,7 +3505,9 @@
                   "target": "@{parent.variables.target}",
                   "bypass": false,
                   "touchAddress": "",
-                  "meterAddress": ""
+                  "meterAddress": "",
+                  "gradient": [],
+                  "sensitivity": 1
                 }
               ],
               "tabs": []
