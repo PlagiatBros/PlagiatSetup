@@ -5,7 +5,7 @@ sys.path.append("../Controls/Mididings/")
 
 from ports import *
 from video_functions import *
-from random import random, shuffle
+from random import random, shuffle, randint
 
 
 def le5_intro(seq, timer):
