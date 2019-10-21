@@ -110,11 +110,11 @@ def le5_rabza_refrain_switcher(seq, timer):
 
 
 _ono = {
-    'a': ['ah', 'aie', 'bla', 'haa', 'ahh', 'ja', 'raaa'],
-    'i': ['***ing', '*ing', 'bing', 'ding', 'mouick', 'couic', 'chips'],
-    'o': ['word', 'ohh', 'mot', 'toto', 'coke', 'dojo', 'god', 'dog', 'ding'],
+    'a': ['ah', 'aie', 'bla', 'haa', 'ahh', 'ja', 'raaa', 'bag'],
+    'i': [' ***ing ', '*ing', 'bing', 'ding', 'mouick', 'couic', 'chips', 'jeez'],
+    'o': ['word', 'ohh', 'coke', 'god', 'dog', 'dong', 'donkey'],
     'u': ['bus', 'wuss', 'nuts', 'guts', 'plug', 'butter'],
-    'e': ['me', 'we', 'tea', 'jeez', 'meh', 'wé']
+    'e': ['tell', 'hell', 'damn', 'hey', 'dang', 'pain']
 }
 _latest = ''
 def le5_rabza_refrain_word(seq, timer, o):
@@ -128,7 +128,7 @@ def le5_rabza_refrain_word(seq, timer, o):
     seq.send('/pyta/text/0/set', 'text', word, 0.1)
     seq.send('/pyta/text/0/animate', 'size', 0.25, 0.35, 0.1, 'sine')
     seq.send('/pyta/slide/white/animate', 'position_y', 0.25, 0.35, 0.25, -1, 'circularout')
-    seq.send('/pyta/slide/white/animate', 'scale', 0.14, 0.08, 0.1, 0.1, 0.25, -1, 'circularout')
+    seq.send('/pyta/slide/white/animate', 'scale', 0.14, 0.08, 0.1, 0.1, 0.25, -1, 'exponentialout')
 
 
 def le5_theme_danse_rotate(seq, timer):
