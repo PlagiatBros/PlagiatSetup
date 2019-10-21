@@ -1,24 +1,44 @@
+import sys
 from light import *
-from time import sleep
-lightseq.bpm = 200000
+from time import sleep, time
+lightseq.bpm = 200
 lightseq.start_threaded()
 lightseq.play()
 
-for name in lightseq.sequences:
-    seq = lightseq.sequences[name]
+
+from subprocess import check_output
+sequences = check_output("./print_sequences.sh").split('\n')
+scenes = check_output("./print_scenes.sh").split('\n')
+
+def exit():
+    lightseq.exit()
+    sys.exit()
+
+print('TESTING SEQUENCES')
+print('#################\n')
+for name in sequences:
+    try:
+        seq = lightseq.sequences[name]
+    except:
+        print('%s: NOT FOUND' % name)
+        continue
     seq.toggle(True)
-    print(seq.name)
+
     for i in range(seq.beats):
         try:
             seq.play(i)
-        except:
-            print('!!Fail at %i' % i)
-
-for name in lightseq.scenes_list:
-    if not name[0].isupper() and name != 'run' and name != 'shuffle' and name != 'config' and name != 'process_file':
-        print("Scene: %s" % name)
-        lightseq.scene_play(name)
-        sleep(0.2)
+        except Exception as e:
+            print(e)
+            print('%s: ERROR in step %i' % (name, i))
+            exit()
+    sleep(0.01)
+    print('%s: OK' % name)
 
 
-lightseq.exit()
+print('TESTING SCENES')
+print('#################\n')
+for name in scenes:
+    lightseq.scene_play(name)
+    print('Playing scene %s...' % name)
+    sleep(0.5)
+    lightseq.disable_all()
