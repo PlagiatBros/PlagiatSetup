@@ -278,60 +278,6 @@ fifty = [
             bassbufferst_off,
             ]
         ],
-    jeannot >> ProgramFilter(2) >> [ # Pont Afro - Bouton 2
-        Program(69) >> cseqtrigger,
-        [
-
-            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
-            SendOSC(slport, '/set', 'tempo', 125),
-
-            SendOSC(klickport, '/klick/simple/set_tempo', 125),
-            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
-            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
-            SendOSC(klickport, '/klick/metro/start'),
-
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(125)),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(125)),
-            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(125)),
-            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(125)),
-
-
-            SendOSC(rpicourport, '/pyta/scene_recall', 'fifty_pont_afro_2'),
-            SendOSC(rpijardinport, '/pyta/scene_recall', 'fifty_pont_afro_2'),
-    	    SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'fifty_twerk', 1),
-    	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'fifty_twerk'),
-
-    	    SendOSC(lightseqport, '/Lightseq/Scene/Play', 'fifty_ragga'),
-    	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'fifty_ragga_anim'),
-    	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'fifty_ragga_anim_firststep'),
-
-
-    	    SendOSC(lightseqport, '/Lightseq/Bpm', 125),
-            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
-
-
-            vxorlgars_on,
-            vxorlmeuf_off,
-            vxorldisint_off,
-            vxorldelay_off,
-            vxorlvocode_off,
-
-            vxjeannotdelay_off,
-            vxjeannotgars_on,
-            vxjeannotmeuf_off,
-            vxjeannotdisint_off,
-            vxjeannotvocode_off,
-
-            bassdry,
-
-            ] >> Discard(),
-        [
-            bassdetunest_on,
-            bassringst_on,
-            bassvibest_off,
-            bassbufferst_off,
-            ]
-    ],
     orl >> ProgramFilter(6) >> [ # thème  synthé - Bouton 7
         Program(8) >> cseqtrigger,
         [
@@ -357,6 +303,66 @@ fifty = [
             vxorldisint_off,
             vxorldelay_off,
             vxorlvocode_off,
+
+            vxjeannotdelay_off,
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
+            vxjeannotdisint_off,
+            vxjeannotvocode_off,
+
+            bassdry,
+
+            ] >> Discard(),
+        [
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
+            ]
+    ],
+    jeannot >> ProgramFilter(2) >> [ # Couplet part 2 - Bouton 2
+        Program(69) >> cseqtrigger,
+        [
+
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 125),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 125),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),
+
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
+            SendOSC(slport, '/sl/0/set', 'sync', 0),
+            SendOSC(slport, '/sl/0/hit', 'pause_off'),
+            SendOSC(slport, '/sl/0/hit', 'trigger'),
+            SendOSC(slport, '/sl/0/set', 'sync', 1),
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(125)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(125)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(125)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(125)),
+
+
+            SendOSC(rpicourport, '/pyta/scene_recall', 'fifty_pont_afro_2'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'fifty_pont_afro_2'),
+    	    SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'fifty_twerk', 1),
+    	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'fifty_twerk'),
+
+    	    SendOSC(lightseqport, '/Lightseq/Scene/Play', 'fifty_ragga'),
+    	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'fifty_ragga_anim'),
+    	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'fifty_ragga_anim_firststep'),
+
+
+    	    SendOSC(lightseqport, '/Lightseq/Bpm', 125),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
+
+            vxorlgars_on,
+            vxorlmeuf_off,
+            vxorldisint_off,
+            vxorldelay_off,
+            vxorlvocode_on,
 
             vxjeannotdelay_off,
             vxjeannotgars_on,

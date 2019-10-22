@@ -43,9 +43,6 @@ horrorcore = [
         SendOSC(mk2inport, '/mididings/switch_scene', 4),
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*'),
     ] >> Discard(),
-    jeannot >> ProgramFilter([range(1,6)]) >> [
-        SubSceneSwitch(2),
-    ] >> Discard(),
     orl >> ProgramFilter([range(2,12)]) >> light_reset >> Discard(),
     jeannot >> ProgramFilter([range(3,6)]) >> light_reset >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
@@ -631,7 +628,7 @@ horrorcore = [
 
             ] >> Discard()
         ],
-    orlCtrl >> CtrlFilter(110) >> [
+    orlCtrl >> CtrlFilter(2) >> [
         SendOSC(rpijardinport, '/pyta/slide/mecdansefondvert/set', 'gif_speed', lambda ev: 0.2 + pow(ev.value / 127., 2) * 2),
         SendOSC(rpicourport, '/pyta/slide/mecdansefondvert/set', 'gif_speed', lambda ev: 0.2 + pow(ev.value / 127., 2) * 2),
         SendOSC(rpicourport, '/pyta/slide/wood_1/animate', 'offset', '+0', 0, '-1', 0, lambda ev: 10 / (ev.value / 12.7) , 1),

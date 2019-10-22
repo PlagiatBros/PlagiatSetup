@@ -45,34 +45,44 @@ geturfreakon = [
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(75)),
 
 
-            SendOSC(rpijardinport, '/pyta/slide/rgb', 'TearEye_1', -10, 0, 0 ),
-            SendOSC(rpijardinport, '/pyta/slide/animate', 'TearEye_1', 'alpha', 0, 1, 180 ),
-            SendOSC(rpijardinport, '/pyta/slide/visible', 'TearEye_1', 1),
-            SendOSC(rpicourport, '/pyta/slide/rgb', 'TearEye_1', 0, -10, 0 ),
-            SendOSC(rpicourport, '/pyta/slide/animate', 'TearEye_1', 'alpha', 0, 1, 180 ),
-            SendOSC(rpicourport, '/pyta/slide/visible', 'TearEye_1', 1),
+            # SendOSC(rpijardinport, '/pyta/slide/rgb', 'TearEye_1', -10, 0, 0 ),
+            # SendOSC(rpijardinport, '/pyta/slide/animate', 'TearEye_1', 'alpha', 0, 1, 180 ),
+            # SendOSC(rpijardinport, '/pyta/slide/visible', 'TearEye_1', 1),
+            # SendOSC(rpicourport, '/pyta/slide/rgb', 'TearEye_1', 0, -10, 0 ),
+            # SendOSC(rpicourport, '/pyta/slide/animate', 'TearEye_1', 'alpha', 0, 1, 180 ),
+            # SendOSC(rpicourport, '/pyta/slide/visible', 'TearEye_1', 1),
+            #
+            #
+            # SendOSC(rpijardinport, '/pyta/text/align', 2, 'left', 'top'),
+            # SendOSC(rpijardinport, '/pyta/text', 2, '[plaʒia]'),
+            # SendOSC(rpijardinport, '/pyta/text/animate', 2, 'zoom', 0.8, 0.5, 4),
+            # SendOSC(rpijardinport, '/pyta/text', 1, 'for sensitive people'),
+            # SendOSC(rpijardinport, '/pyta/text/position_y', 1, 100),
+            # SendOSC(rpijardinport, '/pyta/text', 0, 'sensitive@plagiat.org'),
+            # SendOSC(rpijardinport, '/pyta/text/visible', -1, 1),
+            # SendOSC(rpijardinport, '/pyta/text/rgb/strobe', 0, 1),
+            # SendOSC(rpicourport, '/pyta/text', 2, '[plaʒia]'),
+            # SendOSC(rpicourport, '/pyta/text/align', 2, 'left', 'top'),
+            # SendOSC(rpicourport, '/pyta/text/animate', 2, 'zoom', 0.8, 0.5, 4),
+            # SendOSC(rpicourport, '/pyta/text', 1, 'for sensitive people'),
+            # SendOSC(rpicourport, '/pyta/text/position_y', 1, 100),
+            # SendOSC(rpicourport, '/pyta/text', 0, 'sensitive@plagiat.org'),
+            # SendOSC(rpicourport, '/pyta/text/visible', -1, 1),
+            # SendOSC(rpicourport, '/pyta/text/rgb/strobe', 1, 1),
+            #
+            # SendOSC(lightseqport, '/Lightseq/Bpm', 20),
+            # SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'sm_blinkinterns'),
+            # SendOSC(lightseqport, '/Lightseq/Play'),
+
+            SendOSC(rpicourport, '/pyta/scene_recall', 'dafist_couplet'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'dafist_couplet'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'no_budget'),
 
 
-            SendOSC(rpijardinport, '/pyta/text/align', 2, 'left', 'top'),
-            SendOSC(rpijardinport, '/pyta/text', 2, '[plaʒia]'),
-            SendOSC(rpijardinport, '/pyta/text/animate', 2, 'zoom', 0.8, 0.5, 4),
-            SendOSC(rpijardinport, '/pyta/text', 1, 'for sensitive people'),
-            SendOSC(rpijardinport, '/pyta/text/position_y', 1, 100),
-            SendOSC(rpijardinport, '/pyta/text', 0, 'sensitive@plagiat.org'),
-            SendOSC(rpijardinport, '/pyta/text/visible', -1, 1),
-            SendOSC(rpijardinport, '/pyta/text/rgb/strobe', 0, 1),
-            SendOSC(rpicourport, '/pyta/text', 2, '[plaʒia]'),
-            SendOSC(rpicourport, '/pyta/text/align', 2, 'left', 'top'),
-            SendOSC(rpicourport, '/pyta/text/animate', 2, 'zoom', 0.8, 0.5, 4),
-            SendOSC(rpicourport, '/pyta/text', 1, 'for sensitive people'),
-            SendOSC(rpicourport, '/pyta/text/position_y', 1, 100),
-            SendOSC(rpicourport, '/pyta/text', 0, 'sensitive@plagiat.org'),
-            SendOSC(rpicourport, '/pyta/text/visible', -1, 1),
-            SendOSC(rpicourport, '/pyta/text/rgb/strobe', 1, 1),
-
-            SendOSC(lightseqport, '/Lightseq/Bpm', 20),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'sm_blinkinterns'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'slowmotium_main'),
+            SendOSC(lightseqport, '/Lightseq/Bpm', 74),
             SendOSC(lightseqport, '/Lightseq/Play'),
+
 
             SendOscState([
 

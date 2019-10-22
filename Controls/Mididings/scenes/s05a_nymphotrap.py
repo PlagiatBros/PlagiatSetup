@@ -16,7 +16,7 @@ nymphotrap_mk2lights = {
     5:'white',
     6:'purple',
     7:'white',
-    8:'purple',
+    # 8:'purple',
 }
 
 #### Nymphotrap ####

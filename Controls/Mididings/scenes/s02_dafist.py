@@ -313,7 +313,7 @@ dafist = [
         SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
         vxorlgars_off,
-        vxorlmeuf_off,
+        vxorlmeuf_on,
         vxorldisint_off,
         vxorldelay_off,
         vxorlvocode_off,
@@ -323,7 +323,6 @@ dafist = [
         vxjeannotmeuf_off,
         vxjeannotdisint_off,
         vxjeannotvocode_off,
-        vxjeannotverb_on,
 
         SendOSC(cmeinport, '/mididings/switch_scene', 5),
 
@@ -384,9 +383,9 @@ dafist = [
             vxorldelay_off,
             vxorlvocode_on,
 
-            vxjeannotdelay_on,
-            vxjeannotgars_off,
-            vxjeannotmeuf_on,
+            vxjeannotdelay_off,
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
 

@@ -14,7 +14,7 @@ wholeworld_mk2lights = {
     2:'purple',
     3: 'purple',
     4: 'purple',
-    5: 'green',
+    # 5: 'green',
     6:'yellow',
     7:'yellow',
     8:'yellow',

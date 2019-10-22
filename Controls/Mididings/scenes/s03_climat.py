@@ -409,6 +409,8 @@ climat = [
             SendOSC(lightseqport, '/Lightseq/Bpm', 150),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
+            SendOSC(surfaceorlport, '/mandela_modal', 0),
+
 
             SendOscState([
 
@@ -421,7 +423,7 @@ climat = [
 
             vxorlgars_on,
             vxorlmeuf_off,
-            vxorldisint_on,
+            vxorldisint_off,
             vxorldelay_off,
             vxorlvocode_off,
 
@@ -471,6 +473,8 @@ climat = [
             SendOSC(lightseqport, '/Lightseq/Bpm', 150),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
+            SendOSC(surfaceorlport, '/mandela_modal', 0),
+
 
             SendOscState([
 
@@ -482,14 +486,14 @@ climat = [
 
             vxorlgars_on,
             vxorlmeuf_off,
-            vxorldisint_on,
+            vxorldisint_off,
             vxorldelay_off,
             vxorlvocode_off,
 
             vxjeannotdelay_off,
             vxjeannotgars_on,
             vxjeannotmeuf_off,
-            vxjeannotdisint_on,
+            vxjeannotdisint_off,
 
             bassdry,
             bassscape,
