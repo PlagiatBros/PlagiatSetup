@@ -12,7 +12,7 @@ def climat_intro(seq, timer):
 _mwords = {
     0: ['win32 error'],
     1: ['Gran Mounouté', 'Grand Moumouté ?', 'Wizzzdom', 'Grand Mère sait faire\n un bon café ?', 'Kond0m'],
-    2: ['Dingité', 'Dingle Dongle', 'Infirmité', 'Soirée Infirmier.e.s ???' ],
+    2: ['Dingité', 'Dingle Dongle', 'Dongle Troupe', 'Dingo shirley', 'no diggity' ],
     3: ['Éternité', 'Enuclée', 'NUclear Weap', 'Zzzzzz', '?? ZnuKzz']
 }
 _mbacks = ['Kwakwa', 'Mandalaa', 'Mendicité', 'Mamacito', 'Gnagnagna', 'lälalA', 'Vend 06 12 7 20 20']
