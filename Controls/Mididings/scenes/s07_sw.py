@@ -15,7 +15,6 @@ sw_mk2lights = {
     5:'yellow',
     6:'yellow',
     7:'yellow',
-    8:'green',
 }
 
 
@@ -36,7 +35,7 @@ sw = [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
     orl >> ProgramFilter([range(2,12)]) >> light_reset >> Discard(),
-    jeannot >> ProgramFilter([2]) >> light_reset >> Discard(),
+    jeannot >> ProgramFilter([3]) >> light_reset >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     orl >> ProgramFilter(2) >> [ # intro - Bouton 2
         #TODO filtre --> Degrade déjà en place ?
@@ -56,8 +55,15 @@ sw = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(178.5)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(178.5)),
 
+
+            SendOSC(rpicourport, '/pyta/scene_recall', 'dafist_couplet'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'dafist_couplet'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'no_budget_andra'),
+
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'sw_intro'),
+
             SendOSC(lightseqport, '/Lightseq/Bpm', 178.5),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'sw_leboncoin'),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
 
             SendOscState([
@@ -93,6 +99,17 @@ sw = [
             SendOSC(klickport, '/klick/simple/set_pattern', 'XxXx'),
             SendOSC(klickport, '/klick/metro/start'),
 
+
+            SendOSC(rpicourport, '/pyta/scene_recall', 'dafist_couplet'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'dafist_couplet'),
+
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'no_budget_pastis'),
+
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'sw_couplet_auto_lights'),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 178.5),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
             ] >> Discard()
         ],
     orl >> ProgramFilter(3) >> [ # Couplet - Bouton 3
@@ -110,6 +127,16 @@ sw = [
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(178.5)),
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(178.5)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(178.5)),
+
+
+            SendOSC(rpicourport, '/pyta/scene_recall', 'dafist_couplet'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'dafist_couplet'),
+
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'sw_couplet1'),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 178.5),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
 
             SendOscState([
 
@@ -151,20 +178,14 @@ sw = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(178.5)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(178.5)),
 
-            SendOSC(rpijardinport, '/pyta/text', 0, 'MORONESS'),
-            SendOSC(rpijardinport, '/pyta/text/strobe', 0, 1, 5, 0.5),
-            SendOSC(rpijardinport, '/pyta/text/colorstrobe', 0, 1, 7, 0.5),
-            SendOSC(rpijardinport, '/pyta/slide/strobe', 'White', 1, 4, 0.5),
-            SendOSC(rpijardinport, '/pyta/slide/visible', 'White', 1),
-            SendOSC(rpicourport, '/pyta/slide/strobe', 'White', 1, 4, 0.5),
-            SendOSC(rpicourport, '/pyta/slide/visible', 'White', 1),
-            SendOSC(rpicourport, '/pyta/text', 0, 'MORONESS'),
-            SendOSC(rpicourport, '/pyta/text/strobe', 0, 1, 5, 0.5),
-            SendOSC(rpicourport, '/pyta/text/colorstrobe', 0, 1, 7, 0.5),
-            SendOSC(rpicourport, '/pyta/slide/strobe', 'White', 1, 4, 0.5),
-            SendOSC(rpicourport, '/pyta/slide/visible', 'White', 1),
+            SendOSC(rpicourport, '/pyta/scene_recall', 'dafist_couplet'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'dafist_couplet'),
 
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'sw_refrain_red_flashes'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'sw_refrain_white_flash'),
 
+            SendOSC(lightseqport, '/Lightseq/Bpm', 178.5),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
 
             SendOscState([
@@ -209,6 +230,12 @@ sw = [
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(178.5)),
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(178.5)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(178.5)),
+
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'sw_intro'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_intro_anim'),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 178.5),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
             SendOscState([
 
@@ -255,6 +282,16 @@ sw = [
             SendOSC(rpijardinport, '/pyta/slide/strobe', 'Water_1', 1, 6, 0.5),
             SendOSC(rpijardinport, '/pyta/slide/visible', 'Water_1', 1),
 
+
+            SendOSC(rpicourport, '/pyta/scene_recall', 'dafist_couplet'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'dafist_couplet'),
+
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'sw_couplet1'),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 178.5),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
+
             SendOscState([
 
                 [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
@@ -280,7 +317,6 @@ sw = [
         ],
 
     jeannot >> ProgramFilter(3) >> [ # stop Three get the shit going- Bouton 3
-#        Program(65) >> cseqtrigger,
         stop,
         [
 
@@ -350,14 +386,6 @@ sw = [
         vxjeannotvocode_on,
     ] >> Discard(),
 
-    jeannot >> ProgramFilter(8) >> [ # video: one/two - Bouton 8
-        SendOSC(lightseqport, '/Lightseq/Bpm', 22.3125),
-        SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'sw_onetwo_jardin', 1),
-        SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'sw_onetwo_jardin'),
-        SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'sw_onetwo_cour', 1),
-        SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'sw_onetwo_cour'),
-        SendOSC(lightseqport, '/Lightseq/Play', timestamp),
-    ],
 
     orl >> ProgramFilter(11) >> [ # SlowMotium
         SceneSwitch(8) >> Discard(),
