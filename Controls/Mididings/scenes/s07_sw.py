@@ -232,7 +232,6 @@ sw = [
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(178.5)),
 
             SendOSC(lightseqport, '/Lightseq/Scene/Play', 'sw_intro'),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_intro_anim'),
 
             SendOSC(lightseqport, '/Lightseq/Bpm', 178.5),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),

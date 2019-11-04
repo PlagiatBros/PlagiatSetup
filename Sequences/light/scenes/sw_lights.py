@@ -21,7 +21,8 @@ def sw_couplet_auto_lights(seq, timer):
     seq.send(qlcport, '/*/*/Segment/*', 0)
 
 def sw_couplet1(seq, timer):
-    eased_fade(seq, timer, ['/Tutti/Blue/Segment/{1,6,7,8}', '/TuttiProche/White/Segment/2'], 0, 150, 1, 0.01)
+    seq.scene_run_subscene(eased_fade, [seq, timer, '/Tutti/Blue/Segment/{1,6,7,8}', 0, 150, 1, 0.01])
+    seq.scene_run_subscene(eased_fade, [seq, timer, '/TuttiProche/White/Segment/2', 0, 150, 1, 0.01])
 
 def sw_moroness(seq, timer):
     seq.send(':/Lightseq/Sequence/Enable', 'sw_moroness_segments')

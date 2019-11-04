@@ -668,11 +668,11 @@ horrorcore = [
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
 
-            vxorlmeuf_off,
+            vxorlmeuf_on,
             vxorlgars_on,
             vxorldisint_off,
-            vxorldelay_off,
-            vxorlvocode_off,
+            vxorldelay_on,
+            vxorlvocode_on,
 
             vxjeannotgars_on,
             vxjeannotmeuf_off,
@@ -720,11 +720,11 @@ horrorcore = [
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
 
-            vxorlmeuf_off,
+            vxorlmeuf_on,
             vxorlgars_on,
             vxorldisint_off,
-            vxorldelay_off,
-            vxorlvocode_off,
+            vxorldelay_on,
+            vxorlvocode_on,
 
             vxjeannotgars_on,
             vxjeannotmeuf_off,
