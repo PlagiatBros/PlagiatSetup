@@ -25,18 +25,18 @@ hook(
 cmeevents = ~Filter(CTRL)
 
 
-zynbass1 = Output('CMEOutBass', 1)
-zynbass2 = Output('CMEOutBass', 2)
-zynbass3 = Output('CMEOutBass', 3)
-zynbass4 = Output('CMEOutBass', 4)
-zynbass5 = [
+zynbass1 = Transpose(-12) >> Output('CMEOutBass', 1)
+zynbass2 = Transpose(-12) >> Output('CMEOutBass', 2)
+zynbass3 = Transpose(-12) >> Output('CMEOutBass', 3)
+zynbass4 = Transpose(-12) >> Output('CMEOutBass', 4)
+zynbass5 = Transpose(-12) >> [
     Output('CMEOutBass', 5),
     Output('CMEOutBass', 1),
     ]
-zynbass6 = Output('CMEOutBass', 6)
-zynbass7 = Output('CMEOutBass', 7)
+zynbass6 = Transpose(-12) >> Output('CMEOutBass', 6)
+zynbass7 = Transpose(-12) >> Output('CMEOutBass', 7)
 
-zyntreble1 = [
+zyntreble1 = Transpose(-12) >> [
     [
         ~Filter(CTRL),
         CtrlFilter(1),
@@ -45,7 +45,7 @@ zyntreble1 = [
 
 ]
 
-zyntreble2 = [
+zyntreble2 = Transpose(-12) >> [
     [
         ~Filter(CTRL),
         CtrlFilter(1),
@@ -53,7 +53,7 @@ zyntreble2 = [
         ] >> Output('CMEOutTreble', 2)
 ]
 
-zyntreble3 = [
+zyntreble3 = Transpose(-12) >> [
     [
         ~Filter(CTRL),
         CtrlFilter(1),
@@ -61,7 +61,7 @@ zyntreble3 = [
         ] >> Output('CMEOutTreble', 3)
 ]
 
-zyntrebleGMandela = ~Filter(CTRL) >> [
+zyntrebleGMandela = Transpose(-12) >> ~Filter(CTRL) >> [
     KeyFilter(notes=['g2','g#2','a#2','g3','g#3','a#3','g3','g#3','a#3','g4','g#4','a#4']),
     ~KeyFilter(notes=['g2','g#2','a#2','g3','g#3','a#3','g3','g#3','a#3','g4','g#4','a#4']) >> [
         KeyFilter('c2','b2') >> Key('g2'),
@@ -71,10 +71,10 @@ zyntrebleGMandela = ~Filter(CTRL) >> [
     ],
 ] >> Output('CMEOutTreble', 1)
 
-zynrhodes1 = Output('CMEOutRhodes', 1)
+zynrhodes1 = Transpose(-12) >> Output('CMEOutRhodes', 1)
 
-tapeutape1 = ~Filter(CTRL) >> Output('CMEOutTapeutape', 1)
-tapeutape16 = ~Filter(CTRL) >> Output('CMEOutTapeutape', 16)
+tapeutape1 = Transpose(-12) >> ~Filter(CTRL) >> Output('CMEOutTapeutape', 1)
+tapeutape16 = Transpose(-12) >> ~Filter(CTRL) >> Output('CMEOutTapeutape', 16)
 
 gatecancel = [
     SendOSC(vxorlpreport, '/strip/VxORLGars/Gate/Threshold%20(dB)/unscaled', lambda ev: -ev.value/127. * 54.0 - 48),
