@@ -107,5 +107,5 @@ sw_refrain_white_flash = [
     (None, whiteflashon), whiteflashoff, (whiteflashon, whiteflashoff), (None, whiteflashon),
     (whiteflashoff, whiteflashon), whiteflashoff, (None, whiteflashon), whiteflashoff,
     (None, whiteflashon), whiteflashoff, (whiteflashon, whiteflashoff), None,
-    [':/Lightseq/Scene/Play', 'sw_refrain_strobe'], None, None, [[':/Lightseq/Scene/Stop', 'sw_refrain_strobe'], whiteflashoff]
+    [':/Lightseq/Scene/Play', 'sw_refrain_strobe'], None, None, [[':/Lightseq/Scene/Stop', 'sw_refrain_strobe']] + whiteflashoff
     ]
