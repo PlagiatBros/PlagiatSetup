@@ -453,7 +453,7 @@
                     if (v < 1) {
                         value = v*24/0.75+(-24/0.75)
                     } else if (v > 1) {
-                        value = v*24-24
+                        value = v*12-12
                     } else {
                         value = 0
                     }
