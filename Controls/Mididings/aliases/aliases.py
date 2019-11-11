@@ -323,7 +323,7 @@ disable_microtonal = [
 
 for port in vocodports:
 	for i in range(12):
-		disable_microtonal.append(SendOSC(port, '/x42/parameter', i + 24, 0.0))
+		disable_microtonal.append(SendOSC(port, '/x42/parameter', i + 26, 0.0))
 
 
 def set_microtonal(*tunings):
@@ -345,7 +345,7 @@ def set_microtonal(*tunings):
 			transpo = transpo[:]
 
 		for i in transpo:
-			commands.append(SendOSC(port, '/x42/parameter', i + 24, float(tunings[i])))
+			commands.append(SendOSC(port, '/x42/parameter', i + 26, float(tunings[i])))
 
 
 	return commands
