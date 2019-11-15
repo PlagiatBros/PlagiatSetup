@@ -96,6 +96,8 @@ climat = [
 
             SendOSC(cmeinport, '/mididings/switch_scene', 13),
 
+            bassdry,
+
         ] >> Discard()
 
     ],
