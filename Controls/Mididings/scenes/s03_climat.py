@@ -445,7 +445,7 @@ climat = [
             bassbufferst_off,
             ]
         ],
-    orl >> ProgramFilter(5) >> [ # Mandela-A-A-A-A  - Bouton 4
+    orl >> ProgramFilter(5) >> [ # There will be 21  - Bouton 5
         Program(73) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -485,11 +485,11 @@ climat = [
 
             SendOSC(cmeinport, '/mididings/switch_scene', 7),
 
-            vxorlgars_on,
+            vxorlgars_off,
             vxorlmeuf_off,
             vxorldisint_off,
             vxorldelay_off,
-            vxorlvocode_off,
+            vxorlvocode_on,
 
             vxjeannotdelay_off,
             vxjeannotgars_on,
@@ -497,7 +497,6 @@ climat = [
             vxjeannotdisint_off,
 
             bassdry,
-            bassscape,
 
 
             ] >> Discard(),
