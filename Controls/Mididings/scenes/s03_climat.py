@@ -435,7 +435,6 @@ climat = [
             vxjeannotdisint_on,
 
             bassdry,
-            bassscape,
 
 
             ] >> Discard(),
