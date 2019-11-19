@@ -2,7 +2,7 @@
 <!--
 ladish Studio configuration.
 -->
-<!-- Sun Oct 20 02:59:30 2019 -->
+<!-- Tue Oct 22 23:37:44 2019 -->
 <studio>
   <jack>
     <conf>
@@ -968,12 +968,6 @@ ladish Studio configuration.
       <client name="gxtuner" uuid="0df37eb2-a1d1-411a-bb9a-043a9a9db67d">
         <ports>
           <port name="in_0" uuid="c6736434-dc2e-4f55-a545-f6a128f29eb0" />
-        </ports>
-      </client>
-      <client name="MIDIMON" uuid="e9a73506-b169-4757-be76-4fe0256dbd3d">
-        <ports>
-          <port name="Print" uuid="a44c8620-8476-441d-9be3-2a3c61ab85b3" />
-          <port name="out_1" uuid="840cfa68-01e7-4db2-bb81-0593b1ec835d" />
         </ports>
       </client>
     </clients>
@@ -2687,16 +2681,6 @@ ladish Studio configuration.
         <key name="http://ladish.org/ns/canvas/y">1062.000000</key>
       </dict>
     </client>
-    <client name="MIDIMON" uuid="619f4903-7e06-4608-843a-79b550bf6a8f" naming="app">
-      <ports>
-        <port name="Print" uuid="a44c8620-8476-441d-9be3-2a3c61ab85b3" type="midi" direction="input" />
-        <port name="out_1" uuid="840cfa68-01e7-4db2-bb81-0593b1ec835d" type="midi" direction="output" />
-      </ports>
-      <dict>
-        <key name="http://ladish.org/ns/canvas/x">1684.992542</key>
-        <key name="http://ladish.org/ns/canvas/y">1286.000000</key>
-      </dict>
-    </client>
   </clients>
   <connections>
     <connection port1="ea3e523a-31e7-4cae-a880-06669e5e4573" port2="68385513-22df-4c24-be28-696805729c28" />
@@ -3246,7 +3230,6 @@ ladish Studio configuration.
     <connection port1="992b029c-e10f-40f1-8e42-c460664cc269" port2="a7e69124-82f5-4c98-ada0-5f1785490923" />
     <connection port1="295afd09-266d-4e64-9f0a-1ee467d03bf8" port2="e82ef645-7bd9-4495-98a2-40cddef03d6a" />
     <connection port1="86e2400a-65ca-4f19-9e50-589ea6e82e94" port2="78275286-beac-42af-ad16-c9de58e93ee5" />
-    <connection port1="64f377fb-7a95-4138-96c2-7b07e5e4406e" port2="a44c8620-8476-441d-9be3-2a3c61ab85b3" />
   </connections>
   <applications>
     <application name="a2j" uuid="65bce9a0-8285-4cb3-9630-321ba19b43a4" terminal="false" level="0" autorun="true">a2j -e</application>
@@ -3310,6 +3293,6 @@ ladish Studio configuration.
     <application name="cmeAdapter" uuid="e25b6fc4-80ec-4f33-918a-92de2585da92" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_cA.sh</application>
     <application name="gxtuner" uuid="8fbf23a3-d9ce-4eec-9205-ffc1ca4d02f4" terminal="false" level="0" autorun="true">gxtuner -w 200</application>
     <application name="PytaJardin" uuid="00ab7a74-6ecf-4d7a-8c74-d45b316040e8" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_PytaJardin.sh</application>
-    <application name="PytaCour" uuid="de178f8a-ba64-41bc-a3d9-b6cb7d56abdd" terminal="false" level="0" autorun="false">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_PytaCour.sh</application>
+    <application name="PytaCour" uuid="de178f8a-ba64-41bc-a3d9-b6cb7d56abdd" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_PytaCour.sh</application>
   </applications>
 </studio>
