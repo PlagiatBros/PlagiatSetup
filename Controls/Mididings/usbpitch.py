@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 # Released by rdb under the Unlicense (unlicense.org)
 # Based on information from:
 # https://www.kernel.org/doc/Documentation/input/joystick-api.txt
@@ -160,10 +162,16 @@ print('%d buttons found: %s' % (num_buttons, ', '.join(button_map)))
 
 
 from time import sleep
+from threading import Thread
 
 import mididings
-from mididings.engine import output_event
-from mididings.event import PitchbendEvent
+from mididings.engine import output_event, active
+from mididings.event import PitchbendEvent, NoteOnEvent, CtrlEvent
+from mididings.extra.osc import SendOSC
+
+from liblo import send
+from ports import *
+
 
 mididings.config(
     backend = 'jack',
@@ -171,18 +179,64 @@ mididings.config(
     out_ports = ['out']
 )
 
-while True:
-    evbuf = jsdev.read(8)
-    if evbuf:
-        time, value, type, number = struct.unpack('IhBB', evbuf)
 
-        if type & 0x02:
-            axis = axis_map[number]
-            if axis:
-                fvalue = value / 32767.0
-                axis_states[axis] = fvalue
-                # print("%s: %.3f" % (axis, fvalue))
-                if axis == 'x':
-                    # print(fvalue * 8192)
-                    output_event(PitchbendEvent('out', 1, fvalue * 8192))
-    sleep(0.001)
+
+def usb_loop():
+    while not active():
+        sleep(0.001)
+
+    while active():
+
+        evbuf = jsdev.read(8)
+        if evbuf:
+            time, value, type, number = struct.unpack('IhBB', evbuf)
+
+            if type & 0x01:
+                button = button_map[number]
+                print(button)
+                if button == 'a': # X
+                    send(cmeinport, '/mididings/switch_scene', 8)
+                elif button == 'b': # O
+                    send(cmeinport, '/mididings/switch_scene', 9)
+                elif button == 'y': # CARRÉ
+                    send(cmeinport, '/mididings/switch_scene', 10)
+                elif button == 'x': # TRIANGLE
+                    send(cmeinport, '/mididings/switch_scene', 12)
+                elif button == 'dpad_up':
+                    send(cmeinport, '/mididings/switch_scene', 6)
+                elif button == 'dpad_down':
+                    pass
+                elif button == 'dpad_left':
+                    send(cmeinport, '/mididings/switch_scene', 5)
+                elif button == 'dpad_right':
+                    send(cmeinport, '/mididings/switch_scene', 7)
+
+                # if button:
+                #     button_states[button] = value
+                #     if value:
+                #         print("%s pressed" % (button))
+                #     else:
+                #         print("%s released" % (button))
+
+            elif type & 0x02:
+                axis = axis_map[number]
+                if axis:
+                    fvalue = value / 32767.0
+                    axis_states[axis] = fvalue
+                    print("%s: %.3f" % (axis, fvalue))
+                    if axis == 'x':
+                        output_event(PitchbendEvent('out', 1, int(fvalue * 8192)))
+                    if axis == 'rx':
+                        output_event(CtrlEvent('out', 1, 1, int(100 * abs(fvalue))))
+
+t = Thread(target=usb_loop, args=[])
+t.start()
+
+import signal, sys
+def handler(signum, frame):
+    sys.exit(1)
+
+signal.signal(signal.SIGINT, handler)
+signal.signal(signal.SIGTERM, handler)
+
+mididings.run(mididings.Call(lambda ev: ev))
