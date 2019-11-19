@@ -3294,5 +3294,7 @@ ladish Studio configuration.
     <application name="gxtuner" uuid="8fbf23a3-d9ce-4eec-9205-ffc1ca4d02f4" terminal="false" level="0" autorun="true">gxtuner -w 200</application>
     <application name="PytaJardin" uuid="00ab7a74-6ecf-4d7a-8c74-d45b316040e8" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_PytaJardin.sh</application>
     <application name="PytaCour" uuid="de178f8a-ba64-41bc-a3d9-b6cb7d56abdd" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_PytaCour.sh</application>
+    <application name="Joystick Control" uuid="a4586d6a-db9d-4859-81a0-ec451b7c95dd" terminal="false" level="0" autorun="false">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_jC.sh</application>
+    <application name="x42 PitchShifter" uuid="38f7f911-0bb1-4c4b-b1e6-071c6f17dd5f" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_xP.sh</application>
   </applications>
 </studio>
