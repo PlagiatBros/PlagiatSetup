@@ -59,25 +59,33 @@ def pitchwheel_cb(ev):
 	return 1.0 - (abs(ev.value) / (8192.0)) * 0.75
 
 
-def pitchwheel_cb_vx(offset):
+def pitchwheel_cb_vx(offset,p=0):
 	def fn(ev):
-		ratio = abs(ev.value) / 8192.0
-		xoffset = offset + 0 -  24. * ratio
-		print(xoffset)
+		ratio = ev.value / 8192.0
+		xoffset = offset + 0 -  (24.+offset) * ratio
 		return xoffset
 	return fn
 
-last_pitch = 0
-def dedupe(ev):
-	global last_pitch
-	if ev.value != last_pitch:
-		last_pitch = ev.value
-		return ev
+lastpitch = 0
+def mk2range(ev):
+	global lastpitch
+	if abs(ev.value) < 1536:
+		ev.value = 0
 	else:
+		if ev.value < 0:
+			ev.value = int(float(abs(ev.value) - 1536) / (8192-1536) * 8192)
+		else:
+			ev.value = -int(float(abs(ev.value) - 1536) / (8192-1536) * 4096)
+
+
+	if lastpitch == ev.value:
 		return None
+	else:
+		lastpitch = ev.value
+		return ev
 
 
-pitch = Filter(PITCHBEND) >> Process(dedupe) >> [
+pitch = Filter(PITCHBEND) >> Process(mk2range) >> [
 
     SendOSC(samplesmainport, '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled', pitchwheel_cb),
     SendOSC(samplesmainport, '/strip/Keyboards/AM%20pitchshifter/Pitch%20shift/unscaled',   pitchwheel_cb),
@@ -85,7 +93,7 @@ pitch = Filter(PITCHBEND) >> Process(dedupe) >> [
 
     SendOSC(vocoderjeannotport, '/x42/parameter', 6, pitchwheel_cb_vx(0)),
     SendOSC(vocoderorlport, '/x42/parameter', 6, pitchwheel_cb_vx(0)),
-    SendOSC(vocoderjeannotportgars, '/x42/parameter', 6, pitchwheel_cb_vx(-4)),
+    SendOSC(vocoderjeannotportgars, '/x42/parameter', 6, pitchwheel_cb_vx(-4,1)),
     SendOSC(vocoderorlportgars, '/x42/parameter', 6, pitchwheel_cb_vx(-4)),
     SendOSC(vocoderjeannotportmeuf, '/x42/parameter', 6, pitchwheel_cb_vx(4)),
     SendOSC(vocoderorlportmeuf, '/x42/parameter', 6, pitchwheel_cb_vx(4)),
