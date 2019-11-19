@@ -23,7 +23,7 @@ horrorcore_mk2lights = {
 horrorcore = [
     Init([
         Program(seq24PageMap[9]) >> seq24once,
-        Ctrl(0, 9) >> tapeutapecontrol,
+        Ctrl(0, 8) >> tapeutapecontrol,
 
         enable_microtonal,
         set_microtonal(0, 0, 0, 0, 0, 0.35, 0, 0, -0.35, 0, 0.35, 0),

@@ -493,6 +493,12 @@
         <instrument name="Gtr1" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.500000" pan="-0.500000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/GetUrFreakOn/GTR_1.wav" sampleRelative="GetUrFreakOn/GTR_1.wav"/>
         </instrument>
+        <instrument name="Kick" minnote="53" maxnote="53" rootnote="64" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/GetUrFreakOn/808_Kick_Short.flac" sampleRelative="DrumKlit/808_Kick_Short.flac"/>
+        </instrument>
+        <instrument name="Kick" minnote="54" maxnote="54" rootnote="64" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/GetUrFreakOn/808_Kick_Long.flac" sampleRelative="DrumKlit/808_Kick_Long.flac"/>
+        </instrument>
         <instrument name="Klap" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Klap.wav" sampleRelative="DrumKlit/Klap.wav"/>
         </instrument>
@@ -507,23 +513,6 @@
         </instrument>
         <instrument name="LaughtersJeannot" minnote="67" maxnote="67" rootnote="67" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav" sampleRelative="ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav"/>
-        </instrument>
-        <instrument name="Foule1" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="16" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Crowd/applause_begin.wav" sampleRelative="Crowd/applause_begin.wav"/>
-        </instrument>
-        <instrument name="Foule2" minnote="61" maxnote="61" rootnote="61" rootnotefine="0.000000" channel="16" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Crowd/applause_background.wav" sampleRelative="Crowd/applause_background.wav"/>
-        </instrument>
-        <instrument name="Foule3" minnote="62" maxnote="62" rootnote="62" rootnotefine="0.000000" channel="16" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Crowd/applause_cheers.wav" sampleRelative="Crowd/applause_cheers.wav"/>
-        </instrument>
-        <instrument name="Foule4" minnote="63" maxnote="63" rootnote="63" rootnotefine="0.000000" channel="16" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Crowd/applause_encore.aiff" sampleRelative="Crowd/applause_encore.aiff"/>
-        </instrument>
-      </kit>
-      <kit name="SlowMotium" volume="1.000000">
-        <instrument name="new instrument" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="" sampleRelative=""/>
         </instrument>
         <instrument name="Foule1" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="16" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Crowd/applause_begin.wav" sampleRelative="Crowd/applause_begin.wav"/>

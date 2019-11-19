@@ -12,7 +12,7 @@ from mididings.extra.osc import SendOSC
 trapone = [
     Init([
         Program(seq24PageMap[6]) >> seq24once,
-        Ctrl(0, 10) >> tapeutapecontrol,
+        Ctrl(0, 9) >> tapeutapecontrol,
 
         disable_microtonal,
         # zynmicrotonal_off,

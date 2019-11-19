@@ -8,6 +8,17 @@ from mididings.extra.osc import SendOSC
 
 #######################################
 
+slowmotium_mk2lights = {
+    1:'blue',
+    3: 'white',
+    4: 'white',
+    5: 'white',
+    6:'yellow',
+    7:'yellow',
+    8:'yellow',
+}
+
+
 #### Get Ur Freak On ####
 geturfreakon = [
     Init([
@@ -19,9 +30,9 @@ geturfreakon = [
         # zynmicrotonal_off,
 
         SendOSC(mk2inport, '/mididings/switch_scene', 6),
-        mk2lights([1]),
+        mk2lights(slowmotium_mk2lights),
     ]),
-    jeannot_padrelease >> mk2lights([1]),
+    jeannot_padrelease >> mk2lights(slowmotium_mk2lights),
     [orl, jeannot] >> ProgramFilter([range(1,12)]) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*')
     ] >> Discard(),
@@ -44,35 +55,6 @@ geturfreakon = [
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(75)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(75)),
 
-
-            # SendOSC(rpijardinport, '/pyta/slide/rgb', 'TearEye_1', -10, 0, 0 ),
-            # SendOSC(rpijardinport, '/pyta/slide/animate', 'TearEye_1', 'alpha', 0, 1, 180 ),
-            # SendOSC(rpijardinport, '/pyta/slide/visible', 'TearEye_1', 1),
-            # SendOSC(rpicourport, '/pyta/slide/rgb', 'TearEye_1', 0, -10, 0 ),
-            # SendOSC(rpicourport, '/pyta/slide/animate', 'TearEye_1', 'alpha', 0, 1, 180 ),
-            # SendOSC(rpicourport, '/pyta/slide/visible', 'TearEye_1', 1),
-            #
-            #
-            # SendOSC(rpijardinport, '/pyta/text/align', 2, 'left', 'top'),
-            # SendOSC(rpijardinport, '/pyta/text', 2, '[plaʒia]'),
-            # SendOSC(rpijardinport, '/pyta/text/animate', 2, 'zoom', 0.8, 0.5, 4),
-            # SendOSC(rpijardinport, '/pyta/text', 1, 'for sensitive people'),
-            # SendOSC(rpijardinport, '/pyta/text/position_y', 1, 100),
-            # SendOSC(rpijardinport, '/pyta/text', 0, 'sensitive@plagiat.org'),
-            # SendOSC(rpijardinport, '/pyta/text/visible', -1, 1),
-            # SendOSC(rpijardinport, '/pyta/text/rgb/strobe', 0, 1),
-            # SendOSC(rpicourport, '/pyta/text', 2, '[plaʒia]'),
-            # SendOSC(rpicourport, '/pyta/text/align', 2, 'left', 'top'),
-            # SendOSC(rpicourport, '/pyta/text/animate', 2, 'zoom', 0.8, 0.5, 4),
-            # SendOSC(rpicourport, '/pyta/text', 1, 'for sensitive people'),
-            # SendOSC(rpicourport, '/pyta/text/position_y', 1, 100),
-            # SendOSC(rpicourport, '/pyta/text', 0, 'sensitive@plagiat.org'),
-            # SendOSC(rpicourport, '/pyta/text/visible', -1, 1),
-            # SendOSC(rpicourport, '/pyta/text/rgb/strobe', 1, 1),
-            #
-            # SendOSC(lightseqport, '/Lightseq/Bpm', 20),
-            # SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'sm_blinkinterns'),
-            # SendOSC(lightseqport, '/Lightseq/Play'),
 
             SendOSC(rpicourport, '/pyta/scene_recall', 'dafist_couplet'),
             SendOSC(rpijardinport, '/pyta/scene_recall', 'dafist_couplet'),
@@ -115,56 +97,39 @@ geturfreakon = [
             bassbufferst_on,
             ]
         ],
-    orl >> ProgramFilter(3) >> [ # Refrain - Bouton 3
-        stop,
-        Program(66) >> cseqtrigger,
-        [
-            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
-            SendOSC(slport, '/set', 'tempo', 225),
-
-            SendOSC(klickport, '/klick/simple/set_tempo', 225),
-            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
-            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
-            SendOSC(klickport, '/klick/metro/start'),
-
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(225)),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(225)),
-            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(225)),
-            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(225)),
-
-            SendOscState([
-
-                [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
-
-            ]),
-
-
-            vxorlgars_off,
-            vxorlmeuf_on,
-            vxorldisint_off,
-            vxorldelay_off,
-            vxorlvocode_off,
-
-            vxjeannotdelay_off,
-            vxjeannotgars_off,
-            vxjeannotmeuf_on,
-            vxjeannotdisint_off,
-            vxjeannotvocode_off,
-
-            bassdry,
-            #bassscape,
-
-            ] >> Discard(),
-        [
-            bassdetunest_on,
-            bassringst_on,
-            bassvibest_off,
-            bassbufferst_off,
-            ]
-        ],
     orl >> ProgramFilter(11) >> [ # SceneSwitch -> HorroCore
         SceneSwitch(9) >> Discard(),
         Program(2) >> Output('PBCtrlOut', 1)
         ],
 
-    ]
+    jeannot >> ProgramFilter(3) >> [ # Clap
+        NoteOn(64, 127) >> Output('PBTapeutape', 3)
+    ],
+    jeannot >> ProgramFilter(4) >> [ # Kick
+        NoteOn(54, 127) >> Output('PBTapeutape', 3)
+    ],
+    jeannot >> ProgramFilter(5) >> [ # Kick
+        NoteOn(53, 127) >> Output('PBTapeutape', 3)
+    ],
+    jeannot >> ProgramFilter(6) >> [ # Vx jeannot
+        vxjeannotdelay_off,
+        vxjeannotgars_on,
+        vxjeannotmeuf_off,
+        vxjeannotdisint_off,
+        vxjeannotvocode_off,
+    ] >> Discard(),
+    jeannot >> ProgramFilter(7) >> [ # Vx jeannot
+        vxjeannotgars_off,
+        vxjeannotmeuf_on,
+        vxjeannotdisint_off,
+        vxjeannotdelay_off,
+        vxjeannotvocode_off,
+    ] >> Discard(),
+    jeannot >> ProgramFilter(8) >> [ # Vx jeannot
+        vxjeannotgars_off,
+        vxjeannotmeuf_off,
+        vxjeannotdisint_off,
+        vxjeannotdelay_off,
+        vxjeannotvocode_on,
+    ] >> Discard(),
+]

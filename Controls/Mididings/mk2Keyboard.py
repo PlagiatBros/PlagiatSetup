@@ -56,7 +56,7 @@ looperctl = CtrlFilter(range(109,117)) >> CtrlValueFilter(127) >> [
 ]
 
 def pitchwheel_cb(ev):
-	return 1.0 - (abs(ev.value) / (8192.0)) * 0.75
+	return 1.0 - (ev.value / (8192.0)) * 0.75
 
 
 def pitchwheel_cb_vx(offset,p=0):
