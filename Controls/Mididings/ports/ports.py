@@ -47,6 +47,11 @@ vocoderorlportgars = 7061
 vocoderorlportmeuf = 7062
 
 
+## Vx pitchshiter
+vxpitchshifterport  = 7040
+
+
+
 ## OSC Sequencers
 
 trapcutport = 8001

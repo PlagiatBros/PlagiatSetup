@@ -75,23 +75,15 @@
         ['samples', '/strip/Keyboards/AM%20pitchshifter/Pitch%20shift/unscaled'],
         ['samples', '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled'],
         ['basssynth','/strip/BassSynth/AM%20pitchshifter/Pitch%20shift/unscaled'],
+        ['vx','/x42/pitch'],
     ]
     pitch_ports = {
         'samples':7008,
-        'basssynth':7020
+        'basssynth':7020,
+        'vx':7040,
+
     }
 
-    vxpitch_ports = {
-        'meuf': [7052, 7062],
-        'gars': [7051, 7061],
-        'normal': [7050, 7060],
-    }
-
-    vxpitch_offset = {
-        'meuf': +4,
-        'gars': -4,
-        'normal': 0,
-    }
 
     mididings_host = '127.0.0.1'
     mididings_port = 57422
@@ -443,31 +435,6 @@
                         host: non_host,
                         port: pitch_ports[portname]
                     })
-                }
-
-                for (type in vxpitch_ports) {
-                    var ports = vxpitch_ports[type],
-                        offset = vxpitch_offset[type]
-
-                    var value
-                    if (v < 1) {
-                        value = v*24/0.75+(-24/0.75)
-                    } else if (v > 1) {
-                        value = v*12-12
-                    } else {
-                        value = 0
-                    }
-                    for (port of ports) {
-                        sendOsc({
-                            address: '/x42/parameter',
-                            args: [{type:'i', value:6}, {
-                                type: 'f',
-                                value: value + offset
-                            }],
-                            host: non_host,
-                            port: port
-                        })
-                    }
                 }
 
                 return
