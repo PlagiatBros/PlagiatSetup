@@ -3277,18 +3277,18 @@ ladish Studio configuration.
     <application name="wobbleCtrl" uuid="d05dd957-12ce-4814-9733-d2df4fb92692" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_wC.sh</application>
     <application name="QLC+" uuid="6247c29f-437a-492f-bab0-2c6474f19ebb" terminal="false" level="0" autorun="true">qlcplus -p -n -o %2Fhome%2Fwoii%2FPlagiat%2FStage%2FLights%2Fplagiat.qxw</application>
     <application name="QLC Manager" uuid="56d9deaf-5745-47f4-b4a7-e47a25e5a3f0" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_qLC.sh</application>
-    <application name="OSC Control Surface" uuid="31ca0d05-49db-4b09-9d83-e925b9262e99" terminal="false" level="0" autorun="true">open-stage-control -l %2Fhome%2Fwoii%2FPlagiat%2FStage%2FInterfaces%2Forl.json -c %2Fhome%2Fwoii%2FPlagiat%2FStage%2FInterfaces%2Forl-custom-module.js -p 11000</application>
+    <application name="OSC Control Surface" uuid="31ca0d05-49db-4b09-9d83-e925b9262e99" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_gUI.sh</application>
     <application name="OSC Control to MIDI" uuid="59351a7d-de17-4db2-80b0-9b56dbbf4ce6" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_gUItoMidi.sh</application>
-    <application name="x42JeannotGars" uuid="da2b6ef4-2338-4619-b42b-208040e00c96" terminal="false" level="0" autorun="true">x42-fat1 --osc 7051 -p 3:0 -p 4:0.02 -p 5:1 -p 6:-4</application>
-    <application name="x42JeannotMeuf" uuid="b9211739-13c0-4b17-b8d4-25afcefd893c" terminal="false" level="0" autorun="true">x42-fat1 --osc 7052 -p 3:0 -p 4:0.02 -p 5:1 -p 6:4</application>
-    <application name="x42ORLGars" uuid="98015882-2ec7-4ad6-b0f9-2c37fcafdec9" terminal="false" level="0" autorun="true">x42-fat1 --osc 7061 -p 3:0 -p 4:0.02 -p 5:1 -p 6:-4</application>
-    <application name="x42ORLMeuf" uuid="6d4c94a7-d2cf-45c4-ab4d-bfedbeb5d24d" terminal="false" level="0" autorun="true">x42-fat1 --osc 7062 -p 3:0 -p 4:0.02 -p 5:1 -p 6:4</application>
+    <application name="x42JeannotGars" uuid="da2b6ef4-2338-4619-b42b-208040e00c96" terminal="false" level="0" autorun="true">x42-fat1 --osc 7051 -p 3:0 -p 4:0.02 -p 5:1 -p 6:-4 -p 8:1</application>
+    <application name="x42JeannotMeuf" uuid="b9211739-13c0-4b17-b8d4-25afcefd893c" terminal="false" level="0" autorun="true">x42-fat1 --osc 7052 -p 3:0 -p 4:0.02 -p 5:1 -p 6:4 -p 8:1</application>
+    <application name="x42ORLGars" uuid="98015882-2ec7-4ad6-b0f9-2c37fcafdec9" terminal="false" level="0" autorun="true">x42-fat1 --osc 7061 -p 3:0 -p 4:0.02 -p 5:1 -p 6:-4 -p 8:1</application>
+    <application name="x42ORLMeuf" uuid="6d4c94a7-d2cf-45c4-ab4d-bfedbeb5d24d" terminal="false" level="0" autorun="true">x42-fat1 --osc 7062 -p 3:0 -p 4:0.02 -p 5:1 -p 6:4 -p 8:1</application>
     <application name="vocodeTranspose" uuid="2e467cbb-6b92-4bb2-a323-065de5ef5d2a" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_vT.sh</application>
     <application name="ZitaPublic1" uuid="4d41ef22-00d8-433a-9f56-145b88d6be77" terminal="false" level="0" autorun="true">zita-at1 -f 0.02 -c 1</application>
     <application name="ZitaPublic 2" uuid="69add5f4-131a-4cd7-9df4-4d78d7ead744" terminal="false" level="0" autorun="true">zita-at1 -f 0.02 -c 1</application>
     <application name="VxPublic" uuid="db4efae3-af1d-4c48-95fd-2f2b977b4c78" terminal="false" level="0" autorun="true">%2Fusr%2Flocal%2Fbin%2Fnon-mixer --osc-port 17001 %2Fhome%2Fwoii%2FPlagiat%2FStage%2FSounds%2FNonMixer%2FVxPublic</application>
-    <application name="x42Jeannot" uuid="224bfd43-443d-4075-8acd-2496a0b15703" terminal="false" level="0" autorun="true">x42-fat1 --osc 7050 -p 3:0 -p 4:0.02 -p 5:1</application>
-    <application name="x42ORL" uuid="8fd817fb-ca84-4360-ac93-75105bcbe8fe" terminal="false" level="0" autorun="true">x42-fat1 --osc 7060 -p 3:0 -p 4:0.02 -p 5:1</application>
+    <application name="x42Jeannot" uuid="224bfd43-443d-4075-8acd-2496a0b15703" terminal="false" level="0" autorun="true">x42-fat1 --osc 7050 -p 3:0 -p 4:0.02 -p 5:1 -p 8:1</application>
+    <application name="x42ORL" uuid="8fd817fb-ca84-4360-ac93-75105bcbe8fe" terminal="false" level="0" autorun="true">x42-fat1 --osc 7060 -p 3:0 -p 4:0.02 -p 5:1 -p 8:1</application>
     <application name="LightsSequencer" uuid="53b3efe4-15be-4764-8a27-49719997399a" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_lS.sh</application>
     <application name="cmeAdapter" uuid="e25b6fc4-80ec-4f33-918a-92de2585da92" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_cA.sh</application>
     <application name="gxtuner" uuid="8fbf23a3-d9ce-4eec-9205-ffc1ca4d02f4" terminal="false" level="0" autorun="true">gxtuner -w 200</application>
