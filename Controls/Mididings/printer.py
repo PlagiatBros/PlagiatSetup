@@ -18,4 +18,8 @@ def printer(ev):
     if str(ev.type) == 'NOTEON' or str(ev.type) == 'NOTEOFF':
         print ' note: %s\n velocity: %s' % (ev.note, ev.velocity)
 
+    if str(ev.type) == 'PITCHBEND' :
+        print ' pitch: %s\n' % (ev.value)
+
+
 run(Process(printer))
