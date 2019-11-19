@@ -58,14 +58,6 @@ looperctl = CtrlFilter(range(109,117)) >> CtrlValueFilter(127) >> [
 def pitchwheel_cb(ev):
 	return 1.0 - (ev.value / (8192.0)) * 0.75
 
-
-def pitchwheel_cb_vx(offset,p=0):
-	def fn(ev):
-		ratio = ev.value / 8192.0
-		xoffset = offset + 0 -  (24.+offset) * ratio
-		return xoffset
-	return fn
-
 lastpitch = 0
 def mk2range(ev):
 	global lastpitch
@@ -89,17 +81,7 @@ pitch = Filter(PITCHBEND) >> Process(mk2range) >> [
 
     SendOSC(samplesmainport, '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled', pitchwheel_cb),
     SendOSC(samplesmainport, '/strip/Keyboards/AM%20pitchshifter/Pitch%20shift/unscaled',   pitchwheel_cb),
-
-
-    SendOSC(vocoderjeannotport, '/x42/parameter', 6, pitchwheel_cb_vx(0)),
-    SendOSC(vocoderorlport, '/x42/parameter', 6, pitchwheel_cb_vx(0)),
-    SendOSC(vocoderjeannotportgars, '/x42/parameter', 6, pitchwheel_cb_vx(-4,1)),
-    SendOSC(vocoderorlportgars, '/x42/parameter', 6, pitchwheel_cb_vx(-4)),
-    SendOSC(vocoderjeannotportmeuf, '/x42/parameter', 6, pitchwheel_cb_vx(4)),
-    SendOSC(vocoderorlportmeuf, '/x42/parameter', 6, pitchwheel_cb_vx(4)),
-
-    # SendOSC(vxmainport, '/strip/VxORLMain/AM%20pitchshifter/Pitch%20shift/unscaled', 		pitchwheel_cb),
-    # SendOSC(vxmainport, '/strip/VxJeannotMain/AM%20pitchshifter/Pitch%20shift/unscaled',  	pitchwheel_cb),
+	SendOSC(vxpitchshifterport, '/x42/pitch', pitchwheel_cb),
 
     SendOSC(bassmainport, '/strip/BassMain/AM%20pitchshifter/Pitch%20shift/unscaled',  	 	pitchwheel_cb),
     SendOSC(bassmainport, '/strip/BassSynth/AM%20pitchshifter/Pitch%20shift/unscaled',  	pitchwheel_cb),

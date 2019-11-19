@@ -15,3 +15,5 @@ def climat_outro_filter(sequencer, timer):
 
     sequencer.animate([samplesmainport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled'], 20., 20000., 300, 'sec', framerate=50)
     sequencer.animate([samplesmainport, '/strip/Keyboards/Calf%20Filter/Frequency/unscaled'], 20., 20000., 300, 'sec', framerate=50)
+    sequencer.animate([surfaceorlport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled'], 20., 20000., 300, 'sec', framerate=5)
+    sequencer.animate([surfaceorlport, '/strip/Keyboards/Calf%20Filter/Frequency/unscaled'], 20., 20000., 300, 'sec', framerate=5)
