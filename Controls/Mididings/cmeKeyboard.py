@@ -73,8 +73,8 @@ zyntrebleGMandela = Transpose(-12) >> ~Filter(CTRL) >> [
 
 zynrhodes1 = Transpose(-12) >> Output('CMEOutRhodes', 1)
 
-tapeutape1 = Transpose(-12) >> ~Filter(CTRL) >> Output('CMEOutTapeutape', 1)
-tapeutape16 = Transpose(-12) >> ~Filter(CTRL) >> Output('CMEOutTapeutape', 16)
+tapeutape1 = ~Filter(CTRL) >> Output('CMEOutTapeutape', 1)
+tapeutape16 = ~Filter(CTRL) >> Output('CMEOutTapeutape', 16)
 
 gatecancel = [
     SendOSC(vxorlpreport, '/strip/VxORLGars/Gate/Threshold%20(dB)/unscaled', lambda ev: -ev.value/127. * 54.0 - 48),

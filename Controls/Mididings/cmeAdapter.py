@@ -22,22 +22,21 @@ hook(
 
 out = Output('AdapterOut', 1)
 
-
 run([
     PortFilter('AdapterIn') >> [
-	Filter(NOTEON) >> [
-		KeyFilter(44) >> Program(5),
-		KeyFilter(45) >> Program(7),
-		KeyFilter(46) >> [Ctrl(16, 127), Ctrl(18, 127)],
-		KeyFilter(47) >> [Ctrl(16, 0), Ctrl(18, 0)],
-		KeyFilter(48) >> Program(8),
-		KeyFilter(49) >> Program(9),
-		KeyFilter(50) >> Program(10),
-		KeyFilter(51) >> Program(11),
+		Filter(NOTEON) >> [
+			KeyFilter(44) >> Program(5),
+			KeyFilter(45) >> Program(7),
+			KeyFilter(46) >> [Ctrl(16, 127), Ctrl(18, 127)],
+			KeyFilter(47) >> [Ctrl(16, 0), Ctrl(18, 0)],
+			KeyFilter(48) >> Program(8),
+			KeyFilter(49) >> Program(9),
+			KeyFilter(50) >> Program(10),
+			KeyFilter(51) >> Program(11),
 
-    ],
-	Filter(PITCHBEND),
-	Filter(CTRL) >> [
+	    ],
+		Filter(PITCHBEND),
+		Filter(CTRL) >> [
             CtrlFilter(1) >> CtrlRange(1, 127, 0, 0, 127) >> Ctrl(2, EVENT_VALUE),
             CtrlFilter(6) >> Ctrl(2, EVENT_VALUE),
             CtrlFilter(7) >> Ctrl(3, EVENT_VALUE),
@@ -46,5 +45,4 @@ run([
             ]
 
 	],
-	PortFilter('tmpPitchbend') >> Filter(PITCHBEND)
 ] >> out)
