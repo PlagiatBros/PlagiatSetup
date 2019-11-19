@@ -36,9 +36,9 @@ run([
 		KeyFilter(51) >> Program(11),
 
     ],
-#	Filter(PITCHBEND) >> Discard(),
+	Filter(PITCHBEND),
 	Filter(CTRL) >> [
-#           CtrlFilter(1) >> CtrlRange(1, 127, 0, 0, 127) >> Ctrl(2, EVENT_VALUE),
+            CtrlFilter(1) >> CtrlRange(1, 127, 0, 0, 127) >> Ctrl(2, EVENT_VALUE),
             CtrlFilter(6) >> Ctrl(2, EVENT_VALUE),
             CtrlFilter(7) >> Ctrl(3, EVENT_VALUE),
             CtrlFilter(8) >> Ctrl(4, EVENT_VALUE),
