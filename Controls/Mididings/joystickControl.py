@@ -5,6 +5,7 @@ from ports import *
 import mididings
 from mididings.engine import output_event
 from mididings.event import PitchbendEvent, NoteOnEvent, CtrlEvent
+from mididings.extra.inotify import AutoRestart
 from liblo import send
 
 
@@ -33,15 +34,21 @@ def process(type, name, value):
             send(cmeinport, '/mididings/switch_scene', 5)
         elif name == 'dpad_right':
             send(cmeinport, '/mididings/switch_scene', 7)
+
     elif type == 'axis':
         if name == 'x':
             output_event(PitchbendEvent('out', 1, int(value * 8192)))
         elif name == 'rx':
             output_event(CtrlEvent('out', 1, 1, int(100 * abs(value))))
 
+    elif type == 'status':
+        if name == 'connected' and value == 0:
+            process('axis', 'x', 0)
+            process('axis', 'rx', 0)
 
 mididings.hook(
-    Joystick(dev=0, callback=process)
+    Joystick(dev=0, callback=process),
+    AutoRestart()
 )
 
 mididings.run(mididings.Pass())

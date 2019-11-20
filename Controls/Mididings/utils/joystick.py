@@ -88,13 +88,16 @@ class Joystick():
         self.quit = False
         self.dev = None
         self.name = ''
+        self.state = {
+            'button': {},
+            'axis': {}
+        }
 
         try:
             self.connect()
         except IOError as e:
             print('ERROR: Joystick device %s not found.' % (self.path))
             self.connected = False
-
 
     def set_callback(self, callback):
 
@@ -139,13 +142,20 @@ class Joystick():
             btn_name = button_names.get(btn, 'unknown(0x%03x)' % btn)
             self.button_map.append(btn_name)
 
-        self.connected = True
         print('INFO: Joystick device %s (%s) connected.' % (self.path, self.name))
+        self.connected = True
+
+        if self.callback:
+            self.callback('status', 'connected', 1)
 
     def disconnect(self):
 
         print('ERROR: Joystick device %s (%s) disconnected.' % (self.path, self.name))
         self.connected = False
+
+        if self.callback:
+            self.callback('status', 'connected', 0)
+
 
     def run(self):
 
@@ -184,8 +194,16 @@ class Joystick():
                     name = self.axis_map[number]
                     value = value / 32767.0
 
-                if type and name and self.callback:
-                    self.callback(type, name, value)
+                if type and name:
+
+                    state = self.state[type]
+
+                    if not name in state or state[name] != value:
+
+                        state[name] = value
+
+                        if self.callback:
+                            self.callback(type, name, value)
 
     # mididings hook
     def on_start(self):
