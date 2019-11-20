@@ -87,11 +87,12 @@ class Joystick():
         self.error = False
         self.quit = False
         self.dev = None
+        self.name = ''
 
         try:
             self.connect()
         except IOError as e:
-            print('ERROR: Joystick device %s (%s) not found.' % (self.path, self.name))
+            print('ERROR: Joystick device %s not found.' % (self.path))
             self.connected = False
 
 
