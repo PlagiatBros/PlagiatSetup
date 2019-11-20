@@ -91,7 +91,7 @@ class Joystick():
         try:
             self.connect()
         except IOError as e:
-            print('ERROR: Joystick device "%s" not found.' % self.path)
+            print('ERROR: Joystick device %s (%s) not found.' % (self.path, self.name))
             self.connected = False
 
 
@@ -113,7 +113,7 @@ class Joystick():
         # Get the device name.
         buf = array.array('B', [0] * 64)
         ioctl(self.dev, 0x80006a13 + (0x10000 * len(buf)), buf) # JSIOCGNAME(len)
-        # self.name = buf.tobytes().rstrip(b'\x00').decode('utf-8')
+        self.name = buf.tostring().rstrip(b'\x00').decode('utf-8')
 
         # Get number of axes and buttons.
         buf = array.array('B', [0])
@@ -139,6 +139,12 @@ class Joystick():
             self.button_map.append(btn_name)
 
         self.connected = True
+        print('INFO: Joystick device %s (%s) connected.' % (self.path, self.name))
+
+    def disconnect(self):
+
+        print('ERROR: Joystick device %s (%s) disconnected.' % (self.path, self.name))
+        self.connected = False
 
     def run(self):
 
@@ -156,13 +162,11 @@ class Joystick():
             try:
                 if not self.connected:
                     self.connect()
-                    print('INFO: Joystick device "%s" connected.' % self.path)
                 evbuf = self.dev.read(8)
             except IOError as e:
                 evbuf = None
                 if self.connected:
-                    print('ERROR: Joystick device "%s" disconnected.' % self.path)
-                    self.connected = False
+                    self.disconnect()
 
             if evbuf:
 
