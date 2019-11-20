@@ -80,13 +80,32 @@ class Joystick():
 
     def __init__(self, dev=0, callback=None):
 
-        path = '/dev/input/js' + str(dev)
+        self.path = '/dev/input/js' + str(dev)
+        self.axis_map = []
+        self.button_map = []
+        self.callback = callback
+        self.error = False
+        self.quit = False
+        self.dev = None
 
         try:
-            self.dev = open(path, 'rb')
+            self.connect()
         except IOError as e:
-            print('ERROR: Joystick device "%s" not found.' % path)
+            print('ERROR: Joystick device "%s" not found.' % self.path)
+            self.connected = False
 
+
+    def set_callback(self, callback):
+
+        self.callback = callback
+
+    def stop(self):
+
+        self.quit = True
+
+    def connect(self):
+
+        self.dev = open(self.path, 'rb')
 
         self.axis_map = []
         self.button_map = []
@@ -119,27 +138,31 @@ class Joystick():
             btn_name = button_names.get(btn, 'unknown(0x%03x)' % btn)
             self.button_map.append(btn_name)
 
-        self.callback = callback
-        self.quit = False
-
-    def set_callback(self, callback):
-
-        self.callback = callback
-
-    def stop(self):
-
-        self.quit = True
+        self.connected = True
 
     def run(self):
 
         while not self.quit:
 
-            r, w, e = select.select([self.dev], [], [], 0)
-            if not self.dev in r:
+            if self.connected:
+                r, w, e = select.select([self.dev], [], [], 0)
+                if not self.dev in r:
+                    sleep(0.001)
+                    continue
+            else:
                 sleep(0.001)
-                continue
 
-            evbuf = self.dev.read(8)
+
+            try:
+                if not self.connected:
+                    self.connect()
+                    print('INFO: Joystick device "%s" connected.' % self.path)
+                evbuf = self.dev.read(8)
+            except IOError as e:
+                evbuf = None
+                if self.connected:
+                    print('ERROR: Joystick device "%s" disconnected.' % self.path)
+                    self.connected = False
 
             if evbuf:
 
