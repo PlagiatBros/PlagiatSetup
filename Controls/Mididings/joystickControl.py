@@ -1,13 +1,12 @@
 # coding=utf8
 from utils import Joystick
+from ports import *
 
 import mididings
-from mididings.engine import output_event, active, quit
+from mididings.engine import output_event
 from mididings.event import PitchbendEvent, NoteOnEvent, CtrlEvent
-from mididings.extra.osc import SendOSC
-
 from liblo import send
-from ports import *
+
 
 mididings.config(
     backend = 'jack',
