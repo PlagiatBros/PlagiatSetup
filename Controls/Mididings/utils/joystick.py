@@ -5,6 +5,12 @@ from fcntl import ioctl
 from time import sleep
 from threading import Thread
 
+try:
+    import pyudev
+    udev_context = pyudev.Context()
+except:
+    udev_context = None
+
 axis_names = {
     0x00 : 'x',
     0x01 : 'y',
@@ -80,7 +86,12 @@ class Joystick():
 
     def __init__(self, dev=0, callback=None):
 
-        self.path = '/dev/input/js' + str(dev)
+        self.dev_id = dev
+
+        if type(dev) is not int and udev_context is None:
+            print('ERROR: missing package "python-pyudev", cannot select device by id')
+
+        self.path = '/dev/input/js' + str(self.dev_id)
         self.axis_map = []
         self.button_map = []
         self.callback = callback
@@ -96,7 +107,7 @@ class Joystick():
         try:
             self.connect()
         except IOError as e:
-            print('ERROR: Joystick device %s not found.' % (self.path))
+            print('ERROR: Joystick device %s not found.' % (self.dev_id))
             self.connected = False
 
     def set_callback(self, callback):
@@ -108,6 +119,20 @@ class Joystick():
         self.quit = True
 
     def connect(self):
+
+        if type(self.dev_id) is not int and udev_context is not None:
+            self.path = self.dev_id
+            i = 0
+            while True:
+                path = '/dev/input/js' + str(i)
+                try:
+                    d = pyudev.Devices.from_device_file(udev_context, path)
+                    if self.dev_id == d['ID_VENDOR_ID'] + ':' + d['ID_MODEL_ID']:
+                        self.path = path
+                        break
+                except:
+                    break
+                i += 1
 
         self.dev = open(self.path, 'rb')
 
@@ -142,7 +167,7 @@ class Joystick():
             btn_name = button_names.get(btn, 'unknown(0x%03x)' % btn)
             self.button_map.append(btn_name)
 
-        print('INFO: Joystick device %s (%s) connected.' % (self.path, self.name))
+        print('INFO: Joystick device %s (%s) connected.' % (self.dev_id, self.name))
         self.connected = True
 
         if self.callback:
@@ -150,7 +175,7 @@ class Joystick():
 
     def disconnect(self):
 
-        print('ERROR: Joystick device %s (%s) disconnected.' % (self.path, self.name))
+        print('ERROR: Joystick device %s (%s) disconnected.' % (self.dev_id, self.name))
         self.connected = False
 
         if self.callback:
@@ -167,7 +192,7 @@ class Joystick():
                     sleep(0.001)
                     continue
             else:
-                sleep(0.001)
+                sleep(0.1)
 
 
             try:
