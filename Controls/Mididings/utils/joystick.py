@@ -1,5 +1,9 @@
 #encoding: utf-8
 
+"""
+Based on https://gist.github.com/rdb/8864666
+"""
+
 import os, struct, array, signal, select
 from fcntl import ioctl
 from time import sleep
@@ -85,6 +89,22 @@ button_names = {
 class Joystick():
 
     def __init__(self, dev=0, callback=None):
+        """
+        Joystick constructor
+        Args:
+            dev:
+                (int): device number as in /dev/input/jsX
+             (string): "vendor_id:device_id" pair as returned by lsusb (example: "054c:0268")
+
+            callback (function): when the joystick's state changes, callback is called with 3 parameters:
+                type (string): event type; can be 'axis', 'button' or 'status'
+                name: event name
+                value: event value
+
+                Note: See axis_names and button_names constants for possible axis/button event names.
+                      Possible status events:
+                        - connected (0/1)
+        """
 
         self.dev_id = dev
 
