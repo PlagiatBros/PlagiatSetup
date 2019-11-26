@@ -1,4 +1,4 @@
-# encoding=utf8
+# coding=utf8
 from utils import Joystick
 from ports import *
 
@@ -16,8 +16,8 @@ mididings.config(
 )
 
 def process(type, name, value):
-    if type == 'button':
-	print('%s/%s: %s' % (type, name, value))
+    # print('%s/%s: %s' % (type, name, value))
+    if type == 'button' and value == 1:
         if name == 'a': # X
             send(cmeinport, '/mididings/switch_scene', 8)
         elif name == 'b': # O
