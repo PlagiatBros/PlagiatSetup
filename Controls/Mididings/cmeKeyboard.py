@@ -120,7 +120,7 @@ run(
     },
     control = [
         Filter(CTRL) >> [
-            CtrlFilter(2) >>  [
+            CtrlFilter(2, 7) >>  [
 				SendOSC(samplesmainport, '/strip/Keyboards/Calf%20Filter/Frequency/unscaled', lambda ev: 20000. * pow(10, ((-log10(71/20000.))*ev.value) / 127. + log10(71/20000.))),
 				SendOSC(surfaceorlport, '/strip/Keyboards/Calf%20Filter/Frequency/unscaled', lambda ev: 20000. * pow(10, ((-log10(71/20000.))*ev.value) / 127. + log10(71/20000.))),
 				],
