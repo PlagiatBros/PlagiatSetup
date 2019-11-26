@@ -2,7 +2,7 @@
 <!--
 ladish Studio configuration.
 -->
-<!-- Tue Nov 26 10:35:55 2019 -->
+<!-- Tue Nov 26 12:53:54 2019 -->
 <studio>
   <jack>
     <conf>
@@ -114,6 +114,10 @@ ladish Studio configuration.
           <port name="TiMidity (playback): TiMidity port 1" uuid="e24f066c-98e4-4dd8-bc3e-88a83688c5cf" />
           <port name="TiMidity (playback): TiMidity port 2" uuid="39f427c2-3201-4c7e-b7fe-7f26911da23b" />
           <port name="TiMidity (playback): TiMidity port 3" uuid="7b6380c7-ed17-4ce3-b008-eff2f381aa87" />
+          <port name="USB Keystation 88es (capture): USB Keystation 88es MIDI 1" uuid="f083c3fe-2c62-4fc1-abe3-734d34bbc12f" />
+          <port name="USB Keystation 88es (playback): USB Keystation 88es MIDI 1" uuid="0fe9e3ff-e2cf-4069-86ee-9f6dd01ed3cf" />
+          <port name="Arturia MiniLab mkII (capture): Arturia MiniLab mkII MIDI 1" uuid="903f0fac-8d51-4c6a-8f02-00c6e3a098b9" />
+          <port name="Arturia MiniLab mkII (playback): Arturia MiniLab mkII MIDI 1" uuid="f5ba5875-ea2f-4070-aa74-ba849925c266" />
         </ports>
       </client>
       <client name="SLServer" uuid="75627883-d5f1-47fe-a2d9-daf52fcb8b8d">
@@ -1103,8 +1107,14 @@ ladish Studio configuration.
           <port name="VxTemoinJeannot/audio_out 1" uuid="6d13da78-12c4-4248-8eea-93a988bc70c9" />
           <port name="VxTemoinJeannot/audio_out 2" uuid="346c4e0b-8855-4003-93f4-4c6a9250a07a" />
           <port name="VxTemoinORL/audio_in 2" uuid="e355fe0e-b65a-424c-9b99-2202bf44bf84" />
-          <port name="LTC-in" uuid="13255939-c881-4ad0-8d4d-b651d98b1bdd" />
-          <port name="LTC-out" uuid="9607f54a-e4e8-4567-b723-df36b5720288" />
+          <port name="LTC-in" uuid="78b2e42a-68ed-41ba-8f2a-fec3d984150a" />
+          <port name="LTC-out" uuid="7e450c12-a757-4f11-a1cf-b698757b2f95" />
+        </ports>
+      </client>
+      <client name="Joystick Control" uuid="64fa0c04-02b4-45d8-9cb4-9976594ebd53">
+        <ports>
+          <port name="in_1" uuid="150a8fb3-34d3-4c46-8dd5-7ed0a2dee62c" />
+          <port name="out" uuid="1a9bf8ca-95e5-4dd8-8685-c482f2a92743" />
         </ports>
       </client>
     </clients>
@@ -2877,8 +2887,8 @@ ladish Studio configuration.
         <port name="VxTemoinJeannot/audio_out 1" uuid="6d13da78-12c4-4248-8eea-93a988bc70c9" type="audio" direction="output" />
         <port name="VxTemoinJeannot/audio_out 2" uuid="346c4e0b-8855-4003-93f4-4c6a9250a07a" type="audio" direction="output" />
         <port name="VxTemoinORL/audio_in 2" uuid="e355fe0e-b65a-424c-9b99-2202bf44bf84" type="audio" direction="input" />
-        <port name="LTC-in" uuid="13255939-c881-4ad0-8d4d-b651d98b1bdd" type="audio" direction="input" />
-        <port name="LTC-out" uuid="9607f54a-e4e8-4567-b723-df36b5720288" type="audio" direction="output" />
+        <port name="LTC-in" uuid="78b2e42a-68ed-41ba-8f2a-fec3d984150a" type="audio" direction="input" />
+        <port name="LTC-out" uuid="7e450c12-a757-4f11-a1cf-b698757b2f95" type="audio" direction="output" />
       </ports>
       <dict>
         <key name="http://ladish.org/ns/canvas/x">12.000000</key>
@@ -2941,6 +2951,36 @@ ladish Studio configuration.
       <dict>
         <key name="http://ladish.org/ns/canvas/x">387.992542</key>
         <key name="http://ladish.org/ns/canvas/y">2266.000000</key>
+      </dict>
+    </client>
+    <client name="USB Keystation 88es" uuid="01d5ec1b-c330-41ed-b8f1-8ddcc341771f" naming="app">
+      <ports>
+        <port name="USB Keystation 88es MIDI 1" uuid="f083c3fe-2c62-4fc1-abe3-734d34bbc12f" type="midi" direction="output" />
+        <port name="USB Keystation 88es MIDI 1" uuid="0fe9e3ff-e2cf-4069-86ee-9f6dd01ed3cf" type="midi" direction="input" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">1690.000000</key>
+        <key name="http://ladish.org/ns/canvas/y">1259.000000</key>
+      </dict>
+    </client>
+    <client name="Arturia MiniLab mkII" uuid="52608385-5229-4b9a-844e-1aef687c5152" naming="app">
+      <ports>
+        <port name="Arturia MiniLab mkII MIDI 1" uuid="903f0fac-8d51-4c6a-8f02-00c6e3a098b9" type="midi" direction="output" />
+        <port name="Arturia MiniLab mkII MIDI 1" uuid="f5ba5875-ea2f-4070-aa74-ba849925c266" type="midi" direction="input" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">1663.000000</key>
+        <key name="http://ladish.org/ns/canvas/y">1226.000000</key>
+      </dict>
+    </client>
+    <client name="Joystick Control" uuid="13d6d951-0a0d-4781-86a6-67d9d1468d0e" naming="app" app="a4586d6a-db9d-4859-81a0-ec451b7c95dd">
+      <ports>
+        <port name="in_1" uuid="150a8fb3-34d3-4c46-8dd5-7ed0a2dee62c" type="midi" direction="input" />
+        <port name="out" uuid="1a9bf8ca-95e5-4dd8-8685-c482f2a92743" type="midi" direction="output" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">1641.992542</key>
+        <key name="http://ladish.org/ns/canvas/y">1443.000000</key>
       </dict>
     </client>
   </clients>
@@ -3267,8 +3307,6 @@ ladish Studio configuration.
     <connection port1="a85d7340-1a20-4d76-bfc3-d09f8b47511e" port2="f86d9a37-525f-4b28-a924-99bc73131bd3" />
     <connection port1="c450dbbe-9094-4b22-8db6-e7132c6b3974" port2="887bb461-c639-49f9-873f-ba3689c6d557" />
     <connection port1="ac7cc7e9-9e4f-4a7a-a682-212ce79cd3e8" port2="732171cf-dea2-4064-b6b7-599763519794" />
-    <connection port1="cda3e38e-413b-4988-aac2-0f93e192e8c0" port2="56bf5a12-038d-4ae2-99b0-776ba590d69f" />
-    <connection port1="a6101004-dead-4e11-8231-811da10628f8" port2="cc4c9336-fedf-4af2-99f4-be300ce5a2fc" />
     <connection port1="c3991a9b-a145-43d6-bf61-b5741607ccda" port2="d99b3abd-5b07-48f7-ad7e-27c579b61e35" />
     <connection port1="a2e4fd7f-3e76-44a3-9ac3-67f81c772fd9" port2="5260c58c-3e6b-4cb5-92c8-3ad9e1703320" />
     <connection port1="8c8fb672-b687-49ef-b16d-70ab6e3069b8" port2="7443c47e-c4f7-41a9-a8c9-36a664ca5c9f" />
@@ -3575,8 +3613,8 @@ ladish Studio configuration.
     <connection port1="7c4b46fd-b98c-435a-9330-b3630cb39928" port2="ce2ab98e-2622-4272-8ac5-22cb1eb7c66d" />
     <connection port1="6e9e2205-248e-43a3-a213-fb4b91f6f3be" port2="3fe4068b-c954-43e3-ab02-64d6c33a3c21" />
     <connection port1="87b61f75-6e78-4f90-9b77-81d15b4ff839" port2="975e35a9-5c14-40aa-bb2d-1fab262c42cd" />
-    <connection port1="4955a7e5-1aa1-40a3-8178-de2821d7214e" port2="321751a7-b207-4a24-af04-9b5812261288" />
-    <connection port1="d5f466e1-5187-4181-b07e-bbb33294732d" port2="dedc980a-fa69-4a22-a7c1-2a6a8060abb0" />
+    <connection port1="4955a7e5-1aa1-40a3-8178-de2821d7214e" port2="56bf5a12-038d-4ae2-99b0-776ba590d69f" />
+    <connection port1="d5f466e1-5187-4181-b07e-bbb33294732d" port2="cc4c9336-fedf-4af2-99f4-be300ce5a2fc" />
   </connections>
   <applications>
     <application name="a2j" uuid="65bce9a0-8285-4cb3-9630-321ba19b43a4" terminal="false" level="0" autorun="true">a2j -e</application>
@@ -3641,7 +3679,7 @@ ladish Studio configuration.
     <application name="gxtuner" uuid="8fbf23a3-d9ce-4eec-9205-ffc1ca4d02f4" terminal="false" level="0" autorun="true">gxtuner -w 200</application>
     <application name="PytaJardin" uuid="00ab7a74-6ecf-4d7a-8c74-d45b316040e8" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_PytaJardin.sh</application>
     <application name="PytaCour" uuid="de178f8a-ba64-41bc-a3d9-b6cb7d56abdd" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_PytaCour.sh</application>
-    <application name="Joystick Control" uuid="a4586d6a-db9d-4859-81a0-ec451b7c95dd" terminal="false" level="0" autorun="false">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_jC.sh</application>
+    <application name="Joystick Control" uuid="a4586d6a-db9d-4859-81a0-ec451b7c95dd" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_jC.sh</application>
     <application name="x42 PitchShifter" uuid="38f7f911-0bb1-4c4b-b1e6-071c6f17dd5f" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_xP.sh</application>
   </applications>
 </studio>
