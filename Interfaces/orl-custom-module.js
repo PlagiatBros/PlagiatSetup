@@ -197,28 +197,21 @@
                 if (!sl_registered) {
                     setTimeout(ping,1000)
                 } else {
-                    send('/sl/'+sl_range+'/unregister_auto_update','state', host, '/sl_state')
-                    send('/sl/'+sl_range+'/unregister_auto_update','loop_len', host, '/sl_time')
-                    send('/sl/'+sl_range+'/unregister_auto_update','loop_pos', host, '/sl_time')
+                    send(sl_host, sl_port, '/sl/'+sl_range+'/unregister_auto_update','state', host, '/sl_state')
+                    send(sl_host, sl_port, '/sl/'+sl_range+'/unregister_auto_update','loop_len', host, '/sl_time')
+                    send(sl_host, sl_port, '/sl/'+sl_range+'/unregister_auto_update','loop_pos', host, '/sl_time')
+
                     setTimeout(()=>{
-                        sendOsc({
-                            address: '/sl/'+sl_range+'/register_auto_update',
-                            args: [{type:'s',value:'state'}, {type:'f',value:1}, {type:'s', value:host}, {type:'s', value:'/sl_state'}],
-                            host: sl_host,
-                            port: sl_port
-                        })
-                        sendOsc({
-                            address: '/sl/'+sl_range+'/register_auto_update',
-                            args: [{type:'s',value:'loop_len'}, {type:'f',value:50}, {type:'s', value:host}, {type:'s', value:'/sl_time'}],
-                            host: sl_host,
-                            port: sl_port
-                        })
-                        sendOsc({
-                            address: '/sl/'+sl_range+'/register_auto_update',
-                            args: [{type:'s',value:'loop_pos'}, {type:'f',value:50}, {type:'s', value:host}, {type:'s', value:'/sl_time'}],
-                            host: sl_host,
-                            port: sl_port
-                        })
+
+
+                        send(sl_host, sl_port, '/sl/'+sl_range+'/get','state',  host, '/sl_state')
+                        send(sl_host, sl_port, '/sl/'+sl_range+'/get','loop_len', host, '/sl_time')
+                        send(sl_host, sl_port, '/sl/'+sl_range+'/get','loop_pos', host, '/sl_time')
+
+                        send(sl_host, sl_port, '/sl/'+sl_range+'/register_auto_update','state', 1,  host, '/sl_state')
+                        send(sl_host, sl_port, '/sl/'+sl_range+'/register_auto_update','loop_len', 50, host, '/sl_time')
+                        send(sl_host, sl_port, '/sl/'+sl_range+'/register_auto_update','loop_pos', 50, host, '/sl_time')
+
                     }, 250)
                 }
             }
@@ -263,13 +256,12 @@
             }
 
             else if (address == '/sl_time') {
-                sl_registered = true
 
                 var i    = args[0].value,
                     ctrl = args[1].value,
                     v    = args[2].value
 
-
+console.log(i, ctrl, v)
                 if (ctrl.indexOf('loop_') != -1) {
                     loop_time[ctrl][i] = v
                     address = '/sl_position_' + sl_map.indexOf(i)
