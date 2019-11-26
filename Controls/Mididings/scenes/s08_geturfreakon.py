@@ -29,7 +29,7 @@ geturfreakon = [
         disable_microtonal,
         # zynmicrotonal_off,
 
-        SendOSC(mk2inport, '/mididings/switch_scene', 6),
+        SendOSC(mk2inport, '/mididings/switch_scene', 1),
         mk2lights(slowmotium_mk2lights),
     ]),
     jeannot_padrelease >> mk2lights(slowmotium_mk2lights),
@@ -73,12 +73,13 @@ geturfreakon = [
             ]),
 
 
+            SendOSC(cmeinport, '/mididings/switch_scene', 8),
+
             vxorlgars_off,
             vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
             vxorlvocode_off,
-            SendOSC(vxorlmeufport,     '/strip/VxORLVocod/AM%20pitchshifter/Pitch%20shift/unscaled', 1.2),
 
             vxjeannotdelay_off,
             vxjeannotgars_on,
@@ -101,7 +102,6 @@ geturfreakon = [
         SceneSwitch(9) >> Discard(),
         Program(2) >> Output('PBCtrlOut', 1)
         ],
-
     jeannot >> ProgramFilter(3) >> [ # Clap
         NoteOn(64, 127) >> Output('PBTapeutape', 3)
     ],

@@ -1,4 +1,4 @@
-#encoding: utf-8
+#coding: utf-8
 
 import os, struct, array, signal, select
 from fcntl import ioctl
