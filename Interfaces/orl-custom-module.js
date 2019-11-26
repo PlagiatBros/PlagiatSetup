@@ -197,24 +197,29 @@
                 if (!sl_registered) {
                     setTimeout(ping,1000)
                 } else {
-                    sendOsc({
-                        address: '/sl/'+sl_range+'/register_auto_update',
-                        args: [{type:'s',value:'state'}, {type:'f',value:1}, {type:'s', value:host}, {type:'s', value:'/sl_state'}],
-                        host: sl_host,
-                        port: sl_port
-                    })
-                    sendOsc({
-                        address: '/sl/'+sl_range+'/register_auto_update',
-                        args: [{type:'s',value:'loop_len'}, {type:'f',value:50}, {type:'s', value:host}, {type:'s', value:'/sl_time'}],
-                        host: sl_host,
-                        port: sl_port
-                    })
-                    sendOsc({
-                        address: '/sl/'+sl_range+'/register_auto_update',
-                        args: [{type:'s',value:'loop_pos'}, {type:'f',value:50}, {type:'s', value:host}, {type:'s', value:'/sl_time'}],
-                        host: sl_host,
-                        port: sl_port
-                    })
+                    send('/sl/'+sl_range+'/unregister_auto_update','state', host, '/sl_state')
+                    send('/sl/'+sl_range+'/unregister_auto_update','loop_len', host, '/sl_time')
+                    send('/sl/'+sl_range+'/unregister_auto_update','loop_pos', host, '/sl_time')
+                    setTimeout(()=>{
+                        sendOsc({
+                            address: '/sl/'+sl_range+'/register_auto_update',
+                            args: [{type:'s',value:'state'}, {type:'f',value:1}, {type:'s', value:host}, {type:'s', value:'/sl_state'}],
+                            host: sl_host,
+                            port: sl_port
+                        })
+                        sendOsc({
+                            address: '/sl/'+sl_range+'/register_auto_update',
+                            args: [{type:'s',value:'loop_len'}, {type:'f',value:50}, {type:'s', value:host}, {type:'s', value:'/sl_time'}],
+                            host: sl_host,
+                            port: sl_port
+                        })
+                        sendOsc({
+                            address: '/sl/'+sl_range+'/register_auto_update',
+                            args: [{type:'s',value:'loop_pos'}, {type:'f',value:50}, {type:'s', value:host}, {type:'s', value:'/sl_time'}],
+                            host: sl_host,
+                            port: sl_port
+                        })
+                    }, 250)
                 }
             }
 
