@@ -3,6 +3,13 @@ sys.path.append("../Controls/Mididings/")
 
 from ports import *
 
+def dafist_blast_bassopen(sequencer, timer):
+    timer.wait( 2 * 16, 'bites')
+    sequencer.send(bassmainport, '/strip/BassSynth/Gain/Mute', 0.0)
+    sequencer.send(samplesmainport, '/strip/SamplesDrumKlit/Gain/Mute', 1.0)
+
+
+
 def dafist_outro_filter_close(sequencer, timer):
 
     sequencer.animate([samplesmainport, '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled'], 1, .25, 0.75, 'beat', framerate=50)

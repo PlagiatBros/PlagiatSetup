@@ -4,6 +4,7 @@ from mididings.extra.osc import OSCInterface
 from mididings.extra.inotify import AutoRestart
 from mididings.extra.osc import SendOSC
 from utils import OSCCustomInterface
+from utils import OSCCurentScene
 from ports import *
 from math import log10
 from liblo import send
@@ -17,8 +18,10 @@ config(
 )
 
 
+
 hook(
     OSCInterface(cmeinport, cmeoutport), # "osc.udp://CtrlOrl:56423"),
+    OSCCurentScene('osc.udp://127.0.0.1:' + str(surfaceorlport), '/cmescene'),
     AutoRestart()
 )
 

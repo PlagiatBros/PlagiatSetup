@@ -136,6 +136,7 @@ d = qlcDelayer(qlcport, qlcappport)
 
 
 while d.server:
-    d.server.recv(0.001)
+    d.server.recv(0)
+    sleep(0.001)
 
 # raw_input('Listening on port '+ str(qlcstopport) +

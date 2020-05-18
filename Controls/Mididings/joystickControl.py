@@ -16,7 +16,7 @@ mididings.config(
 )
 
 def process(type, name, value):
-    # print('%s/%s: %s' % (type, name, value))
+    print('%s/%s: %s' % (type, name, value))
     if type == 'button' and value == 1:
         if name == 'a': # X
             send(cmeinport, '/mididings/switch_scene', 8)

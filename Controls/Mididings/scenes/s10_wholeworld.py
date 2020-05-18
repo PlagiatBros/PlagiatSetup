@@ -280,7 +280,7 @@ wholeworld = [
     ] >> Discard(),
     orl >> ProgramFilter(11) >> [ # SceneSwitch -> Dafist
         SceneSwitch(2) >> Discard(),
-        Program(3) >> Output('PBCtrlOut', 1)
+        Program(2) >> Output('PBCtrlOut', 1)
     ],
     jeannot >> ProgramFilter(6) >> [ # Vx jeannot
         vxjeannotdelay_off,

@@ -261,7 +261,6 @@
                     ctrl = args[1].value,
                     v    = args[2].value
 
-console.log(i, ctrl, v)
                 if (ctrl.indexOf('loop_') != -1) {
                     loop_time[ctrl][i] = v
                     address = '/sl_position_' + sl_map.indexOf(i)
@@ -306,9 +305,9 @@ console.log(i, ctrl, v)
                         title: args[1].value,
                         subscenes: []
                     }
-                    for (var i = 2; i < args.length; i++) {
-                        mididings_scenes[args[0].value].subscenes.push(args[i].value)
-                    }
+                    // for (var i = 2; i < args.length; i++) {
+                    //     mididings_scenes[args[0].value].subscenes.push(args[i].value)
+                    // }
 
                     return
 
@@ -330,7 +329,7 @@ console.log(i, ctrl, v)
                         receiveOsc({address, args, host, port})
 
                         receiveOsc({address:'/mididings/switch_scene', args:[{type:'s',value: mididings_current_scenes }]})
-                        receiveOsc({address:'/mididings/switch_subscene', args:[{type:'s',value: mididings_current_subscenes }]})
+                        // receiveOsc({address:'/mididings/switch_subscene', args:[{type:'s',value: mididings_current_subscenes }]})
 
                     },3000)
 
@@ -339,28 +338,28 @@ console.log(i, ctrl, v)
 
                 else if (address == '/mididings/current_scene') {
 
-                    if (mididings_current_scenes != args[0].value) {
-
-                        var subscenes_buttons = {}
-
-                        for (var i in mididings_scenes[args[0].value].subscenes) {
-                            subscenes_buttons[mididings_scenes[args[0].value].subscenes[i]] = parseInt(i) + 1
-                        }
-                        address = '/EDIT'
-                        editargs = [
-                            {type:'s', value: 'mididings_subscenes'},
-                            {type:'s', value: JSON.stringify({values:subscenes_buttons})}
-                        ]
-
-                        receiveOsc({address, args:editargs, host, port})
-
-                    }
+                    // if (mididings_current_scenes != args[0].value) {
+                    //
+                    //     var subscenes_buttons = {}
+                    //
+                    //     for (var i in mididings_scenes[args[0].value].subscenes) {
+                    //         subscenes_buttons[mididings_scenes[args[0].value].subscenes[i]] = parseInt(i) + 1
+                    //     }
+                    //     address = '/EDIT'
+                    //     editargs = [
+                    //         {type:'s', value: 'mididings_subscenes'},
+                    //         {type:'s', value: JSON.stringify({values:subscenes_buttons})}
+                    //     ]
+                    //
+                    //     receiveOsc({address, args:editargs, host, port})
+                    //
+                    // }
 
                     mididings_current_scenes = args[0].value
-                    mididings_current_subscenes = args[1].value
+                    // mididings_current_subscenes = args[1].value
 
                     receiveOsc({address:'/mididings/switch_scene', args:[{type:'s',value: args[0].value }]})
-                    receiveOsc({address:'/mididings/switch_subscene', args:[{type:'s',value: args[1].value }]})
+                    // receiveOsc({address:'/mididings/switch_subscene', args:[{type:'s',value: args[1].value }]})
 
                     return
 
@@ -497,6 +496,10 @@ console.log(i, ctrl, v)
 
             }
 
+
+            else if (address === '/cmescene') {
+                address = '/mididings/switch_scene'
+            }
 
             return {address, args, host, port}
         }

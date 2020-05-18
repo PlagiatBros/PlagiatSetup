@@ -47,7 +47,7 @@ dafist = [
     jeannot >> ProgramFilter([2,3,4,6]) >> light_reset >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
 
-    orl >> ProgramFilter(3) >> [ # Intro - Bouton 3
+    orl >> ProgramFilter(2) >> [ # Intro - Bouton 2
         Program(66) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -219,7 +219,7 @@ dafist = [
 
             ] >> Discard()
         ],
-    orl >> ProgramFilter(4) >> [ # Couplet - Bouton 4
+    orl >> ProgramFilter(3) >> [ # Couplet - Bouton 3
         Program(67) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -292,7 +292,7 @@ dafist = [
     jeannot >> ProgramFilter(5) >> [ # "Look" (video text) - Bouton 5
         SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_look') >> Discard()
     ],
-    orl >> ProgramFilter(5) >> [ # Couplet part 2 (orl meuf) - Bouton 5
+    orl >> ProgramFilter(4) >> [ # Couplet part 2 (orl meuf) - Bouton 4
 
 
         SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_couplet_firstpart_fixe'),
@@ -399,7 +399,7 @@ dafist = [
 
         ] >> Discard(),
     ],
-    orl >> ProgramFilter(6) >> [ # Pre-refrain nano - Bouton 6
+    orl >> ProgramFilter(5) >> [ # Pre-refrain nano - Bouton 5
         Program(68) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -465,8 +465,7 @@ dafist = [
 
             ] >> Discard()
         ],
-
-    orl >> ProgramFilter(7) >> [ # Couplet 2 - Bouton 7
+    orl >> ProgramFilter(6) >> [ # Couplet 2 - Bouton 6
         Program(67) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -536,6 +535,78 @@ dafist = [
             bassbufferst_off,
 
             ] >> Discard()
+        ],
+ 
+
+    orl >> ProgramFilter(7) >> [ # Blast - Bouton 7
+        Program(73) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 120),
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 120),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),
+
+            SendOSC(bassmainport, '/strip/BassSynth/Gain/Mute', 1.0),
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(120)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(120)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(120)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
+
+
+            SendOSC(rpicourport, '/pyta/scene_recall', 'dafist_refrain'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'dafist_refrain'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_refrain'),
+
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_refrain_anim'),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 120),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
+            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'dafist_blast_bassopen'),
+            SendOSC(audioseqport, '/Audioseq/Bpm', 120),
+            SendOSC(audioseqport, '/Audioseq/Play', timestamp),
+
+
+            SendOscState([
+                [bassmainport, '/strip/BassSynth/Gain/Mute', 1.0],
+
+                [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/Samples5Dry/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/SamplesScape/Gain/Mute', 0.0],
+
+                [samplesscapeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -5.0],
+
+            ]),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+            vxorldelay_off,
+            vxorlvocode_off,
+
+            vxjeannotdelay_off,
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
+            vxjeannotvocode_off,
+
+            bassdry,
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_on,
+            bassbufferst_on,
+
+            SendOSC(cmeinport, '/mididings/switch_scene', 5),
+
+            ] >> Discard()
+
         ],
     orl >> ProgramFilter(8) >> [ # Transe goa - Bouton 8
         Program(71) >> cseqtrigger,

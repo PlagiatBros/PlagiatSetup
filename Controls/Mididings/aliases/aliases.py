@@ -429,6 +429,10 @@ oscsendproxy = OscSendProxy([
     [samplesringmodport, '/strip/Samples4/Gain/Gain%20(dB)/unscaled', -70.0],
     [samplesringmodport, '/strip/Samples5/Gain/Gain%20(dB)/unscaled', -70.0],
 
+	# synth bass
+    [bassmainport, '/strip/BassSynth/Gain/Mute', 0.0],
+
+
 
 ])
 
