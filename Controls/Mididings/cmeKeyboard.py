@@ -47,6 +47,15 @@ zyntreble1 = Transpose(-12) >> [
         ] >> Output('CMEOutTreble', 1),
 
 ]
+zyntreble1b = Transpose(-12) >> [
+    [
+        ~Filter(CTRL),
+        CtrlFilter(1),
+        CtrlFilter(64)
+        ] >> Output('CMEOutTreble', 5),
+
+]
+
 
 zyntreble2 = Transpose(-12) >> [
     [
@@ -120,6 +129,7 @@ run(
         11:	Scene("Tapeutape 1", tapeutape1),
         12: Scene("ZynTreble 3", zyntreble3),
         13: Scene("zyntrebleGMandela", zyntrebleGMandela),
+		14: Scene("ZynTreble 1", zyntreble1b),
     },
     control = [
         Filter(CTRL) >> [

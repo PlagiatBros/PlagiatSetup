@@ -255,6 +255,7 @@ fifty = [
 
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
+            SendOSC(cmeinport, '/mididings/switch_scene', 14),
 
             vxorlgars_on,
             vxorlmeuf_off,
@@ -296,7 +297,7 @@ fifty = [
     	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'fifty_ragga_anim_firststep'),
     	    SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'fifty_petit_theme_anim'),
 
-            SendOSC(cmeinport, '/mididings/switch_scene', 8),
+            SendOSC(cmeinport, '/mididings/switch_scene', 14),
 
             vxorlgars_on,
             vxorlmeuf_off,

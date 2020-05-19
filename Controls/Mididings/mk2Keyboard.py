@@ -134,10 +134,12 @@ video = Filter(CTRL) >> CtrlFilter([1] + range(12,19)) >> Call(send_glitch_state
 
 samples_mute = Filter(NOTE) >> [
     KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEON) >> [
-        SendOSC(samplesmainport, '/strip/SamplesMain/Gain/Mute', 1.0)
+        SendOSC(samplesmainport, '/strip/SamplesMain/Gain/Mute', 1.0),
+        SendOSC(samplesmainport, '/strip/Keyboards/Gain/Mute', 1.0)
     ],
     KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEOFF) >> [
-        SendOSC(samplesmainport, '/strip/SamplesMain/Gain/Mute', 0.0)
+        SendOSC(samplesmainport, '/strip/SamplesMain/Gain/Mute', 0.0),
+		SendOSC(samplesmainport, '/strip/Keyboards/Gain/Mute', 0.0)
     ],
 ]
 

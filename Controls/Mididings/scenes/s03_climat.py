@@ -101,15 +101,15 @@ climat = [
         ] >> Discard()
 
     ],
-    orl >> ProgramFilter(6) >> [
-	    SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_granmounoute') >> Discard(),
-    ],
-    orl >> ProgramFilter(7) >> [
-	    SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_dignite') >> Discard(),
-    ],
-    orl >> ProgramFilter(8) >> [
-	    SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_eternite') >> Discard(),
-    ],
+#    orl >> ProgramFilter(6) >> [
+#	    SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_granmounoute') >> Discard(),
+#    ],
+#    orl >> ProgramFilter(7) >> [
+#	    SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_dignite') >> Discard(),
+#    ],
+#    orl >> ProgramFilter(8) >> [
+#	    SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_eternite') >> Discard(),
+#    ],
     orl >> [
         ProgramFilter(2),
         ProgramFilter(10)
@@ -429,10 +429,11 @@ climat = [
             vxorldelay_off,
             vxorlvocode_off,
 
-            vxjeannotdelay_off,
-            vxjeannotgars_on,
+            vxjeannotgars_off,
             vxjeannotmeuf_off,
-            vxjeannotdisint_on,
+            vxjeannotdisint_off,
+            vxjeannotdelay_off,
+            vxjeannotvocode_on,
 
             bassdry,
 
@@ -484,6 +485,7 @@ climat = [
             ]),
 
             SendOSC(cmeinport, '/mididings/switch_scene', 7),
+            SendOSC(mk2inport, '/mididings/switch_scene', 8),
 
             vxorlgars_off,
             vxorlmeuf_off,
@@ -507,6 +509,75 @@ climat = [
             bassbufferst_off,
             ]
         ],
+    orl >> ProgramFilter(6) >> [ # Climax  - Bouton 6
+        Program(73) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 150),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 150),
+            SendOSC(klickport, '/klick/simple/set_meter', 3, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(150)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(150)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(150)),
+
+
+            SendOSC(trapcutport, '/Trapcut/Bpm', 300. * 4 / 3),
+
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'climat_climax_jardin'),
+            SendOSC(rpicourport, '/pyta/scene_recall', 'climat_climax_cour'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_climax_glitch1'),
+
+
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'climat_climax_anim'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_climax_fixe'),
+
+
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 150),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
+            SendOSC(surfaceorlport, '/mandela_modal', 0),
+
+
+            SendOscState([
+
+                [samplesmainport, '/strip/Samples4Dry/Gain/Mute', 0.0],
+
+            ]),
+
+            SendOSC(cmeinport, '/mididings/switch_scene', 7),
+            SendOSC(mk2inport, '/mididings/switch_scene', 8),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+            vxorldelay_off,
+            vxorlvocode_off,
+
+            vxjeannotdelay_off,
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
+            vxjeannotdisint_off,
+
+            bassdry,
+
+
+            ] >> Discard(),
+        [
+            bassdetunest_off,
+            bassringst_off,
+            bassvibest_off,
+            bassbufferst_off,
+            ]
+        ],
+    orl >> ProgramFilter(7) >> [ # mama zbaking eggz
+        SendOSC(trapcutport, '/Trapcut/Scene/Play', 'III', timestamp),
+    ] >> Discard(),
     jeannot >> ProgramFilter(6) >> [ # sythé DRE - Bouton 6
         Program(70) >> seq24once,
         SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_climax_up'),

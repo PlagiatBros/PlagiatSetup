@@ -4,6 +4,7 @@ _ip = '127.0.0.1:'
 
 def _open(send):
     send(samplesmainport, '/strip/SamplesMain/Gain/Mute', 0.0)
+    send(samplesmainport, '/strip/Keyboards/Gain/Mute', 0.0)
     send(bassmainport, '/strip/BassMain/Gain/Mute', 0.0)
     # send(slport, '/sl/1/set', 'wet', 1)
     # send(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0)
@@ -15,6 +16,7 @@ def _open(send):
 
 def _close(send):
     send(samplesmainport, '/strip/SamplesMain/Gain/Mute', 1.0)
+    send(samplesmainport, '/strip/Keyboards/Gain/Mute', 1.0)
     send(bassmainport, '/strip/BassMain/Gain/Mute', 1.0)
     # send(slport, '/sl/1/set', 'wet', 0)
     # send(samplesmainport, '/strip/Samples1Dry/Gain/Mute', 1.0)
