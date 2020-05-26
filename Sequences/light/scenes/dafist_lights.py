@@ -47,7 +47,7 @@ def dafist_refrain_strobe(seq,timer):
     strobelights(seq, timer, ['ProcheJardin','ProcheCour','LointainJardin','LointainCour'], 'White', 'All', 'aleatoire', alea_type = ['bar', 1])
 
 def dafist_refrain_montee(seq,timer):
-    
+
     seq.scene_run_subscene(eased_fade,[seq, timer, '/TuttiLointain/{Blue,Green}/Segment/All', 0, 255, 0.1*seq.bpm/60, 0.01])
     timer.wait(0.15, 'b')
     seq.scene_run_subscene(eased_fade,[seq, timer, '/TuttiLointain/{Red}/Segment/All', 0, 255, 0.1*seq.bpm/60, 0.01])
@@ -56,7 +56,13 @@ def dafist_refrain_montee(seq,timer):
     timer.wait(0.1, 'b')
     seq.scene_run_subscene(eased_fade,[seq, timer, '/TuttiLointain/{Red}/Segment/All', 255, 0, 0.1*seq.bpm/60, 0.01])
 
-                       
+
+def dafist_refrain_delayed(seq, timer):
+    timer.wait( 2 * 16, 'bites')
+
+    seq.send(':/Lightseq/Sequence/Enable', 'dafist_refrain_anim'),
+
+
 def dafist_couplet_firstpart_fixe(seq,timer):
     seq.send(qlcport, '/ProcheCour/Red/Segment/{1,8}', 113)#105)
     seq.send(qlcport, '/ProcheCour/Green/Segment/{1,8}', 135)#140)
@@ -114,7 +120,7 @@ def dafist_couplet_thirdpart_flash(seq,timer):
     eased_fade(seq, timer, '/Tutti/{Blue,Green}/Segment/{1,4,5,7}', 255, 0, 0.1*seq.bpm/60, 0.01)
 
 
-    
+
 def dafist_transe_intro(seq,timer):
     global transe_bass
     crepitement(seq, timer, [['TuttiLointain', 'Red', '{1,4,5,8}', 99, 112], ['TuttiLointain', 'Green', '{1,4,5,8}', 125, 135], ['TuttiLointain', 'Blue', '{1,4,5,8}', 99, 109]])
@@ -153,4 +159,3 @@ def dafist_transe_tot(seq,timer):
 
 def dafist_transe_tota(seq,timer):
     bar_chase(seq, timer, 'TuttiProche', [[56, 122, 135]], ['bt'], [0.25, 'b'])
-

@@ -59,3 +59,22 @@ def dafist_drop_basse(seq, timer):
         seq.send(rpijardinport, '/pyta/slide/multiplesdanseuses/set', 'key_color', 0, 0, 0)
         seq.send(rpicourport, '/pyta/slide/multiplesdanseuses/set', 'key_color', 1, 1, 1)
         timer.wait(2, 'b')
+
+
+def dafist_refrain_delayed_video(seq, timer):
+    timer.wait( 3 * 4 - 0.05, 'bites')
+    seq.send('/pyta/slide/souleyman/set', 'rgbwave', 0.5)
+    seq.send('/pyta/slide/souleyman/set', 'noise', 0.8)
+    seq.send('/pyta/slide/souleyman/set', 'saturation', 0)
+    timer.wait( 2.30, 'bites')
+    seq.send('/pyta/slide/souleyman/set', 'rgbwave', 0)
+    seq.send('/pyta/slide/souleyman/set', 'noise', 0)
+    seq.send('/pyta/slide/souleyman/set', 'saturation', 1)
+
+    timer.wait( 17.5, 'bites')
+
+    seq.send('/pyta/slide/souleyman/strobe', 'invert', 0, 1, 0.08, 0.5)
+
+    # seq.send('/pyta/slide/souleyman/set', 'video_speed', 1.5)
+
+    # seq.send(':/Lightseq/Sequence/Enable', 'dafist_refrain_blast'),

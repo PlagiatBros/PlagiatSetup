@@ -498,6 +498,7 @@ dafist = [
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_mooncupwaters_cour'),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
+
             SendOscState([
 
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
@@ -536,7 +537,7 @@ dafist = [
 
             ] >> Discard()
         ],
- 
+
 
     orl >> ProgramFilter(7) >> [ # Blast - Bouton 7
         Program(73) >> cseqtrigger,
@@ -558,17 +559,18 @@ dafist = [
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
 
 
-            SendOSC(rpicourport, '/pyta/scene_recall', 'dafist_refrain'),
-            SendOSC(rpijardinport, '/pyta/scene_recall', 'dafist_refrain'),
-            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_refrain'),
 
-            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_refrain_anim'),
+            SendOSC(rpicourport, '/pyta/scene_recall', 'dafist_omar'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'dafist_omar'),
+
 
             SendOSC(lightseqport, '/Lightseq/Bpm', 120),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_refrain_delayed', timestamp),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_refrain_delayed_video', timestamp),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
-            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'dafist_blast_bassopen'),
             SendOSC(audioseqport, '/Audioseq/Bpm', 120),
+            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'dafist_blast_bassopen', timestamp),
             SendOSC(audioseqport, '/Audioseq/Play', timestamp),
 
 

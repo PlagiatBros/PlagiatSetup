@@ -1550,7 +1550,8 @@
                     "ZynRhodes 1": 10,
                     "Tapeutape 1": 11,
                     "ZynTreble 3": 12,
-                    "zyntrebleGMandela": 13
+                    "zyntrebleGMandela": 13,
+                    "pianoNul": 15
                   },
                   "traversing": true
                 }

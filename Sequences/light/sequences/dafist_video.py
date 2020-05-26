@@ -43,6 +43,27 @@ dafist_refrain = [
 ]
 
 
+# _blast_on = [
+#     ['/pyta/post_process/strobe', 'invert', 0, 1, 0.08, 0.5]
+# ]
+# _blast_off = [
+#     ['/pyta/slide/souleyman/stop_strobe', 'invert'],
+#     ['/pyta/slide/souleyman/set', 'invert', 0]
+# ]
+#
+#
+# dafist_refrain_blast = [
+#     (_blast_on, _blast_off, None, None), (_blast_on, _blast_off, None, None), (None, _blast_on, _blast_off, None), (None, _blast_on, _blast_off, None),
+#     (None, None, None ,_blast_on), (_blast_off, _blast_on, _blast_off, None), (None, _blast_on, _blast_off, None), (None, None, None ,_blast_on),
+#     (_blast_off, _blast_on, _blast_off, None), None, (None, _blast_on, _blast_off, None), (None, _blast_on, _blast_off, None),
+#     (None, None, None ,_blast_on), (_blast_off, _blast_on, _blast_off, None), (_blast_on, _blast_off, _blast_on, _blast_off, _blast_on, _blast_off), (_blast_on, _blast_off, None, None, None, None),
+#
+#     (_blast_on, _blast_off, None, None), (_blast_on, _blast_off, None, None), (None, _blast_on, _blast_off, None), (None, _blast_on, _blast_off, None),
+#     (None, None, None ,_blast_on), (_blast_off, _blast_on, _blast_off, None), (None, _blast_on, _blast_off, None), (None, None, None ,_blast_on),
+#     (_blast_off, _blast_on, _blast_off, None), (None, None, None, _blast_on + _glitch), None, (_blast_off + _glitch_off, _blast_on, _blast_off, None),
+#     (None, None, None ,_blast_on), (_blast_off, _blast_on, _blast_off, None), (_blast_on, _blast_off, _blast_on, _blast_off, _blast_on, _blast_off), (_blast_on, _blast_off, None, None, None, None),
+# ]
+
 ## pre Refrain
 
 

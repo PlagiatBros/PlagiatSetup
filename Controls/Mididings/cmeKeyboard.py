@@ -13,7 +13,7 @@ from liblo import send
 config(
 	backend='jack',
 	client_name='CMEKeyBoardRoutes',
-	out_ports=['CMEOutBass', 'CMEOutTreble', 'CMEOutRhodes', 'CMEOutTapeutape'],
+	out_ports=['CMEOutBass', 'CMEOutTreble', 'CMEOutRhodes', 'CMEOutTapeutape', 'CMEOutPiano'],
 	in_ports=['CMEIn']
 )
 
@@ -85,6 +85,14 @@ zyntrebleGMandela = Transpose(-12) >> ~Filter(CTRL) >> [
 
 zynrhodes1 = Transpose(-12) >> Output('CMEOutRhodes', 1)
 
+pianonul = Transpose(-12) >> [
+    [
+        ~Filter(CTRL),
+        CtrlFilter(1),
+        CtrlFilter(64)
+        ] >> Output('CMEOutPiano', 3)
+]
+
 tapeutape1 = ~Filter(CTRL) >> Output('CMEOutTapeutape', 1)
 tapeutape16 = ~Filter(CTRL) >> Output('CMEOutTapeutape', 16)
 
@@ -130,6 +138,7 @@ run(
         12: Scene("ZynTreble 3", zyntreble3),
         13: Scene("zyntrebleGMandela", zyntrebleGMandela),
 		14: Scene("ZynTreble 1", zyntreble1b),
+		15: Scene("Piano nul", pianonul)
     },
     control = [
         Filter(CTRL) >> [

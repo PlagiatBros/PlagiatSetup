@@ -216,7 +216,11 @@ climat = [
             vxorldelay_off,
 
 
-	    vxjeannotverb_on,
+            vxjeannotdelay_on,
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
+            vxjeannotdisint_off,
+            vxjeannotvocode_off,
 
         ] >> Discard()
 
@@ -354,8 +358,7 @@ climat = [
             vxorldelay_off,
             vxorlvocode_off,
 
-
-            vxjeannotdelay_off,
+            vxjeannotdelay_on,
             vxjeannotgars_on,
             vxjeannotmeuf_off,
             vxjeannotdisint_off,
@@ -423,8 +426,8 @@ climat = [
 
             SendOSC(cmeinport, '/mididings/switch_scene', 7),
 
-            vxorlgars_on,
-            vxorlmeuf_off,
+            vxorlgars_off,
+            vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
             vxorlvocode_off,
@@ -434,6 +437,7 @@ climat = [
             vxjeannotdisint_off,
             vxjeannotdelay_off,
             vxjeannotvocode_on,
+            
 
             bassdry,
 

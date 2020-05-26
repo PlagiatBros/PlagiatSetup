@@ -2,7 +2,7 @@
 <!--
 ladish Studio configuration.
 -->
-<!-- Tue Oct 22 23:37:44 2019 -->
+<!-- Mon May 25 17:40:30 2020 -->
 <studio>
   <jack>
     <conf>
@@ -14,7 +14,7 @@ ladish Studio configuration.
       <parameter path="/engine/port-max">4096</parameter>
       <parameter path="/engine/sync">false</parameter>
       <parameter path="/engine/self-connect-mode">a</parameter>
-      <parameter path="/driver/device">hw:0</parameter>
+      <parameter path="/driver/device">hw:1</parameter>
       <parameter path="/driver/period">128</parameter>
       <parameter path="/driver/nperiods">2</parameter>
       <parameter path="/internals/profiler/cpu-load">true</parameter>
@@ -112,14 +112,8 @@ ladish Studio configuration.
           <port name="Arturia MiniLab mkII (playback): Arturia MiniLab mkII MIDI 1" uuid="e3ffd1fa-0312-4ffa-ba5c-c60e920a4da5" />
           <port name="QLC+ (capture): __QLC__" uuid="0dca8864-6032-456b-8328-564078b62df1" />
           <port name="QLC+ (playback): __QLC__" uuid="3df1ba51-f336-49ca-a666-e817291664cd" />
-          <port name="TiMidity (playback): TiMidity port 0" uuid="1568ab2b-1a64-4dbb-8c65-906021643f08" />
-          <port name="TiMidity (playback): TiMidity port 1" uuid="e24f066c-98e4-4dd8-bc3e-88a83688c5cf" />
-          <port name="TiMidity (playback): TiMidity port 2" uuid="39f427c2-3201-4c7e-b7fe-7f26911da23b" />
-          <port name="TiMidity (playback): TiMidity port 3" uuid="7b6380c7-ed17-4ce3-b008-eff2f381aa87" />
           <port name="USB Keystation 88es (capture): USB Keystation 88es MIDI 1" uuid="afc6c74b-d991-42e5-a025-76ee6977b589" />
           <port name="USB Keystation 88es (playback): USB Keystation 88es MIDI 1" uuid="006320c9-1429-432c-aa81-8aefb36c3c7c" />
-          <port name="MPKmini2 (capture): MPKmini2 MIDI 1" uuid="64f377fb-7a95-4138-96c2-7b07e5e4406e" />
-          <port name="MPKmini2 (playback): MPKmini2 MIDI 1" uuid="20f9ba4b-ec03-4d07-8e3e-6fbd216b7b55" />
         </ports>
       </client>
       <client name="SLServer" uuid="75627883-d5f1-47fe-a2d9-daf52fcb8b8d">
@@ -802,6 +796,9 @@ ladish Studio configuration.
           <port name="fluidsynth MIDI In" uuid="6d6a1c7b-0c46-44a7-9249-187797aa4467" />
           <port name="fluidsynth Out #1" uuid="9fdd83eb-d101-420b-9f83-0573cd941509" />
           <port name="fluidsynth Out #2" uuid="5e95c059-25a9-4f04-805f-28218023200e" />
+          <port name="fluidsynth (2) MIDI In" uuid="99b4b51d-877e-4aeb-a1b1-0ab6d215f474" />
+          <port name="fluidsynth (2) Out #1" uuid="7c671733-6255-4b34-87a4-0be5c3a9a0fc" />
+          <port name="fluidsynth (2) Out #2" uuid="cc119749-9923-4be5-a271-7f86d46f5c24" />
         </ports>
       </client>
       <client name="ZitaORL" uuid="d6d213b9-63f8-469f-bb6a-27161211bb80">
@@ -859,6 +856,7 @@ ladish Studio configuration.
           <port name="CMEOutTreble" uuid="86672e08-3965-4317-a619-b71f0731680f" />
           <port name="CMEOutRhodes" uuid="7856fb33-aec3-440c-8be2-53320d2716eb" />
           <port name="CMEOutTapeutape" uuid="22b59030-773f-46a4-a174-c1030d082e2d" />
+          <port name="CMEOutPiano" uuid="f65caebb-eaaa-4e65-845e-a6cb9705f3b2" />
         </ports>
       </client>
       <client name="MKII Keyboard Filter" uuid="a2345d3d-d17a-4ae9-8dcc-e4c1577c7de2">
@@ -963,11 +961,18 @@ ladish Studio configuration.
         <ports>
           <port name="AdapterIn" uuid="25c38d48-d409-4289-9b61-e14c14cd1bc0" />
           <port name="AdapterOut" uuid="295afd09-266d-4e64-9f0a-1ee467d03bf8" />
+          <port name="tmpPitchbend" uuid="d2c992bc-3f55-44c4-aa5d-e04888096482" />
         </ports>
       </client>
       <client name="gxtuner" uuid="0df37eb2-a1d1-411a-bb9a-043a9a9db67d">
         <ports>
           <port name="in_0" uuid="c6736434-dc2e-4f55-a545-f6a128f29eb0" />
+        </ports>
+      </client>
+      <client name="Joystick Control" uuid="2b8d6cbe-4390-4750-a81f-e67b2e17dc79">
+        <ports>
+          <port name="in_1" uuid="c71ea74f-3ff7-4c47-8aea-5cc4970cf496" />
+          <port name="out" uuid="bacbdfdf-1e52-48c9-a985-b03035caa344" />
         </ports>
       </client>
     </clients>
@@ -2357,6 +2362,9 @@ ladish Studio configuration.
         <port name="fluidsynth MIDI In" uuid="6d6a1c7b-0c46-44a7-9249-187797aa4467" type="midi" direction="input" />
         <port name="fluidsynth Out #1" uuid="9fdd83eb-d101-420b-9f83-0573cd941509" type="audio" direction="output" />
         <port name="fluidsynth Out #2" uuid="5e95c059-25a9-4f04-805f-28218023200e" type="audio" direction="output" />
+        <port name="fluidsynth (2) MIDI In" uuid="99b4b51d-877e-4aeb-a1b1-0ab6d215f474" type="midi" direction="input" />
+        <port name="fluidsynth (2) Out #1" uuid="7c671733-6255-4b34-87a4-0be5c3a9a0fc" type="audio" direction="output" />
+        <port name="fluidsynth (2) Out #2" uuid="cc119749-9923-4be5-a271-7f86d46f5c24" type="audio" direction="output" />
       </ports>
       <dict>
         <key name="http://ladish.org/ns/canvas/x">1186.497747</key>
@@ -2444,6 +2452,7 @@ ladish Studio configuration.
         <port name="CMEOutTreble" uuid="86672e08-3965-4317-a619-b71f0731680f" type="midi" direction="output" />
         <port name="CMEOutRhodes" uuid="7856fb33-aec3-440c-8be2-53320d2716eb" type="midi" direction="output" />
         <port name="CMEOutTapeutape" uuid="22b59030-773f-46a4-a174-c1030d082e2d" type="midi" direction="output" />
+        <port name="CMEOutPiano" uuid="f65caebb-eaaa-4e65-845e-a6cb9705f3b2" type="midi" direction="output" />
       </ports>
       <dict>
         <key name="http://ladish.org/ns/canvas/x">1455.852541</key>
@@ -2598,18 +2607,6 @@ ladish Studio configuration.
         <key name="http://ladish.org/ns/canvas/y">1686.539833</key>
       </dict>
     </client>
-    <client name="TiMidity" uuid="d697b625-3bc4-430c-8a06-d63ecb1c3ca3" naming="app">
-      <ports>
-        <port name="TiMidity port 0" uuid="1568ab2b-1a64-4dbb-8c65-906021643f08" type="midi" direction="input" />
-        <port name="TiMidity port 1" uuid="e24f066c-98e4-4dd8-bc3e-88a83688c5cf" type="midi" direction="input" />
-        <port name="TiMidity port 2" uuid="39f427c2-3201-4c7e-b7fe-7f26911da23b" type="midi" direction="input" />
-        <port name="TiMidity port 3" uuid="7b6380c7-ed17-4ce3-b008-eff2f381aa87" type="midi" direction="input" />
-      </ports>
-      <dict>
-        <key name="http://ladish.org/ns/canvas/x">1718.000000</key>
-        <key name="http://ladish.org/ns/canvas/y">1458.000000</key>
-      </dict>
-    </client>
     <client name="x42Jeannot" uuid="9483d2c6-6f68-41a8-8523-90b18db018c8" naming="app" app="224bfd43-443d-4075-8acd-2496a0b15703">
       <ports>
         <port name="in" uuid="0d65bfaa-28cb-465c-ad03-ebd5ab6f29af" type="audio" direction="input" />
@@ -2646,6 +2643,7 @@ ladish Studio configuration.
       <ports>
         <port name="AdapterIn" uuid="25c38d48-d409-4289-9b61-e14c14cd1bc0" type="midi" direction="input" />
         <port name="AdapterOut" uuid="295afd09-266d-4e64-9f0a-1ee467d03bf8" type="midi" direction="output" />
+        <port name="tmpPitchbend" uuid="d2c992bc-3f55-44c4-aa5d-e04888096482" type="midi" direction="input" />
       </ports>
       <dict>
         <key name="http://ladish.org/ns/canvas/x">1637.306560</key>
@@ -2671,14 +2669,14 @@ ladish Studio configuration.
         <key name="http://ladish.org/ns/canvas/y">1481.000000</key>
       </dict>
     </client>
-    <client name="MPKmini2" uuid="f6ab38bb-32d9-4257-b2e1-2c8d206fb5d5" naming="app">
+    <client name="Joystick Control" uuid="ebe78c99-eb73-4f1c-b273-d45f6763a7b4" naming="app" app="a4586d6a-db9d-4859-81a0-ec451b7c95dd">
       <ports>
-        <port name="MPKmini2 MIDI 1" uuid="64f377fb-7a95-4138-96c2-7b07e5e4406e" type="midi" direction="output" />
-        <port name="MPKmini2 MIDI 1" uuid="20f9ba4b-ec03-4d07-8e3e-6fbd216b7b55" type="midi" direction="input" />
+        <port name="in_1" uuid="c71ea74f-3ff7-4c47-8aea-5cc4970cf496" type="midi" direction="input" />
+        <port name="out" uuid="bacbdfdf-1e52-48c9-a985-b03035caa344" type="midi" direction="output" />
       </ports>
       <dict>
-        <key name="http://ladish.org/ns/canvas/x">1461.992542</key>
-        <key name="http://ladish.org/ns/canvas/y">1062.000000</key>
+        <key name="http://ladish.org/ns/canvas/x">1683.000000</key>
+        <key name="http://ladish.org/ns/canvas/y">1286.000000</key>
       </dict>
     </client>
   </clients>
@@ -3225,11 +3223,14 @@ ladish Studio configuration.
     <connection port1="8c7a91a6-e4f7-4790-bfa7-1f22b3f8e2a6" port2="5398d25b-f9ba-4d5c-9ad6-80b983e41f28" />
     <connection port1="f003f199-69e5-422f-bdcb-d6694efc1ca8" port2="8515a81e-9ec2-4269-96a4-aa1287b163b5" />
     <connection port1="8c7a91a6-e4f7-4790-bfa7-1f22b3f8e2a6" port2="db60cc23-581c-4aa4-816b-360c3d2da0f6" />
-    <connection port1="64f377fb-7a95-4138-96c2-7b07e5e4406e" port2="25c38d48-d409-4289-9b61-e14c14cd1bc0" />
     <connection port1="afc6c74b-d991-42e5-a025-76ee6977b589" port2="cfca9e3d-5dd8-4601-afe0-6eb45383ad55" />
     <connection port1="992b029c-e10f-40f1-8e42-c460664cc269" port2="a7e69124-82f5-4c98-ada0-5f1785490923" />
     <connection port1="295afd09-266d-4e64-9f0a-1ee467d03bf8" port2="e82ef645-7bd9-4495-98a2-40cddef03d6a" />
     <connection port1="86e2400a-65ca-4f19-9e50-589ea6e82e94" port2="78275286-beac-42af-ad16-c9de58e93ee5" />
+    <connection port1="bacbdfdf-1e52-48c9-a985-b03035caa344" port2="25c38d48-d409-4289-9b61-e14c14cd1bc0" />
+    <connection port1="f65caebb-eaaa-4e65-845e-a6cb9705f3b2" port2="99b4b51d-877e-4aeb-a1b1-0ab6d215f474" />
+    <connection port1="7c671733-6255-4b34-87a4-0be5c3a9a0fc" port2="377e25ee-2f4a-42fc-b42f-5ba51393c726" />
+    <connection port1="cc119749-9923-4be5-a271-7f86d46f5c24" port2="b3f6789c-68ca-4d65-91de-b8e99f35fffe" />
   </connections>
   <applications>
     <application name="a2j" uuid="65bce9a0-8285-4cb3-9630-321ba19b43a4" terminal="false" level="0" autorun="true">a2j -e</application>
@@ -3294,7 +3295,7 @@ ladish Studio configuration.
     <application name="gxtuner" uuid="8fbf23a3-d9ce-4eec-9205-ffc1ca4d02f4" terminal="false" level="0" autorun="true">gxtuner -w 200</application>
     <application name="PytaJardin" uuid="00ab7a74-6ecf-4d7a-8c74-d45b316040e8" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_PytaJardin.sh</application>
     <application name="PytaCour" uuid="de178f8a-ba64-41bc-a3d9-b6cb7d56abdd" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_PytaCour.sh</application>
-    <application name="Joystick Control" uuid="a4586d6a-db9d-4859-81a0-ec451b7c95dd" terminal="false" level="0" autorun="false">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_jC.sh</application>
+    <application name="Joystick Control" uuid="a4586d6a-db9d-4859-81a0-ec451b7c95dd" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_jC.sh</application>
     <application name="x42 PitchShifter" uuid="38f7f911-0bb1-4c4b-b1e6-071c6f17dd5f" terminal="false" level="0" autorun="true">%2Fhome%2Fwoii%2FPlagiat%2FStage%2FScripts%2Flaunch_xP.sh</application>
   </applications>
 </studio>

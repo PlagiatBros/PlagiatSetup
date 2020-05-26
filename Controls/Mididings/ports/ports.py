@@ -91,7 +91,8 @@ rpicourport = 'osc.udp://127.0.0.1:5556'
 vporlport = 'osc.udp://192.168.0.102:56418'
 vpjeannotport = 'osc.udp://192.168.0.103:56418'
 
-
+## misc
+gxtunermanagerport = 13000
 
 ## MIDI
 
