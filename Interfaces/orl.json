@@ -1551,7 +1551,8 @@
                     "Tapeutape 1": 11,
                     "ZynTreble 3": 12,
                     "zyntrebleGMandela": 13,
-                    "pianoNul": 15
+                    "pianoNul": 15,
+                    "slapNul": 16
                   },
                   "traversing": true
                 }

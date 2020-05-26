@@ -17,7 +17,12 @@ def le5_refrain_cutdown_close(sequencer, timer):
     sequencer.send(samplesmainport, '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.)
     sequencer.send(samplesmainport, '/strip/Keyboards/AM%20pitchshifter/Pitch%20shift/unscaled', 1.)
     sequencer.send(bassmainport, '/strip/BassMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.)
-    sequencer.send(vxpitchshifterport, '/strip/VxORLMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.)
+    sequencer.send(vxpitchshifterport, '/x42/pitch', 1.)
+
+def le5_fartingart(sequencer, timer):
+
+    sequencer.animate([samplesmainport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled'], 20000., 280., .5, 'sec', framerate=50)
+    sequencer.animate([surfaceorlport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled'], 20000., 280., .5, 'sec', framerate=5)
 
 def le5_louboutin_close(sequencer, timer):
     t = timer.time()

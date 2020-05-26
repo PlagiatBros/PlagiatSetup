@@ -7,6 +7,8 @@ from mididings.engine import output_event
 from mididings.event import PitchbendEvent, NoteOnEvent, CtrlEvent
 from mididings.extra.inotify import AutoRestart
 from liblo import send
+import subprocess
+
 
 
 mididings.config(
@@ -34,6 +36,10 @@ def process(type, name, value):
             send(cmeinport, '/mididings/switch_scene', 5)
         elif name == 'dpad_right':
             send(cmeinport, '/mididings/switch_scene', 7)
+        elif name == 'tr':
+            subprocess.call(['i3-msg', 'scratchpad', 'show'])
+
+
 
     elif type == 'axis':
         if name == 'x':

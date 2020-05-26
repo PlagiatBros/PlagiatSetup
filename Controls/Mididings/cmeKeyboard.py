@@ -28,16 +28,16 @@ hook(
 cmeevents = ~Filter(CTRL)
 
 
-zynbass1 = Transpose(-12) >> Output('CMEOutBass', 1)
-zynbass2 = Transpose(-12) >> Output('CMEOutBass', 2)
-zynbass3 = Transpose(-12) >> Output('CMEOutBass', 3)
-zynbass4 = Transpose(-12) >> Output('CMEOutBass', 4)
-zynbass5 = Transpose(-12) >> [
+zynbass1 = Transpose(-12) >> ~Filter(CTRL) >> Output('CMEOutBass', 1)
+zynbass2 = Transpose(-12) >> ~Filter(CTRL) >> Output('CMEOutBass', 2)
+zynbass3 = Transpose(-12) >> ~Filter(CTRL) >> Output('CMEOutBass', 3)
+zynbass4 = Transpose(-12) >> ~Filter(CTRL) >> Output('CMEOutBass', 4)
+zynbass5 = Transpose(-12) >> ~Filter(CTRL) >>[
     Output('CMEOutBass', 5),
     Output('CMEOutBass', 1),
     ]
-zynbass6 = Transpose(-12) >> Output('CMEOutBass', 6)
-zynbass7 = Transpose(-12) >> Output('CMEOutBass', 7)
+zynbass6 = Transpose(-12) >> ~Filter(CTRL) >> Output('CMEOutBass', 6)
+zynbass7 = Transpose(-12) >> ~Filter(CTRL) >> Output('CMEOutBass', 7)
 
 zyntreble1 = Transpose(-12) >> [
     [
@@ -93,6 +93,15 @@ pianonul = Transpose(-12) >> [
         ] >> Output('CMEOutPiano', 3)
 ]
 
+basseslapnul = Transpose(-12) >> [
+    [
+        ~Filter(CTRL),
+        CtrlFilter(1),
+        CtrlFilter(64)
+        ] >> Output('CMEOutPiano', 4) // Output('CMEOutPiano', 5)
+]
+
+
 tapeutape1 = ~Filter(CTRL) >> Output('CMEOutTapeutape', 1)
 tapeutape16 = ~Filter(CTRL) >> Output('CMEOutTapeutape', 16)
 
@@ -138,7 +147,8 @@ run(
         12: Scene("ZynTreble 3", zyntreble3),
         13: Scene("zyntrebleGMandela", zyntrebleGMandela),
 		14: Scene("ZynTreble 1", zyntreble1b),
-		15: Scene("Piano nul", pianonul)
+		15: Scene("Piano nul", pianonul),
+		16: Scene("Slapnul", basseslapnul)
     },
     control = [
         Filter(CTRL) >> [

@@ -628,7 +628,7 @@ horrorcore = [
 
             ] >> Discard()
         ],
-    orlCtrl >> CtrlFilter(2) >> [
+    orlCtrl >> CtrlFilter(7) >> [
         SendOSC(rpijardinport, '/pyta/slide/mecdansefondvert/set', 'gif_speed', lambda ev: 0.2 + pow(ev.value / 127., 2) * 2),
         SendOSC(rpicourport, '/pyta/slide/mecdansefondvert/set', 'gif_speed', lambda ev: 0.2 + pow(ev.value / 127., 2) * 2),
         SendOSC(rpicourport, '/pyta/slide/wood_1/animate', 'offset', '+0', 0, '-1', 0, lambda ev: 10 / (ev.value / 12.7) , 1),

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tapeutape version="0.1.0">
+<tapeutape version="0.1.2">
   <options globalvolume="1.000000" max_polyphony="100">
     <jack-output name="Samples1"/>
     <jack-output name="Samples2"/>
@@ -494,10 +494,10 @@
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/GetUrFreakOn/GTR_1.wav" sampleRelative="GetUrFreakOn/GTR_1.wav"/>
         </instrument>
         <instrument name="Kick" minnote="53" maxnote="53" rootnote="64" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/GetUrFreakOn/808_Kick_Short.flac" sampleRelative="DrumKlit/808_Kick_Short.flac"/>
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/GetUrFreakOn/808_Kick_Short.flac" sampleRelative="GetUrFreakOn/808_Kick_Short.flac"/>
         </instrument>
         <instrument name="Kick" minnote="54" maxnote="54" rootnote="64" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/GetUrFreakOn/808_Kick_Long.flac" sampleRelative="DrumKlit/808_Kick_Long.flac"/>
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/GetUrFreakOn/808_Kick_Long.flac" sampleRelative="GetUrFreakOn/808_Kick_Long.flac"/>
         </instrument>
         <instrument name="Klap" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Klap.wav" sampleRelative="DrumKlit/Klap.wav"/>
@@ -525,6 +525,12 @@
         </instrument>
         <instrument name="Foule4" minnote="63" maxnote="63" rootnote="63" rootnotefine="0.000000" channel="16" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Crowd/applause_encore.aiff" sampleRelative="Crowd/applause_encore.aiff"/>
+        </instrument>
+        <instrument name="Sax" minnote="84" maxnote="84" rootnote="84" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/GetUrFreakOn/trompette.flac" sampleRelative="GetUrFreakOn/trompette.flac"/>
+        </instrument>
+        <instrument name="blast" minnote="86" maxnote="86" rootnote="86" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/GetUrFreakOn/blast.flac" sampleRelative="GetUrFreakOn/blast.flac"/>
         </instrument>
       </kit>
       <kit name="Horrorcore" volume="1.000000">

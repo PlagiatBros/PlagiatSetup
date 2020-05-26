@@ -1,3 +1,4 @@
 #!/bin/bash
 cd ~/Plagiat/Stage/Controls/Mididings
-python vocodTranspose.py > vocodTranspose.log
+echo "launching vocodTranspose.py" >> vocodTranspose.log
+python vocodTranspose.py >> vocodTranspose.log

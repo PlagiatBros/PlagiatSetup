@@ -86,8 +86,8 @@ le5 = [
             vxorlvocode_on,
 
             vxjeannotdelay_off,
-            vxjeannotgars_off,
-            vxjeannotmeuf_on,
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
 
@@ -142,8 +142,8 @@ le5 = [
             vxorlvocode_off,
 
             vxjeannotdelay_off,
-            vxjeannotgars_off,
-            vxjeannotmeuf_on,
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
 
@@ -208,8 +208,8 @@ le5 = [
             vxorlvocode_on,
 
             vxjeannotdelay_off,
-            vxjeannotgars_off,
-            vxjeannotmeuf_on,
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
 
@@ -266,8 +266,8 @@ le5 = [
             vxorlvocode_off,
 
             vxjeannotdelay_off,
-            vxjeannotgars_off,
-            vxjeannotmeuf_on,
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
 
@@ -324,8 +324,8 @@ le5 = [
             vxorlvocode_off,
 
             vxjeannotdelay_off,
-            vxjeannotgars_off,
-            vxjeannotmeuf_on,
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
 
@@ -385,8 +385,8 @@ le5 = [
             vxorlvocode_off,
 
             vxjeannotdelay_off,
-            vxjeannotgars_off,
-            vxjeannotmeuf_on,
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
             vxjeannotdisint_on,
 
             bassscape,
@@ -443,8 +443,8 @@ le5 = [
             vxorlvocode_off,
 
             vxjeannotdelay_off,
-            vxjeannotgars_off,
-            vxjeannotmeuf_on,
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
 
@@ -504,8 +504,8 @@ le5 = [
             vxorlvocode_off,
 
             vxjeannotdelay_off,
-            vxjeannotgars_off,
-            vxjeannotmeuf_on,
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
 
@@ -566,8 +566,8 @@ le5 = [
             vxorlvocode_off,
 
             vxjeannotdelay_off,
-            vxjeannotgars_off,
-            vxjeannotmeuf_on,
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
 

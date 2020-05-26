@@ -13,9 +13,9 @@ slowmotium_mk2lights = {
     3: 'white',
     4: 'white',
     5: 'white',
-    6:'yellow',
-    7:'yellow',
-    8:'yellow',
+    7:'blue',
+    7:'purple',
+    8:'purple',
 }
 
 
@@ -111,25 +111,17 @@ geturfreakon = [
     jeannot >> ProgramFilter(5) >> [ # Kick
         NoteOn(53, 127) >> Output('PBTapeutape', 3)
     ],
-    jeannot >> ProgramFilter(6) >> [ # Vx jeannot
-        vxjeannotdelay_off,
-        vxjeannotgars_on,
-        vxjeannotmeuf_off,
-        vxjeannotdisint_off,
-        vxjeannotvocode_off,
-    ] >> Discard(),
-    jeannot >> ProgramFilter(7) >> [ # Vx jeannot
-        vxjeannotgars_off,
-        vxjeannotmeuf_on,
-        vxjeannotdisint_off,
-        vxjeannotdelay_off,
-        vxjeannotvocode_off,
-    ] >> Discard(),
-    jeannot >> ProgramFilter(8) >> [ # Vx jeannot
-        vxjeannotgars_off,
-        vxjeannotmeuf_off,
-        vxjeannotdisint_off,
-        vxjeannotdelay_off,
-        vxjeannotvocode_on,
-    ] >> Discard(),
+
+
+    jeannot >> ProgramFilter(6) >> [ # Sax/Blast Off
+        [NoteOff(84), NoteOff(86)] >> Output('PBTapeutape', 3)
+    ],
+    jeannot >> ProgramFilter(7) >> [ # Sax
+        NoteOn(84, 127) >> Output('PBTapeutape', 3)
+    ],
+    jeannot >> ProgramFilter(8) >> [ # Blast
+        NoteOn(86, 127) >> Output('PBTapeutape', 3)
+    ],
+
+
 ]

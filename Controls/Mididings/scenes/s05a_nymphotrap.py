@@ -38,6 +38,7 @@ nymphotrap = [
     [orl >> ProgramFilter([range(1,12)]), jeannot >>  ProgramFilter([1,5,6,7])] >> Filter(PROGRAM) >> [
         SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*'),
         SendOSC(samplesmainport, '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.),
+        SendOSC(surfaceorlport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled',20000.),
         SendOSC(bassmainport, '/strip/BassMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.),
         SendOSC(vxpitchshifterport, '/x42/pitch', 1.),
         SendOSC(samplesmainport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled',20000.),
@@ -299,7 +300,25 @@ nymphotrap = [
             bassbufferst_off,
             ]
     ],
+    orl >> ProgramFilter(4) >> [ # VxOrlGars on  - Bouton 4
+            vxorlgars_on,
+        ],
+    orl >> ProgramFilter(5) >> [ # VxOrlGars off - Bouton 5
+            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'le5_fartingart'),
+            SendOSC(cmeinport, '/mididings/switch_scene', 2),
 
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+            vxorldelay_off,
+            vxorlvocode_on,
+
+            vxjeannotgars_off,
+            vxjeannotmeuf_off,
+            vxjeannotdisint_off,
+            vxjeannotdelay_off,
+            vxjeannotvocode_on,
+        ],
     orl >> ProgramFilter(11) >> [ # Instouboul - bouton 11
         SceneSwitch(61) >> Discard(),
         Program(2) >> Output('PBCtrlOut', 1)
