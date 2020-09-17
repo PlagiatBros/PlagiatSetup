@@ -633,8 +633,8 @@ horrorcore = [
         SendOSC(rpicourport, '/pyta/slide/mecdansefondvert/set', 'gif_speed', lambda ev: 0.2 + pow(ev.value / 127., 2) * 2),
         SendOSC(rpicourport, '/pyta/slide/wood_1/animate', 'offset', '+0', 0, '-1', 0, lambda ev: 10 / (ev.value / 12.7) , 1),
     ] >> Discard(),
-    orl >> ProgramFilter(8) >> [ # Ramner Mooncup Maison - Bouton 8
-        Program(71) >> cseqtrigger,
+    orl >> ProgramFilter(8) >> [ # Ramner Mooncup Maison (+pitchdown de départ) - Bouton 8
+        Program(73) >> cseqtrigger,
         [
 
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -667,12 +667,25 @@ horrorcore = [
             SendOSC(lightseqport, '/Lightseq/Bpm', 150),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
+            SendOSC(audioseqport, '/Audioseq/Bpm', 150),
+            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'horrorcore_mooncup_maison_pitchdown', 1, timestamp),
 
-            vxorlmeuf_on,
+
+            SendOSC(mk2inport, '/mididings/switch_scene', 10),
+
+            SendOSC(samplesmainport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled',20000.),
+            SendOSC(samplesmainport, '/strip/Keyboards/Calf%20Filter/Frequency/unscaled',20000.),
+            SendOSC(surfaceorlport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled',20000.),
+            SendOSC(surfaceorlport, '/strip/Keyboards/Calf%20Filter/Frequency/unscaled',20000.),
+            SendOSC(samplesmainport, '/strip/Keyboards/AM%20pitchshifter/Pitch%20shift/unscaled', 1.),
+            SendOSC(samplesmainport, '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.),
+            SendOSC(bassmainport, '/strip/BassMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.),
+
+            vxorlmeuf_off,
             vxorlgars_on,
             vxorldisint_off,
-            vxorldelay_on,
-            vxorlvocode_on,
+            vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotgars_on,
             vxjeannotmeuf_off,
@@ -688,7 +701,28 @@ horrorcore = [
             ] >> Discard()
         ],
     orl >> ProgramFilter(9) >> [ # Meshuggah Ramner Mooncup Maison - Bouton 9
-        Program(71) >> cseqtrigger,
+        # Program(73) >> cseqtrigger,
+            NoteOn(96,127) >> Output('PBTapeutape', 16), # airhorn
+            [
+                vxorlmeuf_on,
+                vxorlgars_on,
+                vxorldisint_off,
+                vxorldelay_on,
+                vxorlvocode_on,
+
+                vxjeannotgars_on,
+                vxjeannotmeuf_off,
+                vxjeannotdisint_off,
+                vxjeannotdelay_off,
+                vxjeannotvocode_off,
+
+                SendOSC(audioseqport, '/Audioseq/Bpm', 150),
+                SendOSC(audioseqport, '/Audioseq/Scene/Play', 'horrorcore_mooncup_maison_pitchdown', timestamp),
+                SendOSC(audioseqport, '/Audioseq/Scene/Play', 'horrorcore_mooncup_maison_mesh', timestamp),
+            ] >> Discard()
+        ],
+    orl >> ProgramFilter(99) >> [ # Meshuggah Ramner Mooncup Maison delayed - Bouton 9
+        Program(74) >> cseqtrigger,
         [
 
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -719,12 +753,73 @@ horrorcore = [
             SendOSC(lightseqport, '/Lightseq/Bpm', 150),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
+            SendOSC(samplesmainport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled',20000.),
+            SendOSC(samplesmainport, '/strip/Keyboards/Calf%20Filter/Frequency/unscaled',20000.),
+            SendOSC(surfaceorlport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled',20000.),
+            SendOSC(surfaceorlport, '/strip/Keyboards/Calf%20Filter/Frequency/unscaled',20000.),
+            SendOSC(samplesmainport, '/strip/Keyboards/AM%20pitchshifter/Pitch%20shift/unscaled', 1.),
+            SendOSC(samplesmainport, '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.),
+            SendOSC(bassmainport, '/strip/BassMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.),
 
-            vxorlmeuf_on,
+            SendOSC(mk2inport, '/mididings/switch_scene', 10),
+
+
+            SubSceneSwitch(1),
+
+            SendOSC(cmeinport, '/mididings/switch_scene', 5),
+
+
+            ] >> Discard()
+        ],
+    orl >> ProgramFilter(10) >> [ # Ramner Mooncup Maison 2 - Bouton 10
+        Program(73) >> cseqtrigger,
+        [
+
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 150),
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
+
+            SendOSC(klickport, '/klick/simple/set_tempo', 150),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(150)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(150)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(150)),
+
+            SendOscState([
+
+                [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
+
+            ]),
+
+
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'horrorcore_relance'),
+            SendOSC(rpicourport, '/pyta/scene_recall', 'horrorcore_relance'),
+
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'horrorcore_ragga'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'horrorcore_mooncup_maison'),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 150),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
+            SendOSC(mk2inport, '/mididings/switch_scene', 10),
+
+            SendOSC(samplesmainport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled',20000.),
+            SendOSC(samplesmainport, '/strip/Keyboards/Calf%20Filter/Frequency/unscaled',20000.),
+            SendOSC(surfaceorlport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled',20000.),
+            SendOSC(surfaceorlport, '/strip/Keyboards/Calf%20Filter/Frequency/unscaled',20000.),
+            SendOSC(samplesmainport, '/strip/Keyboards/AM%20pitchshifter/Pitch%20shift/unscaled', 1.),
+            SendOSC(samplesmainport, '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.),
+            SendOSC(bassmainport, '/strip/BassMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.),
+
+            vxorlmeuf_off,
             vxorlgars_on,
             vxorldisint_off,
-            vxorldelay_on,
-            vxorlvocode_on,
+            vxorldelay_off,
+            vxorlvocode_off,
 
             vxjeannotgars_on,
             vxjeannotmeuf_off,

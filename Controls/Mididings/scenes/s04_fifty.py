@@ -283,6 +283,8 @@ fifty = [
         Program(8) >> cseqtrigger,
         [
 
+            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
+
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(125)),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(125)),
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(125)),

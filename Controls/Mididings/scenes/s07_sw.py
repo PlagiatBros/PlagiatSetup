@@ -242,6 +242,8 @@ sw = [
                 [samplesdegradeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -3.0],
                 [samplesscapeport, '/strip/SamplesDegrade/Gain/Gain%20(dB)/unscaled', -18.0],
 
+                [vxorlpreport, '/strip/VxORLDelayPre/Gain/Mute', 1.0],
+                [surfaceorlport, '/strip/VxORLDelayPre/Gain/Mute', 1.0],
             ]),
 
 
@@ -250,7 +252,6 @@ sw = [
             vxorldisint_off,
             vxorldelay_on,
             vxorlvocode_off,
-            SendOSC(vxorlpreport, '/strip/VxORLDelayPre/Gain/Mute', 1.0),
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
@@ -291,6 +292,21 @@ sw = [
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
 
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_off,
+            vxorldelay_on,
+            vxorlvocode_off,
+
+
+            vxjeannotdelay_off,
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
+            vxjeannotvocode_off,
+
+
             SendOscState([
 
                 [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
@@ -298,20 +314,13 @@ sw = [
 
                 [samplesscapeport, '/strip/SamplesDegrade/Gain/Gain%20(dB)/unscaled', -18.0],
 
+                [vxorlpreport, '/strip/VxORLDelayPre/Gain/Mute', 1.0],
+                [surfaceorlport, '/strip/VxORLDelayPre/Gain/Mute', 1.0],
+
             ]),
 
 
-            vxorlgars_off,
-            vxorlmeuf_on,
-            vxorldisint_off,
-            vxorldelay_off,
-            vxorlvocode_off,
 
-            vxjeannotdelay_off,
-            vxjeannotgars_off,
-            vxjeannotmeuf_on,
-            vxjeannotdisint_off,
-            vxjeannotvocode_off,
             ] >> Discard()
         ],
 

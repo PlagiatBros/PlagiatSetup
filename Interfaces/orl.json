@@ -120,9 +120,38 @@
                       "height": "auto"
                     },
                     {
+                      "type": "push",
+                      "id": "vx_orl_delay_pre",
+                      "linkId": [
+                        "<< delay",
+                        ">> delaypre"
+                      ],
+                      "label": "DELAY PRE",
+                      "color": "rgb(200,100,255)",
+                      "css": "",
+                      "on": 1,
+                      "off": 0,
+                      "precision": 2,
+                      "preArgs": [
+                        "delaypre"
+                      ],
+                      "target": [
+                        "non:vx"
+                      ],
+                      "address": "/vxorl",
+                      "value": "",
+                      "doubleTap": false,
+                      "bypass": false,
+                      "width": "auto",
+                      "left": "auto",
+                      "top": "auto",
+                      "height": 100,
+                      "norelease": false
+                    },
+                    {
                       "type": "toggle",
                       "id": "vx_orl_delay",
-                      "linkId": "",
+                      "linkId": ">> delay",
                       "label": "DELAY",
                       "color": "rgb(200,100,255)",
                       "css": "",
@@ -172,6 +201,27 @@
                       "left": "auto",
                       "top": "auto",
                       "height": "auto"
+                    },
+                    {
+                      "type": "script",
+                      "top": 80,
+                      "left": 150,
+                      "id": "script_1",
+                      "linkId": "<< delaypre",
+                      "width": "auto",
+                      "height": "auto",
+                      "label": "auto",
+                      "color": "auto",
+                      "css": "display:none",
+                      "condition": 1,
+                      "script": "JS{{\nif (value==1) set(\"vx_orl_delay\", 1)\n\n}}",
+                      "default": "",
+                      "value": "",
+                      "precision": 2,
+                      "address": "/script_1",
+                      "preArgs": "",
+                      "target": "",
+                      "bypass": false
                     }
                   ],
                   "spacing": 10,

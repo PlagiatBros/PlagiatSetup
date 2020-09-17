@@ -576,6 +576,9 @@
         <instrument name="Foule4" minnote="63" maxnote="63" rootnote="63" rootnotefine="0.000000" channel="16" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Crowd/applause_encore.aiff" sampleRelative="Crowd/applause_encore.aiff"/>
         </instrument>
+        <instrument name="Horny" minnote="96" maxnote="96" rootnote="96" rootnotefine="0.000000" channel="16" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/HorrorCore/AirHorn.wav" sampleRelative="HorrorCore/AirHorn.wav"/>
+        </instrument>
       </kit>
       <kit name="TrapOne" volume="1.000000">
         <instrument name="MusicBox1Main" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.300000" pan="-0.250000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">

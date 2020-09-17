@@ -433,6 +433,12 @@ oscsendproxy = OscSendProxy([
     [bassmainport, '/strip/BassSynth/Gain/Mute', 0.0],
 
 
+	# vxorl delayt pre
+    [surfaceorlport, '/strip/VxORLDelayPre/Gain/Mute', 0.0],
+    [vxorlpreport, '/strip/VxORLDelayPre/Gain/Mute', 0.0],
+
+
+
 
 ])
 

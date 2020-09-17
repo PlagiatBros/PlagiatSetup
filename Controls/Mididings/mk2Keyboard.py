@@ -296,6 +296,15 @@ run(
 					pitch
               ] >> Discard()
             ),
+      10: 	Scene("AirHorn",
+              [
+              KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEON) >> NoteOn(96,127) >> Output('Mk2OutTapeutape', 16),
+              bassfilter,
+              gatecancel,
+			  looperctl,
+				pitch
+              ]
+            ),
     },
     control = [
 		video,

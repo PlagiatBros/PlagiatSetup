@@ -38,6 +38,10 @@ def process(type, name, value):
             send(cmeinport, '/mididings/switch_scene', 7)
         elif name == 'tr':
             subprocess.call(['i3-msg', 'scratchpad', 'show'])
+        elif name == 'tr2':
+            subprocess.call(['i3-msg', 'focus', 'right'])
+        elif name == 'tl2':
+            subprocess.call(['i3-msg', 'focus', 'left'])
 
 
 

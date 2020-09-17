@@ -54,10 +54,14 @@
         },
         delay: {
             both:[
-                '/strip/VxORLDelayPre/Gain/Mute',
-                '/strip/VxORLDelayPost/Gain/Mute'
+                '/strip/VxORLDelayPost/Gain/Mute',
             ]
         },
+	delaypre: {
+            both:[
+                '/strip/VxORLDelayPre/Gain/Mute'
+            ]
+	},
         vocode: {
             on: [
                 '/strip/VxORLMeuf/Gain/Mute',

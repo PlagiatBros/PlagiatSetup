@@ -43,10 +43,10 @@ class OSCCustomInterface(object):
 	else:
             if args[0] == 12:
              _engine.switch_subscene(9)
-   	    if args[0] < 12:
+   	    if args[0] < 12 or args[0] > 24:
 	     _engine.output_event(_event.ProgramEvent('PBCtrlOut', _util.NoDataOffset(1), args[0]))
-            if _engine.current_subscene() == 8 and args[0] > 17:
-             _engine.switch_subscene(args[0]-17)
+            # if _engine.current_subscene() == 8 and args[0] > 17:
+            #  _engine.switch_subscene(args[0]-17)
 
 	    else:
                 if args[0] == 24:
@@ -65,7 +65,7 @@ class OSCCustomInterface(object):
                     _engine.output_event(_event.NoteOnEvent('WobbleCtrlOut', 1, 'c4', 127))
                 elif args[0] == 21:
                     _engine.output_event(_event.NoteOnEvent('WobbleCtrlOut', 1, 'g4', 127))
-                    
+
 
     @_liblo.make_method('/pedalBoard/buttonRelease', 'i')
     def buttonRelease_cb(self, path, args):

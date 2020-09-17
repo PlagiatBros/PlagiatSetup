@@ -23,7 +23,7 @@ filter_reset = [
     SendOSC(bassmainport, '/strip/BassMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.),
     SendOSC(vxpitchshifterport, '/x42/pitch', 1.),
     SendOSC(samplesmainport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled',20000.),
-    SendOSC(surfaceorlport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled',200.),
+    SendOSC(surfaceorlport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled',20000.),
 
 ] >> Discard()
 
@@ -41,7 +41,7 @@ instouboul = [
         SendOSC(mk2inport, '/mididings/switch_scene', 1),
         mk2lights(instouboul_mk2lights),
         ]),
-    [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
+    [orl, jeannot] >> ProgramFilter(1) >> [stop, SendOSC(audioseqport, '/Audioseq/Sequence/Disable', '*') ], # !!!STOP!!! #
     jeannot_padrelease >> mk2lights(instouboul_mk2lights),
     orl >> ProgramFilter(11) >> filter_reset,
     jeannot >> ProgramFilter([5, 8]) >> filter_reset,
@@ -71,6 +71,10 @@ instouboul = [
 
             SendOSC(lightseqport, '/Lightseq/Bpm', 120),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
+
+            SendOSC(audioseqport, '/Audioseq/Bpm', 120),
+            SendOSC(audioseqport, '/Audioseq/Play', timestamp),
 
             vxorlgars_on,
             vxorlmeuf_off,
@@ -157,24 +161,19 @@ instouboul = [
         vxjeannotvocode_on,
     ] >> Discard(),
     jeannot >> ProgramFilter(5) >> [ # Instouboul entrée batterie meshuggah - bouton 7
-        Program(78) >> cseqtrigger,
+        Program(16) >> cseqtrigger,
         [
 
-            SendOSC(slport, '/set', 'eighth_per_cycle', 5),
-            SendOSC(slport, '/set', 'tempo', 120),
+            SendOSC(lightseqport, '/Lightseq/Bpm', 120),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
-            SendOSC(klickport, '/klick/simple/set_tempo', 120),
-            SendOSC(klickport, '/klick/simple/set_meter', 5, 4),
-            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxxx'),
-            SendOSC(klickport, '/klick/metro/start'),
 
             SendOSC(audioseqport, '/Audioseq/Bpm', 120),
             SendOSC(audioseqport, '/Audioseq/Play', timestamp),
+
+
             SendOSC(audioseqport, '/Audioseq/Sequence/Enable', 'le5_louboutin'),
 
-            SendOSC(slport, '/sl/0/hit', 'pause_on'), # bass
-            SendOSC(slport, '/sl/2/hit', 'pause_on'), # vxorlpre
-            SendOSC(slport, '/sl/4/hit', 'pause_on'), # vxjeannotpre
 
             SendOSC(rpicourport, '/pyta/scene_recall', 'le5_mesh_strobe'),
             SendOSC(rpijardinport, '/pyta/scene_recall', 'le5_mesh_strobe'),
@@ -185,8 +184,8 @@ instouboul = [
             SendOSC(lightseqport, '/Lightseq/Scene/Play', 'le5_meshug_strobelights_alea_trig', timestamp),
             SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'le5_mechantmeshug'),
 
-            SendOSC(lightseqport, '/Lightseq/Bpm', 120),
-            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
+            SendOSC(slport, '/sl/0/hit', 'pause_on'),
 
 
             vxorlgars_off,

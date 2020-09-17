@@ -146,7 +146,7 @@ run(
         11:	Scene("Tapeutape 1", tapeutape1),
         12: Scene("ZynTreble 3", zyntreble3),
         13: Scene("zyntrebleGMandela", zyntrebleGMandela),
-		14: Scene("ZynTreble 1", zyntreble1b),
+		14: Scene("ZynTreble 1b", zyntreble1b),
 		15: Scene("Piano nul", pianonul),
 		16: Scene("Slapnul", basseslapnul)
     },

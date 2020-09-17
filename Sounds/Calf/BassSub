@@ -4,9 +4,9 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="meter_in" value="0.000297471" />
-  <param name="meter_outL" value="0.000297471" />
-  <param name="meter_outR" value="0.000297471" />
+  <param name="meter_in" value="0.000168013" />
+  <param name="meter_outL" value="0.000168013" />
+  <param name="meter_outR" value="0.000168013" />
   <param name="clip_in" value="0" />
   <param name="clip_outL" value="0" />
   <param name="clip_outR" value="0" />
@@ -26,8 +26,8 @@
 <preset bank="0" program="0" plugin="gate" name="">
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
-  <param name="meter_in" value="3.91684e-05" />
-  <param name="meter_out" value="2.39906e-06" />
+  <param name="meter_in" value="3.28825e-05" />
+  <param name="meter_out" value="2.01405e-06" />
   <param name="clip_in" value="0" />
   <param name="clip_out" value="0" />
   <param name="range" value="0.06125" />
@@ -48,13 +48,13 @@
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
   <param name="amount" value="4.13532" />
-  <param name="meter_in" value="2.39906e-06" />
-  <param name="meter_out" value="2.70832e-06" />
+  <param name="meter_in" value="2.01405e-06" />
+  <param name="meter_out" value="1.82444e-06" />
   <param name="clip_in" value="0" />
   <param name="clip_out" value="0" />
   <param name="drive" value="8.5396" />
   <param name="blend" value="0" />
-  <param name="meter_drive" value="3.15811e-06" />
+  <param name="meter_drive" value="2.26275e-06" />
   <param name="freq" value="100" />
   <param name="listen" value="1" />
   <param name="floor_active" value="1" />
@@ -65,8 +65,8 @@
 <preset bank="0" program="0" plugin="compressor" name="">
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
-  <param name="meter_in" value="2.70832e-06" />
-  <param name="meter_out" value="5.53813e-06" />
+  <param name="meter_in" value="1.82444e-06" />
+  <param name="meter_out" value="3.73073e-06" />
   <param name="clip_in" value="0" />
   <param name="clip_out" value="0" />
   <param name="threshold" value="0.0921418" />
@@ -94,10 +94,10 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="meter_inL" value="5.53813e-06" />
-  <param name="meter_inR" value="5.53813e-06" />
-  <param name="meter_outL" value="5.53813e-06" />
-  <param name="meter_outR" value="5.53813e-06" />
+  <param name="meter_inL" value="3.73073e-06" />
+  <param name="meter_inR" value="3.73073e-06" />
+  <param name="meter_outL" value="3.73073e-06" />
+  <param name="meter_outR" value="3.73073e-06" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
   <param name="clip_outL" value="0" />
@@ -164,9 +164,9 @@
   <var name="preset_key_set3">2</var>
   <var name="preset_key_set4">36</var>
   <var name="preset_key_set5">37</var>
-  <var name="preset_key_set6">0</var>
-  <var name="preset_key_set7">0</var>
-  <var name="preset_key_set8">0</var>
+  <var name="preset_key_set6">13</var>
+  <var name="preset_key_set7">77</var>
+  <var name="preset_key_set8">106</var>
   <var name="preset_key_set9">0</var>
   <var name="soundfont">/usr/share/sounds/sf2/FluidR3_GM.sf2</var>
 </preset>
