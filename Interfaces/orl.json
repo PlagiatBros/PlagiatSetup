@@ -727,7 +727,7 @@
                             "id": "sl_clone_5",
                             "css": "JS{{\nreturn @{arm} ? \"\" : \"filter: grayscale(100%)\"\n}}",
                             "visible": true,
-                            "interaction": "@{arm_scenes}",
+                            "interaction": "@{arm}",
                             "expand": "false",
                             "widgetId": "panel_sl_0",
                             "props": {
