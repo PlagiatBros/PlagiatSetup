@@ -194,7 +194,7 @@ module.exports = {
                 var reverse = args.value != 0 && args.value < prevVal
                 if (reverse != sl_reverse) {
                     sl_reverse = reverse
-                    receive('/sl/-1/hit', 'reverse', sl_reverse ? 1 : 0)
+                    receive('/sl/-1/hit/feedback', 'reverse', sl_reverse ? 1 : 0)
                 }
             }
 

@@ -155,7 +155,7 @@
                 "type": "button",
                 "id": "reverse",
                 "linkId": "",
-                "css": "JS{{\nreturn @{arm} ? \"\" : \"filter: grayscale(100%)\"\n}}",
+                "css": "@keyframes blink{\n 0%{--alpha-fill-off: 0.25}\n 50%{--alpha-fill-off: 0.5}\n}\n:host {\n  #{@{arm} ? \"\" : \"filter: grayscale(100%);\"}\n  #{OSC{@{this.address}/feedback} ? \"animation: blink 1s steps(1) infinite;\" : \"\"}\n}\n",
                 "value": "",
                 "address": "/sl/-1/hit",
                 "target": [
@@ -168,8 +168,8 @@
                 "height": 60,
                 "default": "",
                 "bypass": false,
-                "left": "auto",
-                "top": "auto",
+                "left": 0,
+                "top": 0,
                 "width": 180,
                 "decimals": 2,
                 "colorWidget": "orange",
@@ -191,7 +191,7 @@
                 "label": "Reverse",
                 "on": 1,
                 "off": 0,
-                "mode": "toggle",
+                "mode": "tap",
                 "vertical": false,
                 "wrap": false,
                 "colorTextOn": "auto"
