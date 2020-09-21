@@ -19,6 +19,8 @@ sl_states = {
     3:'wait'
 }
 
+sl_reverse = false
+
 sl_map = [0,1,2,3,4,5,6,7,8]
 sl_range = '[0-8]'
 
@@ -95,31 +97,6 @@ mididings_current_subscenes = false
 mididings_scenes = {}
 
 
-time_zero = Date.now();
-
-setInterval(()=>{
-
-    setTimer((Date.now() - time_zero )/ 1000)
-
-}, 1000)
-
-function setTimer(time){
-
-    var h = Math.floor(time / 3600),
-        m = Math.floor((time - h * 3600) / 60),
-        s = Math.round((time - h * 3600 - m * 60))
-
-    receiveOsc({
-        address: '/timer',
-        args: [
-            {
-                type: 's',
-                value: `${h<10?'0':''}${h}:${m<10?'0':''}${m}:${s<10?'0':''}${s}`
-            }
-        ]
-    })
-}
-
 app.on('sessionOpened', ()=>{
     var monitors = loadJSON('./monitors.json')
     for (var m in monitors) {
@@ -189,17 +166,6 @@ module.exports = {
 
         setTimeout(ping, 1000)
 
-        // setTimeout(()=>{
-        //     var address = '/EXEC',
-        //         args = [
-        //             {type:'s', value: 'edit'},
-        //             {type:'s', value: 'sacem_samples'},
-        //             {type:'s', value: JSON.stringify({widgets:sacem_buttons})}
-        //         ]
-        //
-        //     receiveOsc({address, args})
-        //
-        // },5000)
     },
     oscInFilter: function(data){
         // Filter incomming osc messages
@@ -218,10 +184,18 @@ module.exports = {
                 v    = args[2].value
 
             if (ctrl.indexOf('loop_') != -1) {
+                var prevVal = loop_time.loop_pos[i] / loop_time.loop_len[i]
                 loop_time[ctrl][i] = v
                 address = '/sl_position_' + sl_map.indexOf(i)
                 args = [{type:'f', value:loop_time.loop_pos[i] / loop_time.loop_len[i]}]
+
                 if (isNaN(args[0].value)) return
+
+                var reverse = args.value != 0 && args.value < prevVal
+                if (reverse != sl_reverse) {
+                    sl_reverse = reverse
+                    receive('/sl/-1/hit', 'reverse', sl_reverse ? 1 : 0)
+                }
             }
 
         }
@@ -401,12 +375,6 @@ module.exports = {
         else if (address == '/sl/-1/hit' && args[0].value == 'reverse') {
             // strip 2nd arg out as it only used for gui (fake) state
             args = [args[0]]
-        }
-
-        else if (address == '/timer_reset') {
-            time_zero = Date.now()
-            setTimer(0)
-            return
         }
 
         else if (address == '/bigup') {
