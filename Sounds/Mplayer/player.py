@@ -21,8 +21,15 @@ pause_state = 0
 def load_file(filename):
     mplayer.loadfile(filename)
 
+def stop():
+    mplayer.loadfile('silence.ogg')
+    mplayer.pause()
 
 def osc(path, args):
+    if path == '/mplayer/start':
+        mplayer.seek(0)
+    if path == '/mplayer/stop':
+        stop()
     if path == '/mplayer/load':
         mplayer.loadfile(args[0])
     if path == '/mplayer/playpause':
@@ -37,8 +44,7 @@ while True:
     server.recv(0)
     time.sleep(0.1)
     if mplayer.filename == None:
-        mplayer.loadfile('silence.ogg')
-        mplayer.pause()
+        stop()
         liblo.send(OUTPUT_PORT, '/mplayer/stop')
 
     mplayer_paused = mplayer.paused
