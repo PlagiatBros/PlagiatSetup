@@ -229,7 +229,7 @@
                 "visible": true,
                 "width": 150,
                 "height": "auto",
-                "expand": "false",
+                "expand": false,
                 "colorText": "auto",
                 "colorWidget": "auto",
                 "colorStroke": "auto",
@@ -404,7 +404,7 @@
                 "linkId": "tab_switch",
                 "width": 410,
                 "height": "auto",
-                "css": "",
+                "css": "value:last-child {\n  min-width: 80rem\n}",
                 "default": "",
                 "value": "",
                 "address": "auto",
@@ -414,7 +414,7 @@
                 "decimals": 2,
                 "visible": true,
                 "interaction": true,
-                "expand": "false",
+                "expand": false,
                 "colorText": "auto",
                 "colorWidget": "auto",
                 "colorStroke": "auto",
@@ -425,7 +425,7 @@
                 "lineWidth": "auto",
                 "padding": "auto",
                 "layout": "horizontal",
-                "gridTemplate": 7,
+                "gridTemplate": "",
                 "script": "",
                 "typeTags": "",
                 "ignoreDefaults": false,
@@ -709,7 +709,8 @@
                               "variables": {
                                 "color": "cyan",
                                 "n": 5,
-                                "label": "Vx Jeannot POST"
+                                "label": "Vx Jeannot POST",
+                                "script": "set('arm', 0)"
                               },
                               "id": "panel_sl_5"
                             },
@@ -843,7 +844,8 @@
                             "props": {
                               "variables": {
                                 "n": 4,
-                                "label": "Vx Jeannot"
+                                "label": "Vx Jeannot",
+                                "script": "set('arm', 0)"
                               },
                               "id": "panel_sl_4"
                             },
@@ -902,7 +904,7 @@
                             "lineWidth": 0,
                             "padding": 10,
                             "default": "",
-                            "script": "",
+                            "script": "console.log(id)",
                             "ignoreDefaults": false,
                             "scroll": true,
                             "widgets": [
@@ -1018,7 +1020,7 @@
                                 "wrap": false,
                                 "colorTextOn": "auto",
                                 "default": "",
-                                "script": "",
+                                "script": "@{parent.variables.script}",
                                 "typeTags": "",
                                 "ignoreDefaults": false
                               },
@@ -1062,7 +1064,7 @@
                                 "wrap": false,
                                 "colorTextOn": "auto",
                                 "default": "",
-                                "script": "",
+                                "script": "@{parent.variables.script}",
                                 "typeTags": "",
                                 "ignoreDefaults": false
                               },
@@ -1106,7 +1108,7 @@
                                 "wrap": false,
                                 "colorTextOn": "auto",
                                 "default": "",
-                                "script": "",
+                                "script": "@{parent.variables.script}",
                                 "typeTags": "",
                                 "ignoreDefaults": false
                               },
@@ -1144,7 +1146,7 @@
                                 "lineWidth": "auto",
                                 "padding": 1,
                                 "default": "",
-                                "script": "",
+                                "script": "@{parent.variables.script}",
                                 "typeTags": "",
                                 "ignoreDefaults": false,
                                 "label": "Trigger",
@@ -7278,7 +7280,7 @@
             "doubleTap": false,
             "value": "",
             "default": "",
-            "linkId": "lock",
+            "linkId": "",
             "script": "",
             "address": "auto",
             "preArgs": "",
@@ -7318,8 +7320,8 @@
             "doubleTap": false,
             "value": "",
             "default": "",
-            "linkId": "lock",
-            "script": "",
+            "linkId": "",
+            "script": "if (touch === 0) {\n set('this', Math.round(value))\n set('lock_button', Math.round(value))\n}",
             "address": "auto",
             "preArgs": "",
             "typeTags": "",
@@ -7341,8 +7343,8 @@
             },
             "logScale": false,
             "sensitivity": 1,
-            "steps": 2,
-            "origin": "auto"
+            "steps": "",
+            "origin": "@{lock_button}"
           }
         ],
         "tabs": []
