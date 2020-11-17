@@ -276,7 +276,6 @@ dafist = [
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
-            vxjeannotverb_on,
 
             SendOSC(cmeinport, '/mididings/switch_scene', 9),
 
@@ -292,41 +291,77 @@ dafist = [
     jeannot >> ProgramFilter(5) >> [ # "Look" (video text) - Bouton 5
         SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_look') >> Discard()
     ],
-    orl >> ProgramFilter(4) >> [ # Couplet part 2 (orl meuf) - Bouton 4
+
+    orl >> ProgramFilter(4) >> [ # Couplet part 2 - Bouton 4
+        Program(13) >> cseqtrigger,
+        [
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 120),
+
+            # video
+            SendOSC(rpicourport, '/pyta/scene_recall', 'dafist_couplet'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'dafist_couplet'),
+
+            # light
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_couplet_firstpart_fixe'),
+            SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_couplet_secondpart_fixe'),
 
 
-        SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_couplet_firstpart_fixe'),
-        SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_couplet_secondpart_fixe'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_mooncupwaters_alpha', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_mooncupwaters_alpha'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_mooncupwaters_rgb', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_mooncupwaters_rgb'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_mooncupwaters_jardin', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_mooncupwaters_jardin'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_mooncupwaters_cour', 1),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_mooncupwaters_cour'),
 
 
-        SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_mooncupwaters_alpha', 1),
-        SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_mooncupwaters_alpha'),
-        SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_mooncupwaters_rgb', 1),
-        SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_mooncupwaters_rgb'),
-        SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_mooncupwaters_jardin', 1),
-        SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_mooncupwaters_jardin'),
-        SendOSC(lightseqport, '/Lightseq/Sequence/Random', 'dafist_mooncupwaters_cour', 1),
-        SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'dafist_mooncupwaters_cour'),
+            SendOSC(lightseqport, '/Lightseq/Bpm', 1800),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
 
-        SendOSC(lightseqport, '/Lightseq/Bpm', 1800),
-        SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
-        vxorlgars_off,
-        vxorlmeuf_on,
-        vxorldisint_off,
-        vxorldelay_off,
-        vxorlvocode_off,
 
-        vxjeannotdelay_off,
-        vxjeannotgars_on,
-        vxjeannotmeuf_off,
-        vxjeannotdisint_off,
-        vxjeannotvocode_off,
+            SendOscState([
 
-        SendOSC(cmeinport, '/mididings/switch_scene', 5),
+                [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/Samples4Dry/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/SamplesMunge/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/SamplesScape/Gain/Mute', 0.0],
 
-    ] >> Discard(),
+                [samplesscapeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -5.0],
+                [samplesscapeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -10.0],
+                [samplesdelaymungeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -9.0],
+
+            ]),
+
+
+            vxorlgars_on,
+            vxorlmeuf_off,
+            vxorldisint_off,
+            vxorldelay_off,
+            vxorlvocode_off,
+
+            vxjeannotdelay_off,
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_off,
+            vxjeannotvocode_off,
+
+            SendOSC(cmeinport, '/mididings/switch_scene', 5),
+
+            bassdry,
+            bassdetunest_on,
+            bassringst_on,
+            bassvibest_off,
+            bassbufferst_off,
+
+
+
+            ] >> Discard()
+        ],
     jeannot >> ProgramFilter(4) >> [ # Couplet part 3 (ragga) - Bouton 4
         Program(72) >> cseqtrigger,
         [
@@ -377,8 +412,8 @@ dafist = [
             ]),
 
 
-            vxorlgars_off,
-            vxorlmeuf_on,
+            vxorlgars_on,
+            vxorlmeuf_off,
             vxorldisint_off,
             vxorldelay_off,
             vxorlvocode_off,
@@ -474,7 +509,7 @@ dafist = [
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
             SendOSC(slport, '/sl/0/set', 'sync', 0),
             SendOSC(slport, '/sl/0/hit', 'pause_off'),
-            SendOSC(slport, '/sl/0/hit', 'trigger'),
+            SendOSC(slport, '/sl/0/hit', 'record'),
             SendOSC(slport, '/sl/0/set', 'sync', 1),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 120),
@@ -791,7 +826,6 @@ dafist = [
             vxjeannotmeuf_on,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
-            vxjeannotverb_on,
         ] >> Discard(),
 
         orl >> ProgramFilter(11) >> [ # Passage vers Fifty - Bouton 11

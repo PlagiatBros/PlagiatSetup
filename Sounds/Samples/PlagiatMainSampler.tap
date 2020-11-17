@@ -564,13 +564,13 @@
         <instrument name="Cri2" minnote="38" maxnote="38" rootnote="38" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.600000" pan="0.710000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/HorrorCore/Horrocore_Cri2.flac" sampleRelative="HorrorCore/Horrocore_Cri2.flac"/>
         </instrument>
-        <instrument name="Shamisen" minnote="39" maxnote="39" rootnote="39" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.600000" pan="0.710000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="Shamisen" minnote="39" maxnote="39" rootnote="39" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.320000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/HorrorCore/Horrocore_Final_Shamisen.flac" sampleRelative="HorrorCore/Horrocore_Final_Shamisen.flac"/>
         </instrument>
-        <instrument name="Shakuhashi" minnote="40" maxnote="40" rootnote="40" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.600000" pan="0.710000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="Shakuhashi" minnote="40" maxnote="40" rootnote="40" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="-0.360000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/HorrorCore/Horrocore_Final_Shakuhashi.flac" sampleRelative="HorrorCore/Horrocore_Final_Shakuhashi.flac"/>
         </instrument>
-        <instrument name="ShakuhashiGrave" minnote="41" maxnote="41" rootnote="41" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.600000" pan="0.710000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="ShakuhashiGrave" minnote="41" maxnote="41" rootnote="41" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.290000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/HorrorCore/Horrocore_Final_ShakuhashiGrave.flac" sampleRelative="HorrorCore/Horrocore_Final_ShakuhashiGrave.flac"/>
         </instrument>
         <instrument name="Foule1" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="16" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
@@ -634,15 +634,9 @@
         </instrument>
       </kit>
       <kit name="ALaPecheAuxMoulagas" volume="1.000000">
-        <!-- <instrument name="Final" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.240000" pan="-0.560000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ALaPecheAuxMoulagas/AllahPecheAuxMoulagas_master_Live_Final1_r5.flac" sampleRelative="ALaPecheAuxMoulagas/AllahPecheAuxMoulagas_master_Live_Final1_r5.flac"/>
-        </instrument> -->
         <instrument name="Final Boucle" minnote="61" maxnote="61" rootnote="61" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.240000" pan="-0.560000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ALaPecheAuxMoulagas/AllahPecheAuxMoulagas_master_Live_Final2_r5.flac" sampleRelative="ALaPecheAuxMoulagas/AllahPecheAuxMoulagas_master_Live_Final2_r5.flac"/>
         </instrument>
-        <!-- <instrument name="Morceau mp3" minnote="62" maxnote="62" rootnote="62" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.240000" pan="-0.560000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ALaPecheAuxMoulagas/AllahPecheAuxMoulagas_master_Live_woVocals_r5.flac" sampleRelative="ALaPecheAuxMoulagas/AllahPecheAuxMoulagas_master_Live_woVocals_r5.flac"/>
-        </instrument> -->
         <instrument name="Foule1" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="16" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Crowd/applause_begin.wav" sampleRelative="Crowd/applause_begin.wav"/>
         </instrument>

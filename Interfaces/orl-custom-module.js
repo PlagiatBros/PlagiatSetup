@@ -97,7 +97,7 @@ mididings_current_subscenes = false
 mididings_scenes = {}
 
 
-app.on('sessionOpened', ()=>{
+app.on('sessionOpened', (data, client)=>{
     var monitors = loadJSON('./monitors.json')
     for (var m in monitors) {
         var last
@@ -110,7 +110,7 @@ app.on('sessionOpened', ()=>{
         }
         if (last) monitors[m].push(last)
 
-        receive('/' + m, monitors[m])
+        receive('/' + m, monitors[m], {clientId: client.id})
     }
     receive('/timer_reset', 1)
 })
