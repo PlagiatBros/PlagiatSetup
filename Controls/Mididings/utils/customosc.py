@@ -9,7 +9,7 @@ import mididings.extra.panic as _panic
 
 import liblo as _liblo
 
-from time import time
+from time import time, sleep
 
 class OSCCustomInterface(object):
     def __init__(self, port=56418):
@@ -29,13 +29,17 @@ class OSCCustomInterface(object):
             del self.server
 
 
+    @_liblo.make_method('/pedalBoard/button', 'if')
     @_liblo.make_method('/pedalBoard/button', 'i')
     def button_cb(self, path, args):
         # Anti-rebond
         diff = time() * 1000 - self.timestamp
-        if diff < self.timeout:
+        if diff < self.timeout and args[0] < 25:
             return
         self.timestamp = time() * 1000
+
+        if len(args) > 1:
+            sleep(args[1])
 
         if _engine.current_subscene() == 9 and args[0] < 12:
          _engine.switch_scene(args[0])

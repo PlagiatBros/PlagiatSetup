@@ -5,6 +5,7 @@ from aliases import *
 
 from mididings import *
 from mididings.extra.osc import SendOSC
+from liblo import send
 
 #######################################
 
@@ -22,6 +23,10 @@ dafist_mk2lights = {
 }
 
 
+_ragga_i = 0
+def ragga_iteration():
+    _ragga_i += 1
+    return _ragga_i
 
 #### Da Fist ####
 dafist = [
@@ -94,12 +99,13 @@ dafist = [
             vxorlvocode_off,
 
             vxjeannotdelay_off,
-            vxjeannotgars_off,
-            vxjeannotmeuf_on,
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
             vxjeannotdisint_off,
             vxjeannotvocode_off,
 
             SendOSC(cmeinport, '/mididings/switch_scene', 7),
+            SendOSC(mk2inport, '/mididings/switch_scene', 8),
 
             ] >> Discard()
         ],
@@ -210,25 +216,28 @@ dafist = [
             vxjeannotvocode_off,
 
             bassdry,
-            bassdetunest_on,
-            bassringst_on,
-            bassvibest_on,
-            bassbufferst_on,
+            bassdisto,
 
             SendOSC(cmeinport, '/mididings/switch_scene', 5),
+            SendOSC(mk2inport, '/mididings/switch_scene', 1),
 
             ] >> Discard()
         ],
-    orl >> ProgramFilter(3) >> [ # Couplet - Bouton 3
-        Program(67) >> cseqtrigger,
+    orl >> ProgramFilter(3) >> [ # Couplet 1 bouclage auto - Bouton 3 (appui anticipé sur la fin du refrain)
+        Program(5) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
-            SendOSC(slport, '/set', 'tempo', 120),
+            SendOSC(slport, '/sl/0/hit', 'record'),
 
-            SendOSC(klickport, '/klick/simple/set_tempo', 120),
-            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
-            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
-            SendOSC(klickport, '/klick/metro/start'),
+#    orl >> ProgramFilter(3) >> [ # Couplet - Bouton 3
+#        Program(67) >> cseqtrigger,
+#        [
+#            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
+#            SendOSC(slport, '/set', 'tempo', 120),
+
+#            SendOSC(klickport, '/klick/simple/set_tempo', 120),
+#            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+#            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+#            SendOSC(klickport, '/klick/metro/start'),
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(120)),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(120)),
@@ -278,6 +287,7 @@ dafist = [
             vxjeannotvocode_off,
 
             SendOSC(cmeinport, '/mididings/switch_scene', 9),
+            SendOSC(mk2inport, '/mididings/switch_scene', 8),
 
             bassdry,
             bassdetunest_on,
@@ -351,6 +361,7 @@ dafist = [
             vxjeannotvocode_off,
 
             SendOSC(cmeinport, '/mididings/switch_scene', 5),
+            SendOSC(mk2inport, '/mididings/switch_scene', 8),
 
             bassdry,
             bassdetunest_on,
@@ -424,7 +435,10 @@ dafist = [
             vxjeannotdisint_off,
             vxjeannotvocode_off,
 
+            #Call(lambda ev: vxorlmeuf_on.__call__() if (ragga_iteration() % 2) else vxorlgars_on.__call__()),
+
             SendOSC(cmeinport, '/mididings/switch_scene', 5),
+            SendOSC(mk2inport, '/mididings/switch_scene', 8),
 
             bassdry,
             bassdetunest_on,
@@ -491,6 +505,7 @@ dafist = [
             vxjeannotvocode_off,
 
             SendOSC(cmeinport, '/mididings/switch_scene', 7),
+            SendOSC(mk2inport, '/mididings/switch_scene', 8),
 
             bassdry,
             bassdetunest_on,
@@ -500,22 +515,15 @@ dafist = [
 
             ] >> Discard()
         ],
-    orl >> ProgramFilter(6) >> [ # Couplet 2 - Bouton 6
-        Program(67) >> cseqtrigger,
+    orl >> ProgramFilter(6) >> [ # Couplet 2 bouclage auto - Bouton 6 (appui anticipé sur la fin du refrain)
+        Program(5) >> cseqtrigger,
         [
-            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
-            SendOSC(slport, '/set', 'tempo', 120),
 
-            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
-            SendOSC(slport, '/sl/0/set', 'sync', 0),
-            SendOSC(slport, '/sl/0/hit', 'pause_off'),
             SendOSC(slport, '/sl/0/hit', 'record'),
-            SendOSC(slport, '/sl/0/set', 'sync', 1),
 
-            SendOSC(klickport, '/klick/simple/set_tempo', 120),
-            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
-            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
-            SendOSC(klickport, '/klick/metro/start'),
+
+            SendOSC(audioseqport, '/Audioseq/Play', timestamp),
+            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'dafist_gate_cancel_orl', timestamp),
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(120)),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(120)),
@@ -563,6 +571,7 @@ dafist = [
             vxjeannotverb_on,
 
             SendOSC(cmeinport, '/mididings/switch_scene', 9),
+            SendOSC(mk2inport, '/mididings/switch_scene', 8),
 
             bassdry,
             bassdetunest_on,
@@ -586,8 +595,6 @@ dafist = [
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),
 
-            SendOSC(bassmainport, '/strip/BassSynth/Gain/Mute', 1.0),
-
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(120)),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(120)),
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(120)),
@@ -605,12 +612,11 @@ dafist = [
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
             SendOSC(audioseqport, '/Audioseq/Bpm', 120),
-            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'dafist_blast_bassopen', timestamp),
+            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'dafist_blast_delayed', timestamp),
             SendOSC(audioseqport, '/Audioseq/Play', timestamp),
 
 
             SendOscState([
-                [bassmainport, '/strip/BassSynth/Gain/Mute', 1.0],
 
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
                 [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
@@ -635,16 +641,19 @@ dafist = [
             vxjeannotvocode_off,
 
             bassdry,
-            bassdetunest_on,
-            bassringst_on,
-            bassvibest_on,
-            bassbufferst_on,
+            bassdisto,
 
             SendOSC(cmeinport, '/mididings/switch_scene', 5),
 
             ] >> Discard()
 
         ],
+    orl >> ProgramFilter(97) >> [ # Blast - Bouton 7
+        Program(74) >> cseqtrigger,
+        [
+            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'dafist_blast_phase', timestamp),
+        ] >> Discard()
+    ],
     orl >> ProgramFilter(8) >> [ # Transe goa - Bouton 8
         Program(71) >> cseqtrigger,
         [
@@ -696,7 +705,7 @@ dafist = [
             vxjeannotdisint_off,
             vxjeannotvocode_off,
 
-            SendOSC(cmeinport, '/mididings/switch_scene', 9),
+            SendOSC(cmeinport, '/mididings/switch_scene', 10),
 
             bassdry,
 

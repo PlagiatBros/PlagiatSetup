@@ -209,6 +209,7 @@ vxjeannotverb_on = [
 # Dry #
 bassdry = [
     SendOSC(bassmainport, '/strip/BassScapePre/Gain/Mute', 1.0),
+    SendOSC(bassmainport, '/strip/BassDistoHi/Gain/Mute', 1.0),
     SendOSC(bassmainport, '/strip/BassDegradePre/Gain/Mute', 1.0),
     SendOSC(bassmainport, '/strip/BassWobblePost/MDA%20RezFilter/Freq/unscaled', 0.0),
     ] >> Discard()
@@ -226,6 +227,11 @@ bassdegrade = [
 # Wobble #
 basswobble = [
     SendOSC(bassmainport, '/strip/BassWobblePre/Gain/Mute', 0.0),
+    ] >> Discard()
+
+# Wobble #
+bassdisto = [
+    SendOSC(bassmainport, '/strip/BassDistoHi/Gain/Mute', 0.0),
     ] >> Discard()
 
 
@@ -431,6 +437,7 @@ oscsendproxy = OscSendProxy([
 
 	# synth bass
     [bassmainport, '/strip/BassSynth/Gain/Mute', 0.0],
+    [samplesmainport, '/strip/Keyboards/Gain/Mute', 0.0],
 
 
 	# vxorl delayt pre

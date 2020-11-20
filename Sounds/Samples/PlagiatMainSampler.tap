@@ -434,8 +434,8 @@
         <instrument name="ufo2" minnote="50" maxnote="50" rootnote="50" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.570000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/48k_ufo.41.wav" sampleRelative="DaFirst/48k_ufo.41.wav"/>
         </instrument>
-        <instrument name="psychose" minnote="72" maxnote="72" rootnote="72" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="0.330000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/48k_psychose.2.wav" sampleRelative="DaFirst/48k_psychose.2.wav"/>
+        <instrument name="psychose" minnote="72" maxnote="72" rootnote="72" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="0.500000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/trapdefeignants.flac.flac" sampleRelative="ConnassesSACEM/trapdefeignants.flac.flac"/>
         </instrument>
         <instrument name="psychose2" minnote="74" maxnote="74" rootnote="74" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples3" volume="0.490000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/48k_psychose.5@112.wav" sampleRelative="DaFirst/48k_psychose.5@112.wav"/>
@@ -487,6 +487,9 @@
         </instrument>
         <instrument name="Foule4" minnote="63" maxnote="63" rootnote="63" rootnotefine="0.000000" channel="16" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Crowd/applause_encore.aiff" sampleRelative="Crowd/applause_encore.aiff"/>
+        </instrument>
+        <instrument name="Muezzin" minnote="114" maxnote="114" rootnote="114" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.240000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/muezzin.wav" sampleRelative="DaFirst/muezzin.wav"/>
         </instrument>
       </kit>
       <kit name="GetUrFreakOn" volume="1.000000">
