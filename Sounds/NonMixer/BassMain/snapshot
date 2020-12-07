@@ -2,17 +2,17 @@
 	Group 0x25 create :name "BassMain"
 	Mixer_Strip 0x1 create :name "BassDry" :width "narrow" :tab "signal" :color 4278196224 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
 	Chain 0x2 create :strip 0x1 :tab "chain"
-	JACK_Module 0x3 create :parameter_values "0.000000:2.000000" :is_default 1 :chain 0x2 :active 1
-	Plugin_Module 0x127 create :lv2_plugin_uri "http://calf.sourceforge.net/plugins/Filter" :plugin_ins 2 :plugin_outs 2 :parameter_values "20000.000000:4.500000:2.000000:20.000000" :is_default 0 :chain 0x2 :active 1
+	JACK_Module 0x3 create :parameter_values "0.000000:1.000000" :is_default 1 :chain 0x2 :active 1
+	Plugin_Module 0x127 create :lv2_plugin_uri "http://calf.sourceforge.net/plugins/Filter" :plugin_ins 2 :plugin_outs 2 :parameter_values "20000.000000:4.500000:2.000000:20.000000:0.000000:1.000000:1.000000" :is_default 0 :chain 0x2 :active 1
 	Gain_Module 0x4 create :parameter_values "0.000000:0.000000" :is_default 1 :chain 0x2 :active 1
 	Meter_Module 0x5 create :is_default 1 :chain 0x2 :active 1
 	JACK_Module 0x6 create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0x2 :active 1
 	Mixer_Strip 0xB0 create :name "BassSub" :width "narrow" :tab "signal" :color 2348813568 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
 	Chain 0xB1 create :strip 0xB0 :tab "chain"
-	JACK_Module 0xB2 create :parameter_values "0.000000:2.000000" :is_default 1 :chain 0xB1 :active 1
+	JACK_Module 0xB2 create :parameter_values "0.000000:1.000000" :is_default 1 :chain 0xB1 :active 1
 	Gain_Module 0xB3 create :parameter_values "0.000000:0.000000" :is_default 1 :chain 0xB1 :active 1
 	Meter_Module 0xB4 create :is_default 1 :chain 0xB1 :active 1
-	JACK_Module 0xB5 create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0xB1 :active 1
+	JACK_Module 0xB5 create :parameter_values "1.000000:0.000000" :is_default 1 :chain 0xB1 :active 1
 	Mixer_Strip 0xD create :name "BassScapePre" :width "narrow" :tab "signal" :color 4278196224 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
 	Chain 0xE create :strip 0xD :tab "chain"
 	JACK_Module 0xF create :parameter_values "0.000000:1.000000" :is_default 1 :chain 0xE :active 1
@@ -48,7 +48,7 @@
 	JACK_Module 0xF1 create :parameter_values "1.000000:0.000000" :is_default 1 :chain 0xED :active 1
 	Mixer_Strip 0xD7 create :name "BassWobblePost" :width "narrow" :tab "signal" :color 2550137088 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
 	Chain 0xD8 create :strip 0xD7 :tab "chain"
-	JACK_Module 0xD9 create :parameter_values "0.000000:2.000000" :is_default 1 :chain 0xD8 :active 1
+	JACK_Module 0xD9 create :parameter_values "0.000000:1.000000" :is_default 1 :chain 0xD8 :active 1
 	Plugin_Module 0x108 create :plugin_id 1433 :plugin_ins 1 :plugin_outs 1 :parameter_values "1.000000:4.000000" :is_default 0 :chain 0xD8 :active 1
 	Plugin_Module 0xEA create :lv2_plugin_uri "http://drobilla.net/plugins/mda/Bandisto" :plugin_ins 2 :plugin_outs 2 :parameter_values "1.000000:0.340426:0.744681:0.500000:0.865248:0.765957:0.567376:0.659574:0.645390:0.000000" :is_default 0 :chain 0xD8 :active 1
 	Plugin_Module 0xEB create :lv2_plugin_uri "http://drobilla.net/plugins/mda/RezFilter" :plugin_ins 2 :plugin_outs 2 :parameter_values "0.000000:0.652482:0.500000:0.850000:0.000000:0.500000:0.700000:0.697022:0.000000:0.000000" :is_default 0 :chain 0xD8 :active 1
@@ -58,17 +58,17 @@
 	Controller_Module 0x109 create :is_default 0 :chain 0xD8 :active 1 :module 0x108 :port 0 :mode 0
 	Mixer_Strip 0x26 create :name "BassMain" :width "narrow" :tab "signal" :color 4278196224 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
 	Chain 0x27 create :strip 0x26 :tab "chain"
-	JACK_Module 0x28 create :parameter_values "0.000000:2.000000" :is_default 1 :chain 0x27 :active 1
-	Plugin_Module 0x11D create :lv2_plugin_uri "http://calf.sourceforge.net/plugins/Filter" :plugin_ins 2 :plugin_outs 2 :parameter_values "20000.000000:4.500000:2.000000:20.000000" :is_default 0 :chain 0x27 :active 1
+	JACK_Module 0x28 create :parameter_values "0.000000:1.000000" :is_default 1 :chain 0x27 :active 1
+	Plugin_Module 0x11D create :lv2_plugin_uri "http://calf.sourceforge.net/plugins/Filter" :plugin_ins 2 :plugin_outs 2 :parameter_values "20000.000000:4.500000:2.000000:20.000000:0.000000:1.000000:1.000000" :is_default 0 :chain 0x27 :active 1
 	Gain_Module 0x29 create :parameter_values "-3.000000:0.000000" :is_default 1 :chain 0x27 :active 1
 	Meter_Module 0x2A create :is_default 1 :chain 0x27 :active 1
 	JACK_Module 0x2B create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0x27 :active 1
 	Mixer_Strip 0xDD create :name "BassSynth" :width "narrow" :tab "signal" :color 305801575 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
 	Chain 0xDE create :strip 0xDD :tab "chain"
-	JACK_Module 0xDF create :parameter_values "0.000000:2.000000" :is_default 1 :chain 0xDE :active 1
+	JACK_Module 0xDF create :parameter_values "0.000000:1.000000" :is_default 1 :chain 0xDE :active 1
 	Gain_Module 0xE0 create :parameter_values "-6.800000:0.000000" :is_default 1 :chain 0xDE :active 1
 	Meter_Module 0xE1 create :is_default 1 :chain 0xDE :active 1
-	JACK_Module 0xE2 create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0xDE :active 1
+	JACK_Module 0xE2 create :parameter_values "1.000000:0.000000" :is_default 1 :chain 0xDE :active 1
 	Mixer_Strip 0x1C5 create :name "BassDistoHi" :width "narrow" :tab "signal" :color 4278190592 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
 	Chain 0x1C6 create :strip 0x1C5 :tab "chain"
 	JACK_Module 0x1C7 create :parameter_values "0.000000:1.000000" :is_default 1 :chain 0x1C6 :active 1

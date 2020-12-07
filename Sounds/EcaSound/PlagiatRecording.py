@@ -21,7 +21,7 @@ def command(string):
 gui_address = 'osc.udp://127.0.0.1:11000'
 
 
-chains = ['Kick', 'OH', 'Basses', 'Samples', 'Keyboards', 'Vx_Missy', 'Vx_Nano', 'Vx_Public', 'Ambiance', 'Master']
+chains = ['Kick', 'OH', 'Basses', 'BassSynths', 'Samples', 'Keyboards', 'Vx_Missy', 'Vx_Nano', 'Vx_Public', 'Ambiance', 'Master']
 meters = {}
 state = {}
 for chain in chains:

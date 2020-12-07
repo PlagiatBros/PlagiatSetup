@@ -103,7 +103,8 @@
             "target": "",
             "vertical": false,
             "wrap": false,
-            "align": "center"
+            "align": "center",
+            "html": ""
           },
           {
             "type": "panel",
@@ -189,7 +190,8 @@
                 "mode": "tap",
                 "vertical": false,
                 "wrap": false,
-                "colorTextOn": "auto"
+                "colorTextOn": "auto",
+                "html": ""
               },
               {
                 "type": "text",
@@ -219,7 +221,8 @@
                 "script": "",
                 "vertical": false,
                 "wrap": false,
-                "align": ""
+                "align": "",
+                "html": ""
               },
               {
                 "type": "text",
@@ -249,7 +252,8 @@
                 "target": "",
                 "vertical": false,
                 "wrap": false,
-                "align": ""
+                "align": "",
+                "html": ""
               },
               {
                 "type": "panel",
@@ -321,7 +325,8 @@
                     "lineWidth": "auto",
                     "padding": "auto",
                     "script": "",
-                    "target": ""
+                    "target": "",
+                    "html": ""
                   },
                   {
                     "type": "button",
@@ -361,7 +366,8 @@
                     "default": "",
                     "script": "var start = Date.now()\nset(\"timer\", \"00:00:00\")\n\nsetInterval(()=>{\nvar now = new Date(),\n    snow = [now.getHours(), now.getMinutes()].map(x=>String(x).padStart(2, \"0\")).join(\"h\"),\n    diff = new Date(now - start),\n    sdiff = [diff.getHours() - 1, diff.getMinutes(), diff.getSeconds()].map(x=>String(x).padStart(2, \"0\")).join(\":\")\n\n\n\nset(\"clock\", snow)\n\nset(\"timer\", sdiff)\n\n\n}, 1000)",
                     "typeTags": "",
-                    "ignoreDefaults": false
+                    "ignoreDefaults": false,
+                    "html": ""
                   },
                   {
                     "type": "text",
@@ -391,10 +397,12 @@
                     "lineWidth": "auto",
                     "padding": "auto",
                     "script": "",
-                    "target": ""
+                    "target": "",
+                    "html": ""
                   }
                 ],
-                "tabs": []
+                "tabs": [],
+                "html": ""
               },
               {
                 "type": "switch",
@@ -412,6 +420,7 @@
                 "target": "",
                 "bypass": true,
                 "decimals": 2,
+                "mode": "tap",
                 "visible": true,
                 "interaction": true,
                 "expand": false,
@@ -424,24 +433,41 @@
                 "alphaFillOn": "auto",
                 "lineWidth": "auto",
                 "padding": "auto",
-                "layout": "horizontal",
-                "gridTemplate": "",
+                "colorTextOn": "auto",
                 "script": "",
                 "typeTags": "",
                 "ignoreDefaults": false,
-                "values": "JS{{\nvar tabs = @{center_tabs.tabs},\n    values = {}\n\nfor (var i in tabs) {\n  values[tabs[i].label] = parseInt(i)\n}\n\nreturn values\n\n}}",
-                "mode": "tap",
-                "colorTextOn": "auto"
+                "html": "",
+                "layout": "horizontal",
+                "gridTemplate": "",
+                "values": "JS{{\nvar tabs = @{center_tabs.tabs},\n    values = {}\n\nfor (var i in tabs) {\n  values[tabs[i].label] = parseInt(i)\n}\n\nreturn values\n\n}}"
               },
               {
                 "type": "button",
+                "id": "mandela_modal",
+                "script": "",
+                "value": "",
+                "default": "",
+                "linkId": "",
+                "address": "/@{this.id}",
+                "preArgs": "",
+                "typeTags": "",
+                "decimals": 2,
+                "target": "",
+                "ignoreDefaults": false,
+                "bypass": true,
                 "top": 50,
                 "left": 140,
-                "id": "mandela_modal",
-                "visible": true,
-                "interaction": true,
                 "width": 100,
                 "height": "auto",
+                "label": "Mandela",
+                "css": "",
+                "doubleTap": false,
+                "on": 1,
+                "off": 0,
+                "mode": "toggle",
+                "visible": true,
+                "interaction": true,
                 "expand": "false",
                 "colorText": "auto",
                 "colorWidget": "#fda96d",
@@ -452,33 +478,27 @@
                 "alphaFillOn": "auto",
                 "lineWidth": "auto",
                 "padding": "auto",
-                "css": "",
-                "label": "Mandela",
-                "doubleTap": false,
-                "value": "",
-                "default": "",
-                "linkId": "",
-                "script": "",
-                "address": "/@{this.id}",
-                "preArgs": "",
-                "typeTags": "",
-                "decimals": 2,
-                "target": "",
-                "ignoreDefaults": false,
-                "bypass": true,
                 "vertical": false,
                 "wrap": false,
-                "on": 1,
-                "off": 0,
-                "mode": "toggle",
-                "colorTextOn": "auto"
+                "colorTextOn": "auto",
+                "html": ""
               },
               {
                 "type": "button",
+                "id": "show_mouse",
+                "script": "",
+                "value": "",
+                "default": "",
+                "linkId": "",
+                "address": "/toggle_1",
+                "preArgs": [],
+                "typeTags": "",
+                "decimals": 2,
+                "target": [],
+                "ignoreDefaults": false,
+                "bypass": true,
                 "top": 0,
                 "left": 0,
-                "id": "show_mouse",
-                "linkId": "",
                 "width": 100,
                 "height": 400,
                 "label": "Show Mouse\n(Ctrl + M)",
@@ -486,13 +506,6 @@
                 "doubleTap": false,
                 "on": 1,
                 "off": 0,
-                "default": "",
-                "value": "",
-                "address": "/toggle_1",
-                "preArgs": [],
-                "target": [],
-                "bypass": true,
-                "decimals": 2,
                 "mode": "toggle",
                 "visible": true,
                 "interaction": true,
@@ -509,9 +522,7 @@
                 "vertical": false,
                 "wrap": false,
                 "colorTextOn": "auto",
-                "script": "",
-                "typeTags": "",
-                "ignoreDefaults": false
+                "html": ""
               },
               {
                 "type": "script",
@@ -533,7 +544,8 @@
                 "bypass": false
               }
             ],
-            "tabs": []
+            "tabs": [],
+            "html": ""
           },
           {
             "type": "panel",
@@ -597,7 +609,8 @@
                 "sensitivity": 1,
                 "design": "compact",
                 "knobSize": 4,
-                "gradient": []
+                "gradient": [],
+                "html": ""
               },
               {
                 "type": "panel",
@@ -665,15 +678,13 @@
                         "id": "looper_tab",
                         "visible": true,
                         "interaction": true,
-                        "colorBg": "auto",
                         "colorText": "auto",
                         "colorWidget": "auto",
                         "colorFill": "auto",
                         "padding": 10,
+                        "html": "",
                         "css": "\n> inner{\nflex-direction:column-reverse;\n}",
-                        "label": "Loops",
-                        "variables": "@{parent.variables}",
-                        "traversing": false,
+                        "colorBg": "auto",
                         "layout": "vertical",
                         "justify": "start",
                         "gridTemplate": "",
@@ -681,6 +692,9 @@
                         "scroll": true,
                         "innerPadding": false,
                         "verticalTabs": false,
+                        "label": "Loops",
+                        "variables": "@{parent.variables}",
+                        "traversing": false,
                         "value": "",
                         "default": "",
                         "linkId": "",
@@ -707,9 +721,9 @@
                             "widgetId": "panel_sl_0",
                             "props": {
                               "variables": {
-                                "color": "cyan",
                                 "n": 5,
                                 "label": "Vx Jeannot POST",
+                                "color": "cyan",
                                 "script": "set('arm', 0)"
                               },
                               "id": "panel_sl_5"
@@ -731,9 +745,9 @@
                             "widgetId": "panel_sl_0",
                             "props": {
                               "variables": {
-                                "color": "cyan",
                                 "n": 3,
-                                "label": "Vx Orl POST"
+                                "label": "Vx Orl POST",
+                                "color": "cyan"
                               },
                               "id": "panel_sl_3"
                             },
@@ -754,9 +768,9 @@
                             "widgetId": "panel_sl_0",
                             "props": {
                               "variables": {
-                                "color": "cyan",
                                 "n": 1,
-                                "label": "Bass POST"
+                                "label": "Bass POST",
+                                "color": "cyan"
                               },
                               "id": "panel_sl_1"
                             },
@@ -765,15 +779,15 @@
                           },
                           {
                             "type": "clone",
-                            "width": "auto",
-                            "height": "auto",
                             "top": "auto",
                             "left": "auto",
                             "id": "panel_synth_rhodes",
-                            "css": "",
                             "visible": true,
                             "interaction": true,
+                            "width": "auto",
+                            "height": "auto",
                             "expand": "false",
+                            "css": "",
                             "widgetId": "panel_sl_0",
                             "props": {
                               "variables": {
@@ -936,7 +950,8 @@
                                 "lineWidth": "auto",
                                 "padding": "auto",
                                 "script": "",
-                                "target": ""
+                                "target": "",
+                                "html": ""
                               },
                               {
                                 "type": "button",
@@ -978,7 +993,8 @@
                                 "doubleTap": false,
                                 "colorTextOn": "auto",
                                 "decimals": 2,
-                                "bypass": false
+                                "bypass": false,
+                                "html": ""
                               },
                               {
                                 "type": "button",
@@ -1022,7 +1038,8 @@
                                 "default": "",
                                 "script": "@{parent.variables.script}",
                                 "typeTags": "",
-                                "ignoreDefaults": false
+                                "ignoreDefaults": false,
+                                "html": ""
                               },
                               {
                                 "type": "button",
@@ -1066,7 +1083,8 @@
                                 "default": "",
                                 "script": "@{parent.variables.script}",
                                 "typeTags": "",
-                                "ignoreDefaults": false
+                                "ignoreDefaults": false,
+                                "html": ""
                               },
                               {
                                 "type": "button",
@@ -1110,7 +1128,8 @@
                                 "default": "",
                                 "script": "@{parent.variables.script}",
                                 "typeTags": "",
-                                "ignoreDefaults": false
+                                "ignoreDefaults": false,
+                                "html": ""
                               },
                               {
                                 "type": "button",
@@ -1154,7 +1173,8 @@
                                 "off": 0,
                                 "vertical": false,
                                 "wrap": false,
-                                "colorTextOn": "auto"
+                                "colorTextOn": "auto",
+                                "html": ""
                               },
                               {
                                 "type": "fader",
@@ -1203,7 +1223,8 @@
                                 "knobSize": 2,
                                 "horizontal": true,
                                 "gradient": [],
-                                "snap": false
+                                "snap": false,
+                                "html": ""
                               }
                             ],
                             "variables": {
@@ -1218,7 +1239,8 @@
                             "justify": "start",
                             "gridTemplate": "",
                             "contain": true,
-                            "verticalTabs": false
+                            "verticalTabs": false,
+                            "html": ""
                           }
                         ],
                         "tabs": []
@@ -1258,13 +1280,17 @@
                         "widgets": [
                           {
                             "type": "button",
+                            "width": "auto",
+                            "height": "auto",
                             "top": "auto",
                             "left": "auto",
                             "id": "push_43",
-                            "linkId": "",
-                            "width": "auto",
-                            "height": "auto",
                             "css": "",
+                            "visible": true,
+                            "interaction": true,
+                            "expand": "false",
+                            "label": "Laughters",
+                            "linkId": "",
                             "default": "",
                             "value": "",
                             "address": "/midi/noteon",
@@ -1277,9 +1303,6 @@
                             ],
                             "bypass": false,
                             "decimals": 0,
-                            "visible": true,
-                            "interaction": true,
-                            "expand": "false",
                             "colorText": "auto",
                             "colorWidget": "auto",
                             "colorStroke": "auto",
@@ -1292,18 +1315,27 @@
                             "script": "",
                             "typeTags": "i",
                             "ignoreDefaults": false,
-                            "label": "Laughters",
                             "on": 127,
                             "off": 0,
                             "doubleTap": false,
                             "mode": "tap",
                             "vertical": false,
                             "wrap": false,
-                            "colorTextOn": "auto"
+                            "colorTextOn": "auto",
+                            "html": ""
                           },
                           {
                             "type": "button",
+                            "width": "auto",
+                            "height": "auto",
+                            "top": "auto",
+                            "left": "auto",
                             "id": "push_44",
+                            "css": "",
+                            "visible": true,
+                            "interaction": true,
+                            "expand": "false",
+                            "label": "Reload",
                             "lineWidth": "auto",
                             "script": "",
                             "value": "",
@@ -1321,19 +1353,10 @@
                             ],
                             "ignoreDefaults": false,
                             "bypass": false,
-                            "label": "Reload",
                             "on": 127,
-                            "width": "auto",
-                            "height": "auto",
-                            "top": "auto",
-                            "left": "auto",
-                            "css": "",
                             "off": 0,
                             "doubleTap": false,
                             "mode": "tap",
-                            "visible": true,
-                            "interaction": true,
-                            "expand": "false",
                             "colorText": "auto",
                             "colorWidget": "auto",
                             "colorStroke": "auto",
@@ -1344,18 +1367,21 @@
                             "padding": "auto",
                             "vertical": false,
                             "wrap": false,
-                            "colorTextOn": "auto"
+                            "colorTextOn": "auto",
+                            "html": ""
                           },
                           {
                             "type": "button",
+                            "width": "auto",
+                            "height": "auto",
                             "top": "auto",
                             "left": "auto",
                             "id": "push_45",
+                            "css": "",
                             "visible": true,
                             "interaction": true,
-                            "width": "auto",
-                            "height": "auto",
                             "expand": "false",
+                            "label": "Fire",
                             "colorText": "auto",
                             "colorWidget": "auto",
                             "colorStroke": "auto",
@@ -1365,7 +1391,6 @@
                             "alphaFillOn": "auto",
                             "lineWidth": "auto",
                             "padding": "auto",
-                            "css": "",
                             "value": "",
                             "default": "",
                             "linkId": "",
@@ -1382,23 +1407,28 @@
                             ],
                             "ignoreDefaults": false,
                             "bypass": false,
-                            "label": "Fire",
                             "on": 127,
                             "off": 0,
                             "doubleTap": false,
                             "mode": "tap",
                             "vertical": false,
                             "wrap": false,
-                            "colorTextOn": "auto"
+                            "colorTextOn": "auto",
+                            "html": ""
                           },
                           {
                             "type": "button",
-                            "label": "ArmeMitrailletteTony",
-                            "on": 127,
                             "width": "auto",
                             "height": "auto",
                             "top": "auto",
                             "left": "auto",
+                            "id": "push_46",
+                            "css": "",
+                            "visible": true,
+                            "interaction": true,
+                            "expand": "false",
+                            "label": "ArmeMitrailletteTony",
+                            "on": 127,
                             "preArgs": [
                               1,
                               120
@@ -1407,9 +1437,7 @@
                             "target": [
                               "127.0.0.1:11001"
                             ],
-                            "id": "push_46",
                             "linkId": "",
-                            "css": "",
                             "off": 0,
                             "bypass": false,
                             "doubleTap": false,
@@ -1417,9 +1445,6 @@
                             "decimals": 0,
                             "typeTags": "i",
                             "mode": "tap",
-                            "visible": true,
-                            "interaction": true,
-                            "expand": "false",
                             "colorText": "auto",
                             "colorWidget": "auto",
                             "colorStroke": "auto",
@@ -1434,16 +1459,22 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
-                            "label": "Automatiseeslesarmesafeu",
-                            "on": 127,
                             "width": "auto",
                             "height": "auto",
                             "top": "auto",
                             "left": "auto",
+                            "id": "push_47",
+                            "css": "",
+                            "visible": true,
+                            "interaction": true,
+                            "expand": "false",
+                            "label": "Automatiseeslesarmesafeu",
+                            "on": 127,
                             "preArgs": [
                               1,
                               117
@@ -1452,9 +1483,7 @@
                             "target": [
                               "127.0.0.1:11001"
                             ],
-                            "id": "push_47",
                             "linkId": "",
-                            "css": "",
                             "off": 0,
                             "bypass": false,
                             "doubleTap": false,
@@ -1462,9 +1491,6 @@
                             "decimals": 0,
                             "typeTags": "i",
                             "mode": "tap",
-                            "visible": true,
-                            "interaction": true,
-                            "expand": "false",
                             "colorText": "auto",
                             "colorWidget": "auto",
                             "colorStroke": "auto",
@@ -1479,16 +1505,22 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
-                            "label": "CalogeroAdoreInternet",
-                            "on": 127,
                             "width": "auto",
                             "height": "auto",
                             "top": "auto",
                             "left": "auto",
+                            "id": "push_48",
+                            "css": "",
+                            "visible": true,
+                            "interaction": true,
+                            "expand": "false",
+                            "label": "CalogeroAdoreInternet",
+                            "on": 127,
                             "preArgs": [
                               1,
                               10
@@ -1497,9 +1529,7 @@
                             "target": [
                               "127.0.0.1:11001"
                             ],
-                            "id": "push_48",
                             "linkId": "",
-                            "css": "",
                             "off": 0,
                             "bypass": false,
                             "doubleTap": false,
@@ -1507,9 +1537,6 @@
                             "decimals": 0,
                             "typeTags": "i",
                             "mode": "tap",
-                            "visible": true,
-                            "interaction": true,
-                            "expand": "false",
                             "colorText": "auto",
                             "colorWidget": "auto",
                             "colorStroke": "auto",
@@ -1524,16 +1551,22 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
-                            "label": "CalogeroBonjour",
-                            "on": 127,
                             "width": "auto",
                             "height": "auto",
                             "top": "auto",
                             "left": "auto",
+                            "id": "push_49",
+                            "css": "",
+                            "visible": true,
+                            "interaction": true,
+                            "expand": "false",
+                            "label": "CalogeroBonjour",
+                            "on": 127,
                             "preArgs": [
                               1,
                               0
@@ -1542,9 +1575,7 @@
                             "target": [
                               "127.0.0.1:11001"
                             ],
-                            "id": "push_49",
                             "linkId": "",
-                            "css": "",
                             "off": 0,
                             "bypass": false,
                             "doubleTap": false,
@@ -1552,9 +1583,6 @@
                             "decimals": 0,
                             "typeTags": "i",
                             "mode": "tap",
-                            "visible": true,
-                            "interaction": true,
-                            "expand": "false",
                             "colorText": "auto",
                             "colorWidget": "auto",
                             "colorStroke": "auto",
@@ -1569,16 +1597,22 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
-                            "label": "CalogeroChouetteJeuns",
-                            "on": 127,
                             "width": "auto",
                             "height": "auto",
                             "top": "auto",
                             "left": "auto",
+                            "id": "push_50",
+                            "css": "",
+                            "visible": true,
+                            "interaction": true,
+                            "expand": "false",
+                            "label": "CalogeroChouetteJeuns",
+                            "on": 127,
                             "preArgs": [
                               1,
                               1
@@ -1587,9 +1621,7 @@
                             "target": [
                               "127.0.0.1:11001"
                             ],
-                            "id": "push_50",
                             "linkId": "",
-                            "css": "",
                             "off": 0,
                             "bypass": false,
                             "doubleTap": false,
@@ -1597,9 +1629,6 @@
                             "decimals": 0,
                             "typeTags": "i",
                             "mode": "tap",
-                            "visible": true,
-                            "interaction": true,
-                            "expand": "false",
                             "colorText": "auto",
                             "colorWidget": "auto",
                             "colorStroke": "auto",
@@ -1614,12 +1643,11 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
-                            "label": "CalogeroCondamne",
-                            "on": 127,
                             "width": "auto",
                             "height": "auto",
                             "top": "auto",
@@ -1635,13 +1663,10 @@
                             "id": "push_51",
                             "linkId": "",
                             "css": "",
-                            "off": 0,
                             "bypass": false,
-                            "doubleTap": false,
                             "value": "",
                             "decimals": 0,
                             "typeTags": "i",
-                            "mode": "tap",
                             "visible": true,
                             "interaction": true,
                             "expand": "false",
@@ -1654,12 +1679,18 @@
                             "alphaFillOn": "auto",
                             "lineWidth": "auto",
                             "padding": "auto",
-                            "vertical": false,
-                            "wrap": false,
-                            "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": "",
+                            "label": "CalogeroCondamne",
+                            "on": 127,
+                            "off": 0,
+                            "doubleTap": false,
+                            "mode": "tap",
+                            "vertical": false,
+                            "wrap": false,
+                            "colorTextOn": "auto"
                           },
                           {
                             "type": "button",
@@ -1704,7 +1735,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -1749,7 +1781,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -1794,7 +1827,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -1839,7 +1873,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -1884,7 +1919,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -1929,7 +1965,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -1974,7 +2011,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -2019,7 +2057,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -2064,7 +2103,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -2109,7 +2149,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -2154,7 +2195,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -2199,7 +2241,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -2244,7 +2287,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -2289,7 +2333,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -2334,7 +2379,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -2379,7 +2425,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -2424,7 +2471,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -2469,7 +2517,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -2514,7 +2563,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -2559,7 +2609,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -2604,7 +2655,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -2649,7 +2701,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -2694,7 +2747,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -2739,7 +2793,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -2784,7 +2839,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -2829,7 +2885,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -2874,7 +2931,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -2919,7 +2977,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -2964,7 +3023,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -3009,7 +3069,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -3054,7 +3115,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -3099,7 +3161,8 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -3144,10 +3207,12 @@
                             "colorTextOn": "auto",
                             "default": "",
                             "script": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           }
                         ],
-                        "tabs": []
+                        "tabs": [],
+                        "html": ""
                       },
                       {
                         "type": "tab",
@@ -3191,15 +3256,12 @@
                             "width": "auto",
                             "height": "auto",
                             "css": ":host {font-size:100rem}\ncanvas {height: 100%}",
-                            "align": "",
-                            "unit": "",
                             "default": "",
                             "value": "",
                             "address": "auto",
                             "preArgs": "",
                             "target": "",
                             "bypass": false,
-                            "asYouType": false,
                             "decimals": 2,
                             "visible": true,
                             "interaction": true,
@@ -3215,16 +3277,17 @@
                             "padding": "auto",
                             "script": "",
                             "typeTags": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": "",
+                            "align": "",
+                            "unit": "",
+                            "asYouType": false,
+                            "validation": ""
                           },
                           {
                             "type": "script",
                             "id": "bigup_script",
-                            "event": "keyboard",
                             "script": "if (get(\"bigup_modal\")) {\n set(\"send_bigup\", 1)\n}",
-                            "keyBinding": "enter",
-                            "keyRepeat": true,
-                            "keyType": "keydown",
                             "value": "",
                             "default": "",
                             "linkId": "",
@@ -3234,7 +3297,11 @@
                             "decimals": 2,
                             "target": "",
                             "ignoreDefaults": false,
-                            "bypass": false
+                            "bypass": false,
+                            "event": "keyboard",
+                            "keyBinding": "enter",
+                            "keyRepeat": true,
+                            "keyType": "keydown"
                           },
                           {
                             "type": "panel",
@@ -3246,7 +3313,6 @@
                             "width": "auto",
                             "height": 400,
                             "expand": "false",
-                            "colorBg": "auto",
                             "colorText": "auto",
                             "colorWidget": "auto",
                             "colorStroke": "auto",
@@ -3257,15 +3323,6 @@
                             "lineWidth": 0,
                             "padding": "auto",
                             "css": "",
-                            "variables": "@{parent.variables}",
-                            "traversing": false,
-                            "layout": "horizontal",
-                            "justify": "center",
-                            "gridTemplate": "",
-                            "contain": true,
-                            "scroll": true,
-                            "innerPadding": true,
-                            "verticalTabs": false,
                             "value": "",
                             "default": "",
                             "linkId": "",
@@ -3277,6 +3334,17 @@
                             "target": "",
                             "ignoreDefaults": false,
                             "bypass": false,
+                            "html": "",
+                            "colorBg": "auto",
+                            "variables": "@{parent.variables}",
+                            "traversing": false,
+                            "layout": "horizontal",
+                            "justify": "center",
+                            "gridTemplate": "",
+                            "contain": true,
+                            "scroll": true,
+                            "innerPadding": true,
+                            "verticalTabs": false,
                             "widgets": [
                               {
                                 "type": "panel",
@@ -3358,7 +3426,8 @@
                                     "decimals": 2,
                                     "target": "",
                                     "ignoreDefaults": false,
-                                    "bypass": false
+                                    "bypass": false,
+                                    "html": ""
                                   },
                                   {
                                     "type": "panel",
@@ -3440,7 +3509,8 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "button",
@@ -3480,7 +3550,8 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "button",
@@ -3520,7 +3591,8 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "button",
@@ -3560,7 +3632,8 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "button",
@@ -3600,7 +3673,8 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "button",
@@ -3640,7 +3714,8 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "button",
@@ -3680,7 +3755,8 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "button",
@@ -3720,7 +3796,8 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "button",
@@ -3760,7 +3837,8 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "button",
@@ -3800,10 +3878,12 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       }
                                     ],
-                                    "tabs": []
+                                    "tabs": [],
+                                    "html": ""
                                   },
                                   {
                                     "type": "panel",
@@ -3885,7 +3965,8 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "button",
@@ -3925,7 +4006,8 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "button",
@@ -3965,7 +4047,8 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "button",
@@ -4005,7 +4088,8 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "button",
@@ -4045,7 +4129,8 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "button",
@@ -4085,7 +4170,8 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "button",
@@ -4125,7 +4211,8 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "button",
@@ -4165,7 +4252,8 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "button",
@@ -4205,7 +4293,8 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "button",
@@ -4245,7 +4334,8 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "button",
@@ -4285,10 +4375,12 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       }
                                     ],
-                                    "tabs": []
+                                    "tabs": [],
+                                    "html": ""
                                   },
                                   {
                                     "type": "panel",
@@ -4370,7 +4462,8 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "button",
@@ -4410,7 +4503,8 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "button",
@@ -4450,7 +4544,8 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "button",
@@ -4490,7 +4585,8 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "button",
@@ -4530,7 +4626,8 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "button",
@@ -4570,7 +4667,8 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "button",
@@ -4610,7 +4708,8 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "button",
@@ -4650,7 +4749,8 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "button",
@@ -4690,7 +4790,8 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "button",
@@ -4730,10 +4831,12 @@
                                         "decimals": 2,
                                         "target": "",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       }
                                     ],
-                                    "tabs": []
+                                    "tabs": [],
+                                    "html": ""
                                   },
                                   {
                                     "type": "button",
@@ -4773,7 +4876,8 @@
                                     "decimals": 2,
                                     "target": "",
                                     "ignoreDefaults": false,
-                                    "bypass": false
+                                    "bypass": false,
+                                    "html": ""
                                   },
                                   {
                                     "type": "button",
@@ -4813,7 +4917,8 @@
                                     "decimals": 2,
                                     "target": "",
                                     "ignoreDefaults": false,
-                                    "bypass": false
+                                    "bypass": false,
+                                    "html": ""
                                   },
                                   {
                                     "type": "button",
@@ -4853,28 +4958,34 @@
                                     "decimals": 2,
                                     "target": "",
                                     "ignoreDefaults": false,
-                                    "bypass": false
+                                    "bypass": false,
+                                    "html": ""
                                   }
                                 ],
-                                "tabs": []
+                                "tabs": [],
+                                "html": ""
                               }
                             ],
                             "tabs": []
                           }
                         ],
-                        "tabs": []
+                        "tabs": [],
+                        "html": ""
                       },
                       {
                         "type": "tab",
                         "id": "mplayer_tab",
                         "visible": true,
                         "interaction": true,
+                        "colorBg": "auto",
                         "colorText": "auto",
                         "colorWidget": "auto",
                         "colorFill": "auto",
                         "padding": "auto",
                         "css": "font-size: 120%",
-                        "colorBg": "auto",
+                        "label": "Player",
+                        "variables": "@{parent.variables}",
+                        "traversing": false,
                         "layout": "grid",
                         "justify": "start",
                         "gridTemplate": "100rem auto / repeat(3, 1fr)",
@@ -4882,9 +4993,6 @@
                         "scroll": true,
                         "innerPadding": true,
                         "verticalTabs": false,
-                        "label": "Player",
-                        "variables": "@{parent.variables}",
-                        "traversing": false,
                         "value": "",
                         "default": "",
                         "linkId": "",
@@ -4902,10 +5010,19 @@
                             "top": 150,
                             "left": 10,
                             "id": "button_3",
-                            "visible": true,
-                            "interaction": true,
+                            "linkId": "",
                             "width": "auto",
                             "height": "auto",
+                            "css": "",
+                            "default": "",
+                            "value": "",
+                            "address": "/mplayer/start",
+                            "preArgs": "",
+                            "target": "127.0.0.1:15002",
+                            "bypass": false,
+                            "decimals": 2,
+                            "visible": true,
+                            "interaction": true,
                             "expand": "false",
                             "colorText": "auto",
                             "colorWidget": "auto",
@@ -4916,7 +5033,10 @@
                             "alphaFillOn": "auto",
                             "lineWidth": "auto",
                             "padding": "auto",
-                            "css": "",
+                            "script": "",
+                            "typeTags": "",
+                            "ignoreDefaults": false,
+                            "html": "",
                             "colorTextOn": "auto",
                             "label": "^backward",
                             "vertical": false,
@@ -4924,24 +5044,24 @@
                             "on": null,
                             "off": 0,
                             "mode": "tap",
-                            "doubleTap": false,
+                            "doubleTap": false
+                          },
+                          {
+                            "type": "button",
+                            "id": "button_2",
+                            "script": "",
                             "value": "",
                             "default": "",
                             "linkId": "",
-                            "script": "",
-                            "address": "/mplayer/start",
+                            "address": "/mplayer/playpause",
                             "preArgs": "",
                             "typeTags": "",
                             "decimals": 2,
                             "target": "127.0.0.1:15002",
                             "ignoreDefaults": false,
-                            "bypass": false
-                          },
-                          {
-                            "type": "button",
+                            "bypass": false,
                             "top": 210,
                             "left": 0,
-                            "id": "button_2",
                             "visible": true,
                             "interaction": true,
                             "width": "auto",
@@ -4965,17 +5085,7 @@
                             "off": 0,
                             "mode": "tap",
                             "doubleTap": false,
-                            "value": "",
-                            "default": "",
-                            "linkId": "",
-                            "script": "",
-                            "address": "/mplayer/playpause",
-                            "preArgs": "",
-                            "typeTags": "",
-                            "decimals": 2,
-                            "target": "127.0.0.1:15002",
-                            "ignoreDefaults": false,
-                            "bypass": false
+                            "html": ""
                           },
                           {
                             "type": "button",
@@ -4997,14 +5107,6 @@
                             "lineWidth": "auto",
                             "padding": "auto",
                             "css": "",
-                            "colorTextOn": "auto",
-                            "label": "^stop",
-                            "vertical": false,
-                            "wrap": false,
-                            "on": null,
-                            "off": 0,
-                            "mode": "tap",
-                            "doubleTap": false,
                             "value": "",
                             "default": "",
                             "linkId": "",
@@ -5015,7 +5117,16 @@
                             "decimals": 2,
                             "target": "127.0.0.1:15002",
                             "ignoreDefaults": false,
-                            "bypass": false
+                            "bypass": false,
+                            "html": "",
+                            "colorTextOn": "auto",
+                            "label": "^stop",
+                            "vertical": false,
+                            "wrap": false,
+                            "on": null,
+                            "off": 0,
+                            "mode": "tap",
+                            "doubleTap": false
                           },
                           {
                             "type": "switch",
@@ -5056,25 +5167,24 @@
                             "decimals": 2,
                             "target": "127.0.0.1:15002",
                             "ignoreDefaults": false,
-                            "bypass": false
+                            "bypass": false,
+                            "html": ""
                           }
                         ],
-                        "tabs": []
+                        "tabs": [],
+                        "html": ""
                       },
                       {
                         "type": "tab",
                         "id": "monitors_tab",
                         "visible": true,
                         "interaction": true,
-                        "colorBg": "auto",
                         "colorText": "auto",
                         "colorWidget": "auto",
                         "colorFill": "auto",
                         "padding": "auto",
                         "css": "",
-                        "label": "Monitors",
-                        "variables": "@{parent.variables}",
-                        "traversing": false,
+                        "colorBg": "auto",
                         "layout": "default",
                         "justify": "start",
                         "gridTemplate": "",
@@ -5082,6 +5192,9 @@
                         "scroll": true,
                         "innerPadding": false,
                         "verticalTabs": false,
+                        "label": "Monitors",
+                        "variables": "@{parent.variables}",
+                        "traversing": false,
                         "value": "",
                         "default": "",
                         "linkId": "",
@@ -5154,7 +5267,8 @@
                                 "scroll": true,
                                 "variables": "@{parent.variables}",
                                 "widgets": [],
-                                "tabs": []
+                                "tabs": [],
+                                "html": ""
                               },
                               {
                                 "type": "panel",
@@ -5236,10 +5350,12 @@
                                     "decimals": 2,
                                     "target": "",
                                     "ignoreDefaults": false,
-                                    "bypass": false
+                                    "bypass": false,
+                                    "html": ""
                                   }
                                 ],
-                                "tabs": []
+                                "tabs": [],
+                                "html": ""
                               }
                             ],
                             "tabs": [],
@@ -5261,7 +5377,8 @@
                             "verticalTabs": false,
                             "script": "",
                             "typeTags": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "tab",
@@ -5324,7 +5441,8 @@
                                 "scroll": true,
                                 "variables": "@{parent.variables}",
                                 "widgets": [],
-                                "tabs": []
+                                "tabs": [],
+                                "html": ""
                               },
                               {
                                 "type": "panel",
@@ -5406,10 +5524,12 @@
                                     "decimals": 2,
                                     "target": "",
                                     "ignoreDefaults": false,
-                                    "bypass": false
+                                    "bypass": false,
+                                    "html": ""
                                   }
                                 ],
-                                "tabs": []
+                                "tabs": [],
+                                "html": ""
                               }
                             ],
                             "tabs": [],
@@ -5431,7 +5551,8 @@
                             "verticalTabs": false,
                             "script": "",
                             "typeTags": "",
-                            "ignoreDefaults": false
+                            "ignoreDefaults": false,
+                            "html": ""
                           },
                           {
                             "type": "tab",
@@ -5539,7 +5660,8 @@
                                     "script": "",
                                     "address": "auto",
                                     "preArgs": "",
-                                    "target": ""
+                                    "target": "",
+                                    "html": ""
                                   },
                                   {
                                     "type": "fader",
@@ -5595,7 +5717,8 @@
                                     "gradient": [],
                                     "script": "",
                                     "typeTags": "",
-                                    "ignoreDefaults": false
+                                    "ignoreDefaults": false,
+                                    "html": ""
                                   },
                                   {
                                     "type": "input",
@@ -5630,13 +5753,17 @@
                                     "decimals": 2,
                                     "target": "",
                                     "ignoreDefaults": false,
-                                    "bypass": true
+                                    "bypass": true,
+                                    "html": "",
+                                    "validation": ""
                                   }
                                 ],
-                                "tabs": []
+                                "tabs": [],
+                                "html": ""
                               }
                             ],
-                            "tabs": []
+                            "tabs": [],
+                            "html": ""
                           },
                           {
                             "type": "tab",
@@ -5741,7 +5868,8 @@
                                     "script": "",
                                     "address": "auto",
                                     "preArgs": "",
-                                    "target": ""
+                                    "target": "",
+                                    "html": ""
                                   },
                                   {
                                     "type": "fader",
@@ -5790,7 +5918,8 @@
                                     "decimals": 2,
                                     "target": "@{parent.variables.target}",
                                     "ignoreDefaults": false,
-                                    "bypass": false
+                                    "bypass": false,
+                                    "html": ""
                                   },
                                   {
                                     "type": "panel",
@@ -5881,7 +6010,8 @@
                                         "decimals": 2,
                                         "target": "@{parent.variables.target}",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       },
                                       {
                                         "type": "fader",
@@ -5937,10 +6067,12 @@
                                         "decimals": 2,
                                         "target": "@{parent.variables.target}",
                                         "ignoreDefaults": false,
-                                        "bypass": false
+                                        "bypass": false,
+                                        "html": ""
                                       }
                                     ],
-                                    "tabs": []
+                                    "tabs": [],
+                                    "html": ""
                                   },
                                   {
                                     "type": "input",
@@ -5975,7 +6107,9 @@
                                     "decimals": 2,
                                     "target": "",
                                     "ignoreDefaults": false,
-                                    "bypass": true
+                                    "bypass": true,
+                                    "html": "",
+                                    "validation": ""
                                   },
                                   {
                                     "type": "button",
@@ -6015,10 +6149,12 @@
                                     "vertical": false,
                                     "wrap": false,
                                     "on": 1,
-                                    "off": 0
+                                    "off": 0,
+                                    "html": ""
                                   }
                                 ],
-                                "tabs": []
+                                "tabs": [],
+                                "html": ""
                               },
                               {
                                 "type": "matrix",
@@ -6083,7 +6219,8 @@
                                 "ignoreDefaults": false,
                                 "bypass": false,
                                 "widgets": [],
-                                "tabs": []
+                                "tabs": [],
+                                "html": ""
                               },
                               {
                                 "type": "panel",
@@ -6155,7 +6292,8 @@
                                     "script": "",
                                     "address": "auto",
                                     "preArgs": "",
-                                    "target": ""
+                                    "target": "",
+                                    "html": ""
                                   },
                                   {
                                     "type": "switch",
@@ -6195,7 +6333,8 @@
                                     "decimals": 2,
                                     "target": "",
                                     "ignoreDefaults": false,
-                                    "bypass": false
+                                    "bypass": false,
+                                    "html": ""
                                   },
                                   {
                                     "type": "text",
@@ -6225,7 +6364,8 @@
                                     "script": "",
                                     "address": "auto",
                                     "preArgs": "",
-                                    "target": ""
+                                    "target": "",
+                                    "html": ""
                                   },
                                   {
                                     "type": "button",
@@ -6265,7 +6405,8 @@
                                     "decimals": 2,
                                     "target": "127.0.0.1:15003",
                                     "ignoreDefaults": false,
-                                    "bypass": false
+                                    "bypass": false,
+                                    "html": ""
                                   },
                                   {
                                     "type": "text",
@@ -6295,7 +6436,8 @@
                                     "script": "",
                                     "address": "auto",
                                     "preArgs": "",
-                                    "target": ""
+                                    "target": "",
+                                    "html": ""
                                   },
                                   {
                                     "type": "button",
@@ -6335,7 +6477,8 @@
                                     "decimals": 2,
                                     "target": "",
                                     "ignoreDefaults": false,
-                                    "bypass": true
+                                    "bypass": true,
+                                    "html": ""
                                   },
                                   {
                                     "type": "button",
@@ -6375,15 +6518,430 @@
                                     "decimals": 2,
                                     "target": "",
                                     "ignoreDefaults": false,
-                                    "bypass": true
+                                    "bypass": true,
+                                    "html": ""
+                                  }
+                                ],
+                                "tabs": [],
+                                "html": ""
+                              }
+                            ],
+                            "tabs": [],
+                            "html": ""
+                          }
+                        ],
+                        "html": ""
+                      },
+                      {
+                        "type": "tab",
+                        "id": "mozart_tab",
+                        "visible": true,
+                        "interaction": true,
+                        "colorBg": "auto",
+                        "colorText": "auto",
+                        "colorWidget": "auto",
+                        "colorFill": "auto",
+                        "padding": "auto",
+                        "css": "",
+                        "label": "Mozart",
+                        "variables": "@{parent.variables}",
+                        "traversing": false,
+                        "layout": "vertical",
+                        "justify": "start",
+                        "gridTemplate": "",
+                        "contain": true,
+                        "scroll": true,
+                        "innerPadding": true,
+                        "verticalTabs": false,
+                        "value": "",
+                        "default": "",
+                        "linkId": "",
+                        "script": "",
+                        "address": "auto",
+                        "preArgs": "",
+                        "typeTags": "",
+                        "decimals": 2,
+                        "target": "",
+                        "ignoreDefaults": false,
+                        "bypass": false,
+                        "widgets": [
+                          {
+                            "type": "panel",
+                            "top": 20,
+                            "left": 130,
+                            "id": "panel_11",
+                            "visible": true,
+                            "interaction": true,
+                            "width": "auto",
+                            "height": "auto",
+                            "expand": "false",
+                            "colorText": "auto",
+                            "colorWidget": "auto",
+                            "colorStroke": "auto",
+                            "colorFill": "auto",
+                            "alphaStroke": "auto",
+                            "alphaFillOff": "auto",
+                            "alphaFillOn": "auto",
+                            "lineWidth": 0,
+                            "padding": "auto",
+                            "html": "",
+                            "css": "",
+                            "colorBg": "auto",
+                            "layout": "horizontal",
+                            "justify": "start",
+                            "gridTemplate": "",
+                            "contain": true,
+                            "scroll": true,
+                            "innerPadding": false,
+                            "verticalTabs": false,
+                            "variables": "@{parent.variables}",
+                            "traversing": false,
+                            "value": "",
+                            "default": "",
+                            "linkId": "",
+                            "script": "",
+                            "address": "auto",
+                            "preArgs": "",
+                            "typeTags": "",
+                            "decimals": 2,
+                            "target": "",
+                            "ignoreDefaults": false,
+                            "bypass": false,
+                            "widgets": [
+                              {
+                                "type": "panel",
+                                "top": 30,
+                                "left": 70,
+                                "id": "panel_12",
+                                "visible": true,
+                                "interaction": true,
+                                "width": "auto",
+                                "height": "auto",
+                                "expand": true,
+                                "colorText": "auto",
+                                "colorWidget": "auto",
+                                "colorStroke": "auto",
+                                "colorFill": "auto",
+                                "alphaStroke": "auto",
+                                "alphaFillOff": "auto",
+                                "alphaFillOn": "auto",
+                                "lineWidth": 0,
+                                "padding": "auto",
+                                "html": "",
+                                "css": "",
+                                "colorBg": "auto",
+                                "layout": "vertical",
+                                "justify": "start",
+                                "gridTemplate": "",
+                                "contain": true,
+                                "scroll": true,
+                                "innerPadding": false,
+                                "verticalTabs": false,
+                                "variables": "@{parent.variables}",
+                                "traversing": false,
+                                "value": "",
+                                "default": "",
+                                "linkId": "",
+                                "script": "",
+                                "address": "auto",
+                                "preArgs": "",
+                                "typeTags": "",
+                                "decimals": 2,
+                                "target": "",
+                                "ignoreDefaults": false,
+                                "bypass": false,
+                                "widgets": [
+                                  {
+                                    "type": "keyboard",
+                                    "top": 50,
+                                    "left": 110,
+                                    "id": "keyboard_sustain",
+                                    "visible": true,
+                                    "interaction": true,
+                                    "width": "auto",
+                                    "height": "auto",
+                                    "expand": true,
+                                    "colorText": "auto",
+                                    "colorWidget": "auto",
+                                    "colorStroke": "auto",
+                                    "colorFill": "auto",
+                                    "alphaStroke": "auto",
+                                    "alphaFillOff": "auto",
+                                    "alphaFillOn": "auto",
+                                    "lineWidth": 0,
+                                    "padding": "auto",
+                                    "html": "",
+                                    "css": "",
+                                    "colorWhite": "#d987d4",
+                                    "colorBlack": "auto",
+                                    "keys": 48,
+                                    "start": 48,
+                                    "traversing": true,
+                                    "on": 127,
+                                    "off": 0,
+                                    "velocity": false,
+                                    "mode": "toggle",
+                                    "value": "",
+                                    "default": "",
+                                    "linkId": "",
+                                    "script": "",
+                                    "address": "/note",
+                                    "preArgs": [
+                                      1
+                                    ],
+                                    "typeTags": "i",
+                                    "decimals": 2,
+                                    "target": "midi:keyboards",
+                                    "ignoreDefaults": false,
+                                    "bypass": false
+                                  },
+                                  {
+                                    "type": "keyboard",
+                                    "top": 120,
+                                    "left": 150,
+                                    "id": "keyboard_nosustain",
+                                    "visible": true,
+                                    "interaction": true,
+                                    "width": "auto",
+                                    "height": "auto",
+                                    "expand": true,
+                                    "colorText": "auto",
+                                    "colorWidget": "auto",
+                                    "colorStroke": "auto",
+                                    "colorFill": "auto",
+                                    "alphaStroke": "auto",
+                                    "alphaFillOff": "auto",
+                                    "alphaFillOn": "auto",
+                                    "lineWidth": 0,
+                                    "padding": "auto",
+                                    "html": "",
+                                    "css": "",
+                                    "colorWhite": "#9dcab9",
+                                    "colorBlack": "auto",
+                                    "keys": 48,
+                                    "start": 48,
+                                    "traversing": true,
+                                    "on": 127,
+                                    "off": 0,
+                                    "velocity": false,
+                                    "mode": "push",
+                                    "value": "",
+                                    "default": "",
+                                    "linkId": "",
+                                    "script": "",
+                                    "address": "/note",
+                                    "preArgs": [
+                                      1
+                                    ],
+                                    "typeTags": "",
+                                    "decimals": 2,
+                                    "target": "midi:keyboards",
+                                    "ignoreDefaults": false,
+                                    "bypass": false
+                                  }
+                                ],
+                                "tabs": []
+                              },
+                              {
+                                "type": "panel",
+                                "top": 50,
+                                "left": 0,
+                                "id": "panel_13",
+                                "visible": true,
+                                "interaction": true,
+                                "width": 70,
+                                "height": "auto",
+                                "expand": "false",
+                                "colorText": "auto",
+                                "colorWidget": "auto",
+                                "colorStroke": "auto",
+                                "colorFill": "auto",
+                                "alphaStroke": "auto",
+                                "alphaFillOff": "auto",
+                                "alphaFillOn": "auto",
+                                "lineWidth": 0,
+                                "padding": "auto",
+                                "html": "",
+                                "css": "",
+                                "colorBg": "auto",
+                                "layout": "vertical",
+                                "justify": "start",
+                                "gridTemplate": "",
+                                "contain": true,
+                                "scroll": true,
+                                "innerPadding": false,
+                                "verticalTabs": false,
+                                "variables": "@{parent.variables}",
+                                "traversing": false,
+                                "value": "",
+                                "default": "",
+                                "linkId": "",
+                                "script": "",
+                                "address": "auto",
+                                "preArgs": "",
+                                "typeTags": "",
+                                "decimals": 2,
+                                "target": "",
+                                "ignoreDefaults": false,
+                                "bypass": false,
+                                "widgets": [
+                                  {
+                                    "type": "button",
+                                    "top": 20,
+                                    "left": 30,
+                                    "id": "all_notes_off",
+                                    "visible": true,
+                                    "interaction": true,
+                                    "width": "auto",
+                                    "height": "50%",
+                                    "expand": "false",
+                                    "colorText": "auto",
+                                    "colorWidget": "auto",
+                                    "colorStroke": "auto",
+                                    "colorFill": "auto",
+                                    "alphaStroke": "auto",
+                                    "alphaFillOff": "auto",
+                                    "alphaFillOn": "auto",
+                                    "lineWidth": "auto",
+                                    "padding": "auto",
+                                    "html": "",
+                                    "css": "",
+                                    "colorTextOn": "auto",
+                                    "label": "^exclamation-triangle",
+                                    "vertical": false,
+                                    "wrap": false,
+                                    "on": 1,
+                                    "off": 0,
+                                    "mode": "tap",
+                                    "doubleTap": false,
+                                    "value": "",
+                                    "default": "",
+                                    "linkId": "",
+                                    "script": "set('keyboard_sustain/*', 0)\nset('keyboard_nosustain/*', 0)",
+                                    "address": "auto",
+                                    "preArgs": "",
+                                    "typeTags": "",
+                                    "decimals": 2,
+                                    "target": "",
+                                    "ignoreDefaults": false,
+                                    "bypass": false
+                                  },
+                                  {
+                                    "type": "button",
+                                    "top": 100,
+                                    "left": 40,
+                                    "id": "random_notes",
+                                    "visible": true,
+                                    "interaction": true,
+                                    "width": "auto",
+                                    "height": "50%",
+                                    "expand": "false",
+                                    "colorText": "auto",
+                                    "colorWidget": "auto",
+                                    "colorStroke": "auto",
+                                    "colorFill": "auto",
+                                    "alphaStroke": "auto",
+                                    "alphaFillOff": "auto",
+                                    "alphaFillOn": "auto",
+                                    "lineWidth": "auto",
+                                    "padding": "auto",
+                                    "html": "",
+                                    "css": "",
+                                    "doubleTap": false,
+                                    "value": "",
+                                    "default": "",
+                                    "linkId": "",
+                                    "script": "var q = getProp('keyboard_nosustain', 'keys')\nvar s = getProp('keyboard_nosustain', 'start')\nvar i = 0\nif (value) {\n  setInterval(()=>{\n    if (i) set('keyboard_nosustain/' + i, 0)\n    i = Math.round(Math.random()  * q + s)\n    set('keyboard_nosustain/' + i, 1)\n  }, 100)\n\n} else {\n  clearInterval()\n}",
+                                    "address": "auto",
+                                    "preArgs": "",
+                                    "typeTags": "",
+                                    "decimals": 2,
+                                    "target": "",
+                                    "ignoreDefaults": false,
+                                    "bypass": false,
+                                    "colorTextOn": "auto",
+                                    "label": "^question",
+                                    "vertical": false,
+                                    "wrap": false,
+                                    "on": 1,
+                                    "off": 0,
+                                    "mode": "push"
                                   }
                                 ],
                                 "tabs": []
                               }
                             ],
                             "tabs": []
+                          },
+                          {
+                            "type": "clone",
+                            "top": "auto-Infinity",
+                            "left": "auto-Infinity",
+                            "id": "panel_synth_rhodes",
+                            "visible": true,
+                            "interaction": true,
+                            "width": "auto",
+                            "height": 60,
+                            "expand": "false",
+                            "css": "",
+                            "widgetId": "panel_sl_0",
+                            "props": {
+                              "variables": {
+                                "n": 8,
+                                "label": "Rhodes"
+                              },
+                              "id": "panel_sl_8"
+                            },
+                            "label": "",
+                            "variables": "@{parent.variables}"
+                          },
+                          {
+                            "type": "clone",
+                            "top": "auto-Infinity",
+                            "left": "auto-Infinity",
+                            "id": "panel_clone_7",
+                            "visible": true,
+                            "interaction": true,
+                            "width": "auto",
+                            "height": 60,
+                            "expand": "false",
+                            "css": "",
+                            "widgetId": "panel_sl_0",
+                            "props": {
+                              "variables": {
+                                "n": 7,
+                                "label": "Synth Aigu"
+                              },
+                              "id": "panel_sl_7"
+                            },
+                            "label": "",
+                            "variables": "@{parent.variables}"
+                          },
+                          {
+                            "type": "clone",
+                            "width": "auto",
+                            "height": 60,
+                            "top": "auto-Infinity",
+                            "left": "auto-Infinity",
+                            "id": "panel_clone_6",
+                            "css": "",
+                            "visible": true,
+                            "interaction": true,
+                            "expand": "false",
+                            "widgetId": "panel_sl_0",
+                            "props": {
+                              "variables": {
+                                "n": 6,
+                                "label": "Synth Bass"
+                              },
+                              "id": "panel_sl_6"
+                            },
+                            "label": "",
+                            "variables": "@{parent.variables}"
                           }
-                        ]
+                        ],
+                        "tabs": [],
+                        "html": ""
                       },
                       {
                         "type": "tab",
@@ -6446,7 +7004,8 @@
                             "script": "",
                             "address": "auto",
                             "preArgs": "",
-                            "target": ""
+                            "target": "",
+                            "html": ""
                           },
                           {
                             "type": "matrix",
@@ -6493,7 +7052,8 @@
                             "scroll": true,
                             "variables": "@{parent.variables}",
                             "widgets": [],
-                            "tabs": []
+                            "tabs": [],
+                            "html": ""
                           },
                           {
                             "type": "matrix",
@@ -6540,7 +7100,8 @@
                             "scroll": true,
                             "variables": "@{parent.variables}",
                             "widgets": [],
-                            "tabs": []
+                            "tabs": [],
+                            "html": ""
                           },
                           {
                             "type": "text",
@@ -6570,7 +7131,8 @@
                             "script": "",
                             "address": "auto",
                             "preArgs": "",
-                            "target": ""
+                            "target": "",
+                            "html": ""
                           },
                           {
                             "type": "matrix",
@@ -6619,10 +7181,12 @@
                             "scroll": true,
                             "variables": "@{parent.variables}",
                             "widgets": [],
-                            "tabs": []
+                            "tabs": [],
+                            "html": ""
                           }
                         ],
-                        "tabs": []
+                        "tabs": [],
+                        "html": ""
                       }
                     ],
                     "decimals": 2,
@@ -6648,7 +7212,8 @@
                     "innerPadding": false,
                     "verticalTabs": false,
                     "script": "",
-                    "ignoreDefaults": false
+                    "ignoreDefaults": false,
+                    "html": ""
                   },
                   {
                     "type": "panel",
@@ -6728,7 +7293,8 @@
                         "colorTextOn": "auto",
                         "script": "",
                         "typeTags": "",
-                        "ignoreDefaults": false
+                        "ignoreDefaults": false,
+                        "html": ""
                       },
                       {
                         "type": "button",
@@ -6772,7 +7338,8 @@
                         "colorTextOn": "auto",
                         "script": "",
                         "typeTags": "",
-                        "ignoreDefaults": false
+                        "ignoreDefaults": false,
+                        "html": ""
                       },
                       {
                         "type": "button",
@@ -6816,7 +7383,8 @@
                         "colorTextOn": "auto",
                         "script": "",
                         "typeTags": "",
-                        "ignoreDefaults": false
+                        "ignoreDefaults": false,
+                        "html": ""
                       },
                       {
                         "type": "button",
@@ -6863,7 +7431,8 @@
                         "default": "",
                         "script": "",
                         "typeTags": "",
-                        "ignoreDefaults": false
+                        "ignoreDefaults": false,
+                        "html": ""
                       },
                       {
                         "type": "button",
@@ -6907,7 +7476,8 @@
                         "colorTextOn": "auto",
                         "script": "",
                         "typeTags": "",
-                        "ignoreDefaults": false
+                        "ignoreDefaults": false,
+                        "html": ""
                       },
                       {
                         "type": "button",
@@ -6951,7 +7521,8 @@
                         "colorTextOn": "auto",
                         "script": "",
                         "typeTags": "",
-                        "ignoreDefaults": false
+                        "ignoreDefaults": false,
+                        "html": ""
                       },
                       {
                         "type": "script",
@@ -6979,10 +7550,12 @@
                     "justify": "start",
                     "contain": true,
                     "innerPadding": false,
-                    "verticalTabs": false
+                    "verticalTabs": false,
+                    "html": ""
                   }
                 ],
-                "tabs": []
+                "tabs": [],
+                "html": ""
               },
               {
                 "type": "panel",
@@ -7054,7 +7627,8 @@
                     "script": "",
                     "address": "auto",
                     "preArgs": "",
-                    "target": ""
+                    "target": "",
+                    "html": ""
                   },
                   {
                     "type": "panel",
@@ -7081,7 +7655,7 @@
                     "traversing": false,
                     "layout": "grid",
                     "justify": "start",
-                    "gridTemplate": "40rem 40rem auto 40rem / auto auto auto",
+                    "gridTemplate": "40rem 40rem auto 40rem / auto auto auto auto",
                     "contain": true,
                     "scroll": true,
                     "innerPadding": false,
@@ -7098,6 +7672,37 @@
                     "ignoreDefaults": false,
                     "bypass": false,
                     "widgets": [
+                      {
+                        "type": "text",
+                        "top": 100,
+                        "left": 50,
+                        "id": "text_12",
+                        "linkId": "",
+                        "width": "auto",
+                        "height": "auto",
+                        "css": "",
+                        "vertical": false,
+                        "wrap": false,
+                        "align": "",
+                        "default": "",
+                        "value": "Zyn",
+                        "address": "auto",
+                        "preArgs": "",
+                        "colorWidget": "grey",
+                        "visible": true,
+                        "expand": "false",
+                        "colorText": "auto",
+                        "colorStroke": "auto",
+                        "colorFill": "auto",
+                        "alphaStroke": "auto",
+                        "alphaFillOff": "auto",
+                        "alphaFillOn": "auto",
+                        "lineWidth": 0,
+                        "padding": "auto",
+                        "script": "",
+                        "target": "",
+                        "html": ""
+                      },
                       {
                         "type": "text",
                         "top": 120,
@@ -7126,7 +7731,8 @@
                         "lineWidth": 0,
                         "padding": "auto",
                         "script": "",
-                        "target": ""
+                        "target": "",
+                        "html": ""
                       },
                       {
                         "type": "text",
@@ -7156,7 +7762,8 @@
                         "lineWidth": 0,
                         "padding": "auto",
                         "script": "",
-                        "target": ""
+                        "target": "",
+                        "html": ""
                       },
                       {
                         "type": "text",
@@ -7186,30 +7793,25 @@
                         "lineWidth": 0,
                         "padding": "auto",
                         "script": "",
-                        "target": ""
+                        "target": "",
+                        "html": ""
                       },
                       {
                         "type": "button",
                         "top": 140,
                         "left": 140,
-                        "id": "reset_filter_kb",
-                        "linkId": ">> reset_filter_kb",
+                        "id": "reset_filter_zyn",
+                        "linkId": ">> reset_filter_zyn",
                         "width": "auto",
                         "height": "auto",
-                        "label": "^undo",
                         "css": "",
-                        "doubleTap": false,
-                        "on": 20000,
-                        "off": 20001,
+                        "vertical": false,
+                        "wrap": false,
+                        "default": "",
                         "value": "",
                         "address": "/push_1",
                         "preArgs": "",
-                        "target": "",
-                        "bypass": false,
-                        "decimals": 2,
-                        "mode": "tap",
                         "visible": true,
-                        "interaction": true,
                         "expand": "false",
                         "colorText": "auto",
                         "colorWidget": "auto",
@@ -7220,11 +7822,59 @@
                         "alphaFillOn": "auto",
                         "lineWidth": 0,
                         "padding": "auto",
+                        "script": "",
+                        "target": "",
+                        "html": "",
+                        "label": "^undo",
+                        "doubleTap": false,
+                        "on": 20000,
+                        "off": 20001,
+                        "bypass": false,
+                        "decimals": 2,
+                        "mode": "tap",
+                        "interaction": true,
+                        "colorTextOn": "auto",
+                        "typeTags": "",
+                        "ignoreDefaults": false
+                      },
+                      {
+                        "type": "button",
+                        "top": 140,
+                        "left": 140,
+                        "id": "reset_filter_kb",
+                        "linkId": ">> reset_filter_kb",
+                        "width": "auto",
+                        "height": "auto",
+                        "css": "",
                         "vertical": false,
                         "wrap": false,
-                        "colorTextOn": "auto",
                         "default": "",
+                        "value": "",
+                        "address": "/push_1",
+                        "preArgs": "",
+                        "visible": true,
+                        "expand": "false",
+                        "colorText": "auto",
+                        "colorWidget": "auto",
+                        "colorStroke": "auto",
+                        "colorFill": "auto",
+                        "alphaStroke": "auto",
+                        "alphaFillOff": "auto",
+                        "alphaFillOn": "auto",
+                        "lineWidth": 0,
+                        "padding": "auto",
                         "script": "",
+                        "target": "",
+                        "html": "",
+                        "label": "^undo",
+                        "doubleTap": false,
+                        "on": 20000,
+                        "off": 20001,
+                        "bypass": false,
+                        "decimals": 2,
+                        "mode": "tap",
+                        "interaction": true,
+                        "colorTextOn": "auto",
                         "typeTags": "",
                         "ignoreDefaults": false
                       },
@@ -7236,20 +7886,12 @@
                         "linkId": ">> reset_filter_samples",
                         "width": "auto",
                         "height": "auto",
-                        "label": "^undo",
                         "css": "",
-                        "doubleTap": false,
-                        "on": 20000,
-                        "off": 20001,
                         "value": "",
                         "address": "/push_1",
                         "preArgs": "",
                         "target": "",
-                        "bypass": false,
-                        "decimals": 2,
-                        "mode": "tap",
                         "visible": true,
-                        "interaction": true,
                         "expand": "false",
                         "colorText": "auto",
                         "colorWidget": "auto",
@@ -7262,9 +7904,18 @@
                         "padding": "auto",
                         "vertical": false,
                         "wrap": false,
-                        "colorTextOn": "auto",
                         "default": "",
                         "script": "",
+                        "html": "",
+                        "label": "^undo",
+                        "doubleTap": false,
+                        "on": 20000,
+                        "off": 20001,
+                        "bypass": false,
+                        "decimals": 2,
+                        "mode": "tap",
+                        "interaction": true,
+                        "colorTextOn": "auto",
                         "typeTags": "",
                         "ignoreDefaults": false
                       },
@@ -7276,20 +7927,12 @@
                         "linkId": ">> reset_filter_main",
                         "width": "auto",
                         "height": "auto",
-                        "label": "^undo",
                         "css": "",
-                        "doubleTap": false,
-                        "on": 20000,
-                        "off": 20001,
                         "value": "",
                         "address": "/push_1",
                         "preArgs": "",
                         "target": "",
-                        "bypass": false,
-                        "decimals": 2,
-                        "mode": "tap",
                         "visible": true,
-                        "interaction": true,
                         "expand": "false",
                         "colorText": "auto",
                         "colorWidget": "auto",
@@ -7302,9 +7945,68 @@
                         "padding": "auto",
                         "vertical": false,
                         "wrap": false,
-                        "colorTextOn": "auto",
                         "default": "",
                         "script": "",
+                        "html": "",
+                        "label": "^undo",
+                        "doubleTap": false,
+                        "on": 20000,
+                        "off": 20001,
+                        "bypass": false,
+                        "decimals": 2,
+                        "mode": "tap",
+                        "interaction": true,
+                        "colorTextOn": "auto",
+                        "typeTags": "",
+                        "ignoreDefaults": false
+                      },
+                      {
+                        "type": "fader",
+                        "top": 60,
+                        "left": 40,
+                        "id": "filter_zyn",
+                        "linkId": "input_filter_zyn",
+                        "width": "auto",
+                        "height": "auto",
+                        "css": "",
+                        "value": "",
+                        "address": "/zyn/filter",
+                        "preArgs": "",
+                        "target": "",
+                        "visible": true,
+                        "expand": true,
+                        "colorText": "auto",
+                        "colorWidget": "auto",
+                        "colorStroke": "auto",
+                        "colorFill": "auto",
+                        "alphaStroke": "auto",
+                        "alphaFillOff": 0.05,
+                        "alphaFillOn": "auto",
+                        "lineWidth": 0,
+                        "padding": "auto",
+                        "default": 20000,
+                        "script": "send(\"midi:keyboards\", \"/control\", 1, 2, value)",
+                        "html": "",
+                        "horizontal": false,
+                        "pips": false,
+                        "dashed": false,
+                        "snap": false,
+                        "spring": false,
+                        "doubleTap": false,
+                        "range": {
+                          "min": 0,
+                          "max": 127
+                        },
+                        "steps": "",
+                        "logScale": false,
+                        "origin": "auto",
+                        "bypass": false,
+                        "sensitivity": 1,
+                        "decimals": 0,
+                        "design": "compact",
+                        "interaction": true,
+                        "knobSize": 4,
+                        "gradient": [],
                         "typeTags": "",
                         "ignoreDefaults": false
                       },
@@ -7321,32 +8023,11 @@
                         "width": "auto",
                         "height": "auto",
                         "css": "",
-                        "horizontal": false,
-                        "pips": false,
-                        "dashed": false,
-                        "snap": false,
-                        "spring": false,
-                        "doubleTap": false,
-                        "range": {
-                          "min": 70,
-                          "50%": 1000,
-                          "80%": 5000,
-                          "max": 20000
-                        },
-                        "steps": "",
-                        "logScale": false,
-                        "origin": "auto",
-                        "default": 20000,
                         "value": "",
                         "address": "/strip/Keyboards/Calf%20Filter/Frequency/unscaled",
                         "preArgs": "",
                         "target": "127.0.0.1:7008",
-                        "bypass": false,
-                        "sensitivity": 1,
-                        "decimals": 2,
-                        "design": "compact",
                         "visible": true,
-                        "interaction": true,
                         "expand": true,
                         "colorText": "auto",
                         "colorWidget": "auto",
@@ -7357,9 +8038,31 @@
                         "alphaFillOn": "auto",
                         "lineWidth": 0,
                         "padding": "auto",
+                        "default": 20000,
+                        "script": "",
+                        "html": "",
+                        "horizontal": false,
+                        "pips": false,
+                        "dashed": false,
+                        "snap": false,
+                        "spring": false,
+                        "doubleTap": false,
+                        "range": {
+                          "min": 70,
+                          "max": 20000,
+                          "50%": 1000,
+                          "80%": 5000
+                        },
+                        "steps": "",
+                        "logScale": false,
+                        "origin": "auto",
+                        "bypass": false,
+                        "sensitivity": 1,
+                        "decimals": 2,
+                        "design": "compact",
+                        "interaction": true,
                         "knobSize": 4,
                         "gradient": [],
-                        "script": "",
                         "typeTags": "",
                         "ignoreDefaults": false
                       },
@@ -7376,6 +8079,24 @@
                         "width": "auto",
                         "height": "auto",
                         "css": "",
+                        "default": 20000,
+                        "value": "",
+                        "address": "/strip/SamplesMain/Calf%20Filter/Frequency/unscaled",
+                        "preArgs": "",
+                        "target": "127.0.0.1:7008",
+                        "visible": true,
+                        "expand": true,
+                        "colorText": "auto",
+                        "colorWidget": "auto",
+                        "colorStroke": "auto",
+                        "colorFill": "auto",
+                        "alphaStroke": "auto",
+                        "alphaFillOff": 0.05,
+                        "alphaFillOn": "auto",
+                        "lineWidth": 0,
+                        "padding": "auto",
+                        "script": "",
+                        "html": "",
                         "horizontal": false,
                         "pips": false,
                         "dashed": false,
@@ -7391,30 +8112,13 @@
                         "steps": "",
                         "logScale": false,
                         "origin": "auto",
-                        "default": 20000,
-                        "value": "",
-                        "address": "/strip/SamplesMain/Calf%20Filter/Frequency/unscaled",
-                        "preArgs": "",
-                        "target": "127.0.0.1:7008",
                         "bypass": false,
                         "sensitivity": 1,
                         "decimals": 2,
                         "design": "compact",
-                        "visible": true,
                         "interaction": true,
-                        "expand": true,
-                        "colorText": "auto",
-                        "colorWidget": "auto",
-                        "colorStroke": "auto",
-                        "colorFill": "auto",
-                        "alphaStroke": "auto",
-                        "alphaFillOff": 0.05,
-                        "alphaFillOn": "auto",
-                        "lineWidth": 0,
-                        "padding": "auto",
                         "knobSize": 4,
                         "gradient": [],
-                        "script": "",
                         "typeTags": "",
                         "ignoreDefaults": false
                       },
@@ -7431,6 +8135,24 @@
                         "width": "auto",
                         "height": "auto",
                         "css": "",
+                        "default": 20000,
+                        "value": "",
+                        "address": "/reset_filter_main",
+                        "preArgs": "",
+                        "target": "",
+                        "colorWidget": "cyan",
+                        "visible": true,
+                        "expand": true,
+                        "colorText": "auto",
+                        "colorStroke": "auto",
+                        "colorFill": "auto",
+                        "alphaStroke": "auto",
+                        "alphaFillOff": 0.05,
+                        "alphaFillOn": "auto",
+                        "lineWidth": 0,
+                        "padding": "auto",
+                        "script": "",
+                        "html": "",
                         "horizontal": false,
                         "pips": false,
                         "dashed": false,
@@ -7446,30 +8168,13 @@
                         "steps": "",
                         "logScale": false,
                         "origin": "auto",
-                        "default": 20000,
-                        "value": "",
-                        "address": "/reset_filter_main",
-                        "preArgs": "",
-                        "target": "",
                         "bypass": false,
                         "sensitivity": 1,
                         "decimals": 2,
-                        "colorWidget": "cyan",
                         "design": "compact",
-                        "visible": true,
                         "interaction": true,
-                        "expand": true,
-                        "colorText": "auto",
-                        "colorStroke": "auto",
-                        "colorFill": "auto",
-                        "alphaStroke": "auto",
-                        "alphaFillOff": 0.05,
-                        "alphaFillOn": "auto",
-                        "lineWidth": 0,
-                        "padding": "auto",
                         "knobSize": 4,
                         "gradient": [],
-                        "script": "",
                         "typeTags": "",
                         "ignoreDefaults": false
                       },
@@ -7477,9 +8182,45 @@
                         "type": "input",
                         "top": 10,
                         "left": 40,
+                        "id": "input_filter_zyn",
+                        "linkId": "input_filter_zyn",
+                        "width": "auto",
+                        "height": "auto",
+                        "css": "",
+                        "default": "",
+                        "value": "",
+                        "address": "auto",
+                        "preArgs": "",
+                        "target": "",
+                        "visible": true,
+                        "expand": "false",
+                        "colorText": "auto",
+                        "colorWidget": "grey",
+                        "colorStroke": "auto",
+                        "colorFill": "auto",
+                        "alphaStroke": "auto",
+                        "alphaFillOff": "auto",
+                        "alphaFillOn": "auto",
+                        "lineWidth": 0,
+                        "padding": "auto",
+                        "script": "",
+                        "html": "",
+                        "align": "center",
+                        "interaction": false,
+                        "unit": "",
+                        "asYouType": false,
+                        "typeTags": "",
+                        "decimals": 0,
+                        "ignoreDefaults": false,
+                        "bypass": false,
+                        "validation": ""
+                      },
+                      {
+                        "type": "input",
+                        "top": 10,
+                        "left": 40,
                         "id": "input_filter_keys",
                         "visible": true,
-                        "interaction": true,
                         "width": "auto",
                         "height": "auto",
                         "expand": "false",
@@ -7493,20 +8234,23 @@
                         "lineWidth": 0,
                         "padding": "auto",
                         "css": "",
-                        "align": "center",
-                        "unit": "Hz",
-                        "asYouType": false,
                         "value": "",
                         "default": "",
                         "linkId": "input_filter_keys",
                         "script": "",
                         "address": "auto",
                         "preArgs": "",
+                        "target": "",
+                        "html": "",
+                        "align": "center",
+                        "interaction": true,
+                        "unit": "Hz",
+                        "asYouType": false,
                         "typeTags": "",
                         "decimals": 0,
-                        "target": "",
                         "ignoreDefaults": false,
-                        "bypass": false
+                        "bypass": false,
+                        "validation": ""
                       },
                       {
                         "type": "input",
@@ -7514,7 +8258,6 @@
                         "left": 40,
                         "id": "input_filter_samples",
                         "visible": true,
-                        "interaction": true,
                         "width": "auto",
                         "height": "auto",
                         "expand": "false",
@@ -7528,30 +8271,39 @@
                         "lineWidth": 0,
                         "padding": "auto",
                         "css": "",
-                        "align": "center",
-                        "unit": "Hz",
-                        "asYouType": false,
                         "value": "",
                         "default": "",
                         "linkId": "input_filter_samples",
                         "script": "",
                         "address": "auto",
                         "preArgs": "",
+                        "target": "",
+                        "html": "",
+                        "align": "center",
+                        "interaction": true,
+                        "unit": "Hz",
+                        "asYouType": false,
                         "typeTags": "",
                         "decimals": 0,
-                        "target": "",
                         "ignoreDefaults": false,
-                        "bypass": false
+                        "bypass": false,
+                        "validation": ""
                       },
                       {
                         "type": "input",
                         "top": 10,
                         "left": 40,
                         "id": "input_filter_main",
-                        "visible": true,
-                        "interaction": true,
+                        "linkId": "input_filter_main",
                         "width": "auto",
                         "height": "auto",
+                        "css": "",
+                        "default": "",
+                        "value": "",
+                        "address": "auto",
+                        "preArgs": "",
+                        "target": "",
+                        "visible": true,
                         "expand": "false",
                         "colorText": "auto",
                         "colorWidget": "auto",
@@ -7562,27 +8314,25 @@
                         "alphaFillOn": "auto",
                         "lineWidth": 0,
                         "padding": "auto",
-                        "css": "",
+                        "script": "",
+                        "html": "",
                         "align": "center",
+                        "interaction": true,
                         "unit": "Hz",
                         "asYouType": false,
-                        "value": "",
-                        "default": "",
-                        "linkId": "input_filter_main",
-                        "script": "",
-                        "address": "auto",
-                        "preArgs": "",
                         "typeTags": "",
                         "decimals": 0,
-                        "target": "",
                         "ignoreDefaults": false,
-                        "bypass": false
+                        "bypass": false,
+                        "validation": ""
                       }
                     ],
-                    "tabs": []
+                    "tabs": [],
+                    "html": ""
                   }
                 ],
-                "tabs": []
+                "tabs": [],
+                "html": ""
               }
             ],
             "default": "",
@@ -7615,7 +8365,8 @@
             "contain": true,
             "verticalTabs": false,
             "script": "",
-            "ignoreDefaults": false
+            "ignoreDefaults": false,
+            "html": ""
           },
           {
             "type": "panel",
@@ -7686,7 +8437,8 @@
                     "lineWidth": "auto",
                     "padding": "auto",
                     "script": "",
-                    "target": ""
+                    "target": "",
+                    "html": ""
                   },
                   {
                     "type": "text",
@@ -7716,7 +8468,8 @@
                     "lineWidth": "auto",
                     "padding": "auto",
                     "script": "",
-                    "target": ""
+                    "target": "",
+                    "html": ""
                   }
                 ],
                 "default": "",
@@ -7752,7 +8505,8 @@
                 "innerPadding": false,
                 "verticalTabs": false,
                 "script": "",
-                "ignoreDefaults": false
+                "ignoreDefaults": false,
+                "html": ""
               },
               {
                 "type": "panel",
@@ -7811,7 +8565,8 @@
                     "mode": "tap",
                     "colorTextOn": "auto",
                     "script": "set(\"arm\", 0)",
-                    "ignoreDefaults": false
+                    "ignoreDefaults": false,
+                    "html": ""
                   },
                   {
                     "type": "switch",
@@ -7851,7 +8606,7 @@
                     "interaction": true,
                     "expand": "false",
                     "colorText": "auto",
-                    "colorWidget": "grey",
+                    "colorWidget": "auto",
                     "colorStroke": "auto",
                     "colorFill": "auto",
                     "alphaStroke": "auto",
@@ -7864,7 +8619,8 @@
                     "mode": "tap",
                     "colorTextOn": "auto",
                     "script": "",
-                    "ignoreDefaults": false
+                    "ignoreDefaults": false,
+                    "html": ""
                   }
                 ],
                 "variables": "@{parent.variables}",
@@ -7902,7 +8658,8 @@
                 "innerPadding": false,
                 "verticalTabs": false,
                 "script": "",
-                "ignoreDefaults": false
+                "ignoreDefaults": false,
+                "html": ""
               },
               {
                 "type": "button",
@@ -7942,7 +8699,8 @@
                 "wrap": false,
                 "on": 1,
                 "off": 0,
-                "doubleTap": false
+                "doubleTap": false,
+                "html": ""
               }
             ],
             "bypass": false,
@@ -7955,10 +8713,12 @@
             "justify": "start",
             "gridTemplate": "",
             "contain": true,
-            "verticalTabs": false
+            "verticalTabs": false,
+            "html": ""
           }
         ],
-        "tabs": []
+        "tabs": [],
+        "html": ""
       },
       {
         "type": "panel",
@@ -8040,7 +8800,8 @@
             "on": 1,
             "off": 0,
             "mode": "toggle",
-            "colorTextOn": "red"
+            "colorTextOn": "red",
+            "html": ""
           },
           {
             "type": "fader",
@@ -8089,10 +8850,12 @@
             "logScale": false,
             "sensitivity": 1,
             "steps": "",
-            "origin": "@{lock_button}"
+            "origin": "@{lock_button}",
+            "html": ""
           }
         ],
-        "tabs": []
+        "tabs": [],
+        "html": ""
       },
       {
         "type": "button",
@@ -8125,14 +8888,15 @@
         "value": "",
         "default": "",
         "linkId": "",
-        "script": "toolbar(3)",
+        "script": "toolbar(4)",
         "address": "auto",
         "preArgs": "",
         "typeTags": "",
         "decimals": 2,
         "target": "",
         "ignoreDefaults": false,
-        "bypass": false
+        "bypass": false,
+        "html": ""
       },
       {
         "type": "panel",
@@ -8214,7 +8978,8 @@
             "default": "",
             "script": "",
             "typeTags": "",
-            "ignoreDefaults": false
+            "ignoreDefaults": false,
+            "html": ""
           },
           {
             "type": "button",
@@ -8254,7 +9019,8 @@
             "default": "",
             "script": "",
             "typeTags": "",
-            "ignoreDefaults": false
+            "ignoreDefaults": false,
+            "html": ""
           },
           {
             "type": "button",
@@ -8294,7 +9060,8 @@
             "default": "",
             "script": "",
             "typeTags": "",
-            "ignoreDefaults": false
+            "ignoreDefaults": false,
+            "html": ""
           },
           {
             "type": "button",
@@ -8334,14 +9101,17 @@
             "decimals": 2,
             "target": "",
             "ignoreDefaults": false,
-            "bypass": false
+            "bypass": false,
+            "html": ""
           }
         ],
-        "tabs": []
+        "tabs": [],
+        "html": ""
       }
     ],
-    "visible": true
+    "visible": true,
+    "html": ""
   },
-  "version": "1.5.1",
+  "version": "1.7.5",
   "type": "Open Stage Control session"
 }

@@ -362,7 +362,7 @@ def set_microtonal(*tunings):
 ### Zyn synths FX  #####################################
 
 def zyn_delay(channel, speed):
-	cmds =  [
+	cmds = [
 		SendOSC(zyntrebleport, '/part%i/Pefxbypass0' % channel, bool(speed))
 	]
 	if speed > 0:
@@ -370,9 +370,6 @@ def zyn_delay(channel, speed):
 			SendOSC(zyntrebleport, '/part%i/partefx0/Echo/Pdelay' % channel, int(speed))
 		)
 	return cmds
-
-def zyn_enable_filter(channel):
-	return SendOSC(zyntrebleport, '/part%i/Pefxbypass0' % (channel - 1), bool(speed))
 
 
 

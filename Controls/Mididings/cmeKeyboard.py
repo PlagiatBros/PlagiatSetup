@@ -25,6 +25,11 @@ hook(
     AutoRestart()
 )
 
+
+def zyn_enable_filter(channel):
+    return SendOSC(zyntrebleport, '/part%i/Pefxbypass0' % (channel - 1), True)
+
+
 cmeevents = ~Filter(CTRL)
 
 
@@ -171,14 +176,14 @@ run(
     control = [
         Filter(CTRL) >> [
             CtrlFilter(2, 7) >>  [
-				SendOSC(zyntrebleport, '/part0/partefx1/EQ/filter0/Pfreq', EVENT_VALUE),
-				SendOSC(zyntrebleport, '/part1/partefx1/EQ/filter0/Pfreq', EVENT_VALUE),
-				SendOSC(zyntrebleport, '/part2/partefx1/EQ/filter0/Pfreq', EVENT_VALUE),
-				SendOSC(zyntrebleport, '/part3/partefx1/EQ/filter0/Pfreq', EVENT_VALUE),
-				SendOSC(zyntrebleport, '/part4/partefx1/EQ/filter0/Pfreq', EVENT_VALUE),
-				SendOSC(zyntrebleport, '/part5/partefx1/EQ/filter0/Pfreq', EVENT_VALUE),
+				SendOSC(zyntrebleport, '/part0/partefx1/EQ/filter0/Pfreq', lambda ev: ev.value),
+				SendOSC(zyntrebleport, '/part1/partefx1/EQ/filter0/Pfreq', lambda ev: ev.value),
+				SendOSC(zyntrebleport, '/part2/partefx1/EQ/filter0/Pfreq', lambda ev: ev.value),
+				SendOSC(zyntrebleport, '/part3/partefx1/EQ/filter0/Pfreq', lambda ev: ev.value),
+				SendOSC(zyntrebleport, '/part4/partefx1/EQ/filter0/Pfreq', lambda ev: ev.value),
+				SendOSC(zyntrebleport, '/part5/partefx1/EQ/filter0/Pfreq', lambda ev: ev.value),
 				# SendOSC(samplesmainport, '/strip/Keyboards/Calf%20Filter/Frequency/unscaled', lambda ev: 20000. * pow(10, ((-log10(71/20000.))*ev.value) / 127. + log10(71/20000.))),
-				SendOSC(surfaceorlport, '/zyn/filter', EVENT_VALUE),
+				SendOSC(surfaceorlport, '/zyn/filter', lambda ev: ev.value),
 				],
             CtrlFilter(3) >>  [
 				SendOSC(samplesmainport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled', lambda ev: 20000. * pow(10, ((-log10(71/20000.))*ev.value) / 127. + log10(71/20000.))),
