@@ -4,9 +4,9 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="meter_in" value="0.000168013" />
-  <param name="meter_outL" value="0.000168013" />
-  <param name="meter_outR" value="0.000168013" />
+  <param name="meter_in" value="0" />
+  <param name="meter_outL" value="0" />
+  <param name="meter_outR" value="0" />
   <param name="clip_in" value="0" />
   <param name="clip_outL" value="0" />
   <param name="clip_outR" value="0" />
@@ -26,8 +26,8 @@
 <preset bank="0" program="0" plugin="gate" name="">
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
-  <param name="meter_in" value="3.28825e-05" />
-  <param name="meter_out" value="2.01405e-06" />
+  <param name="meter_in" value="0" />
+  <param name="meter_out" value="0" />
   <param name="clip_in" value="0" />
   <param name="clip_out" value="0" />
   <param name="range" value="0.06125" />
@@ -39,7 +39,7 @@
   <param name="knee" value="3.97788" />
   <param name="detection" value="0" />
   <param name="stereo_link" value="0" />
-  <param name="gating" value="0.06125" />
+  <param name="gating" value="1" />
 </preset>
 </plugin>
 <plugin type="bassenhancer" instance-name="bassenhancer" input-index="6" output-index="7">
@@ -48,13 +48,13 @@
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
   <param name="amount" value="4.13532" />
-  <param name="meter_in" value="2.01405e-06" />
-  <param name="meter_out" value="1.82444e-06" />
+  <param name="meter_in" value="0" />
+  <param name="meter_out" value="0" />
   <param name="clip_in" value="0" />
   <param name="clip_out" value="0" />
   <param name="drive" value="8.5396" />
   <param name="blend" value="0" />
-  <param name="meter_drive" value="2.26275e-06" />
+  <param name="meter_drive" value="0" />
   <param name="freq" value="100" />
   <param name="listen" value="1" />
   <param name="floor_active" value="1" />
@@ -65,8 +65,8 @@
 <preset bank="0" program="0" plugin="compressor" name="">
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
-  <param name="meter_in" value="1.82444e-06" />
-  <param name="meter_out" value="3.73073e-06" />
+  <param name="meter_in" value="0" />
+  <param name="meter_out" value="0" />
   <param name="clip_in" value="0" />
   <param name="clip_out" value="0" />
   <param name="threshold" value="0.0921418" />
@@ -94,10 +94,10 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="meter_inL" value="3.73073e-06" />
-  <param name="meter_inR" value="3.73073e-06" />
-  <param name="meter_outL" value="3.73073e-06" />
-  <param name="meter_outR" value="3.73073e-06" />
+  <param name="meter_inL" value="0" />
+  <param name="meter_inR" value="0" />
+  <param name="meter_outL" value="0" />
+  <param name="meter_outR" value="0" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
   <param name="clip_outL" value="0" />
@@ -146,29 +146,319 @@
   <var name="soundfont">/home/woii/Plagiat/Stage/Sounds/sf2/jRhodes3.sf2</var>
 </preset>
 </plugin>
-<plugin type="fluidsynth" instance-name="fluidsynth (2)" output-index="19" midi-index="1">
-<preset bank="0" program="0" plugin="fluidsynth" name="">
-  <param name="master" value="1" />
-  <param name="interpolation" value="2" />
-  <param name="reverb" value="0" />
-  <param name="chorus" value="0" />
-  <var name="preset_key_set">3</var>
-  <var name="preset_key_set10">16384</var>
-  <var name="preset_key_set11">0</var>
-  <var name="preset_key_set12">0</var>
-  <var name="preset_key_set13">0</var>
-  <var name="preset_key_set14">0</var>
-  <var name="preset_key_set15">0</var>
-  <var name="preset_key_set16">0</var>
-  <var name="preset_key_set2">2</var>
-  <var name="preset_key_set3">2</var>
-  <var name="preset_key_set4">36</var>
-  <var name="preset_key_set5">37</var>
-  <var name="preset_key_set6">13</var>
-  <var name="preset_key_set7">77</var>
-  <var name="preset_key_set8">106</var>
-  <var name="preset_key_set9">0</var>
-  <var name="soundfont">/usr/share/sounds/sf2/FluidR3_GM.sf2</var>
+<plugin type="monosynth" instance-name="monosynth" output-index="21" midi-index="2">
+<preset bank="0" program="0" plugin="monosynth" name="">
+  <param name="o1_wave" value="0" />
+  <param name="o2_wave" value="1" />
+  <param name="o1_pw" value="0" />
+  <param name="o2_pw" value="0" />
+  <param name="o12_detune" value="10" />
+  <param name="o2_xpose" value="12" />
+  <param name="phase_mode" value="0" />
+  <param name="o12_mix" value="0.5" />
+  <param name="filter" value="1" />
+  <param name="cutoff" value="33" />
+  <param name="res" value="3" />
+  <param name="filter_sep" value="0" />
+  <param name="env2cutoff" value="8000" />
+  <param name="env2res" value="1" />
+  <param name="env2amp" value="0" />
+  <param name="adsr_a" value="1" />
+  <param name="adsr_d" value="350" />
+  <param name="adsr_s" value="0.5" />
+  <param name="adsr_f" value="0" />
+  <param name="adsr_r" value="100" />
+  <param name="key_follow" value="0" />
+  <param name="legato" value="0" />
+  <param name="portamento" value="1" />
+  <param name="vel2filter" value="0.5" />
+  <param name="vel2amp" value="0" />
+  <param name="master" value="0.5" />
+  <param name="pbend_range" value="200" />
+  <param name="lfo_rate" value="5" />
+  <param name="lfo_delay" value="0.5" />
+  <param name="lfo2filter" value="0" />
+  <param name="lfo2pitch" value="100" />
+  <param name="lfo2pw" value="0" />
+  <param name="mwhl2lfo" value="1" />
+  <param name="scale_detune" value="1" />
+  <param name="adsr2_cutoff" value="0" />
+  <param name="adsr2_res" value="0.3" />
+  <param name="adsr2_amp" value="1" />
+  <param name="adsr2_a" value="1" />
+  <param name="adsr2_d" value="100" />
+  <param name="adsr2_s" value="0.5" />
+  <param name="adsr2_f" value="0" />
+  <param name="adsr2_r" value="50" />
+  <param name="o1_stretch" value="1" />
+  <param name="o1_window" value="0" />
+  <param name="lfo1_trig" value="0" />
+  <param name="lfo2_trig" value="0" />
+  <param name="lfo2_rate" value="5" />
+  <param name="lfo2_delay" value="0.5" />
+  <param name="o2_unison" value="0" />
+  <param name="o2_unisonfrq" value="2" />
+  <param name="o1_xpose" value="0" />
+  <var name="mod_matrix:0,0">None</var>
+  <var name="mod_matrix:0,1">0..1</var>
+  <var name="mod_matrix:0,2">None</var>
+  <var name="mod_matrix:0,3">1</var>
+  <var name="mod_matrix:0,4">None</var>
+  <var name="mod_matrix:1,0">None</var>
+  <var name="mod_matrix:1,1">0..1</var>
+  <var name="mod_matrix:1,2">None</var>
+  <var name="mod_matrix:1,3">1</var>
+  <var name="mod_matrix:1,4">None</var>
+  <var name="mod_matrix:2,0">None</var>
+  <var name="mod_matrix:2,1">0..1</var>
+  <var name="mod_matrix:2,2">None</var>
+  <var name="mod_matrix:2,3">1</var>
+  <var name="mod_matrix:2,4">None</var>
+  <var name="mod_matrix:3,0">None</var>
+  <var name="mod_matrix:3,1">0..1</var>
+  <var name="mod_matrix:3,2">None</var>
+  <var name="mod_matrix:3,3">1</var>
+  <var name="mod_matrix:3,4">None</var>
+  <var name="mod_matrix:4,0">None</var>
+  <var name="mod_matrix:4,1">0..1</var>
+  <var name="mod_matrix:4,2">None</var>
+  <var name="mod_matrix:4,3">1</var>
+  <var name="mod_matrix:4,4">None</var>
+  <var name="mod_matrix:5,0">None</var>
+  <var name="mod_matrix:5,1">0..1</var>
+  <var name="mod_matrix:5,2">None</var>
+  <var name="mod_matrix:5,3">1</var>
+  <var name="mod_matrix:5,4">None</var>
+  <var name="mod_matrix:6,0">None</var>
+  <var name="mod_matrix:6,1">0..1</var>
+  <var name="mod_matrix:6,2">None</var>
+  <var name="mod_matrix:6,3">1</var>
+  <var name="mod_matrix:6,4">None</var>
+  <var name="mod_matrix:7,0">None</var>
+  <var name="mod_matrix:7,1">0..1</var>
+  <var name="mod_matrix:7,2">None</var>
+  <var name="mod_matrix:7,3">1</var>
+  <var name="mod_matrix:7,4">None</var>
+  <var name="mod_matrix:8,0">None</var>
+  <var name="mod_matrix:8,1">0..1</var>
+  <var name="mod_matrix:8,2">None</var>
+  <var name="mod_matrix:8,3">1</var>
+  <var name="mod_matrix:8,4">None</var>
+  <var name="mod_matrix:9,0">None</var>
+  <var name="mod_matrix:9,1">0..1</var>
+  <var name="mod_matrix:9,2">None</var>
+  <var name="mod_matrix:9,3">1</var>
+  <var name="mod_matrix:9,4">None</var>
+</preset>
+</plugin>
+<plugin type="monosynth" instance-name="monosynth (2)" output-index="23" midi-index="3">
+<preset bank="0" program="0" plugin="monosynth" name="">
+  <param name="o1_wave" value="0" />
+  <param name="o2_wave" value="1" />
+  <param name="o1_pw" value="0" />
+  <param name="o2_pw" value="0" />
+  <param name="o12_detune" value="10" />
+  <param name="o2_xpose" value="12" />
+  <param name="phase_mode" value="0" />
+  <param name="o12_mix" value="0.5" />
+  <param name="filter" value="1" />
+  <param name="cutoff" value="33" />
+  <param name="res" value="3" />
+  <param name="filter_sep" value="0" />
+  <param name="env2cutoff" value="8000" />
+  <param name="env2res" value="1" />
+  <param name="env2amp" value="0" />
+  <param name="adsr_a" value="1" />
+  <param name="adsr_d" value="350" />
+  <param name="adsr_s" value="0.5" />
+  <param name="adsr_f" value="0" />
+  <param name="adsr_r" value="100" />
+  <param name="key_follow" value="0" />
+  <param name="legato" value="0" />
+  <param name="portamento" value="1" />
+  <param name="vel2filter" value="0.5" />
+  <param name="vel2amp" value="0" />
+  <param name="master" value="0.5" />
+  <param name="pbend_range" value="200" />
+  <param name="lfo_rate" value="5" />
+  <param name="lfo_delay" value="0.5" />
+  <param name="lfo2filter" value="0" />
+  <param name="lfo2pitch" value="100" />
+  <param name="lfo2pw" value="0" />
+  <param name="mwhl2lfo" value="1" />
+  <param name="scale_detune" value="1" />
+  <param name="adsr2_cutoff" value="0" />
+  <param name="adsr2_res" value="0.3" />
+  <param name="adsr2_amp" value="1" />
+  <param name="adsr2_a" value="1" />
+  <param name="adsr2_d" value="100" />
+  <param name="adsr2_s" value="0.5" />
+  <param name="adsr2_f" value="0" />
+  <param name="adsr2_r" value="50" />
+  <param name="o1_stretch" value="1" />
+  <param name="o1_window" value="0" />
+  <param name="lfo1_trig" value="0" />
+  <param name="lfo2_trig" value="0" />
+  <param name="lfo2_rate" value="5" />
+  <param name="lfo2_delay" value="0.5" />
+  <param name="o2_unison" value="0" />
+  <param name="o2_unisonfrq" value="2" />
+  <param name="o1_xpose" value="0" />
+  <var name="mod_matrix:0,0">None</var>
+  <var name="mod_matrix:0,1">0..1</var>
+  <var name="mod_matrix:0,2">None</var>
+  <var name="mod_matrix:0,3">1</var>
+  <var name="mod_matrix:0,4">None</var>
+  <var name="mod_matrix:1,0">None</var>
+  <var name="mod_matrix:1,1">0..1</var>
+  <var name="mod_matrix:1,2">None</var>
+  <var name="mod_matrix:1,3">1</var>
+  <var name="mod_matrix:1,4">None</var>
+  <var name="mod_matrix:2,0">None</var>
+  <var name="mod_matrix:2,1">0..1</var>
+  <var name="mod_matrix:2,2">None</var>
+  <var name="mod_matrix:2,3">1</var>
+  <var name="mod_matrix:2,4">None</var>
+  <var name="mod_matrix:3,0">None</var>
+  <var name="mod_matrix:3,1">0..1</var>
+  <var name="mod_matrix:3,2">None</var>
+  <var name="mod_matrix:3,3">1</var>
+  <var name="mod_matrix:3,4">None</var>
+  <var name="mod_matrix:4,0">None</var>
+  <var name="mod_matrix:4,1">0..1</var>
+  <var name="mod_matrix:4,2">None</var>
+  <var name="mod_matrix:4,3">1</var>
+  <var name="mod_matrix:4,4">None</var>
+  <var name="mod_matrix:5,0">None</var>
+  <var name="mod_matrix:5,1">0..1</var>
+  <var name="mod_matrix:5,2">None</var>
+  <var name="mod_matrix:5,3">1</var>
+  <var name="mod_matrix:5,4">None</var>
+  <var name="mod_matrix:6,0">None</var>
+  <var name="mod_matrix:6,1">0..1</var>
+  <var name="mod_matrix:6,2">None</var>
+  <var name="mod_matrix:6,3">1</var>
+  <var name="mod_matrix:6,4">None</var>
+  <var name="mod_matrix:7,0">None</var>
+  <var name="mod_matrix:7,1">0..1</var>
+  <var name="mod_matrix:7,2">None</var>
+  <var name="mod_matrix:7,3">1</var>
+  <var name="mod_matrix:7,4">None</var>
+  <var name="mod_matrix:8,0">None</var>
+  <var name="mod_matrix:8,1">0..1</var>
+  <var name="mod_matrix:8,2">None</var>
+  <var name="mod_matrix:8,3">1</var>
+  <var name="mod_matrix:8,4">None</var>
+  <var name="mod_matrix:9,0">None</var>
+  <var name="mod_matrix:9,1">0..1</var>
+  <var name="mod_matrix:9,2">None</var>
+  <var name="mod_matrix:9,3">1</var>
+  <var name="mod_matrix:9,4">None</var>
+</preset>
+</plugin>
+<plugin type="monosynth" instance-name="monosynth (3)" output-index="25" midi-index="4">
+<preset bank="0" program="0" plugin="monosynth" name="">
+  <param name="o1_wave" value="0" />
+  <param name="o2_wave" value="1" />
+  <param name="o1_pw" value="0" />
+  <param name="o2_pw" value="0" />
+  <param name="o12_detune" value="10" />
+  <param name="o2_xpose" value="12" />
+  <param name="phase_mode" value="0" />
+  <param name="o12_mix" value="0.5" />
+  <param name="filter" value="1" />
+  <param name="cutoff" value="33" />
+  <param name="res" value="3" />
+  <param name="filter_sep" value="0" />
+  <param name="env2cutoff" value="8000" />
+  <param name="env2res" value="1" />
+  <param name="env2amp" value="0" />
+  <param name="adsr_a" value="1" />
+  <param name="adsr_d" value="350" />
+  <param name="adsr_s" value="0.5" />
+  <param name="adsr_f" value="0" />
+  <param name="adsr_r" value="100" />
+  <param name="key_follow" value="0" />
+  <param name="legato" value="0" />
+  <param name="portamento" value="1" />
+  <param name="vel2filter" value="0.5" />
+  <param name="vel2amp" value="0" />
+  <param name="master" value="0.5" />
+  <param name="pbend_range" value="200" />
+  <param name="lfo_rate" value="5" />
+  <param name="lfo_delay" value="0.5" />
+  <param name="lfo2filter" value="0" />
+  <param name="lfo2pitch" value="100" />
+  <param name="lfo2pw" value="0" />
+  <param name="mwhl2lfo" value="1" />
+  <param name="scale_detune" value="1" />
+  <param name="adsr2_cutoff" value="0" />
+  <param name="adsr2_res" value="0.3" />
+  <param name="adsr2_amp" value="1" />
+  <param name="adsr2_a" value="1" />
+  <param name="adsr2_d" value="100" />
+  <param name="adsr2_s" value="0.5" />
+  <param name="adsr2_f" value="0" />
+  <param name="adsr2_r" value="50" />
+  <param name="o1_stretch" value="1" />
+  <param name="o1_window" value="0" />
+  <param name="lfo1_trig" value="0" />
+  <param name="lfo2_trig" value="0" />
+  <param name="lfo2_rate" value="5" />
+  <param name="lfo2_delay" value="0.5" />
+  <param name="o2_unison" value="0" />
+  <param name="o2_unisonfrq" value="2" />
+  <param name="o1_xpose" value="0" />
+  <var name="mod_matrix:0,0">None</var>
+  <var name="mod_matrix:0,1">0..1</var>
+  <var name="mod_matrix:0,2">None</var>
+  <var name="mod_matrix:0,3">1</var>
+  <var name="mod_matrix:0,4">None</var>
+  <var name="mod_matrix:1,0">None</var>
+  <var name="mod_matrix:1,1">0..1</var>
+  <var name="mod_matrix:1,2">None</var>
+  <var name="mod_matrix:1,3">1</var>
+  <var name="mod_matrix:1,4">None</var>
+  <var name="mod_matrix:2,0">None</var>
+  <var name="mod_matrix:2,1">0..1</var>
+  <var name="mod_matrix:2,2">None</var>
+  <var name="mod_matrix:2,3">1</var>
+  <var name="mod_matrix:2,4">None</var>
+  <var name="mod_matrix:3,0">None</var>
+  <var name="mod_matrix:3,1">0..1</var>
+  <var name="mod_matrix:3,2">None</var>
+  <var name="mod_matrix:3,3">1</var>
+  <var name="mod_matrix:3,4">None</var>
+  <var name="mod_matrix:4,0">None</var>
+  <var name="mod_matrix:4,1">0..1</var>
+  <var name="mod_matrix:4,2">None</var>
+  <var name="mod_matrix:4,3">1</var>
+  <var name="mod_matrix:4,4">None</var>
+  <var name="mod_matrix:5,0">None</var>
+  <var name="mod_matrix:5,1">0..1</var>
+  <var name="mod_matrix:5,2">None</var>
+  <var name="mod_matrix:5,3">1</var>
+  <var name="mod_matrix:5,4">None</var>
+  <var name="mod_matrix:6,0">None</var>
+  <var name="mod_matrix:6,1">0..1</var>
+  <var name="mod_matrix:6,2">None</var>
+  <var name="mod_matrix:6,3">1</var>
+  <var name="mod_matrix:6,4">None</var>
+  <var name="mod_matrix:7,0">None</var>
+  <var name="mod_matrix:7,1">0..1</var>
+  <var name="mod_matrix:7,2">None</var>
+  <var name="mod_matrix:7,3">1</var>
+  <var name="mod_matrix:7,4">None</var>
+  <var name="mod_matrix:8,0">None</var>
+  <var name="mod_matrix:8,1">0..1</var>
+  <var name="mod_matrix:8,2">None</var>
+  <var name="mod_matrix:8,3">1</var>
+  <var name="mod_matrix:8,4">None</var>
+  <var name="mod_matrix:9,0">None</var>
+  <var name="mod_matrix:9,1">0..1</var>
+  <var name="mod_matrix:9,2">None</var>
+  <var name="mod_matrix:9,3">1</var>
+  <var name="mod_matrix:9,4">None</var>
 </preset>
 </plugin>
 </rack>
