@@ -7,22 +7,13 @@
 	Gain_Module 0x4 create :parameter_values "0.000000:0.000000" :is_default 1 :chain 0x2 :active 1
 	Meter_Module 0x5 create :is_default 1 :chain 0x2 :active 1
 	JACK_Module 0x6 create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0x2 :active 1
-	Mixer_Strip 0x7 create :name "BassOct" :width "narrow" :tab "signal" :color 2315255808 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
-	Chain 0x8 create :strip 0x7 :tab "chain"
-	JACK_Module 0x9 create :parameter_values "0.000000:1.000000" :is_default 1 :chain 0x8 :active 1
-	Plugin_Module 0x174 create :plugin_id 1410 :plugin_ins 1 :plugin_outs 1 :parameter_values "33.599998:23520.000000:-21.000000:10.000000:2.000000:2.000000:-90.000000:0.000000" :is_default 0 :chain 0x8 :active 1
-	Plugin_Module 0x52 create :lv2_plugin_uri "http://ssj71.github.io/infamousPlugins/plugs.html#ewham" :plugin_ins 1 :plugin_outs 1 :parameter_values "1.000000:0.000000:-13.000000:0.000000:2.000000" :is_default 0 :chain 0x8 :active 1
-	Plugin_Module 0x54 create :plugin_id 1041 :plugin_ins 1 :plugin_outs 1 :parameter_values "1200.000000" :is_default 0 :chain 0x8 :active 1
-	Gain_Module 0xA create :parameter_values "0.000000:1.000000" :is_default 1 :chain 0x8 :active 1
-	Meter_Module 0xB create :is_default 1 :chain 0x8 :active 1
-	JACK_Module 0xC create :parameter_values "1.000000:0.000000" :is_default 1 :chain 0x8 :active 1
-	Mixer_Strip 0xB0 create :name "BassSub" :width "narrow" :tab "fader" :color 2348813568 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
+	Mixer_Strip 0xB0 create :name "BassSub" :width "narrow" :tab "signal" :color 2348813568 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
 	Chain 0xB1 create :strip 0xB0 :tab "chain"
 	JACK_Module 0xB2 create :parameter_values "0.000000:2.000000" :is_default 1 :chain 0xB1 :active 1
 	Gain_Module 0xB3 create :parameter_values "0.000000:0.000000" :is_default 1 :chain 0xB1 :active 1
 	Meter_Module 0xB4 create :is_default 1 :chain 0xB1 :active 1
 	JACK_Module 0xB5 create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0xB1 :active 1
-	Mixer_Strip 0xD create :name "BassScapePre" :width "narrow" :tab "fader" :color 4278196224 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
+	Mixer_Strip 0xD create :name "BassScapePre" :width "narrow" :tab "signal" :color 4278196224 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
 	Chain 0xE create :strip 0xD :tab "chain"
 	JACK_Module 0xF create :parameter_values "0.000000:1.000000" :is_default 1 :chain 0xE :active 1
 	Gain_Module 0x10 create :parameter_values "0.500000:1.000000" :is_default 1 :chain 0xE :active 1
@@ -49,7 +40,7 @@
 	Gain_Module 0x22 create :parameter_values "0.000000:0.000000" :is_default 1 :chain 0x20 :active 1
 	Meter_Module 0x23 create :is_default 1 :chain 0x20 :active 1
 	JACK_Module 0x24 create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0x20 :active 1
-	Mixer_Strip 0xEC create :name "BassWobblePre" :width "narrow" :tab "fader" :color 2030052608 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
+	Mixer_Strip 0xEC create :name "BassWobblePre" :width "narrow" :tab "signal" :color 2030052608 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
 	Chain 0xED create :strip 0xEC :tab "chain"
 	JACK_Module 0xEE create :parameter_values "0.000000:1.000000" :is_default 1 :chain 0xED :active 1
 	Gain_Module 0xEF create :parameter_values "0.000000:0.000000" :is_default 1 :chain 0xED :active 1
@@ -59,33 +50,30 @@
 	Chain 0xD8 create :strip 0xD7 :tab "chain"
 	JACK_Module 0xD9 create :parameter_values "0.000000:2.000000" :is_default 1 :chain 0xD8 :active 1
 	Plugin_Module 0x108 create :plugin_id 1433 :plugin_ins 1 :plugin_outs 1 :parameter_values "1.000000:4.000000" :is_default 0 :chain 0xD8 :active 1
-	Plugin_Module 0xE9 create :lv2_plugin_uri "http://drobilla.net/plugins/mda/Detune" :plugin_ins 2 :plugin_outs 2 :parameter_values "0.260000:0.900000:0.500000:0.500000" :is_default 0 :chain 0xD8 :active 0
 	Plugin_Module 0xEA create :lv2_plugin_uri "http://drobilla.net/plugins/mda/Bandisto" :plugin_ins 2 :plugin_outs 2 :parameter_values "1.000000:0.340426:0.744681:0.500000:0.865248:0.765957:0.567376:0.659574:0.645390:0.000000" :is_default 0 :chain 0xD8 :active 1
 	Plugin_Module 0xEB create :lv2_plugin_uri "http://drobilla.net/plugins/mda/RezFilter" :plugin_ins 2 :plugin_outs 2 :parameter_values "0.000000:0.652482:0.500000:0.850000:0.000000:0.500000:0.700000:0.697022:0.000000:0.000000" :is_default 0 :chain 0xD8 :active 1
 	Gain_Module 0xDA create :parameter_values "0.000000:0.000000" :is_default 1 :chain 0xD8 :active 1
 	Meter_Module 0xDB create :is_default 1 :chain 0xD8 :active 1
 	JACK_Module 0xDC create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0xD8 :active 1
 	Controller_Module 0x109 create :is_default 0 :chain 0xD8 :active 1 :module 0x108 :port 0 :mode 0
-	Mixer_Strip 0x26 create :name "BassMain" :width "narrow" :tab "fader" :color 4278196224 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
+	Mixer_Strip 0x26 create :name "BassMain" :width "narrow" :tab "signal" :color 4278196224 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
 	Chain 0x27 create :strip 0x26 :tab "chain"
 	JACK_Module 0x28 create :parameter_values "0.000000:2.000000" :is_default 1 :chain 0x27 :active 1
-	Plugin_Module 0xF2 create :plugin_id 1433 :plugin_ins 1 :plugin_outs 1 :parameter_values "1.000000:4.000000" :is_default 0 :chain 0x27 :active 0
 	Plugin_Module 0x11D create :lv2_plugin_uri "http://calf.sourceforge.net/plugins/Filter" :plugin_ins 2 :plugin_outs 2 :parameter_values "20000.000000:4.500000:2.000000:20.000000" :is_default 0 :chain 0x27 :active 1
 	Gain_Module 0x29 create :parameter_values "-3.000000:0.000000" :is_default 1 :chain 0x27 :active 1
 	Meter_Module 0x2A create :is_default 1 :chain 0x27 :active 1
 	JACK_Module 0x2B create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0x27 :active 1
-	Mixer_Strip 0xDD create :name "BassSynth" :width "narrow" :tab "fader" :color 305801575 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
+	Mixer_Strip 0xDD create :name "BassSynth" :width "narrow" :tab "signal" :color 305801575 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
 	Chain 0xDE create :strip 0xDD :tab "chain"
 	JACK_Module 0xDF create :parameter_values "0.000000:2.000000" :is_default 1 :chain 0xDE :active 1
 	Gain_Module 0xE0 create :parameter_values "-6.800000:0.000000" :is_default 1 :chain 0xDE :active 1
 	Meter_Module 0xE1 create :is_default 1 :chain 0xDE :active 1
 	JACK_Module 0xE2 create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0xDE :active 1
-	Mixer_Strip 0x1C5 create :name "BassDistoHi" :width "narrow" :tab "fader" :color 4278190592 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
+	Mixer_Strip 0x1C5 create :name "BassDistoHi" :width "narrow" :tab "signal" :color 4278190592 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
 	Chain 0x1C6 create :strip 0x1C5 :tab "chain"
 	JACK_Module 0x1C7 create :parameter_values "0.000000:1.000000" :is_default 1 :chain 0x1C6 :active 1
 	Plugin_Module 0x1CD create :lv2_plugin_uri "http://invadarecords.com/plugins/lv2/filter/hpf/mono" :plugin_ins 1 :plugin_outs 1 :parameter_values "0.000000:1000.000000:0.000000:0.000000" :is_default 0 :chain 0x1C6 :active 1
 	Plugin_Module 0x1CB create :lv2_plugin_uri "http://drobilla.net/plugins/mda/Bandisto" :plugin_ins 2 :plugin_outs 2 :parameter_values "1.000000:0.418440:0.780142:0.000000:0.673759:0.524823:0.000000:0.453901:0.411348:0.000000" :is_default 0 :chain 0x1C6 :active 1
-	Plugin_Module 0x1D2 create :plugin_id 1795 :plugin_ins 2 :plugin_outs 2 :parameter_values "1.000000:0.546099:0.687943:0.439716" :is_default 0 :chain 0x1C6 :active 0
 	Gain_Module 0x1C8 create :parameter_values "-5.900000:0.000000" :is_default 1 :chain 0x1C6 :active 1
 	Meter_Module 0x1C9 create :is_default 1 :chain 0x1C6 :active 1
 	JACK_Module 0x1CA create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0x1C6 :active 1
