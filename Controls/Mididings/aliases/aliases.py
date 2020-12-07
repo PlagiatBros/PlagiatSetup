@@ -358,6 +358,24 @@ def set_microtonal(*tunings):
 
 	return commands
 
+
+### Zyn synths FX  #####################################
+
+def zyn_delay(channel, speed):
+	cmds =  [
+		SendOSC(zyntrebleport, '/part%i/Pefxbypass0' % channel, bool(speed))
+	]
+	if speed > 0:
+		cmds.append(
+			SendOSC(zyntrebleport, '/part%i/partefx0/Echo/Pdelay' % channel, int(speed))
+		)
+	return cmds
+
+def zyn_enable_filter(channel):
+	return SendOSC(zyntrebleport, '/part%i/Pefxbypass0' % (channel - 1), bool(speed))
+
+
+
 ### OSC send proxy #####################################
 
 oscsendproxy = OscSendProxy([
@@ -447,6 +465,22 @@ oscsendproxy = OscSendProxy([
     [vxorlpreport, '/strip/VxORLDelayPre/Gain/Mute', 0.0],
 
 
+	# zyn synth fx
+	## delay
+	[zyntrebleport, '/part0/Pefxbypass0', True],
+	[zyntrebleport, '/part1/Pefxbypass0', True],
+	[zyntrebleport, '/part2/Pefxbypass0', True],
+	[zyntrebleport, '/part3/Pefxbypass0', True],
+	[zyntrebleport, '/part4/Pefxbypass0', True],
+	[zyntrebleport, '/part5/Pefxbypass0', True],
+
+	## filter
+	[zyntrebleport, '/part0/Pefxbypass1', True],
+	[zyntrebleport, '/part1/Pefxbypass1', True],
+	[zyntrebleport, '/part2/Pefxbypass1', True],
+	[zyntrebleport, '/part3/Pefxbypass1', True],
+	[zyntrebleport, '/part4/Pefxbypass1', True],
+	[zyntrebleport, '/part5/Pefxbypass1', True],
 
 
 ])

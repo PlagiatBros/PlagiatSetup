@@ -39,38 +39,60 @@ zynbass5 = Transpose(-12) >> ~Filter(CTRL) >>[
 zynbass6 = Transpose(-12) >> ~Filter(CTRL) >> Output('CMEOutBass', 6)
 zynbass7 = Transpose(-12) >> ~Filter(CTRL) >> Output('CMEOutBass', 7)
 
-zyntreble1 = Transpose(-12) >> [
-    [
-        ~Filter(CTRL),
-        CtrlFilter(1),
-        CtrlFilter(64)
-        ] >> Output('CMEOutTreble', 1),
+zyntreble1 = [
+    Init([
+		zyn_enable_filter(1)
+    ]),
+	Transpose(-12) >> [
+	    [
+	        ~Filter(CTRL),
+	        CtrlFilter(1),
+	        CtrlFilter(64)
+	        ] >> Output('CMEOutTreble', 1),
 
-]
-zyntreble1b = Transpose(-12) >> [
-    [
-        ~Filter(CTRL),
-        CtrlFilter(1),
-        CtrlFilter(64)
-        ] >> Output('CMEOutTreble', 5),
-
+	]
 ]
 
+zyntreble1b = [
+    Init([
+		zyn_enable_filter(5)
+    ]),
+	Transpose(-12) >> [
+	    [
+	        ~Filter(CTRL),
+	        CtrlFilter(1),
+	        CtrlFilter(64)
+	        ] >> Output('CMEOutTreble', 5),
 
-zyntreble2 = Transpose(-12) >> [
-    [
-        ~Filter(CTRL),
-        CtrlFilter(1),
-        CtrlFilter(64)
-        ] >> Output('CMEOutTreble', 2)
+	]
 ]
 
-zyntreble3 = Transpose(-12) >> [
-    [
-        ~Filter(CTRL),
-        CtrlFilter(1),
-        CtrlFilter(64)
-        ] >> Output('CMEOutTreble', 3)
+
+zyntreble2 = [
+    Init([
+		zyn_enable_filter(2)
+    ]),
+	Transpose(-12) >> [
+	    [
+	        ~Filter(CTRL),
+	        CtrlFilter(1),
+	        CtrlFilter(64)
+	        ] >> Output('CMEOutTreble', 2)
+	]
+]
+
+zyntreble3 = [
+    Init([
+		zyn_enable_filter(3),
+		zyn_enable_filter(4),
+    ]),
+	Transpose(-12) >> [
+	    [
+	        ~Filter(CTRL),
+	        CtrlFilter(1),
+	        CtrlFilter(64)
+	        ] >> Output('CMEOutTreble', 3)
+	]
 ]
 
 zyntrebleGMandela = Transpose(-12) >> ~Filter(CTRL) >> [
@@ -83,23 +105,20 @@ zyntrebleGMandela = Transpose(-12) >> ~Filter(CTRL) >> [
     ],
 ] >> Output('CMEOutTreble', 1)
 
+zyntreble4 = [ #bombarde
+    Init([
+		zyn_enable_filter(6),
+    ]),
+	Transpose(-12) >> [
+	    [
+	        ~Filter(CTRL),
+	        CtrlFilter(1),
+	        CtrlFilter(64)
+	        ] >> Output('CMEOutTreble', 6)
+	]
+]
+
 zynrhodes1 = Transpose(-12) >> Output('CMEOutRhodes', 1)
-
-pianonul = Transpose(-12) >> [
-    [
-        ~Filter(CTRL),
-        CtrlFilter(1),
-        CtrlFilter(64)
-        ] >> Output('CMEOutPiano', 3)
-]
-
-basseslapnul = Transpose(-12) >> [
-    [
-        ~Filter(CTRL),
-        CtrlFilter(1),
-        CtrlFilter(64)
-        ] >> Output('CMEOutPiano', 4) // Output('CMEOutPiano', 5)
-]
 
 
 tapeutape1 = ~Filter(CTRL) >> Output('CMEOutTapeutape', 1)
@@ -147,14 +166,19 @@ run(
         12: Scene("ZynTreble 3", zyntreble3),
         13: Scene("zyntrebleGMandela", zyntrebleGMandela),
 		14: Scene("ZynTreble 1b", zyntreble1b),
-		15: Scene("Piano nul", pianonul),
-		16: Scene("Slapnul", basseslapnul)
+		15: Scene("BOMBARDE", zyntreble4),
     },
     control = [
         Filter(CTRL) >> [
             CtrlFilter(2, 7) >>  [
-				SendOSC(samplesmainport, '/strip/Keyboards/Calf%20Filter/Frequency/unscaled', lambda ev: 20000. * pow(10, ((-log10(71/20000.))*ev.value) / 127. + log10(71/20000.))),
-				SendOSC(surfaceorlport, '/strip/Keyboards/Calf%20Filter/Frequency/unscaled', lambda ev: 20000. * pow(10, ((-log10(71/20000.))*ev.value) / 127. + log10(71/20000.))),
+				SendOSC(zyntrebleport, '/part0/partefx1/EQ/filter0/Pfreq', EVENT_VALUE),
+				SendOSC(zyntrebleport, '/part1/partefx1/EQ/filter0/Pfreq', EVENT_VALUE),
+				SendOSC(zyntrebleport, '/part2/partefx1/EQ/filter0/Pfreq', EVENT_VALUE),
+				SendOSC(zyntrebleport, '/part3/partefx1/EQ/filter0/Pfreq', EVENT_VALUE),
+				SendOSC(zyntrebleport, '/part4/partefx1/EQ/filter0/Pfreq', EVENT_VALUE),
+				SendOSC(zyntrebleport, '/part5/partefx1/EQ/filter0/Pfreq', EVENT_VALUE),
+				# SendOSC(samplesmainport, '/strip/Keyboards/Calf%20Filter/Frequency/unscaled', lambda ev: 20000. * pow(10, ((-log10(71/20000.))*ev.value) / 127. + log10(71/20000.))),
+				SendOSC(surfaceorlport, '/zyn/filter', EVENT_VALUE),
 				],
             CtrlFilter(3) >>  [
 				SendOSC(samplesmainport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled', lambda ev: 20000. * pow(10, ((-log10(71/20000.))*ev.value) / 127. + log10(71/20000.))),
