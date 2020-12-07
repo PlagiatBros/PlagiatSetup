@@ -121,7 +121,7 @@
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/48k_FiatLux.6@112.wav" sampleRelative="SW/48k_FiatLux.6@112.wav"/>
         </instrument>
         <instrument name="SW" minnote="48" maxnote="48" rootnote="48" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.400000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/48k_SW.57.wav" sampleRelative="SW/48k_SW.57.wav"/>
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/48k_SW.57.wav" sampleRelative="SW/48k_SW.57.flac"/>
         </instrument>
       </kit>
       <kit name="Snapchat" volume="0.330000">
@@ -146,13 +146,13 @@
       </kit>
       <kit name="MCOB" volume="1.000000">
         <instrument name="BAM" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.250000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/48k_BAM_8.1.wav" sampleRelative="DaFirst/48k_BAM_8.1.wav"/>
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/48k_BAM_8.1.wav" sampleRelative="DaFirst/48k_BAM_8.2.flac"/>
         </instrument>
         <instrument name="BAM2" minnote="62" maxnote="62" rootnote="62" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.250000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/48k_BAM_8.2.wav" sampleRelative="DaFirst/48k_BAM_8.2.wav"/>
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/48k_BAM_8.2.wav" sampleRelative="DaFirst/48k_BAM_8.4.flac"/>
         </instrument>
         <instrument name="BAM3" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.250000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/48k_BAM_8.3.wav" sampleRelative="DaFirst/48k_BAM_8.3.wav"/>
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/48k_BAM_8.3.wav" sampleRelative="DaFirst/48k_BAM_8.6.flac"/>
         </instrument>
         <instrument name="ufo" minnote="48" maxnote="48" rootnote="48" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/48k_ufo.42.wav" sampleRelative="DaFirst/48k_ufo.42.wav"/>
