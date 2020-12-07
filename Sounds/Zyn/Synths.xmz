@@ -2475,10 +2475,31 @@ version-revision="5" ZynAddSubFX-author="Nasca Octavian Paul">
 <INSTRUMENT_EFFECTS>
 <INSTRUMENT_EFFECT id="0">
 <EFFECT>
-<par name="type" value="0" />
+<par name="type" value="2" />
+<par name="preset" value="0" />
+<EFFECT_PARAMETERS>
+<par_no id="0">
+<par name="par" value="33" />
+</par_no>
+<par_no id="1">
+<par name="par" value="64" />
+</par_no>
+<par_no id="2">
+<par name="par" value="35" />
+</par_no>
+<par_no id="3">
+<par name="par" value="64" />
+</par_no>
+<par_no id="4">
+<par name="par" value="30" />
+</par_no>
+<par_no id="5">
+<par name="par" value="59" />
+</par_no>
+</EFFECT_PARAMETERS>
 </EFFECT>
 <par name="route" value="0" />
-<par_bool name="bypass" value="no" />
+<par_bool name="bypass" value="yes" />
 </INSTRUMENT_EFFECT>
 <INSTRUMENT_EFFECT id="1">
 <EFFECT>
