@@ -11,7 +11,6 @@ config(
 )
 
 from ports import *
-from aliases import *
 
 hook(
     AutoRestart()
