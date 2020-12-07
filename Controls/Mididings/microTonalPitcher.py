@@ -16,6 +16,10 @@ hook(
     AutoRestart()
 )
 
+monosynth_pitch = [0 for i in range(12)]
+manual_pitch = [0, 0, 0]
+
+
 def set_microtonal(path, args):
     monosynth_pitch = [8192. * t / 2 for t in args]
     print('monosynth pitch: %s' % monosynth_pitch)
@@ -25,14 +29,17 @@ server = ServerThread(monosynthpitcherport)
 server.add_method('/monosynth/pitch', None, set_microtonal)
 server.start()
 
-def applyPitch(ev):
+def applyMicrotonal(ev, input):
+    note = ev.note % 12
+    port = ev.port
+    return [ev, Pitchbend(monosynth_pitch[note] + manual_pitch[port])]
 
-    return ev >> Pitchbend(monosynth_pitch[ev.note % 12])
+def storePitchwheel(ev, input):
+    port = ev.port
+    manual_pitch[port] = ev.value
+    return Discard()
 
 run(
-    Filter(NOTEON) >> Process(applyPitch) >> [
-        PortFilter('SynthIn1') >> Output('SynthOut1', 1),
-        PortFilter('SynthIn2') >> Output('SynthOut2', 1),
-        PortFilter('SynthIn3') >> Output('SynthOut3', 1),
-    ]
+    Filter(NOTEON) >> Process(applyMicrotonal),
+    Filter(PITCHBEND) >> Process(storePitchwheel)
 )
