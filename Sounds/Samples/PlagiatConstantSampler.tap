@@ -151,6 +151,21 @@
         <instrument name="Foule4" minnote="63" maxnote="63" rootnote="63" rootnotefine="0.000000" channel="16" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Crowd/applause_encore.aiff" sampleRelative="Crowd/applause_encore.aiff"/>
         </instrument>
+        <instrument name="Bolos0" minnote="58" maxnote="58" rootnote="59" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="yes" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/WholeWorld/Intro_voix1.wav" sampleRelative="WholeWorld/Intro_voix1.wav"/>
+        </instrument>
+        <instrument name="Bolos1" minnote="57" maxnote="57" rootnote="57" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="yes" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/WholeWorld/Intro_HenriGayNo.wav" sampleRelative="WholeWorld/Intro_HenriGayNo.wav"/>
+        </instrument>
+	<instrument name="Kick" minnote="53" maxnote="53" rootnote="64" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/GetUrFreakOn/808_Kick_Short.flac" sampleRelative="GetUrFreakOn/808_Kick_Short.flac"/>
+        </instrument>
+        <instrument name="Kick" minnote="54" maxnote="54" rootnote="64" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/GetUrFreakOn/808_Kick_Long.flac" sampleRelative="GetUrFreakOn/808_Kick_Long.flac"/>
+        </instrument>
+        <instrument name="Horny" minnote="96" maxnote="96" rootnote="96" rootnotefine="0.000000" channel="16" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/HorrorCore/AirHorn.wav" sampleRelative="HorrorCore/AirHorn.wav"/>
+        </instrument>
       </kit>
     </setup>
   </creation>
