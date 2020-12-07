@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tapeutape version="0.1.2">
+  <options globalvolume="1.000000" max_polyphony="100">
+    <jack-output name="DeplorablesSamples"/>
+    <jack-output name="DrumKlit"/>
+  </options>
+  <creation>
+    <setup name="PlagiatConstantSamples" channel="1" cc="0">
+      <kit name="DeploDrumKlit" volume="1.000000">
+        <instrument name="RiresConnasses" minnote="62" maxnote="62" rootnote="62" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/48k_conassesSACEM_3.9@50.wav" sampleRelative="ConnassesSACEM/48k_conassesSACEM_3.9@50.wav"/>
+        </instrument>
+        <instrument name="Laughters" minnote="65" maxnote="72" rootnote="65" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav" sampleRelative="ConnassesSACEM/67182__robinhood76__00897-massive-800-men-laugh.wav"/>
+        </instrument>
+        <instrument name="Klap" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Klap.wav" sampleRelative="DrumKlit/Klap.wav"/>
+        </instrument>
+        <instrument name="Reload" minnote="65" maxnote="65" rootnote="65" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DeplorablesSamples" volume="0.560000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Reload.wav" sampleRelative="DrumKlit/Reload.wav"/>
+        </instrument>
+        <instrument name="Fire" minnote="66" maxnote="66" rootnote="66" rootnotefine="0.000000" channel="3" cut="-1" polyphony="0" output="DeplorablesSamples" volume="0.820000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DrumKlit/Fire.wav" sampleRelative="DrumKlit/Fire.wav"/>
+        </instrument>
+        <instrument name="ArmeMitrailletteTony" minnote="120" maxnote="120" rootnote="120" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/armeaveclamitraillettedetony.flac.flac" sampleRelative="ConnassesSACEM/armeaveclamitraillettedetony.flac.flac"/>
+        </instrument>
+        <instrument name="Automatiseeslesarmesafeu" minnote="117" maxnote="117" rootnote="117" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/automatiseeslesarmesafeu.flac.flac" sampleRelative="ConnassesSACEM/automatiseeslesarmesafeu.flac.flac"/>
+        </instrument>
+        <instrument name="CalogeroAdoreInternet" minnote="10" maxnote="10" rootnote="10" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/calogeroadoreinternet.flac" sampleRelative="ConnassesSACEM/calogeroadoreinternet.flac"/>
+        </instrument>
+        <instrument name="CalogeroBonjour" minnote="0" maxnote="0" rootnote="0" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/calogerobonjour.flac" sampleRelative="ConnassesSACEM/calogerobonjour.flac"/>
+        </instrument>
+        <instrument name="CalogeroChouetteJeuns" minnote="1" maxnote="1" rootnote="1" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/calogerochouettejeuns.flac" sampleRelative="ConnassesSACEM/calogerochouettejeuns.flac"/>
+        </instrument>
+        <instrument name="CalogeroCondamne" minnote="2" maxnote="2" rootnote="2" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/calogerocondamne.flac" sampleRelative="ConnassesSACEM/calogerocondamne.flac"/>
+        </instrument>
+        <instrument name="CalogeroContreLaMusiqueGratuite" minnote="11" maxnote="11" rootnote="11" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/calogerocontrelamusiquegratuite.flac" sampleRelative="ConnassesSACEM/calogerocontrelamusiquegratuite.flac"/>
+        </instrument>
+        <instrument name="CalogeroFlippeSurInternet" minnote="3" maxnote="3" rootnote="3" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/calogeroflippedinternet.flac" sampleRelative="ConnassesSACEM/calogeroflippedinternet.flac"/>
+        </instrument>
+        <instrument name="ClogeroFlippeSurLesDroitsAuteur" minnote="4" maxnote="4" rootnote="4" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/calogeroflippesurlesdroitsdauteur.flac" sampleRelative="ConnassesSACEM/calogeroflippesurlesdroitsdauteur.flac"/>
+        </instrument>
+        <instrument name="CalogeroLaAnarchie" minnote="5" maxnote="5" rootnote="5" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/calogerolanarchie.flac" sampleRelative="ConnassesSACEM/calogerolanarchie.flac"/>
+        </instrument>
+        <instrument name="CalogeroLoiMalFaite" minnote="6" maxnote="6" rootnote="6" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/calogeroloimalfaite.flac" sampleRelative="ConnassesSACEM/calogeroloimalfaite.flac"/>
+        </instrument>
+        <instrument name="CalogeroOse" minnote="7" maxnote="7" rootnote="7" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/calogeroose.flac" sampleRelative="ConnassesSACEM/calogeroose.flac"/>
+        </instrument>
+        <instrument name="CalogeroPommeC" minnote="8" maxnote="8" rootnote="8" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/calogeropommec.flac" sampleRelative="ConnassesSACEM/calogeropommec.flac"/>
+        </instrument>
+        <instrument name="CalogeroVoleDesDisques" minnote="9" maxnote="9" rootnote="9" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/calogerovoledesdisques.flac" sampleRelative="ConnassesSACEM/calogerovoledesdisques.flac"/>
+        </instrument>
+        <instrument name="CesNousLesBagarreurs" minnote="111" maxnote="111" rootnote="111" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/cestnouslesbagarreurs.flac" sampleRelative="ConnassesSACEM/cestnouslesbagarreurs.flac"/>
+        </instrument>
+        <instrument name="CommeTonyMontana2" minnote="121" maxnote="121" rootnote="121" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/commetonymontana2.flac" sampleRelative="ConnassesSACEM/commetonymontana2.flac"/>
+        </instrument>
+        <instrument name="CommeTonyMontana" minnote="122" maxnote="122" rootnote="122" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/commetonymontana.flac.flac" sampleRelative="ConnassesSACEM/commetonymontana.flac.flac"/>
+        </instrument>
+        <instrument name="EurosDansMonCompteCourant" minnote="115" maxnote="115" rootnote="115" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/eurosdansmoncomptecourant.flac" sampleRelative="ConnassesSACEM/eurosdansmoncomptecourant.flac"/>
+        </instrument>
+        <instrument name="FlorentPagnyPlagiat" minnote="17" maxnote="17" rootnote="17" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/florentpagny_plagiat.flac.flac" sampleRelative="ConnassesSACEM/florentpagny_plagiat.flac.flac"/>
+        </instrument>
+        <instrument name="JulRappeChambre" minnote="112" maxnote="112" rootnote="112" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/jul_rapchambre.flac.flac" sampleRelative="ConnassesSACEM/jul_rapchambre.flac.flac"/>
+        </instrument>
+        <instrument name="LeCanonFrotteAMonPenis" minnote="116" maxnote="116" rootnote="116" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/lecanonfrotteamonpenis.flac.flac" sampleRelative="ConnassesSACEM/lecanonfrotteamonpenis.flac.flac"/>
+        </instrument>
+        <instrument name="LunettesTonyMontana" minnote="119" maxnote="119" rootnote="119" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/memeslunettesquetony.flac" sampleRelative="ConnassesSACEM/memeslunettesquetony.flac"/>
+        </instrument>
+        <instrument name="MoiMoi" minnote="100" maxnote="100" rootnote="100" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/moimoi.flac" sampleRelative="ConnassesSACEM/moimoi.flac"/>
+        </instrument>
+        <instrument name="PeignoirArmeAFeu" minnote="118" maxnote="118" rootnote="118" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/peignoirarmeafeu.flac.flac" sampleRelative="ConnassesSACEM/peignoirarmeafeu.flac.flac"/>
+        </instrument>
+        <instrument name="PNApprendreCafe" minnote="15" maxnote="15" rootnote="15" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/pn_apprendrecafe.flac" sampleRelative="ConnassesSACEM/pn_apprendrecafe.flac"/>
+        </instrument>
+        <instrument name="PNCreux" minnote="16" maxnote="16" rootnote="16" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/pn_creux.flac" sampleRelative="ConnassesSACEM/pn_creux.flac"/>
+        </instrument>
+        <instrument name="PNStagiaire" minnote="12" maxnote="12" rootnote="12" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/pn_moinsstagiaire.flac" sampleRelative="ConnassesSACEM/pn_moinsstagiaire.flac"/>
+        </instrument>
+        <instrument name="PNPasStagiaireBenevole" minnote="13" maxnote="13" rootnote="13" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/pn_passtagiairebenevole.flac" sampleRelative="ConnassesSACEM/pn_passtagiairebenevole.flac"/>
+        </instrument>
+        <instrument name="PNSousPaye" minnote="14" maxnote="14" rootnote="14" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/pn_souspaye.flac" sampleRelative="ConnassesSACEM/pn_souspaye.flac"/>
+        </instrument>
+        <instrument name="TonyMontana1x2" minnote="123" maxnote="123" rootnote="123" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/tonymontana1x2.flac" sampleRelative="ConnassesSACEM/tonymontana1x2.flac"/>
+        </instrument>
+        <instrument name="TonyMontana1x3" minnote="124" maxnote="124" rootnote="124" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/tonymontana1x3.flac" sampleRelative="ConnassesSACEM/tonymontana1x3.flac"/>
+        </instrument>
+        <instrument name="TonyMontana1x" minnote="125" maxnote="125" rootnote="125" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/tonymontana1x.flac.flac" sampleRelative="ConnassesSACEM/tonymontana1x.flac.flac"/>
+        </instrument>
+        <instrument name="TonyMontana2x" minnote="126" maxnote="126" rootnote="126" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/tonymontana2x.flac.flac" sampleRelative="ConnassesSACEM/tonymontana2x.flac.flac"/>
+        </instrument>
+        <instrument name="TonyMontana6x" minnote="127" maxnote="127" rootnote="127" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/tonymontana6x.flac" sampleRelative="ConnassesSACEM/tonymontana6x.flac"/>
+        </instrument>
+        <instrument name="TrapDeFeignants" minnote="114" maxnote="114" rootnote="114" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/trapdefeignants.flac.flac" sampleRelative="ConnassesSACEM/trapdefeignants.flac.flac"/>
+        </instrument>
+        <instrument name="UrolagneDescription" minnote="102" maxnote="102" rootnote="102" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/urolagne_description.flac.flac" sampleRelative="ConnassesSACEM/urolagne_description.flac.flac"/>
+        </instrument>
+        <instrument name="Urolagne" minnote="101" maxnote="101" rootnote="101" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/urolagne.flac.flac" sampleRelative="ConnassesSACEM/urolagne.flac.flac"/>
+        </instrument>
+        <instrument name="YADesEnfants" minnote="103" maxnote="103" rootnote="103" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/yadesenfants.flac.flac" sampleRelative="ConnassesSACEM/yadesenfants.flac.flac"/>
+        </instrument>
+        <instrument name="BlahBlahBlah" minnote="104" maxnote="104" rootnote="104" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/ConnassesSACEM/blahblahblah.wav" sampleRelative="ConnassesSACEM/blahblahblah.wav"/>
+        </instrument>
+        <instrument name="Foule1" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="16" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Crowd/applause_begin.wav" sampleRelative="Crowd/applause_begin.wav"/>
+        </instrument>
+        <instrument name="Foule2" minnote="61" maxnote="61" rootnote="61" rootnotefine="0.000000" channel="16" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Crowd/applause_background.wav" sampleRelative="Crowd/applause_background.wav"/>
+        </instrument>
+        <instrument name="Foule3" minnote="62" maxnote="62" rootnote="62" rootnotefine="0.000000" channel="16" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Crowd/applause_cheers.wav" sampleRelative="Crowd/applause_cheers.wav"/>
+        </instrument>
+        <instrument name="Foule4" minnote="63" maxnote="63" rootnote="63" rootnotefine="0.000000" channel="16" cut="-1" polyphony="0" output="DeplorablesSamples" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Crowd/applause_encore.aiff" sampleRelative="Crowd/applause_encore.aiff"/>
+        </instrument>
+      </kit>
+    </setup>
+  </creation>
+</tapeutape>
