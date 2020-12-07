@@ -73,6 +73,9 @@ cmeoutport = 56425
 mk2inport = 56426
 mk2outport = 56427
 
+## Mono Synth Microtonal Pitcher
+
+monosynthpitcherport = 56428
 
 ## Control Surfaces
 

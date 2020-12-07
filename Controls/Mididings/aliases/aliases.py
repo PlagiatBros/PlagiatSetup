@@ -339,6 +339,8 @@ def set_microtonal(*tunings):
 	zynshift = tunings[10:] + tunings[:10] # zyn commence au Si bémol
 	zynscale = "\n".join([str(100.0 + i * 100 + zynshift[i] * 100) for i in range(12)]).replace('1200.0', '2/1')
 
+	commands.append(SendOSC(monosynthpitcherport, '/monosynth/pitch', *tunings))
+
 	commands.append(SendOSC(zyntrebleport, '/microtonal/tunings', zynscale))
 
 	for port in vocodports:
