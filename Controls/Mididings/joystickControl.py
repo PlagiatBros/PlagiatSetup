@@ -47,7 +47,7 @@ def process(type, name, value):
 
     elif type == 'axis':
         if name == 'x':
-            output_event(PitchbendEvent('out', 1, int(value * 8192)))
+            output_event(PitchbendEvent('out', 2, int(value * 8192)))
         elif name == 'rx':
             output_event(CtrlEvent('out', 1, 1, int(100 * abs(value))))
 

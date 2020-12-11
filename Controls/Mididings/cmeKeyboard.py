@@ -13,7 +13,7 @@ from liblo import send
 config(
 	backend='jack',
 	client_name='CMEKeyBoardRoutes',
-	out_ports=['CMEOutBass', 'CMEOutTreble', 'CMEOutRhodes', 'CMEOutTapeutape', 'CMEOutPiano'],
+	out_ports=['CMEOutBass', 'CMEOutTreble', 'CMEOutRhodes', 'CMEOutTapeutape', 'CMEOutMonoSynth1', 'CMEOutMonoSynth2', 'CMEOutMonoSynth3'],
 	in_ports=['CMEIn']
 )
 
@@ -26,9 +26,57 @@ hook(
 )
 
 
-def zyn_enable_filter(channel):
-    return SendOSC(zyntrebleport, '/part%i/Pefxbypass0' % (channel - 1), True)
+active_channel = []
 
+def zyn_enable_filter(*channel):
+	global active_channel
+
+	for c in active_channel:
+		if c == 11:
+			# calf monosynth
+			send(keyboardsport, '/strip/DubstepHorn/Calf%20Filter/Frequency/unscaled', 20000.0)
+		elif c == 12:
+			# calf monosynth
+			send(keyboardsport, '/strip/TrapHigh/Calf%20Filter/Frequency/unscaled', 20000.0)
+		else:
+			# zyn
+			send(zyntrebleport, '/part%i/Pefxbypass1' % (c - 1), True)
+
+	active_channel = list(channel)
+
+	for c in active_channel:
+		if c < 10:
+			# zyn
+			send(zyntrebleport, '/part%i/Pefxbypass1' % (c - 1), False)
+
+
+def zyn_enable_filter_1(e):
+	zyn_enable_filter(1)
+def zyn_enable_filter_2(e):
+	zyn_enable_filter(2)
+def zyn_enable_filter_3(e):
+	zyn_enable_filter(3,4)
+def zyn_enable_filter_5(e):
+	zyn_enable_filter(5)
+def zyn_enable_filter_6(e):
+	zyn_enable_filter(6)
+def zyn_enable_filter_11(e):
+	zyn_enable_filter(11)
+def zyn_enable_filter_12(e):
+	zyn_enable_filter(12)
+
+
+def zyn_set_filter(ev):
+	for c in active_channel:
+		if c == 11:
+			# calf monosynth
+			send(keyboardsport, '/strip/DubstepHorn/Calf%20Filter/Frequency/unscaled',  20000. * pow(10, ((-log10(71/20000.))*ev.value) / 127. + log10(71/20000.)))
+		elif c == 12:
+			# calf monosynth
+			send(keyboardsport, '/strip/TrapHigh/Calf%20Filter/Frequency/unscaled',  20000. * pow(10, ((-log10(71/20000.))*ev.value) / 127. + log10(71/20000.)))
+		else:
+			#zyn
+			send(zyntrebleport, '/part%i/partefx1/EQ/filter0/Pfreq' % (c - 1), ev.value)
 
 cmeevents = ~Filter(CTRL)
 
@@ -46,7 +94,7 @@ zynbass7 = Transpose(-12) >> ~Filter(CTRL) >> Output('CMEOutBass', 7)
 
 zyntreble1 = [
     Init([
-		zyn_enable_filter(1)
+	Call(zyn_enable_filter_1)
     ]),
 	Transpose(-12) >> [
 	    [
@@ -60,7 +108,7 @@ zyntreble1 = [
 
 zyntreble1b = [
     Init([
-		zyn_enable_filter(5)
+	Call(zyn_enable_filter_5)
     ]),
 	Transpose(-12) >> [
 	    [
@@ -75,7 +123,7 @@ zyntreble1b = [
 
 zyntreble2 = [
     Init([
-		zyn_enable_filter(2)
+	Call(zyn_enable_filter_2)
     ]),
 	Transpose(-12) >> [
 	    [
@@ -88,8 +136,7 @@ zyntreble2 = [
 
 zyntreble3 = [
     Init([
-		zyn_enable_filter(3),
-		zyn_enable_filter(4),
+	Call(zyn_enable_filter_3)
     ]),
 	Transpose(-12) >> [
 	    [
@@ -112,8 +159,9 @@ zyntrebleGMandela = Transpose(-12) >> ~Filter(CTRL) >> [
 
 zyntreble4 = [ #bombarde
     Init([
-		zyn_enable_filter(6),
+	Call(zyn_enable_filter_6)
     ]),
+
 	Transpose(-12) >> [
 	    [
 	        ~Filter(CTRL),
@@ -122,6 +170,50 @@ zyntreble4 = [ #bombarde
 	        ] >> Output('CMEOutTreble', 6)
 	]
 ]
+
+monosynth1 = [ # trap bass
+
+	Transpose(-12) >> [
+	    [
+	        ~Filter(CTRL),
+	        CtrlFilter(1),
+	        CtrlFilter(64)
+	        ] >> Output('CMEOutMonoSynth1', 1)
+	]
+]
+
+monosynth2 = [ # horny horn
+    Init([
+	Call(zyn_enable_filter_11)
+    ]),
+
+	~Filter(PITCHBEND) >> Transpose(-12) >> [
+	    [
+	        ~Filter(CTRL),
+	        CtrlFilter(1),
+	        CtrlFilter(64),
+	        ] >> Output('CMEOutMonoSynth2', 1),
+	],
+        Filter(PITCHBEND) >> [
+            ChannelFilter(1) >> Output('CMEOutMonoSynth2', 1),
+            ChannelFilter(2) >> Output('CMEOutMonoSynth2', 2)
+            ]
+]
+
+monosynth3 = [ # trap so high
+    Init([
+	Call(zyn_enable_filter_12)
+    ]),
+
+	Transpose(-12) >> [
+	    [
+	        ~Filter(CTRL),
+	        CtrlFilter(1),
+	        CtrlFilter(64),
+	        ] >> Output('CMEOutMonoSynth3', 1),
+	]
+]
+
 
 zynrhodes1 = Transpose(-12) >> Output('CMEOutRhodes', 1)
 
@@ -172,16 +264,14 @@ run(
         13: Scene("zyntrebleGMandela", zyntrebleGMandela),
 		14: Scene("ZynTreble 1b", zyntreble1b),
 		15: Scene("BOMBARDE", zyntreble4),
+		16: Scene("Trap Bass mono", monosynth1),
+		17: Scene("Dubstep Horn mono", monosynth2),
+		18: Scene("Trap High mono", monosynth3),
     },
     control = [
         Filter(CTRL) >> [
             CtrlFilter(2, 7) >>  [
-				SendOSC(zyntrebleport, '/part0/partefx1/EQ/filter0/Pfreq', lambda ev: ev.value),
-				SendOSC(zyntrebleport, '/part1/partefx1/EQ/filter0/Pfreq', lambda ev: ev.value),
-				SendOSC(zyntrebleport, '/part2/partefx1/EQ/filter0/Pfreq', lambda ev: ev.value),
-				SendOSC(zyntrebleport, '/part3/partefx1/EQ/filter0/Pfreq', lambda ev: ev.value),
-				SendOSC(zyntrebleport, '/part4/partefx1/EQ/filter0/Pfreq', lambda ev: ev.value),
-				SendOSC(zyntrebleport, '/part5/partefx1/EQ/filter0/Pfreq', lambda ev: ev.value),
+				Call(zyn_set_filter),
 				# SendOSC(samplesmainport, '/strip/Keyboards/Calf%20Filter/Frequency/unscaled', lambda ev: 20000. * pow(10, ((-log10(71/20000.))*ev.value) / 127. + log10(71/20000.))),
 				SendOSC(surfaceorlport, '/zyn/filter', lambda ev: ev.value),
 				],

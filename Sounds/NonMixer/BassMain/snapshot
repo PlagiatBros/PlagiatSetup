@@ -56,6 +56,14 @@
 	Meter_Module 0xDB create :is_default 1 :chain 0xD8 :active 1
 	JACK_Module 0xDC create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0xD8 :active 1
 	Controller_Module 0x109 create :is_default 0 :chain 0xD8 :active 1 :module 0x108 :port 0 :mode 0
+	Mixer_Strip 0x1C5 create :name "BassDistoHi" :width "narrow" :tab "signal" :color 4278190592 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
+	Chain 0x1C6 create :strip 0x1C5 :tab "chain"
+	JACK_Module 0x1C7 create :parameter_values "0.000000:1.000000" :is_default 1 :chain 0x1C6 :active 1
+	Plugin_Module 0x1CD create :lv2_plugin_uri "http://invadarecords.com/plugins/lv2/filter/hpf/mono" :plugin_ins 1 :plugin_outs 1 :parameter_values "0.000000:1000.000000:0.000000:0.000000" :is_default 0 :chain 0x1C6 :active 1
+	Plugin_Module 0x1CB create :lv2_plugin_uri "http://drobilla.net/plugins/mda/Bandisto" :plugin_ins 2 :plugin_outs 2 :parameter_values "1.000000:0.418440:0.780142:0.000000:0.673759:0.524823:0.000000:0.453901:0.411348:0.000000" :is_default 0 :chain 0x1C6 :active 1
+	Gain_Module 0x1C8 create :parameter_values "-5.900000:0.000000" :is_default 1 :chain 0x1C6 :active 1
+	Meter_Module 0x1C9 create :is_default 1 :chain 0x1C6 :active 1
+	JACK_Module 0x1CA create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0x1C6 :active 1
 	Mixer_Strip 0x26 create :name "BassMain" :width "narrow" :tab "signal" :color 4278196224 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
 	Chain 0x27 create :strip 0x26 :tab "chain"
 	JACK_Module 0x28 create :parameter_values "0.000000:1.000000" :is_default 1 :chain 0x27 :active 1
@@ -69,12 +77,16 @@
 	Gain_Module 0xE0 create :parameter_values "-6.800000:0.000000" :is_default 1 :chain 0xDE :active 1
 	Meter_Module 0xE1 create :is_default 1 :chain 0xDE :active 1
 	JACK_Module 0xE2 create :parameter_values "1.000000:0.000000" :is_default 1 :chain 0xDE :active 1
-	Mixer_Strip 0x1C5 create :name "BassDistoHi" :width "narrow" :tab "signal" :color 4278190592 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
-	Chain 0x1C6 create :strip 0x1C5 :tab "chain"
-	JACK_Module 0x1C7 create :parameter_values "0.000000:1.000000" :is_default 1 :chain 0x1C6 :active 1
-	Plugin_Module 0x1CD create :lv2_plugin_uri "http://invadarecords.com/plugins/lv2/filter/hpf/mono" :plugin_ins 1 :plugin_outs 1 :parameter_values "0.000000:1000.000000:0.000000:0.000000" :is_default 0 :chain 0x1C6 :active 1
-	Plugin_Module 0x1CB create :lv2_plugin_uri "http://drobilla.net/plugins/mda/Bandisto" :plugin_ins 2 :plugin_outs 2 :parameter_values "1.000000:0.418440:0.780142:0.000000:0.673759:0.524823:0.000000:0.453901:0.411348:0.000000" :is_default 0 :chain 0x1C6 :active 1
-	Gain_Module 0x1C8 create :parameter_values "-5.900000:0.000000" :is_default 1 :chain 0x1C6 :active 1
-	Meter_Module 0x1C9 create :is_default 1 :chain 0x1C6 :active 1
-	JACK_Module 0x1CA create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0x1C6 :active 1
+	Mixer_Strip 0x1D2 create :name "BassTrapSynth" :width "narrow" :tab "fader" :color 2075255550 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
+	Chain 0x1D3 create :strip 0x1D2 :tab "chain"
+	JACK_Module 0x1D4 create :parameter_values "0.000000:1.000000" :is_default 1 :chain 0x1D3 :active 1
+	Gain_Module 0x1D5 create :parameter_values "0.000000:0.000000" :is_default 1 :chain 0x1D3 :active 1
+	Meter_Module 0x1D6 create :is_default 1 :chain 0x1D3 :active 1
+	JACK_Module 0x1D7 create :parameter_values "1.000000:0.000000" :is_default 1 :chain 0x1D3 :active 1
+	Mixer_Strip 0x1E5 create :name "BassZynSynth" :width "narrow" :tab "fader" :color 586092432 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
+	Chain 0x1E6 create :strip 0x1E5 :tab "chain"
+	JACK_Module 0x1E7 create :parameter_values "0.000000:1.000000" :is_default 1 :chain 0x1E6 :active 1
+	Gain_Module 0x1E8 create :parameter_values "0.000000:0.000000" :is_default 1 :chain 0x1E6 :active 1
+	Meter_Module 0x1E9 create :is_default 1 :chain 0x1E6 :active 1
+	JACK_Module 0x1EA create :parameter_values "1.000000:0.000000" :is_default 1 :chain 0x1E6 :active 1
 }
