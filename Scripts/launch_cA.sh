@@ -1,3 +1,3 @@
 #!/bin/bash
 cd ~/Plagiat/Stage/Controls/Mididings/
-python cmeAdapter.py > cmeAdapter.log 2>&1 2>&1
+python cmeAdapter.py > cmeAdapter.log 2>&1
