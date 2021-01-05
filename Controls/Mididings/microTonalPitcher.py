@@ -20,7 +20,7 @@ from ports import *
 
 monosynth_pitch =  [0 for i in range(12)]
 manual_pitch = [0, 0, 0]
-pb_factor = [1, 1/12., 1]
+pb_factor = [1/12., 1/12., 1]
 note = 0
 
 def set_microtonal(path, args):
