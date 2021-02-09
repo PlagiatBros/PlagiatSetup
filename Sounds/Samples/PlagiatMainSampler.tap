@@ -121,7 +121,7 @@
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/48k_FiatLux.6@112.wav" sampleRelative="SW/48k_FiatLux.6@112.wav"/>
         </instrument>
         <instrument name="SW" minnote="48" maxnote="48" rootnote="48" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.400000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/48k_SW.57.flac" sampleRelative="SW/48k_SW.57.flac"/>
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/48k_SW.60.flac" sampleRelative="SW/48k_SW.60.flac"/>
         </instrument>
       </kit>
       <kit name="Snapchat" volume="0.330000">
@@ -190,8 +190,17 @@
         <instrument name="lead3" minnote="112" maxnote="112" rootnote="112" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.230000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/48k_Processed_Lead8.28.wav" sampleRelative="DaFirst/48k_Processed_Lead8.28.wav"/>
         </instrument>
-        <instrument name="Muezzin" minnote="114" maxnote="114" rootnote="114" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.240000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="Muezzin" minnote="114" maxnote="114" rootnote="114" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.500000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/muezzin.wav" sampleRelative="DaFirst/muezzin.wav"/>
+        </instrument>
+        <instrument name="GtrPrince" minnote="117" maxnote="117" rootnote="117" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.600000" pan="-0.230000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="19" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/PrinceGtr-2.10.wav" sampleRelative="DaFirst/PrinceGtr-2.10.wav"/>
+          <variation minveloc="20" maxveloc="38" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/PrinceGtr-2.12.wav" sampleRelative="DaFirst/PrinceGtr-2.12.wav"/>
+          <variation minveloc="39" maxveloc="57" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/PrinceGtr-2.14.wav" sampleRelative="DaFirst/PrinceGtr-2.14.wav"/>
+          <variation minveloc="58" maxveloc="76" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/PrinceGtr-2.16.wav" sampleRelative="DaFirst/PrinceGtr-2.16.wav"/>
+          <variation minveloc="77" maxveloc="95" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/PrinceGtr-2.18.wav" sampleRelative="DaFirst/PrinceGtr-2.18.wav"/>
+          <variation minveloc="96" maxveloc="114" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/PrinceGtr-2.6.wav" sampleRelative="DaFirst/PrinceGtr-2.6.wav"/>
+          <variation minveloc="115" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/DaFirst/PrinceGtr-2.8.wav" sampleRelative="DaFirst/PrinceGtr-2.8.wav"/>
         </instrument>
       </kit>
       <kit name="GetUrFreakOn" volume="1.000000">

@@ -15,7 +15,7 @@ version-revision="5" ZynAddSubFX-author="Nasca Octavian Paul">
 <par name="max_addsynth_voices" value="8" />
 </BASE_PARAMETERS>
 <MASTER>
-<par_real name="volume" value="-6.66667" exact_value="0xC0D55556" />
+<par_real name="volume" value="4.58333" exact_value="0x4092AAAB" />
 <par name="key_shift" value="64" />
 <par_bool name="nrpn_receive" value="yes" />
 <MICROTONAL>
@@ -50,7 +50,7 @@ version-revision="5" ZynAddSubFX-author="Nasca Octavian Paul">
 <par_real name="cents" value="1.33484" exact_value="0x3FAADC08" />
 </DEGREE>
 <DEGREE id="5">
-<par_real name="cents" value="1.4431" exact_value="0x3FB8B75A" />
+<par_real name="cents" value="1.41421" exact_value="0x3FB504F3" />
 </DEGREE>
 <DEGREE id="6">
 <par_real name="cents" value="1.49831" exact_value="0x3FBFC887" />
@@ -119,7 +119,7 @@ version-revision="5" ZynAddSubFX-author="Nasca Octavian Paul">
 </automation>
 <PART id="0">
 <par_bool name="enabled" value="yes" />
-<par_real name="volume" value="0" exact_value="0x00000000" />
+<par_real name="volume" value="12.9167" exact_value="0x414EAAAB" />
 <par name="panning" value="64" />
 <par name="min_key" value="0" />
 <par name="max_key" value="127" />
@@ -435,7 +435,7 @@ version-revision="5" ZynAddSubFX-author="Nasca Octavian Paul">
 </EFFECT_PARAMETERS>
 </EFFECT>
 <par name="route" value="0" />
-<par_bool name="bypass" value="no" />
+<par_bool name="bypass" value="yes" />
 </INSTRUMENT_EFFECT>
 <INSTRUMENT_EFFECT id="1">
 <EFFECT>
@@ -523,7 +523,7 @@ version-revision="5" ZynAddSubFX-author="Nasca Octavian Paul">
 </EFFECT_PARAMETERS>
 </EFFECT>
 <par name="route" value="0" />
-<par_bool name="bypass" value="no" />
+<par_bool name="bypass" value="yes" />
 </INSTRUMENT_EFFECT>
 <INSTRUMENT_EFFECT id="2">
 <EFFECT>
@@ -563,7 +563,7 @@ version-revision="5" ZynAddSubFX-author="Nasca Octavian Paul">
 </PART>
 <PART id="1">
 <par_bool name="enabled" value="yes" />
-<par_real name="volume" value="0" exact_value="0x00000000" />
+<par_real name="volume" value="12.9167" exact_value="0x414EAAAB" />
 <par name="panning" value="64" />
 <par name="min_key" value="0" />
 <par name="max_key" value="127" />
@@ -879,7 +879,7 @@ version-revision="5" ZynAddSubFX-author="Nasca Octavian Paul">
 </EFFECT_PARAMETERS>
 </EFFECT>
 <par name="route" value="0" />
-<par_bool name="bypass" value="no" />
+<par_bool name="bypass" value="yes" />
 </INSTRUMENT_EFFECT>
 <INSTRUMENT_EFFECT id="1">
 <EFFECT>
@@ -967,7 +967,7 @@ version-revision="5" ZynAddSubFX-author="Nasca Octavian Paul">
 </EFFECT_PARAMETERS>
 </EFFECT>
 <par name="route" value="0" />
-<par_bool name="bypass" value="no" />
+<par_bool name="bypass" value="yes" />
 </INSTRUMENT_EFFECT>
 <INSTRUMENT_EFFECT id="2">
 <EFFECT>
@@ -1362,7 +1362,7 @@ version-revision="5" ZynAddSubFX-author="Nasca Octavian Paul">
 </EFFECT_PARAMETERS>
 </EFFECT>
 <par name="route" value="0" />
-<par_bool name="bypass" value="no" />
+<par_bool name="bypass" value="yes" />
 </INSTRUMENT_EFFECT>
 <INSTRUMENT_EFFECT id="1">
 <EFFECT>
@@ -1450,7 +1450,7 @@ version-revision="5" ZynAddSubFX-author="Nasca Octavian Paul">
 </EFFECT_PARAMETERS>
 </EFFECT>
 <par name="route" value="0" />
-<par_bool name="bypass" value="no" />
+<par_bool name="bypass" value="yes" />
 </INSTRUMENT_EFFECT>
 <INSTRUMENT_EFFECT id="2">
 <EFFECT>
@@ -1986,7 +1986,7 @@ version-revision="5" ZynAddSubFX-author="Nasca Octavian Paul">
 <par name="type" value="0" />
 </EFFECT>
 <par name="route" value="0" />
-<par_bool name="bypass" value="no" />
+<par_bool name="bypass" value="yes" />
 </INSTRUMENT_EFFECT>
 <INSTRUMENT_EFFECT id="1">
 <EFFECT>
@@ -2074,7 +2074,7 @@ version-revision="5" ZynAddSubFX-author="Nasca Octavian Paul">
 </EFFECT_PARAMETERS>
 </EFFECT>
 <par name="route" value="0" />
-<par_bool name="bypass" value="no" />
+<par_bool name="bypass" value="yes" />
 </INSTRUMENT_EFFECT>
 <INSTRUMENT_EFFECT id="2">
 <EFFECT>
@@ -2114,7 +2114,7 @@ version-revision="5" ZynAddSubFX-author="Nasca Octavian Paul">
 </PART>
 <PART id="4">
 <par_bool name="enabled" value="yes" />
-<par_real name="volume" value="-7.08333" exact_value="0xC0E2AAAB" />
+<par_real name="volume" value="12.9167" exact_value="0x414EAAAB" />
 <par name="panning" value="64" />
 <par name="min_key" value="0" />
 <par name="max_key" value="127" />
@@ -2548,7 +2548,7 @@ version-revision="5" ZynAddSubFX-author="Nasca Octavian Paul">
 </EFFECT_PARAMETERS>
 </EFFECT>
 <par name="route" value="0" />
-<par_bool name="bypass" value="no" />
+<par_bool name="bypass" value="yes" />
 </INSTRUMENT_EFFECT>
 <INSTRUMENT_EFFECT id="2">
 <EFFECT>
@@ -2588,7 +2588,7 @@ version-revision="5" ZynAddSubFX-author="Nasca Octavian Paul">
 </PART>
 <PART id="5">
 <par_bool name="enabled" value="yes" />
-<par_real name="volume" value="-6.66667" exact_value="0xC0D55556" />
+<par_real name="volume" value="-5.41667" exact_value="0xC0AD5556" />
 <par name="panning" value="64" />
 <par name="min_key" value="0" />
 <par name="max_key" value="127" />
@@ -3393,9 +3393,87 @@ version-revision="5" ZynAddSubFX-author="Nasca Octavian Paul">
 </EFFECT>
 </INSERTION_EFFECT>
 <INSERTION_EFFECT id="3">
-<par name="part" value="-1" />
+<par name="part" value="5" />
 <EFFECT>
-<par name="type" value="0" />
+<par name="type" value="7" />
+<par name="preset" value="0" />
+<EFFECT_PARAMETERS>
+<par_no id="0">
+<par name="par" value="52" />
+</par_no>
+<par_no id="11">
+<par name="par" value="64" />
+</par_no>
+<par_no id="12">
+<par name="par" value="64" />
+</par_no>
+<par_no id="13">
+<par name="par" value="64" />
+</par_no>
+<par_no id="16">
+<par name="par" value="64" />
+</par_no>
+<par_no id="17">
+<par name="par" value="64" />
+</par_no>
+<par_no id="18">
+<par name="par" value="64" />
+</par_no>
+<par_no id="21">
+<par name="par" value="64" />
+</par_no>
+<par_no id="22">
+<par name="par" value="64" />
+</par_no>
+<par_no id="23">
+<par name="par" value="64" />
+</par_no>
+<par_no id="26">
+<par name="par" value="64" />
+</par_no>
+<par_no id="27">
+<par name="par" value="64" />
+</par_no>
+<par_no id="28">
+<par name="par" value="64" />
+</par_no>
+<par_no id="31">
+<par name="par" value="64" />
+</par_no>
+<par_no id="32">
+<par name="par" value="64" />
+</par_no>
+<par_no id="33">
+<par name="par" value="64" />
+</par_no>
+<par_no id="36">
+<par name="par" value="64" />
+</par_no>
+<par_no id="37">
+<par name="par" value="64" />
+</par_no>
+<par_no id="38">
+<par name="par" value="64" />
+</par_no>
+<par_no id="41">
+<par name="par" value="64" />
+</par_no>
+<par_no id="42">
+<par name="par" value="64" />
+</par_no>
+<par_no id="43">
+<par name="par" value="64" />
+</par_no>
+<par_no id="46">
+<par name="par" value="64" />
+</par_no>
+<par_no id="47">
+<par name="par" value="64" />
+</par_no>
+<par_no id="48">
+<par name="par" value="64" />
+</par_no>
+</EFFECT_PARAMETERS>
 </EFFECT>
 </INSERTION_EFFECT>
 <INSERTION_EFFECT id="4">

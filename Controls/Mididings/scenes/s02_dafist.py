@@ -423,11 +423,11 @@ dafist = [
             ]),
 
 
-            vxorlgars_on,
-            vxorlmeuf_off,
+            vxorlgars_off,
+            vxorlmeuf_on,
             vxorldisint_off,
             vxorldelay_off,
-            vxorlvocode_off,
+            vxorlvocode_on,
 
             vxjeannotdelay_off,
             vxjeannotgars_on,
@@ -500,9 +500,10 @@ dafist = [
 
             vxjeannotdelay_off,
             vxjeannotgars_off,
-            vxjeannotmeuf_on,
+            vxjeannotmeuf_off,
             vxjeannotdisint_off,
-            vxjeannotvocode_off,
+            vxjeannotvocode_on,
+
 
             SendOSC(cmeinport, '/mididings/switch_scene', 7),
             SendOSC(mk2inport, '/mididings/switch_scene', 8),
@@ -705,7 +706,7 @@ dafist = [
             vxjeannotdisint_off,
             vxjeannotvocode_off,
 
-            SendOSC(cmeinport, '/mididings/switch_scene', 10),
+            SendOSC(cmeinport, '/mididings/switch_scene', 9),
 
             bassdry,
 
@@ -740,19 +741,19 @@ dafist = [
 
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
-            SendOSC(slport, '/sl/7/set', 'sync', 0),
-            SendOSC(slport, '/sl/7/hit', 'pause_off'),
-            SendOSC(slport, '/sl/7/hit', 'trigger'),
-            SendOSC(slport, '/sl/7/set', 'sync', 1),
+            SendOSC(slport, '/sl/[0,7]/set', 'sync', 0),
+            SendOSC(slport, '/sl/[0,7]/hit', 'pause_off'),
+            SendOSC(slport, '/sl/[0,7]/hit', 'trigger'),
+            SendOSC(slport, '/sl/[0,7]/set', 'sync', 1),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 130),
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),
 
-            SendOSC(audioseqport, '/Audioseq/Bpm', 130),
-            SendOSC(audioseqport, '/Audioseq/Play', timestamp),
-            SendOSC(audioseqport, '/Audioseq/Sequence/Enable', 'dafist_outro_filter'),
+            # SendOSC(audioseqport, '/Audioseq/Bpm', 130),
+            # SendOSC(audioseqport, '/Audioseq/Play', timestamp),
+            # SendOSC(audioseqport, '/Audioseq/Sequence/Enable', 'dafist_outro_filter'),
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(130)),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(130)),
@@ -801,7 +802,7 @@ dafist = [
             bassdry,
 
             # Transition Trains Climat
-            SendOSC(cmeinport, '/mididings/switch_scene', 11),
+            SendOSC(cmeinport, '/mididings/switch_scene', 15),
             SendOscState([
                 [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
                 [samplesmainport, '/strip/SamplesMunge/Gain/Mute', 0.0],

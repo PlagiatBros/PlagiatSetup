@@ -50,19 +50,23 @@ seq24PageMap = {
 
 #### BPM Scape & Delay Vx ####
 # Formule : (x-30)/134.
-scapebpmpath = 'C%2A%20Scape%20-%20Stereo%20delay%20with%20chromatic%20resonances/bpm'
+# scapebpmpath = 'C%2A%20Scape%20-%20Stereo%20delay%20with%20chromatic%20resonances/bpm'
+scapebpmpath = 'C%2A%20Scape%20-%20Stereo%20delay%20with%20chromatic%20resonances/bpm/unscaled'
 
 class scapebpm(object):
     def __init__(self, bpm):
-        self.v = (bpm-30)/134.
+        # self.v = (bpm-30)/134.
+        self.v = bpm * 1.0
     def __call__(self, ev):
         return self.v
 
 # Formule : (x-30)/270.
-delaybpmpath = 'Calf%20Vintage%20Delay/Tempo'
+# delaybpmpath = 'Calf%20Vintage%20Delay/Tempo'
+delaybpmpath = 'Calf%20Vintage%20Delay/BPM/unscaled'
 class delaybpm(object):
     def __init__(self, bpm):
-        self.v = (bpm-30)/270.
+        # self.v = (bpm-30)/270.
+        self.v = bpm * 1.0
     def __call__(self, ev):
         return self.v
 
@@ -236,14 +240,14 @@ bassdisto = [
 
 
 # Guitarix - Stages - Control Changes #
-bassdetunest_on = Ctrl(0, 127) >> guitarixst
-bassvibest_on = Ctrl(1, 127) >> guitarixst
-bassringst_on = Ctrl(2, 127) >> guitarixst
-bassbufferst_on = Ctrl(3, 127) >> guitarixst
-bassdetunest_off = Ctrl(0, 0) >> guitarixst
-bassvibest_off = Ctrl(1, 0) >> guitarixst
-bassringst_off = Ctrl(2, 0) >> guitarixst
-bassbufferst_off = Ctrl(3, 0) >> guitarixst
+bassdetunest_on = Ctrl(0, 127) >> Discard()
+bassvibest_on = Ctrl(1, 127) >> Discard()
+bassringst_on = Ctrl(2, 127) >> Discard()
+bassbufferst_on = Ctrl(3, 127) >> Discard()
+bassdetunest_off = Ctrl(0, 0) >> Discard()
+bassvibest_off = Ctrl(1, 0) >> Discard()
+bassringst_off = Ctrl(2, 0) >> Discard()
+bassbufferst_off = Ctrl(3, 0) >> Discard()
 
 
 # pedal Select

@@ -14,7 +14,16 @@ from time import sleep
 config(
 	backend='jack',
 	client_name='Mk2KeyBoardRoutes',
-	out_ports=['Mk2OutBass', 'Mk2OutTreble', 'Mk2OutRhodes', 'Mk2OutTapeutape', 'Mk2OutWobble', 'PBseq24', 'PBTapeutape', 'PBguitarix'],
+	out_ports=[
+		# 'Mk2OutBass',
+		# 'Mk2OutTreble',
+		# 'Mk2OutRhodes',
+		'Mk2OutTapeutape',
+		'Mk2OutWobble',
+		'PBseq24',
+		# 'PBTapeutape',
+		# 'PBguitarix'
+	],
 	in_ports=['Mk2In']
 )
 
