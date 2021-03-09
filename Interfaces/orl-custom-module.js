@@ -172,6 +172,8 @@ module.exports = {
 
         var {address, args, host, port} = data
 
+        if (address === '/active_keys') return // zyn
+
         if (address == '/pong') {
             sl_registered = true
             return
