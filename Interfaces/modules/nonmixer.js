@@ -31,11 +31,11 @@ vx_addresses = {
             '/strip/VxORLDelayPost/Gain/Mute',
         ]
     },
-delaypre: {
-        both:[
-            '/strip/VxORLDelayPre/Gain/Mute'
-        ]
-},
+    delaypre: {
+            both:[
+                '/strip/VxORLDelayPre/Gain/Mute'
+            ]
+    },
     vocode: {
         on: [
             '/strip/VxORLMeuf/Gain/Mute',

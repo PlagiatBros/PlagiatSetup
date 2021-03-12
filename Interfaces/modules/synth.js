@@ -1,5 +1,6 @@
 zyn_port = 9090
 bcr_port = 12345
+zyn_selected = 0
 
 function midiSteps(steps) {
     return (v)=>{
@@ -44,6 +45,28 @@ bcr_mapping = {
 }
 
 bcr_address_cache = {}
+
+function queryZyn(n) {
+
+    var root1 = `/part${n}/kit0/`,
+        root2 = 'adpars/GlobalPar/'
+    for (var k in bcr_mapping) {
+        var address = k === 'partefx1/EQ/filter0/Pfreq' ?
+            root1 + k : root1 + root2 + k
+
+        send('127.0.0.1', zyn_port, address)
+
+    }
+
+}
+
+function queryZynAll() {
+
+    for (var n = 0; i < 6; i++) {
+        queryZyn(i)
+    }
+
+}
 
 
 module.exports = {
@@ -96,6 +119,7 @@ module.exports = {
         else if (port === bcr_port) {
 
 
+            return
 
         }
 
@@ -107,6 +131,22 @@ module.exports = {
 
         var {address, args, host, port} = data
 
+
+        if (host === 'zyn') {
+
+            if (address === '/select') {
+
+                zyn_selected = args[0].value
+                queryZyn(zyn_selected)
+                return
+            }
+
+
+
+
+
+
+        }
 
         if (address === '/cmescene') {
             address = '/mididings/switch_scene'
