@@ -80,7 +80,7 @@ module.exports = {
             if (address === '/active_keys') return
 
             // get zyn part number, strip address part prefix
-            var [_, part, paramAddress] = address.match(/^\/part([0-9]+)(\/.*)/) || []),
+            var [_, part, paramAddress] = address.match(/^\/part([0-9]+)(\/.*)/) || [],
                 parameter = bcr_mapping[paramAddress]
 
             // copy feedback to bcr if part is selected
