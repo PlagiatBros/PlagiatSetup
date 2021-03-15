@@ -1,4 +1,4 @@
-debug = 1
+debug = false
 
 zyn_port = 10000
 bcr_port = 12345
@@ -13,6 +13,12 @@ bcr_scenes = {
     4: 14,
     5: 15,
     6: 19
+}
+
+state = {}
+statesave = false
+for (var i in bcr_scenes){
+    state[parseInt(i)] = {}
 }
 
 
@@ -31,28 +37,28 @@ bcr_mapping = {
     '/kit0/adpars/GlobalPar/GlobalFilter/Pstages': {control: 3, map: midiSteps(5)},
     '/kit0/adpars/GlobalPar/PBandwidth': {control: 6},
     '/kit0/adpars/GlobalPar/PCoarseDetune': {control: 7},
-    '/partefx1/EQ/filter0/Pfreq': {control: 8},
+    '/partefx1/EQ/filter0/Pfreq': {control: 8, type: 'f'},
     '/kit0/adpars/GlobalPar/GlobalFilter/Ptype': {control: 33, forcefeedback: true},
     '/kit0/adpars/GlobalPar/octave': {control: 41, map: v=>v+2, forcefeedback: true},
     '/kit0/adpars/GlobalPar/AmpEnvelope/PA_dt': {control: 49},
     '/kit0/adpars/GlobalPar/AmpEnvelope/PD_dt': {control: 50},
     '/kit0/adpars/GlobalPar/AmpEnvelope/PS_val': {control: 51},
     '/kit0/adpars/GlobalPar/AmpEnvelope/PR_dt': {control: 52},
-    '/kit0/adpars/GlobalPar/AmpLfo/Pfreq': {control: 53},
+    '/kit0/adpars/GlobalPar/AmpLfo/Pfreq': {control: 53, type: 'f'},
     '/kit0/adpars/GlobalPar/AmpLfo/Pintensity': {control: 54},
     '/kit0/adpars/GlobalPar/AmpLfo/PLFOtype': {control: 56, map: midiSteps(8)},
     '/kit0/adpars/GlobalPar/FreqEnvelope/PA_val': {control: 57},
     '/kit0/adpars/GlobalPar/FreqEnvelope/PA_dt': {control: 58},
     '/kit0/adpars/GlobalPar/FreqEnvelope/PR_dt': {control: 59},
     '/kit0/adpars/GlobalPar/FreqEnvelope/PR_val': {control: 60},
-    '/kit0/adpars/GlobalPar/FreqLfo/Pfreq': {control: 61, map: v=>parseInt(127*v)},
+    '/kit0/adpars/GlobalPar/FreqLfo/Pfreq': {control: 61, map: v=>parseInt(127*v), type: 'f'},
     '/kit0/adpars/GlobalPar/FreqLfo/Pintensity': {control: 62},
     '/kit0/adpars/GlobalPar/FreqLfo/PLFOtype': {control: 64, map: midiSteps(8)},
     '/kit0/adpars/GlobalPar/FilterEnvelope/PA_dt': {control: 65},
     '/kit0/adpars/GlobalPar/FilterEnvelope/PD_val': {control: 66},
     '/kit0/adpars/GlobalPar/FilterEnvelope/PD_dt': {control: 67},
     '/kit0/adpars/GlobalPar/FilterEnvelope/PR_dt': {control: 68},
-    '/kit0/adpars/GlobalPar/FilterLfo/Pfreq': {control: 69},
+    '/kit0/adpars/GlobalPar/FilterLfo/Pfreq': {control: 69, type: 'f'},
     '/kit0/adpars/GlobalPar/FilterLfo/Pintensity': {control: 70},
     '/kit0/adpars/GlobalPar/FilterLfo/PLFOtype': {control: 72, map: midiSteps(8)},
     '/kit0/adpars/GlobalPar/GlobalFilter/Pcategory': {control: 101, forcefeedback: true},
@@ -73,9 +79,15 @@ function queryZyn(n) {
 
 function queryZynAll() {
 
+    statesave = true
+
     for (var n in bcr_scenes) {
         queryZyn(n)
     }
+
+    setTimeout(()=>{
+        statesave = false
+    }, 1000)
 
 }
 
@@ -91,7 +103,7 @@ module.exports = {
 
     init: ()=>{
 
-        setTimeout(queryZynAll, 5000)
+        setTimeout(queryZynAll, 3000)
 
     },
 
@@ -108,6 +120,10 @@ module.exports = {
             // get zyn part number, strip address part prefix
             var [_, part, paramAddress] = address.match(/^\/part([0-9]+)(\/.*)/) || [],
                 parameter = bcr_mapping[paramAddress]
+
+            if (statesave) {
+                state[parseInt(part)][paramAddress] = args[0].value
+            }
 
             // copy feedback to bcr if part is selected
             if (parseInt(part) === zyn_selected && parameter) {
@@ -157,6 +173,22 @@ module.exports = {
                 queryZyn(zyn_selected)
                 return
             }
+
+            if (address === '/reset') {
+                send('127.0.0.1', 8645, '/log', `STATE set: ${JSON.stringify(state)}`)
+
+                var part = args[0].value
+                if (!state[part]) return
+                var root = `/part${part}`
+                for (var address in state[part]) {
+                    var val = state[part][address]
+                    if (bcr_mapping[address].type !== 'f') val = {type: 'i', value: val}
+                    send('127.0.0.1', zyn_port, root + address, val)
+                }
+                return
+            }
+
+            return
 
         }
 

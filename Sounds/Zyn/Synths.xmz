@@ -523,7 +523,7 @@ version-revision="5" ZynAddSubFX-author="Nasca Octavian Paul">
 </EFFECT_PARAMETERS>
 </EFFECT>
 <par name="route" value="0" />
-<par_bool name="bypass" value="yes" />
+<par_bool name="bypass" value="no" />
 </INSTRUMENT_EFFECT>
 <INSTRUMENT_EFFECT id="2">
 <EFFECT>
@@ -2992,7 +2992,7 @@ version-revision="5" ZynAddSubFX-author="Nasca Octavian Paul">
 </EFFECT_PARAMETERS>
 </EFFECT>
 <par name="route" value="0" />
-<par_bool name="bypass" value="no" />
+<par_bool name="bypass" value="yes" />
 </INSTRUMENT_EFFECT>
 <INSTRUMENT_EFFECT id="2">
 <EFFECT>
@@ -3659,7 +3659,7 @@ version-revision="5" ZynAddSubFX-author="Nasca Octavian Paul">
 <ADD_SYNTH_PARAMETERS>
 <par_bool name="stereo" value="yes" />
 <AMPLITUDE_PARAMETERS>
-<par_real name="volume" value="19.375" exact_value="0x419B0002" />
+<par_real name="volume" value="-3.75" exact_value="0xC0700000" />
 <par name="panning" value="64" />
 <par name="velocity_sensing" value="92" />
 <par name="fadein_adjustment" value="20" />
