@@ -1,6 +1,7 @@
 from s01_connassesacem import *
 from s02_dafist import *
 from s03_climat import *
+from s03b_climat import *
 from s04_fifty import *
 from s05_le5 import *
 from s05a_nymphotrap import *

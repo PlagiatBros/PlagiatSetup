@@ -82,6 +82,63 @@ run(
 		),
 	    ]
         ),
+        31: SceneGroup("Climat 2 (sapercomjaja) ", [
+  		Scene("Bass ORL",
+                      [
+                        sapercomjaja,
+                        basspedal,
+                        ]
+		),
+		Scene("Vx ORL",
+                      [
+                        sapercomjaja,
+                        vxpedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        sapercomjaja,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        sapercomjaja,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        sapercomjaja,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        sapercomjaja,
+                        basspedal,
+                        ]
+		),
+		Scene("Nope",
+                      [
+                        sapercomjaja,
+                        basspedal,
+                        ]
+		),
+		Scene("Pedal Select",
+                      [
+                        sapercomjaja,
+                        pedalselect,
+                        ]
+		),
+		Scene("Tune Select",
+                      [
+                        sapercomjaja,
+                        basspedal,
+                        ]
+		),
+	    ]
+        ),
         1: SceneGroup("ConnassesSACEM", [
   		Scene("Bass ORL",
                       [
