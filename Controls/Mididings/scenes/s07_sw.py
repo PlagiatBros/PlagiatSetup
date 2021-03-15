@@ -323,7 +323,55 @@ sw = [
 
             ] >> Discard()
         ],
+    orl >> ProgramFilter(7) >> [ # DnB - Bouton 7
+        Program(68) >> cseqtrigger,
+        [
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 178.5),
 
+            SendOSC(klickport, '/klick/simple/set_tempo', 178.5),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),
+
+            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(178.5)),
+            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(178.5)),
+            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(178.5)),
+            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(178.5)),
+
+            SendOSC(rpicourport, '/pyta/scene_recall', 'dafist_couplet'),
+            SendOSC(rpijardinport, '/pyta/scene_recall', 'dafist_couplet'),
+
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'sw_refrain_red_flashes'),
+            SendOSC(lightseqport, '/Lightseq/Sequence/Enable', 'sw_refrain_white_flash'),
+
+            SendOSC(lightseqport, '/Lightseq/Bpm', 178.5),
+            SendOSC(lightseqport, '/Lightseq/Play', timestamp),
+
+
+            SendOscState([
+
+                [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
+                [samplesmainport, '/strip/SamplesScape/Gain/Mute', 0.0],
+
+                [samplesscapeport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -4.5],
+
+            ]),
+
+            vxorlgars_off,
+            vxorlmeuf_on,
+            vxorldisint_on,
+            vxorldelay_on,
+            vxorlvocode_off,
+
+            vxjeannotgars_off,
+            vxjeannotmeuf_on,
+            vxjeannotdisint_on,
+            vxjeannotdelay_on,
+            vxjeannotvocode_off,
+
+            ] >> Discard()
+        ],
     jeannot >> ProgramFilter(3) >> [ # stop Three get the shit going- Bouton 3
         stop,
         [
