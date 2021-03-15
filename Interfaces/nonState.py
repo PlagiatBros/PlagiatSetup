@@ -34,7 +34,7 @@ file.close()
 import liblo
 import time
 
-server = liblo.Server(15001)
+server = liblo.Server(15641)
 
 def save(path, args):
     m, data = args

@@ -6622,7 +6622,7 @@
                                     "script": "",
                                     "address": "/note",
                                     "preArgs": [
-                                      1
+                                      2
                                     ],
                                     "typeTags": "i",
                                     "decimals": 2,
@@ -6666,7 +6666,7 @@
                                     "script": "",
                                     "address": "/note",
                                     "preArgs": [
-                                      1
+                                      2
                                     ],
                                     "typeTags": "",
                                     "decimals": 2,
@@ -6968,7 +6968,7 @@
                                 "default": 127,
                                 "linkId": "",
                                 "script": "",
-                                "address": "/part@{parent.variables.n}/partefx1/EQ/filter0/Pfreq",
+                                "address": "/part@{parent.variables.n}/partefx1/parameter11",
                                 "preArgs": "",
                                 "typeTags": "",
                                 "decimals": 2,
@@ -7061,7 +7061,7 @@
                                 "value": "",
                                 "default": "",
                                 "linkId": "",
-                                "script": "if (value) {\n  var n = getProp('parent', 'variables').n\n  set(\"zynstrip_details_*\", 0)\n  set('synthselect', n)\n  send('zyn:cmd', '/select' n)\n}",
+                                "script": "if (value) {\n  var n = getProp('parent', 'variables').n\n  set(\"zynstrip_details_*\", 0)\n  set('synthselect', n)\n  send('zyn:cmd', '/select', n)\n}",
                                 "address": "auto",
                                 "preArgs": "",
                                 "typeTags": "",
@@ -7147,7 +7147,7 @@
                                 "padding": 0,
                                 "html": "",
                                 "css": "",
-                                "value": "[\n  [ 0, 0 ],\n  [ 0, @{zynstrip_amp_attack_@{parent.variables.n}} ],\n  [ @{zynstrip_amp_decay_@{parent.variables.n}}, @{zynstrip_amp_sustain_@{parent.variables.n}} ],\n  [ @{zynstrip_amp_release_@{parent.variables.n}}, 0 ]\n]",
+                                "value": "[\n  [ 0, 0 ],\n  [ @{zynstrip_amp_attack_@{parent.variables.n}}, 127 ],\n  [ #{@{zynstrip_amp_decay_@{parent.variables.n}} + @{zynstrip_amp_attack_@{parent.variables.n}}}, @{zynstrip_amp_sustain_@{parent.variables.n}} ],\n  [ #{@{zynstrip_amp_decay_@{parent.variables.n}} + @{zynstrip_amp_attack_@{parent.variables.n}} + @{zynstrip_amp_release_@{parent.variables.n}}}, 0 ]\n]",
                                 "default": "",
                                 "linkId": "",
                                 "script": "",
@@ -7703,29 +7703,6 @@
                             "widgetId": "synthstrip_template",
                             "width": 80,
                             "height": 510,
-                            "left": 650,
-                            "top": 230,
-                            "id": "synthstrip_3",
-                            "visible": true,
-                            "interaction": true,
-                            "expand": "false",
-                            "css": "",
-                            "props": {
-                              "variables": {
-                                "color": "orange",
-                                "n": 3,
-                                "name": "Organ",
-                                "link": "organ"
-                              }
-                            },
-                            "address": "auto",
-                            "variables": "@{parent.variables}"
-                          },
-                          {
-                            "type": "clone",
-                            "widgetId": "synthstrip_template",
-                            "width": 80,
-                            "height": 510,
                             "left": 750,
                             "top": 230,
                             "id": "synthstrip_4",
@@ -7760,6 +7737,28 @@
                                 "color": "violet",
                                 "n": 5,
                                 "name": "Bombarde"
+                              }
+                            },
+                            "address": "auto",
+                            "variables": "@{parent.variables}"
+                          },
+                          {
+                            "type": "clone",
+                            "top": 40,
+                            "left": 30,
+                            "id": "synthstrip_6",
+                            "visible": true,
+                            "interaction": true,
+                            "width": 80,
+                            "height": 510,
+                            "expand": "false",
+                            "css": "",
+                            "widgetId": "synthstrip_template",
+                            "props": {
+                              "variables": {
+                                "color": "yellow",
+                                "n": 6,
+                                "name": "Forain"
                               }
                             },
                             "address": "auto",
@@ -8108,10 +8107,10 @@
                                           "max": 130
                                         },
                                         "origin": "auto",
-                                        "value": "[\n  [ 0, 0 ],\n  [ 0, @{zynstrip_amp_attack_@{synthselect}} ],\n  [ @{zynstrip_amp_decay_@{synthselect}}, @{zynstrip_amp_sustain_@{synthselect}} ],\n  [ @{zynstrip_amp_release_@{synthselect}}, 0 ]\n]",
+                                        "value": "[\n  [ 0, 0 ],\n  [ @{zynstrip_amp_attack_@{synthselect}}, 127 ],\n  [ #{@{zynstrip_amp_decay_@{synthselect}} + @{zynstrip_amp_attack_@{synthselect}}}, @{zynstrip_amp_sustain_@{synthselect}} ],\n  [ #{@{zynstrip_amp_decay_@{synthselect}} + @{zynstrip_amp_attack_@{synthselect}} + @{zynstrip_amp_release_@{synthselect}}}, 0 ]\n]",
                                         "default": "",
                                         "linkId": "",
-                                        "script": "",
+                                        "script": "synthselect",
                                         "address": "auto",
                                         "preArgs": "",
                                         "target": ""
@@ -8604,7 +8603,7 @@
                                           "max": 130
                                         },
                                         "origin": "auto",
-                                        "value": "[\n  [ 0, 0 ],\n  [ 0, @{zynstrip_freq_attack_@{synthselect}} ],\n  [ @{zynstrip_freq_decay_@{synthselect}}, @{zynstrip_freq_sustain_@{synthselect}} ],\n  [ @{zynstrip_freq_release_@{synthselect}}, 0 ]\n]",
+                                        "value": "[\n  [ 0, 0 ],\n  [ @{zynstrip_freq_attack_@{synthselect}}, 127 ],\n  [ #{@{zynstrip_freq_decay_@{synthselect}} + @{zynstrip_freq_attack_@{synthselect}}}, @{zynstrip_freq_sustain_@{synthselect}} ],\n  [ #{@{zynstrip_freq_decay_@{synthselect}} + @{zynstrip_freq_attack_@{synthselect}} + @{zynstrip_freq_release_@{synthselect}}}, 0 ]\n]",
                                         "default": "",
                                         "linkId": "",
                                         "script": "",
@@ -9100,7 +9099,7 @@
                                           "max": 130
                                         },
                                         "origin": "auto",
-                                        "value": "[\n  [ 0, 0 ],\n  [ 0, @{zynstrip_filter_attack_@{synthselect}} ],\n  [ @{zynstrip_filter_decay_@{synthselect}}, @{zynstrip_filter_sustain_@{synthselect}} ],\n  [ @{zynstrip_filter_release_@{synthselect}}, 0 ]\n]",
+                                        "value": "[\n  [ 0, 0 ],\n  [ @{zynstrip_filter_attack_@{synthselect}}, 127 ],\n  [ #{@{zynstrip_filter_decay_@{synthselect}} + @{zynstrip_filter_attack_@{synthselect}}}, @{zynstrip_filter_sustain_@{synthselect}} ],\n  [ #{@{zynstrip_filter_decay_@{synthselect}} + @{zynstrip_filter_attack_@{synthselect}} + @{zynstrip_filter_release_@{synthselect}}}, 0 ]\n]",
                                         "default": "",
                                         "linkId": "",
                                         "script": "",
@@ -9574,8 +9573,8 @@
                                         "spring": false,
                                         "doubleTap": true,
                                         "range": {
-                                          "min": -8,
-                                          "max": 7
+                                          "min": -2,
+                                          "max": 5
                                         },
                                         "logScale": false,
                                         "sensitivity": 1,
@@ -9695,7 +9694,7 @@
                                       "max": 6
                                     },
                                     "origin": "auto",
-                                    "filters": "JS{{\nvar f = {},\n    r = [f],\n    cat = @{zynstrip_globalfilter_category_@{synthselect}},\n    type = @{zynstrip_globalfilter_type_@{synthselect}},\n    q = @{zynstrip_globalfilter_q_@{synthselect}},\n    _types = [\n      [\"lowpass\", \"highpass\", \"lowpass\", \"highpass\", \"bandpass\", \"notch\", \"peak\", \"lowshelf\", \"highshelf\"],\n      [],\n      [\"lowpass\", \"highpass\", \"bandpass\", \"notch\"]\n    ]\n     \nif (cat !== 1) {\n f.q = q/127 + 0.5\n f.type =  _types[cat][type]\n f.freq = @{zynstrip_globalfilter_freq_@{synthselect}}\n} else {\n f.type = \"bandpass\"\n f.freq = @{zynstrip_globalfilter_formantcenterfreq_@{synthselect}}\n}\n\n\nreturn r\n}}",
+                                    "filters": "JS{{\nvar f = {},\n    r = [f],\n    cat = @{zynstrip_globalfilter_category_@{synthselect}},\n    type = @{zynstrip_globalfilter_type_@{synthselect}},\n    q = @{zynstrip_globalfilter_q_@{synthselect}},\n    _types = [\n      [\"lowpass\", \"highpass\", \"lowpass\", \"highpass\", \"bandpass\", \"notch\", \"peak\", \"lowshelf\", \"highshelf\"],\n      [],\n      [\"lowpass\", \"highpass\", \"bandpass\", \"notch\"]\n    ]\n     \nif (cat !== 1) {\n f.q = q/127 + 0.5\n f.type =  _types[cat][type]\n f.freq = @{zynstrip_globalfilter_freq_@{synthselect}}\n} else {\n f.type = \"bandpass\"\n f.freq = @{zynstrip_globalfilter_formantcenterfreq_@{synthselect}}\n}\nf.freq = f.freq / 127 * 21980 + 20\n\n\nreturn r\n}}",
                                     "value": "",
                                     "default": "",
                                     "linkId": "",
@@ -9831,11 +9830,11 @@
                                         "doubleTap": false,
                                         "values": "JS{{ \nreturn @{zynstrip_globalfilter_category_@{synthselect}} === 0 ?\n{\n  \"LP1\": 0,\n  \"HP1\": 1,\n  \"LP2\": 2,\n  \"HP2\": 3,\n  \"Bandpass\": 4,\n  \"Notch\": 5,\n  \"Peak\": 6,\n  \"LowShelf\": 7,\n  \"HighShelf\": 8\n} : {\n  \"LowPass\": 2,\n  \"HighPass\": 3,\n  \"BandPass\": 4,\n  \"Notch\": 5,\n  \"Peak\": 6\n}\n\n}}",
                                         "weights": "",
-                                        "value": "@{zynstrip_globalfilter_cat_@{synthselect}}",
+                                        "value": "@{zynstrip_globalfilter_type_@{synthselect}}",
                                         "default": "",
                                         "linkId": "",
                                         "script": "",
-                                        "address": "@{zynstrip_globalfilter_cat_@{synthselect}.address}1",
+                                        "address": "@{zynstrip_globalfilter_type_@{synthselect}.address}1",
                                         "preArgs": "",
                                         "typeTags": "",
                                         "decimals": 2,
@@ -11690,6 +11689,7 @@
                       "GetYourFreakOn": 8,
                       "Horrorcore": 9,
                       "Wholeworld": 10,
+                      "Climat 2 (sapercomjaja) ": 31,
                       "Instouboul": 61,
                       "Trapone": 99
                     },
@@ -12270,6 +12270,6 @@
     "visible": true,
     "html": ""
   },
-  "version": "1.8.11",
+  "version": "1.8.12",
   "type": "Open Stage Control session"
 }

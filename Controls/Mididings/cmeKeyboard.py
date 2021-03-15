@@ -76,7 +76,7 @@ def zyn_set_filter(ev):
 			send(keyboardsport, '/strip/TrapHigh/Calf%20Filter/Frequency/unscaled',  20000. * pow(10, ((-log10(71/20000.))*ev.value) / 127. + log10(71/20000.)))
 		else:
 			#zyn
-			send(zyntrebleport, '/part%i/partefx1/EQ/filter0/Pfreq' % (c - 1), ev.value)
+			send(zyntrebleport, '/part%i/partefx1/parameter11' % (c - 1), ev.value) # EQ/filter0/Pfreq
 
 cmeevents = ~Filter(CTRL)
 

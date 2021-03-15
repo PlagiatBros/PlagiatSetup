@@ -1,6 +1,20 @@
-zyn_port = 9090
+debug = 1
+
+zyn_port = 10000
 bcr_port = 12345
 zyn_selected = 0
+midi_port = 'keyboards'
+
+bcr_scenes = {
+    0: 8,
+    1: 9,
+    2: 12,
+    3: 12,
+    4: 14,
+    5: 15,
+    6: 19
+}
+
 
 function midiSteps(steps) {
     return (v)=>{
@@ -17,9 +31,9 @@ bcr_mapping = {
     '/kit0/adpars/GlobalPar/GlobalFilter/Pstages': {control: 3, map: midiSteps(5)},
     '/kit0/adpars/GlobalPar/PBandwidth': {control: 6},
     '/kit0/adpars/GlobalPar/PCoarseDetune': {control: 7},
-    '/kit0/partefx1/EQ/filter0/Pfreq': {control: 8},
-    '/kit0/adpars/GlobalPar/GlobalFilter/Ptype': {control: 33},
-    '/kit0/adpars/GlobalPar/octave': {control: 41, map: v=>v+2},
+    '/partefx1/EQ/filter0/Pfreq': {control: 8},
+    '/kit0/adpars/GlobalPar/GlobalFilter/Ptype': {control: 33, forcefeedback: true},
+    '/kit0/adpars/GlobalPar/octave': {control: 41, map: v=>v+2, forcefeedback: true},
     '/kit0/adpars/GlobalPar/AmpEnvelope/PA_dt': {control: 49},
     '/kit0/adpars/GlobalPar/AmpEnvelope/PD_dt': {control: 50},
     '/kit0/adpars/GlobalPar/AmpEnvelope/PS_val': {control: 51},
@@ -41,10 +55,14 @@ bcr_mapping = {
     '/kit0/adpars/GlobalPar/FilterLfo/Pfreq': {control: 69},
     '/kit0/adpars/GlobalPar/FilterLfo/Pintensity': {control: 70},
     '/kit0/adpars/GlobalPar/FilterLfo/PLFOtype': {control: 72, map: midiSteps(8)},
-    '/kit0/adpars/GlobalPar/GlobalFilter/Pcategory': {control: 101, action: v=>send('127.0.0.1', bcr_port, '/mididings/switch_subscene', v === 1 ? 2 : 1)},
+    '/kit0/adpars/GlobalPar/GlobalFilter/Pcategory': {control: 101, forcefeedback: true},
 }
 
+forcedfeedbacks = Object.keys(bcr_mapping).filter(x=>bcr_mapping[x].forcefeedback)
+
+
 function queryZyn(n) {
+    if (debug) send('127.0.0.1', 8645, '/log', `QUERY ZYN`)
 
     var root = `/part${n}`
     for (var address in bcr_mapping) {
@@ -55,12 +73,19 @@ function queryZyn(n) {
 
 function queryZynAll() {
 
-    for (var n = 0; i < 6; i++) {
-        queryZyn(i)
+    for (var n in bcr_scenes) {
+        queryZyn(n)
     }
 
 }
 
+setInterval(()=>{
+    for (var address of forcedfeedbacks) {
+        send('127.0.0.1', zyn_port, `/part${zyn_selected}${address}`)
+        if (debug) send('127.0.0.1', 8645, '/log', `OSC OUT: /part${zyn_selected}${address}`)
+    }
+
+}, 250)
 
 module.exports = {
 
@@ -73,6 +98,7 @@ module.exports = {
     oscInFilter: (data)=>{
 
         var {address, args, host, port} = data
+        if (!address.includes('ecasound')) if (debug) send('127.0.0.1', 8645, '/log', `OSC IN: ${JSON.stringify(data)}`)
 
         if (port === zyn_port) {
 
@@ -86,18 +112,22 @@ module.exports = {
             // copy feedback to bcr if part is selected
             if (parseInt(part) === zyn_selected && parameter) {
 
-                var cc = bcr_mapping[parameter].control,
-                    value = bcr_mapping[parameter].map ?
-                        bcr_mapping[parameter].map(args[0].value) :
+                var cc = parameter.control,
+                    value = parameter.map ?
+                        parameter.map(args[0].value) :
                         args[0].value
 
-                send('midi', 'bcr_feedback', '/control', cc, value)
+                send('midi', midi_port, '/control', 1, cc, value)
+                if (debug) send('127.0.0.1', 8645, '/log', `BCR feedback sent: cc ${cc} ${value}`)
 
-                if (bcr_mapping[parameter].action) {
-                    bcr_mapping[parameter].action(value)
+                if (parameter.action) {
+                    parameter.action(value)
                 }
 
+
             }
+            // if (debug) send('127.0.0.1', 8645, '/log', `ZYN in: ${address} ${args[0].value} (control ${cc} ${value})`)
+
 
         }
 
@@ -115,12 +145,15 @@ module.exports = {
 
         var {address, args, host, port} = data
 
+        if (debug) send('127.0.0.1', 8645, '/log', `OSC OUT: ${JSON.stringify(data)}`)
+
 
         if (host === 'zyn') {
 
             if (address === '/select') {
 
                 zyn_selected = args[0].value
+                send('127.0.0.1', bcr_port, '/mididings/switch_scene', bcr_scenes[zyn_selected])
                 queryZyn(zyn_selected)
                 return
             }

@@ -351,10 +351,7 @@ sw = [
 
             SendOscState([
 
-                [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
-                [samplesmainport, '/strip/SamplesScape/Gain/Mute', 0.0],
-
-                [samplesscapeport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -4.5],
+                [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
 
             ]),
 

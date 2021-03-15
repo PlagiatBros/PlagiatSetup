@@ -97,6 +97,11 @@ vpjeannotport = 'osc.udp://192.168.0.103:56418'
 ## misc
 gxtunermanagerport = 13000
 
+## BCR
+
+bcrinport = 12345
+bcroutport = 12346
+
 ## MIDI
 
 try:
