@@ -64,7 +64,7 @@ pitch_ports = {
 
 
 app.on('sessionOpened', (data, client)=>{
-    var monitors = loadJSON('../monitors.json')
+    var monitors = loadJSON('./monitors.json')
     for (var m in monitors) {
         var last
         for (var i in monitors[m]) {

@@ -36,7 +36,7 @@ module.exports = {
             } else {
                 send(sl_host, sl_port, '/sl/'+sl_range+'/unregister_auto_update','state', osc_host, '/sl_state')
                 send(sl_host, sl_port, '/sl/'+sl_range+'/unregister_auto_update','loop_len', osc_host, '/sl_time')
-                send(sl_host, sl_port, '/sl/'+sl_range+'/unregister_auto_update','loop_pos', host, '/sl_time')
+                send(sl_host, sl_port, '/sl/'+sl_range+'/unregister_auto_update','loop_pos', osc_host, '/sl_time')
 
                 setTimeout(()=>{
 
