@@ -169,8 +169,8 @@ version-revision="5" ZynAddSubFX-author="Nasca Octavian Paul">
 <par_bool name="forced_release" value="yes" />
 <par_bool name="linear_envelope" value="no" />
 <par name="A_dt" value="0" />
-<par name="D_dt" value="40" />
-<par name="R_dt" value="25" />
+<par name="D_dt" value="1" />
+<par name="R_dt" value="8" />
 <par name="A_val" value="64" />
 <par name="D_val" value="64" />
 <par name="S_val" value="127" />
@@ -190,7 +190,7 @@ version-revision="5" ZynAddSubFX-author="Nasca Octavian Paul">
 </AMPLITUDE_PARAMETERS>
 <FREQUENCY_PARAMETERS>
 <par name="detune" value="8192" />
-<par name="coarse_detune" value="0" />
+<par name="coarse_detune" value="15360" />
 <par name="detune_type" value="1" />
 <par name="bandwidth" value="64" />
 <FREQUENCY_ENVELOPE>
@@ -224,13 +224,419 @@ version-revision="5" ZynAddSubFX-author="Nasca Octavian Paul">
 <par name="velocity_sensing_amplitude" value="64" />
 <par name="velocity_sensing" value="64" />
 <FILTER>
-<par name="category" value="0" />
-<par name="type" value="2" />
-<par_real name="basefreq" value="5076.2" exact_value="0x459EA1A0" />
-<par_real name="baseq" value="1.08427" exact_value="0x3F8AC956" />
+<par name="category" value="1" />
+<par name="type" value="3" />
+<par_real name="basefreq" value="9209.51" exact_value="0x460FE60D" />
+<par_real name="baseq" value="0.354279" exact_value="0x3EB56414" />
 <par name="stages" value="0" />
 <par_real name="freq_tracking" value="0" exact_value="0x00000000" />
 <par_real name="gain" value="0" exact_value="0x00000000" />
+<FORMANT_FILTER>
+<par name="num_formants" value="1" />
+<par name="formant_slowness" value="64" />
+<par name="vowel_clearness" value="64" />
+<par name="center_freq" value="64" />
+<par name="octaves_freq" value="0" />
+<VOWEL id="0">
+<FORMANT id="0">
+<par name="freq" value="37" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="1">
+<par name="freq" value="110" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="2">
+<par name="freq" value="20" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="3">
+<par name="freq" value="98" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="4">
+<par name="freq" value="52" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="5">
+<par name="freq" value="41" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="6">
+<par name="freq" value="107" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="7">
+<par name="freq" value="84" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="8">
+<par name="freq" value="80" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="9">
+<par name="freq" value="120" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="10">
+<par name="freq" value="67" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="11">
+<par name="freq" value="44" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+</VOWEL>
+<VOWEL id="1">
+<FORMANT id="0">
+<par name="freq" value="91" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="1">
+<par name="freq" value="67" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="2">
+<par name="freq" value="115" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="3">
+<par name="freq" value="85" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="4">
+<par name="freq" value="78" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="5">
+<par name="freq" value="106" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="6">
+<par name="freq" value="13" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="7">
+<par name="freq" value="108" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="8">
+<par name="freq" value="20" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="9">
+<par name="freq" value="73" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="10">
+<par name="freq" value="59" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="11">
+<par name="freq" value="85" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+</VOWEL>
+<VOWEL id="2">
+<FORMANT id="0">
+<par name="freq" value="81" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="1">
+<par name="freq" value="74" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="2">
+<par name="freq" value="122" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="3">
+<par name="freq" value="11" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="4">
+<par name="freq" value="78" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="5">
+<par name="freq" value="19" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="6">
+<par name="freq" value="9" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="7">
+<par name="freq" value="122" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="8">
+<par name="freq" value="63" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="9">
+<par name="freq" value="108" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="10">
+<par name="freq" value="103" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="11">
+<par name="freq" value="2" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+</VOWEL>
+<VOWEL id="3">
+<FORMANT id="0">
+<par name="freq" value="28" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="1">
+<par name="freq" value="77" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="2">
+<par name="freq" value="84" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="3">
+<par name="freq" value="68" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="4">
+<par name="freq" value="98" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="5">
+<par name="freq" value="55" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="6">
+<par name="freq" value="125" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="7">
+<par name="freq" value="121" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="8">
+<par name="freq" value="80" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="9">
+<par name="freq" value="84" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="10">
+<par name="freq" value="121" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="11">
+<par name="freq" value="121" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+</VOWEL>
+<VOWEL id="4">
+<FORMANT id="0">
+<par name="freq" value="8" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="1">
+<par name="freq" value="3" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="2">
+<par name="freq" value="31" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="3">
+<par name="freq" value="10" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="4">
+<par name="freq" value="31" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="5">
+<par name="freq" value="47" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="6">
+<par name="freq" value="95" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="7">
+<par name="freq" value="70" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="8">
+<par name="freq" value="17" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="9">
+<par name="freq" value="56" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="10">
+<par name="freq" value="65" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="11">
+<par name="freq" value="44" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+</VOWEL>
+<VOWEL id="5">
+<FORMANT id="0">
+<par name="freq" value="29" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="1">
+<par name="freq" value="66" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="2">
+<par name="freq" value="7" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="3">
+<par name="freq" value="9" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="4">
+<par name="freq" value="112" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="5">
+<par name="freq" value="28" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="6">
+<par name="freq" value="57" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="7">
+<par name="freq" value="105" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="8">
+<par name="freq" value="62" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="9">
+<par name="freq" value="54" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="10">
+<par name="freq" value="17" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+<FORMANT id="11">
+<par name="freq" value="79" />
+<par name="amp" value="127" />
+<par name="q" value="64" />
+</FORMANT>
+</VOWEL>
+<par name="sequence_size" value="3" />
+<par name="sequence_stretch" value="40" />
+<par_bool name="sequence_reversed" value="no" />
+<SEQUENCE_POS id="0">
+<par name="vowel_id" value="0" />
+</SEQUENCE_POS>
+<SEQUENCE_POS id="1">
+<par name="vowel_id" value="1" />
+</SEQUENCE_POS>
+<SEQUENCE_POS id="2">
+<par name="vowel_id" value="2" />
+</SEQUENCE_POS>
+<SEQUENCE_POS id="3">
+<par name="vowel_id" value="3" />
+</SEQUENCE_POS>
+<SEQUENCE_POS id="4">
+<par name="vowel_id" value="4" />
+</SEQUENCE_POS>
+<SEQUENCE_POS id="5">
+<par name="vowel_id" value="5" />
+</SEQUENCE_POS>
+<SEQUENCE_POS id="6">
+<par name="vowel_id" value="0" />
+</SEQUENCE_POS>
+<SEQUENCE_POS id="7">
+<par name="vowel_id" value="1" />
+</SEQUENCE_POS>
+</FORMANT_FILTER>
 </FILTER>
 <FILTER_ENVELOPE>
 <par_bool name="free_mode" value="no" />
@@ -2637,7 +3043,7 @@ version-revision="5" ZynAddSubFX-author="Nasca Octavian Paul">
 <par name="env_stretch" value="64" />
 <par_bool name="forced_release" value="yes" />
 <par_bool name="linear_envelope" value="no" />
-<par name="A_dt" value="0" />
+<par name="A_dt" value="65" />
 <par name="D_dt" value="40" />
 <par name="R_dt" value="25" />
 <par name="A_val" value="64" />
@@ -2693,10 +3099,10 @@ version-revision="5" ZynAddSubFX-author="Nasca Octavian Paul">
 <par name="velocity_sensing_amplitude" value="64" />
 <par name="velocity_sensing" value="64" />
 <FILTER>
-<par name="category" value="0" />
-<par name="type" value="2" />
+<par name="category" value="2" />
+<par name="type" value="0" />
 <par_real name="basefreq" value="5076.2" exact_value="0x459EA1A0" />
-<par_real name="baseq" value="1.08427" exact_value="0x3F8AC956" />
+<par_real name="baseq" value="1.22865" exact_value="0x3F9D4477" />
 <par name="stages" value="0" />
 <par_real name="freq_tracking" value="0" exact_value="0x00000000" />
 <par_real name="gain" value="0" exact_value="0x00000000" />
@@ -2992,7 +3398,7 @@ version-revision="5" ZynAddSubFX-author="Nasca Octavian Paul">
 </EFFECT_PARAMETERS>
 </EFFECT>
 <par name="route" value="0" />
-<par_bool name="bypass" value="no" />
+<par_bool name="bypass" value="yes" />
 </INSTRUMENT_EFFECT>
 <INSTRUMENT_EFFECT id="2">
 <EFFECT>
@@ -3659,7 +4065,7 @@ version-revision="5" ZynAddSubFX-author="Nasca Octavian Paul">
 <ADD_SYNTH_PARAMETERS>
 <par_bool name="stereo" value="yes" />
 <AMPLITUDE_PARAMETERS>
-<par_real name="volume" value="19.375" exact_value="0x419B0002" />
+<par_real name="volume" value="0.625005" exact_value="0x3F200050" />
 <par name="panning" value="64" />
 <par name="velocity_sensing" value="92" />
 <par name="fadein_adjustment" value="20" />
