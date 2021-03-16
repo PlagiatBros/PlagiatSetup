@@ -169,6 +169,12 @@ module.exports = {
 
         if (host === 'zyn') {
 
+            if (port === 'osc') {
+
+                return {address:'127.0.0.1', port:zyn_port, address, args}
+ 
+            }
+
             if (address === '/select') {
 
                 zyn_selected = args[0].value

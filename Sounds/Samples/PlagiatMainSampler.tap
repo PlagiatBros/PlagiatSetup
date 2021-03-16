@@ -126,6 +126,18 @@
         <instrument name="SWDegrade" minnote="50" maxnote="50" rootnote="50" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.400000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/SW_degrade.wav" sampleRelative="SW/SW_degrade.wav"/>
         </instrument>
+        <instrument name="Lycopter1" minnote="34" maxnote="36" rootnote="29" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.500000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/chopper1.wav" sampleRelative="SW/chopper1.wav"/>
+        </instrument>
+        <instrument name="Lycopter2" minnote="38" maxnote="38" rootnote="38" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.280000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/chopper2.wav" sampleRelative="SW/chopper2.wav"/>
+        </instrument>
+        <instrument name="Gasliqu" minnote="40" maxnote="44" rootnote="42" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.400000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/GasLeak.wav" sampleRelative="SW/GasLeak.wav"/>
+        </instrument>
+        <instrument name="SWscream" minnote="9" maxnote="33" rootnote="21" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.170000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/SW_scream.wav" sampleRelative="SW/SW_scream.wav"/>
+        </instrument>
       </kit>
       <kit name="Snapchat" volume="0.330000">
         <instrument name="Koto" minnote="60" maxnote="60" rootnote="60" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">

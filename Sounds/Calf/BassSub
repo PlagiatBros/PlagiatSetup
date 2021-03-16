@@ -4,9 +4,9 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="meter_in" value="0" />
-  <param name="meter_outL" value="0" />
-  <param name="meter_outR" value="0" />
+  <param name="meter_in" value="0.000172552" />
+  <param name="meter_outL" value="0.000172552" />
+  <param name="meter_outR" value="0.000172552" />
   <param name="clip_in" value="0" />
   <param name="clip_outL" value="0" />
   <param name="clip_outR" value="0" />
@@ -26,8 +26,8 @@
 <preset bank="0" program="0" plugin="gate" name="">
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
-  <param name="meter_in" value="0" />
-  <param name="meter_out" value="0" />
+  <param name="meter_in" value="3.85762e-05" />
+  <param name="meter_out" value="2.36279e-06" />
   <param name="clip_in" value="0" />
   <param name="clip_out" value="0" />
   <param name="range" value="0.06125" />
@@ -39,7 +39,7 @@
   <param name="knee" value="3.97788" />
   <param name="detection" value="0" />
   <param name="stereo_link" value="0" />
-  <param name="gating" value="1" />
+  <param name="gating" value="0.06125" />
 </preset>
 </plugin>
 <plugin type="bassenhancer" instance-name="bassenhancer" input-index="6" output-index="7">
@@ -48,13 +48,13 @@
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
   <param name="amount" value="4.13532" />
-  <param name="meter_in" value="0" />
-  <param name="meter_out" value="0" />
+  <param name="meter_in" value="2.36279e-06" />
+  <param name="meter_out" value="6.06441e-06" />
   <param name="clip_in" value="0" />
   <param name="clip_out" value="0" />
   <param name="drive" value="8.5396" />
   <param name="blend" value="0" />
-  <param name="meter_drive" value="0" />
+  <param name="meter_drive" value="7.58812e-06" />
   <param name="freq" value="100" />
   <param name="listen" value="1" />
   <param name="floor_active" value="1" />
@@ -65,8 +65,8 @@
 <preset bank="0" program="0" plugin="compressor" name="">
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
-  <param name="meter_in" value="0" />
-  <param name="meter_out" value="0" />
+  <param name="meter_in" value="6.15051e-06" />
+  <param name="meter_out" value="1.25769e-05" />
   <param name="clip_in" value="0" />
   <param name="clip_out" value="0" />
   <param name="threshold" value="0.0921418" />
@@ -87,6 +87,17 @@
   <param name="res" value="0.707" />
   <param name="mode" value="1" />
   <param name="inertia" value="20" />
+  <param name="bypass" value="0" />
+  <param name="level_in" value="1" />
+  <param name="level_out" value="1" />
+  <param name="meter_inL" value="0.000172025" />
+  <param name="meter_inR" value="0.000172025" />
+  <param name="meter_outL" value="3.81052e-05" />
+  <param name="meter_outR" value="3.81052e-05" />
+  <param name="clip_inL" value="0" />
+  <param name="clip_inR" value="0" />
+  <param name="clip_outL" value="0" />
+  <param name="clip_outR" value="0" />
 </preset>
 </plugin>
 <plugin type="stereo" instance-name="stereo" input-index="14" output-index="15">
@@ -94,10 +105,10 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="meter_inL" value="0" />
-  <param name="meter_inR" value="0" />
-  <param name="meter_outL" value="0" />
-  <param name="meter_outR" value="0" />
+  <param name="meter_inL" value="1.25769e-05" />
+  <param name="meter_inR" value="1.25769e-05" />
+  <param name="meter_outL" value="1.25769e-05" />
+  <param name="meter_outR" value="1.25769e-05" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
   <param name="clip_outL" value="0" />
@@ -160,7 +171,7 @@
   <param name="cutoff" value="221.682" />
   <param name="res" value="1.41878" />
   <param name="filter_sep" value="0" />
-  <param name="env2cutoff" value="216" />
+  <param name="env2cutoff" value="647.999" />
   <param name="env2res" value="1" />
   <param name="env2amp" value="0" />
   <param name="adsr_a" value="1.21905" />
@@ -171,7 +182,7 @@
   <param name="key_follow" value="0" />
   <param name="legato" value="0" />
   <param name="portamento" value="56.1754" />
-  <param name="vel2filter" value="0.5" />
+  <param name="vel2filter" value="0" />
   <param name="vel2amp" value="0" />
   <param name="master" value="0.5" />
   <param name="pbend_range" value="2100" />
@@ -185,11 +196,11 @@
   <param name="adsr2_cutoff" value="0" />
   <param name="adsr2_res" value="0" />
   <param name="adsr2_amp" value="1" />
-  <param name="adsr2_a" value="1.21905" />
+  <param name="adsr2_a" value="1" />
   <param name="adsr2_d" value="10" />
-  <param name="adsr2_s" value="0.5129" />
-  <param name="adsr2_f" value="0" />
-  <param name="adsr2_r" value="311.46" />
+  <param name="adsr2_s" value="0.6" />
+  <param name="adsr2_f" value="-10000" />
+  <param name="adsr2_r" value="799.736" />
   <param name="o1_stretch" value="1" />
   <param name="o1_window" value="0" />
   <param name="lfo1_trig" value="0" />
@@ -199,6 +210,7 @@
   <param name="o2_unison" value="0" />
   <param name="o2_unisonfrq" value="2" />
   <param name="o1_xpose" value="0" />
+  <param name="midi" value="0" />
   <var name="mod_matrix:0,0">None</var>
   <var name="mod_matrix:0,1">0..1</var>
   <var name="mod_matrix:0,2">None</var>
@@ -304,6 +316,7 @@
   <param name="o2_unison" value="0.44" />
   <param name="o2_unisonfrq" value="2.04513" />
   <param name="o1_xpose" value="0" />
+  <param name="midi" value="0" />
   <var name="mod_matrix:0,0">None</var>
   <var name="mod_matrix:0,1">0..1</var>
   <var name="mod_matrix:0,2">None</var>
@@ -409,6 +422,7 @@
   <param name="o2_unison" value="0" />
   <param name="o2_unisonfrq" value="2" />
   <param name="o1_xpose" value="0" />
+  <param name="midi" value="0" />
   <var name="mod_matrix:0,0">None</var>
   <var name="mod_matrix:0,1">0..1</var>
   <var name="mod_matrix:0,2">None</var>
