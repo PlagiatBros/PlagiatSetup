@@ -16,9 +16,11 @@ bcr_scenes = {
 }
 
 state = {}
+tmpstate = {}
 statesave = false
 for (var i in bcr_scenes){
     state[parseInt(i)] = {}
+    tmpstate[parseInt(i)] = {}
 }
 
 
@@ -44,21 +46,21 @@ bcr_mapping = {
     '/kit0/adpars/GlobalPar/AmpEnvelope/PD_dt': {control: 50},
     '/kit0/adpars/GlobalPar/AmpEnvelope/PS_val': {control: 51},
     '/kit0/adpars/GlobalPar/AmpEnvelope/PR_dt': {control: 52},
-    '/kit0/adpars/GlobalPar/AmpLfo/Pfreq': {control: 53, type: 'f'},
+    '/kit0/adpars/GlobalPar/AmpLfo/Pfreq': {control: 53, map: v=>parseInt(127*v), type: 'f', forcefeedback: true, action: ()=>{send('127.0.0.1', zyn_port, `/part${zyn_selected}/kit0/adpars/GlobalPar/AmpLfo/Pstartphase`, {type: 'i', value:0})}},
     '/kit0/adpars/GlobalPar/AmpLfo/Pintensity': {control: 54},
     '/kit0/adpars/GlobalPar/AmpLfo/PLFOtype': {control: 56, map: midiSteps(8)},
     '/kit0/adpars/GlobalPar/FreqEnvelope/PA_val': {control: 57},
     '/kit0/adpars/GlobalPar/FreqEnvelope/PA_dt': {control: 58},
     '/kit0/adpars/GlobalPar/FreqEnvelope/PR_dt': {control: 59},
     '/kit0/adpars/GlobalPar/FreqEnvelope/PR_val': {control: 60},
-    '/kit0/adpars/GlobalPar/FreqLfo/Pfreq': {control: 61, map: v=>parseInt(127*v), type: 'f'},
+    '/kit0/adpars/GlobalPar/FreqLfo/Pfreq': {control: 61, map: v=>parseInt(127*v), type: 'f', action: ()=>{send('127.0.0.1', zyn_port, `/part${zyn_selected}/kit0/adpars/GlobalPar/FreqLfo/Pstartphase`, {type: 'i', value:0})}},
     '/kit0/adpars/GlobalPar/FreqLfo/Pintensity': {control: 62},
     '/kit0/adpars/GlobalPar/FreqLfo/PLFOtype': {control: 64, map: midiSteps(8)},
     '/kit0/adpars/GlobalPar/FilterEnvelope/PA_dt': {control: 65},
     '/kit0/adpars/GlobalPar/FilterEnvelope/PD_val': {control: 66},
     '/kit0/adpars/GlobalPar/FilterEnvelope/PD_dt': {control: 67},
-    '/kit0/adpars/GlobalPar/FilterEnvelope/PR_dt': {control: 68},
-    '/kit0/adpars/GlobalPar/FilterLfo/Pfreq': {control: 69, type: 'f'},
+    '/kit0/adpars/GlobalPar/FilterEnvelope/PR_dt': {control : 68},
+    '/kit0/adpars/GlobalPar/FilterLfo/Pfreq': {control: 69, map: v=>parseInt(127*v), type: 'f', forcefeedback: true, action: ()=>{send('127.0.0.1', zyn_port, `/part${zyn_selected}/kit0/adpars/GlobalPar/FilterLfo/Pstartphase`, {type: 'i', value:0})}},
     '/kit0/adpars/GlobalPar/FilterLfo/Pintensity': {control: 70},
     '/kit0/adpars/GlobalPar/FilterLfo/PLFOtype': {control: 72, map: midiSteps(8)},
     '/kit0/adpars/GlobalPar/GlobalFilter/Pcategory': {control: 101, forcefeedback: true},
@@ -124,6 +126,7 @@ module.exports = {
             if (statesave) {
                 state[parseInt(part)][paramAddress] = args[0].value
             }
+            tmpstate[parseInt(part)][paramAddress] = args[0].value
 
             // copy feedback to bcr if part is selected
             if (parseInt(part) === zyn_selected && parameter) {

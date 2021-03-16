@@ -508,7 +508,7 @@
                 "typeTags": "",
                 "alphaStroke": "auto",
                 "padding": "auto",
-                "visible": true,
+                "visible": false,
                 "interaction": true,
                 "expand": false,
                 "colorText": "auto",
@@ -8232,7 +8232,7 @@
                                         "doubleTap": false,
                                         "range": {
                                           "min": 0,
-                                          "max": 127
+                                          "max": 1
                                         },
                                         "logScale": false,
                                         "sensitivity": 1,
@@ -8648,7 +8648,7 @@
                                         "default": "",
                                         "linkId": "",
                                         "script": "",
-                                        "address": "auto2",
+                                        "address": "auto",
                                         "preArgs": "",
                                         "target": ""
                                       }
@@ -9144,7 +9144,7 @@
                                         "default": "",
                                         "linkId": "",
                                         "script": "",
-                                        "address": "auto2",
+                                        "address": "auto",
                                         "preArgs": "",
                                         "target": ""
                                       }
@@ -10764,7 +10764,7 @@
                 "top": 110,
                 "width": "#{globals.screen.width < 1200 ? 160 : 260}",
                 "decimals": 2,
-                "visible": true,
+                "visible": false,
                 "interaction": true,
                 "expand": "false",
                 "colorBg": "auto",

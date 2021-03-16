@@ -121,7 +121,10 @@
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/48k_FiatLux.6@112.wav" sampleRelative="SW/48k_FiatLux.6@112.wav"/>
         </instrument>
         <instrument name="SW" minnote="48" maxnote="48" rootnote="48" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.400000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/48k_SW.60.flac" sampleRelative="SW/48k_SW.60.flac"/>
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/SW_normal.wav" sampleRelative="SW/SW_normal.wav"/>
+        </instrument>
+        <instrument name="SWDegrade" minnote="50" maxnote="50" rootnote="50" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.400000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/SW_degrade.wav" sampleRelative="SW/SW_degrade.wav"/>
         </instrument>
       </kit>
       <kit name="Snapchat" volume="0.330000">
