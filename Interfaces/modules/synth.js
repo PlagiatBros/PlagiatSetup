@@ -15,13 +15,17 @@ bcr_scenes = {
     6: 19
 }
 
-state = {}
-tmpstate = {}
-statesave = false
-for (var i in bcr_scenes){
-    state[parseInt(i)] = {}
+const initstate = {},
+      tmpstate = {}
+
+var statesave = false
+
+for (var i = 0; i < 10; i++){
+    initstate[parseInt(i)] = {}
     tmpstate[parseInt(i)] = {}
 }
+
+
 
 
 function midiSteps(steps) {
@@ -53,7 +57,7 @@ bcr_mapping = {
     '/kit0/adpars/GlobalPar/FreqEnvelope/PA_dt': {control: 58},
     '/kit0/adpars/GlobalPar/FreqEnvelope/PR_dt': {control: 59},
     '/kit0/adpars/GlobalPar/FreqEnvelope/PR_val': {control: 60},
-    '/kit0/adpars/GlobalPar/FreqLfo/Pfreq': {control: 61, map: v=>parseInt(127*v), type: 'f', action: ()=>{send('127.0.0.1', zyn_port, `/part${zyn_selected}/kit0/adpars/GlobalPar/FreqLfo/Pstartphase`, {type: 'i', value:0})}},
+    '/kit0/adpars/GlobalPar/FreqLfo/Pfreq': {control: 61, map: v=>parseInt(127*v), type: 'f', forcefeedback: true, action: ()=>{send('127.0.0.1', zyn_port, `/part${zyn_selected}/kit0/adpars/GlobalPar/FreqLfo/Pstartphase`, {type: 'i', value:0})}},
     '/kit0/adpars/GlobalPar/FreqLfo/Pintensity': {control: 62},
     '/kit0/adpars/GlobalPar/FreqLfo/PLFOtype': {control: 64, map: midiSteps(8)},
     '/kit0/adpars/GlobalPar/FilterEnvelope/PA_dt': {control: 65},
@@ -123,26 +127,30 @@ module.exports = {
             var [_, part, paramAddress] = address.match(/^\/part([0-9]+)(\/.*)/) || [],
                 parameter = bcr_mapping[paramAddress]
 
-            if (statesave) {
-                state[parseInt(part)][paramAddress] = args[0].value
-            }
-            tmpstate[parseInt(part)][paramAddress] = args[0].value
+            if (parameter) {
 
-            // copy feedback to bcr if part is selected
-            if (parseInt(part) === zyn_selected && parameter) {
-
-                var cc = parameter.control,
-                    value = parameter.map ?
-                        parameter.map(args[0].value) :
-                        args[0].value
-
-                send('midi', midi_port, '/control', 1, cc, value)
-                if (debug) send('127.0.0.1', 8645, '/log', `BCR feedback sent: cc ${cc} ${value}`)
-
-                if (parameter.action) {
-                    parameter.action(value)
+                if (statesave) {
+                  initstate[parseInt(part)][paramAddress] = args[0].value
                 }
+                tmpstate[parseInt(part)][paramAddress] = args[0].value
 
+                // copy feedback to bcr if part is selected
+                if (parseInt(part) === zyn_selected) {
+
+                  var cc = parameter.control,
+                  value = parameter.map ?
+                  parameter.map(args[0].value) :
+                  args[0].value
+
+                  send('midi', midi_port, '/control', 1, cc, value)
+                  if (debug) send('127.0.0.1', 8645, '/log', `BCR feedback sent: cc ${cc} ${value}`)
+
+                  if (parameter.action) {
+                    parameter.action(value)
+                  }
+
+
+                }
 
             }
             // if (debug) send('127.0.0.1', 8645, '/log', `ZYN in: ${address} ${args[0].value} (control ${cc} ${value})`)
@@ -172,30 +180,62 @@ module.exports = {
             if (port === 'osc') {
 
                 return {address:'127.0.0.1', port:zyn_port, address, args}
- 
-            }
 
-            if (address === '/select') {
+            } else if (port === 'cmd') {
 
-                zyn_selected = args[0].value
-                send('127.0.0.1', bcr_port, '/mididings/switch_scene', bcr_scenes[zyn_selected])
-                queryZyn(zyn_selected)
-                return
-            }
-
-            if (address === '/reset') {
-                send('127.0.0.1', 8645, '/log', `STATE set: ${JSON.stringify(state)}`)
-
-                var part = args[0].value
-                if (!state[part]) return
-                var root = `/part${part}`
-                for (var address in state[part]) {
-                    var val = state[part][address]
-                    if (bcr_mapping[address].type !== 'f') val = {type: 'i', value: val}
-                    send('127.0.0.1', zyn_port, root + address, val)
+                if (address === '/select') {
+                    if (bcr_scenes[zyn_selected] === undefined) return
+                    zyn_selected = args[0].value
+                    send('127.0.0.1', bcr_port, '/mididings/switch_scene', bcr_scenes[zyn_selected])
+                    queryZyn(zyn_selected)
                 }
-                return
+
+                if (address === '/reset') {
+                    if (debug) send('127.0.0.1', 8645, '/log', `STATE set: ${JSON.stringify(initstate)}`)
+
+                    var part = args[0].value
+                    if (!initstate[part]) return
+                    var root = `/part${part}`
+                    for (var address in initstate[part]) {
+                        if (bcr_mapping[address]) {
+
+                            var val = initstate[part][address]
+                            if (bcr_mapping[address].type !== 'f') val = {type: 'i', value: val}
+                            send('127.0.0.1', zyn_port, root + address, val)
+                        }
+                    }
+                }
+
+                if (address === '/save') {
+
+                  var part = args[0].value,
+                      path = args[1].value
+
+                    saveJSON(path, tmpstate[part])
+
+                }
+
+                if (address === '/load') {
+
+                  var part = args[0].value,
+                      path = args[1].value
+
+                  var state = loadJSON(path),
+                      root = `/part${part}`
+
+                    for (var address in state) {
+                        if (bcr_mapping[address]) {
+                            var val = state[address]
+                            if (bcr_mapping[address].type !== 'f') val = {type: 'i', value: val}
+                            send('127.0.0.1', zyn_port, root + address, val)
+                        }
+                    }
+
+                }
+
+
             }
+
 
             return
 
