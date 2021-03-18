@@ -232,7 +232,7 @@ sw = [
 
     jeannot >> ProgramFilter(4) >> [ # Break + delay vers orl-bouton 5 - Bouton 4
         Program(5) >> cseqtrigger,
-        Program(22) >> seq24once,
+        NoteOn(40, 127) >> Output('PBTapeutape', 1),
         [
             SendOSC(vxorlpreport, '/strip/VxORLDelayPre/Gain/Mute', 1.0),
             SendOSC(audioseqport, '/Audioseq/Scene/Play', 'sw_couplet_break2', timestamp),

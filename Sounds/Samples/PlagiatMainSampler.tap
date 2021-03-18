@@ -132,20 +132,17 @@
         <instrument name="Lycopter2" minnote="38" maxnote="38" rootnote="38" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.150000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/chopper2.wav" sampleRelative="SW/chopper2.wav"/>
         </instrument>
-        <instrument name="Gasliqu" minnote="40" maxnote="44" rootnote="42" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.400000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/GasLeak.wav" sampleRelative="SW/GasLeak.wav"/>
-        </instrument>
         <instrument name="SWscream" minnote="9" maxnote="33" rootnote="21" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.170000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/SW_scream.wav" sampleRelative="SW/SW_scream.wav"/>
         </instrument>
         <instrument name="Trumpet1" minnote="96" maxnote="96" rootnote="96" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.500000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/TocarDelDiablo1_Como tocar las trompetas del diablo.8.flac" sampleRelative="SW/TocarDelDiablo1_Como tocar las trompetas del diablo.8.flac"/>
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/TocarDelDiablo1_Tape.flac" sampleRelative="SW/TocarDelDiablo1_Tape.flac"/>
         </instrument>
         <instrument name="Trumpet2" minnote="105" maxnote="115" rootnote="110" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.400000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/TocarDelDiablo2_Como tocar las trompetas del diablo.12.flac" sampleRelative="SW/TocarDelDiablo2_Como tocar las trompetas del diablo.12.flac"/>
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/TocarDelDiablo2_Tape.flac" sampleRelative="SW/TocarDelDiablo2_Tape.flac"/>
         </instrument>
         <instrument name="Trumpet3" minnote="98" maxnote="98" rootnote="98" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.500000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/TocarDelDiablo3_Como tocar las trompetas del diablo.9.flac" sampleRelative="SW/TocarDelDiablo3_Como tocar las trompetas del diablo.9.flac"/>
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/TocarDelDiablo3_Tape.flac" sampleRelative="SW/TocarDelDiablo3_Tape.flac"/>
         </instrument>
         <instrument name="MopedFonda" minnote="120" maxnote="120" rootnote="120" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.300000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/Moped_Fonda.flac" sampleRelative="SW/Moped_Fonda.flac"/>
@@ -155,6 +152,13 @@
         </instrument>
         <instrument name="MopedOctave" minnote="124" maxnote="124" rootnote="124" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="0.240000" pan="0.270000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/Moped_Octave.flac" sampleRelative="SW/Moped_Octave.flac"/>
+        </instrument>
+        <instrument name="BregoLong" minnote="40" maxnote="40" rootnote="40" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.500000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/BregoLong_Tape.flac" sampleRelative="SW/BregoLong_Tape.flac"/>
+        </instrument>
+        <instrument name="BregoNote" minnote="83" maxnote="93" rootnote="88" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="0.500000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="112" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/BregoNote_Tape.flac" sampleRelative="SW/BregoNote_Tape.flac"/>
+          <variation minveloc="111" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/SW/BregoNote_Fla_Tape.flac" sampleRelative="SW/BregoNote_Fla_Tape.flac"/>
         </instrument>
       </kit>
       <kit name="Snapchat" volume="0.330000">
