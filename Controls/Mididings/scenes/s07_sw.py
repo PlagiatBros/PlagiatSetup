@@ -232,6 +232,7 @@ sw = [
 
     jeannot >> ProgramFilter(4) >> [ # Break + delay vers orl-bouton 5 - Bouton 4
         Program(5) >> cseqtrigger,
+        Program(22) >> seq24once,
         [
             SendOSC(vxorlpreport, '/strip/VxORLDelayPre/Gain/Mute', 1.0),
             SendOSC(audioseqport, '/Audioseq/Scene/Play', 'sw_couplet_break2', timestamp),
@@ -505,7 +506,7 @@ sw = [
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
             SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
             SendOSC(klickport, '/klick/metro/start'),
-        
+
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(178.5)),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(178.5)),
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(178.5)),
