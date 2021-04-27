@@ -109,61 +109,61 @@ dafist = [
 
             ] >> Discard()
         ],
-    jeannot >> ProgramFilter(2) >> [ # Psychose - Bouton 2
-        Program(69) >> cseqtrigger,
-        [
-            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
-            SendOSC(slport, '/set', 'tempo', 120),
-            SendOSC(slport, '/sl/-1/hit', 'pause_on'),
-
-            SendOSC(klickport, '/klick/simple/set_tempo', 120),
-            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
-            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
-            SendOSC(klickport, '/klick/metro/start'),
-
-            SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(120)),
-            SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(120)),
-            SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(120)),
-            SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
-
-
-            SendOSC(rpicourport, '/pyta/scene_recall', 'dafist_psychose'),
-            SendOSC(rpijardinport, '/pyta/scene_recall', 'dafist_psychose'),
-
-            SendOscState([
-
-                [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
-                [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
-                [samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0],
-                [samplesmainport, '/strip/Samples5Dry/Gain/Mute', 0.0],
-                [samplesmainport, '/strip/SamplesScape/Gain/Mute', 0.0],
-
-                [samplesscapeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -5.0],
-
-            ]),
-
-
-            vxorlgars_off,
-            vxorlmeuf_on,
-            vxorldisint_off,
-            vxorldelay_off,
-            vxorlvocode_off,
-
-            vxjeannotdelay_off,
-            vxjeannotgars_off,
-            vxjeannotmeuf_on,
-            vxjeannotdisint_off,
-            vxjeannotvocode_off,
-
-            bassdry,
-            bassdetunest_on,
-            bassringst_on,
-            bassvibest_on,
-            bassbufferst_on,
-
-            ] >> Discard()
-        ],
-    jeannot >> ProgramFilter(3) >> [ # Refrain - Bouton 3
+    # jeannot >> ProgramFilter(2) >> [ # Psychose - Bouton 2
+    #     Program(69) >> cseqtrigger,
+    #     [
+    #         SendOSC(slport, '/set', 'eighth_per_cycle', 8),
+    #         SendOSC(slport, '/set', 'tempo', 120),
+    #         SendOSC(slport, '/sl/-1/hit', 'pause_on'),
+    #
+    #         SendOSC(klickport, '/klick/simple/set_tempo', 120),
+    #         SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+    #         SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+    #         SendOSC(klickport, '/klick/metro/start'),
+    #
+    #         SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(120)),
+    #         SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(120)),
+    #         SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(120)),
+    #         SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
+    #
+    #
+    #         SendOSC(rpicourport, '/pyta/scene_recall', 'dafist_psychose'),
+    #         SendOSC(rpijardinport, '/pyta/scene_recall', 'dafist_psychose'),
+    #
+    #         SendOscState([
+    #
+    #             [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
+    #             [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
+    #             [samplesmainport, '/strip/Samples3Dry/Gain/Mute', 0.0],
+    #             [samplesmainport, '/strip/Samples5Dry/Gain/Mute', 0.0],
+    #             [samplesmainport, '/strip/SamplesScape/Gain/Mute', 0.0],
+    #
+    #             [samplesscapeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -5.0],
+    #
+    #         ]),
+    #
+    #
+    #         vxorlgars_off,
+    #         vxorlmeuf_on,
+    #         vxorldisint_off,
+    #         vxorldelay_off,
+    #         vxorlvocode_off,
+    #
+    #         vxjeannotdelay_off,
+    #         vxjeannotgars_off,
+    #         vxjeannotmeuf_on,
+    #         vxjeannotdisint_off,
+    #         vxjeannotvocode_off,
+    #
+    #         bassdry,
+    #         bassdetunest_on,
+    #         bassringst_on,
+    #         bassvibest_on,
+    #         bassbufferst_on,
+    #
+    #         ] >> Discard()
+    #     ],
+    jeannot >> ProgramFilter(2) >> [ # Refrain - Bouton 2
         Program(70) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
@@ -223,26 +223,24 @@ dafist = [
 
             ] >> Discard()
         ],
-    orl >> ProgramFilter(3) >> [ # Couplet 1 bouclage auto - Bouton 3 (appui anticipé sur la fin du refrain)
-        Program(5) >> cseqtrigger,
-        [
-            SendOSC(slport, '/sl/0/hit', 'record'),
+        orl >> ProgramFilter(3) >> [ # Couplet - Bouton 3
+            Program(67) >> cseqtrigger,
+            [
+            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
+            SendOSC(slport, '/set', 'tempo', 120),
 
-#    orl >> ProgramFilter(3) >> [ # Couplet - Bouton 3
-#        Program(67) >> cseqtrigger,
-#        [
-#            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
-#            SendOSC(slport, '/set', 'tempo', 120),
-
-#            SendOSC(klickport, '/klick/simple/set_tempo', 120),
-#            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
-#            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
-#            SendOSC(klickport, '/klick/metro/start'),
+            SendOSC(klickport, '/klick/simple/set_tempo', 120),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),
 
             SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(120)),
             SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(120)),
             SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(240)),
             SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(120)),
+
+            SendOSC(audioseqport, '/Audioseq/Bpm', 120),
+            SendOSC(audioseqport, '/Audioseq/Play', timestamp),
 
 
             SendOSC(lightseqport, '/Lightseq/Bpm', 120),
@@ -330,8 +328,9 @@ dafist = [
             SendOSC(lightseqport, '/Lightseq/Bpm', 1800),
             SendOSC(lightseqport, '/Lightseq/Play', timestamp),
 
+            SendOSC(audioseqport, '/Audioseq/Sequence/Enable', 'dafist_couplet_part2_vx_launcher'),
 
-
+            SubSceneSwitch(2),
 
             SendOscState([
 
@@ -344,6 +343,8 @@ dafist = [
                 [samplesscapeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -5.0],
                 [samplesscapeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -10.0],
                 [samplesdelaymungeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -9.0],
+
+                [bassmainport, '/strip/Trapsynth_barkline/Gain/Mute', 0.0],
 
             ]),
 
@@ -373,6 +374,20 @@ dafist = [
 
             ] >> Discard()
         ],
+    jeannot >> ProgramFilter(3) >> [ # Couplet part 2 (shaft) - Bouton 3
+        Program(75) >> cseqtrigger,
+        [
+            SendOSC(klickport, '/klick/simple/set_tempo', 120),
+            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+            SendOSC(klickport, '/klick/metro/start'),
+            SendOSC(audioseqport, '/Audioseq/Play', timestamp),
+            SendOSC(audioseqport, '/Audioseq/Sequence/Enable', 'dafist_couplet_part2_vx_b'),
+            bassdry,
+
+        ]
+
+    ],
     jeannot >> ProgramFilter(4) >> [ # Couplet part 3 (ragga) - Bouton 4
         Program(72) >> cseqtrigger,
         [

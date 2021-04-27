@@ -14,14 +14,20 @@ from liblo import time
 p_firstpart=[range(1,65)]
 p_secondpart=[range(65,129)]
 
-note2seq = ProgramFilter(p_firstpart) >> seq24 # mute-groups seq24
-note2seqNplay = ProgramFilter(p_secondpart) >> [ # mute-groups + play
-			NoteOn(EVENT_PROGRAM,127) >> Transpose(-62) >> Program('PBseq24',1,EVENT_NOTE) >> seq24,
-			Program('PBseq24',1,1),
-		]
+note2seq = None
+note2seqNplay = None
+seq24start = None
 
+try:
+	note2seq = ProgramFilter(p_firstpart) >> seq24 # mute-groups seq24
+	note2seqNplay = ProgramFilter(p_secondpart) >> [ # mute-groups + play
+				NoteOn(EVENT_PROGRAM,127) >> Transpose(-62) >> Program('PBseq24',1,EVENT_NOTE) >> seq24,
+				Program('PBseq24',1,1),
+			]
+	seq24start = Program('PBseq24',1,1)
 
-seq24start = Program('PBseq24',1,1)
+except:
+	pass
 
 seqtrigger = Filter(PROGRAM) >> [
 		ChannelFilter(1) >> [
@@ -271,17 +277,11 @@ basspedal= [
 
 # Vx Pedal
 vxpedal= [
-    ProgramFilter(13) >> SendOSC(slport, '/sl/2/hit', 'record') >> Discard(),
-    ProgramFilter(14) >> SendOSC(slport, '/sl/2/hit', 'overdub') >> Discard(),
-    ProgramFilter(15) >> SendOSC(slport, '/sl/2/hit', 'pause_on') >> Discard(),
-    ProgramFilter(16) >> SendOSC(slport, '/sl/3/hit', 'record') >> Discard(),
-    ProgramFilter(17) >> SendOSC(slport, '/sl/3/hit', 'overdub') >> Discard(),
-    ProgramFilter(18) >> SendOSC(slport, '/sl/3/hit', 'pause_on') >> Discard(),
-    ProgramFilter(19) >> vxorldelay_on,
-    ProgramFilter(20) >> vxorldisint_on,
-    ProgramFilter(21) >> [vxorlmeuf_on, vxorlgars_on, vxorldelay_off, vxorlvocode_off, vxorldisint_off],
-    ProgramFilter(22) >> [vxorlmeuf_off, vxorlgars_on, vxorldelay_off, vxorlvocode_off, vxorldisint_off],
-    ProgramFilter(23) >> [vxorlmeuf_on, vxorlgars_off, vxorldelay_off, vxorlvocode_off, vxorldisint_off],
+    ProgramFilter(13) >> [vxorlmeuf_on, vxorlgars_off, vxorldelay_off, vxorlvocode_off, vxorldisint_off],
+    ProgramFilter(14) >> [vxorlmeuf_off, vxorlgars_on, vxorldelay_off, vxorlvocode_off, vxorldisint_off],
+    ProgramFilter(15) >> [vxorlmeuf_off, vxorlgars_off, vxorldelay_off, vxorlvocode_on, vxorldisint_off],
+    ProgramFilter(16) >> [vxorlmeuf_on, vxorlgars_off, vxorldelay_off, vxorlvocode_on, vxorldisint_off],
+    ProgramFilter(17) >> [vxorlmeuf_off, vxorlgars_on, vxorldelay_off, vxorlvocode_on, vxorldisint_off],
     ]
 
 
@@ -460,6 +460,10 @@ oscsendproxy = OscSendProxy([
     [bassmainport, '/strip/BassSynth/Gain/Mute', 0.0],
     [samplesmainport, '/strip/Keyboards/Gain/Mute', 0.0],
 
+	# trap synth bass adds
+    [bassmainport, '/strip/Trapsynth_barkline/Gain/Mute', 1.0],
+    [keyboardsport, '/strip/Trapsynth_fifth/Gain/Mute', 1.0],
+
 
 	# vxorl delayt pre
     [surfaceorlport, '/strip/VxORLDelayPre/Gain/Mute', 0.0],
@@ -487,6 +491,14 @@ oscsendproxy = OscSendProxy([
 ])
 
 SendOscState = oscsendproxy.sendOscState
+
+
+pitchreset = [
+    SendOSC(samplesmainport, '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.),
+    SendOSC(samplesmainport, '/strip/Keyboards/AM%20pitchshifter/Pitch%20shift/unscaled', 1.),
+    SendOSC(bassmainport, '/strip/BassMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.),
+	SendOSC(vxpitchshifterport, '/x42/pitch', 1.),
+] >> Discard()
 
 """
 

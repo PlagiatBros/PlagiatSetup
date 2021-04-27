@@ -104,6 +104,11 @@ bcroutport = 12346
 
 ## MIDI
 
+seq24 = None
+seq24once = None
+tapeutape = None
+tapeutapecontrol = None
+
 try:
 
     seq24=Output('PBseq24',1)

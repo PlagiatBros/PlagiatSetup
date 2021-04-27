@@ -1,3 +1,4 @@
+#encoding: utf8
 import sys
 sys.path.append("../Controls/Mididings/")
 
@@ -35,5 +36,18 @@ def dafist_gate_cancel_orl(seq, timer):
     seq.send(vxorlpreport, '/strip/VxORLGars/Gate/Threshold%20(dB)/unscaled', -70.0)
     seq.send(vxorlpreport, '/strip/VxORLMeuf/Gate/Threshold%20(dB)/unscaled', -70.0)
     seq.wait(3, 'bites')
-    seq.send(vxorlpreport, '/strip/VxORLGars/Gate/Threshold%20(dB)/unscaled', -48.0) 
+    seq.send(vxorlpreport, '/strip/VxORLGars/Gate/Threshold%20(dB)/unscaled', -48.0)
     seq.send(vxorlpreport, '/strip/VxORLMeuf/Gate/Threshold%20(dB)/unscaled', -48.0)
+
+
+def dafist_couplet_part2_pitchdown(sequencer, timer):
+    t = timer.time()
+    sequencer.animate([samplesmainport, '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled'], 1, .25, 0.5, 'beat', framerate=50, timestamp=t)
+    sequencer.animate([samplesmainport, '/strip/Keyboards/AM%20pitchshifter/Pitch%20shift/unscaled'], 1, .25, 0.5, 'beat', framerate=50, timestamp=t)
+    sequencer.animate([bassmainport, '/strip/BassMain/AM%20pitchshifter/Pitch%20shift/unscaled'], 1, .25, 0.5, 'beat', framerate=50, timestamp=t)
+    sequencer.animate([vxpitchshifterport, '/x42/pitch'], 1, .25, 0.5, 'beat', framerate=50, timestamp=t)
+    timer.wait(1, 'bites')
+    sequencer.send(samplesmainport, '/strip/SamplesMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.)
+    sequencer.send(samplesmainport, '/strip/Keyboards/AM%20pitchshifter/Pitch%20shift/unscaled', 1.)
+    sequencer.send(bassmainport, '/strip/BassMain/AM%20pitchshifter/Pitch%20shift/unscaled', 1.)
+    sequencer.send(vxpitchshifterport, '/x42/pitch', 1.)

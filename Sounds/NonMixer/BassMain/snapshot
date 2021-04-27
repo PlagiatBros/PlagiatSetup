@@ -22,7 +22,7 @@
 	Mixer_Strip 0x13 create :name "BassScapePost" :width "narrow" :tab "signal" :color 2315255808 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
 	Chain 0x14 create :strip 0x13 :tab "chain"
 	JACK_Module 0x15 create :parameter_values "0.000000:1.000000" :is_default 1 :chain 0x14 :active 1
-	Plugin_Module 0x2C create :plugin_id 2588 :plugin_ins 1 :plugin_outs 2 :parameter_values "132.089539:3.000000:0.750000:1.000000:0.751773" :is_default 0 :chain 0x14 :active 1
+	Plugin_Module 0x2C create :plugin_id 2588 :plugin_ins 1 :plugin_outs 2 :parameter_values "178.500000:3.000000:0.750000:1.000000:0.751773" :is_default 0 :chain 0x14 :active 1
 	Gain_Module 0x16 create :parameter_values "0.000000:0.000000" :is_default 1 :chain 0x14 :active 1
 	Meter_Module 0x17 create :is_default 1 :chain 0x14 :active 1
 	JACK_Module 0x18 create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0x14 :active 1
@@ -61,7 +61,7 @@
 	JACK_Module 0x1C7 create :parameter_values "0.000000:1.000000" :is_default 1 :chain 0x1C6 :active 1
 	Plugin_Module 0x1CD create :lv2_plugin_uri "http://invadarecords.com/plugins/lv2/filter/hpf/mono" :plugin_ins 1 :plugin_outs 1 :parameter_values "0.000000:1000.000000:0.000000:0.000000" :is_default 0 :chain 0x1C6 :active 1
 	Plugin_Module 0x1CB create :lv2_plugin_uri "http://drobilla.net/plugins/mda/Bandisto" :plugin_ins 2 :plugin_outs 2 :parameter_values "1.000000:0.418440:0.780142:0.000000:0.673759:0.524823:0.000000:0.453901:0.411348:0.000000" :is_default 0 :chain 0x1C6 :active 1
-	Gain_Module 0x1C8 create :parameter_values "-5.900000:0.000000" :is_default 1 :chain 0x1C6 :active 1
+	Gain_Module 0x1C8 create :parameter_values "-5.900000:1.000000" :is_default 1 :chain 0x1C6 :active 1
 	Meter_Module 0x1C9 create :is_default 1 :chain 0x1C6 :active 1
 	JACK_Module 0x1CA create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0x1C6 :active 1
 	Mixer_Strip 0x26 create :name "BassMain" :width "narrow" :tab "signal" :color 4278196224 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
@@ -83,6 +83,12 @@
 	Gain_Module 0x1D5 create :parameter_values "0.000000:0.000000" :is_default 1 :chain 0x1D3 :active 1
 	Meter_Module 0x1D6 create :is_default 1 :chain 0x1D3 :active 1
 	JACK_Module 0x1D7 create :parameter_values "1.000000:0.000000" :is_default 1 :chain 0x1D3 :active 1
+	Mixer_Strip 0x1FD create :name "Trapsynth_barkline" :width "narrow" :tab "signal" :color 1700694150 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
+	Chain 0x1FE create :strip 0x1FD :tab "chain"
+	JACK_Module 0x1FF create :parameter_values "0.000000:1.000000" :is_default 1 :chain 0x1FE :active 1
+	Gain_Module 0x200 create :parameter_values "-4.600000:1.000000" :is_default 1 :chain 0x1FE :active 1
+	Meter_Module 0x201 create :is_default 1 :chain 0x1FE :active 1
+	JACK_Module 0x202 create :parameter_values "1.000000:0.000000" :is_default 1 :chain 0x1FE :active 1
 	Mixer_Strip 0x1E5 create :name "BassZynSynth" :width "narrow" :tab "fader" :color 586092432 :gain_mode 0 :mute_mode 0 :group 0x25 :auto_input "" :manual_connection 0
 	Chain 0x1E6 create :strip 0x1E5 :tab "chain"
 	JACK_Module 0x1E7 create :parameter_values "0.000000:1.000000" :is_default 1 :chain 0x1E6 :active 1

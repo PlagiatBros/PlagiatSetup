@@ -54,21 +54,24 @@ class OSCCustomInterface(object):
 
 	    else:
                 if args[0] == 24:
-                 _engine.switch_subscene(8)
-   	        if (args[0] < 15 and args[0] > 12) or (args[0] < 24 and args[0] > 21):
+                    _engine.switch_subscene(8)
+                else:
                     _engine.output_event(_event.ProgramEvent('PBCtrlOut', _util.NoDataOffset(1), args[0]))
-                elif args[0] == 15:
-                    _engine.output_event(_event.NoteOnEvent('WobbleCtrlOut', 1, 'f2', 127))
-                elif args[0] == 16:
-                    _engine.output_event(_event.NoteOnEvent('WobbleCtrlOut', 1, 'c3', 127))
-                elif args[0] == 17:
-                    _engine.output_event(_event.NoteOnEvent('WobbleCtrlOut', 1, 'g3', 127))
-                elif args[0] == 19:
-                    _engine.output_event(_event.NoteOnEvent('WobbleCtrlOut', 1, 'f3', 127))
-                elif args[0] == 20:
-                    _engine.output_event(_event.NoteOnEvent('WobbleCtrlOut', 1, 'c4', 127))
-                elif args[0] == 21:
-                    _engine.output_event(_event.NoteOnEvent('WobbleCtrlOut', 1, 'g4', 127))
+                 
+                # if (args[0] < 15 and args[0] > 12) or (args[0] < 24 and args[0] > 21):
+                #     _engine.output_event(_event.ProgramEvent('PBCtrlOut', _util.NoDataOffset(1), args[0]))
+                # elif args[0] == 15:
+                #     _engine.output_event(_event.NoteOnEvent('WobbleCtrlOut', 1, 'f2', 127))
+                # elif args[0] == 16:
+                #     _engine.output_event(_event.NoteOnEvent('WobbleCtrlOut', 1, 'c3', 127))
+                # elif args[0] == 17:
+                #     _engine.output_event(_event.NoteOnEvent('WobbleCtrlOut', 1, 'g3', 127))
+                # elif args[0] == 19:
+                #     _engine.output_event(_event.NoteOnEvent('WobbleCtrlOut', 1, 'f3', 127))
+                # elif args[0] == 20:
+                #     _engine.output_event(_event.NoteOnEvent('WobbleCtrlOut', 1, 'c4', 127))
+                # elif args[0] == 21:
+                #     _engine.output_event(_event.NoteOnEvent('WobbleCtrlOut', 1, 'g4', 127))
 
 
     @_liblo.make_method('/pedalBoard/buttonRelease', 'i')
