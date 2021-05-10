@@ -274,7 +274,7 @@ sw = [
                 [samplesscapeport, '/strip/SamplesDegrade/Gain/Gain%20(dB)/unscaled', -18.0],
 
                 [bassmainport, '/strip/Trapsynth_barkline/Gain/Mute', 0.0],
-                [keyboardsport, '/strip/Trapsynth_fifth/Gain/Mute', 0.0],
+                #[keyboardsport, '/strip/Trapsynth_fifth/Gain/Mute', 0.0],
             ]),
 
 

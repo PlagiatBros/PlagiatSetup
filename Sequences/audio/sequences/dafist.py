@@ -92,12 +92,12 @@ dafist_couplet_part2_vx_b = [
 
 
     _N + _UNMUTE,None,None,None,
-    None,None,None,None,
-    None,None,None,None,
-    None,None,None,None,
-    None,None,None,None,
-    None,None,None,None,
-    None,None,None,None,
+    None,None, _NM,None,
+    _N,None,None,(None, _NM),
+    None,(None, _N),_NM,(None, _N),
+    _NM,None,None,None,
+    None,(None, _N),_NM,None,
+    _MUTE,None,None,None,
     None,None,None,None,
 
 

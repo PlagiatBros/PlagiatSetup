@@ -16,8 +16,8 @@ dafist_mk2lights = {
     2:'purple',
     3:'purple',
     4:'purple',
-    5:'green',
-    6:'purple',
+    5:'purple',
+    6:'yellow',
     7:'yellow',
     8:'yellow',
 }
@@ -330,8 +330,6 @@ dafist = [
 
             SendOSC(audioseqport, '/Audioseq/Sequence/Enable', 'dafist_couplet_part2_vx_launcher'),
 
-            SubSceneSwitch(2),
-
             SendOscState([
 
                 [samplesmainport, '/strip/Samples1Dry/Gain/Mute', 0.0],
@@ -383,8 +381,13 @@ dafist = [
             SendOSC(klickport, '/klick/metro/start'),
             SendOSC(audioseqport, '/Audioseq/Play', timestamp),
             SendOSC(audioseqport, '/Audioseq/Sequence/Enable', 'dafist_couplet_part2_vx_b'),
-            bassdry,
+            vxjeannotdelay_off,
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
+            vxjeannotdisint_off,
+            vxjeannotvocode_on,
 
+            bassdry,
         ]
 
     ],
@@ -504,6 +507,8 @@ dafist = [
 
                 [samplesscapeport, '/strip/Samples2/Gain/Gain%20(dB)/unscaled', -5.0],
 
+                [bassmainport, '/strip/Trapsynth_barkline/Gain/Mute', 0.0],
+
             ]),
 
 
@@ -520,7 +525,7 @@ dafist = [
             vxjeannotvocode_on,
 
 
-            SendOSC(cmeinport, '/mididings/switch_scene', 7),
+            SendOSC(cmeinport, '/mididings/switch_scene', 16),
             SendOSC(mk2inport, '/mididings/switch_scene', 8),
 
             bassdry,
@@ -747,7 +752,7 @@ dafist = [
         SendOSC(lightseqport, '/Lightseq/Scene/Play', 'dafist_transe_intro_step'),
 
         ] >> Discard(),
-    jeannot >> ProgramFilter(6) >> [ # RELANCE Transe goa - Bouton 6
+    jeannot >> ProgramFilter(5) >> [ # RELANCE Transe goa - Bouton 6
         # Program(71) >> cseqtrigger,
         Ctrl(0, 0) >> tapeutapecontrol,
         [
@@ -756,10 +761,10 @@ dafist = [
 
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
 
-            SendOSC(slport, '/sl/[0,7]/set', 'sync', 0),
-            SendOSC(slport, '/sl/[0,7]/hit', 'pause_off'),
-            SendOSC(slport, '/sl/[0,7]/hit', 'trigger'),
-            SendOSC(slport, '/sl/[0,7]/set', 'sync', 1),
+            SendOSC(slport, '/sl/[0,2,7]/set', 'sync', 0),
+            SendOSC(slport, '/sl/[0,2,7]/hit', 'pause_off'),
+            SendOSC(slport, '/sl/[0,2,7]/hit', 'trigger'),
+            SendOSC(slport, '/sl/[0,2,7]/set', 'sync', 1),
 
             SendOSC(klickport, '/klick/simple/set_tempo', 130),
             SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
@@ -838,6 +843,13 @@ dafist = [
             bassbufferst_off,
             ]
         ],
+        jeannot >> ProgramFilter(6) >> [ # Delay Vx Normal
+            vxjeannotdelay_off,
+            vxjeannotgars_off,
+            vxjeannotmeuf_off,
+            vxjeannotdisint_off,
+            vxjeannotvocode_on,
+        ] >> Discard(),
         jeannot >> ProgramFilter(7) >> [ # Delay Jeannot Off
             vxjeannotdelay_on,
             vxjeannotgars_on,

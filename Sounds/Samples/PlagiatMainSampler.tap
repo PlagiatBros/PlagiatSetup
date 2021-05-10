@@ -168,13 +168,13 @@
         <instrument name="Koto2" minnote="62" maxnote="62" rootnote="62" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/WholeWorld/WholeWorldCymb2_0dB.wav" sampleRelative="WholeWorld/WholeWorldCymb2_0dB.wav"/>
         </instrument>
-        <instrument name="Koto3" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+        <instrument name="Koto3" minnote="64" maxnote="64" rootnote="64" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.300000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/WholeWorld/WholeWorldCymb3_0dB.wav" sampleRelative="WholeWorld/WholeWorldCymb3_0dB.wav"/>
         </instrument>
         <instrument name="Indien" minnote="48" maxnote="48" rootnote="48" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/WholeWorld/Indien_0dB.wav" sampleRelative="WholeWorld/Indien_0dB.wav"/>
         </instrument>
-        <instrument name="Cowboy" minnote="50" maxnote="50" rootnote="45" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+        <instrument name="Cowboy" minnote="50" maxnote="50" rootnote="45" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/WholeWorld/Cowboy_0dB.wav" sampleRelative="WholeWorld/Cowboy_0dB.wav"/>
         </instrument>
         <instrument name="Koto0" minnote="59" maxnote="59" rootnote="59" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples1" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="yes" play_reverse="no">
