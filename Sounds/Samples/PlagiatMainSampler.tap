@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tapeutape version="0.1.2">
+<tapeutape version="0.1.3">
   <options globalvolume="1.000000" max_polyphony="100">
     <jack-output name="Samples1"/>
     <jack-output name="Samples2"/>
@@ -71,6 +71,9 @@
         </instrument>
         <instrument name="Mandelouille_2" minnote="14" maxnote="14" rootnote="14" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples4" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/mandela_2.wav" sampleRelative="Climat/mandela_2.wav"/>
+        </instrument>
+        <instrument name="Hey" minnote="24" maxnote="24" rootnote="24" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/HeyShout.wav" sampleRelative="Climat/HeyShout.wav"/>
         </instrument>
       </kit>
       <kit name="Stagiaire" volume="1.000000">

@@ -2,6 +2,7 @@ debug = false
 
 zyn_port = 10000
 bcr_port = 12345
+calf_port = 56428
 zyn_selected = 0
 midi_port = 'keyboards'
 
@@ -12,7 +13,8 @@ bcr_scenes = {
     3: 12,
     4: 14,
     5: 15,
-    6: 19
+    6: 19,
+    9: -1
 }
 
 const initstate = {},
@@ -35,6 +37,7 @@ function midiSteps(steps) {
 }
 
 bcr_mapping = {
+    '/Volume': {type: 'f'},
     '/kit0/adpars/GlobalPar/GlobalFilter/Pfreq': {control: 1},
     '/kit0/adpars/GlobalPar/GlobalFilter/Pcenterfreq': {control: 1},
     '/kit0/adpars/GlobalPar/GlobalFilter/Pnumformants': {control: 4, map: midiSteps(12)},
@@ -142,8 +145,10 @@ module.exports = {
                   parameter.map(args[0].value) :
                   args[0].value
 
-                  send('midi', midi_port, '/control', 1, cc, value)
-                  if (debug) send('127.0.0.1', 8645, '/log', `BCR feedback sent: cc ${cc} ${value}`)
+                  if (cc) {
+                    send('midi', midi_port, '/control', 1, cc, value)
+                    if (debug) send('127.0.0.1', 8645, '/log', `BCR feedback sent: cc ${cc} ${value}`)
+                  }
 
                   if (parameter.action) {
                     parameter.action(value)
@@ -238,6 +243,13 @@ module.exports = {
 
 
             return
+
+        }
+
+        else if (host === 'calf') {
+
+          host = '127.0.0.1'
+          port = calf_port
 
         }
 
