@@ -439,7 +439,7 @@ climat = [
     ],
 
 
-    jeannot >> ProgramFilter(7) >> [ # Vx jeannot grave
+    jeannot >> ProgramFilter(6) >> [ # Vx jeannot grave
         vxjeannotdelay_on,
         vxjeannotgars_on,
         vxjeannotmeuf_off,
