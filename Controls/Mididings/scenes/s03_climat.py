@@ -61,7 +61,6 @@ climat = [
         enable_microtonal,
         set_microtonal(0, 0, 0, 0, 0, 0.35, 0, 0, 0.35, 0, 0.35, 0),
 
-        SendOSC(mk2inport, '/mididings/switch_scene', 1),
         mk2lights(climat_mk2lights),
     ]),
     jeannot_padrelease >> mk2lights(climat_mk2lights),
@@ -256,7 +255,7 @@ climat = [
             Program(16)
             ] >> seq24once,
         [
-            SendOSC(mk2inport, '/mididings/switch_scene', 11), # samples/keys cut
+            SendOSC(mk2inport, '/mididings/switch_scene', 11), # hey / rosalia
         ] >> Discard(),
 
     ],
