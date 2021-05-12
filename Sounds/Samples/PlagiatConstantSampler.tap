@@ -169,6 +169,9 @@
         <instrument name="Hey" minnote="97" maxnote="97" rootnote="97" rootnotefine="0.000000" channel="16" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/HeyShout.wav" sampleRelative="Climat/HeyShout.wav"/>
         </instrument>
+        <instrument name="Hey" minnote="98" maxnote="98" rootnote="98" rootnotefine="0.000000" channel="16" cut="-1" polyphony="0" output="DrumKlit" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="trigger" play_loop="no" play_reverse="no">
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/RosaLia_raw.flac" sampleRelative="Climat/RosaLia_raw.flac"/>
+        </instrument>
       </kit>
     </setup>
   </creation>

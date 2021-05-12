@@ -76,7 +76,7 @@
           <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/HeyShout.wav" sampleRelative="Climat/HeyShout.wav"/>
         </instrument>
         <instrument name="RosaLia" minnote="26" maxnote="26" rootnote="26" rootnotefine="0.000000" channel="1" cut="-1" polyphony="0" output="Samples2" volume="1.000000" pan="0.000000" pitch_over_range="true" play_mode="normal" play_loop="no" play_reverse="no">
-          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/RosaLia.flac" sampleRelative="Climat/RosaLia.flac"/>
+          <variation minveloc="0" maxveloc="127" sample="/home/woii/Plagiat/Stage/Sounds/Samples/Climat/RosaLia_raw.flac" sampleRelative="Climat/RosaLia_raw.flac"/>
         </instrument>
       </kit>
       <kit name="Stagiaire" volume="1.000000">
