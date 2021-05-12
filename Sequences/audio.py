@@ -1,3 +1,4 @@
+"""
 # globals
 seq = None
 restarting = False
@@ -20,7 +21,6 @@ base_dir = os.path.dirname(os.path.abspath(sys.modules['__main__'].__file__))
 watcher.add_watch(base_dir, pyinotify.IN_MODIFY, rec=True)
 notifier.start()
 
-
 # module reload
 if sys.version_info[0] == 3:
     from importlib import reload
@@ -28,7 +28,7 @@ if sys.version_info[0] == 3:
 
 from types import ModuleType
 def rreload(module):
-    """Recursively reload modules."""
+    #Recursively reload modules.
     for attribute_name in dir(module):
         attribute = getattr(module, attribute_name)
         if type(attribute) is ModuleType:
@@ -58,3 +58,7 @@ while True:
 
 # exit
 notifier.stop()
+"""
+import audio
+seq = audio.audioseq
+seq.start()

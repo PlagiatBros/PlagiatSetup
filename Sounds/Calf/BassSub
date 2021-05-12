@@ -3,8 +3,8 @@
 <preset bank="0" program="0" plugin="gate" name="">
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
-  <param name="meter_in" value="0.000636553" />
-  <param name="meter_out" value="3.89889e-05" />
+  <param name="meter_in" value="3.22883e-05" />
+  <param name="meter_out" value="1.97766e-06" />
   <param name="clip_in" value="0" />
   <param name="clip_out" value="0" />
   <param name="range" value="0.06125" />
@@ -25,13 +25,13 @@
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
   <param name="amount" value="4.13532" />
-  <param name="meter_in" value="1.94945e-05" />
-  <param name="meter_out" value="5.46731e-05" />
+  <param name="meter_in" value="9.88828e-07" />
+  <param name="meter_out" value="1.11563e-06" />
   <param name="clip_in" value="0" />
   <param name="clip_out" value="0" />
   <param name="drive" value="8.5396" />
   <param name="blend" value="0" />
-  <param name="meter_drive" value="0.000259665" />
+  <param name="meter_drive" value="2.33956e-06" />
   <param name="freq" value="100" />
   <param name="listen" value="1" />
   <param name="floor_active" value="1" />
@@ -42,8 +42,8 @@
 <preset bank="0" program="0" plugin="compressor" name="">
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
-  <param name="meter_in" value="8.98529e-05" />
-  <param name="meter_out" value="0.000183737" />
+  <param name="meter_in" value="2.23126e-06" />
+  <param name="meter_out" value="4.56261e-06" />
   <param name="clip_in" value="0" />
   <param name="clip_out" value="0" />
   <param name="threshold" value="0.0921418" />
@@ -67,9 +67,9 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="meter_inL" value="0.000729785" />
+  <param name="meter_inL" value="0.00017678" />
   <param name="meter_inR" value="0" />
-  <param name="meter_outL" value="0.000632656" />
+  <param name="meter_outL" value="3.20906e-05" />
   <param name="meter_outR" value="0" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
@@ -219,7 +219,7 @@
   <param name="phase_mode" value="1" />
   <param name="o12_mix" value="0.5" />
   <param name="filter" value="4" />
-  <param name="cutoff" value="117.537" />
+  <param name="cutoff" value="114.718" />
   <param name="res" value="1.99542" />
   <param name="filter_sep" value="192" />
   <param name="env2cutoff" value="9288" />
@@ -235,7 +235,7 @@
   <param name="portamento" value="56.1754" />
   <param name="vel2filter" value="0.4" />
   <param name="vel2amp" value="0" />
-  <param name="master" value="0.5" />
+  <param name="master" value="0.49188" />
   <param name="pbend_range" value="2400" />
   <param name="lfo_rate" value="6.39552" />
   <param name="lfo_delay" value="0.5" />
@@ -313,6 +313,8 @@
   <var name="mod_matrix:9,3">1</var>
   <var name="mod_matrix:9,4">None</var>
 </preset>
+<automation key="automation_v1_1_to_master" value="0 1" />
+<automation key="automation_v1_2_to_cutoff" value="0 1" />
 </plugin>
 <plugin type="monosynth" instance-name="trapsynth" output-index="25" midi-index="4">
 <preset bank="0" program="0" plugin="monosynth" name="">
@@ -325,7 +327,7 @@
   <param name="phase_mode" value="0" />
   <param name="o12_mix" value="0.5" />
   <param name="filter" value="1" />
-  <param name="cutoff" value="26.08" />
+  <param name="cutoff" value="26.8471" />
   <param name="res" value="2.73888" />
   <param name="filter_sep" value="0" />
   <param name="env2cutoff" value="8000" />
@@ -341,7 +343,7 @@
   <param name="portamento" value="1" />
   <param name="vel2filter" value="0.5" />
   <param name="vel2amp" value="0" />
-  <param name="master" value="0.5" />
+  <param name="master" value="0.465753" />
   <param name="pbend_range" value="200" />
   <param name="lfo_rate" value="5" />
   <param name="lfo_delay" value="0.5" />
@@ -419,6 +421,8 @@
   <var name="mod_matrix:9,3">1</var>
   <var name="mod_matrix:9,4">None</var>
 </preset>
+<automation key="automation_v1_257_to_master" value="0 1" />
+<automation key="automation_v1_258_to_cutoff" value="0 1" />
 </plugin>
 <plugin type="monosynth" instance-name="trapbass add 1" output-index="27" midi-index="5">
 <preset bank="0" program="0" plugin="monosynth" name="">
@@ -681,10 +685,10 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="meter_inL" value="2.08906e-05" />
-  <param name="meter_inR" value="2.09075e-05" />
-  <param name="meter_outL" value="2.05772e-05" />
-  <param name="meter_outR" value="2.05772e-05" />
+  <param name="meter_inL" value="0" />
+  <param name="meter_inR" value="0" />
+  <param name="meter_outL" value="0" />
+  <param name="meter_outR" value="0" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
   <param name="clip_outL" value="0" />
@@ -723,7 +727,7 @@
   <param name="knee2" value="2.82843" />
   <param name="detection2" value="1" />
   <param name="compression2" value="1" />
-  <param name="output2" value="4.63004e-06" />
+  <param name="output2" value="0" />
   <param name="bypass2" value="0" />
   <param name="solo2" value="0" />
   <param name="threshold3" value="0.25" />

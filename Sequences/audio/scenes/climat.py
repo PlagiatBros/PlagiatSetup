@@ -5,10 +5,15 @@ from ports import *
 
 
 def climat_couplet1b(sequencer, timer):
-    timer.wait(19.5, 'b')
+    timer.wait(10.5, 'b')
+    sequencer.animate([monosynthpitcherport, '/monosynth/control', "traphigh", "filterFreq"], 2, 40, 6, 'b', framerate=10) 
+    timer.wait(7, 'b')
+    sequencer.animate([monosynthpitcherport, '/monosynth/control', "traphigh", "filterFreq"], 40, 12, 0.5, 'b', framerate=10) 
     sequencer.send(56418, '/pedalBoard/button', 93)
 
 
+
+##### /* A VIRER ?
 
 def climat_couplet2b(sequencer, timer):
 
@@ -34,3 +39,5 @@ def climat_outro_filter(sequencer, timer):
     sequencer.animate([samplesmainport, '/strip/Keyboards/Calf%20Filter/Frequency/unscaled'], 20., 20000., 300, 'sec', framerate=50)
     sequencer.animate([surfaceorlport, '/strip/SamplesMain/Calf%20Filter/Frequency/unscaled'], 20., 20000., 300, 'sec', framerate=5)
     sequencer.animate([surfaceorlport, '/strip/Keyboards/Calf%20Filter/Frequency/unscaled'], 20., 20000., 300, 'sec', framerate=5)
+
+#####  A VIRER ? */

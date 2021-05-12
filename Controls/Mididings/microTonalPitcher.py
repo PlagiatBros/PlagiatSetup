@@ -45,12 +45,12 @@ def set_control(path, args):
 		return
 
 	channel, control, value = args
-	print(args)
 	if channel in oscChannelMap:
 		channel = oscChannelMap[channel]
-	if control in oscControlMap:
-		control = oscControlMap[control]
-    	_engine.output_event(_event.CtrlEvent('CalfAutomation', channel, control, int(value)))
+		if control in oscControlMap:
+			control = oscControlMap[control]
+
+		    	_engine.output_event(_event.CtrlEvent('CalfAutomation', channel, control, int(value)))
 
 
 
@@ -80,6 +80,6 @@ run([
     Filter(NOTEOFF),
     Filter(PITCHBEND) >> [
 	Process(storePitchwheel),
-	ChannelFilter(1) >> SendOSC(5678, '/channel', 1)
+#	ChannelFilter(1) >> SendOSC(5678, '/channel', 1)
 	]
 ])

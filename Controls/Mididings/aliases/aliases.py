@@ -486,6 +486,9 @@ oscsendproxy = OscSendProxy([
 	[zyntrebleport, '/part3/Pefxbypass1', True],
 	[zyntrebleport, '/part4/Pefxbypass1', True],
 	[zyntrebleport, '/part5/Pefxbypass1', True],
+        [monosynthpitcherport, '/monosynth/control', 'traphigh', 'filterFreq', 17],
+        [monosynthpitcherport, '/monosynth/control', 'horn', 'filterFreq', 42],
+
 
 
 ])

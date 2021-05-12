@@ -19,6 +19,7 @@ climat_mk2lights = {
     8:'white',
 }
 
+
 climat_metro = [
     SendOSC(slport, '/set', 'eighth_per_cycle', 74),
     SendOSC(slport, '/set', 'tempo', 150),
@@ -34,6 +35,22 @@ climat_metro = [
     SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
     SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(150))
 ]
+climat_metro_2 = [
+    SendOSC(slport, '/set', 'eighth_per_cycle', 74),
+    SendOSC(slport, '/set', 'tempo', 150),
+    SendOSC(slport, '/sl/-1/hit', 'pause_on'),
+
+    SendOSC(klickport, '/klick/simple/set_tempo', 150),
+    SendOSC(klickport, '/klick/simple/set_meter', 74, 8),
+    SendOSC(klickport, '/klick/simple/set_pattern', 'X.x.x.x.X.x.x.x.X.x.xxx.X.x.x.x.X.xX.x.x.x.X.x.x.x.X.x.x.x.Xxx.x.x.X.x.x.x'),
+    SendOSC(klickport, '/klick/metro/start'),
+
+    SendOSC(bassmainport, '/strip/BassScapePost/' + scapebpmpath, scapebpm(150)),
+    SendOSC(samplesscapeport, '/strip/SamplesScape/' + scapebpmpath, scapebpm(150)),
+    SendOSC(vxorlpostport, '/strip/VxORLDelayPost/' + delaybpmpath, delaybpm(150)),
+    SendOSC(vxjeannotpostport, '/strip/VxJeannotDelayPost/' + delaybpmpath, delaybpm(150))
+]
+
 
 #### Climat ####
 climat = [
@@ -55,7 +72,7 @@ climat = [
     jeannot >> ProgramFilter([2,4,7]) >> light_reset >> Discard(),
     [orl, jeannot] >> ProgramFilter(1) >> stop, # !!!STOP!!! #
     jeannot >> ProgramFilter(2) >> [ # Intro mandela - Bouton 2
-        Program(69) >> cseqtrigger,
+        Program(70) >> cseqtrigger,
         [
             SendOSC(slport, '/sl/-1/hit', 'pause_on'),
             SendOSC(slport, '/set', 'eighth_per_cycle', 74),
@@ -176,13 +193,28 @@ climat = [
         Program(66) >> cseqtrigger,
         [
 
-            climat_metro,
+            climat_metro_2,
 
-            SendOscState([]), # mute samples
+            SendOscState([
+                [monosynthpitcherport, '/monosynth/control', 'traphigh', 'filterFreq', 2]
+                ]), # mute samples
 
-            SendOSC(audioseqport, '/Audioseq/Bpm', 120),
-            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'climat_couplet1a', timestamp),
+            SendOSC(audioseqport, '/Audioseq/Bpm', 150),
+            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'climat_couplet1b', timestamp),
             SendOSC(audioseqport, '/Audioseq/Play', timestamp),
+
+            vxorlgars_on,
+            vxorlmeuf_off,
+            vxorldisint_off,
+            vxorldelay_off,
+            vxorlvocode_off,
+
+            vxjeannotdelay_off,
+            vxjeannotgars_on,
+            vxjeannotmeuf_off,
+            vxjeannotdisint_off,
+            vxjeannotvocode_off,
+
 
         ] >> Discard()
 
@@ -190,7 +222,8 @@ climat = [
     orl >> ProgramFilter(93) >> [ # Couplet Ib (smell it quick) - Bouton 93 (auto)
         Program(66) >> cseqtrigger,
         [
-            climat_metro,
+            climat_metro_2,
+
 
             SendOscState([
                 [samplesmainport, '/strip/Samples2Dry/Gain/Mute', 0.0],
@@ -200,29 +233,35 @@ climat = [
                 [samplesmainport, '/strip/SamplesReverseDelay/Gain/Mute', 0.0],
 
                 [samplesdelaymungeport, '/strip/Samples3/Gain/Gain%20(dB)/unscaled', -7.0],
-                [samplesreversedelayport, '/strip/Samples4/Gain/Gain%20(dB)/unscaled', -2.0],
-                [samplesringmodport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -2.0]
+                [samplesreversedelayport, '/strip/Samples4/Gain/Gain%20(dB)/unscaled', -6.0],
+                [samplesringmodport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -2.0],
+
+                [monosynthpitcherport, '/monosynth/control', 'traphigh', 'filterFreq', 12]
+
             ]), # unmute samples
 
             SendOSC(mk2inport, '/mididings/switch_scene', 4), # samples/keys cut
-            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'climat_couplet1c', timestamp),
-
-
         ] >> Discard(),
 
     ],
     orl >> ProgramFilter(3) >> [ # Couplet Ic (see it's easy) - Bouton 3
-        Program(67) >> cseqtrigger,
+        [
+            Program(9),
+            Program(10),
+            Program(11),
+            Program(12),
+
+            Program(14),
+            Program(15),
+            Program(16)
+            ] >> seq24once,
         [
             SendOSC(mk2inport, '/mididings/switch_scene', 4), # samples/keys cut
-            SendOSC(audioseqport, '/Audioseq/Scene/Play', 'climat_couplet1c', timestamp),
-
-
         ] >> Discard(),
 
     ],
     jeannot >> ProgramFilter(4) >> [ # Refrain - Bouton 4
-        Program(66) >> cseqtrigger,
+        Program(67) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 74),
             SendOSC(slport, '/set', 'tempo', 150),
@@ -271,6 +310,11 @@ climat = [
                 [samplesdelaymungeport, '/strip/Samples3/Gain/Gain%20(dB)/unscaled', -40.0],
                 [samplesringmodport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -2.0],
 
+                [monosynthpitcherport, '/monosynth/control', 'traphigh', 'filterFreq', 12],
+#                [bassmainport, '/strip/Trapsynth_barkline/Gain/Mute', 0.0],
+                [keyboardsport, '/strip/Trapsynth_fifth/Gain/Mute', 0.0],
+
+
             ]),
 
             vxorlgars_on,
@@ -296,7 +340,7 @@ climat = [
             ]
         ],
     orl >> ProgramFilter(4) >> [ # Couplet II - Bouton 4
-        Program(67) >> cseqtrigger,
+        Program(68) >> cseqtrigger,
         [
             SendOSC(slport, '/set', 'eighth_per_cycle', 74),
             SendOSC(slport, '/set', 'tempo', 150),
@@ -347,6 +391,9 @@ climat = [
                 [samplesdelaymungeport, '/strip/Samples3/Gain/Gain%20(dB)/unscaled', -7.0],
                 [samplesreversedelayport, '/strip/Samples4/Gain/Gain%20(dB)/unscaled', -2.0],
                 [samplesringmodport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -2.0],
+
+                [monosynthpitcherport, '/monosynth/control', 'traphigh', 'filterFreq', 12]
+
             ]),
 
             vxorlgars_on,
@@ -381,5 +428,7 @@ climat = [
         SendOSC(trapcutport, '/Trapcut/Scene/Play', 'IIII', timestamp),
         SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_boutros_cut', timestamp),
     ],
+
+    ## Mpko
 
 ]
