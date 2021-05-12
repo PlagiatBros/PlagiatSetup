@@ -81,5 +81,6 @@ run([
     Filter(PITCHBEND) >> [
 	Process(storePitchwheel),
 #	ChannelFilter(1) >> SendOSC(5678, '/channel', 1)
-	]
+	],
+	CtrlFilter(1)
 ])
