@@ -338,24 +338,25 @@ sapercomjaja = [
         SendOSC(trapcutport, '/Trapcut/Scene/Play', 'III', timestamp),
     ] >> Discard(),
     orl >> ProgramFilter(10) >> [ # rimdogged
-            stop,
-            SendOSC(slport, '/set', 'eighth_per_cycle', 8),
-            SendOSC(slport, '/set', 'tempo', 150),
+            stop, [
+                    SendOSC(slport, '/set', 'eighth_per_cycle', 8),
+                    SendOSC(slport, '/set', 'tempo', 150),
 
-            SendOSC(klickport, '/klick/simple/set_tempo', 150),
-            SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
-            SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
-            SendOSC(klickport, '/klick/metro/start'),
+                    SendOSC(klickport, '/klick/simple/set_tempo', 150),
+                    SendOSC(klickport, '/klick/simple/set_meter', 4, 4),
+                    SendOSC(klickport, '/klick/simple/set_pattern', 'Xxxx'),
+                    SendOSC(klickport, '/klick/metro/start'),
 
-            vxjeannotdelay_off,
-            vxjeannotgars_on,
-            vxjeannotmeuf_off,
-            vxjeannotdisint_on,
+                    vxjeannotdelay_off,
+                    vxjeannotgars_on,
+                    vxjeannotmeuf_off,
+                    vxjeannotdisint_on,
 
 
-            SendOSC(cmeinport, '/mididings/switch_scene', 17),
+                    SendOSC(cmeinport, '/mididings/switch_scene', 17),
 
-    ] >> Discard(),
+            ] >> Discard(),
+        ],
     orl >> ProgramFilter(11) >> [ # Mandela-A-A-A-A II
         Program(74) >> cseqtrigger,
         [
