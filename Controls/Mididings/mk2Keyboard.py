@@ -316,7 +316,7 @@ run(
             ),
       11: 	Scene("Hey",
               [
-              KeyFilter(notes=['c3') >> Filter(NOTEON) >> NoteOn(97,127) >> Output('Mk2OutTapeutape', 16),
+              KeyFilter(notes=['c3']) >> Filter(NOTEON) >> NoteOn(97,127) >> Output('Mk2OutTapeutape', 16),
               KeyFilter(notes=['f3']) >> Filter(NOTEON) >> NoteOn(98,127) >> Output('Mk2OutTapeutape', 16),
               bassfilter,
               gatecancel,
