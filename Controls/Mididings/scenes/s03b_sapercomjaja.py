@@ -338,6 +338,7 @@ sapercomjaja = [
         SendOSC(trapcutport, '/Trapcut/Scene/Play', 'III', timestamp),
     ] >> Discard(),
     orl >> ProgramFilter(10) >> [ # rimdogged
+            stop,
             SendOSC(slport, '/set', 'eighth_per_cycle', 8),
             SendOSC(slport, '/set', 'tempo', 150),
 
