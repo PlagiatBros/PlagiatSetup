@@ -13,10 +13,10 @@ climat_mk2lights = {
     2:'purple',
     3:'purple',
     4:'purple',
-    5:'green',
-    6:'purple',
-    7:'white',
-    8:'white',
+    5:'red',
+    6'yellow',
+    7:'yellow',
+    8:'yellow',
 }
 
 
@@ -437,6 +437,32 @@ climat = [
         SendOSC(trapcutport, '/Trapcut/Scene/Play', 'IIII', timestamp),
         SendOSC(lightseqport, '/Lightseq/Scene/Play', 'climat_boutros_cut', timestamp),
     ],
+
+
+    jeannot >> ProgramFilter(7) >> [ # Vx jeannot grave
+        vxjeannotdelay_on,
+        vxjeannotgars_on,
+        vxjeannotmeuf_off,
+        vxjeannotdisint_off,
+        vxjeannotvocode_off,
+    ] >> Discard(),
+
+    jeannot >> ProgramFilter(7) >> [ # Vx jeannot grave
+        vxjeannotdelay_off,
+        vxjeannotgars_on,
+        vxjeannotmeuf_off,
+        vxjeannotdisint_off,
+        vxjeannotvocode_off,
+    ] >> Discard(),
+
+    jeannot >> ProgramFilter(8) >> [ # Vx jeannot aigue
+        vxjeannotdelay_off,
+        vxjeannotgars_off,
+        vxjeannotmeuf_off,
+        vxjeannotdisint_off,
+        vxjeannotvocode_on,
+    ] >> Discard(),
+
 
     ## goto Mpko
 
