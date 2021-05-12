@@ -14,7 +14,7 @@ climat_mk2lights = {
     3:'purple',
     4:'purple',
     5:'red',
-    6'yellow',
+    6: 'yellow',
     7:'yellow',
     8:'yellow',
 }
