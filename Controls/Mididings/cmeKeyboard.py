@@ -32,10 +32,10 @@ def zyn_enable_filter(*channel):
 	global active_channel
 
 	for c in active_channel:
-		if c == 11:
+		if c == 21:
 			# calf monosynth
 			send(keyboardsport, '/strip/DubstepHorn/Calf%20Filter/Frequency/unscaled', 20000.0)
-		elif c == 12:
+		elif c == 22:
 			# calf monosynth
 			send(keyboardsport, '/strip/TrapHigh/Calf%20Filter/Frequency/unscaled', 20000.0)
 		else:
@@ -45,7 +45,7 @@ def zyn_enable_filter(*channel):
 	active_channel = list(channel)
 
 	for c in active_channel:
-		if c < 10:
+		if c < 20:
 			# zyn
 			send(zyntrebleport, '/part%i/Pefxbypass1' % (c - 1), False)
 
@@ -62,16 +62,18 @@ def zyn_enable_filter_6(e):
 	zyn_enable_filter(6)
 def zyn_enable_filter_11(e):
 	zyn_enable_filter(11)
-def zyn_enable_filter_12(e):
+def zyn_enable_filter_21(e):
+	zyn_enable_filter(21)
+def zyn_enable_filter_22(e):
 	zyn_enable_filter(12)
 
 
 def zyn_set_filter(ev):
 	for c in active_channel:
-		if c == 11:
+		if c == 21:
 			# calf monosynth
 			send(keyboardsport, '/strip/DubstepHorn/Calf%20Filter/Frequency/unscaled',  20000. * pow(10, ((-log10(71/20000.))*ev.value) / 127. + log10(71/20000.)))
-		elif c == 12:
+		elif c == 22:
 			# calf monosynth
 			send(keyboardsport, '/strip/TrapHigh/Calf%20Filter/Frequency/unscaled',  20000. * pow(10, ((-log10(71/20000.))*ev.value) / 127. + log10(71/20000.)))
 		else:
@@ -171,6 +173,20 @@ zyntreble4 = [ #bombarde
 	]
 ]
 
+zyndre = [ #bombarde
+    Init([
+	Call(zyn_enable_filter_11)
+    ]),
+
+	Transpose(-12) >> [
+	    [
+	        ~Filter(CTRL),
+	        CtrlFilter(1),
+	        CtrlFilter(64)
+	        ] >> Output('CMEOutTreble', 6)
+	]
+]
+
 monosynth1 = [ # trap bass
 
 	Transpose(-12) >> [
@@ -184,7 +200,7 @@ monosynth1 = [ # trap bass
 
 monosynth2 = [ # horny horn
     Init([
-	Call(zyn_enable_filter_11)
+	Call(zyn_enable_filter_21)
     ]),
 
 	~Filter(PITCHBEND) >> Transpose(-12) >> [
@@ -202,7 +218,7 @@ monosynth2 = [ # horny horn
 
 monosynth3 = [ # trap so high
     Init([
-	Call(zyn_enable_filter_12)
+	Call(zyn_enable_filter_22)
     ]),
 
 	Transpose(-12) >> [
@@ -267,6 +283,7 @@ run(
 		16: Scene("Trap Bass mono", monosynth1),
 		17: Scene("Dubstep Horn mono", monosynth2),
 		18: Scene("Trap High mono", monosynth3),
+		19: Scene("DRE", zyndre),
     },
     control = [
         Filter(CTRL) >> [
