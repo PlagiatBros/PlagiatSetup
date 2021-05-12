@@ -256,7 +256,7 @@ climat = [
             Program(16)
             ] >> seq24once,
         [
-            SendOSC(mk2inport, '/mididings/switch_scene', 4), # samples/keys cut
+            SendOSC(mk2inport, '/mididings/switch_scene', 11), # samples/keys cut
         ] >> Discard(),
 
     ],
