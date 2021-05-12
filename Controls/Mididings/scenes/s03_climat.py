@@ -195,7 +195,9 @@ climat = [
             climat_metro_2,
 
             SendOscState([
-                [monosynthpitcherport, '/monosynth/control', 'traphigh', 'filterFreq', 2]
+                [monosynthpitcherport, '/monosynth/control', 'traphigh', 'filterFreq', 2],
+                [samplesmainport, '/strip/SamplesDrumKlit/Gain/Mute', 1.0],
+
                 ]), # mute samples
 
             SendOSC(audioseqport, '/Audioseq/Bpm', 150),
