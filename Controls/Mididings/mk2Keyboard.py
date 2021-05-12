@@ -152,6 +152,15 @@ samples_mute = Filter(NOTE) >> [
     ],
 ]
 
+keys_mute = Filter(NOTE) >> [
+    KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEON) >> [
+        SendOSC(samplesmainport, '/strip/Keyboards/Gain/Mute', 1.0)
+    ],
+    KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEOFF) >> [
+		SendOSC(samplesmainport, '/strip/Keyboards/Gain/Mute', 0.0)
+    ],
+]
+
 bass_mute = Filter(NOTE) >> [
     KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEON) >> [
         SendOSC(bassmainport, '/strip/BassMain/Gain/Mute', 1.0)
@@ -318,6 +327,15 @@ run(
               [
               KeyFilter(notes=['c3']) >> Filter(NOTEON) >> NoteOn(97,127) >> Output('Mk2OutTapeutape', 16),
               KeyFilter(notes=['f3']) >> Filter(NOTEON) >> NoteOn(98,127) >> Output('Mk2OutTapeutape', 16),
+              bassfilter,
+              gatecancel,
+			  looperctl,
+				pitch
+              ]
+            ),
+      12: 	Scene("Keyboards Mute",
+              [
+			  keys_mute,
               bassfilter,
               gatecancel,
 			  looperctl,

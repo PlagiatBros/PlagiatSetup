@@ -247,7 +247,7 @@ climat = [
             vxjeannotdisint_off,
             vxjeannotvocode_on,
 
-            SendOSC(mk2inport, '/mididings/switch_scene', 4), # samples/keys cut
+            SendOSC(mk2inport, '/mididings/switch_scene', 12), # samples/keys cut
         ] >> Discard(),
 
     ],
