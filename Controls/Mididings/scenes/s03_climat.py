@@ -239,6 +239,12 @@ climat = [
 
             ]), # unmute samples
 
+            vxjeannotdelay_off,
+            vxjeannotgars_off,
+            vxjeannotmeuf_off,
+            vxjeannotdisint_off,
+            vxjeannotvocode_on,
+
             SendOSC(mk2inport, '/mididings/switch_scene', 4), # samples/keys cut
         ] >> Discard(),
 
