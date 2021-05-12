@@ -1,0 +1,30 @@
+{
+	Group 0xD create :name "Keyboards"
+	Mixer_Strip 0x1 create :name "Rhodes" :width "narrow" :tab "signal" :color 1310618371 :gain_mode 0 :mute_mode 0 :group 0xD :auto_input "" :manual_connection 0
+	Chain 0x2 create :strip 0x1 :tab "chain"
+	JACK_Module 0x3 create :parameter_values "0.000000:2.000000" :is_default 1 :chain 0x2 :active 1
+	Gain_Module 0x4 create :parameter_values "0.000000:0.000000" :is_default 1 :chain 0x2 :active 1
+	Meter_Module 0x5 create :is_default 1 :chain 0x2 :active 1
+	JACK_Module 0x6 create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0x2 :active 1
+	Mixer_Strip 0x7 create :name "Zyn1" :width "narrow" :tab "signal" :color 814721259 :gain_mode 0 :mute_mode 0 :group 0xD :auto_input "" :manual_connection 0
+	Chain 0x8 create :strip 0x7 :tab "chain"
+	JACK_Module 0x9 create :parameter_values "0.000000:2.000000" :is_default 1 :chain 0x8 :active 1
+	Gain_Module 0xA create :parameter_values "0.000000:0.000000" :is_default 1 :chain 0x8 :active 1
+	Meter_Module 0xB create :is_default 1 :chain 0x8 :active 1
+	Plugin_Module 0x32 create :plugin_id 1795 :plugin_ins 2 :plugin_outs 2 :parameter_values "1.000000:0.500000:0.750000:0.250000" :is_default 0 :chain 0x8 :active 1
+	JACK_Module 0xC create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0x8 :active 1
+	Mixer_Strip 0x22 create :name "DubstepHorn" :width "narrow" :tab "signal" :color 1705199573 :gain_mode 0 :mute_mode 0 :group 0xD :auto_input "" :manual_connection 0
+	Chain 0x23 create :strip 0x22 :tab "chain"
+	JACK_Module 0x24 create :parameter_values "0.000000:2.000000" :is_default 1 :chain 0x23 :active 1
+	Plugin_Module 0x2F create :lv2_plugin_uri "http://calf.sourceforge.net/plugins/Filter" :plugin_ins 2 :plugin_outs 2 :parameter_values "20000.000000:4.500000:1.000000:20.000000:0.000000:1.000000:1.000000" :is_default 0 :chain 0x23 :active 1
+	Gain_Module 0x25 create :parameter_values "0.000000:0.000000" :is_default 1 :chain 0x23 :active 1
+	Meter_Module 0x27 create :is_default 1 :chain 0x23 :active 1
+	JACK_Module 0x28 create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0x23 :active 1
+	Mixer_Strip 0x1C create :name "TrapHigh" :width "narrow" :tab "signal" :color 1406792853 :gain_mode 0 :mute_mode 0 :group 0xD :auto_input "" :manual_connection 0
+	Chain 0x1D create :strip 0x1C :tab "chain"
+	JACK_Module 0x1E create :parameter_values "0.000000:2.000000" :is_default 1 :chain 0x1D :active 1
+	Plugin_Module 0x30 create :lv2_plugin_uri "http://calf.sourceforge.net/plugins/Filter" :plugin_ins 2 :plugin_outs 2 :parameter_values "20000.000000:4.500000:1.000000:20.000000:0.000000:1.000000:1.000000" :is_default 0 :chain 0x1D :active 1
+	Gain_Module 0x1F create :parameter_values "0.000000:0.000000" :is_default 1 :chain 0x1D :active 1
+	Meter_Module 0x20 create :is_default 1 :chain 0x1D :active 1
+	JACK_Module 0x21 create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0x1D :active 1
+}

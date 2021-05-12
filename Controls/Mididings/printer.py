@@ -5,13 +5,14 @@ from mididings.extra.inotify import AutoRestart
 
 
 config(
-	backend='jack',
+	backend='alsa',
 	client_name='MIDIMON',
 	in_ports=['Print']
 )
 
 def printer(ev):
     print 'Midi received:'
+    print ev
     print ' channel: %s\n type: %s' % (ev.channel, ev.type)
     if str(ev.type) == 'CTRL':
         print ' ctrl: %s\n value: %s' % (ev.ctrl, ev.value)

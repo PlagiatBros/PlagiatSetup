@@ -6919,7 +6919,7 @@
                             "id": "panel_24",
                             "visible": true,
                             "interaction": true,
-                            "width": 440,
+                            "width": 500,
                             "height": "auto",
                             "expand": "false",
                             "colorText": "auto",
@@ -7866,6 +7866,28 @@
                                       "variables": {
                                         "color": "orange",
                                         "n": 9,
+                                        "name": "Arpeggio"
+                                      }
+                                    },
+                                    "address": "auto",
+                                    "variables": "@{parent.variables}"
+                                  },
+                                  {
+                                    "type": "clone",
+                                    "top": 190,
+                                    "left": 0,
+                                    "id": "synthstrip_10",
+                                    "visible": true,
+                                    "interaction": true,
+                                    "width": 80,
+                                    "height": 510,
+                                    "expand": "false",
+                                    "css": "",
+                                    "widgetId": "synthstrip_template",
+                                    "props": {
+                                      "variables": {
+                                        "color": "grey",
+                                        "n": 10,
                                         "name": "Arpeggio"
                                       }
                                     },
@@ -12497,7 +12519,8 @@
                       "ZynTreble 3": 12,
                       "Bombarde": 15,
                       "DubStep Horn": 17,
-                      "Trap High": 18
+                      "Trap High": 18,
+                      "Dree": 19
                     },
                     "decimals": 0,
                     "typeTags": "i",
