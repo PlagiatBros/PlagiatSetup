@@ -183,7 +183,7 @@ zyndre = [ #bombarde
 	        ~Filter(CTRL),
 	        CtrlFilter(1),
 	        CtrlFilter(64)
-	        ] >> Output('CMEOutTreble', 6)
+	        ] >> Output('CMEOutTreble', 9)
 	]
 ]
 
