@@ -314,6 +314,15 @@ run(
 				pitch
               ]
             ),
+      11: 	Scene("Hey",
+              [
+              KeyFilter(notes=['f2','c3','g3']) >> Filter(NOTEON) >> NoteOn(97,127) >> Output('Mk2OutTapeutape', 16),
+              bassfilter,
+              gatecancel,
+			  looperctl,
+				pitch
+              ]
+            ),
     },
     control = [
 		video,
