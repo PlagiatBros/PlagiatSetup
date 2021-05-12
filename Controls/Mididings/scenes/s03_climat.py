@@ -320,8 +320,8 @@ climat = [
                 [samplesringmodport, '/strip/Samples1/Gain/Gain%20(dB)/unscaled', -2.0],
 
                 [monosynthpitcherport, '/monosynth/control', 'traphigh', 'filterFreq', 12],
-               [bassmainport, '/strip/Trapsynth_barkline/Gain/Mute', 0.0],
-                # [keyboardsport, '/strip/Trapsynth_fifth/Gain/Mute', 0.0],
+                [bassmainport, '/strip/Trapsynth_barkline/Gain/Mute', 0.0],
+                [keyboardsport, '/strip/Trapsynth_fifth/Gain/Mute', 0.0],
 
 
             ]),
@@ -339,7 +339,7 @@ climat = [
             vxjeannotvocode_off,
 
             bassdry,
-            # bassdisto,
+            bassdisto,
 
             ] >> Discard(),
         [
